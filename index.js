@@ -8,6 +8,8 @@ var port = 10000;
 
 const path = require("path");
 
+app.use("/", express.static(path.join(__dirname, "public")));
+
 app.get("/cool",(request,response) =>{
     response.send(cool());
     console.log("New request to /cool has arrived");
