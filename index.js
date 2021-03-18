@@ -4,7 +4,7 @@ var express = require("express");
 
 var app = express();
 
-var port = 10000;
+var port = (process.env.PORT || 10000);
 
 const path = require("path");
 
