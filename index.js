@@ -20,6 +20,12 @@ app.get("/index.html",(request,response) =>{
     console.log("File sent");
 });
 
+app.get("/info/life-expectancy-stats",(request,response) =>{
+    response.send("<html><body>aes</body></html>");
+    console.log("Info sent");
+});
+
+
 app.listen(port,()=>{
     console.log("Server ready listening on port "+port);
 });
