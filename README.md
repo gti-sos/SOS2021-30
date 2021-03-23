@@ -12,5 +12,5 @@
     - [https://sos2021-30.herokuapp.com/info/life-expectancy-stats](https://sos2021-30.herokuapp.com/info/life-expectancy-stats) (developed by [Alejandro Sánchez Márquez](https://github.com/Alesanmar))
     - [https://sos2021-30.herokuapp.com/info/smokers-stats](https://sos2021-30.herokuapp.com/info/smokers-stats) (developed by [Juan Pedro Hurtado Masero](https://github.com/Juanpepitt))
     - [https://sos2021-30.herokuapp.com/info/table-weights-stats](https://sos2021-30.herokuapp.com/info/table-weights-stats) (developed by [Jesús Ruiz Domínguez](https://github.com/jesruidom))
-    - [https://sos2021-30.herokuapp.com/info/alcohol-consumption-stats](https://sos2021-30.herokuapp.com/info/alcohol-consumption-stats/docs) (developed by [Victor Caballero Sánchez](https://github.com/vic3214))
+    - [https://sos2021-30.herokuapp.com/info/alcohol-consumption-stats](https://sos2021-30.herokuapp.com/info/alcohol-consumption-stats) (developed by [Victor Caballero Sánchez](https://github.com/vic3214))
   
