@@ -30,6 +30,11 @@ app.get("/info/smokers-stats",(request,response) =>{
     console.log("Info about smokers-stats sent");
 });
 
+app.get("/info/table-weights-stats",(request,response) =>{
+    response.send("<html><body><p>Datos del IMC por comunidades autónomas de España teniendo en cuenta peso normal, sobre peso y obesidad.(Presentando el dato en % de habitantes)</p><table border='1'><tr><td>country</td><td>province</td><td>year</td><td>normal weight</td><td>overweight</td><td>obesity</td></tr><tr><td>España</td><td>Andalucia</td><td>2017</td><td>45,1</td> <td>37,5</td><td>21,0</td> </tr><tr><td>España</td><td>Canarias</td><td>2017</td><td>43,5</td> <td>37,2</td><td>19,3</td></tr><tr><td>España</td><td>Castilla y León</td><td>2017</td><td>47,6</td><td>39,2</td><td>13,2</td></tr><tr><td>España</td><td>Cataluña</td><td>2017</td><td>48,4</td><td>36,7</td><td>14,9</td></tr><tr><td>España</td><td>Comunidad Valenciana</td><td>2017</td><td>45,0</td><td>36,2</td><td>18,8</td></tr><tr><td>España</td><td>País Vasco</td><td>2017</td><td>50,3</td><td>35,9</td><td>13,8</td></tr></table></body></html>");
+    console.log("Info weights-stats sent");
+});
+
 app.get("/info/alcohol-consumption-stats",(request,response) =>{
     response.send("<html><body><p>Datos de consumo de alcohol en España: rango de edad, muertes prematuras por consumo, prevalencia del trastorno por consumo de alcohol</p><table border='5'><tr><td>country</td><td>years</td><td>age range</td><td>alcohol premature death</td><td>prevalence of alcohol use disorder </td></tr><tr><td>España</td><td>2017</td><td>0-5</td><td>0</td><td>0.00</td></tr><tr><td>España</td><td>2017</td><td>5-14</td><td>10</td><td>0.05</td></tr><tr><td>España</td><td>2017</td><td>15-49</td><td>2,529</td><td>1.32</td></tr><tr><td>España</td><td>2017</td><td>50-69</td><td>10,184</td><td>0.63</td></tr><tr><td>España</td><td>2017</td><td>70-</td><td>18,864</td><td>0.25</td></tr></table></body></html>");
     console.log("Info about alcohol-consumption-stats sent");
