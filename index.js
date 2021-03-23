@@ -30,6 +30,11 @@ app.get("/info/smokers-stats",(request,response) =>{
     console.log("Info about smokers-stats sent");
 });
 
+app.get("/info/alcohol-consumption-stats",(request,response) =>{
+    response.send("<html><body><p>Datos de consumo de alcohol en España: rango de edad, muertes prematuras por consumo, prevalencia del trastorno por consumo de alcohol</p><table border='5'><tr><td>country</td><td>years</td><td>age range</td><td>alcohol premature death</td><td>prevalence of alcohol use disorder </td></tr><tr><td>España</td><td>2017</td><td>0-5</td><td>0</td><td>0.00</td></tr><tr><td>España</td><td>2017</td><td>5-14</td><td>10</td><td>0.05</td></tr><tr><td>España</td><td>2017</td><td>15-49</td><td>2,529</td><td>1.32</td></tr><tr><td>España</td><td>2017</td><td>50-69</td><td>10,184</td><td>0.63</td></tr><tr><td>España</td><td>2017</td><td>70-</td><td>18,864</td><td>0.25</td></tr></table></body></html>");
+    console.log("Info about alcohol-consumption-stats sent");
+});
+
 app.listen(port,()=>{
     console.log("Server ready listening on port "+port);
 });
