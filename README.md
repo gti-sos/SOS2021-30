@@ -9,8 +9,8 @@
 - **Repository**: [gti-sos/SOS2021-30](https://github.com/gti-sos/SOS2021-30)
 - **URL**: [http://sos2021-30.herokuapp.com](http://sos2021-30.herokuapp.com)
 -  **APIs**:
-    - [https://sos2021-30.herokuapp.com//info/life-expectancy-stats](https://sos2021-00.herokuapp.com/api/v1/my-awesome-resource-1/docs) (developed by [Alejandro Sánchez Márquez](https://github.com/Alesanmar))
-    - [https://sos2021-30.herokuapp.com//info/smokers-stats](https://sos2021-00.herokuapp.com/api/v1/my-awesome-resource-2/docs) (developed by [Juan Pedro Hurtado Masero](https://github.com/Juanpepitt))
-    - [https://sos2021-30.herokuapp.com//info/table-weights-stats](https://sos2021-00.herokuapp.com/api/v1/my-awesome-resource-3/docs) (developed by [Jesús Ruiz Domínguez](https://github.com/jesruidom))
-    - [https://sos2021-30.herokuapp.com//info/alcohol-consumption-stats](https://sos2021-00.herokuapp.com/api/v1/my-awesome-resource-3/docs) (developed by [Victor Caballero Sánchez](https://github.com/vic3214))
+    - [https://sos2021-30.herokuapp.com/info/life-expectancy-stats](https://sos2021-00.herokuapp.com/info/life-expectancy-stats) (developed by [Alejandro Sánchez Márquez](https://github.com/Alesanmar))
+    - [https://sos2021-30.herokuapp.com/info/smokers-stats](https://sos2021-00.herokuapp.com/info/smokers-stats) (developed by [Juan Pedro Hurtado Masero](https://github.com/Juanpepitt))
+    - [https://sos2021-30.herokuapp.com/info/table-weights-stats](https://sos2021-00.herokuapp.com/info/table-weights-stats) (developed by [Jesús Ruiz Domínguez](https://github.com/jesruidom))
+    - [https://sos2021-30.herokuapp.com/info/alcohol-consumption-stats](https://sos2021-00.herokuapp.com/info/alcohol-consumption-stats/docs) (developed by [Victor Caballero Sánchez](https://github.com/vic3214))
   
