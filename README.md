@@ -13,3 +13,4 @@
     - [https://sos2021-30.herokuapp.com/api/v1/my-awesome-resource-2/docs](https://sos2021-00.herokuapp.com/api/v1/my-awesome-resource-2/docs) (developed by [Juan Pedro Hurtado Masero](https://github.com/Juanpepitt))
     - [https://sos2021-30.herokuapp.com/api/v1/my-awesome-resource-3/docs](https://sos2021-00.herokuapp.com/api/v1/my-awesome-resource-3/docs) (developed by [Jesús Ruiz Domínguez](https://github.com/jesruidom))
     - [https://sos2021-30.herokuapp.com/api/v1/my-awesome-resource-3/docs](https://sos2021-00.herokuapp.com/api/v1/my-awesome-resource-3/docs) (developed by [Victor Caballero Sánchez](https://github.com/vic3214))
+  
