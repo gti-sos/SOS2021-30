@@ -9,6 +9,8 @@ var port = (process.env.PORT || 10000);
 
 const path = require("path");
 
+app.use(bodyParser.json);
+
 app.get("/cool",(request,response) =>{
     response.send(cool());
     console.log("New request to /cool has arrived");
