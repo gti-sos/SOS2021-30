@@ -1,12 +1,15 @@
 var cool = require("cool-ascii-faces");
 
 var express = require("express");
+var bodyParser = require("body-parser");
 
 var app = express();
 
 var port = (process.env.PORT || 10000);
 
 const path = require("path");
+
+app.use(bodyParser.json);
 
 app.get("/cool",(request,response) =>{
     response.send(cool());
