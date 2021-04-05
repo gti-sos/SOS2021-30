@@ -1,18 +1,20 @@
 var cool = require("cool-ascii-faces");
 
 var express = require("express");
-//var bodyParser = require("body-parser");
+var bodyParser = require("body-parser");
+
+var _= require("underscore");
 
 var app = express();
 
-var port = (process.env.PORT || 10000);
+var port = process.env.PORT || 10000;
 
 //RUTA BASE DE LA API
-//var BASE_API_PATH = "/api/v1";
+var BASE_API_PATH = "/api/v1";
 
 const path = require("path");
 
-//app.use(bodyParser.json);
+app.use(bodyParser.json());
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 /*
@@ -79,6 +81,105 @@ app.get("/info/table-weights-stats",(request,response) =>{
 app.get("/info/alcohol-consumption-stats",(request,response) =>{
     response.send("<html><body><p>Datos de consumo de alcohol en España: rango de edad, muertes prematuras por consumo, prevalencia del trastorno por consumo de alcohol</p><table border='5'><tr><td>country</td><td>years</td><td>age range</td><td>alcohol premature death</td><td>prevalence of alcohol use disorder </td></tr><tr><td>España</td><td>2017</td><td>0-5</td><td>0</td><td>0.00</td></tr><tr><td>España</td><td>2017</td><td>5-14</td><td>10</td><td>0.05</td></tr><tr><td>España</td><td>2017</td><td>15-49</td><td>2,529</td><td>1.32</td></tr><tr><td>España</td><td>2017</td><td>50-69</td><td>10,184</td><td>0.63</td></tr><tr><td>España</td><td>2017</td><td>70-</td><td>18,864</td><td>0.25</td></tr></table></body></html>");
     console.log("Info about alcohol-consumption-stats sent");
+});
+
+ var alcoholConsumptionStats=[];
+ 
+app.get(BASE_API_PATH+"/alcohol-consumption-stats/loadInitialData",(req,res)=>{
+    alcoholConsumptionStats=[
+        {
+            "id":1,
+            "country":"España",
+            "years":"2017",
+            "ageRange":"0-5",
+            "alcoholPrematureDeath":0,
+            "prevalenceOfAlcoholUseDisorder":0.00
+        },
+        {
+            "id":2,
+            "country":"España",
+            "years":"2017",
+            "ageRange":"5-14",
+            "alcoholPrematureDeath":10,
+            "prevalenceOfAlcoholUseDisorder":0.05
+        }
+    ];
+    res.send(JSON.stringify(alcoholConsumptionStats,null,2));
+});
+
+//GET A UNA LISTA DE RECURSOS
+app.get(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
+    res.send(JSON.stringify(alcoholConsumptionStats,null,2));
+    res.sendStatus(200);
+});
+//POST A LA LISTA DE RECURSOS
+app.post(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
+    const id = alcoholConsumptionStats.length +1;
+    var newStat={...req.body,id};
+    console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
+    alcoholConsumptionStats.push(newStat);
+    res.sendStatus(201);
+});
+//GET A UN RECURSO 
+app.get(BASE_API_PATH+"/alcohol-consumption-stats/:id",(req,res)=>{
+    const {id} = req.params;
+    _.each(alcoholConsumptionStats,(alcoholConsumptionStat,i)=>{
+        if(alcoholConsumptionStat.id==id){
+            res.send(JSON.stringify(alcoholConsumptionStat,null,2));
+        }
+    });
+    res.sendStatus(200);
+});
+
+//PUT A UN RECURSO
+app.put(BASE_API_PATH+"/alcohol-consumption-stats/:id",(req,res)=>{
+    const {id} = req.params;
+    const {country,years,ageRange,alcoholPrematureDeath,prevalenceOfAlcoholUseDisorder}=req.body;
+    if(country&&years&&ageRange&&alcoholPrematureDeath&&prevalenceOfAlcoholUseDisorder){
+        _.each(alcoholConsumptionStats,(alcoholConsumptionStat,i)=>{
+            if(alcoholConsumptionStat.id==id){
+                alcoholConsumptionStat.country=country;
+                alcoholConsumptionStat.years=years;
+                alcoholConsumptionStat.ageRange=ageRange;
+                alcoholConsumptionStat.alcoholPrematureDeath=alcoholPrematureDeath;
+                alcoholConsumptionStat.prevalenceOfAlcoholUseDisorder=prevalenceOfAlcoholUseDisorder;
+            }
+        });
+        //Envio de recurso actualizado
+        res.json(alcoholConsumptionStats);
+        res.status(200);
+    
+    }else{
+        res.status(500).json({error: 'There was an error.'})
+    }
+});
+//DELETE A UN RECURSO
+app.delete(BASE_API_PATH+"/alcohol-consumption-stats/:id",(req,res)=>{
+    const {id} = req.params;
+    _.each(alcoholConsumptionStats,(alcoholConsumptionStat,i)=>{
+        if(alcoholConsumptionStat.id==id){
+            alcoholConsumptionStats.splice(i,1);
+        }
+    });
+    //Envio de recurso actualizado
+    res.send(alcoholConsumptionStats);
+    res.sendStatus(200);
+});
+
+//DELETE A LISTA DE RECURSOS
+app.delete(BASE_API_PATH+"/alcohol-consumption-stats/",(req,res)=>{
+    alcoholConsumptionStats.splice(0, alcoholConsumptionStats.length);
+    //Envio de recurso actualizado
+    res.send(alcoholConsumptionStats);
+    res.sendStatus(200);
+});
+//PUT A UNA LISTA DE RECURSOS (Debe dar error)
+app.put(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
+    res.sendStatus(405);
+});
+//POST A UN RECURSO (Debe dar error)
+app.post(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
+    res.sendStatus(405);
 });
 
 app.listen(port,()=>{
