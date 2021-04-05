@@ -13,7 +13,7 @@ var port = (process.env.PORT || 10000);
 var BASE_API_PATH = "/api/v1";
 
 const path = require("path");
-const { range } = require("underscore");
+const _= require("underscore");
 
 app.use(bodyParser.json);
 
