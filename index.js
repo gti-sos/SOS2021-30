@@ -100,7 +100,7 @@ app.get(BASE_API_PATH+"/alcohol-consumption-stats/loadInitialData",(req,res)=>{
             "country":"España",
             "years":"2017",
             "ageRange":"5-14",
-            "lcoholPrematureDeath":10,
+            "alcoholPrematureDeath":10,
             "prevalenceOfAlcoholUseDisorder":0.05
         }
     ];
