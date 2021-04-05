@@ -7,6 +7,8 @@ var app = express();
 
 var port = (process.env.PORT || 10000);
 
+var BASE_API_PATH = "/api/v1";
+
 const path = require("path");
 
 app.use(bodyParser.json);
