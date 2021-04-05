@@ -1,7 +1,7 @@
 var cool = require("cool-ascii-faces");
 
 var express = require("express");
-//var bodyParser = require("body-parser");
+var bodyParser = require("body-parser");
 
 var _ = require("underscore");
 
@@ -10,12 +10,12 @@ var app = express();
 var port = (process.env.PORT || 10000);
 
 //RUTA BASE DE LA API
-//var BASE_API_PATH = "/api/v1";
+var BASE_API_PATH = "/api/v1";
 
 const path = require("path");
 const { range } = require("underscore");
 
-//app.use(bodyParser.json);
+app.use(bodyParser.json);
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 /*
