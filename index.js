@@ -1,7 +1,7 @@
 var cool = require("cool-ascii-faces");
 
 var express = require("express");
-var bodyParser = require("body-parser");
+//var bodyParser = require("body-parser");
 
 var _ = require("underscore");
 
@@ -9,12 +9,50 @@ var app = express();
 
 var port = (process.env.PORT || 10000);
 
-var BASE_API_PATH = "/api/v1";
+//RUTA BASE DE LA API
+//var BASE_API_PATH = "/api/v1";
 
 const path = require("path");
 const { range } = require("underscore");
 
-app.use(bodyParser.json());
+//app.use(bodyParser.json);
+
+//~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
+/*
+var weights_stats = [];
+
+app.get(BASE_API_PATH + "/table-weights-stats/loadInitialData", (req, res) => {
+    weights_stats = [
+        {
+            "country": 'España',
+            "provinces": 'Andalucia',
+            "year": 2017,
+            "normal-weight": 41.5,
+            "overweight": 37.5,
+            "obesity": 21.0
+        },
+        {
+            "country": 'España',
+            "provinces": 'Canarias',
+            "year": 2017,
+            "normal-weight": 43.5,
+            "overweight": 37.2,
+            "obesity": 19.3
+        },
+        {
+            "country": 'España',
+            "provinces": 'Castilla y León',
+            "year": 2017,
+            "normal-weight": 47.6,
+            "overweight": 39.2,
+            "obesity": 13.2
+        }
+    ];
+
+    console.log()
+})
+*/
+//~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
 app.get("/cool",(request,response) =>{
     response.send(cool());
