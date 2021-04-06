@@ -150,6 +150,7 @@ var smokersStats = [];
 app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
     smokersStats=[
         {
+            "id": 0,
             "province":"Andalucía",
             "year":2017,
             "dailySmoker": 1902219.14,
@@ -158,6 +159,8 @@ app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
             "nonSmoker": 4294657.75
         },
         {
+            
+            "id": 1,
             "province":"Aragón",
             "year":2017,
             "dailySmoker": 315408.75,
@@ -166,6 +169,8 @@ app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
             "nonSmoker": 603988.13
         },
         {
+            
+            "id": 2,
             "province":"Asturias (Principado De)",
             "year":2017,
             "dailySmoker": 246320.48,
@@ -186,7 +191,7 @@ app.get(BASE_API_PATH+"/smokers-stats",(req,res)=>{
 //POST A LA LISTA DE RECURSOS DE SMOKERS-STATS
 app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     const id = smokersStats.length +1;
-    var newStat={...req.body};
+    var newStat={...req.body, id};
     console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
     smokersStats.push(newStat);
     res.sendStatus(201);
