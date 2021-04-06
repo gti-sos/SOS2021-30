@@ -201,7 +201,7 @@ app.put(BASE_API_PATH+"/smokers-stats",(req,res)=>{
 });
 
 //DELETE A LISTA DE RECURSOS DE SMOKERS-STATS
-app.delete(BASE_API_PATH+"/smokers-stats/",(req,res)=>{
+app.delete(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     smokersStats.splice(0, smokersStats.length);
     //Envio de recurso actualizado
     res.send(smokersStats);
