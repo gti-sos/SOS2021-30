@@ -161,8 +161,8 @@ app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
             "daily-smoker": 1902219.14,
             "ocasional-smoker": 260612.40,
             "ex-smoker": 242773.13,
-            "non-smoker": 4294657.75
-            "id": 1,
+            "non-smoker": 4294657.75,
+            "id": 1
         },
         {
             "province":"Aragón",
@@ -170,8 +170,8 @@ app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
             "daily-smoker": 315408.75,
             "ocasional-smoker": 18846.00,
             "ex-smoker": 274678.38,
-            "non-smoker": 603988.13
-            "id": 2,
+            "non-smoker": 603988.13,
+            "id": 2
         },
         {
             "province":"Asturias (Principado De)",
@@ -179,8 +179,8 @@ app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
             "daily-smoker": 246320.48,
             "ocasional-smoker": 45124.26,
             "ex-smoker": 220967.80,
-            "non-smoker": 559602.87
-            "id":3,
+            "non-smoker": 559602.87,
+            "id": 3
         }
     ];
     res.send(JSON.stringify(smokersStats,null,2));
