@@ -262,12 +262,12 @@ app.put(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
     }
 });
 
-//DELETE A UN RECURSO CONCRETO DE SMOKER
-app.delete(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
+//DELETE A UN RECURSO
+app.delete(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
     const {id} = req.params;
-    _.each(smokersStats,(smokersStats, i)=>{
+    _.each(smokersStats,(smokersStats,i)=>{
         if(smokersStats.id==id){
-            smokersStats.splice(i);
+            smokersStats.splice(i,1);
             res.send(smokersStats);
             res.sendStatus(200);
         }else{
