@@ -448,7 +448,3 @@ app.delete(BASE_API_PATH+"/life-expectancy-stats/",(req,res)=>{
 });
 
 //~~~~~~~~~~~~~~~~~~~ END: API LIFE-EXPECTANCY-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
->>>>>>> a706cc1341968dc1d96e10313af128f4f353aad3
