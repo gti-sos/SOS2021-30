@@ -284,6 +284,7 @@ var weights_stats = [];
 app.get(BASE_API_PATH + "/tableweights-stats/loadInitialData", (req, res) => {
     weights_stats = [
         {
+            "id": 1,
             "country": 'España',
             "provinces": 'Andalucia',
             "year": 2017,
@@ -292,6 +293,7 @@ app.get(BASE_API_PATH + "/tableweights-stats/loadInitialData", (req, res) => {
             "obesity": 21.0
         },
         {
+            "id": 2,
             "country": 'España',
             "provinces": 'Canarias',
             "year": 2017,
@@ -300,6 +302,7 @@ app.get(BASE_API_PATH + "/tableweights-stats/loadInitialData", (req, res) => {
             "obesity": 19.3
         },
         {
+            "id": 3,
             "country": 'España',
             "provinces": 'Castilla y León',
             "year": 2017,
