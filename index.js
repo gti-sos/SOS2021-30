@@ -157,7 +157,7 @@ app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
     smokersStats=[
         {   
             "country": "España",
-            "province":"Andalucía",
+            "province":"Andalucia",
             "year":2017,
             "dailySmoker": 1902219.14,
             "ocasionalSmoker": 260612.40,
