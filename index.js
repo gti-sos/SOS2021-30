@@ -53,9 +53,8 @@ app.get(BASE_API_PATH + "/table-weights-stats/loadInitialData", (req, res) => {
 */
 //~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
-app.get("/cool",(request,response) =>{
-    response.send(cool());
-    console.log("New request to /cool has arrived");
+app.listen(port,()=>{
+    console.log("Server ready listening on port "+port);
 });
 
 app.use("/",express.static(path.join(__dirname,"public")));
@@ -182,8 +181,52 @@ app.post(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
     res.sendStatus(405);
 });
 
-app.listen(port,()=>{
-    console.log("Server ready listening on port "+port);
+/*-----------------------------------------------SMOKERS-STATS------------------------------------------*/
+var smokersStats = [];
+
+app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
+    smokersStats=[
+        {
+            "id":1,
+            "province":"Andalucía",
+            "year":2017,
+            "daily-smoker": 1902219.14,
+            "ocasional-smoker": 260612.40,
+            "ex-smoker": 242773.13,
+            "non-smoker": 4294657.75
+        },
+        {
+            "id":1,
+            "province":"Aragón",
+            "year":2017,
+            "daily-smoker": 315408.75,
+            "ocasional-smoker": 18846.00,
+            "ex-smoker": 274678.38,
+            "non-smoker": 603988.13
+        },
+        {
+            "id":2,
+            "province":"Asturias (Principado De)",
+            "year":2017,
+            "daily-smoker": 246320.48,
+            "ocasional-smoker": 45124.26,
+            "ex-smoker": 220967.80,
+            "non-smoker": 559602.87
+        }
+    ];
+    res.send(JSON.stringify(smokersStats,null,2));
 });
 
-console.log(cool());
+//GET A UNA LISTA DE RECURSOS DE SMOKERS-STATS
+app.get(BASE_API_PATH+"/smokers-stats",(req,res)=>{
+    res.send(JSON.stringify(smokersStats,null,2));
+    res.sendStatus(200);
+});
+//POST A LA LISTA DE RECURSOS DE SMOKERS-STATS
+app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
+    const id = smokersStats.length +1;
+    var newStat={...req.body,id};
+    console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
+    smokersStats.push(newStat);
+    res.sendStatus(201);
+});
