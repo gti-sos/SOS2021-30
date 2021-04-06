@@ -508,7 +508,7 @@ app.post(BASE_API_PATH+"/life-expectancy-stats/:id",(req,res)=>{
 
 
 //PUT A UNA LISTA DE RECURSOS (Debe dar error)
-app.put(BASE_API_PATH+"/life-expectancy-stats",(req,res)=>{
+app.put(BASE_API_PATH+"/life-expectancy-stats/:id",(req,res)=>{
     res.sendStatus(405);
 });
 
