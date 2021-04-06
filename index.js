@@ -227,6 +227,8 @@ app.get(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
     _.each(smokersStats,(smokersStats,i)=>{
         if(smokersStats.id==id){
             res.send(JSON.stringify(smokersStats,null,2));
+        }else{
+            sendStatus(404);
         }
     });
     res.sendStatus(200);
