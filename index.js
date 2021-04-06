@@ -304,7 +304,7 @@ app.get(BASE_API_PATH + "/tableweights-stats/loadInitialData", (req, res) => {
         {
             "id":3,
             "country": 'España',
-            "provinces": 'Castilla y León',
+            "provinces": 'Castilla',
             "year": 2017,
             "normal_weight": 47.6,
             "overweight": 39.2,
