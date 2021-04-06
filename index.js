@@ -262,10 +262,10 @@ app.put(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
 });
 
 //DELETE A UN RECURSO CONCRETO DE SMOKER
-app.delete(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
-    const {id} = req.params;
+app.delete(BASE_API_PATH+"/smokers-stats/:province",(req,res)=>{
+    const {province} = req.params;
     _.each(smokersStats,(smokersStats,i)=>{
-        if(smokersStats.id==id){
+        if(smokersStats.province==province){
             smokersStats.splice(i,1);
             res.send(smokersStats);
             res.sendStatus(200);
