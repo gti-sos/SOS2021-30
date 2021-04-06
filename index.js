@@ -328,12 +328,7 @@ app.get(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
 
 
 app.post(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
-    var weights_stats = req.body;
-console.log('new stat to be added:' +JSON.stringify(weights_stats,null,2));
-loadInitialData.push(weights_stats);
-res.sendStatus(201);
-});
-/*    if(Object.keys(req.body).length>6){
+    if(Object.keys(req.body).length>6){
         res.status(400).json({error: 'Bad request'});
     }else{
         const id = weights_stats.length +1;
@@ -343,7 +338,7 @@ res.sendStatus(201);
         res.sendStatus(201);
     }
     res.end();
-});*/
+});
 //GET A UN RECURSO 
 app.get(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
     const {id} = req.params;
