@@ -156,31 +156,31 @@ var smokersStats = [];
 app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
     smokersStats=[
         {
-            "id":1,
             "province":"Andalucía",
             "year":2017,
             "daily-smoker": 1902219.14,
             "ocasional-smoker": 260612.40,
             "ex-smoker": 242773.13,
-            "non-smoker": 4294657.75
+            "non-smoker": 4294657.75,
+            "id": 1
         },
         {
-            "id":1,
             "province":"Aragón",
             "year":2017,
             "daily-smoker": 315408.75,
             "ocasional-smoker": 18846.00,
             "ex-smoker": 274678.38,
-            "non-smoker": 603988.13
+            "non-smoker": 603988.13,
+            "id": 2
         },
         {
-            "id":2,
             "province":"Asturias (Principado De)",
             "year":2017,
             "daily-smoker": 246320.48,
             "ocasional-smoker": 45124.26,
             "ex-smoker": 220967.80,
-            "non-smoker": 559602.87
+            "non-smoker": 559602.87,
+            "id": 3
         }
     ];
     res.send(JSON.stringify(smokersStats,null,2));
@@ -194,6 +194,9 @@ app.get(BASE_API_PATH+"/smokers-stats",(req,res)=>{
 //POST A LA LISTA DE RECURSOS DE SMOKERS-STATS
 app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     const id = smokersStats.length +1;
+
+    var newStat={...req.body, id};
+
     var newStat={...req.body,id};
     console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
     smokersStats.push(newStat);
@@ -211,7 +214,7 @@ app.get(BASE_API_PATH + "/tableweights-stats/loadInitialData", (req, res) => {
             "country": 'España',
             "provinces": 'Andalucia',
             "year": 2017,
-            "normal-weight": 41.5,
+            "normal_weight": 41.5,
             "overweight": 37.5,
             "obesity": 21.0
         },
@@ -219,7 +222,7 @@ app.get(BASE_API_PATH + "/tableweights-stats/loadInitialData", (req, res) => {
             "country": 'España',
             "provinces": 'Canarias',
             "year": 2017,
-            "normal-weight": 43.5,
+            "normal_weight": 43.5,
             "overweight": 37.2,
             "obesity": 19.3
         },
@@ -227,7 +230,7 @@ app.get(BASE_API_PATH + "/tableweights-stats/loadInitialData", (req, res) => {
             "country": 'España',
             "provinces": 'Castilla y León',
             "year": 2017,
-            "normal-weight": 47.6,
+            "normal_weight": 47.6,
             "overweight": 39.2,
             "obesity": 13.2
         }
@@ -237,32 +240,92 @@ app.get(BASE_API_PATH + "/tableweights-stats/loadInitialData", (req, res) => {
     return res.sendStatus(201);
 });
 
-//6.1 - GET a la lista de recursos 
-app.get(BASE_API_PATH + "/table-weights-stats", (req, res) => {
-    if(weights_stats.length =! 0){
-        console.log("200 - OK")
-        return res.send(JSON.stringify(weights_stats, null, 2));
+//GET A UNA LISTA DE RECURSOS
+app.get(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
+    res.send(JSON.stringify(weights_stats,null,2));
+    res.sendStatus(200);
+});
+//POST A LA LISTA DE RECURSOS
+app.post(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
+    if(Object.keys(req.body).length>6){
+        res.status(400).json({error: 'Bad request'});
+    }else{
+        const id = weights_stats.length +1;
+        var newStat={...req.body,id};
+        console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
+        weights_stats.push(newStat);
+        res.sendStatus(201);
     }
-    else{
-        console.log("Not Found");
-        return res.sendStatus(404)
-    }
+    res.end();
+});
+//GET A UN RECURSO 
+app.get(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
+    const {id} = req.params;
+    _.each(weights_stats,(weights_stats,i)=>{
+        if(weights_stats.id==id){
+            res.send(JSON.stringify(weights_stats,null,2));
+        }
+    });
+    res.sendStatus(200);
 });
 
-//6.2 - POST a la lista de recursos
-app.post(BASE_API_PATH + "/table-weights-stats", (req, res) => {
-    const id = weights_stats.length +1;
-    var newStat={...req.body,id};
-    console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
-    weights_stats.push(newStat);
-    res.sendStatus(201);
+//PUT A UN RECURSO
+app.put(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
+    const {id} = req.params;
+    const {country,provinces,year,normal_weight,overweight, obesity}=req.body;
+    if(country&&provinces&&year&&normal_weight&&overweight&&obesity){
+        _.each(weights_stats,(weights_stats,i)=>{
+            if(weights_stats.id==id){
+                weights_stats.country=country;
+                weights_stats.provinces=provinces;
+                weights_stats.year=year;
+                weights_stats.normal_weight=normal_weight;
+                weights_stats.overweight=overweight;
+                weights_stats.obesity=obesity;
+            }
+        });
+        res.json(weights_stats);
+        res.status(200);
+    
+    }else{
+        res.status(500).json({error: 'There was an error.'});
+    }
+});
+//DELETE A UN RECURSO
+app.delete(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
+    const {id} = req.params;
+    _.each(weights_stats,(weights_stats,i)=>{
+        if(weights_stats.id==id){
+            weights_stats.splice(i,1);
+            res.send(weights_stats);
+            res.sendStatus(200);
+        }else{
+            res.sendStatus(404);
+        }
+    });
 });
 
-//6.3
-
+<<<<<<< HEAD
 <<<<<<< HEAD
 //~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 =======
+=======
+//DELETE A LISTA DE RECURSOS
+app.delete(BASE_API_PATH+"/table-weights-stats/",(req,res)=>{
+    weights_stats.splice(0, weights_stats.length);
+    //Envio de recurso actualizado
+    res.send(weights_stats);
+    res.sendStatus(200);
+});
+//PUT A UNA LISTA DE RECURSOS (Debe dar error)
+app.put(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
+    res.sendStatus(405);
+});
+//POST A UN RECURSO (Debe dar error)
+app.post(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
+    res.sendStatus(405);
+});
+>>>>>>> fbc3333c6d134a5e6e2de7271a5b870a31384045
 
 //~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -391,7 +454,10 @@ app.delete(BASE_API_PATH+"/life-expectancy-stats/",(req,res)=>{
 });
 
 //~~~~~~~~~~~~~~~~~~~ END: API LIFE-EXPECTANCY-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
+<<<<<<< HEAD
 
 
 
 >>>>>>> 69a27efd59ea168a317a28f573c8dea820912bfa
+=======
+>>>>>>> fbc3333c6d134a5e6e2de7271a5b870a31384045
