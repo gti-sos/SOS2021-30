@@ -269,9 +269,9 @@ app.delete(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
         if(smokersStats.id==id){
             smokersStats.splice(i,1);
             res.send(smokersStats);
+            res.sendStatus(200);
         }
     });
-    res.sendStatus(200);
 });
 
 
