@@ -45,7 +45,7 @@ app.get("/info/alcohol-consumption-stats",(request,response) =>{
     console.log("Info about alcohol-consumption-stats sent");
 });
 
- var alcoholConsumptionStats=[];
+var alcoholConsumptionStats=[];
  
 app.get(BASE_API_PATH+"/alcohol-consumption-stats/loadInitialData",(req,res)=>{
     alcoholConsumptionStats=[
@@ -305,14 +305,6 @@ app.delete(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
     });
 });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-//~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
-=======
-=======
-=======
->>>>>>> dcd332bfe659ee0fca92dcd702ae18fec9f2855f
 //DELETE A LISTA DE RECURSOS
 app.delete(BASE_API_PATH+"/table-weights-stats/",(req,res)=>{
     weights_stats.splice(0, weights_stats.length);
@@ -328,10 +320,6 @@ app.put(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
 app.post(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
     res.sendStatus(405);
 });
-<<<<<<< HEAD
->>>>>>> fbc3333c6d134a5e6e2de7271a5b870a31384045
-=======
->>>>>>> dcd332bfe659ee0fca92dcd702ae18fec9f2855f
 
 //~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -460,17 +448,3 @@ app.delete(BASE_API_PATH+"/life-expectancy-stats/",(req,res)=>{
 });
 
 //~~~~~~~~~~~~~~~~~~~ END: API LIFE-EXPECTANCY-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-
-
->>>>>>> 69a27efd59ea168a317a28f573c8dea820912bfa
-=======
->>>>>>> fbc3333c6d134a5e6e2de7271a5b870a31384045
-=======
-
-
-
->>>>>>> a706cc1341968dc1d96e10313af128f4f353aad3
->>>>>>> dcd332bfe659ee0fca92dcd702ae18fec9f2855f
