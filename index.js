@@ -217,7 +217,7 @@ app.delete(BASE_API_PATH+"/smokers-stats/",(req,res)=>{
     smokersStats.splice(0, smokersStats.length);
     //Envio de recurso actualizado
     res.send(smokersStats);
-    res.sendStatus(200);
+    res.sendStatus(200).json({deleted: 'Table has been deleted.'});
 });
 
 
@@ -262,7 +262,7 @@ app.put(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
     }
 });
 
-//DELETE A UN RECURSO
+//DELETE A UN RECURSO CONCRETO DE SMOKER
 app.delete(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
     const {id} = req.params;
     _.each(smokersStats,(smokersStats,i)=>{
