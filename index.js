@@ -265,7 +265,7 @@ app.put(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
 app.delete(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
     const {id} = req.params;
     _.each(smokersStats,(smokersStats,i)=>{
-        if(smokersStats.id==province){
+        if(smokersStats.id==id){
             smokersStats.splice(i,1);
             res.send(smokersStats);
             res.sendStatus(200);
