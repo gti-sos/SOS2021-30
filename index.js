@@ -15,8 +15,6 @@ var BASE_API_PATH = "/api/v1";
 const path = require("path");
 
 app.use(bodyParser.json());
-<<<<<<< HEAD
-=======
 
 app.listen(port,()=>{
     console.log("Server ready listening on port "+port);
@@ -195,7 +193,6 @@ app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     smokersStats.push(newStat);
     res.sendStatus(201);
 });
->>>>>>> 246155a9d5f2519b46f03ccec6194d011332abf6
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -257,106 +254,8 @@ app.post(BASE_API_PATH + "/table-weights-stats", (req, res) => {
 
 //6.3
 
-<<<<<<< HEAD
- var alcoholConsumptionStats=[];
- 
-app.get(BASE_API_PATH+"/alcohol-consumption-stats/loadInitialData",(req,res)=>{
-    alcoholConsumptionStats=[
-        {
-            "id":1,
-            "country":"España",
-            "years":"2017",
-            "ageRange":"0-5",
-            "alcoholPrematureDeath":0,
-            "prevalenceOfAlcoholUseDisorder":0.00
-        },
-        {
-            "id":2,
-            "country":"España",
-            "years":"2017",
-            "ageRange":"5-14",
-            "alcoholPrematureDeath":10,
-            "prevalenceOfAlcoholUseDisorder":0.05
-        }
-    ];
-    res.send(JSON.stringify(alcoholConsumptionStats,null,2));
-});
 
-//GET A UNA LISTA DE RECURSOS
-app.get(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
-    res.send(JSON.stringify(alcoholConsumptionStats,null,2));
-    res.sendStatus(200);
-});
-//POST A LA LISTA DE RECURSOS
-app.post(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
-    const id = alcoholConsumptionStats.length +1;
-    var newStat={...req.body,id};
-    console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
-    alcoholConsumptionStats.push(newStat);
-    res.sendStatus(201);
-});
-//GET A UN RECURSO 
-app.get(BASE_API_PATH+"/alcohol-consumption-stats/:id",(req,res)=>{
-    const {id} = req.params;
-    _.each(alcoholConsumptionStats,(alcoholConsumptionStat,i)=>{
-        if(alcoholConsumptionStat.id==id){
-            res.send(JSON.stringify(alcoholConsumptionStat,null,2));
-        }
-    });
-    res.sendStatus(200);
-});
-
-//PUT A UN RECURSO
-app.put(BASE_API_PATH+"/alcohol-consumption-stats/:id",(req,res)=>{
-    const {id} = req.params;
-    const {country,years,ageRange,alcoholPrematureDeath,prevalenceOfAlcoholUseDisorder}=req.body;
-    if(country&&years&&ageRange&&alcoholPrematureDeath&&prevalenceOfAlcoholUseDisorder){
-        _.each(alcoholConsumptionStats,(alcoholConsumptionStat,i)=>{
-            if(alcoholConsumptionStat.id==id){
-                alcoholConsumptionStat.country=country;
-                alcoholConsumptionStat.years=years;
-                alcoholConsumptionStat.ageRange=ageRange;
-                alcoholConsumptionStat.alcoholPrematureDeath=alcoholPrematureDeath;
-                alcoholConsumptionStat.prevalenceOfAlcoholUseDisorder=prevalenceOfAlcoholUseDisorder;
-            }
-        });
-        //Envio de recurso actualizado
-        res.json(alcoholConsumptionStats);
-        res.status(200);
-    
-    }else{
-        res.status(500).json({error: 'There was an error.'})
-    }
-});
-//DELETE A UN RECURSO
-app.delete(BASE_API_PATH+"/alcohol-consumption-stats/:id",(req,res)=>{
-    const {id} = req.params;
-    _.each(alcoholConsumptionStats,(alcoholConsumptionStat,i)=>{
-        if(alcoholConsumptionStat.id==id){
-            alcoholConsumptionStats.splice(i,1);
-        }
-    });
-    //Envio de recurso actualizado
-    res.send(alcoholConsumptionStats);
-    res.sendStatus(200);
-});
-
-//DELETE A LISTA DE RECURSOS
-app.delete(BASE_API_PATH+"/alcohol-consumption-stats/",(req,res)=>{
-    alcoholConsumptionStats.splice(0, alcoholConsumptionStats.length);
-    //Envio de recurso actualizado
-    res.send(alcoholConsumptionStats);
-    res.sendStatus(200);
-});
-//PUT A UNA LISTA DE RECURSOS (Debe dar error)
-app.put(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
-    res.sendStatus(405);
-});
-//POST A UN RECURSO (Debe dar error)
-app.post(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
-    res.sendStatus(405);
-});
-
+//~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
@@ -486,13 +385,3 @@ app.delete(BASE_API_PATH+"/life-expectancy-stats/",(req,res)=>{
 
 
 
-
-
-
-app.listen(port,()=>{
-    console.log("Server ready listening on port "+port);
-});
-=======
->>>>>>> 246155a9d5f2519b46f03ccec6194d011332abf6
-
-//~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
