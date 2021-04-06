@@ -45,7 +45,7 @@ app.get("/info/alcohol-consumption-stats",(request,response) =>{
     console.log("Info about alcohol-consumption-stats sent");
 });
 
- var alcoholConsumptionStats=[];
+var alcoholConsumptionStats=[];
  
 app.get(BASE_API_PATH+"/alcohol-consumption-stats/loadInitialData",(req,res)=>{
     alcoholConsumptionStats=[
