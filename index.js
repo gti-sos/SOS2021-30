@@ -206,7 +206,6 @@ app.delete(BASE_API_PATH+"/smokers-stats/",(req,res)=>{
     //Envio de recurso actualizado
     res.send(smokersStats);
     res.sendStatus(200);
-    res.send(String("List has been removed."));
 });
 
 //GET A UN RECURSO DE SMOKERS-STATS
