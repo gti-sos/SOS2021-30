@@ -270,6 +270,10 @@ app.delete(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
             smokersStats.splice(i,1);
             res.send(smokersStats);
             res.sendStatus(200);
+        }else{
+            smokersStats.splice(i,1);
+            res.send(smokersStats);
+            res.sendStatus(400);
         }
     });
 });
