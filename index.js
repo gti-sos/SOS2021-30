@@ -146,7 +146,7 @@ app.put(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
     res.sendStatus(405);
 });
 //POST A UN RECURSO (Debe dar error)
-app.post(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
+app.post(BASE_API_PATH+"/alcohol-consumption-stats/:id",(req,res)=>{
     res.sendStatus(405);
 });
 
