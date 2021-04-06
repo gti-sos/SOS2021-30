@@ -186,7 +186,7 @@ app.get(BASE_API_PATH+"/smokers-stats",(req,res)=>{
 //POST A LA LISTA DE RECURSOS DE SMOKERS-STATS
 app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     const id = smokersStats.length +1;
-    var newStat={...req.body,id};
+    var newStat={...req.body};
     console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
     smokersStats.push(newStat);
     res.sendStatus(201);
