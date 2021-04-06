@@ -240,7 +240,7 @@ app.get(BASE_API_PATH + "/tableweights-stats/loadInitialData", (req, res) => {
     return res.sendStatus(201);
 });
 
-//GET A UNA LISTA DE RECURSOS
+//6.1 - GET A UNA LISTA DE RECURSOS
 app.get(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
     res.send(JSON.stringify(weights_stats,null,2));
     res.sendStatus(200);
