@@ -144,7 +144,7 @@ app.post(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
     res.sendStatus(405);
 });
 
-/*-----------------------------------------------SMOKERS-STATS------------------------------------------*/
+/*-----------------------------------------------SMOKERS-STATS-------------------------------------------------*/
 var smokersStats = [];
 
 app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
@@ -153,28 +153,28 @@ app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
             "id":1,
             "province":"Andalucía",
             "year":2017,
-            "daily-smoker": 1902219.14,
-            "ocasional-smoker": 260612.40,
-            "ex-smoker": 242773.13,
-            "non-smoker": 4294657.75
+            "dailySmoker": 1902219.14,
+            "ocasionalSmoker": 260612.40,
+            "exSmoker": 242773.13,
+            "nonSmoker": 4294657.75
         },
         {
             "id":1,
             "province":"Aragón",
             "year":2017,
-            "daily-smoker": 315408.75,
-            "ocasional-smoker": 18846.00,
-            "ex-smoker": 274678.38,
-            "non-smoker": 603988.13
+            "dailySmoker": 315408.75,
+            "ocasionalSmoker": 18846.00,
+            "exSmoker": 274678.38,
+            "nonSmoker": 603988.13
         },
         {
             "id":2,
             "province":"Asturias (Principado De)",
             "year":2017,
-            "daily-smoker": 246320.48,
-            "ocasional-smoker": 45124.26,
-            "ex-smoker": 220967.80,
-            "non-smoker": 559602.87
+            "dailySmoker": 246320.48,
+            "ocasionalSmoker": 45124.26,
+            "exSmoker": 220967.80,
+            "nonSmoker": 559602.87
         }
     ];
     res.send(JSON.stringify(smokersStats,null,2));
@@ -185,6 +185,7 @@ app.get(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     res.send(JSON.stringify(smokersStats,null,2));
     res.sendStatus(200);
 });
+
 //POST A LA LISTA DE RECURSOS DE SMOKERS-STATS
 app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     const id = smokersStats.length +1;
@@ -193,6 +194,74 @@ app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     smokersStats.push(newStat);
     res.sendStatus(201);
 });
+
+//PUT A UNA LISTA DE RECURSOS DE SMOKERS STATS (Debe dar error)
+app.put(BASE_API_PATH+"/smokers-stats",(req,res)=>{
+    res.sendStatus(405);
+});
+
+//DELETE A LISTA DE RECURSOS DE SMOKERS-STATS
+app.delete(BASE_API_PATH+"/smokers-stats/",(req,res)=>{
+    smokersStats.splice(0, smokersStats.length);
+    //Envio de recurso actualizado
+    res.send(smokersStats);
+    res.sendStatus(200);
+});
+
+//GET A UN RECURSO DE SMOKERS-STATS
+app.get(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
+    const {id} = req.params;
+    _.each(smokersStats,(smokersStats,i)=>{
+        if(smokersStats.id==id){
+            res.send(JSON.stringify(smokersStats,null,2));
+        }
+    });
+    res.sendStatus(200);
+});
+
+//POST A UN RECURSO DE SMOKERS-STATS (Debe dar error)
+app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
+    res.sendStatus(405);
+});
+
+//PUT A UN RECURSO DE SMOKERS-STATS
+app.put(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
+    const {id} = req.params;
+    const {province,year,dailySmoker,ocasionalSmoker,exSmoker, nonSmoker}=req.body;
+    if(province&&year&&dailySmoker&&ocasionalSmoker&&exSmoker&&nonSmoker){
+        _.each(smokersStats,(smokersStats,i)=>{
+            if(smokersStats.id==id){
+                smokersStats.province = province;
+                smokersStats.year = year;
+                smokersStats.dailySmoker = dailySmoker;
+                smokersStats.ocasionalSmoker = ocasionalSmoker;
+                smokersStats.exSmoker = exSmoker;
+                smokersStats.nonSmoker = nonSmoker;
+            }
+        });
+        //Envio de recurso actualizado
+        res.json(smokersStats);
+        res.status(200);
+    
+    }else{
+        res.status(500).json({error: 'There was an error.'})
+    }
+});
+
+//DELETE A UN RECURSO DE SMOKERS-STATS
+app.delete(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
+    const {id} = req.params;
+    _.each(smokersStats,(smokerStats, i)=>{
+        if(smokersStats.id==id){
+            smokersStats.splice(i,1);
+        }
+    });
+    //Envio de recurso actualizado
+    res.send(smokersStats);
+    res.sendStatus(200);
+});
+
+/*--------------------------------------------END SMOKERS-STATS----------------------------------------------*/
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
