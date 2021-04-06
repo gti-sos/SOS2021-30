@@ -146,7 +146,7 @@ app.put(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
     res.sendStatus(405);
 });
 //POST A UN RECURSO (Debe dar error)
-app.post(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
+app.post(BASE_API_PATH+"/alcohol-consumption-stats/:id",(req,res)=>{
     res.sendStatus(405);
 });
 
@@ -157,7 +157,7 @@ app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
     smokersStats=[
         {   
             "country": "España",
-            "province":"Andalucia",
+            "province":"Andalucía",
             "year":2017,
             "dailySmoker": 1902219.14,
             "ocasionalSmoker": 260612.40,
