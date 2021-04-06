@@ -289,7 +289,6 @@ app.delete(BASE_API_PATH +"/smokers-stats/:id", (req, res) =>{
 	res.sendStatus(404);
 });
 
-
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
 //5.2 - GET loadInitialData
