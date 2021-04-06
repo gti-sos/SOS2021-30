@@ -272,25 +272,25 @@ app.get(BASE_API_PATH + "/tableweights-stats/loadInitialData", (req, res) => {
     weights_stats = [
         {
             "country": 'España',
-            "provinces": 'Andalucia',
+            "province": 'Andalucia',
             "year": 2017,
-            "normal-weight": 41.5,
+            "normal_weight": 41.5,
             "overweight": 37.5,
             "obesity": 21.0
         },
         {
             "country": 'España',
-            "provinces": 'Canarias',
+            "province": 'Canarias',
             "year": 2017,
-            "normal-weight": 43.5,
+            "normal_weight": 43.5,
             "overweight": 37.2,
             "obesity": 19.3
         },
         {
             "country": 'España',
-            "provinces": 'Castilla y León',
+            "province": 'Castilla y León',
             "year": 2017,
-            "normal-weight": 47.6,
+            "normal_weight": 47.6,
             "overweight": 39.2,
             "obesity": 13.2
         }
@@ -321,8 +321,87 @@ app.post(BASE_API_PATH + "/table-weights-stats", (req, res) => {
     res.sendStatus(201);
 });
 
-//6.3
+//6.3 - GET a un recurso
+app.get(BASE_API_PATH + "/table-weights-stats", (req, res) => {
+    var varComunidad = req.params.province;
+    var varYear = req.params.year;
 
+    for(var stat of weights_stats){
+        if(stat.country == varComunidad && stat.year == varYear){
+            return res.sendStatus(200).json(stat)
+        }
+        else{
+            console.log("Not found");
+            return res.sendStatus(404);
+        }
+    }
+});
+
+//6.4 - DELETE a un recurso
+app.delete(BASE_API_PATH + "/table-weights-stats", (req, res) => {
+    var varComunidad = req.params.province;
+    var varYear = req.params.year;
+
+    for(var i = 0; i < weights_stats.length; i++){
+        if(weights_stats[i].province == varComunidad && weights_stats[i].year == varYear){
+            weights_stats.splice(i, 1);
+            return res.sendStatus(200);
+        }
+        else{
+            console.log("Not found");
+            return res.sendStatus(404); 
+        }
+    }
+});
+
+//6.5 - PUT a un recurso
+app.put(BASE_API_PATH + "/table-weights-stats", (req,res) => {
+    const {id} = req.params;
+    const {country,province, year, normal_weight, overweight, obesity }=req.body;
+    if(country&&province&&year&&normal_weight&&overweight&&obesity){
+        _.each(weights_stats,(weights_stats ,i)=>{
+            if(weights_stats.id==id){
+                weights_stats.country=country;
+                weights_stats.province=province;
+                weights_stats.years=year;                
+                weights_stats.normal_weight=normal_weight;
+                weights_stats.overweight=overweight;
+                weights_stats.obesity=obesity;
+            }
+        });
+        //Envio de recurso actualizado
+        res.json(alcoholConsumptionStats);
+        res.status(200);
+    
+    }else{
+        res.status(500).json({error: 'There was an error.'})
+    }
+});
+
+//6.6 - POST a un recurso (debe dar un error)
+app.post(BASE_API_PATH + "/table-weights-stats/:country/:year", (req,res) => {
+    console.log("Metodo no permitido");
+    res.sendStatus(405);
+});
+
+//6.7 - PUT a una lista de recursos (debe dar un error)
+app.put(BASE_API_PATH + "/table-weights-stats", (req,res) =>{
+    console.log("Metodo no permitido");
+    res.sendStatus(405);
+});
+
+//6.8 - DELETE a una lista de recursos
+app.delete(BASE_API_PATH + "/table-weights-stats", (req,res) =>{
+    if(weights_stats.length =! 0){
+        weights_stats.length = 0;
+        return res.sendStatus(200);
+    }
+
+    else{
+        console.log("La lista de recursos ya estaba vacia");
+        return res.sendStatus(409);
+    }
+});
 
 //~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
