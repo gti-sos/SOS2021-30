@@ -45,7 +45,7 @@ app.get("/info/alcohol-consumption-stats",(request,response) =>{
     console.log("Info about alcohol-consumption-stats sent");
 });
 
-var alcoholConsumptionStats=[];
+ var alcoholConsumptionStats=[];
  
 app.get(BASE_API_PATH+"/alcohol-consumption-stats/loadInitialData",(req,res)=>{
     alcoholConsumptionStats=[
@@ -159,30 +159,30 @@ app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
             "country": "España",
             "province":"Andalucía",
             "year":2017,
-            "daily-smoker": 1902219.14,
-            "ocasional-smoker": 260612.40,
-            "ex-smoker": 242773.13,
-            "non-smoker": 4294657.75,
+            "dailySmoker": 1902219.14,
+            "ocasionalSmoker": 260612.40,
+            "exSmoker": 242773.13,
+            "nonSmoker": 4294657.75,
             "id": 1
         },
         {
             "country": "España",
             "province":"Aragón",
             "year":2017,
-            "daily-smoker": 315408.75,
-            "ocasional-smoker": 18846.00,
-            "ex-smoker": 274678.38,
-            "non-smoker": 603988.13,
+            "dailySmoker": 315408.75,
+            "ocasionalSmoker": 18846.00,
+            "exSmoker": 274678.38,
+            "nonSmoker": 603988.13,
             "id": 2
         },
         {
             "country": "España",
             "province":"Asturias (Principado De)",
             "year":2017,
-            "daily-smoker": 246320.48,
-            "ocasional-smoker": 45124.26,
-            "ex-smoker": 220967.80,
-            "non-smoker": 559602.87,
+            "dailySmoker": 246320.48,
+            "ocasionalSmoker": 45124.26,
+            "exSmoker": 220967.80,
+            "nonSmoker": 559602.87,
             "id": 3
         }
     ];
@@ -284,7 +284,6 @@ var weights_stats = [];
 app.get(BASE_API_PATH + "/tableweights-stats/loadInitialData", (req, res) => {
     weights_stats = [
         {
-            "id": 1,
             "country": 'España',
             "provinces": 'Andalucia',
             "year": 2017,
@@ -293,7 +292,6 @@ app.get(BASE_API_PATH + "/tableweights-stats/loadInitialData", (req, res) => {
             "obesity": 21.0
         },
         {
-            "id": 2,
             "country": 'España',
             "provinces": 'Canarias',
             "year": 2017,
@@ -302,7 +300,6 @@ app.get(BASE_API_PATH + "/tableweights-stats/loadInitialData", (req, res) => {
             "obesity": 19.3
         },
         {
-            "id": 3,
             "country": 'España',
             "provinces": 'Castilla y León',
             "year": 2017,
