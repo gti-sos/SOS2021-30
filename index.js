@@ -150,7 +150,6 @@ var smokersStats = [];
 app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
     smokersStats=[
         {
-            "id":0,
             "province":"Andalucía",
             "year":2017,
             "dailySmoker": 1902219.14,
@@ -159,7 +158,6 @@ app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
             "nonSmoker": 4294657.75
         },
         {
-            "id":1,
             "province":"Aragón",
             "year":2017,
             "dailySmoker": 315408.75,
@@ -168,7 +166,6 @@ app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
             "nonSmoker": 603988.13
         },
         {
-            "id":2,
             "province":"Asturias (Principado De)",
             "year":2017,
             "dailySmoker": 246320.48,
