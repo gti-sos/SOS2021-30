@@ -150,7 +150,7 @@ var smokersStats = [];
 app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
     smokersStats=[
         {
-            "id":1,
+            "id":0,
             "province":"Andalucía",
             "year":2017,
             "dailySmoker": 1902219.14,
