@@ -16,43 +16,6 @@ const path = require("path");
 
 app.use(bodyParser.json());
 
-//~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
-/*
-var weights_stats = [];
-
-app.get(BASE_API_PATH + "/table-weights-stats/loadInitialData", (req, res) => {
-    weights_stats = [
-        {
-            "country": 'España',
-            "provinces": 'Andalucia',
-            "year": 2017,
-            "normal-weight": 41.5,
-            "overweight": 37.5,
-            "obesity": 21.0
-        },
-        {
-            "country": 'España',
-            "provinces": 'Canarias',
-            "year": 2017,
-            "normal-weight": 43.5,
-            "overweight": 37.2,
-            "obesity": 19.3
-        },
-        {
-            "country": 'España',
-            "provinces": 'Castilla y León',
-            "year": 2017,
-            "normal-weight": 47.6,
-            "overweight": 39.2,
-            "obesity": 13.2
-        }
-    ];
-
-    console.log()
-})
-*/
-//~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
-
 app.listen(port,()=>{
     console.log("Server ready listening on port "+port);
 });
@@ -230,3 +193,66 @@ app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     smokersStats.push(newStat);
     res.sendStatus(201);
 });
+
+//~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
+
+//5.2 - GET loadInitialData
+var weights_stats = [];
+
+app.get(BASE_API_PATH + "/tableweights-stats/loadInitialData", (req, res) => {
+    weights_stats = [
+        {
+            "country": 'España',
+            "provinces": 'Andalucia',
+            "year": 2017,
+            "normal-weight": 41.5,
+            "overweight": 37.5,
+            "obesity": 21.0
+        },
+        {
+            "country": 'España',
+            "provinces": 'Canarias',
+            "year": 2017,
+            "normal-weight": 43.5,
+            "overweight": 37.2,
+            "obesity": 19.3
+        },
+        {
+            "country": 'España',
+            "provinces": 'Castilla y León',
+            "year": 2017,
+            "normal-weight": 47.6,
+            "overweight": 39.2,
+            "obesity": 13.2
+        }
+    ];
+
+    res.send(JSON.stringify(weights_stats, null, 2));
+    return res.sendStatus(201);
+});
+
+//6.1 - GET a la lista de recursos 
+app.get(BASE_API_PATH + "/table-weights-stats", (req, res) => {
+    if(weights_stats.length =! 0){
+        console.log("200 - OK")
+        return res.send(JSON.stringify(weights_stats, null, 2));
+    }
+    else{
+        console.log("Not Found");
+        return res.sendStatus(404)
+    }
+});
+
+//6.2 - POST a la lista de recursos
+app.post(BASE_API_PATH + "/table-weights-stats", (req, res) => {
+    const id = weights_stats.length +1;
+    var newStat={...req.body,id};
+    console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
+    weights_stats.push(newStat);
+    res.sendStatus(201);
+});
+
+//6.3
+
+
+//~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
