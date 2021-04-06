@@ -240,7 +240,7 @@ app.get(BASE_API_PATH + "/tableweights-stats/loadInitialData", (req, res) => {
     return res.sendStatus(201);
 });
 
-//6.1 - GET A UNA LISTA DE RECURSOS
+//GET A UNA LISTA DE RECURSOS
 app.get(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
     res.send(JSON.stringify(weights_stats,null,2));
     res.sendStatus(200);
@@ -448,3 +448,7 @@ app.delete(BASE_API_PATH+"/life-expectancy-stats/",(req,res)=>{
 });
 
 //~~~~~~~~~~~~~~~~~~~ END: API LIFE-EXPECTANCY-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+>>>>>>> a706cc1341968dc1d96e10313af128f4f353aad3
