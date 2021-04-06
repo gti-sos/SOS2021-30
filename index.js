@@ -265,15 +265,20 @@ app.put(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
 //DELETE A UN RECURSO CONCRETO DE SMOKER
 app.delete(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
     const {id} = req.params;
-    _.each(smokersStats,(smokersStats,i)=>{
-        if(smokersStats.id==id){
-            smokersStats.removeChild(i,1);
-            res.send(smokersStats);
-            res.sendStatus(200);
-        }else{
-            res.sendStatus(404);
-        }
+    const {country,province,year,dailySmoker,ocasionalSmoker,exSmoker, nonSmoker}=req.body;
+    if(country&&province&&year&&dailySmoker&&ocasionalSmoker&&exSmoker&&nonSmoker){
+        _.each(smokersStats,(smokersStats,i)=>{
+            if(smokersStats.id==id){
+                smokersStats.splice(i,1);
+                res.send(smokersStats);
+                res.sendStatus(200);
+            }else{
+                res.sendStatus(404);
+            }
     });
+    } else {
+        res.status(500).json({error: 'There was an error.'})
+    }
 });
 
 
