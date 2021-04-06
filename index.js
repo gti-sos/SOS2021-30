@@ -282,7 +282,7 @@ app.delete(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
 //5.2 - GET loadInitialData
 var weights_stats = [];
 
-app.get(BASE_API_PATH + "/tableweights-stats/loadInitialData", (req, res) => {
+app.get(BASE_API_PATH + "/table-weights-stats/loadInitialData", (req, res) => {
     weights_stats = [
         {
             "id": 1,
