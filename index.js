@@ -194,6 +194,7 @@ app.get(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     res.send(JSON.stringify(smokersStats,null,2));
     res.sendStatus(200);
 });
+
 //POST A LA LISTA DE RECURSOS DE SMOKERS-STATS
 app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     const id = smokersStats.length +1;
@@ -264,9 +265,9 @@ app.put(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
 //DELETE A UN RECURSO CONCRETO DE SMOKER
 app.delete(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
     const {id} = req.params;
-    _.each(smokersStats,(smokersStats,i)=>{
+    _.each(smokersStats,(smokersStats, i)=>{
         if(smokersStats.id==id){
-            smokersStats.splice(i,1);
+            smokersStats.splice(i);
             res.send(smokersStats);
             res.sendStatus(200);
         }else{
