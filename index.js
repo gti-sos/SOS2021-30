@@ -207,12 +207,12 @@ app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
 });
 
 //PUT A UNA LISTA DE RECURSOS DE SMOKERS STATS (Debe dar error)
-app.put(BASE_API_PATH+"/smoker-stats",(req,res)=>{
+app.put(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     res.sendStatus(405);
 });
 
 //DELETE A LISTA DE RECURSOS DE SMOKERS STATS
-app.delete(BASE_API_PATH+"/smoker-stats/",(req,res)=>{
+app.delete(BASE_API_PATH+"/smokers-stats/",(req,res)=>{
     smokersStats.splice(0, smokersStats.length);
     //Envio de recurso actualizado
     res.send(smokersStats);
@@ -221,7 +221,7 @@ app.delete(BASE_API_PATH+"/smoker-stats/",(req,res)=>{
 
 
 //GET A UN RECURSO CONCRETO DE SMOKER
-app.get(BASE_API_PATH+"/smoker-stats/:id",(req,res)=>{
+app.get(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
     const {id} = req.params;
     _.each(smo,(smokersStats,i)=>{
         if(smokersStats.id==id){
@@ -232,12 +232,12 @@ app.get(BASE_API_PATH+"/smoker-stats/:id",(req,res)=>{
 });
 
 //POST A UN RECURSO DE SMOKER (Debe dar error)
-app.post(BASE_API_PATH+"/smoker-stats/:id",(req,res)=>{
+app.post(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
     res.sendStatus(405);
 });
 
 //PUT A UN RECURSO CONCRETO DE SMOKER
-app.put(BASE_API_PATH+"/smoker/:id",(req,res)=>{
+app.put(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
     const {id} = req.params;
     const {country,province,year,dailySmoker,ocasionalSmoker,exSmoker, nonSmoker}=req.body;
     if(country&&province&&year&&dailySmoker&&ocasionalSmoker&&exSmoker&&nonSmoker){
