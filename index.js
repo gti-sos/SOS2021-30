@@ -468,13 +468,13 @@ app.delete(BASE_API_PATH+"/life-expectancy-stats/:id",(req,res)=>{
     _.each(lifeExpectancyStats,(lifeExpectancyStats,i)=>{
         if(lifeExpectancyStats.id==id){
             lifeExpectancyStats.splice(i,1);
+            res.send(lifeExpectancyStats);
+            res.sendStatus(200);
+        }else{
+            res.sendStatus(404);
         }
     });
-    //Envio de recurso actualizado
-    res.send(lifeExpectancyStats);
-    res.sendStatus(200);
 });
-
 
 //PUT A UN RECURSO
 app.put(BASE_API_PATH+"/life-expectancy-stats/:id",(req,res)=>{
@@ -502,13 +502,13 @@ app.put(BASE_API_PATH+"/life-expectancy-stats/:id",(req,res)=>{
 
 
 //POST A UN RECURSO (Debe dar error)
-app.post(BASE_API_PATH+"/life-expectancy-stats",(req,res)=>{
+app.post(BASE_API_PATH+"/life-expectancy-stats/:id",(req,res)=>{
     res.sendStatus(405);
 });
 
 
 //PUT A UNA LISTA DE RECURSOS (Debe dar error)
-app.put(BASE_API_PATH+"/life-expectancy-stats",(req,res)=>{
+app.put(BASE_API_PATH+"/life-expectancy-stats/:id",(req,res)=>{
     res.sendStatus(405);
 });
 
