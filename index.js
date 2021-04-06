@@ -155,7 +155,8 @@ var smokersStats = [];
 
 app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
     smokersStats=[
-        {
+        {   
+            "country": "España",
             "province":"Andalucía",
             "year":2017,
             "daily-smoker": 1902219.14,
@@ -165,6 +166,7 @@ app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
             "id": 1
         },
         {
+            "country": "España",
             "province":"Aragón",
             "year":2017,
             "daily-smoker": 315408.75,
@@ -174,6 +176,7 @@ app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
             "id": 2
         },
         {
+            "country": "España",
             "province":"Asturias (Principado De)",
             "year":2017,
             "daily-smoker": 246320.48,
@@ -202,6 +205,76 @@ app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     smokersStats.push(newStat);
     res.sendStatus(201);
 });
+
+//PUT A UNA LISTA DE RECURSOS DE SMOKERS STATS (Debe dar error)
+app.put(BASE_API_PATH+"/smoker-stats",(req,res)=>{
+    res.sendStatus(405);
+});
+
+//DELETE A LISTA DE RECURSOS DE SMOKERS STATS
+app.delete(BASE_API_PATH+"/smoker-stats/",(req,res)=>{
+    smokersStats.splice(0, smokersStats.length);
+    //Envio de recurso actualizado
+    res.send(smokersStats);
+    res.sendStatus(200);
+});
+
+
+//GET A UN RECURSO CONCRETO DE SMOKER
+app.get(BASE_API_PATH+"/smoker-stats/:id",(req,res)=>{
+    const {id} = req.params;
+    _.each(smo,(smokersStats,i)=>{
+        if(smokersStats.id==id){
+            res.send(JSON.stringify(smokersStats,null,2));
+        }
+    });
+    res.sendStatus(200);
+});
+
+//POST A UN RECURSO DE SMOKER (Debe dar error)
+app.post(BASE_API_PATH+"/smoker-stats/:id",(req,res)=>{
+    res.sendStatus(405);
+});
+
+//PUT A UN RECURSO CONCRETO DE SMOKER
+app.put(BASE_API_PATH+"/smoker/:id",(req,res)=>{
+    const {id} = req.params;
+    const {country,province,year,dailySmoker,ocasionalSmoker,exSmoker, nonSmoker}=req.body;
+    if(country&&province&&year&&dailySmoker&&ocasionalSmoker&&exSmoker&&nonSmoker){
+        _.each(smokersStats,(smokersStats,i)=>{
+            if(smokersStats.id==id){
+                smokersStats.country = country;
+                smokersStats.province = province;
+                smokersStats.year = year;
+                smokersStats.dailySmoker = dailySmoker;
+                smokersStats.ocasionalSmoker = ocasionalSmoker;
+                smokersStats.exSmoker = exSmoker;
+                smokersStats.nonSmoker = nonSmoker;
+            }
+        });
+        //Envio de recurso actualizado
+        res.json(smokersStats);
+        res.status(200);
+    
+    }else{
+        res.status(500).json({error: 'There was an error.'})
+    }
+});
+
+//DELETE A UN RECURSO CONCRETO DE SMOKER
+app.delete(BASE_API_PATH+"/smoker-stats/:id",(req,res)=>{
+    const {id} = req.params;
+    _.each(smokersStats,(smokersStats,i)=>{
+        if(smokersStats.id==id){
+            smokersStats.splice(i,1);
+            res.send(smokersStats);
+            res.sendStatus(200);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+});
+
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
