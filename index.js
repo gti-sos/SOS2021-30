@@ -277,6 +277,9 @@ app.delete(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
             }
     });
     } else {
+        smokersStats.splice(i,1);
+                res.send(smokersStats);
+                res.sendStatus(200);
         res.status(500).json({error: 'There was an error.'})
     }
 });
