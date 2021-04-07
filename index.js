@@ -336,19 +336,6 @@ app.get(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
 });
 
 //POST A LA LISTA DE RECURSOS
-/*app.post(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
-    if(Object.keys(req.body).length>7){
-        res.status(400).json({error: 'Bad request'});
-    }else{
-        const id = weights_stats.length +1;
-        var newStat={...req.body,id};
-        console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
-        weights_stats.push(newStat);
-        res.sendStatus(201);
-    }
-    res.end();
-});*/
-
 app.post(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
     const id = weights_stats.length +1;
 
@@ -394,7 +381,7 @@ app.put(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
     }
 });
 //DELETE A UN RECURSO
-app.delete(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
+/*app.delete(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
     const {id} = req.params;
     _.each(weights_stats,(weights_stats,i)=>{
         if(weights_stats.id==id){
@@ -405,6 +392,17 @@ app.delete(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
             res.sendStatus(404);
         }
     });
+});*/
+app.delete(BASE_API_PATH +"/table-weights-stats/:id", (req, res) =>{ 
+    var id = req.params.id;
+
+    for (var i = 0; i <  weights_stats.length; i++){
+		if(weights_stats[i].id == id){
+			weights_stats.splice(i,1);
+			return res.sendStatus(200);
+		}
+	}
+	res.sendStatus(404);
 });
 
 //DELETE A LISTA DE RECURSOS
@@ -419,7 +417,7 @@ app.put(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
     res.sendStatus(405);
 });
 //POST A UN RECURSO (Debe dar error)
-app.post(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
+app.post(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
     res.sendStatus(405);
 });
 
