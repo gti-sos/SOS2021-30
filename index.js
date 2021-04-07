@@ -380,19 +380,8 @@ app.put(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
         res.status(500).json({error: 'There was an error.'});
     }
 });
+
 //DELETE A UN RECURSO
-/*app.delete(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
-    const {id} = req.params;
-    _.each(weights_stats,(weights_stats,i)=>{
-        if(weights_stats.id==id){
-            weights_stats.splice(i,1);
-            res.send(weights_stats);
-            res.sendStatus(200);
-        }else{
-            res.sendStatus(404);
-        }
-    });
-});*/
 app.delete(BASE_API_PATH +"/table-weights-stats/:id", (req, res) =>{ 
     var id = req.params.id;
 
@@ -412,10 +401,12 @@ app.delete(BASE_API_PATH+"/table-weights-stats/",(req,res)=>{
     res.send(weights_stats);
     res.sendStatus(200);
 });
+
 //PUT A UNA LISTA DE RECURSOS (Debe dar error)
 app.put(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
     res.sendStatus(405);
 });
+
 //POST A UN RECURSO (Debe dar error)
 app.post(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
     res.sendStatus(405);
