@@ -262,8 +262,9 @@ app.put(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
     }
 });
 
-//DELETE A UN RECURSO
-app.delete(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
+//DELETE A UN RECURSO CONCRETO DE SMOKER
+/*
+app.delete(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
     const {id} = req.params;
     _.each(smokersStats,(smokersStats,i)=>{
         if(smokersStats.id==id){
@@ -275,7 +276,18 @@ app.delete(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
         }
     });
 });
+*/
+app.delete(BASE_API_PATH +"/smokers-stats/:id", (req, res) =>{ 
+    var id = req.params.id;
 
+    for (var i = 0; i <  smokersStats.length; i++){
+		if(smokersStats[i].id == id){
+			smokersStats.splice(i,1);
+			return res.sendStatus(200);
+		}
+	}
+	res.sendStatus(404);
+});
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
