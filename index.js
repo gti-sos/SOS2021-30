@@ -336,7 +336,7 @@ app.get(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
 });
 
 //POST A LA LISTA DE RECURSOS
-app.post(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
+/*app.post(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
     if(Object.keys(req.body).length>7){
         res.status(400).json({error: 'Bad request'});
     }else{
@@ -347,7 +347,19 @@ app.post(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
         res.sendStatus(201);
     }
     res.end();
+});*/
+
+app.post(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
+    const id = weights_stats.length +1;
+
+    var newStat={...req.body, id};
+
+    var newStat={...req.body,id};
+    console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
+    weights_stats.push(newStat);
+    res.sendStatus(201);
 });
+
 //GET A UN RECURSO 
 app.get(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
     const {id} = req.params;
