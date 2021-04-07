@@ -322,11 +322,10 @@ app.get(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
     res.send(JSON.stringify(weights_stats,null,2));
     res.sendStatus(200);
 });
+
 //POST A LA LISTA DE RECURSOS
-
-
 app.post(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
-    if(Object.keys(req.body).length>6){
+    if(Object.keys(req.body).length>7){
         res.status(400).json({error: 'Bad request'});
     }else{
         const id = weights_stats.length +1;
