@@ -1,11 +1,11 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
-var BASE_API_PATH = "/api/v1";
+var BASE_API_PATH2 = "/api/v1/table-weights-stats";
 var weights_stats = [];
 
 module.exports.register = (app, BASE_API_PATH) => {
     //5.2 - GET loadInitialData
-    app.get(BASE_API_PATH + "/table-weights-stats/loadInitialData", (req, res) => {
+    app.get(BASE_API_PATH2 + "/loadInitialData", (req, res) => {
         weights_stats = [
             {
                 "id": 1,
@@ -41,13 +41,13 @@ module.exports.register = (app, BASE_API_PATH) => {
     });
 
     //6.1 - GET a la lista de recursos
-    app.get(BASE_API_PATH + "/table-weights-stats", (req, res) => {
+    app.get(BASE_API_PATH2, (req, res) => {
         res.send(JSON.stringify(weights_stats, null, 2));
         res.sendStatus(200);
     });
 
     //6.2 - POST a la lista de recursos
-    app.post(BASE_API_PATH + "/table-weights-stats", (req, res) => {
+    app.post(BASE_API_PATH2, (req, res) => {
         const id = weights_stats.length + 1;
 
         var newStat = { ...req.body, id };
@@ -59,7 +59,7 @@ module.exports.register = (app, BASE_API_PATH) => {
     });
 
     //6.3 - GET a un recurso 
-    app.get(BASE_API_PATH + "/table-weights-stats/:id", (req, res) => {
+    app.get(BASE_API_PATH2 + "/:id", (req, res) => {
         const { id } = req.params;
         _.each(weights_stats, (weights_stats, i) => {
             if (weights_stats.id == id) {
@@ -70,7 +70,7 @@ module.exports.register = (app, BASE_API_PATH) => {
     });
 
     //6.4 - DELETE a un recurso
-    app.delete(BASE_API_PATH + "/table-weights-stats/:id", (req, res) => {
+    app.delete(BASE_API_PATH2 + "/:id", (req, res) => {
         var id = req.params.id;
 
         for (var i = 0; i < weights_stats.length; i++) {
@@ -83,7 +83,7 @@ module.exports.register = (app, BASE_API_PATH) => {
     });
 
     //6.5 - PUT a un recurso
-    app.put(BASE_API_PATH + "/table-weights-stats/:id", (req, res) => {
+    app.put(BASE_API_PATH2 + "/:id", (req, res) => {
         const { id } = req.params;
         const { country, provinces, year, normal_weight, overweight, obesity } = req.body;
         if (country && provinces && year && normal_weight && overweight && obesity) {
@@ -106,17 +106,17 @@ module.exports.register = (app, BASE_API_PATH) => {
     });
 
     //6.6 - POST a un recurso (Debe dar error)
-    app.post(BASE_API_PATH + "/table-weights-stats/:id", (req, res) => {
+    app.post(BASE_API_PATH2 + "/:id", (req, res) => {
         res.sendStatus(405);
     });
 
     //6.7 - PUT a la lista de recursos (Debe dar error)
-    app.put(BASE_API_PATH + "/table-weights-stats", (req, res) => {
+    app.put(BASE_API_PATH2, (req, res) => {
         res.sendStatus(405);
     });
 
     //6.8 - DELETE a la lista de recursos
-    app.delete(BASE_API_PATH + "/table-weights-stats/", (req, res) => {
+    app.delete(BASE_API_PATH2, (req, res) => {
         weights_stats.splice(0, weights_stats.length);
         //Envio de recurso actualizado
         res.send(weights_stats);
