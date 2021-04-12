@@ -11,15 +11,11 @@ const path = require("path");
 //RUTA BASE DE LA API
 var BASE_API_PATH = "/api/v1";
 
-<<<<<<< HEAD
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 var weightsStatsAPI = require("./weightsStatsAPI");
 weightsStatsAPI.register(app, BASE_API_PATH);
 //~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
-=======
-const path = require("path");
->>>>>>> 6e0e85352f7b096e83f546c80ef7faa9b6057d91
 
 app.use(bodyParser.json());
 
@@ -52,10 +48,6 @@ app.get("/info/alcohol-consumption-stats",(request,response) =>{
     console.log("Info about alcohol-consumption-stats sent");
 });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6e0e85352f7b096e83f546c80ef7faa9b6057d91
  var alcoholConsumptionStats=[];
  
 app.get(BASE_API_PATH+"/alcohol-consumption-stats/loadInitialData",(req,res)=>{
