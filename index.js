@@ -1,21 +1,20 @@
+var cool = require("cool-ascii-faces");
+
 var express = require("express");
 var bodyParser = require("body-parser");
+
 var _= require("underscore");
+
+var alcoholAPI = require("./alcoholConsumptionStatsAPI");
 
 var app = express();
 
 var port = process.env.PORT || 10000;
 
-const path = require("path");
-
 //RUTA BASE DE LA API
 var BASE_API_PATH = "/api/v1";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
-var weightsStatsAPI = require("./weightsStatsAPI");
-weightsStatsAPI.register(app, BASE_API_PATH);
-//~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
-
+const path = require("path");
 
 app.use(bodyParser.json());
 
@@ -48,110 +47,8 @@ app.get("/info/alcohol-consumption-stats",(request,response) =>{
     console.log("Info about alcohol-consumption-stats sent");
 });
 
- var alcoholConsumptionStats=[];
- 
-app.get(BASE_API_PATH+"/alcohol-consumption-stats/loadInitialData",(req,res)=>{
-    alcoholConsumptionStats=[
-        {
-            "id":1,
-            "country":"España",
-            "years":"2017",
-            "ageRange":"0-5",
-            "alcoholPrematureDeath":0,
-            "prevalenceOfAlcoholUseDisorder":0.00
-        },
-        {
-            "id":2,
-            "country":"España",
-            "years":"2017",
-            "ageRange":"5-14",
-            "alcoholPrematureDeath":10,
-            "prevalenceOfAlcoholUseDisorder":0.05
-        }
-    ];
-    res.send(JSON.stringify(alcoholConsumptionStats,null,2));
-});
-
-//GET A UNA LISTA DE RECURSOS
-app.get(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
-    res.send(JSON.stringify(alcoholConsumptionStats,null,2));
-    res.sendStatus(200);
-});
-//POST A LA LISTA DE RECURSOS
-app.post(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
-    if(Object.keys(req.body).length>6){
-        res.status(400).json({error: 'Bad request'});
-    }else{
-        const id = alcoholConsumptionStats.length +1;
-        var newStat={...req.body,id};
-        console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
-        alcoholConsumptionStats.push(newStat);
-        res.sendStatus(201);
-    }
-    res.end();
-});
-//GET A UN RECURSO 
-app.get(BASE_API_PATH+"/alcohol-consumption-stats/:id",(req,res)=>{
-    const {id} = req.params;
-    _.each(alcoholConsumptionStats,(alcoholConsumptionStat,i)=>{
-        if(alcoholConsumptionStat.id==id){
-            res.send(JSON.stringify(alcoholConsumptionStat,null,2));
-        }
-    });
-    res.sendStatus(200);
-});
-
-//PUT A UN RECURSO
-app.put(BASE_API_PATH+"/alcohol-consumption-stats/:id",(req,res)=>{
-    const {id} = req.params;
-    const {country,years,ageRange,alcoholPrematureDeath,prevalenceOfAlcoholUseDisorder}=req.body;
-    if(country&&years&&ageRange&&alcoholPrematureDeath&&prevalenceOfAlcoholUseDisorder){
-        _.each(alcoholConsumptionStats,(alcoholConsumptionStat,i)=>{
-            if(alcoholConsumptionStat.id==id){
-                alcoholConsumptionStat.country=country;
-                alcoholConsumptionStat.years=years;
-                alcoholConsumptionStat.ageRange=ageRange;
-                alcoholConsumptionStat.alcoholPrematureDeath=alcoholPrematureDeath;
-                alcoholConsumptionStat.prevalenceOfAlcoholUseDisorder=prevalenceOfAlcoholUseDisorder;
-
-            }
-        });
-        res.json(alcoholConsumptionStats);
-        res.status(200);
-    
-    }else{
-        res.status(500).json({error: 'There was an error.'});
-    }
-});
-//DELETE A UN RECURSO
-app.delete(BASE_API_PATH+"/alcohol-consumption-stats/:id",(req,res)=>{
-    const {id} = req.params;
-    _.each(alcoholConsumptionStats,(alcoholConsumptionStat,i)=>{
-        if(alcoholConsumptionStat.id==id){
-            alcoholConsumptionStats.splice(i,1);
-            res.send(alcoholConsumptionStats);
-            res.sendStatus(200);
-        }else{
-            res.sendStatus(404);
-        }
-    });
-});
-
-//DELETE A LISTA DE RECURSOS
-app.delete(BASE_API_PATH+"/alcohol-consumption-stats/",(req,res)=>{
-    alcoholConsumptionStats.splice(0, alcoholConsumptionStats.length);
-    //Envio de recurso actualizado
-    res.send(alcoholConsumptionStats);
-    res.sendStatus(200);
-});
-//PUT A UNA LISTA DE RECURSOS (Debe dar error)
-app.put(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
-    res.sendStatus(405);
-});
-//POST A UN RECURSO (Debe dar error)
-app.post(BASE_API_PATH+"/alcohol-consumption-stats/:id",(req,res)=>{
-    res.sendStatus(405);
-});
+// Acceso a API sobre consumo de alcohol
+alcoholAPI.register(app);
 
 /*-----------------------------------------------SMOKERS-STATS------------------------------------------*/
 var smokersStats = [];
@@ -159,34 +56,34 @@ var smokersStats = [];
 app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
     smokersStats=[
         {   
-            "id": 1,
             "country": "España",
             "province":"Andalucía",
             "year":2017,
             "dailySmoker": 1902219.14,
             "ocasionalSmoker": 260612.40,
             "exSmoker": 242773.13,
-            "nonSmoker": 4294657.75
+            "nonSmoker": 4294657.75,
+            "id": 1
         },
         {
-            "id": 2,
             "country": "España",
             "province":"Aragón",
             "year":2017,
             "dailySmoker": 315408.75,
             "ocasionalSmoker": 18846.00,
             "exSmoker": 274678.38,
-            "nonSmoker": 603988.13
+            "nonSmoker": 603988.13,
+            "id": 2
         },
         {
-            "id": 3,
             "country": "España",
             "province":"Asturias (Principado De)",
             "year":2017,
             "dailySmoker": 246320.48,
             "ocasionalSmoker": 45124.26,
             "exSmoker": 220967.80,
-            "nonSmoker": 559602.87
+            "nonSmoker": 559602.87,
+            "id": 3
         }
     ];
     res.send(JSON.stringify(smokersStats,null,2));
@@ -197,7 +94,6 @@ app.get(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     res.send(JSON.stringify(smokersStats,null,2));
     res.sendStatus(200);
 });
-
 //POST A LA LISTA DE RECURSOS DE SMOKERS-STATS
 app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     const id = smokersStats.length +1;
@@ -266,7 +162,6 @@ app.put(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
 });
 
 //DELETE A UN RECURSO CONCRETO DE SMOKER
-/*
 app.delete(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
     const {id} = req.params;
     _.each(smokersStats,(smokersStats,i)=>{
@@ -279,28 +174,16 @@ app.delete(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
         }
     });
 });
-*/
-app.delete(BASE_API_PATH +"/smokers-stats/:id", (req, res) =>{ 
-    var id = req.params.id;
 
-    for (var i = 0; i <  smokersStats.length; i++){
-		if(smokersStats[i].id == id){
-			smokersStats.splice(i,1);
-			return res.sendStatus(200);
-		}
-	}
-	res.sendStatus(404);
-});
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
 //5.2 - GET loadInitialData
 var weights_stats = [];
 
-app.get(BASE_API_PATH + "/table-weights-stats/loadInitialData", (req, res) => {
+app.get(BASE_API_PATH + "/tableweights-stats/loadInitialData", (req, res) => {
     weights_stats = [
         {
-            "id": 1,
             "country": 'España',
             "provinces": 'Andalucia',
             "year": 2017,
@@ -309,7 +192,6 @@ app.get(BASE_API_PATH + "/table-weights-stats/loadInitialData", (req, res) => {
             "obesity": 21.0
         },
         {
-            "id": 2,
             "country": 'España',
             "provinces": 'Canarias',
             "year": 2017,
@@ -318,9 +200,8 @@ app.get(BASE_API_PATH + "/table-weights-stats/loadInitialData", (req, res) => {
             "obesity": 19.3
         },
         {
-            "id":3,
             "country": 'España',
-            "provinces": 'Castilla y leon',
+            "provinces": 'Castilla y León',
             "year": 2017,
             "normal_weight": 47.6,
             "overweight": 39.2,
@@ -337,19 +218,19 @@ app.get(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
     res.send(JSON.stringify(weights_stats,null,2));
     res.sendStatus(200);
 });
-
 //POST A LA LISTA DE RECURSOS
 app.post(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
-    const id = weights_stats.length +1;
-
-    var newStat={...req.body, id};
-
-    var newStat={...req.body,id};
-    console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
-    weights_stats.push(newStat);
-    res.sendStatus(201);
+    if(Object.keys(req.body).length>6){
+        res.status(400).json({error: 'Bad request'});
+    }else{
+        const id = weights_stats.length +1;
+        var newStat={...req.body,id};
+        console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
+        weights_stats.push(newStat);
+        res.sendStatus(201);
+    }
+    res.end();
 });
-
 //GET A UN RECURSO 
 app.get(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
     const {id} = req.params;
@@ -383,18 +264,18 @@ app.put(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
         res.status(500).json({error: 'There was an error.'});
     }
 });
-
 //DELETE A UN RECURSO
-app.delete(BASE_API_PATH +"/table-weights-stats/:id", (req, res) =>{ 
-    var id = req.params.id;
-
-    for (var i = 0; i <  weights_stats.length; i++){
-		if(weights_stats[i].id == id){
-			weights_stats.splice(i,1);
-			return res.sendStatus(200);
-		}
-	}
-	res.sendStatus(404);
+app.delete(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
+    const {id} = req.params;
+    _.each(weights_stats,(weights_stats,i)=>{
+        if(weights_stats.id==id){
+            weights_stats.splice(i,1);
+            res.send(weights_stats);
+            res.sendStatus(200);
+        }else{
+            res.sendStatus(404);
+        }
+    });
 });
 
 //DELETE A LISTA DE RECURSOS
@@ -404,14 +285,12 @@ app.delete(BASE_API_PATH+"/table-weights-stats/",(req,res)=>{
     res.send(weights_stats);
     res.sendStatus(200);
 });
-
 //PUT A UNA LISTA DE RECURSOS (Debe dar error)
 app.put(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
     res.sendStatus(405);
 });
-
 //POST A UN RECURSO (Debe dar error)
-app.post(BASE_API_PATH+"/table-weights-stats/:id",(req,res)=>{
+app.post(BASE_API_PATH+"/table-weights-stats",(req,res)=>{
     res.sendStatus(405);
 });
 
