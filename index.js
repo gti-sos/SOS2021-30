@@ -1,20 +1,21 @@
-var cool = require("cool-ascii-faces");
-
 var express = require("express");
 var bodyParser = require("body-parser");
-
 var _= require("underscore");
 
 var app = express();
 
 var port = process.env.PORT || 10000;
 
+const path = require("path");
+
 //RUTA BASE DE LA API
 var BASE_API_PATH = "/api/v1";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 var weightsStatsAPI = require("./weightsStatsAPI");
+weightsStatsAPI.register(app, BASE_API_PATH);
+//~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
-const path = require("path");
 
 app.use(bodyParser.json());
 
@@ -47,7 +48,6 @@ app.get("/info/alcohol-consumption-stats",(request,response) =>{
     console.log("Info about alcohol-consumption-stats sent");
 });
 
-weightsStatsAPI.register(app);
 
  var alcoholConsumptionStats=[];
  
