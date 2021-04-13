@@ -1,13 +1,8 @@
-
-
-/*-----------------------------------------------SMOKERS-STATS------------------------------------------*/
-
 var BASE_SMOKERS_API_PATH2 = "/api/v1";
 var smokersStats = [];
 
-
 module.exports.register = (app) => {
-app.get(BASE_SMOKERS_API_PATH2+"/smokers-stats/loadInitialData",(req,res)=>{
+    app.get(BASE_SMOKERS_API_PATH2+"/smokers-stats/loadInitialData",(req,res)=>{
     smokersStats=[
         {   
             "id": 1,
@@ -41,16 +36,16 @@ app.get(BASE_SMOKERS_API_PATH2+"/smokers-stats/loadInitialData",(req,res)=>{
         }
     ];
     res.send(JSON.stringify(smokersStats,null,2));
-});
+    });
 
-//GET A UNA LISTA DE RECURSOS DE SMOKERS-STATS
-app.get(BASE_SMOKERS_API_PATH2+"/smokers-stats",(req,res)=>{
+    //GET A UNA LISTA DE RECURSOS DE SMOKERS-STATS
+    app.get(BASE_SMOKERS_API_PATH2+"/smokers-stats",(req,res)=>{
     res.send(JSON.stringify(smokersStats,null,2));
     res.sendStatus(200);
-});
+    });
 
-//POST A LA LISTA DE RECURSOS DE SMOKERS-STATS
-app.post(BASE_SMOKERS_API_PATH2+"/smokers-stats",(req,res)=>{
+    //POST A LA LISTA DE RECURSOS DE SMOKERS-STATS
+    app.post(BASE_SMOKERS_API_PATH2+"/smokers-stats",(req,res)=>{
     const id = smokersStats.length +1;
 
     var newStat={...req.body, id};
@@ -59,24 +54,24 @@ app.post(BASE_SMOKERS_API_PATH2+"/smokers-stats",(req,res)=>{
     console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
     smokersStats.push(newStat);
     res.sendStatus(201);
-});
+    });
 
-//PUT A UNA LISTA DE RECURSOS DE SMOKERS STATS (Debe dar error)
-app.put(BASE_SMOKERS_API_PATH2+"/smokers-stats",(req,res)=>{
+    //PUT A UNA LISTA DE RECURSOS DE SMOKERS STATS (Debe dar error)
+    app.put(BASE_SMOKERS_API_PATH2+"/smokers-stats",(req,res)=>{
     res.sendStatus(405);
-});
+    });
 
-//DELETE A LISTA DE RECURSOS DE SMOKERS STATS
-app.delete(BASE_SMOKERS_API_PATH2+"/smokers-stats/",(req,res)=>{
+    //DELETE A LISTA DE RECURSOS DE SMOKERS STATS
+    app.delete(BASE_SMOKERS_API_PATH2+"/smokers-stats/",(req,res)=>{
     smokersStats.splice(0, smokersStats.length);
     //Envio de recurso actualizado
     res.send(smokersStats);
     res.sendStatus(200);
-});
+    });
 
 
-//GET A UN RECURSO CONCRETO DE SMOKER
-app.get(BASE_SMOKERS_API_PATH2+"/smokers-stats/:id",(req,res)=>{
+    //GET A UN RECURSO CONCRETO DE SMOKER
+    app.get(BASE_SMOKERS_API_PATH2+"/smokers-stats/:id",(req,res)=>{
     const {id} = req.params;
     _.each(smokersStats,(smokersStats,i)=>{
         if(smokersStats.id==id){
@@ -84,15 +79,15 @@ app.get(BASE_SMOKERS_API_PATH2+"/smokers-stats/:id",(req,res)=>{
         }
     });
     res.sendStatus(200);
-});
+    });
 
-//POST A UN RECURSO DE SMOKER (Debe dar error)
-app.post(BASE_SMOKERS_API_PATH2+"/smokers-stats/:id",(req,res)=>{
+    //POST A UN RECURSO DE SMOKER (Debe dar error)
+    app.post(BASE_SMOKERS_API_PATH2+"/smokers-stats/:id",(req,res)=>{
     res.sendStatus(405);
-});
+    });
 
-//PUT A UN RECURSO CONCRETO DE SMOKER
-app.put(BASE_SMOKERS_API_PATH2+"/smokers-stats/:id",(req,res)=>{
+    //PUT A UN RECURSO CONCRETO DE SMOKER
+    app.put(BASE_SMOKERS_API_PATH2+"/smokers-stats/:id",(req,res)=>{
     const {id} = req.params;
     const {country,province,year,dailySmoker,ocasionalSmoker,exSmoker, nonSmoker}=req.body;
     if(country&&province&&year&&dailySmoker&&ocasionalSmoker&&exSmoker&&nonSmoker){
@@ -114,21 +109,17 @@ app.put(BASE_SMOKERS_API_PATH2+"/smokers-stats/:id",(req,res)=>{
     }else{
         res.status(500).json({error: 'There was an error.'})
     }
-});
+    });
 
-app.delete(BASE_SMOKERS_API_PATH2 +"/smokers-stats/:id", (req, res) =>{ 
-    var id = req.params.id;
+    app.delete(BASE_SMOKERS_API_PATH2 +"/smokers-stats/:id", (req, res) =>{ 
+        var id = req.params.id;
 
-    for (var i = 0; i <  smokersStats.length; i++){
-		if(smokersStats[i].id == id){
-			smokersStats.splice(i,1);
-			return res.sendStatus(200);
-		}
-	}
-	res.sendStatus(404);
-});
-
-
-
-
-}
+        for (var i = 0; i <  smokersStats.length; i++){
+    		if(smokersStats[i].id == id){
+			    smokersStats.splice(i,1);
+			    return res.sendStatus(200);
+		    }
+	    }
+	    res.sendStatus(404);
+    });
+};
