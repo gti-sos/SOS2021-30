@@ -59,18 +59,6 @@ module.exports.register = (app, BASE_API_PATH) => {
     });
 
     //6.3 - GET a un recurso 
-    /*
-    app.get(BASE_API_PATH2+"/:provinces/:year", (req, res) =>{
-        var reqprovinces = req.params.provinces;
-        var reqyear = req.params.year;
-        var sendData = [];
-        for(var i=0; i<weights_stats.length; i++) {
-            if((String(weights_stats[i].provinces) === reqprovinces) && (weights_stats[i].year === parseInt(reqyear))){
-                sendData.push(weights_stats[i]);
-            }
-        }
-        res.send(JSON.stringify(sendData, null, 2));
-    });*/
     app.get(BASE_API_PATH2+"/:provinces", (req, res) =>{
         var reqprovinces = req.params.provinces;
         
