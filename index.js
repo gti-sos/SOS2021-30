@@ -24,6 +24,11 @@ var weightsStatsAPI = require("./weightsStatsAPI");
 weightsStatsAPI.register(app);
 //~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
+//--------------------------- API REST SMOKERS-CONSUMPTION-STATS-----------------
+var smokersAPI = require("./smokersStatsAPI");
+smokersStatsAPI.register(app);
+//--------------------------- API REST SMOKERS-CONSUMPTION-STATS-----------------
+
 
 app.use("/",express.static(path.join(__dirname,"public")));
 
@@ -54,149 +59,6 @@ app.get("/info/alcohol-consumption-stats",(request,response) =>{
     response.send("<html><body><p>Datos de consumo de alcohol en España: rango de edad, muertes prematuras por consumo, prevalencia del trastorno por consumo de alcohol</p><table border='5'><tr><td>country</td><td>years</td><td>age range</td><td>alcohol premature death</td><td>prevalence of alcohol use disorder </td></tr><tr><td>España</td><td>2017</td><td>0-5</td><td>0</td><td>0.00</td></tr><tr><td>España</td><td>2017</td><td>5-14</td><td>10</td><td>0.05</td></tr><tr><td>España</td><td>2017</td><td>15-49</td><td>2,529</td><td>1.32</td></tr><tr><td>España</td><td>2017</td><td>50-69</td><td>10,184</td><td>0.63</td></tr><tr><td>España</td><td>2017</td><td>70-</td><td>18,864</td><td>0.25</td></tr></table></body></html>");
     console.log("Info about alcohol-consumption-stats sent");
 });
-
-
-
-/*-----------------------------------------------SMOKERS-STATS------------------------------------------*/
-var smokersStats = [];
-
-app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
-    smokersStats=[
-        {   
-            "id": 1,
-            "country": "España",
-            "province":"Andalucía",
-            "year":2017,
-            "dailySmoker": 1902219.14,
-            "ocasionalSmoker": 260612.40,
-            "exSmoker": 242773.13,
-            "nonSmoker": 4294657.75
-        },
-        {
-            "id": 2,
-            "country": "España",
-            "province":"Aragón",
-            "year":2017,
-            "dailySmoker": 315408.75,
-            "ocasionalSmoker": 18846.00,
-            "exSmoker": 274678.38,
-            "nonSmoker": 603988.13
-        },
-        {
-            "id": 3,
-            "country": "España",
-            "province":"Asturias (Principado De)",
-            "year":2017,
-            "dailySmoker": 246320.48,
-            "ocasionalSmoker": 45124.26,
-            "exSmoker": 220967.80,
-            "nonSmoker": 559602.87
-        }
-    ];
-    res.send(JSON.stringify(smokersStats,null,2));
-});
-
-//GET A UNA LISTA DE RECURSOS DE SMOKERS-STATS
-app.get(BASE_API_PATH+"/smokers-stats",(req,res)=>{
-    res.send(JSON.stringify(smokersStats,null,2));
-    res.sendStatus(200);
-});
-
-//POST A LA LISTA DE RECURSOS DE SMOKERS-STATS
-app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
-    const id = smokersStats.length +1;
-
-    var newStat={...req.body, id};
-
-    var newStat={...req.body,id};
-    console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
-    smokersStats.push(newStat);
-    res.sendStatus(201);
-});
-
-//PUT A UNA LISTA DE RECURSOS DE SMOKERS STATS (Debe dar error)
-app.put(BASE_API_PATH+"/smokers-stats",(req,res)=>{
-    res.sendStatus(405);
-});
-
-//DELETE A LISTA DE RECURSOS DE SMOKERS STATS
-app.delete(BASE_API_PATH+"/smokers-stats/",(req,res)=>{
-    smokersStats.splice(0, smokersStats.length);
-    //Envio de recurso actualizado
-    res.send(smokersStats);
-    res.sendStatus(200);
-});
-
-
-//GET A UN RECURSO CONCRETO DE SMOKER
-app.get(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
-    const {id} = req.params;
-    _.each(smokersStats,(smokersStats,i)=>{
-        if(smokersStats.id==id){
-            res.send(JSON.stringify(smokersStats,null,2));
-        }
-    });
-    res.sendStatus(200);
-});
-
-//POST A UN RECURSO DE SMOKER (Debe dar error)
-app.post(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
-    res.sendStatus(405);
-});
-
-//PUT A UN RECURSO CONCRETO DE SMOKER
-app.put(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
-    const {id} = req.params;
-    const {country,province,year,dailySmoker,ocasionalSmoker,exSmoker, nonSmoker}=req.body;
-    if(country&&province&&year&&dailySmoker&&ocasionalSmoker&&exSmoker&&nonSmoker){
-        _.each(smokersStats,(smokersStats,i)=>{
-            if(smokersStats.id==id){
-                smokersStats.country = country;
-                smokersStats.province = province;
-                smokersStats.year = year;
-                smokersStats.dailySmoker = dailySmoker;
-                smokersStats.ocasionalSmoker = ocasionalSmoker;
-                smokersStats.exSmoker = exSmoker;
-                smokersStats.nonSmoker = nonSmoker;
-            }
-        });
-        //Envio de recurso actualizado
-        res.json(smokersStats);
-        res.status(200);
-    
-    }else{
-        res.status(500).json({error: 'There was an error.'})
-    }
-});
-
-//DELETE A UN RECURSO CONCRETO DE SMOKER
-/*
-app.delete(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
-    const {id} = req.params;
-    _.each(smokersStats,(smokersStats,i)=>{
-        if(smokersStats.id==id){
-            smokersStats.splice(i,1);
-            res.send(smokersStats);
-            res.sendStatus(200);
-        }else{
-            res.sendStatus(404);
-        }
-    });
-});
-*/
-app.delete(BASE_API_PATH +"/smokers-stats/:id", (req, res) =>{ 
-    var id = req.params.id;
-
-    for (var i = 0; i <  smokersStats.length; i++){
-		if(smokersStats[i].id == id){
-			smokersStats.splice(i,1);
-			return res.sendStatus(200);
-		}
-	}
-	res.sendStatus(404);
-});
-
-
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST LIFE-EXPECTANCY-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 

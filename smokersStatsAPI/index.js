@@ -1,8 +1,8 @@
-var BASE_SMOKERS_API_PATH2 = "/api/v1";
+var BASE_API_PATH = "/api/v1";
 var smokersStats = [];
 
 module.exports.register = (app) => {
-    app.get(BASE_SMOKERS_API_PATH2+"/smokers-stats/loadInitialData",(req,res)=>{
+    app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
     smokersStats=[
         {   
             "id": 1,
@@ -39,13 +39,13 @@ module.exports.register = (app) => {
     });
 
     //GET A UNA LISTA DE RECURSOS DE SMOKERS-STATS
-    app.get(BASE_SMOKERS_API_PATH2+"/smokers-stats",(req,res)=>{
+    app.get(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     res.send(JSON.stringify(smokersStats,null,2));
     res.sendStatus(200);
     });
 
     //POST A LA LISTA DE RECURSOS DE SMOKERS-STATS
-    app.post(BASE_SMOKERS_API_PATH2+"/smokers-stats",(req,res)=>{
+    app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     const id = smokersStats.length +1;
 
     var newStat={...req.body, id};
@@ -57,12 +57,12 @@ module.exports.register = (app) => {
     });
 
     //PUT A UNA LISTA DE RECURSOS DE SMOKERS STATS (Debe dar error)
-    app.put(BASE_SMOKERS_API_PATH2+"/smokers-stats",(req,res)=>{
+    app.put(BASE_API_PATH+"/smokers-stats",(req,res)=>{
     res.sendStatus(405);
     });
 
     //DELETE A LISTA DE RECURSOS DE SMOKERS STATS
-    app.delete(BASE_SMOKERS_API_PATH2+"/smokers-stats/",(req,res)=>{
+    app.delete(BASE_API_PATH+"/smokers-stats/",(req,res)=>{
     smokersStats.splice(0, smokersStats.length);
     //Envio de recurso actualizado
     res.send(smokersStats);
@@ -71,7 +71,7 @@ module.exports.register = (app) => {
 
 
     //GET A UN RECURSO CONCRETO DE SMOKER
-    app.get(BASE_SMOKERS_API_PATH2+"/smokers-stats/:id",(req,res)=>{
+    app.get(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
     const {id} = req.params;
     _.each(smokersStats,(smokersStats,i)=>{
         if(smokersStats.id==id){
@@ -82,12 +82,12 @@ module.exports.register = (app) => {
     });
 
     //POST A UN RECURSO DE SMOKER (Debe dar error)
-    app.post(BASE_SMOKERS_API_PATH2+"/smokers-stats/:id",(req,res)=>{
+    app.post(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
     res.sendStatus(405);
     });
 
     //PUT A UN RECURSO CONCRETO DE SMOKER
-    app.put(BASE_SMOKERS_API_PATH2+"/smokers-stats/:id",(req,res)=>{
+    app.put(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
     const {id} = req.params;
     const {country,province,year,dailySmoker,ocasionalSmoker,exSmoker, nonSmoker}=req.body;
     if(country&&province&&year&&dailySmoker&&ocasionalSmoker&&exSmoker&&nonSmoker){
@@ -111,7 +111,7 @@ module.exports.register = (app) => {
     }
     });
 
-    app.delete(BASE_SMOKERS_API_PATH2 +"/smokers-stats/:id", (req, res) =>{ 
+    app.delete(BASE_API_PATH +"/smokers-stats/:id", (req, res) =>{ 
         var id = req.params.id;
 
         for (var i = 0; i <  smokersStats.length; i++){
