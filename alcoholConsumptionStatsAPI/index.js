@@ -1,5 +1,6 @@
-
+var _= require("underscore");
 var BASE_API_PATH = "/api/v1";
+
 var  alcoholConsumptionStats= [];
 
 module.exports.register = (app) => {
@@ -33,7 +34,8 @@ module.exports.register = (app) => {
     });
     //POST A LA LISTA DE RECURSOS
     app.post(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
-        if(Object.keys(req.body).length>6){
+        var newIncomingStat=req.body;
+        if(Object.keys(newIncomingStat).length!=6){
             res.status(400).json({error: 'Bad request'});
         }else{
             const id = alcoholConsumptionStats.length +1;
@@ -68,7 +70,7 @@ module.exports.register = (app) => {
                     alcoholConsumptionStat.alcoholPrematureDeath=alcoholPrematureDeath;
                     alcoholConsumptionStat.prevalenceOfAlcoholUseDisorder=prevalenceOfAlcoholUseDisorder;
                     
-                }
+                };
             });
             res.json(alcoholConsumptionStats);
             res.status(200);

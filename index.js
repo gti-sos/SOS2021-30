@@ -4,9 +4,12 @@ var _= require("underscore");
 
 var app = express();
 
+app.use(bodyParser.json());
+
 var port = process.env.PORT || 10000;
 
 const path = require("path");
+
 
 //RUTA BASE DE LA API
 var BASE_API_PATH = "/api/v1";
@@ -21,14 +24,14 @@ var weightsStatsAPI = require("./weightsStatsAPI");
 weightsStatsAPI.register(app);
 //~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 app.use(bodyParser.json());
+
+app.use("/",express.static(path.join(__dirname,"public")));
 
 app.listen(port,()=>{
     console.log("Server ready listening on port "+port);
 });
 
-app.use("/",express.static(path.join(__dirname,"public")));
 
 app.get("/index.html",(request,response) =>{
     response.sendFile(path.join(__dirname,"/index.html"));
