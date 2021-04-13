@@ -1,7 +1,11 @@
 var _= require("underscore");
 var BASE_API_PATH = "/api/v1";
+<<<<<<< HEAD
 
 var  alcoholConsumptionStats= [];
+=======
+var alcoholConsumptionStats= [];
+>>>>>>> 1d9d5a22beb9306f3f45257471a90bbf0ea38451
 
 module.exports.register = (app) => {
     app.get(BASE_API_PATH+"/alcohol-consumption-stats/loadInitialData",(req,res)=>{

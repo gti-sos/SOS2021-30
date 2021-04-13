@@ -49,9 +49,6 @@ module.exports.register = (app) => {
     //6.2 - POST a la lista de recursos
     app.post(BASE_API_PATH2, (req, res) => {
         const id = weights_stats.length + 1;
-
-        var newStat = { ...req.body, id };
-
         var newStat = { ...req.body, id };
         console.log(`new stat added: <${JSON.stringify(newStat, null, 2)}>`);
         weights_stats.push(newStat);
@@ -59,17 +56,6 @@ module.exports.register = (app) => {
     });
 
     //6.3 - GET a un recurso 
-    /*app.get(BASE_API_PATH2+"/:provinces", (req, res) =>{
-        var reqprovinces = req.params.provinces;
-        
-        var sendData = [];
-        for(var i=0; i<weights_stats.length; i++) {
-            if((String(weights_stats[i].provinces) === reqprovinces)){
-                sendData.push(weights_stats[i]);
-            }
-        }
-        res.send(JSON.stringify(sendData, null, 2));
-    });*/
     app.get(BASE_API_PATH2+"/:id", (req, res) =>{
         var reqid = req.params.id;
         
