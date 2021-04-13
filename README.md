@@ -14,3 +14,9 @@
     - [https://sos2021-30.herokuapp.com/api/v1/table-weights-stats](https://sos2021-30.herokuapp.com/api/v1/table-weights-stats) (developed by [Jesús Ruiz Domínguez](https://github.com/jesruidom))
     - [https://sos2021-30.herokuapp.com/api/v1/alcohol-consumption-stats](https://sos2021-30.herokuapp.com/api/v1/alcohol-consumption-stats) (developed by [Victor Caballero Sánchez](https://github.com/vic3214))
   
+  **Contact API**
+  - [Documentación POSTMAN-test life-expectancy-stats]()
+  - [Documentación POSTMAN-test smokers-stats](https://documenter.getpostman.com/view/14966429/TzJoFgHe)
+  - [Documentación POSTMAN-test table-weights-stats](https://documenter.getpostman.com/view/14975289/TzJoFM7R#f0bbc7c4-552f-43da-b8bf-7dfcf759037f)
+  - [Documentación POSTMAN-test alcohol-consumption-stats](https://documenter.getpostman.com/view/14942936/TzJoFMVa)
+ 
