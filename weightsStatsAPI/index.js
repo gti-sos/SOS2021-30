@@ -1,5 +1,5 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
-
+var _= require("underscore");
 var BASE_API_PATH2 = "/api/v1/table-weights-stats";
 var weights_stats = [];
 
