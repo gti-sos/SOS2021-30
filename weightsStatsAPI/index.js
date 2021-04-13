@@ -3,7 +3,7 @@
 var BASE_API_PATH2 = "/api/v1/table-weights-stats";
 var weights_stats = [];
 
-module.exports.register = (app, BASE_API_PATH) => {
+module.exports.register = (app) => {
     //5.2 - GET loadInitialData
     app.get(BASE_API_PATH2 + "/loadInitialData", (req, res) => {
         weights_stats = [
@@ -59,12 +59,23 @@ module.exports.register = (app, BASE_API_PATH) => {
     });
 
     //6.3 - GET a un recurso 
-    app.get(BASE_API_PATH2+"/:provinces", (req, res) =>{
+    /*app.get(BASE_API_PATH2+"/:provinces", (req, res) =>{
         var reqprovinces = req.params.provinces;
         
         var sendData = [];
         for(var i=0; i<weights_stats.length; i++) {
             if((String(weights_stats[i].provinces) === reqprovinces)){
+                sendData.push(weights_stats[i]);
+            }
+        }
+        res.send(JSON.stringify(sendData, null, 2));
+    });*/
+    app.get(BASE_API_PATH2+"/:id", (req, res) =>{
+        var reqid = req.params.id;
+        
+        var sendData = [];
+        for(var i=0; i<weights_stats.length; i++) {
+            if((String(weights_stats[i].id) === reqid)){
                 sendData.push(weights_stats[i]);
             }
         }
