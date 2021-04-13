@@ -24,7 +24,6 @@ var weightsStatsAPI = require("./weightsStatsAPI");
 weightsStatsAPI.register(app);
 //~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
-app.use(bodyParser.json());
 
 app.use("/",express.static(path.join(__dirname,"public")));
 
@@ -56,10 +55,7 @@ app.get("/info/alcohol-consumption-stats",(request,response) =>{
     console.log("Info about alcohol-consumption-stats sent");
 });
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 1d9d5a22beb9306f3f45257471a90bbf0ea38451
 
 /*-----------------------------------------------SMOKERS-STATS------------------------------------------*/
 var smokersStats = [];
