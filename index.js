@@ -428,6 +428,7 @@ var lifeExpectancyStats=[];
 app.get(BASE_API_PATH+"/life-expectancy-stats/loadInitialData",(req,res)=>{
     lifeExpectancyStats=[
         {
+            "id":1,
             "country":"España",
             "province":"Andalucia",
             "year":"2017",
@@ -436,6 +437,7 @@ app.get(BASE_API_PATH+"/life-expectancy-stats/loadInitialData",(req,res)=>{
             "averageLifeExpectancy":"81,63"
         },
         {
+            "id":2,
             "country":"España",
             "province":"Aragón",
             "year":"2017",
@@ -444,6 +446,7 @@ app.get(BASE_API_PATH+"/life-expectancy-stats/loadInitialData",(req,res)=>{
             "averageLifeExpectancy":"83,23"
         },
         {
+            "id":3,
             "country":"España",
             "province":"Asturias",
             "year":"2017",
