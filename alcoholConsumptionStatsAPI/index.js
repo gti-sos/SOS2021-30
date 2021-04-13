@@ -1,6 +1,6 @@
 
 var BASE_API_PATH = "/api/v1";
-var weights_stats = [];
+var  alcoholConsumptionStats= [];
 
 module.exports.register = (app) => {
     app.get(BASE_API_PATH+"/alcohol-consumption-stats/loadInitialData",(req,res)=>{

@@ -12,8 +12,8 @@ const path = require("path");
 var BASE_API_PATH = "/api/v1";
 
 //--------------------------- API REST ALCOHOL-CONSUMPTION-STATS-----------------
-var weightsStatsAPI = require("./weightsStatsAPI");
-weightsStatsAPI.register(app);
+var alcoholAPI = require("./alcoholConsumptionStatsAPI");
+alcoholAPI.register(app);
 //--------------------------- API REST ALCOHOL-CONSUMPTION-STATS-----------------
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
