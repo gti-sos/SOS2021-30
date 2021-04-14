@@ -55,22 +55,22 @@ module.exports.register = (app) => {
         res.sendStatus(201);
     });
 
-    //6.3 - GET a un recurso 
-    app.get(BASE_API_PATH2+"/:id", (req, res) =>{
-        var reqid = req.params.id;
-        
+    //6.3 - GET a un recurso por PROVINCES/YEAR (SIN YEAR)    
+    app.get(BASE_API_PATH2+"/:provinces", (req, res) =>{
+        var provinces = req.params.provinces;       
+       // var year = req.params.year;
         var sendData = [];
         for(var i=0; i<weights_stats.length; i++) {
-            if((String(weights_stats[i].id) === reqid)){
+            if((String(weights_stats[i].provinces) === provinces /*&& weights_stats[i].year === year*/)){
                 sendData.push(weights_stats[i]);
             }
         }
         res.send(JSON.stringify(sendData, null, 2));
+        res.sendStatus(200);
     });
 
-
-    //6.4 - DELETE a un recurso
-    app.delete(BASE_API_PATH2 + "/:id", (req, res) => {
+    //6.4 - DELETE a un recurso por ID
+    /*app.delete(BASE_API_PATH2 + "/:id", (req, res) => {
         var id = req.params.id;
 
         for (var i = 0; i < weights_stats.length; i++) {
@@ -80,9 +80,24 @@ module.exports.register = (app) => {
             }
         }
         res.sendStatus(404);
+    });*/
+
+    //6.4 - DELETE a un recurso por PROVINCES/YEAR
+    app.delete(BASE_API_PATH2 + "/:provinces/:year", (req, res) => {
+        var provinces = req.params.provinces;
+        var year = req.params.year;
+
+        for (var i = 0; i < weights_stats.length; i++) {
+            if (weights_stats[i].provinces == provinces && weights_stats[i].year == year) {
+                weights_stats.splice(i, 1);
+                return res.sendStatus(200);
+            }
+        }
+        res.sendStatus(404);
     });
 
-    //6.5 - PUT a un recurso
+    //6.5 - PUT a un recurso por ID
+    /*
     app.put(BASE_API_PATH2 + "/:id", (req, res) => {
         const { id } = req.params;
         const { country, provinces, year, normal_weight, overweight, obesity } = req.body;
@@ -101,7 +116,31 @@ module.exports.register = (app) => {
             res.status(200);
 
         } else {
-            res.status(500).json({ error: 'There was an error.' });
+            res.status(400).json({ error: 'El dato JSON no tiene exactamente la estructura de campos esperada.' });
+        }
+    });*/
+
+    //6.5 - PUT a un recurso por PROVINCES/YEAR    
+    app.put(BASE_API_PATH2 + "/:provinces/:year", (req, res) => {
+        const { provinces, year } = req.params;
+        const { id, country, normal_weight, overweight, obesity } = req.body;
+        if (id && country && provinces && year && normal_weight && overweight && obesity) {
+            _.each(weights_stats, (weights_stats, i) => {
+                if (weights_stats.provinces == provinces && weights_stats.year == year) {
+                    weights_stats.id = id;
+                    weights_stats.country = country;
+                    weights_stats.provinces = provinces;
+                    weights_stats.year = year;
+                    weights_stats.normal_weight = normal_weight;
+                    weights_stats.overweight = overweight;
+                    weights_stats.obesity = obesity;
+                }
+            });
+            res.json(weights_stats);
+            res.status(200);
+
+        } else {
+            res.status(400).json({ error: 'El dato JSON no tiene exactamente la estructura de campos esperada.' });
         }
     });
 
