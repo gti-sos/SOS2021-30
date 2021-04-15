@@ -47,12 +47,33 @@ module.exports.register = (app) => {
     });
 
     //6.2 - POST a la lista de recursos
-    app.post(BASE_WEIGHTS_PATH, (req,res)=>{
-        var newData = req.body;        
-        console.log(`new data to be added: <${JSON.stringify(newData,null,2)}>`);    
-        weights_stats.push(newData);    
-        res.sendStatus(201);
-     });
+    app.post(BASE_WEIGHTS_PATH, (req, res) => {
+        var newData = req.body;
+        var provinces = req.body.provinces;
+        var year = req.body.year;
+
+        for (var stat of weights_stats) {
+            if (stat.provinces === provinces && stat.year === year) {
+                console.log("Ese recurso ya se encuentra en la lista de recursos");
+                return res.sendStatus(409);
+            }
+        }
+        if (!newData.id
+            || !newData.country
+            || !newData.provinces
+            || !newData.year
+            || !newData['normal_weight']
+            || !newData['overweight']
+            || !newData['obesity']
+            || Object.keys(newData).length != 7) {
+            console.log("Numero de parametros incorrectos");
+            return res.sendStatus(400);
+        } else {
+            console.log(`new data to be added: <${JSON.stringify(newData, null, 2)}>`);
+            weights_stats.push(newData);
+            return res.sendStatus(201);
+        }
+    });
 
     //6.3 - GET a un recurso por PROVINCES/YEAR     
     app.get(BASE_WEIGHTS_PATH+"/:provinces/:year", (req, res) =>{
