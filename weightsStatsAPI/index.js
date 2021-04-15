@@ -55,13 +55,13 @@ module.exports.register = (app) => {
         res.sendStatus(201);
     });
 
-    //6.3 - GET a un recurso por PROVINCES/YEAR (SIN YEAR)    
-    app.get(BASE_API_PATH2+"/:provinces", (req, res) =>{
+    //6.3 - GET a un recurso por PROVINCES/YEAR     
+    app.get(BASE_API_PATH2+"/:provinces/:year", (req, res) =>{
         var provinces = req.params.provinces;       
-       // var year = req.params.year;
+        var year = req.params.year;
         var sendData = [];
         for(var i=0; i<weights_stats.length; i++) {
-            if((String(weights_stats[i].provinces) === provinces /*&& weights_stats[i].year === year*/)){
+            if (weights_stats[i].provinces == provinces && weights_stats[i].year == year) {
                 sendData.push(weights_stats[i]);
             }
         }
