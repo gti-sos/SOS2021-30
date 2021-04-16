@@ -1,6 +1,10 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 var _= require("underscore");
 var BASE_WEIGHTS_PATH = "/api/v1/table-weights-stats";
+
+var Datastore = require("nedb");
+var db = new Datastore();
+
 var weights_stats = [];
 
 module.exports.register = (app) => {
@@ -36,18 +40,55 @@ module.exports.register = (app) => {
             }
         ];
 
-        res.send(JSON.stringify(weights_stats, null, 2));
-        return res.sendStatus(201);
+        db.find({},(err, data) => {
+            if (err) {
+                console.error("ERROR accesing DB in GET");
+                res.sendStatus(500);
+            } else {
+                if (data.length == 0) {
+                    db.insert(weights_stats);
+                    console.log(`Loaded initial data: <${JSON.stringify(weights_stats, null, 2)}>`);
+                    res.sendStatus(201);
+                } else {
+                    console.error(`initial data already exists`);
+                    res.sendStatus(409);
+                }
+            }
+        });
     });
 
     //6.1 - GET a la lista de recursos
     app.get(BASE_WEIGHTS_PATH, (req, res) => {
-        res.send(JSON.stringify(weights_stats, null, 2));
-        res.sendStatus(200);
+        db.find({}, (err, weightsInDB) => {
+            if(err){
+                console.log("ERROR accessing DB in GET: " + err);
+                res.sendStatus(500);
+            }else{
+                var weightsToSend = weightsInDB.map((c) => {
+                    return{
+                        id : c.id,
+                        country : c.country,
+                        provinces : c.provinces,
+                        year : c.year,
+                        normal_weight : c.normal_weight,
+                        overweight : c.overweight,
+                        obesity : c.obesity
+                    };
+                });
+                res.send(JSON.stringify(weightsToSend,null,2));
+            }
+        });
     });
 
     //6.2 - POST a la lista de recursos
-    app.post(BASE_WEIGHTS_PATH, (req, res) => {
+    /*app.post(BASE_WEIGHTS_PATH, (req,res)=>{
+        var newData = req.body;        
+        console.log(`new data to be added: <${JSON.stringify(newData,null,2)}>`);    
+        weights_stats.push(newData);    
+        res.sendStatus(201);
+     });*/
+
+     /*app.post(BASE_WEIGHTS_PATH, (req, res) => {
         var newData = req.body;
         var provinces = req.body.provinces;
         var year = req.body.year;
@@ -70,12 +111,35 @@ module.exports.register = (app) => {
             return res.sendStatus(400);
         } else {
             console.log(`new data to be added: <${JSON.stringify(newData, null, 2)}>`);
-            weights_stats.push(newData);
+            db.insert(newData);
+            //weights_stats.push(newData);
             return res.sendStatus(201);
         }
+    });*/
+
+    app.post(BASE_WEIGHTS_PATH, (req, res) => {
+        var newData = req.body; 
+        console.log(`new data to be added: <${JSON.stringify(newData, null, 2)}>`);
+
+        db.find({provinces : newData.provinces}, (err, dataInDB) => {
+            if(err){
+                console.log("ERROR accessing DB in POST: " + err);
+                res.sendStatus(500);
+            }else{
+                if(dataInDB.length == 0){
+                    console.log(`new data to be added: <${JSON.stringify(newData, null, 2)}>`);
+                    db.insert(newData);
+                    res.sendStatus(201);
+                }
+                else{
+                    console.log("Ese recurso ya se encuentra en la DB");
+                    res.sendStatus(409);
+                }
+            }
+        });
     });
 
-    //6.3 - GET a un recurso por PROVINCES/YEAR     
+    //6.3 - GET a un recurso por provinces/YEAR (SIN YEAR)    
     app.get(BASE_WEIGHTS_PATH+"/:provinces/:year", (req, res) =>{
         var provinces = req.params.provinces;       
         var year = req.params.year;
@@ -102,7 +166,7 @@ module.exports.register = (app) => {
         res.sendStatus(404);
     });*/
 
-    //6.4 - DELETE a un recurso por PROVINCES/YEAR
+    //6.4 - DELETE a un recurso por provinces/YEAR
     app.delete(BASE_WEIGHTS_PATH + "/:provinces/:year", (req, res) => {
         var provinces = req.params.provinces;
         var year = req.params.year;
@@ -140,7 +204,7 @@ module.exports.register = (app) => {
         }
     });*/
 
-    //6.5 - PUT a un recurso por PROVINCES/YEAR    
+    //6.5 - PUT a un recurso por provinces/YEAR    
     app.put(BASE_WEIGHTS_PATH + "/:provinces/:year", (req, res) => {
         const { provinces, year } = req.params;
         const { id, country, normal_weight, overweight, obesity } = req.body;
@@ -176,10 +240,19 @@ module.exports.register = (app) => {
 
     //6.8 - DELETE a la lista de recursos
     app.delete(BASE_WEIGHTS_PATH, (req, res) => {
-        weights_stats.splice(0, weights_stats.length);
-        //Envio de recurso actualizado
-        res.send(weights_stats);
-        res.sendStatus(200);
+
+        db.remove({}, {multi: true}, (err, numDataRemoved) =>{
+            if(err){
+                console.log("ERROR deleting DB : " + err);
+                res.sendStatus(500);
+            }else{
+                console.log("Se han borrado " + numDataRemoved + "recursos de la BD");
+                res.sendStatus(200);
+            }
+        });
+        //weights_stats.splice(0, weights_stats.length);
+        //res.send(weights_stats);
+        //res.sendStatus(200);
     });
 };
 
