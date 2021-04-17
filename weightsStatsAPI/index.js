@@ -81,6 +81,127 @@ module.exports.register = (app) => {
     });
 
     //6.2 - POST a la lista de recursos
+    app.post(BASE_WEIGHTS_PATH, (req, res) => {
+        var newData = req.body; 
+        console.log(`new data to be added: <${JSON.stringify(newData, null, 2)}>`);
+
+        db.find({provinces : newData.provinces}, (err, dataInDB) => {
+            if(err){
+                console.log("ERROR accessing DB in POST: " + err);
+                res.sendStatus(500);
+            }else{
+                if(dataInDB.length == 0){
+                    console.log(`new data to be added: <${JSON.stringify(newData, null, 2)}>`);
+                    db.insert(newData);
+                    res.sendStatus(201);
+                }
+                else{
+                    console.log("Ese recurso ya se encuentra en la DB");
+                    res.sendStatus(409);
+                }
+            }
+        });
+    });
+
+    //6.3 - GET a un recurso por PROVINCES/YEAR    
+    app.get(BASE_WEIGHTS_PATH+"/:provinces/:year", (req, res) => {
+        var reqprovinces = req.params.provinces;
+        var reqyear = parseInt(req.params.year);
+
+        db.find({ provinces: reqprovinces, year: reqyear }, { _id: 0 }, function (err, data) {
+            if (err) {
+                console.error("ERROR in GET");
+                res.sendStatus(500);
+            } else {
+                if(data.length != 0){                
+                console.log(`NEW GET request to <${reqprovinces}>, <${reqyear}>`);
+                res.status(200).send(JSON.stringify(data, null, 2));
+                }else{
+                    console.error("Data not found");
+                    res.sendStatus(404);
+                }
+
+            }
+        });
+    });
+
+    //6.4 - DELETE a un recurso por PROVINCES/YEAR
+    app.delete(BASE_WEIGHTS_PATH + "/:provinces/:year", (req,res)=>{
+			var reqprovinces = req.params.provinces;
+			var reqyear = parseInt(req.params.year);
+			db.remove({provinces : reqprovinces, year : reqyear},{multi:true}, (err, data) => {
+                if (err) {
+                    console.error("ERROR in GET");
+                    res.sendStatus(500);
+                } else {
+                    if(data != 0){
+                        console.log(`NEW DELETE request to <${reqprovinces}>, <${reqyear}>`);
+                        res.status(200).send("The corresponding data for " + reqprovinces + " and " + reqyear + " has been deleted");
+                    }else{
+                        console.log("Data not found");
+                        res.sendStatus(404);
+                    }
+                }
+			});
+	});
+
+    //6.5 - PUT a un recurso por PROVINCES/YEAR 
+    app.put(BASE_WEIGHTS_PATH + "/:provinces/:year", (req,res)=>{
+        var reqprovinces = req.params.provinces;
+        var reqyear = parseInt(req.params.year);
+        var data = req.body;
+        
+        if (Object.keys(data).length != 7) {
+            console.log("Actualizacion de campos no valida")
+            res.sendStatus(400);
+        } else {
+            db.update({ provinces: reqprovinces, year: reqyear }, { $set: data }, {}, function (err, dataUpdate) {
+                if (err) {
+                    console.error("ERROR accesing DB in GET");
+                    res.sendStatus(500);
+                } else {
+                    if (dataUpdate == 0) {
+                        console.error("No data found");
+                        res.sendStatus(404);
+                    } else {
+                        console.log("Campos actualizados")
+                        res.sendStatus(200);
+                    }
+                }
+            });
+        }
+    });
+
+    //6.6 - POST a un recurso (Debe dar error)
+    app.post(BASE_WEIGHTS_PATH + "/:id", (req, res) => {
+        res.sendStatus(405);
+    });
+
+    //6.7 - PUT a la lista de recursos (Debe dar error)
+    app.put(BASE_WEIGHTS_PATH, (req, res) => {
+        res.sendStatus(405);
+    });
+
+    //6.8 - DELETE a la lista de recursos
+    app.delete(BASE_WEIGHTS_PATH, (req, res) => {
+
+        db.remove({}, {multi: true}, (err, numDataRemoved) =>{
+            if(err){
+                console.log("ERROR deleting DB : " + err);
+                res.sendStatus(500);
+            }else{
+                console.log("Se han borrado " + numDataRemoved + "recursos de la BD");
+                res.sendStatus(200);
+            }
+        });
+    });
+};
+
+//~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
+
+///////////////////// MÉTODOS ANTERIORES A LA DB /////////////////////
+
+//6.2 - POST a la lista de recursos
     /*app.post(BASE_WEIGHTS_PATH, (req,res)=>{
         var newData = req.body;        
         console.log(`new data to be added: <${JSON.stringify(newData,null,2)}>`);    
@@ -117,29 +238,7 @@ module.exports.register = (app) => {
         }
     });*/
 
-    app.post(BASE_WEIGHTS_PATH, (req, res) => {
-        var newData = req.body; 
-        console.log(`new data to be added: <${JSON.stringify(newData, null, 2)}>`);
-
-        db.find({provinces : newData.provinces}, (err, dataInDB) => {
-            if(err){
-                console.log("ERROR accessing DB in POST: " + err);
-                res.sendStatus(500);
-            }else{
-                if(dataInDB.length == 0){
-                    console.log(`new data to be added: <${JSON.stringify(newData, null, 2)}>`);
-                    db.insert(newData);
-                    res.sendStatus(201);
-                }
-                else{
-                    console.log("Ese recurso ya se encuentra en la DB");
-                    res.sendStatus(409);
-                }
-            }
-        });
-    });
-
-    //6.3 - GET a un recurso por provinces/YEAR (SIN YEAR)    
+    //6.3 - GET a un recurso por provinces/YEAR
     /*app.get(BASE_WEIGHTS_PATH+"/:provinces/:year", (req, res) =>{
         var provinces = req.params.provinces;       
         var year = req.params.year;
@@ -152,27 +251,6 @@ module.exports.register = (app) => {
         res.send(JSON.stringify(sendData, null, 2));
         res.sendStatus(200);
     });*/
-
-    app.get(BASE_WEIGHTS_PATH+"/:provinces/:year", (req, res) => {
-        var reqprovinces = req.params.provinces;
-        var reqyear = parseInt(req.params.year);
-
-        db.find({ provinces: reqprovinces, year: reqyear }, { _id: 0 }, function (err, data) {
-            if (err) {
-                console.error("ERROR in GET");
-                res.sendStatus(500);
-            } else {
-                if(data.length != 0){                
-                console.log(`NEW GET request to <${reqprovinces}>, <${reqyear}>`);
-                res.status(200).send(JSON.stringify(data, null, 2));
-                }else{
-                    console.error("Data not found");
-                    res.sendStatus(404);
-                }
-
-            }
-        });
-    });
 
     //6.4 - DELETE a un recurso por ID
     /*app.delete(BASE_WEIGHTS_PATH + "/:id", (req, res) => {
@@ -200,28 +278,7 @@ module.exports.register = (app) => {
         }
         res.sendStatus(404);
     });*/
-
-    app.delete(BASE_WEIGHTS_PATH + "/:provinces/:year", (req, res) => {
-        var reqprovinces = req.params.provinces;
-        var reqyear = parseInt(req.params.year);
-
-        db.remove({ provinces: reqprovinces, year: reqyear }, {multi :true}, function (err, data){
-            if (err) {
-                console.error("ERROR in GET");
-                res.sendStatus(500);
-            } else {
-                if(data.length == 0){
-                    console.error("Data not found");
-                    res.sendStatus(404);
-                    
-                }else{
-                    console.log(`NEW DELETE request to <${reqprovinces}>, <${reqyear}>`);
-                    res.status(200).send("The corresponding data for " + reqprovinces + " and " + reqyear + " has been deleted");
-                }
-            }
-        });
-    });
-
+    
     //6.5 - PUT a un recurso por ID
     /*
     app.put(BASE_WEIGHTS_PATH + "/:id", (req, res) => {
@@ -270,67 +327,3 @@ module.exports.register = (app) => {
         }
     });*/
 
-    app.put(BASE_WEIGHTS_PATH, (req,res)=>{
-        var reqprovinces = req.params.provinces;
-        var reqyear = parseInt(req.params.year);
-        var data = req.body;
-        
-        if (!data.id
-            || !data.country
-            || !data.provinces
-            || !data.year
-            || !data['normal_weight']
-            || !data['overweight']
-            || !data['obesity']
-            || data.provinces != reqprovinces
-            || data.year != reqprovinces
-            || Object.keys(newNatalityStat).length != 7) {
-            console.log("Actualizacion de campos no valida")
-            res.sendStatus(400);
-        } else {
-            db.update({ provinces: reqprovinces, year: reqyear }, { $set: data }, {}, function (err, dataUpdate) {
-                if (err) {
-                    console.error("ERROR accesing DB in GET");
-                    res.sendStatus(500);
-                } else {
-                    if (dataUpdate == 0) {
-                        console.error("No data found");
-                        res.sendStatus(404);
-                    } else {
-                        console.log("Campos actualizados")
-                        res.sendStatus(200);
-                    }
-                }
-            });
-        }
-    });
-
-    //6.6 - POST a un recurso (Debe dar error)
-    app.post(BASE_WEIGHTS_PATH + "/:id", (req, res) => {
-        res.sendStatus(405);
-    });
-
-    //6.7 - PUT a la lista de recursos (Debe dar error)
-    app.put(BASE_WEIGHTS_PATH, (req, res) => {
-        res.sendStatus(405);
-    });
-
-    //6.8 - DELETE a la lista de recursos
-    app.delete(BASE_WEIGHTS_PATH, (req, res) => {
-
-        db.remove({}, {multi: true}, (err, numDataRemoved) =>{
-            if(err){
-                console.log("ERROR deleting DB : " + err);
-                res.sendStatus(500);
-            }else{
-                console.log("Se han borrado " + numDataRemoved + "recursos de la BD");
-                res.sendStatus(200);
-            }
-        });
-        //weights_stats.splice(0, weights_stats.length);
-        //res.send(weights_stats);
-        //res.sendStatus(200);
-    });
-};
-
-//~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
