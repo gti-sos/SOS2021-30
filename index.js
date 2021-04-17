@@ -34,10 +34,7 @@ var lifeAPI = require("./lifeExpectancyStatsAPI");
 lifeAPI.register(app);
 //~~~~~~~~~~~~~~~~~~~ END: API LIFE-EXPECTANCY-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
-//~~~~~~~~~~~~~~~~~~~~~~~~ API REST LIFE-EXPECTANCY-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
-var lifeAPI = require("./lifeExpectancyStatsAPI");
-lifeAPI.register(app);
-//~~~~~~~~~~~~~~~~~~~ END: API LIFE-EXPECTANCY-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 
 app.use("/",express.static(path.join(__dirname,"public")));
