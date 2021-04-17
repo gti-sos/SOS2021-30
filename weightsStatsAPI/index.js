@@ -140,7 +140,7 @@ module.exports.register = (app) => {
     });
 
     //6.3 - GET a un recurso por provinces/YEAR (SIN YEAR)    
-    app.get(BASE_WEIGHTS_PATH+"/:provinces/:year", (req, res) =>{
+    /*app.get(BASE_WEIGHTS_PATH+"/:provinces/:year", (req, res) =>{
         var provinces = req.params.provinces;       
         var year = req.params.year;
         var sendData = [];
@@ -151,6 +151,27 @@ module.exports.register = (app) => {
         }
         res.send(JSON.stringify(sendData, null, 2));
         res.sendStatus(200);
+    });*/
+
+    app.get(BASE_WEIGHTS_PATH+"/:provinces/:year", (req, res) => {
+        var reqprovinces = req.params.provinces;
+        var reqyear = parseInt(req.params.year);
+
+        db.find({ provinces: reqprovinces, year: reqyear }, { _id: 0 }, function (err, data) {
+            if (err) {
+                console.error("ERROR in GET");
+                res.sendStatus(500);
+            } else {
+                if(data.length != 0){                
+                console.log(`NEW GET request to <${reqprovinces}>, <${reqyear}>`);
+                res.status(200).send(JSON.stringify(data, null, 2));
+                }else{
+                    console.error("Data not found");
+                    res.sendStatus(404);
+                }
+
+            }
+        });
     });
 
     //6.4 - DELETE a un recurso por ID
@@ -167,7 +188,7 @@ module.exports.register = (app) => {
     });*/
 
     //6.4 - DELETE a un recurso por provinces/YEAR
-    app.delete(BASE_WEIGHTS_PATH + "/:provinces/:year", (req, res) => {
+    /*app.delete(BASE_WEIGHTS_PATH + "/:provinces/:year", (req, res) => {
         var provinces = req.params.provinces;
         var year = req.params.year;
 
@@ -178,6 +199,27 @@ module.exports.register = (app) => {
             }
         }
         res.sendStatus(404);
+    });*/
+
+    app.delete(BASE_WEIGHTS_PATH + "/:provinces/:year", (req, res) => {
+        var reqprovinces = req.params.provinces;
+        var reqyear = parseInt(req.params.year);
+
+        db.remove({ provinces: reqprovinces, year: reqyear }, {multi :true}, function (err, data){
+            if (err) {
+                console.error("ERROR in GET");
+                res.sendStatus(500);
+            } else {
+                if(data.length == 0){
+                    console.error("Data not found");
+                    res.sendStatus(404);
+                    
+                }else{
+                    console.log(`NEW DELETE request to <${reqprovinces}>, <${reqyear}>`);
+                    res.status(200).send("The corresponding data for " + reqprovinces + " and " + reqyear + " has been deleted");
+                }
+            }
+        });
     });
 
     //6.5 - PUT a un recurso por ID
@@ -205,7 +247,7 @@ module.exports.register = (app) => {
     });*/
 
     //6.5 - PUT a un recurso por provinces/YEAR    
-    app.put(BASE_WEIGHTS_PATH + "/:provinces/:year", (req, res) => {
+    /*app.put(BASE_WEIGHTS_PATH + "/:provinces/:year", (req, res) => {
         const { provinces, year } = req.params;
         const { id, country, normal_weight, overweight, obesity } = req.body;
         if (id && country && provinces && year && normal_weight && overweight && obesity) {
@@ -225,6 +267,41 @@ module.exports.register = (app) => {
 
         } else {
             res.status(400).json({ error: 'El dato JSON no tiene exactamente la estructura de campos esperada.' });
+        }
+    });*/
+
+    app.put(BASE_WEIGHTS_PATH, (req,res)=>{
+        var reqprovinces = req.params.provinces;
+        var reqyear = parseInt(req.params.year);
+        var data = req.body;
+        
+        if (!data.id
+            || !data.country
+            || !data.provinces
+            || !data.year
+            || !data['normal_weight']
+            || !data['overweight']
+            || !data['obesity']
+            || data.provinces != reqprovinces
+            || data.year != reqprovinces
+            || Object.keys(newNatalityStat).length != 7) {
+            console.log("Actualizacion de campos no valida")
+            res.sendStatus(400);
+        } else {
+            db.update({ provinces: reqprovinces, year: reqyear }, { $set: data }, {}, function (err, dataUpdate) {
+                if (err) {
+                    console.error("ERROR accesing DB in GET");
+                    res.sendStatus(500);
+                } else {
+                    if (dataUpdate == 0) {
+                        console.error("No data found");
+                        res.sendStatus(404);
+                    } else {
+                        console.log("Campos actualizados")
+                        res.sendStatus(200);
+                    }
+                }
+            });
         }
     });
 
