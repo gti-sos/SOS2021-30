@@ -1,4 +1,8 @@
 var _= require("underscore");
+var Datastore = require("nedb");
+const { sortBy } = require("underscore");
+
+var db = new Datastore();
 
 var BASE_API_PATH = "/api/v1";
 
@@ -7,6 +11,11 @@ var lifeExpectancyStats=[];
  
 module.exports.register = (app) => {
     
+
+    
+
+
+
     app.get(BASE_API_PATH+"/life-expectancy-stats/loadInitialData",(req,res)=>{
         lifeExpectancyStats=[
             {
@@ -39,6 +48,54 @@ module.exports.register = (app) => {
         ];
         res.send(JSON.stringify(lifeExpectancyStats,null,2));
     });
+
+
+    db.insert(lifeExpectancyStats);
+
+    app.get(BASE_API_PATH+"/life-expectancy-stats", (req,res)=>{
+
+        db.find({},(err, lifeExpectancyStats)=>{
+            if(err){
+                console.error("");
+                res.sendStatus(500);
+            }else{
+                res.send(JSON.stringify(lifeExpectancyStats,null,2));
+            }
+        });
+            
+
+        });
+
+
+    app.post(BASE_API_PATH+"/life-expectancy-stats", (req,res)=>{
+        var newLifeStat = req.body;
+
+        db.find({name : newLifeStat.country},(err, lifeExpectancyStats)=>{
+            if(err){
+                console.error("");
+                res.sendStatus(500);
+            }else{
+                if(lifeExpectancyStats.length == 0){
+                    console.log("Inserting new life expectancy stat in db:"+ JSON.stringify(newLifeStat,null,2));
+                    db.insert(newLifeStat);
+                    res.sendStatus(201);
+                }else{
+                    res.sendStatus(409);
+                }
+               
+            }
+        });
+
+        db.insert(newLifeStat);
+
+        res.sendStatus(201);
+
+    });
+ 
+
+
+
+
 
     //GET A UNA LISTA DE RECURSOS
         app.get(BASE_API_PATH+"/life-expectancy-stats",(req,res)=>{
