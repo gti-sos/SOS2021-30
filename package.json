@@ -23,6 +23,6 @@
     "express": "^4.17.1",
     "grpc": "^1.24.6",
     "nedb": "^1.8.0",
-    "underscore": "^1.12.1"
+    "underscore": "^1.13.1"
   }
 }
