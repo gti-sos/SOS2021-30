@@ -42,7 +42,7 @@ module.exports.register = (app) => {
 
     db.insert(smokersStats);
 
-    
+
     //GET inicial (loadInitialData) para inicializar
     app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
     smokersStats=[
@@ -157,7 +157,7 @@ module.exports.register = (app) => {
     //DELETE A LISTA DE RECURSOS DE SMOKERS STATS
     app.delete(BASE_API_PATH+"/smokers-stats", (req,res) => {
         db.remove({}, {multi: true}, (err, numDataRemoved) => {
-            if (err){
+            if (err || numDataRemoved == 0){
                 console.log("ERROR deleting DB: "+err);
                 res.sendStatus(500);
             }else{
