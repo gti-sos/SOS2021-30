@@ -126,6 +126,106 @@ module.exports.register = (app) => {
 
 
 
+<<<<<<< HEAD
+=======
+    //GET A RECURSO /
+        /*
+    app.get(BASE_API_PATH,(req, res) => {
+        console.log("GET LIFE STATS");
+        
+        var request = {};
+        if(req.query.country) request["country"] = req.query.country;
+        if(req.query.province) request["province"] = req.query.province;
+        if(req.query.year) request["year"] = parseInt(req.query.year);
+        if(req.query.lifeExpectancyWoman) request["lifeExpectancyWoman"] = parseFloat(req.query.lifeExpectancyWoman);
+        if(req.query.lifeExpectancyMan) request["lifeExpectancyMan"] = parseFloat(req.query.lifeExpectancyMan);
+        if(req.query.averageLifeExpectancy) request["averageLifeExpectancy"] = parseFloat(req.query.averageLifeExpectancy);
+        
+        var offset = parseInt(req.query.offset) || 0;
+        var limit = parseInt(req.query.limit) || Number.MAX_SAFE_INTEGER;
+        
+        db.find(request,{}).skip(offset).limit(limit).exec((err, lifeExpectancyStatsInDB) => {
+            //la query se pone entre llaves, para que devuelva todo se deja vacío si se pone name: "nono"  sólo devuelve los nono
+            lifeExpectancyStatsInDB.forEach((c) => {
+                delete c._id;
+            });
+            if(lifeExpectancyStatsInDB.length>=1){
+                console.log("Recurso encontrado");
+                if(lifeExpectancyStatsInDB.length == 1){
+                    res.send(JSON.stringify(lifeExpectancyStatsInDB[0],null,2));
+            console.log("Data sent: "+JSON.stringify(lifeExpectancyStatsInDB,null,2));
+                }else{
+                    res.send(JSON.stringify(lifeExpectancyStatsInDB,null,2));
+                    console.log("Data sent: "+JSON.stringify(lifeExpectancyStatsInDB,null,2));
+                    }			
+            }else{
+                console.log("ERROR. No se encuentra el recurso.");
+                res.sendStatus(404, "El recurso no existe.");
+            }
+            
+        });
+        
+    });	
+    
+    app.get(BASE_API_PATH+"/:country",(req, res) => {
+        console.log("GET COUNTRY_f03");
+        
+        var country = req.params.country;
+        
+        db.find({country}, (err, lifeExpectancyStatsInDB) => {
+            //la query se pone entre llaves, para que devuelva todo se deja vacío si se pone name: "nono"  sólo devuelve los nono
+            lifeExpectancyStatsInDB.forEach((c) => {
+                delete c._id;
+            });
+            if(lifeExpectancyStatsInDB.length>=1){
+                console.log("El pais existe. Enviado");
+                if(lifeExpectancyStatsInDB.length ==1 ){
+                    res.send(JSON.stringify(lifeExpectancyStatsInDB[0],null,2));
+            console.log("Data sent: "+JSON.stringify(lifeExpectancyStatsInDB,null,2));
+                }else{
+                    res.send(JSON.stringify(lifeExpectancyStatsInDB,null,2));
+            console.log("Data sent: "+JSON.stringify(lifeExpectancyStatsInDB,null,2));
+                }
+                
+            }else{
+                console.log("ERROR. No existe ese pais");
+                res.sendStatus(404,"ERROR. No existe ese pais.");
+            }
+            
+        });
+        
+    });
+    
+    app.get(BASE_API_PATH+"/:country/:year",(req, res) => {
+        console.log("GET YEAR");
+        
+        var country = req.params.country;
+        var year = parseInt(req.params.year);
+        
+        db.find({country, year}, (err, lifeExpectancyStatsInDB) => {
+            //la query se pone entre llaves, para que devuelva todo se deja vacío si se pone name: "nono"  sólo devuelve los nono
+            lifeExpectancyStatsInDB.forEach((c) => {
+                delete c._id;
+            });
+            if(lifeExpectancyStatsInDB.length >= 1){
+                console.log("recurso+year encontrado.");
+                res.send(JSON.stringify(lifeExpectancyStatsInDB[0],null,2));
+                console.log("Data sent: "+JSON.stringify(lifeExpectancyStatsInDB,null,2));
+            }else{
+                console.log("recurso+year NO EXISTE.");
+                res.sendStatus(404,"ERROR. No existe ese pais.");
+            }
+            
+        });
+        
+    });
+    
+    */
+
+
+
+
+>>>>>>> 424f99ee6b1d19ee234701ebb39dbb7e56b7dabf
     //GET A RECURSO /province/year
     app.get(BASE_API_PATH+"/:province/:year",(req,res)=>{
 
