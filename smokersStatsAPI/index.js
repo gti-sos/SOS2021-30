@@ -39,22 +39,10 @@ module.exports.register = (app) => {
             "nonSmoker": 559602.87
         }
     ];
-    db.find({},(err, data) => {
-        if(err){
-            console.error("ERROR accesing DB in GET: "+err);
-            res.sendStatus(500);
-        }else{
-            if (data.length == 0) {
-                db.insert(smokersStats);
-                console.log(`Loaded initial data: <${JSON.stringify(smokersStats, null, 2)}>`);
-                res.sendStatus(201);
-            }else{
-                console.error(`initial data already exists: `+err);
-                res.sendStatus(409);
-            }
-        }
-    })
 
+    db.insert(smokersStats);
+
+    
     //GET inicial (loadInitialData) para inicializar
     app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
     smokersStats=[
