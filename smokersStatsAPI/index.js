@@ -2,6 +2,8 @@ var _= require("underscore");
 var Datastore = require("nedb");
 var db = new Datastore();
 
+const { sortBy } = require("underscore");
+
 var BASE_API_PATH = "/api/v1";
 var smokersStats = [];
 
@@ -42,7 +44,7 @@ module.exports.register = (app) => {
 
     db.insert(smokersStats);
 
-    
+
     //GET inicial (loadInitialData) para inicializar
     app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
     smokersStats=[
@@ -157,7 +159,7 @@ module.exports.register = (app) => {
     //DELETE A LISTA DE RECURSOS DE SMOKERS STATS
     app.delete(BASE_API_PATH+"/smokers-stats", (req,res) => {
         db.remove({}, {multi: true}, (err, numDataRemoved) => {
-            if (err){
+            if (err || numDataRemoved == 0){
                 console.log("ERROR deleting DB: "+err);
                 res.sendStatus(500);
             }else{
@@ -277,7 +279,7 @@ module.exports.register = (app) => {
         var reqyear = parseInt(req.params.year);
 
         db.remove({province : reqprovince, year : reqyear},{multi:true}, (err, data) => {
-            if (err) {
+            if (err || data == 0) {
                 console.error("ERROR in GET: "+err);
                 res.sendStatus(500);
             } else {
