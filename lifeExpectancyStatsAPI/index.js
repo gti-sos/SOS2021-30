@@ -12,10 +12,8 @@ var lifeExpectancyStats = [];
 module.exports.register = (app) => {
     
 
-    
 
-
-
+    app.get(BASE_API_PATH+"/loadInitialData",(req,res)=>{
 
 
         lifeExpectancyStats=[
@@ -45,9 +43,14 @@ module.exports.register = (app) => {
             }
         ];
 
-
-
+        db.remove({}, { multi: true }, function (err, numRemoved) {
+        });
         db.insert(lifeExpectancyStats);
+        res.send(JSON.stringify(lifeExpectancyStats,null,2));
+    });
+
+
+        
 
     //GET A LA LISTA DE RECURSOS
         app.get(BASE_API_PATH,(req,res)=>{
@@ -103,12 +106,188 @@ module.exports.register = (app) => {
       }
     });
  
-    //DELETE A RECURSO
+        //DELETE A LA LISTA DE RECURSOS
+        app.delete(BASE_API_PATH,(req,res)=>{
+            db.remove({}, { multi: true },(err, numRemoved)=>{
+                if (err) {
+                    console.error("ERROR deleting DB stats in DELETE");
+                    res.sendStatus(500);
+                } else {
+                    if (numRemoved == 0) {
+                        console.error("ERROR stats not found");
+                        res.sendStatus(404);
+                    } else {
+                        res.sendStatus(200);
+                    }
+                }
+            });
+        });
 
-    app.delete(BASE_API_PATH+"/:province",(req,res)=>{
+
+
+
+    //GET A RECURSO /
+        /*
+    app.get(BASE_API_PATH,(req, res) => {
+        console.log("GET LIFE STATS");
+        
+        var request = {};
+        if(req.query.country) request["country"] = req.query.country;
+        if(req.query.province) request["province"] = req.query.province;
+        if(req.query.year) request["year"] = parseInt(req.query.year);
+        if(req.query.lifeExpectancyWoman) request["lifeExpectancyWoman"] = parseFloat(req.query.lifeExpectancyWoman);
+        if(req.query.lifeExpectancyMan) request["lifeExpectancyMan"] = parseFloat(req.query.lifeExpectancyMan);
+        if(req.query.averageLifeExpectancy) request["averageLifeExpectancy"] = parseFloat(req.query.averageLifeExpectancy);
+        
+        var offset = parseInt(req.query.offset) || 0;
+        var limit = parseInt(req.query.limit) || Number.MAX_SAFE_INTEGER;
+        
+        db.find(request,{}).skip(offset).limit(limit).exec((err, lifeExpectancyStatsInDB) => {
+            //la query se pone entre llaves, para que devuelva todo se deja vacío si se pone name: "nono"  sólo devuelve los nono
+            lifeExpectancyStatsInDB.forEach((c) => {
+                delete c._id;
+            });
+            if(lifeExpectancyStatsInDB.length>=1){
+                console.log("Recurso encontrado");
+                if(lifeExpectancyStatsInDB.length == 1){
+                    res.send(JSON.stringify(lifeExpectancyStatsInDB[0],null,2));
+            console.log("Data sent: "+JSON.stringify(lifeExpectancyStatsInDB,null,2));
+                }else{
+                    res.send(JSON.stringify(lifeExpectancyStatsInDB,null,2));
+                    console.log("Data sent: "+JSON.stringify(lifeExpectancyStatsInDB,null,2));
+                    }			
+            }else{
+                console.log("ERROR. No se encuentra el recurso.");
+                res.sendStatus(404, "El recurso no existe.");
+            }
+            
+        });
+        
+    });	
+    
+    app.get(BASE_API_PATH+"/:country",(req, res) => {
+        console.log("GET COUNTRY_f03");
+        
+        var country = req.params.country;
+        
+        db.find({country}, (err, lifeExpectancyStatsInDB) => {
+            //la query se pone entre llaves, para que devuelva todo se deja vacío si se pone name: "nono"  sólo devuelve los nono
+            lifeExpectancyStatsInDB.forEach((c) => {
+                delete c._id;
+            });
+            if(lifeExpectancyStatsInDB.length>=1){
+                console.log("El pais existe. Enviado");
+                if(lifeExpectancyStatsInDB.length ==1 ){
+                    res.send(JSON.stringify(lifeExpectancyStatsInDB[0],null,2));
+            console.log("Data sent: "+JSON.stringify(lifeExpectancyStatsInDB,null,2));
+                }else{
+                    res.send(JSON.stringify(lifeExpectancyStatsInDB,null,2));
+            console.log("Data sent: "+JSON.stringify(lifeExpectancyStatsInDB,null,2));
+                }
+                
+            }else{
+                console.log("ERROR. No existe ese pais");
+                res.sendStatus(404,"ERROR. No existe ese pais.");
+            }
+            
+        });
+        
+    });
+    
+    app.get(BASE_API_PATH+"/:country/:year",(req, res) => {
+        console.log("GET YEAR");
+        
+        var country = req.params.country;
+        var year = parseInt(req.params.year);
+        
+        db.find({country, year}, (err, lifeExpectancyStatsInDB) => {
+            //la query se pone entre llaves, para que devuelva todo se deja vacío si se pone name: "nono"  sólo devuelve los nono
+            lifeExpectancyStatsInDB.forEach((c) => {
+                delete c._id;
+            });
+            if(lifeExpectancyStatsInDB.length >= 1){
+                console.log("recurso+year encontrado.");
+                res.send(JSON.stringify(lifeExpectancyStatsInDB[0],null,2));
+                console.log("Data sent: "+JSON.stringify(lifeExpectancyStatsInDB,null,2));
+            }else{
+                console.log("recurso+year NO EXISTE.");
+                res.sendStatus(404,"ERROR. No existe ese pais.");
+            }
+            
+        });
+        
+    });
+    
+    */
+
+
+
+
+    //GET A RECURSO /province/year
+    app.get(BASE_API_PATH+"/:province/:year",(req,res)=>{
+
+        var provinceToGet = req.params.province;
+        var yearToGet = req.params.year;
+
+        db.find({$and: [{ province: provinceToGet }, { year: yearToGet }]},(err, lifeExpectancyStatsInDB)=>{
+            if(err){
+                console.log("ERROR getting DB stat in GET: "+ err);
+                res.sendStatus(500);
+            }else {
+                if (lifeExpectancyStatsInDB.length == 0) {
+                    console.error("No data found");
+                    res.sendStatus(404);
+                } else {
+                    var lifeStatsToSend = lifeExpectancyStatsInDB.map((l)=>{
+                        return{country : l.country,
+                            province : l.province, 
+                            year : l.year,
+                            lifeExpectancyWoman : l.lifeExpectancyWoman,
+                            lifeExpectancyMan : l.lifeExpectancyMan,
+                            averageLifeExpectancy : l.averageLifeExpectancy};
+                    });
+                    res.status(200).send(JSON.stringify(lifeStatsToSend[0], null, 2));
+                }
+            }
+            
+        });
+    });
+
+    //PUT A RECURSO /province/year
+
+    app.put(BASE_API_PATH+"/:province/:year",(req,res)=>{
+
+        var provinceToGet = req.params.province;
+        var yearToGet = req.params.year;
+        var newLifeStat = req.body;
+
+        if(Object.keys(newLifeStat).length!=6){
+            res.status(400).json({error: 'Bad request'});
+        }else{
+            db.update({$and: [{ province: provinceToGet }, { year: yearToGet }]} ,{$set:newLifeStat},{},(err, lifeExpectancyStatsInDB)=>{
+                if(err){
+                    console.log("Error accessing DB in GET: "+ err);
+                    res.sendStatus(500);
+                }else{
+                    if (lifeExpectancyStatsInDB.length == 0) {
+                        console.error("No data found");
+                        res.sendStatus(404);
+                    } else {
+                        console.log(`Valores del recurso actualizados`);
+                        res.sendStatus(200);
+                    }
+                }
+            });
+        }
+    });
+
+    //DELETE A RECURSO /province/year
+
+    app.delete(BASE_API_PATH+"/:province/:year",(req,res)=>{
         var provinceToBeDeleted = req.params.province;
+        var yearToBeDeleted = req.params.year;
 
-        db.remove({province : provinceToBeDeleted},{},(err,numStatsRemoved)=>{
+        db.remove({province : provinceToBeDeleted,year : yearToBeDeleted},{},(err,numStatsRemoved)=>{
             if(err){
                 console.error("ERROR deleting DB stat in DELETE:" + err);
                 res.sendStatus(500);
@@ -122,6 +301,19 @@ module.exports.register = (app) => {
         });
 
     })
+
+    //POST  A RECURSO /province/year (Debe dar error)
+    app.post(BASE_API_PATH+"/:province/:year",(req,res)=>{
+        res.sendStatus(405);
+    });
+
+
+    //PUT A LA LISTA DE RECURSOS (Debe dar error)
+    app.put(BASE_API_PATH,(req,res)=>{
+        res.sendStatus(405);
+    });
+
+
 
 
     //Metodos no DB
