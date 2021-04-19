@@ -4,10 +4,10 @@ const { sortBy } = require("underscore");
 
 var db = new Datastore();
 
-var BASE_API_PATH = "/api/v1";
+var BASE_API_PATH = "/api/v1/life-expectancy-stats";
 
+var lifeExpectancyStats = [];
 
-var lifeExpectancyStats=[];
  
 module.exports.register = (app) => {
     
@@ -16,66 +16,81 @@ module.exports.register = (app) => {
 
 
 
-    app.get(BASE_API_PATH+"/life-expectancy-stats/loadInitialData",(req,res)=>{
+
+
         lifeExpectancyStats=[
             {
-                "id":1,
                 "country":"España",
                 "province":"Andalucia",
                 "year":"2017",
                 "lifeExpectancyWoman":"84,41",
-                "lifeExpentancyMan":"79,23",
+                "lifeExpectancyMan":"79,23",
                 "averageLifeExpectancy":"81,63"
             },
             {
-                "id":2,
                 "country":"España",
                 "province":"Aragón",
                 "year":"2017",
                 "lifeExpectancyWoman":"86,06",
-                "lifeExpentancyMan":"80,43",
+                "lifeExpectancyMan":"80,43",
                 "averageLifeExpectancy":"83,23"
             },
             {
-                "id":3,
                 "country":"España",
                 "province":"Asturias",
                 "year":"2017",
                 "lifeExpectancyWoman":"85,51",
-                "lifeExpentancyMan":"79,50",
+                "lifeExpectancyMan":"79,50",
                 "averageLifeExpectancy":"82,58"
             }
         ];
-        res.send(JSON.stringify(lifeExpectancyStats,null,2));
-    });
 
 
-    db.insert(lifeExpectancyStats);
 
-    app.get(BASE_API_PATH+"/life-expectancy-stats", (req,res)=>{
+        db.insert(lifeExpectancyStats);
 
-        db.find({},(err, lifeExpectancyStats)=>{
-            if(err){
-                console.error("");
-                res.sendStatus(500);
-            }else{
-                res.send(JSON.stringify(lifeExpectancyStats,null,2));
-            }
+    //GET A LA LISTA DE RECURSOS
+        app.get(BASE_API_PATH,(req,res)=>{
+            db.find({}, (err,lifeExpectancyStatsInDB)=>{
+                if(err){
+                    console.log("Error accessing DB in GET: "+ err);
+                    res.sendStatus(500);
+                }else{
+                    if (lifeExpectancyStatsInDB.length == 0) {
+                        console.error("No data found");
+                        res.sendStatus(404);
+                    } else {
+                        var lifeStatsToSend = lifeExpectancyStatsInDB.map((l)=>{
+                            return{country : l.country,
+                                province : l.province, 
+                                year : l.year,
+                                lifeExpectancyWoman : l.lifeExpectancyWoman,
+                                lifeExpectancyMan : l.lifeExpectancyMan,
+                                averageLifeExpectancy : l.averageLifeExpectancy};
+                        });
+                        console.log("GET to the resource list");
+                        res.status(200).send(JSON.stringify(lifeStatsToSend, null, 2));
+                    }
+                }
+            });
         });
-            
 
-        });
+    //POST A LA LISTA DE RECURSOS
 
-
-    app.post(BASE_API_PATH+"/life-expectancy-stats", (req,res)=>{
+    app.post(BASE_API_PATH, (req,res)=>{
         var newLifeStat = req.body;
 
-        db.find({name : newLifeStat.country},(err, lifeExpectancyStats)=>{
+        console.log(`new stat to be added: <${JSON.stringify(newLifeStat,null,2)}>`);
+        if(Object.keys(newLifeStat).length!=6){
+            console.log("Bad Request");
+            res.sendStatus(400);
+        }else{
+        db.find({province : newLifeStat.province,year : newLifeStat.year},(err, lifeExpectancyStatsInDB)=>{
             if(err){
-                console.error("");
+                console.error("ERROR accesing DB in POST: " + err);
                 res.sendStatus(500);
             }else{
-                if(lifeExpectancyStats.length == 0){
+                if(lifeExpectancyStatsInDB.length == 0){
                     console.log("Inserting new life expectancy stat in db:"+ JSON.stringify(newLifeStat,null,2));
                     db.insert(newLifeStat);
                     res.sendStatus(201);
@@ -85,25 +100,40 @@ module.exports.register = (app) => {
                
             }
         });
-
-        db.insert(newLifeStat);
-
-        res.sendStatus(201);
-
+      }
     });
  
+    //DELETE A RECURSO
+
+    app.delete(BASE_API_PATH+"/:province",(req,res)=>{
+        var provinceToBeDeleted = req.params.province;
+
+        db.remove({province : provinceToBeDeleted},{},(err,numStatsRemoved)=>{
+            if(err){
+                console.error("ERROR deleting DB stat in DELETE:" + err);
+                res.sendStatus(500);
+            }else{
+                if(numStatsRemoved == 0){
+                    res.sendStatus(404);
+                }else{
+                    res.sendStatus(200);
+                }
+            }
+        });
+
+    })
 
 
+    //Metodos no DB
 
-
-
+/*
     //GET A UNA LISTA DE RECURSOS
-        app.get(BASE_API_PATH+"/life-expectancy-stats",(req,res)=>{
+        app.get(BASE_API_PATH,(req,res)=>{
             res.send(JSON.stringify(lifeExpectancyStats,null,2));
             res.sendStatus(200);
         });
     //POST A LA LISTA DE RECURSOS
-        app.post(BASE_API_PATH+"/life-expectancy-stats",(req,res)=>{
+        app.post(BASE_API_PATH,(req,res)=>{
             const id = lifeExpectancyStats.length +1;
             var newStat={...req.body,id};
             console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
@@ -111,7 +141,7 @@ module.exports.register = (app) => {
             res.sendStatus(201);
         });
     //GET A UN RECURSO 
-        app.get(BASE_API_PATH+"/life-expectancy-stats/:province/:year",(req,res)=>{
+        app.get(BASE_API_PATH+"/:province/:year",(req,res)=>{
             const {province,year} = req.params;
             console.log(province);
             console.log(year);
@@ -128,7 +158,7 @@ module.exports.register = (app) => {
 
 
     //DELETE A UN RECURSO
-        app.delete(BASE_API_PATH +"/life-expectancy-stats/:province/:year", (req, res) =>{ 
+        app.delete(BASE_API_PATH +"/:province/:year", (req, res) =>{ 
             const {province,year} = req.params;
 
             for (var i = 0; i <  lifeExpectancyStats.length; i++){
@@ -141,7 +171,7 @@ module.exports.register = (app) => {
         });
 
     //PUT A UN RECURSO
-        app.put(BASE_API_PATH+"/life-expectancy-stats/:province/:year",(req,res)=>{
+        app.put(BASE_API_PATH+"/:province/:year",(req,res)=>{
             const {province,year} = req.params;
             const {country,provinceData,yearData,lifeExpectancyWoman,lifeExpentancyMan,averageLifeExpectancy}=req.body;
                 for (var i = 0; i <  lifeExpectancyStats.length; i++){
@@ -166,7 +196,7 @@ module.exports.register = (app) => {
             
         });
 
-        app.put(BASE_API_PATH+"/life-expectancy-stats/:id",(req,res)=>{
+        app.put(BASE_API_PATH+"/:id",(req,res)=>{
             const {id} = req.params;
             const {country,province,year,lifeExpectancyWoman,lifeExpentancyMan,averageLifeExpectancy}=req.body;
             if(country&&province&&year&&lifeExpectancyWoman&&lifeExpentancyMan&&averageLifeExpectancy){
@@ -190,22 +220,24 @@ module.exports.register = (app) => {
             });
 
     //POST A UN RECURSO (Debe dar error)
-        app.post(BASE_API_PATH+"/life-expectancy-stats/:province/:year",(req,res)=>{
+        app.post(BASE_API_PATH+"/:province/:year",(req,res)=>{
             res.sendStatus(405);
         });
 
 
     //PUT A UNA LISTA DE RECURSOS (Debe dar error)
-        app.put(BASE_API_PATH+"/life-expectancy-stats/",(req,res)=>{
+        app.put(BASE_API_PATH,(req,res)=>{
             res.sendStatus(405);
         });
 
     //DELETE A LISTA DE RECURSOS
-        app.delete(BASE_API_PATH+"/life-expectancy-stats/",(req,res)=>{
+        app.delete(BASE_API_PATH,(req,res)=>{
             lifeExpectancyStats.splice(0, lifeExpectancyStats.length);
             //Envio de recurso actualizado
             res.send(lifeExpectancyStats);
             res.sendStatus(200);
         });
+
+*/
 
 };
