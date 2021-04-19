@@ -1,5 +1,7 @@
-var _= require("underscore");
 var BASE_API_PATH = "/api/v1";
+var Database = require("nedb");
+
+var db = new Database();
 
 var  alcoholConsumptionStats= [];
 
@@ -8,106 +10,181 @@ module.exports.register = (app) => {
 
         alcoholConsumptionStats=[
             {
-                "id":1,
                 "country":"España",
-                "years":"2017",
+                "year":"2017",
                 "ageRange":"0-5",
                 "alcoholPrematureDeath":0,
                 "prevalenceOfAlcoholUseDisorder":0.00
             },
             {
-                "id":2,
                 "country":"España",
-                "years":"2017",
+                "year":"2017",
                 "ageRange":"5-14",
                 "alcoholPrematureDeath":10,
                 "prevalenceOfAlcoholUseDisorder":0.05
             }
         ];
+        // Inicialización base de datos
+        //Borra todo lo anterior para evitar duplicidades al hacer loadInitialData
+        db.remove({}, { multi: true }, function (err, numRemoved) {
+        });
+        // Inserta los datos iniciales en la base de datos
+        db.insert(alcoholConsumptionStats);
+
         res.send(JSON.stringify(alcoholConsumptionStats,null,2));
     });
+
     
-    //GET A UNA LISTA DE RECURSOS
+    //GET A UNA LISTA DE RECURSOS (Funciona)
     app.get(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
-        res.send(JSON.stringify(alcoholConsumptionStats,null,2));
-        res.sendStatus(200);
+        db.find({}, (err,statsInDB)=>{
+            if(err){
+                console.log("Error accessing DB in GET: "+ err);
+                res.sendStatus(500);
+            }else{
+                if (statsInDB.length == 0) {
+                    console.error("No data found");
+                    res.sendStatus(404);
+                } else {
+                    var statsToSend = statsInDB.map((stats)=>{
+                        return{country: stats.country, year: stats.year,ageRange: stats.ageRange, alcoholPrematureDeath: stats.alcoholPrematureDeath,
+                        prevalenceOfAlcoholUseDisorder: stats.prevalenceOfAlcoholUseDisorder};
+                    });
+                    console.log(`GET to all resources`);
+                    res.status(200).send(JSON.stringify(statsToSend, null, 2));
+                }
+            }
+        });
     });
-    //POST A LA LISTA DE RECURSOS
+    //POST A LA LISTA DE RECURSOS (Funciona)
     app.post(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
         var newIncomingStat=req.body;
-        if(Object.keys(newIncomingStat).length!=6){
+
+        console.log(`new alcohol stat to be added <${JSON.stringify(newIncomingStat,null,2)}>`);
+
+        if(Object.keys(newIncomingStat).length!=5){
             res.status(400).json({error: 'Bad request'});
         }else{
-            const id = alcoholConsumptionStats.length +1;
-            var newStat={...req.body,id};
-            console.log(`new stat added: <${JSON.stringify(newStat,null,2)}>`);
-            alcoholConsumptionStats.push(newStat);
-            res.sendStatus(201);
-        }
-        res.end();
-    });
-    //GET A UN RECURSO 
-    app.get(BASE_API_PATH+"/alcohol-consumption-stats/:id",(req,res)=>{
-        const {id} = req.params;
-        _.each(alcoholConsumptionStats,(alcoholConsumptionStat,i)=>{
-            if(alcoholConsumptionStat.id==id){
-                res.send(JSON.stringify(alcoholConsumptionStat,null,2));
-            }
-        });
-        res.sendStatus(200);
-    });
-    
-    //PUT A UN RECURSO
-    app.put(BASE_API_PATH+"/alcohol-consumption-stats/:id",(req,res)=>{
-        const {id} = req.params;
-        const {country,years,ageRange,alcoholPrematureDeath,prevalenceOfAlcoholUseDisorder}=req.body;
-        if(country&&years&&ageRange&&alcoholPrematureDeath&&prevalenceOfAlcoholUseDisorder){
-            _.each(alcoholConsumptionStats,(alcoholConsumptionStat,i)=>{
-                if(alcoholConsumptionStat.id==id){
-                    alcoholConsumptionStat.country=country;
-                    alcoholConsumptionStat.years=years;
-                    alcoholConsumptionStat.ageRange=ageRange;
-                    alcoholConsumptionStat.alcoholPrematureDeath=alcoholPrematureDeath;
-                    alcoholConsumptionStat.prevalenceOfAlcoholUseDisorder=prevalenceOfAlcoholUseDisorder;
-                    
-                };
+            db.find({$and:[{country: newIncomingStat.country},{year: newIncomingStat.year},{ageRange: newIncomingStat.ageRange}]},(err,statsInDB)=>{
+                if(err){
+                    console.log("Error accessing DB in GET: "+ err);
+                    res.sendStatus(500);
+                }else{
+                    if(statsInDB.length==0){
+                        console.log(`Inserting new alcohol stat in db: <${JSON.stringify(newIncomingStat,null,2)}>`);
+                        db.insert(newIncomingStat);
+                        res.sendStatus(201); // Recurso creado
+                    }else{
+                        res.sendStatus(409); //Conflicto
+                    }
+                }
             });
-            res.json(alcoholConsumptionStats);
-            res.status(200);
+        };
         
-        }else{
-            res.status(500).json({error: 'There was an error.'});
-        }
     });
-    //DELETE A UN RECURSO
-    app.delete(BASE_API_PATH+"/alcohol-consumption-stats/:id",(req,res)=>{
-        const {id} = req.params;
-        _.each(alcoholConsumptionStats,(alcoholConsumptionStat,i)=>{
-            if(alcoholConsumptionStat.id==id){
-                alcoholConsumptionStats.splice(i,1);
-                res.send(alcoholConsumptionStats);
-                res.sendStatus(200);
-            }else{
-                res.sendStatus(404);
+
+    //GET A UN RECURSO (Funciona)
+    app.get(BASE_API_PATH+"/alcohol-consumption-stats/:country/:year/:ageRange",(req,res)=>{
+
+        var pais = req.params.country;
+        var año = req.params.year;
+        var rangoEdad = req.params.ageRange;
+
+        db.find({$and: [{ country: pais }, { year: año },{ ageRange: rangoEdad } ]},(err, statsInDB)=>{
+            if(err){
+                console.log("Error accessing DB in GET: "+ err);
+                res.sendStatus(500);
+            }else {
+                if (statsInDB.length == 0) {
+                    console.error("No data found");
+                    res.sendStatus(404);
+                } else {
+                    var statsToSend = statsInDB.map((stats)=>{
+                        return{country: stats.country, year: stats.year,ageRange: stats.ageRange, alcoholPrematureDeath: stats.alcoholPrematureDeath,
+                        prevalenceOfAlcoholUseDisorder: stats.prevalenceOfAlcoholUseDisorder};
+                    });
+                    console.log(`GET stat by country: <${pais}> , year: <${año}> and age range: <${rangoEdad}> `);
+                    res.status(200).send(JSON.stringify(statsToSend[0], null, 2));
+                }
             }
+            
         });
     });
+
     
-    //DELETE A LISTA DE RECURSOS
+    //PUT A UN RECURSO (Funciona)
+    app.put(BASE_API_PATH+"/alcohol-consumption-stats/:country/:year/:ageRange",(req,res)=>{
+
+        var pais = req.params.country;
+        var año = req.params.year;
+        var rangoEdad = req.params.ageRange;
+        var newIncomingStat = req.body;
+
+        if(Object.keys(newIncomingStat).length!=5){
+            res.status(400).json({error: 'Bad request'});
+        }else{
+            db.update({$and: [{ country: pais }, { year: año },{ ageRange: rangoEdad } ]} ,{$set:newIncomingStat},{},(err, statsInDB)=>{
+                if(err){
+                    console.log("Error accessing DB in GET: "+ err);
+                    res.sendStatus(500);
+                }else{
+                    if (statsInDB.length == 0) {
+                        console.error("No data found");
+                        res.sendStatus(404);
+                    } else {
+                        console.log(`Valores del recurso actualizados`);
+                        res.sendStatus(200);
+                    }
+                }
+            });
+        }
+    });
+    //DELETE A UN RECURSO (Funciona)
+    app.delete(BASE_API_PATH+"/alcohol-consumption-stats/:country/:year/:ageRange",(req,res)=>{
+
+        var pais = req.params.country;
+        var año = req.params.year;
+        var rangoEdad = req.params.ageRange;
+
+        db.remove({ $and: [{ country: pais }, { year: año }, { ageRange: rangoEdad}] }, { multi: true }, function (err, dataDeleted) {
+            if (err) {
+                console.error("ERROR accesing DB in DELETE");
+                res.sendStatus(500);
+            } else {
+                if (dataDeleted.length == 0) {
+                    console.error("No data found");
+                    res.sendStatus(404);
+                } else {
+                    console.log(`stat with country: <${pais}>, year: <${año}> and ageRange: <${rangoEdad}> deleted`);
+                    res.sendStatus(200);
+                }
+            }
+        });
+
+    });
+    
+    //DELETE A LISTA DE RECURSOS (Funciona)
     app.delete(BASE_API_PATH+"/alcohol-consumption-stats/",(req,res)=>{
-        alcoholConsumptionStats.splice(0, alcoholConsumptionStats.length);
-        //Envio de recurso actualizado
-        res.send(alcoholConsumptionStats);
-        res.sendStatus(200);
+        db.remove({}, { multi: true },(err, numRemoved)=>{
+            if (err) {
+                console.error("ERROR deleting DB contacts in DELETE");
+                res.sendStatus(500);
+            } else {
+                if (numRemoved == 0) {
+                    console.error("ERROR alcohol stats not found");
+                    res.sendStatus(404);
+                } else {
+                    res.sendStatus(200);
+                }
+            }
+        });
     });
     //PUT A UNA LISTA DE RECURSOS (Debe dar error)
     app.put(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
         res.sendStatus(405);
     });
     //POST A UN RECURSO (Debe dar error)
-    app.post(BASE_API_PATH+"/alcohol-consumption-stats/:id",(req,res)=>{
+    app.post(BASE_API_PATH+"/alcohol-consumption-stats/:country/:year/:ageRange",(req,res)=>{
         res.sendStatus(405);
     });
-    
-
 };
