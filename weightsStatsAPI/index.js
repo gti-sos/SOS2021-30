@@ -37,7 +37,61 @@ module.exports.register = (app) => {
                 "normal_weight": 47.6,
                 "overweight": 39.2,
                 "obesity": 13.2
-            }
+            },
+            {
+                "id": 4,
+                "country": 'España',
+                "provinces": 'Cataluña',
+                "year": 2017,
+                "normal_weight": 48.4,
+                "overweight": 36.7,
+                "obesity": 14.9
+            },
+            {
+                "id": 5,
+                "country": 'España',
+                "provinces": 'Comunidad Valenciana',
+                "year": 2017,
+                "normal_weight": 45.0,
+                "overweight": 36.2,
+                "obesity": 18.8
+            },
+            {
+                "id": 6,
+                "country": 'España',
+                "provinces": 'País Vasco',
+                "year": 2017,
+                "normal_weight": 50.3,
+                "overweight": 35.9,
+                "obesity": 13.8
+            },
+            {
+                "id": 7,
+                "country": 'España',
+                "provinces": 'Aragón',
+                "year": 2017,
+                "normal_weight": 47.5,
+                "overweight": 36.8,
+                "obesity": 15.7
+            },
+            {
+                "id": 8,
+                "country": 'España',
+                "provinces": 'Comunidad de Madrid',
+                "year": 2017,
+                "normal_weight": 48.9,
+                "overweight": 35.2,
+                "obesity": 15.9
+            },
+            {
+                "id": 9,
+                "country": 'España',
+                "provinces": 'La Rioja',
+                "year": 2017,
+                "normal_weight": 47.5,
+                "overweight": 37.5,
+                "obesity": 15.0
+            },
         ];
 
         db.find({},(err, data) => {
@@ -58,27 +112,32 @@ module.exports.register = (app) => {
     });
 
     //6.1 - GET a la lista de recursos
-    app.get(BASE_WEIGHTS_PATH, (req, res) => {
-        db.find({}, (err, weightsInDB) => {
-            if(err){
-                console.log("ERROR accessing DB in GET: " + err);
-                res.sendStatus(500);
-            }else{
-                var weightsToSend = weightsInDB.map((c) => {
-                    return{
-                        id : c.id,
-                        country : c.country,
-                        provinces : c.provinces,
-                        year : c.year,
-                        normal_weight : c.normal_weight,
-                        overweight : c.overweight,
-                        obesity : c.obesity
-                    };
-                });
-                res.send(JSON.stringify(weightsToSend,null,2));
-            }
-        });
-    });
+    app.get(BASE_WEIGHTS_PATH, (req,res)=>{
+		var query = req.query;
+        var limit = parseInt(query.limit);
+        var offset = parseInt(query.offset);
+        var dbquery = {};
+		
+		//BUSQUEDA
+        if(req.query.id) dbquery["id"]= parseInt(req.query.id);
+		if(req.query.country) dbquery["country"]= req.query.country;
+        if(req.query.provinces) dbquery["provinces"]= req.query.provinces;
+		if(req.query.year) dbquery["year"] = parseInt(req.query.year);
+		if(req.query.normal_weight) dbquery["normal_weight"] = parseFloat(req.query.normal_weight);
+		if(req.query.overweight) dbquery["overweight"] = parseFloat(req.query.overweight);
+		if(req.query.obesity) dbquery["obesity"] = parseFloat(req.query.obesity);	
+		
+		db.find(dbquery).sort({country:1,year:-1}).skip(offset).limit(limit).exec((error, obesity) =>{
+
+			obesity.forEach((t)=>{
+				delete t._id
+			});
+
+			res.send(JSON.stringify(obesity,null,2));
+			console.log("The GET REQUEST have been send");
+		});
+    
+ });
 
     //6.2 - POST a la lista de recursos
     app.post(BASE_WEIGHTS_PATH, (req, res) => {
