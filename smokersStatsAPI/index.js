@@ -2,6 +2,8 @@ var _= require("underscore");
 var Datastore = require("nedb");
 var db = new Datastore();
 
+const { sortBy } = require("underscore");
+
 var BASE_API_PATH = "/api/v1";
 var smokersStats = [];
 
@@ -277,7 +279,7 @@ module.exports.register = (app) => {
         var reqyear = parseInt(req.params.year);
 
         db.remove({province : reqprovince, year : reqyear},{multi:true}, (err, data) => {
-            if (err) {
+            if (err || data == 0) {
                 console.error("ERROR in GET: "+err);
                 res.sendStatus(500);
             } else {
