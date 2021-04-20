@@ -218,7 +218,7 @@ module.exports.register = (app) => {
                     if (data.length == 0) {
                         console.error("No data found.");
                         res.status(404).send(`Not  found. Data is not in DB.`);
-                    }else if (data.length == 8){
+                    }else if (dataNew.length == 8){
                         console.log(`Valores del recurso actualizados.`);
                         res.status(200).send(`Se ha actualizado correctamente el recurso.`);
                     }
