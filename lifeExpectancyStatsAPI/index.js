@@ -168,7 +168,7 @@ module.exports.register = (app) => {
     app.get(BASE_API_PATH+"/:province/:year",(req,res)=>{
 
         var provinceToGet = req.params.province;
-        var yearToGet = req.params.year;
+        var yearToGet = parseInt(req.params.year);
 
         db.find({$and: [{ province: provinceToGet }, { year: yearToGet }]},(err, lifeExpectancyStatsInDB)=>{
             if(err){
@@ -199,7 +199,7 @@ module.exports.register = (app) => {
     app.put(BASE_API_PATH+"/:province/:year",(req,res)=>{
 
         var provinceToGet = req.params.province;
-        var yearToGet = req.params.year;
+        var yearToGet = parseInt(req.params.year);
         var newLifeStat = req.body;
 
         if(Object.keys(newLifeStat).length!=6){
@@ -226,7 +226,7 @@ module.exports.register = (app) => {
 
     app.delete(BASE_API_PATH+"/:province/:year",(req,res)=>{
         var provinceToBeDeleted = req.params.province;
-        var yearToBeDeleted = req.params.year;
+        var yearToBeDeleted = parseInt(req.params.year);
 
         db.remove({province : provinceToBeDeleted,year : yearToBeDeleted},{},(err,numStatsRemoved)=>{
             if(err){
