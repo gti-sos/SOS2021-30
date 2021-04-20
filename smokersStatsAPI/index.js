@@ -109,8 +109,8 @@ module.exports.register = (app) => {
 
         //"Parseamos" los datos a su tipo original antes de buscar
         if (req.query.id) dbquery["id"] = parseInt(req.query.id);
-        if (req.query.country) dbquery["country"] = parseInt(req.query.country);
-        if (req.query.province) dbquery["province"] = parseInt(req.query.province);
+        if (req.query.country) dbquery["country"] = req.query.country;
+        if (req.query.province) dbquery["province"] = req.query.province;
         if (req.query.year) dbquery["year"] = parseInt(req.query.year);
         if (req.query.dailySmoker) dbquery["dailySmoker"] = parseFloat(req.query.dailySmoker);
         if (req.query.ocasionalSmoker) dbquery["ocasionalSmoker"] = parseFloat(req.query.ocasionalSmoker);
@@ -135,7 +135,7 @@ module.exports.register = (app) => {
     //POST A LA LISTA DE RECURSOS DE SMOKERS-STATS
     
     app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
-        id = req.body.id;
+        id = parseInt(req.body.id);
         country = req.body.country;
         province = req.body.province;
         year = parseInt(req.body.year);
@@ -143,8 +143,6 @@ module.exports.register = (app) => {
         ocasionalSmoker = parseFloat(req.body.ocasionalSmoker);
         exSmoker = parseFloat(req.body.exSmoker);
         nonSmoker = parseFloat(req.body.nonSmoker);
-
-        console.log(`new data to be added: <${JSON.stringify(newData,null,2)}>`);
     
         db.find({ $and: [{ province: province, year: year }] }, function (err, data) {
             if (err){
