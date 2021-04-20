@@ -169,7 +169,7 @@ module.exports.register = (app) => {
                         }
                         db.insert(newData);
                         res.status(201).send(`Data inserted in DB: <${JSON.stringify(newData,null,2)}>`);
-                    }else {
+                    }else if (typeof id == null || country == null || province == '' || typeof year == null || dailySmoker == null || ocasionalSmoker == null || exSmoker == null || nonSmoker == null){
                         console.log("Invalid format of temperature.")
                         res.status(400).send("Invalid format of temperature.");
                     }
