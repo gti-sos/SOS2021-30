@@ -198,16 +198,16 @@ module.exports.register = (app) => {
     });
 
     //PUT A UN RECURSO CONCRETO DE SMOKER POR PROVINCE/YEAR 
-    app.put(BASE_API_PATH + "/:province/:year", (req,res)=>{
-        var reqprovince = req.params.province;
-        var reqyear = parseInt(req.params.year);
-        var data = req.body;
+    app.put(BASE_API_PATH + "/smokers-stats/:province/:year", (req,res)=>{
+        var province = req.params.province;
+        var year = parseInt(req.params.year);
+        var dataNew = req.body;
         
         if (Object.keys(dataNew).length != 8) {
             console.log("Actualizacion de campos no valida.")
             res.sendStatus(400);
         } else {
-            db.update({$and: [{ province: province }, { year: año }]} ,{$set:dataNew},{},(err, data)=> {
+            db.update({$and: [{ province: province }, { year: year }]} ,{$set:dataNew},{},(err, data)=> {
                 if (err) {
                     console.error("ERROR accesing DB in GET. "+err);
                     res.sendStatus(500);
