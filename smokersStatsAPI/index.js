@@ -175,9 +175,11 @@ module.exports.register = (app) => {
         _.each(smokersStats,(smokersStats,i)=>{
             if(smokersStats.id==id){
                 res.send(JSON.stringify(smokersStats,null,2));
+                res.sendStatus(200);
+            }else{
+                res.sendStatus(500);
             }
-        });
-        res.sendStatus(200);
+        })
     });
 
     //GET A UN RECURSO CONCRETO DE SMOKER POR PROVINCE/YEAR    
