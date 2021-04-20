@@ -147,27 +147,29 @@ module.exports.register = (app) => {
 
         console.log(`new data to be added: <${JSON.stringify(newData,null,2)}>`);
     
-        db.find({province : newData.province}, (err, data) => {
+        db.find({ $and: [{ province: province, year: year }] }, function (err, data) {
             if (err){
                 console.log("ERROR accesing DB in POST: "+err);
                 res.sendStatus(500);
             }else{
-                }if (data.length > 0){
+                if (data.length > 0){
                     console.log("Data already exists in DB.");
                     res.sendStatus(409);
                 }else {
                     if (data.length == 0){
-                    console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>.`);
-                    db.insert(newData);
-                    res.status(201).send(`Data inserted in DB: <${JSON.stringify(newData,null,2)}>`);
-                }else if (typeof id == null || country == null || province == null || typeof year == null || dailySmoker == null || ocasionalSmoker == null || exSmoker == null || nonSmoker == null){
-                    console.log("Invalid format of temperature.")
-                    res.status(400).send("Invalid format of temperature.");
+                        console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>.`);
+                        db.insert(newData);
+                        res.status(201).send(`Data inserted in DB: <${JSON.stringify(newData,null,2)}>`);
+                    }else if (typeof id == null || country == null || province == null || typeof year == null || dailySmoker == null || ocasionalSmoker == null || exSmoker == null || nonSmoker == null){
+                        console.log("Invalid format of temperature.")
+                        res.status(400).send("Invalid format of temperature.");
+                    }
+                
                 }
             }
-        })
+        });
     });
-    
+    /*
     app.post(BASE_API_PATH + "/smokers-stats", (req, res) => {
         country = req.body.country;
         year = parseInt(req.body.year);
@@ -185,7 +187,7 @@ module.exports.register = (app) => {
                 /*}else if (country == req.body.country || typeof year ==  req.body.year || temperature_min ==  req.body.temperature_min || temperature_max ==  req.body.temperature_max || temperature_co2 ==  req.body.temperature_co2){
                         console.log("Conflict.")
                         res.sendStatus(400);
-                  */  
+                  
                 } else {
                     new_temperature = {
                         country: country,
@@ -202,7 +204,7 @@ module.exports.register = (app) => {
             }
         });
     });
-
+    */
 
     //PUT A UNA LISTA DE RECURSOS DE SMOKERS STATS (Debe dar error)
     app.put(BASE_API_PATH+"/smokers-stats",(req,res) => {
