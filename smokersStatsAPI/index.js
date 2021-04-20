@@ -184,7 +184,7 @@ module.exports.register = (app) => {
                 res.status(200).send(JSON.stringify(data,null,2));
                 }else{
                     console.error("Data not found");
-                    res.sendStatus(404);
+                    res.status(404).send("Data not found in DB.");
                 }
 
             }
