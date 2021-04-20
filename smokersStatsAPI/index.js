@@ -180,7 +180,7 @@ module.exports.register = (app) => {
             }else{
                 res.sendStatus(500);
             }
-        })
+        });
     });
 
     //GET A UN RECURSO CONCRETO DE SMOKER POR PROVINCE/YEAR    
@@ -207,8 +207,8 @@ module.exports.register = (app) => {
     
     //POST A UN RECURSO DE SMOKER (Debe dar error)
     app.post(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
-    res.sendStatus(405);
-    console.log("Se ha intentado hacer POST a un recurso concreto.");
+        res.sendStatus(405);
+        console.log("Se ha intentado hacer POST a un recurso concreto.");
     });
 
     //PUT A UN RECURSO CONCRETO DE SMOKER
