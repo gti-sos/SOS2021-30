@@ -157,7 +157,7 @@ module.exports.register = (app) => {
                     }else {
                         console.log("Inserting new data in DB: " + JSON.stringify(dataNew, null, 2));
                         db.insert(dataNew);
-                        res.status(201).send("Se ha creado correctamente: "+dataNew);
+                        res.status(201).send("Se ha creado correctamente: " +JSON.stringify(dataNew, null, 2));
                     }
                 } else {
                     console.log("Conflit is detected.");
