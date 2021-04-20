@@ -153,11 +153,11 @@ module.exports.register = (app) => {
                         !dataNew.exSmoker ||
                         !dataNew.nonSmoker) {
                         console.log(`Number of parameters is incorrect.`);
-                        res.status(400).send("Format incorrect.");
+                        return res.status(400).send("Format incorrect.");
                     }else {
                         console.log("Inserting new data in DB: " + JSON.stringify(dataNew, null, 2));
                         db.insert(dataNew);
-                        res.status(201).send("Se ha creado correctamente: " +JSON.stringify(dataNew, null, 2));
+                        return res.status(201).send("Se ha creado correctamente: " +JSON.stringify(dataNew, null, 2));
                     }
                 } else {
                     console.log("Conflit is detected.");
