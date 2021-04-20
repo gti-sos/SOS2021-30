@@ -142,7 +142,7 @@ module.exports.register = (app) => {
                 console.log("ERROR accesing DB in POST: "+err);
                 res.sendStatus(500);
             }else{
-                if (newData.length != 8){
+                if (newData.length != 9){
                     console.log("Error in format.");
                     res.sendStatus(400);
                 }else if(dataInDB.length == 0){
