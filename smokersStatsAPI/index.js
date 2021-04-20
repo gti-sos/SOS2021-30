@@ -151,7 +151,7 @@ module.exports.register = (app) => {
                     res.status(201).send(`Data inserted in DB: <${JSON.stringify(newData,null,2)}>`);
                 }else{
                     console.log("Data already exists in DB.");
-                    res.status(409).send(`Data <${JSON.stringify(newData.province,null,2)}> already exists.`);
+                    res.sendStatus(400);
                 }
         })
     });
