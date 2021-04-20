@@ -142,10 +142,10 @@ module.exports.register = (app) => {
                 if(dataInDB.length == 0){
                     console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>.`);
                     db.insert(newData);
-                    res.status(201).send(`Insertando el nuevo dato <${JSON.stringify(newData,null,2)}>.`);
+                    res.status(201).send(`Insertando el nuevo dato <${JSON.stringify(newData.province,null,2)}>`);
                 }else{
                     console.log("Data already exists in DB.");
-                    res.status(409).send(`El dato <${JSON.stringify(newData,null,2)}> ya existe.`);
+                    res.status(409).send(`El dato <${JSON.stringify(newData.province,null,2)}> ya existe.`);
                 }
             }
         })
@@ -282,7 +282,10 @@ module.exports.register = (app) => {
             if (err) {
                 console.error("ERROR in GET: "+err);
                 res.sendStatus(500);
-            } else {
+            } else if (data == 0){
+                console.log("Data not found in DB.");
+                res.sendStatus(404);
+            }else {
                 if(data != 0){
                     console.log(`NEW DELETE request to <${reqprovince}>, <${reqyear}>`);
                     res.status(200).send("The corresponding data for " + reqprovince + " and " + reqyear + " has been deleted.");
