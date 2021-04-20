@@ -142,10 +142,10 @@ module.exports.register = (app) => {
                 if(dataInDB.length == 0){
                     console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>`);
                     db.insert(newData);
-                    res.sendStatus(201);
+                    res.status(201).send("Insertando el nuevo dato "+newData+".");
                 }else{
                     console.log("Data already exists in DB.");
-                    res.sendStatus(409);
+                    res.status(409).send("El dato "+newData+" ya existe.");
                 }
             }
         })
@@ -289,7 +289,7 @@ module.exports.register = (app) => {
                 }else if(data != 1){
                     console.log(`Previous error detected. Deleted more than 1 data with the same attribute.`);
                     res.sendStatus(200);
-                }else if(data == 0){
+                }else{
                     console.log("Data not found in DB.");
                     res.sendStatus(404);
                 }
