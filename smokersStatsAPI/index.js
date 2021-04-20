@@ -155,8 +155,8 @@ module.exports.register = (app) => {
                         console.log(`Number of parameters is incorrect`);
                         return res.sendStatus(400);
                     }else {
-                        console.log("Inserting new sales in db: " + JSON.stringify(newSales, null, 2));
-                        db.insert(newSales);
+                        console.log("Inserting new sales in db: " + JSON.stringify(dataNew, null, 2));
+                        db.insert(dataNew);
                         res.sendStatus(201); // CREATED	
                     }
                 } else {
