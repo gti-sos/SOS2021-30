@@ -193,7 +193,7 @@ module.exports.register = (app) => {
         });
     });
     
-    //POST A UN RECURSO DE SMOKER (Debe dar error)
+    //POST A UN RECURSO DE SMOKER (Debe dar errorr)
     app.post(BASE_API_PATH+"/smokers-stats/:province/:year",(req,res)=>{
         res.sendStatus(405);
         console.log("Se ha intentado hacer POST a un recurso concreto.");
