@@ -140,12 +140,12 @@ module.exports.register = (app) => {
                 res.sendStatus(500);
             }else{
                 if(dataInDB.length == 0){
-                    console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>`);
+                    console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>.`);
                     db.insert(newData);
-                    res.status(201).send("Insertando el nuevo dato "+newData+".");
+                    res.status(201).send(`Insertando el nuevo dato <${JSON.stringify(newData,null,2)}>.`);
                 }else{
                     console.log("Data already exists in DB.");
-                    res.status(409).send("El dato "+newData+" ya existe.");
+                    res.status(409).send(`El dato <${JSON.stringify(newData,null,2)}> ya existe.`);
                 }
             }
         })
