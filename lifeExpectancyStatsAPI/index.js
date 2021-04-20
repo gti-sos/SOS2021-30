@@ -20,26 +20,50 @@ module.exports.register = (app) => {
             {
                 "country":"España",
                 "province":"Andalucia",
-                "year":"2017",
-                "lifeExpectancyWoman":"84,41",
-                "lifeExpectancyMan":"79,23",
-                "averageLifeExpectancy":"81,63"
+                "year":2017,
+                "lifeExpectancyWoman":84.41,
+                "lifeExpectancyMan":79.23,
+                "averageLifeExpectancy":81.63
             },
             {
                 "country":"España",
                 "province":"Aragón",
-                "year":"2017",
-                "lifeExpectancyWoman":"86,06",
-                "lifeExpectancyMan":"80,43",
-                "averageLifeExpectancy":"83,23"
+                "year":2017,
+                "lifeExpectancyWoman":86.06,
+                "lifeExpectancyMan":80.43,
+                "averageLifeExpectancy":83.23
             },
             {
                 "country":"España",
                 "province":"Asturias",
-                "year":"2017",
-                "lifeExpectancyWoman":"85,51",
-                "lifeExpectancyMan":"79,50",
-                "averageLifeExpectancy":"82,58"
+                "year":2017,
+                "lifeExpectancyWoman":85.51,
+                "lifeExpectancyMan":79.50,
+                "averageLifeExpectancy":82.58
+            },
+            {
+                "country":"España",
+                "province":"Andalucia",
+                "year":2018,
+                "lifeExpectancyWoman":87,
+                "lifeExpectancyMan":86,
+                "averageLifeExpectancy":86.5
+            },
+            {
+                "country":"España",
+                "province":"Aragón",
+                "year":2018,
+                "lifeExpectancyWoman":87,
+                "lifeExpectancyMan":86,
+                "averageLifeExpectancy":86.5
+            },
+            {
+                "country":"España",
+                "province":"Asturias",
+                "year":2018,
+                "lifeExpectancyWoman":87,
+                "lifeExpectancyMan":86,
+                "averageLifeExpectancy":86.5
             }
         ];
 
@@ -50,33 +74,65 @@ module.exports.register = (app) => {
     });
 
 
+    //GET PAGINACION + BÚSQUEDA
+    app.get(BASE_API_PATH , (req, res) =>{
+        console.log("NEW GET OF SPECIFIC RESOURCE WITH SPECIFIC FIELDS: ")
+        
+        var query = req.query;	
+        
+        var offset = req.query.offset;	
+        var limit = req.query.limit;	
+        
+        delete req.query.offset;
+        delete req.query.limit;
+        
+        var country = req.query.country;
+        var province = req.query.province;
+        var year = req.query.year;
+        var lifeExpectancyWoman = req.query.lifeExpectancyWoman;
+        var lifeExpectancyMan = req.query.lifeExpectancyMan;
+        var averageLifeExpectancy = req.query.averageLifeExpectancy;
+        
+        
+        if(query.hasOwnProperty("country")){
+            query.country = query.country;
+        }
+        if(query.hasOwnProperty("province")){
+            query.province = query.province;
+        }
+        if(query.hasOwnProperty("year")){
+            query.year = parseInt(query.year);
+        }
+        if(query.hasOwnProperty("lifeExpectancyWoman")){
+            query.lifeExpectancyWoman = parseFloat(query.lifeExpectancyWoman);
+        }
+        if(query.hasOwnProperty("lifeExpectancyMan")){
+            query.lifeExpectancyMan = parseFloat(query.lifeExpectancyMan);
+        }
+        if(query.hasOwnProperty("averageLifeExpectancy")){
+            query.averageLifeExpectancy = parseFloat(query.averageLifeExpectancy);
+        }
         
 
-    //GET A LA LISTA DE RECURSOS
-        app.get(BASE_API_PATH,(req,res)=>{
-            db.find({}, (err,lifeExpectancyStatsInDB)=>{
-                if(err){
-                    console.log("Error accessing DB in GET: "+ err);
-                    res.sendStatus(500);
-                }else{
-                    if (lifeExpectancyStatsInDB.length == 0) {
-                        console.error("No data found");
-                        res.sendStatus(404);
-                    } else {
-                        var lifeStatsToSend = lifeExpectancyStatsInDB.map((l)=>{
-                            return{country : l.country,
-                                province : l.province, 
-                                year : l.year,
-                                lifeExpectancyWoman : l.lifeExpectancyWoman,
-                                lifeExpectancyMan : l.lifeExpectancyMan,
-                                averageLifeExpectancy : l.averageLifeExpectancy};
-                        });
-                        console.log("GET to the resource list");
-                        res.status(200).send(JSON.stringify(lifeStatsToSend, null, 2));
-                    }
+            db.find(query).skip(offset).limit(limit).exec((err, lifeExpectancyStatsInDB) =>{
+                
+                lifeExpectancyStatsInDB.forEach( (c) =>{ 
+                delete c._id;
+                });
+                
+                
+                if(lifeExpectancyStatsInDB.length < 1){	
+                     res.status(404).send("Not found");
+                    console.log("Failed to make request");
+                }
+                else {	
+                        
+                    res.send(JSON.stringify(lifeExpectancyStatsInDB, null, 2));
+                    console.log("Data Sent: "+JSON.stringify(lifeExpectancyStatsInDB, null, 2));
                 }
             });
-        });
+    });
+
 
     //POST A LA LISTA DE RECURSOS
 
@@ -122,6 +178,12 @@ module.exports.register = (app) => {
                 }
             });
         });
+
+
+
+
+        
+
 
 
 
