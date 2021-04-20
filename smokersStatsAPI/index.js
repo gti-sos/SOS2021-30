@@ -135,16 +135,16 @@ module.exports.register = (app) => {
     //POST A LA LISTA DE RECURSOS DE SMOKERS-STATS
     
     app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
-        id = parseInt(req.body.id);
-        country = req.body.country;
-        province = req.body.province;
-        year = parseInt(req.body.year);
-        dailySmoker = parseFloat(req.body.dailySmoker);
-        ocasionalSmoker = parseFloat(req.body.ocasionalSmoker);
-        exSmoker = parseFloat(req.body.exSmoker);
-        nonSmoker = parseFloat(req.body.nonSmoker);
+        idNew = parseInt(req.body.id);
+        countryNew = req.body.country;
+        provinceNew = req.body.province;
+        yearNew = parseInt(req.body.year);
+        dailySmokerNew = parseFloat(req.body.dailySmoker);
+        ocasionalSmokerNew = parseFloat(req.body.ocasionalSmoker);
+        exSmokerNew = parseFloat(req.body.exSmoker);
+        nonSmokerNew = parseFloat(req.body.nonSmoker);
     
-        db.find({ $and: [{ province: province, year: year }] }, function (err, data) {
+        db.find({ $and: [{ province: provinceNew, year: yearNew }] }, (err, data) => {
             if (err){
                 console.log("ERROR accesing DB in POST: "+err);
                 res.sendStatus(500);
@@ -155,14 +155,14 @@ module.exports.register = (app) => {
                 }else {
                     if (data.length == 0){
                         newData = {
-                            id = id,
-                            country = country,
-                            province = province,
-                            year = year,
-                            dailySmoker = dailySmoker,
-                            ocasionalSmoker = ocasionalSmoker,
-                            exSmoker = exSmoker,
-                            nonSmoker = nonSmoker
+                            id = idNew,
+                            country = countryNew,
+                            province = provinceNew,
+                            year = yearNew,
+                            dailySmoker = dailySmokerNew,
+                            ocasionalSmoker = ocasionalSmokerNew,
+                            exSmoker = exSmokerNew,
+                            nonSmoker = nonSmokerNew
                         }
                         console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>.`);
                         db.insert(newData);
