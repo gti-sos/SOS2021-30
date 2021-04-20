@@ -86,7 +86,7 @@ module.exports.register = (app) => {
                 res.sendStatus(500);
             }else{
                 if (data.length == 0) {
-                    db.insert(smokersStats);
+                    db.insert(smokersStatsIni);
                     console.log(`Loaded initial data: <${JSON.stringify(smokersStats, null, 2)}>`);
                     res.sendStatus(201);
                 }else if (data.length != 8){
@@ -98,8 +98,6 @@ module.exports.register = (app) => {
                 }
             }
         })
-
-        db.insert(smokersStatsIni);
     });
 
     //GET A UNA LISTA DE RECURSOS DE SMOKERS-STATS
