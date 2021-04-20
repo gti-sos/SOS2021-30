@@ -201,22 +201,23 @@ module.exports.register = (app) => {
 
     //PUT A UN RECURSO CONCRETO DE SMOKER POR PROVINCE/YEAR
     app.put(BASE_API_PATH+"/smokers-stats/:province/:year",(req,res)=>{
-
+        
         var provinceNew = req.params.province;
-        var yearnew = parseInt(req.params.year);
+        var yearNew = parseInt(req.params.year);
         var dataNew = req.body;
 
-        if(Object.keys(dataNew).length!=8) {
+        if (Object.keys(dataNew).length!=8) {
+            console.log("Actualizacion de campos no valida");
             res.sendStatus(400);
-        }else{
-            db.update({$and: [{ province: provinceNew }, { year: yearnew }]} ,{$set:newData},{},(err, data)=>{
-                if(err){
+        } else{
+            db.update({$and: [{ province: provinceNew }, { year: yearNew }]} ,{$set:dataNew},{},(err, data)=>{
+                if (err) {
                     console.log("Error accessing DB in GET: "+ err);
                     res.sendStatus(500);
                 }else{
                     if (data.length == 0) {
                         console.error("No data found.");
-                        res.status(404).send(`Not  found. Data is not in DB.`)
+                        res.status(404).send(`Not  found. Data is not in DB.`);
                     } else {
                         console.log(`Valores del recurso actualizados.`);
                         res.status(200).send(`Se ha actualizado correctamente el recurso.`);
