@@ -37,7 +37,9 @@ module.exports.register = (app) => {
     
     //GET A UNA LISTA DE RECURSOS (Funciona)
     app.get(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
-        db.find({}, (err,statsInDB)=>{
+        var ofset = parseInt(req.query.offset);
+        var limit = parseInt(req.query.limit);
+        db.find({}).skip(ofset).limit(limit).exec((err,statsInDB)=>{
             if(err){
                 console.log("Error accessing DB in GET: "+ err);
                 res.sendStatus(500);
