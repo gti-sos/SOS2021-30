@@ -197,7 +197,7 @@ module.exports.register = (app) => {
         console.log("Se ha intentado hacer POST a un recurso concreto.");
     });
 
-    //PUT A UN RECURSO CONCRETO DE SMOKER POR PROVINCE/YEAR 
+    //PUT A UN RECURSO CONCRETO DE SMOKER POR PROVINCE/YEAR
     app.put(BASE_API_PATH + "/smokers-stats/:province/:year", (req,res)=>{
         var province = req.params.province;
         var year = parseInt(req.params.year);
