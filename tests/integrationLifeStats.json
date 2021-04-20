@@ -1,0 +1,731 @@
+{
+	"info": {
+		"_postman_id": "fef74c21-bb11-40c3-bc58-f832d570d1e4",
+		"name": "Tests lifeExpectancyAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get lista recursos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"life-expectancy-stats"
+					]
+				},
+				"description": "Petición get a la lista de recursos, devolvera not found ya que al inicio la lista esta vacia"
+			},
+			"response": []
+		},
+		{
+			"name": "Get loadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"There are 3 contacts\", function (){\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(3);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats/loadInitialData",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"life-expectancy-stats",
+						"loadInitialData"
+					]
+				},
+				"description": "Carga los datos en la lista"
+			},
+			"response": []
+		},
+		{
+			"name": "Post lista de recurso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"España\",\r\n\"province\": \"Murcia\",\r\n\"year\": 2017,\r\n\"lifeExpectancyWoman\": 86.06,\r\n\"lifeExpectancyMan\": 80.43,\r\n\"averageLifeExpectancy\": 83.23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"life-expectancy-stats"
+					]
+				},
+				"description": "Añade un nuevo recurso a la lista"
+			},
+			"response": []
+		},
+		{
+			"name": "Post lista de recurso (Bad Request)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"España\",\r\n\"province\": \"Murcia\",\r\n\"year\": 2017,\r\n\"lifeExpectancyWoman\": 86.06,\r\n\"averageLifeExpectancy\": 83.23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"life-expectancy-stats"
+					]
+				},
+				"description": "Añade un nuevo recurso a la lista mal formateado (devuelve error Bad Request)"
+			},
+			"response": []
+		},
+		{
+			"name": "Post lista de recurso (Conflict)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 409\", function () {\r",
+							"    pm.response.to.have.status(409);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"España\",\r\n\"province\": \"Murcia\",\r\n\"year\": 2017,\r\n\"lifeExpectancyWoman\": 86.06,\r\n\"lifeExpectancyMan\": 80.43,\r\n\"averageLifeExpectancy\": 83.23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"life-expectancy-stats"
+					]
+				},
+				"description": "Añade un recurso que ya existe a la lista (devuelve error Conflict)"
+			},
+			"response": []
+		},
+		{
+			"name": "Post lista de recurso 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"España\",\r\n\"province\": \"Andalucia\",\r\n\"year\": 2018,\r\n\"lifeExpectancyWoman\": 86.06,\r\n\"lifeExpectancyMan\": 80.43,\r\n\"averageLifeExpectancy\": 83.23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"life-expectancy-stats"
+					]
+				},
+				"description": "Añade un nuevo recurso a la lista para hacer uso de búsquedas a continuación"
+			},
+			"response": []
+		},
+		{
+			"name": "Get recurso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats/Murcia/2017",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"life-expectancy-stats",
+						"Murcia",
+						"2017"
+					]
+				},
+				"description": "Obtenemos el recurso"
+			},
+			"response": []
+		},
+		{
+			"name": "Get recurso busquedas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats?country=España&province=Andalucia",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"life-expectancy-stats"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "España"
+						},
+						{
+							"key": "province",
+							"value": "Andalucia"
+						}
+					]
+				},
+				"description": "Obtenemos 2 recursos buscando por pais y provincia"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a un recurso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats/Murcia/2017",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"life-expectancy-stats",
+						"Murcia",
+						"2017"
+					]
+				},
+				"description": "Borramos el recurso Murcia/2017"
+			},
+			"response": []
+		},
+		{
+			"name": "Get lista recursos 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"life-expectancy-stats"
+					]
+				},
+				"description": "Obtenemos la lista de recurso para observar que se ha eliminado el recurso de la petición anterior"
+			},
+			"response": []
+		},
+		{
+			"name": "Get recurso paginación",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats?country=España&limit=3&offset=0",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"life-expectancy-stats"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "España"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				},
+				"description": "Obtenemos la lista de recursos paginada (muestra 3 recursos)"
+			},
+			"response": []
+		},
+		{
+			"name": "Put a recurso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"country\": \"España\",\r\n    \"province\": \"Galicia\",\r\n    \"year\": \"2070\",\r\n    \"lifeExpectancyWoman\": \"83211\",\r\n    \"lifeExpentancyMan\": \"79,23\",\r\n    \"averageLifeExpectancy\": \"8421,35\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats/Andalucia/2017",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"life-expectancy-stats",
+						"Andalucia",
+						"2017"
+					]
+				},
+				"description": "Actualizamos los valores de un recurso"
+			},
+			"response": []
+		},
+		{
+			"name": "Get heroku",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"There are 4 contacts\", function (){\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(4);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"life-expectancy-stats"
+					]
+				},
+				"description": "Observamos que se ha efectuado el cambio"
+			},
+			"response": []
+		},
+		{
+			"name": "Test - Post recurso (error)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats/Andalucia/2017",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"life-expectancy-stats",
+						"Andalucia",
+						"2017"
+					]
+				},
+				"description": "Operación no permitida (muestra error)"
+			},
+			"response": []
+		},
+		{
+			"name": "Test - Put lista recursos (error)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"life-expectancy-stats"
+					]
+				},
+				"description": "Operación no permitida (muestra error)"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete lista de recurso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"life-expectancy-stats"
+					]
+				},
+				"description": "Borra la lista de recursos para que vuelva a su estado inicial (vacio)"
+			},
+			"response": []
+		},
+		{
+			"name": "Get lista recursos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"life-expectancy-stats"
+					]
+				},
+				"description": "Obtenemos la lista de recursos y comprobamos que se ha borrado"
+			},
+			"response": []
+		}
+	]
+}
