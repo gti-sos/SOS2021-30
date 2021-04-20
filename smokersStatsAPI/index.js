@@ -168,22 +168,7 @@ module.exports.register = (app) => {
             }
         });
     });
-
-    //GET A UN RECURSO CONCRETO DE SMOKER POR ID
-    app.get(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
-        const {id} = req.params.id;
-        
-        _.each(smokersStats,(smokersStats,i)=>{
-            if(smokersStats.id==id){
-                res.send(JSON.stringify(smokersStats,null,2));
-                
-            }else{
-                res.sendStatus(404);
-            }
-        });
-        res.sendStatus(200);
-    });
-
+    
     //GET A UN RECURSO CONCRETO DE SMOKER POR PROVINCE/YEAR    
     app.get(BASE_API_PATH+"/smokers-stats/:province/:year", (req, res) => {
         var reqprovince = req.params.province;
@@ -207,34 +192,9 @@ module.exports.register = (app) => {
     });
     
     //POST A UN RECURSO DE SMOKER (Debe dar error)
-    app.post(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
+    app.post(BASE_API_PATH+"/smokers-stats/:province/:year",(req,res)=>{
         res.sendStatus(405);
         console.log("Se ha intentado hacer POST a un recurso concreto.");
-    });
-
-    //PUT A UN RECURSO CONCRETO DE SMOKER
-    app.put(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
-    const {id} = req.params;
-    const {country,province,year,dailySmoker,ocasionalSmoker,exSmoker, nonSmoker}=req.body;
-    if(country&&province&&year&&dailySmoker&&ocasionalSmoker&&exSmoker&&nonSmoker){
-        _.each(smokersStats,(smokersStats,i)=>{
-            if(smokersStats.id==id){
-                smokersStats.country = country;
-                smokersStats.province = province;
-                smokersStats.year = year;
-                smokersStats.dailySmoker = dailySmoker;
-                smokersStats.ocasionalSmoker = ocasionalSmoker;
-                smokersStats.exSmoker = exSmoker;
-                smokersStats.nonSmoker = nonSmoker;
-            }
-        });
-        //Envio de recurso actualizado
-        res.json(smokersStats);
-        res.status(200);
-    
-    }else{
-        res.status(500).json({error: 'There was an error.'})
-    }
     });
 
     //PUT A UN RECURSO CONCRETO DE SMOKER POR PROVINCE/YEAR 
@@ -262,19 +222,6 @@ module.exports.register = (app) => {
                 }
             });
         }
-    });
-
-    //DELETE A UN RECURSO CONCRETO DE SMOKER POR ID
-    app.delete(BASE_API_PATH +"/smokers-stats/:id", (req, res) =>{ 
-        var id = req.params.id;
-
-        for (var i = 0; i <  smokersStats.length; i++){
-    		if(smokersStats[i].id == id){
-			    smokersStats.splice(i,1);
-			    return res.sendStatus(200);
-		    }
-	    }
-	    res.sendStatus(404);
     });
 
     //DELETE A UN RECURSO CONCRETO DE SMOKER POR PROVINCE/YEAR
