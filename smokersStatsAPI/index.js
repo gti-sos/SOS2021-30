@@ -156,7 +156,7 @@ module.exports.register = (app) => {
                     console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>.`);
                     db.insert(newData);
                     res.status(201).send(`Data inserted in DB: <${JSON.stringify(newData,null,2)}>`);
-                }else if (typeof id == null || country == '' || province == null || typeof year == null || dailySmoker == null || ocasionalSmoker == null || exSmoker == null || nonSmoker == null){
+                }else if (typeof id == null || country == '' || province == '' || typeof year == null || dailySmoker == '' || ocasionalSmoker == '' || exSmoker == '' || nonSmoker == ''){
                     console.log("Invalid format of temperature.")
                     res.status(400).send("Invalid format of temperature.");
                 }else{
