@@ -1,0 +1,679 @@
+{
+	"info": {
+		"_postman_id": "e5343987-484c-45b6-89ab-d69df1ea97d1",
+		"name": "TESTs SMOKERS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET a lista completa inicial",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200. Se ha enviado la lista correctamente.\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Hay 3 datos como al inicio.\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(3);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smokers-stats",
+						""
+					]
+				},
+				"description": "Obtener la lista con todos sus elementos."
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE a la lista completa",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200. Se ha borrado la lista completa correctamente.\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smokers-stats",
+						""
+					]
+				},
+				"description": "Se elimina la lista por completo, siempre que contenga elementos."
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE a la lista completa VACÏA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 500. La lista estaba vacía.\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smokers-stats",
+						""
+					]
+				},
+				"description": "Caso especial que intenta eliminar una lista vacía (código de error 500)."
+			},
+			"response": []
+		},
+		{
+			"name": "loadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/loadinitialdata",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smokers-stats",
+						"loadinitialdata"
+					]
+				},
+				"description": "Inicializa la api."
+			},
+			"response": []
+		},
+		{
+			"name": "GET a lista completa",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200. Se ha enviado la lista correctamente.\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Hay 3 datos como al inicio.\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(3);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smokers-stats",
+						""
+					]
+				},
+				"description": "Obtener la lista con todos sus elementos."
+			},
+			"response": []
+		},
+		{
+			"name": "POST a la lista completa",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": 4,\r\n\"country\": \"España\",\r\n\"province\": \"Cantabria\",\r\n\"year\": 2017,\r\n\"dailySmoker\": 132887.56,\r\n\"ocasionalSmoker\": 4526.30,\r\n\"exSmoker\": 541681.36,\r\n\"nonSmoker\": 307382.26\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smokers-stats",
+						""
+					]
+				},
+				"description": "Se inserta un elemento completo a la lista."
+			},
+			"response": []
+		},
+		{
+			"name": "POST a la lista completa (dato ya existe)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 409\", function () {\r",
+							"    pm.response.to.have.status(409);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": 4,\r\n\"country\": \"España\",\r\n\"province\": \"Cantabria\",\r\n\"year\": 2017,\r\n\"dailySmoker\": 132887.56,\r\n\"ocasionalSmoker\": 4526.30,\r\n\"exSmoker\": 541681.36,\r\n\"nonSmoker\": 307382.26\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smokers-stats",
+						""
+					]
+				},
+				"description": "Nuevo PUT igual que el anterior pero habiendo introducido ya el dato, por lo que debe de aparecernos 409 (ya existe)."
+			},
+			"response": []
+		},
+		{
+			"name": "PUT a una lista completa (error)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405. El método no está permitido.\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smokers-stats"
+					]
+				},
+				"description": "Se intenta un put fallido a la lista completa. Método no permitido."
+			},
+			"response": []
+		},
+		{
+			"name": "GET a un recurso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Cantabria/2017",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smokers-stats",
+						"Cantabria",
+						"2017"
+					]
+				},
+				"description": "Se devuelve un recurso especificado por provincia y año."
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE a un recurso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Cantabria/2017",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smokers-stats",
+						"Cantabria",
+						"2017"
+					]
+				},
+				"description": "Se elimina el recurso especificado en [ruta]/:province/:year"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE a un recurso inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Cantabria/2017",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smokers-stats",
+						"Cantabria",
+						"2017"
+					]
+				},
+				"description": "Debe aparecer 404 Not Found"
+			},
+			"response": []
+		},
+		{
+			"name": "GET a un recurso inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Cantabria/2017",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smokers-stats",
+						"Cantabria",
+						"2017"
+					]
+				},
+				"description": "Se realiza un GET a un dato que no está en la BD."
+			},
+			"response": []
+		},
+		{
+			"name": "POST a un recurso (error)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405. Método no permitido.\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Cantabria/2017",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smokers-stats",
+						"Cantabria",
+						"2017"
+					]
+				},
+				"description": "Se intenta un put fallido a la lista completa. Método no permitido."
+			},
+			"response": []
+		},
+		{
+			"name": "POST a la lista completa prePUT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": 4,\r\n\"country\": \"España\",\r\n\"province\": \"Cantabria\",\r\n\"year\": 2017,\r\n\"dailySmoker\": 132887.56,\r\n\"ocasionalSmoker\": 4526.30,\r\n\"exSmoker\": 541681.36,\r\n\"nonSmoker\": 307382.26\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smokers-stats",
+						""
+					]
+				},
+				"description": "Se inserta un elemento completo a la lista."
+			},
+			"response": []
+		},
+		{
+			"name": "PUT a un recurso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": 4,\r\n\"country\": \"España\",\r\n\"province\": \"Cantabria\",\r\n\"year\": 2017,\r\n\"dailySmoker\": 132887.56,\r\n\"ocasionalSmoker\": 4526.30,\r\n\"exSmoker\": 541681.36,\r\n\"nonSmoker\": 99999999.26\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Cantabria/2017",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smokers-stats",
+						"Cantabria",
+						"2017"
+					]
+				},
+				"description": "Se actualia un recurso existente en la BD"
+			},
+			"response": []
+		},
+		{
+			"name": "GET a recurso actualizado",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200. Se ha enviado la lista correctamente.\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Se tiene Cantabria actualizado.\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"99999999.26\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Cantabria/2017",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smokers-stats",
+						"Cantabria",
+						"2017"
+					]
+				},
+				"description": "Obtener la lista con todos sus elementos.\n\n[Este GET es duplicado exclusivamente para este test]"
+			},
+			"response": []
+		}
+	]
+}
