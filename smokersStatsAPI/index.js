@@ -91,7 +91,7 @@ module.exports.register = (app) => {
                     res.sendStatus(201);
                 }else if (data.length != 8){
                     console.log("Error in format.");
-                    res.sendStatus(401);
+                    res.sendStatus(400);
                 }else{
                     console.error(`initial data already exists: `+err);
                     res.sendStatus(409);
@@ -146,7 +146,7 @@ module.exports.register = (app) => {
                     console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>.`);
                     db.insert(newData);
                     res.status(201).send(`Data inserted in DB: <${JSON.stringify(newData,null,2)}>`);
-                }else{
+                }else if (newData.length != 8){
                     console.log("Data already exists in DB.");
                     res.status(409).send(`Data <${JSON.stringify(newData.province,null,2)}> already exists.`);
                 }
