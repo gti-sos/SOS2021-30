@@ -5,10 +5,10 @@ var db = new Datastore();
 const { sortBy } = require("underscore");
 
 var BASE_API_PATH = "/api/v1";
-var smokersStats = [];
 
 module.exports.register = (app) => {
 
+/*--------------Variable Objeto-----------------------*/
     smokersStats=[
         {   
             "id": 1,
@@ -41,13 +41,13 @@ module.exports.register = (app) => {
             "nonSmoker": 559602.87
         }
     ];
-
+    //Inserta 
     db.insert(smokersStats);
+/*--------------------fin constructor-----------------------*/
 
-
-    //GET inicial (loadInitialData) para inicializar la BD
+    //GET inicial (loadInitialData) para inicializar la BD (constructor)
     app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
-    smokersStats=[
+    smokersStatsIni=[
         {   
             "id": 1,
             "country": "España",
@@ -89,6 +89,9 @@ module.exports.register = (app) => {
                     db.insert(smokersStats);
                     console.log(`Loaded initial data: <${JSON.stringify(smokersStats, null, 2)}>`);
                     res.sendStatus(201);
+                }else if (data.length != 8){
+                    console.log("Error in format.");
+                    res.sendStatus(401);
                 }else{
                     console.error(`initial data already exists: `+err);
                     res.sendStatus(409);
@@ -96,7 +99,7 @@ module.exports.register = (app) => {
             }
         })
 
-        db.insert(smokersStats);
+        db.insert(smokersStatsIni);
     });
 
     //GET A UNA LISTA DE RECURSOS DE SMOKERS-STATS
@@ -118,7 +121,7 @@ module.exports.register = (app) => {
 
 
         //Búsqueda de datos 
-        db.find(dbquery).sort({country:1, year:-1}).skip(offset).limit(limit).exec((error, nonSmoker) => {
+        db.find(dbquery).sort({id:1, year:-1}).skip(offset).limit(limit).exec((error, nonSmoker) => {
 
 
             //Se elimina el _id creado automáticamente
@@ -127,7 +130,7 @@ module.exports.register = (app) => {
             });
 
             res.send(JSON.stringify(nonSmoker, null, 2));
-            console.log("The GET REQUEST have been sent.");
+            console.log("GET REQUEST have been sent.");
         });
     });
 
@@ -141,10 +144,13 @@ module.exports.register = (app) => {
                 console.log("ERROR accesing DB in POST: "+err);
                 res.sendStatus(500);
             }else{
-                if(dataInDB.length == 0){
+                if (newData.length != 8){
+                    console.log("Error in format.");
+                    res.sendStatus(400);
+                }else if(dataInDB.length == 0){
                     console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>.`);
                     db.insert(newData);
-                    res.status(201).send(`Inserting new data: <${JSON.stringify(newData,null,2)}>`);
+                    res.status(201).send(`Data inserted in DB: <${JSON.stringify(newData,null,2)}>`);
                 }else{
                     console.log("Data already exists in DB.");
                     res.status(409).send(`Data <${JSON.stringify(newData.province,null,2)}> already exists.`);
@@ -193,33 +199,33 @@ module.exports.register = (app) => {
         });
     });
     
-    //POST A UN RECURSO DE SMOKER (Debe dar errorr)
+    //POST A UN RECURSO DE SMOKER (No está permitido)
     app.post(BASE_API_PATH+"/smokers-stats/:province/:year",(req,res)=>{
         res.sendStatus(405);
         console.log("Se ha intentado hacer POST a un recurso concreto.");
     });
 
     //PUT A UN RECURSO CONCRETO DE SMOKER POR PROVINCE/YEAR
-    app.put(BASE_API_PATH + "/smokers-stats/:province/:year", (req,res)=>{
-        var province = req.params.province;
-        var year = parseInt(req.params.year);
+    app.put(BASE_API_PATH+"/smokers-stats/:province/:year",(req,res)=>{
+
+        var provinceNew = req.params.province;
+        var yearnew = parseInt(req.params.year);
         var dataNew = req.body;
-        
-        if (Object.keys(dataNew).length != 8) {
-            console.log("Actualizacion de campos no valida.")
+
+        if(Object.keys(dataNew).length!=8) {
             res.sendStatus(400);
-        } else {
-            db.update({$and: [{ province: province }, { year: year }]} ,{$set:dataNew},{},(err, data)=> {
-                if (err) {
-                    console.error("ERROR accesing DB in GET. "+err);
+        }else{
+            db.update({$and: [{ province: provinceNew }, { year: yearnew }]} ,{$set:newData},{},(err, data)=>{
+                if(err){
+                    console.log("Error accessing DB in GET: "+ err);
                     res.sendStatus(500);
-                } else {
+                }else{
                     if (data.length == 0) {
                         console.error("No data found.");
-                        res.status(404).send("No data found. Check the new data.");
+                        res.status(404).send(`Not  found. Data is not in DB.`)
                     } else {
-                        console.log("Data updated.")
-                        res.status(200).sendStatus(`Data <${reqprovince}> updated.`);
+                        console.log(`Valores del recurso actualizados.`);
+                        res.status(200).send(`Se ha actualizado correctamente el recurso.`);
                     }
                 }
             });
@@ -243,7 +249,7 @@ module.exports.register = (app) => {
                     console.log(`NEW DELETE request to <${reqprovince}>, <${reqyear}>`);
                     res.status(200).send("The corresponding data for " + reqprovince + " and " + reqyear + " has been deleted.");
                 }else if(data != 1){
-                    console.log(`Previous error detected. Deleted more than 1 data with the same attribute.`);
+                    console.log(`Previous error should have been detected. Deleted more than 1 data with the same attribute.`);
                     res.sendStatus(200);
                 }else{
                     res.sendStatus(500); //En cualquier otro caso, habrá error.
