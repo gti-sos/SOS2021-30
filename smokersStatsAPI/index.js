@@ -206,10 +206,10 @@ module.exports.register = (app) => {
         var yearNew = parseInt(req.params.year);
         var dataNew = req.body;
 
-        if (Object.keys(dataNew).length!=8) {
+        if (Object.keys(dataNew).length !=8 ) {
             console.log("Actualizacion de campos no valida");
             res.sendStatus(400);
-        } else{
+        }else{
             db.update({$and: [{ province: provinceNew }, { year: yearNew }]} ,{$set:dataNew},{},(err, data)=>{
                 if (err) {
                     console.log("Error accessing DB in GET: "+ err);
@@ -218,7 +218,10 @@ module.exports.register = (app) => {
                     if (data.length == 0) {
                         console.error("No data found.");
                         res.status(404).send(`Not  found. Data is not in DB.`);
-                    }else if (dataNew.length == 8){
+                    }else if (data == 0){
+                        console.log("Data not found in DB.");
+                        res.status(404).send(`Not Found. Data do not exists.`); 
+                    }else {
                         console.log(`Valores del recurso actualizados.`);
                         res.status(200).send(`Se ha actualizado correctamente el recurso.`);
                     }
