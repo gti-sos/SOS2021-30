@@ -203,16 +203,16 @@ module.exports.register = (app) => {
         var reqyear = parseInt(req.params.year);
         var data = req.body;
         
-        if (Object.keys(data).length != 8) {
+        if (Object.keys(dataNew).length != 8) {
             console.log("Actualizacion de campos no valida.")
             res.sendStatus(400);
         } else {
-            db.update({ province: reqprovince, year: reqyear }, { $set: data }, {}, function (err, dataUpdate) {
+            db.update({$and: [{ province: province }, { year: año }]} ,{$set:dataNew},{},(err, data)=> {
                 if (err) {
-                    console.error("ERROR accesing DB in GET.");
+                    console.error("ERROR accesing DB in GET. "+err);
                     res.sendStatus(500);
                 } else {
-                    if (dataUpdate == 0) {
+                    if (data.length == 0) {
                         console.error("No data found.");
                         res.sendStatus(404);
                     } else {
