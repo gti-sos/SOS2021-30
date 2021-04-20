@@ -152,17 +152,19 @@ module.exports.register = (app) => {
                 console.log("ERROR accesing DB in POST: "+err);
                 res.sendStatus(500);
             }else{
-                }if (data.length == 0){
+                }if (data.length > 0){
+                    console.log("Data already exists in DB.");
+                    res.sendStatus(409);
+                }else {
+                    if (data.length == 0){
                     console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>.`);
                     db.insert(newData);
                     res.status(201).send(`Data inserted in DB: <${JSON.stringify(newData,null,2)}>`);
-                }else if (typeof id == null || country == '' || province == '' || typeof year == null || dailySmoker == '' || ocasionalSmoker == '' || exSmoker == '' || nonSmoker == ''){
+                }else if (typeof id == null || country == null || province == null || typeof year == null || dailySmoker == null || ocasionalSmoker == null || exSmoker == null || nonSmoker == null){
                     console.log("Invalid format of temperature.")
                     res.status(400).send("Invalid format of temperature.");
-                }else{
-                    console.log("Data already exists in DB.");
-                    res.sendStatus(409);
                 }
+            }
         })
     });
     
