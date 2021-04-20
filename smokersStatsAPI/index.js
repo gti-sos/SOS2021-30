@@ -279,7 +279,7 @@ module.exports.register = (app) => {
         var reqyear = parseInt(req.params.year);
 
         db.remove({province : reqprovince, year : reqyear},{multi:true}, (err, data) => {
-            if (err || data == 0) {
+            if (err) {
                 console.error("ERROR in GET: "+err);
                 res.sendStatus(500);
             } else {
@@ -289,7 +289,7 @@ module.exports.register = (app) => {
                 }else if(data != 1){
                     console.log(`Previous error detected. Deleted more than 1 data with the same attribute.`);
                     res.sendStatus(200);
-                }else{
+                }else if(data == 0){
                     console.log("Data not found in DB.");
                     res.sendStatus(404);
                 }
