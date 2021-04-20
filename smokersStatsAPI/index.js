@@ -171,7 +171,8 @@ module.exports.register = (app) => {
 
     //GET A UN RECURSO CONCRETO DE SMOKER POR ID
     app.get(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
-        const {id} = req.params;
+        var id = req.params.id;
+        
         _.each(smokersStats,(smokersStats,i)=>{
             if(smokersStats.id==id){
                 res.send(JSON.stringify(smokersStats,null,2));
