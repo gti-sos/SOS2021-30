@@ -141,7 +141,7 @@ module.exports.register = (app) => {
             if (err){
                 console.log("ERROR accesing DB in POST: "+err);
                 res.sendStatus(500);
-            }else if (newData.length == 8){
+            }else if (req.body == 8){
                 res.sendStatus(400);
             }
             else{
