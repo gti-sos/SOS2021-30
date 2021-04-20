@@ -135,7 +135,6 @@ module.exports.register = (app) => {
     //POST A LA LISTA DE RECURSOS DE SMOKERS-STATS
     
     app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
-        newData = req.body;
         id = req.body.id;
         country = req.body.country;
         province = req.body.province;
@@ -156,11 +155,21 @@ module.exports.register = (app) => {
                     console.log("Data already exists in DB.");
                     res.status(409).send("Data already exists.");
                 }else {
-                    if (data.length == 0 && newData.length == 8){
+                    if (data.length == 0){
                         console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>.`);
+                        newData = {
+                            id = id,
+                            country = country,
+                            province = province,
+                            year = year,
+                            dailySmoker = dailySmoker,
+                            ocasionalSmoker = ocasionalSmoker,
+                            exSmoker = exSmoker,
+                            nonSmoker = nonSmoker
+                        }
                         db.insert(newData);
                         res.status(201).send(`Data inserted in DB: <${JSON.stringify(newData,null,2)}>`);
-                    }else if (typeof id == null || country == null || province == null || typeof year == null || dailySmoker == null || ocasionalSmoker == null || exSmoker == null || nonSmoker == null){
+                    }else {
                         console.log("Invalid format of temperature.")
                         res.status(400).send("Invalid format of temperature.");
                     }
