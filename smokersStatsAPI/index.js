@@ -142,10 +142,7 @@ module.exports.register = (app) => {
                 console.log("ERROR accesing DB in POST: "+err);
                 res.sendStatus(500);
             }else{
-                if (newData.length != 9){
-                    console.log("Error in format.");
-                    res.sendStatus(400);
-                }else if(dataInDB.length == 0){
+                }if(dataInDB.length == 0){
                     console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>.`);
                     db.insert(newData);
                     res.status(201).send(`Data inserted in DB: <${JSON.stringify(newData,null,2)}>`);
@@ -153,7 +150,6 @@ module.exports.register = (app) => {
                     console.log("Data already exists in DB.");
                     res.status(409).send(`Data <${JSON.stringify(newData.province,null,2)}> already exists.`);
                 }
-            }
         })
     });
 
