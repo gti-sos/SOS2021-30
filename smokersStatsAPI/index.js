@@ -214,10 +214,10 @@ module.exports.register = (app) => {
                 } else {
                     if (data.length == 0) {
                         console.error("No data found.");
-                        res.sendStatus(404);
+                        res.status(404).send("No data found. Check the new data.");
                     } else {
                         console.log("Data updated.")
-                        res.sendStatus(200);
+                        res.status(200).sendStatus(`Data <${reqprovince}> updated.`);
                     }
                 }
             });
