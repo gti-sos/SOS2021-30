@@ -135,43 +135,33 @@ module.exports.register = (app) => {
     //POST A LA LISTA DE RECURSOS DE SMOKERS-STATS
     
     app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
-        idNew = parseInt(req.body.id);
-        countryNew = req.body.country;
-        provinceNew = req.body.province;
-        yearNew = parseInt(req.body.year);
-        dailySmokerNew = parseFloat(req.body.dailySmoker);
-        ocasionalSmokerNew = parseFloat(req.body.ocasionalSmoker);
-        exSmokerNew = parseFloat(req.body.exSmoker);
-        nonSmokerNew = parseFloat(req.body.nonSmoker);
-    
-        db.find({ $and: [{ province: provinceNew, year: yearNew }] }, (err, data) => {
-            if (err){
-                console.log("ERROR accesing DB in POST: "+err);
+        var dataNew = req.body;
+        var provinceNew = req.body.province;
+        var yearNew = req.body.year;
+        
+        
+        db.find({ province: provinceNew, year: yearNew }, (err, data) => {
+            if (err) {
+                console.error("Error accessing DB in POST: " + err);
                 res.sendStatus(500);
-            }else{
-                if (data.length > 0){
-                    console.log("Data already exists in DB.");
-                    res.status(409).send("Data already exists.");
-                }else {
-                    if (data.length == 0){
-                        newData = {
-                            id = idNew,
-                            country = countryNew,
-                            province = provinceNew,
-                            year = yearNew,
-                            dailySmoker = dailySmokerNew,
-                            ocasionalSmoker = ocasionalSmokerNew,
-                            exSmoker = exSmokerNew,
-                            nonSmoker = nonSmokerNew
-                        }
-                        console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>.`);
-                        db.insert(newData);
-                        res.status(201).send(`Data inserted in DB: <${JSON.stringify(newData,null,2)}>`);
-                    }else if (typeof id == null || country == null || province == '' || typeof year == null || dailySmoker == null || ocasionalSmoker == null || exSmoker == null || nonSmoker == null){
-                        console.log("Invalid format of temperature.")
-                        res.status(400).send("Invalid format of temperature.");
+            } else {
+                if (data.length == 0) {
+                    if (!dataNew.province ||
+                        !dataNew.year ||
+                        !dataNew.dailySmoker ||
+                        !dataNew.ocasionalSmoker ||
+                        !dataNew.exSmoker ||
+                        !dataNew.nonSmoker) {
+                        console.log(`Number of parameters is incorrect`);
+                        return res.sendStatus(400);
+                    }else {
+                        console.log("Inserting new sales in db: " + JSON.stringify(newSales, null, 2));
+                        db.insert(newSales);
+                        res.sendStatus(201); // CREATED	
                     }
-                
+                } else {
+                    console.log("Conflit is detected");
+                    res.sendStatus(409); // CONFLICT
                 }
             }
         });
