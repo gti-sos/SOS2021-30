@@ -156,7 +156,6 @@ module.exports.register = (app) => {
                     res.status(409).send("Data already exists.");
                 }else {
                     if (data.length == 0){
-                        console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>.`);
                         newData = {
                             id = id,
                             country = country,
@@ -167,6 +166,7 @@ module.exports.register = (app) => {
                             exSmoker = exSmoker,
                             nonSmoker = nonSmoker
                         }
+                        console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>.`);
                         db.insert(newData);
                         res.status(201).send(`Data inserted in DB: <${JSON.stringify(newData,null,2)}>`);
                     }else if (typeof id == null || country == null || province == '' || typeof year == null || dailySmoker == null || ocasionalSmoker == null || exSmoker == null || nonSmoker == null){
