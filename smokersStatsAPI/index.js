@@ -45,7 +45,7 @@ module.exports.register = (app) => {
     db.insert(smokersStats);
 
 
-    //GET inicial (loadInitialData) para inicializar
+    //GET inicial (loadInitialData) para inicializar la BD
     app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
     smokersStats=[
         {   
@@ -95,6 +95,8 @@ module.exports.register = (app) => {
                 }
             }
         })
+
+        db.insert(smokersStats);
     });
 
     //GET A UNA LISTA DE RECURSOS DE SMOKERS-STATS
