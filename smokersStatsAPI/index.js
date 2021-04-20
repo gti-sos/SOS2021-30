@@ -141,7 +141,10 @@ module.exports.register = (app) => {
             if (err){
                 console.log("ERROR accesing DB in POST: "+err);
                 res.sendStatus(500);
-            }else{
+            }else if (newData.length == 8){
+                res.sendStatus(400);
+            }
+            else{
                 }if(dataInDB.length == 0 && newData.length == 8){
                     console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>.`);
                     db.insert(newData);
