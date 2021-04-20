@@ -142,10 +142,10 @@ module.exports.register = (app) => {
                 if(dataInDB.length == 0){
                     console.log(`Inserting new data in DB: <${JSON.stringify(newData,null,2)}>.`);
                     db.insert(newData);
-                    res.status(201).send(`Insertando el nuevo dato <${JSON.stringify(newData.province,null,2)}>`);
+                    res.status(201).send(`Inserting new data: <${JSON.stringify(newData,null,2)}>`);
                 }else{
                     console.log("Data already exists in DB.");
-                    res.status(409).send(`El dato <${JSON.stringify(newData.province,null,2)}> ya existe.`);
+                    res.status(409).send(`Data <${JSON.stringify(newData.province,null,2)}> already exists.`);
                 }
             }
         })
@@ -163,7 +163,7 @@ module.exports.register = (app) => {
                 console.log("ERROR deleting DB: "+err);
                 res.sendStatus(500);
             }else{
-                console.log("Se ha borrado correctamente "+numDataRemoved+" recursos de la BD.");
+                console.log(numDataRemoved+" has been successfully deleted from the BD.");
                 res.sendStatus(200);
             }
         });
@@ -252,7 +252,7 @@ module.exports.register = (app) => {
                         console.error("No data found.");
                         res.sendStatus(404);
                     } else {
-                        console.log("Campos actualizados.")
+                        console.log("Data updated.")
                         res.sendStatus(200);
                     }
                 }
@@ -284,7 +284,7 @@ module.exports.register = (app) => {
                 res.sendStatus(500);
             } else if (data == 0){
                 console.log("Data not found in DB.");
-                res.sendStatus(404);
+                res.status(404).send(`Not Found. Data <${reqprovince}>, <${reqyear}> do not exists.`);
             }else {
                 if(data != 0){
                     console.log(`NEW DELETE request to <${reqprovince}>, <${reqyear}>`);
@@ -293,8 +293,7 @@ module.exports.register = (app) => {
                     console.log(`Previous error detected. Deleted more than 1 data with the same attribute.`);
                     res.sendStatus(200);
                 }else{
-                    console.log("Data not found in DB.");
-                    res.sendStatus(404);
+                    res.sendStatus(500); //En cualquier otro caso, habrá error.
                 }
             }
         });
