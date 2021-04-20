@@ -171,14 +171,14 @@ module.exports.register = (app) => {
 
     //GET A UN RECURSO CONCRETO DE SMOKER POR ID
     app.get(BASE_API_PATH+"/smokers-stats/:id",(req,res)=>{
-        var id = req.params.id;
+        const {id} = req.params.id;
         
         _.each(smokersStats,(smokersStats,i)=>{
             if(smokersStats.id==id){
                 res.send(JSON.stringify(smokersStats,null,2));
                 res.sendStatus(200);
             }else{
-                res.sendStatus(500);
+                res.sendStatus(404);
             }
         });
     });
