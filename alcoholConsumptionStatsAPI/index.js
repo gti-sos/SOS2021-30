@@ -37,26 +37,28 @@ module.exports.register = (app) => {
     
     //GET A UNA LISTA DE RECURSOS (Funciona)
     app.get(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
-        var ofset = parseInt(req.query.offset);
-        var limit = parseInt(req.query.limit);
-        db.find({}).skip(ofset).limit(limit).exec((err,statsInDB)=>{
-            if(err){
-                console.log("Error accessing DB in GET: "+ err);
-                res.sendStatus(500);
-            }else{
-                if (statsInDB.length == 0) {
-                    console.error("No data found");
-                    res.sendStatus(404);
-                } else {
-                    var statsToSend = statsInDB.map((stats)=>{
-                        return{country: stats.country, year: stats.year,ageRange: stats.ageRange, alcoholPrematureDeath: stats.alcoholPrematureDeath,
-                        prevalenceOfAlcoholUseDisorder: stats.prevalenceOfAlcoholUseDisorder};
-                    });
-                    console.log(`GET to all resources`);
-                    res.status(200).send(JSON.stringify(statsToSend, null, 2));
-                }
-            }
-        });
+        var query = req.query;
+        var limit = parseInt(query.limit);
+        var offset = parseInt(query.offset);
+        var dbquery = {};
+
+        //Búsquedas
+        if (req.query.country) dbquery["country"] = req.query.country;
+        if (req.query.year) dbquery["year"] = req.query.year;
+        if (req.query.ageRange) dbquery["ageRange"] = req.query.ageRange;
+        if (req.query.alcoholPrematureDeath) dbquery["alcoholPrematureDeath"] = parseInt(req.query.alcoholPrematureDeath);
+        if (req.query.prevalenceOfAlcoholUseDisorder) dbquery["prevalenceOfAlcoholUseDisorder"] = parseFloat(req.query.prevalenceOfAlcoholUseDisorder);
+
+        db.find(dbquery).sort({ageRange:1}).skip(offset).limit(limit).exec((err, statsInDB) =>{
+
+			statsInDB.forEach((t)=>{
+				delete t._id
+			});
+
+			res.send(JSON.stringify(statsInDB,null,2));
+			console.log("The GET REQUEST have been send");
+		});
+
     });
     //POST A LA LISTA DE RECURSOS (Funciona)
     app.post(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
