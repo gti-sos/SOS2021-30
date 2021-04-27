@@ -4,10 +4,9 @@ var db = new Datastore();
 
 var BASE_API_PATH = "/api/v1";
 
-var smokersStats = [];
 module.exports.register = (app) => {
 
-/*--------------Variable Objeto-----------------------
+/*--------------Variable Objeto-----------------------*/
     smokersStats=[
         {   
             "id": 1,
@@ -42,7 +41,7 @@ module.exports.register = (app) => {
     ];
     //Inserta 
     db.insert(smokersStats);
---------------------fin constructor-----------------------*/
+/*--------------------fin constructor-----------------------*/
 
     //GET inicial (loadInitialData) para inicializar la BD (constructor)
     app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
