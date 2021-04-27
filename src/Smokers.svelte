@@ -87,6 +87,7 @@
                  "Content-Type": "application/json"
              }
              }).then(function (res) {
+                 visible=true;
                  if(res.status == 201){
                      getSmoker();
                      console.log("Data introduced");
@@ -137,6 +138,7 @@
 			const res = await fetch("/api/v1/smokers-stats/", {
 				method: "DELETE"
 			}).then(function (res) {
+                visible=true;
 				if(res.ok){
                     totaldata = 0;
 					getSmoker();
