@@ -37,6 +37,105 @@ module.exports.register = (app) => {
             "ocasionalSmoker": 45124.26,
             "exSmoker": 220967.80,
             "nonSmoker": 559602.87
+        },
+        {
+            "id": 4,
+            "country": "España",
+            "province": "Cantabria",
+            "year": 2017,
+            "dailySmoker": 132887.56,
+            "ocasionalSmoker": 4526.30,
+            "nonSmoker": 307382.26
+            },
+        {
+            "id": 5,
+            "country": "España",
+            "province":"Castilla y León",
+            "year":2017,
+            "dailySmoker": 550656.83,
+            "ocasionalSmoker": 72774.03,
+            "exSmoker": 465208.69,
+            "nonSmoker": 1244193.33
+        },
+        {
+            "id": 6,
+            "country": "España",
+            "province":"Castilla-La Mancha",
+            "year":2017,
+            "dailySmoker": 499743.83,
+            "ocasionalSmoker": 55865.67,
+            "exSmoker": 1294313.68,
+            "nonSmoker": 1129502.32
+        },
+        {
+            "id": 7,
+            "country": "España",
+            "province":"Cataluña",
+            "year":2017,
+            "dailySmoker": 1700061.75,
+            "ocasionalSmoker": 174539.67,
+            "exSmoker": 994231.61,
+            "nonSmoker": 4125483.18
+        },
+        {
+            "id": 8,
+            "country": "España",
+            "province":"Comunidad Valenciana",
+            "year":2017,
+            "dailySmoker": 1225494.23,
+            "ocasionalSmoker": 123043.57,
+            "exSmoker": 220519.66,
+            "nonSmoker": 2447035.26
+        },
+        {
+            "id": 9,
+            "country": "España",
+            "province":"Extremadura",
+            "year":2017,
+            "dailySmoker": 258100.88,
+            "ocasionalSmoker": 30885.71,
+            "exSmoker": 524605.26,
+            "nonSmoker": 573221.54
+        },
+        {
+            "id": 10,
+            "country": "España",
+            "province":"Galicia",
+            "year":2017,
+            "dailySmoker": 482084.34,
+            "ocasionalSmoker": 108333.56,
+            "exSmoker": 1068479.61,
+            "nonSmoker": 1606045.03
+        },
+        {
+            "id": 11,
+            "country": "España",
+            "province":"Madrid (Comunidad De)",
+            "year":2017,
+            "dailySmoker": 1236364.96,
+            "ocasionalSmoker": 211483.48,
+            "exSmoker": 304346.51,
+            "nonSmoker": 3586109.10
+        },
+        {
+            "id": 12,
+            "country": "España",
+            "province":"Navarra (Comunidad Foral De)",
+            "year":2017,
+            "dailySmoker": 131219.74,
+            "ocasionalSmoker": 16788.41,
+            "exSmoker": 308937.45,
+            "nonSmoker": 385747.43
+        },
+        {
+            "id": 13,
+            "country": "España",
+            "province":"País Vasco",
+            "year":2017,
+            "dailySmoker": 434443.28,
+            "ocasionalSmoker": 83816.84,
+            "exSmoker": 74051.46,
+            "nonSmoker": 1083694.64
         }
     ];
     //Inserta 
@@ -75,6 +174,105 @@ module.exports.register = (app) => {
             "ocasionalSmoker": 45124.26,
             "exSmoker": 220967.80,
             "nonSmoker": 559602.87
+        },
+        {
+            "id": 4,
+            "country": "España",
+            "province": "Cantabria",
+            "year": 2017,
+            "dailySmoker": 132887.56,
+            "ocasionalSmoker": 4526.30,
+            "nonSmoker": 307382.26
+            },
+        {
+            "id": 5,
+            "country": "España",
+            "province":"Castilla y León",
+            "year":2017,
+            "dailySmoker": 550656.83,
+            "ocasionalSmoker": 72774.03,
+            "exSmoker": 465208.69,
+            "nonSmoker": 1244193.33
+        },
+        {
+            "id": 6,
+            "country": "España",
+            "province":"Castilla-La Mancha",
+            "year":2017,
+            "dailySmoker": 499743.83,
+            "ocasionalSmoker": 55865.67,
+            "exSmoker": 1294313.68,
+            "nonSmoker": 1129502.32
+        },
+        {
+            "id": 7,
+            "country": "España",
+            "province":"Cataluña",
+            "year":2017,
+            "dailySmoker": 1700061.75,
+            "ocasionalSmoker": 174539.67,
+            "exSmoker": 994231.61,
+            "nonSmoker": 4125483.18
+        },
+        {
+            "id": 8,
+            "country": "España",
+            "province":"Comunidad Valenciana",
+            "year":2017,
+            "dailySmoker": 1225494.23,
+            "ocasionalSmoker": 123043.57,
+            "exSmoker": 220519.66,
+            "nonSmoker": 2447035.26
+        },
+        {
+            "id": 9,
+            "country": "España",
+            "province":"Extremadura",
+            "year":2017,
+            "dailySmoker": 258100.88,
+            "ocasionalSmoker": 30885.71,
+            "exSmoker": 524605.26,
+            "nonSmoker": 573221.54
+        },
+        {
+            "id": 10,
+            "country": "España",
+            "province":"Galicia",
+            "year":2017,
+            "dailySmoker": 482084.34,
+            "ocasionalSmoker": 108333.56,
+            "exSmoker": 1068479.61,
+            "nonSmoker": 1606045.03
+        },
+        {
+            "id": 11,
+            "country": "España",
+            "province":"Madrid (Comunidad De)",
+            "year":2017,
+            "dailySmoker": 1236364.96,
+            "ocasionalSmoker": 211483.48,
+            "exSmoker": 304346.51,
+            "nonSmoker": 3586109.10
+        },
+        {
+            "id": 12,
+            "country": "España",
+            "province":"Navarra (Comunidad Foral De)",
+            "year":2017,
+            "dailySmoker": 131219.74,
+            "ocasionalSmoker": 16788.41,
+            "exSmoker": 308937.45,
+            "nonSmoker": 385747.43
+        },
+        {
+            "id": 13,
+            "country": "España",
+            "province":"País Vasco",
+            "year":2017,
+            "dailySmoker": 434443.28,
+            "ocasionalSmoker": 83816.84,
+            "exSmoker": 74051.46,
+            "nonSmoker": 1083694.64
         }
     ];
 
