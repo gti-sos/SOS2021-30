@@ -53,7 +53,7 @@
  
         console.log("Fetching employment data...");
         await fetch("/api/v1/smokers-stats/loadInitialData");
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -178,7 +178,7 @@
             console.log("Ok:");
             const json = await res.json();
             SmokerStats = json;
-            console.log("Received " + SmokerStats.length + " data.");
+            console.log("Received " + SmokerStats.length + " resources.");
         } else {
             errorMSG= res.status + ": " + res.statusText;
             console.log("ERROR!");
@@ -206,7 +206,7 @@
 </script>
 
 <main>
-    <h1>Administración de datos de fumadores</h1>
+    <h1 style ="text-align: center;">Administración de datos de fumadores</h1>
 
     {#await SmokerStats}
         Loading smokers data...
