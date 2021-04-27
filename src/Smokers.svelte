@@ -17,7 +17,7 @@
     let color = "danger";
     
     let page = 1;
-    let totaldata=5;
+    let totaldata=13;
     let SmokerStats = [];
 	let newSmoker = {
         province: "",
@@ -36,7 +36,7 @@
     async function getSmoker() {
  
         console.log("Fetching employment Data...");
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
