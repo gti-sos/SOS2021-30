@@ -8,7 +8,7 @@ var db = new Datastore();
 var weights_stats = [];
 
 module.exports.register = (app) => {
-    //5.2 - GET loadInitialData
+    //5.2 - GET loadInitialData.
     app.get(BASE_WEIGHTS_PATH + "/loadInitialData", (req, res) => {
         weights_stats = [
             {
@@ -94,21 +94,14 @@ module.exports.register = (app) => {
             },
         ];
 
-        db.find({},(err, data) => {
-            if (err) {
-                console.error("ERROR accesing DB in GET");
-                res.sendStatus(500);
-            } else {
-                if (data.length == 0) {
-                    db.insert(weights_stats);
-                    console.log(`Loaded initial data: <${JSON.stringify(weights_stats, null, 2)}>`);
-                    res.send(JSON.stringify(weights_stats,null,2));
-                } else {
-                    console.error(`initial data already exists`);
-                    res.sendStatus(409);
-                }
-            }
+        // Inicialización base de datos
+        //Borra todo lo anterior para evitar duplicidades al hacer loadInitialData
+        db.remove({}, { multi: true }, function (err, numRemoved) {
         });
+        // Inserta los datos iniciales en la base de datos
+        db.insert(weights_stats);
+        
+        res.send(JSON.stringify(weights_stats,null,2));
     });
 
     //6.1 - GET a la lista de recursos
