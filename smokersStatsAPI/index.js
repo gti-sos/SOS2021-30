@@ -6,9 +6,10 @@ const { sortBy } = require("underscore");
 
 var BASE_API_PATH = "/api/v1";
 
+var smokersStats = [];
 module.exports.register = (app) => {
 
-/*--------------Variable Objeto-----------------------*/
+/*--------------Variable Objeto-----------------------
     smokersStats=[
         {   
             "id": 1,
@@ -43,11 +44,11 @@ module.exports.register = (app) => {
     ];
     //Inserta 
     db.insert(smokersStats);
-/*--------------------fin constructor-----------------------*/
+--------------------fin constructor-----------------------*/
 
     //GET inicial (loadInitialData) para inicializar la BD (constructor)
     app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
-    smokersStatsIni=[
+    smokersStats=[
         {   
             "id": 1,
             "country": "España",
@@ -85,9 +86,9 @@ module.exports.register = (app) => {
         db.remove({}, { multi: true }, function (err, numRemoved) {
         });
     // Inserta los datos iniciales en la base de datos
-       db.insert(smokersStatsIni);
+       db.insert(smokersStats);
        
-       res.send(JSON.stringify(smokersStatsIni,null,2));
+       res.send(JSON.stringify(smokersStats,null,2));
 
     });
 
