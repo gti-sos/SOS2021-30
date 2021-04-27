@@ -91,7 +91,7 @@
                      getSmoker();
                      console.log("Data introduced");
                      color = "success";
-                     errorMSG="Entrada introducida correctamente a la base de datos";
+                     okayMSG="Entrada introducida correctamente a la base de datos";
                  }
                  else if(res.status == 400){
                      console.log("ERROR Data was not correctly introduced");
