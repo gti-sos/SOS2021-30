@@ -3180,6 +3180,9 @@ var app = (function () {
     	let t45;
     	let li13;
     	let a15;
+    	let t47;
+    	let li14;
+    	let a16;
 
     	const block = {
     		c: function create() {
@@ -3269,6 +3272,10 @@ var app = (function () {
     			li13 = element("li");
     			a15 = element("a");
     			a15.textContent = "Front-End API alcohol-consumption-stats";
+    			t47 = space();
+    			li14 = element("li");
+    			a16 = element("a");
+    			a16.textContent = "Front-End API weight-stats";
     			add_location(h10, file$4, 1, 4, 12);
     			attr_dev(a0, "href", "https://github.com/Alesanmar");
     			add_location(a0, file$4, 2, 22, 51);
@@ -3337,6 +3344,10 @@ var app = (function () {
     			add_location(a15, file$4, 30, 22, 3008);
     			attr_dev(li13, "type", "circle");
     			add_location(li13, file$4, 30, 4, 2990);
+    			attr_dev(a16, "href", "http://sos2021-30.herokuapp.com/#/weights-stats");
+    			add_location(a16, file$4, 31, 22, 3138);
+    			attr_dev(li14, "type", "circle");
+    			add_location(li14, file$4, 31, 4, 3120);
     			add_location(main, file$4, 0, 0, 0);
     		},
     		l: function claim(nodes) {
@@ -3405,6 +3416,9 @@ var app = (function () {
     			append_dev(main, t45);
     			append_dev(main, li13);
     			append_dev(li13, a15);
+    			append_dev(main, t47);
+    			append_dev(main, li14);
+    			append_dev(li14, a16);
     		},
     		p: noop,
     		i: noop,
@@ -5170,7 +5184,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (41:4) {#each weights as data}
+    // (41:8) {#each weights as data}
     function create_each_block(ctx) {
     	let tr;
     	let td0;
@@ -5227,20 +5241,20 @@ var app = (function () {
     			t12 = text(t12_value);
     			t13 = space();
     			attr_dev(td0, "class", "svelte-1saowt2");
-    			add_location(td0, file$1, 42, 12, 1110);
+    			add_location(td0, file$1, 42, 16, 1130);
     			attr_dev(td1, "class", "svelte-1saowt2");
-    			add_location(td1, file$1, 43, 12, 1142);
+    			add_location(td1, file$1, 43, 16, 1166);
     			attr_dev(td2, "class", "svelte-1saowt2");
-    			add_location(td2, file$1, 44, 12, 1179);
+    			add_location(td2, file$1, 44, 16, 1207);
     			attr_dev(td3, "class", "svelte-1saowt2");
-    			add_location(td3, file$1, 45, 12, 1218);
+    			add_location(td3, file$1, 45, 16, 1250);
     			attr_dev(td4, "class", "svelte-1saowt2");
-    			add_location(td4, file$1, 46, 12, 1252);
+    			add_location(td4, file$1, 46, 16, 1288);
     			attr_dev(td5, "class", "svelte-1saowt2");
-    			add_location(td5, file$1, 47, 12, 1295);
+    			add_location(td5, file$1, 47, 16, 1335);
     			attr_dev(td6, "class", "svelte-1saowt2");
-    			add_location(td6, file$1, 48, 12, 1335);
-    			add_location(tr, file$1, 41, 8, 1092);
+    			add_location(td6, file$1, 48, 16, 1379);
+    			add_location(tr, file$1, 41, 12, 1108);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -5284,7 +5298,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(41:4) {#each weights as data}",
+    		source: "(41:8) {#each weights as data}",
     		ctx
     	});
 
@@ -5366,7 +5380,7 @@ var app = (function () {
     			add_location(tr, file$1, 29, 12, 759);
     			attr_dev(thead, "class", "svelte-1saowt2");
     			add_location(thead, file$1, 28, 8, 738);
-    			add_location(tbody, file$1, 39, 4, 1046);
+    			add_location(tbody, file$1, 39, 8, 1054);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);

@@ -36,21 +36,21 @@
                 <td>Sobrepeso</td>
                 <td>Obesidad</td>
             </tr>
-    </thead>
-    <tbody>
-    {#each weights as data}
-        <tr>
-            <td>{data.id}</td>
-            <td>{data.country}</td>
-            <td>{data.provinces}</td>
-            <td>{data.year}</td>
-            <td>{data.normal_weight}</td>
-            <td>{data.overweight}</td>
-            <td>{data.obesity}</td>
-    </tr>
+        </thead>
+        <tbody>
+        {#each weights as data}
+            <tr>
+                <td>{data.id}</td>
+                <td>{data.country}</td>
+                <td>{data.provinces}</td>
+                <td>{data.year}</td>
+                <td>{data.normal_weight}</td>
+                <td>{data.overweight}</td>
+                <td>{data.obesity}</td>
+            </tr>
             
         {/each}
-    </tbody>
+        </tbody>
     </Table>
 </body>
 </main>
