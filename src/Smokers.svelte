@@ -107,6 +107,7 @@
              });	
          }
      }
+
     //DELETE SPECIFIC
     async function deleteSmokers(province, year) {
         const res = await fetch("/api/v1/smokers-stats/" + province + "/" + year, {
@@ -130,6 +131,7 @@
             }      
         });
     }
+
     //DELETE ALL
     async function deleteALL() {
 		console.log("Deleting employment data...");
@@ -171,7 +173,7 @@
             page+=5
         }
         console.log("Charging page "+ page);
-        const res = await fetch("/api/v1/smokers-stats?limit=5"+ page);
+        const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+ page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -189,7 +191,7 @@
             page-=5; 
         } else page = 1
         console.log("Charging page " +page);
-        const res = await fetch("/api/v1/smokers-stats?limit=5"+page);
+        const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
