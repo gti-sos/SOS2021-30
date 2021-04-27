@@ -84,25 +84,11 @@ module.exports.register = (app) => {
         //Borra todo lo anterior para evitar duplicidades al hacer loadInitialData
         db.remove({}, { multi: true }, function (err, numRemoved) {
         });
-        
-        db.find({},(err, data) => {
-            if(err){
-                console.error("ERROR accesing DB in GET: "+err);
-                res.sendStatus(500);
-            }else{
-                if (data.length == 0) {
-                    db.insert(smokersStatsIni);
-                    console.log(`Loaded initial data: <${JSON.stringify(smokersStats, null, 2)}>`);
-                    res.sendStatus(201);
-                }else if (data.length != 8){
-                    console.log("Error in format.");
-                    res.sendStatus(400);
-                }else{
-                    console.error(`initial data already exists: `+err);
-                    res.sendStatus(409);
-                }
-            }
-        })
+    // Inserta los datos iniciales en la base de datos
+       db.insert(smokersStatsIni);
+       
+       res.send(JSON.stringify(smokersStatsIni,null,2));
+
     });
 
     //GET A UNA LISTA DE RECURSOS DE SMOKERS-STATS
