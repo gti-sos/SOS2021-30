@@ -2,9 +2,7 @@ var _= require("underscore");
 var Datastore = require("nedb");
 var db = new Datastore();
 
-const { sortBy } = require("underscore");
-
-var BASE_API_PATH = "/api/v1";
+var BASE_API_PATH = "/api/v1/smokers-stats";
 
 module.exports.register = (app) => {
 
@@ -46,7 +44,7 @@ module.exports.register = (app) => {
 /*--------------------fin constructor-----------------------*/
 
     //GET inicial (loadInitialData) para inicializar la BD (constructor)
-    app.get(BASE_API_PATH+"/smokers-stats/loadInitialData",(req,res)=>{
+    app.get(BASE_API_PATH+"/loadInitialData",(req,res)=>{
     smokersStatsIni=[
         {   
             "id": 1,
@@ -80,28 +78,19 @@ module.exports.register = (app) => {
         }
     ];
 
-        db.find({},(err, data) => {
-            if(err){
-                console.error("ERROR accesing DB in GET: "+err);
-                res.sendStatus(500);
-            }else{
-                if (data.length == 0) {
-                    db.insert(smokersStatsIni);
-                    console.log(`Loaded initial data: <${JSON.stringify(smokersStats, null, 2)}>`);
-                    res.sendStatus(201);
-                }else if (data.length != 8){
-                    console.log("Error in format.");
-                    res.sendStatus(400);
-                }else{
-                    console.error(`initial data already exists: `+err);
-                    res.sendStatus(409);
-                }
-            }
-        })
+    // Inicialización base de datos
+        //Borra todo lo anterior para evitar duplicidades al hacer loadInitialData
+        db.remove({}, { multi: true }, function (err, numRemoved) {
+        });
+    // Inserta los datos iniciales en la base de datos
+       db.insert(smokersStatsIni);
+       
+       res.send(JSON.stringify(smokersStats,null,2));
+
     });
 
     //GET A UNA LISTA DE RECURSOS DE SMOKERS-STATS
-    app.get(BASE_API_PATH+"/smokers-stats", (req,res)=>{
+    app.get(BASE_API_PATH, (req,res)=>{
         var query = req.query;
         var limit = parseInt(query.limit);
         var offset = parseInt(query.offset);
@@ -134,7 +123,7 @@ module.exports.register = (app) => {
 
     //POST A LA LISTA DE RECURSOS DE SMOKERS-STATS
     
-    app.post(BASE_API_PATH+"/smokers-stats",(req,res)=>{
+    app.post(BASE_API_PATH,(req,res)=>{
         var dataNew = req.body;
         var provinceNew = req.body.province;
         var yearNew = req.body.year;
@@ -168,12 +157,12 @@ module.exports.register = (app) => {
     });
 
     //PUT A UNA LISTA DE RECURSOS DE SMOKERS STATS (Debe dar error)
-    app.put(BASE_API_PATH+"/smokers-stats",(req,res) => {
+    app.put(BASE_API_PATH,(req,res) => {
         res.sendStatus(405);
     });
 
     //DELETE A LISTA DE RECURSOS DE SMOKERS STATS
-    app.delete(BASE_API_PATH+"/smokers-stats", (req,res) => {
+    app.delete(BASE_API_PATH, (req,res) => {
         db.remove({}, {multi: true}, (err, numDataRemoved) => {
             if (err || numDataRemoved == 0){
                 console.log("ERROR deleting DB: "+err);
@@ -186,7 +175,7 @@ module.exports.register = (app) => {
     });
     
     //GET A UN RECURSO CONCRETO DE SMOKER POR PROVINCE/YEAR    
-    app.get(BASE_API_PATH+"/smokers-stats/:province/:year", (req, res) => {
+    app.get(BASE_API_PATH+"/:province/:year", (req, res) => {
         var reqprovince = req.params.province;
         var reqyear = parseInt(req.params.year);
 
@@ -208,13 +197,13 @@ module.exports.register = (app) => {
     });
     
     //POST A UN RECURSO DE SMOKER (No está permitido)
-    app.post(BASE_API_PATH+"/smokers-stats/:province/:year",(req,res)=>{
+    app.post(BASE_API_PATH+"/:province/:year",(req,res)=>{
         res.sendStatus(405);
         console.log("Se ha intentado hacer POST a un recurso concreto.");
     });
 
     //PUT A UN RECURSO CONCRETO DE SMOKER POR PROVINCE/YEAR
-    app.put(BASE_API_PATH+"/smokers-stats/:province/:year",(req,res)=>{
+    app.put(BASE_API_PATH+"/:province/:year",(req,res)=>{
         
         var provinceNew = req.params.province;
         var yearNew = parseInt(req.params.year);
@@ -245,7 +234,7 @@ module.exports.register = (app) => {
     });
 
     //DELETE A UN RECURSO CONCRETO DE SMOKER POR PROVINCE/YEAR
-    app.delete(BASE_API_PATH + "/smokers-stats/:province/:year", (req,res)=>{
+    app.delete(BASE_API_PATH + "/:province/:year", (req,res)=>{
         var reqprovince = req.params.province;
         var reqyear = parseInt(req.params.year);
 

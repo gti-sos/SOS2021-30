@@ -30,6 +30,7 @@
     <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/life-stats">Front-End API life-expectancy-stats</a></li>
     <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/alcohol-stats">Front-End API alcohol-consumption-stats</a></li>
     <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/weights-stats">Front-End API weight-stats</a></li>
+    <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/smokers-stats">Front-End API smokers-stats</a></li>
 
 
 
