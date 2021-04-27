@@ -26,7 +26,7 @@
     <li type="circle"><a href="https://documenter.getpostman.com/view/14975289/TzJsgyKg#e9ca3cfb-c54e-4c42-860e-b58fbe87205e">Documentación de los tests de Postman sobre la API Weights-Stats (developed by Jesús Ruiz Domínguez)</a></li>
     <li type="circle"><a href="https://documenter.getpostman.com/view/14942936/TzJsheDD">Documentación de los tests de Postman sobre la API alcohol-consumption-stats (developed by Víctor Caballero Sánchez)</a></li>
 
-    <h1>Enlaces Back-End</h1>
+    <h1>Enlaces Front-End</h1>
     <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/alcohol-stats">Back-End API alcohol-consumption-stats</a></li>
 
 
