@@ -182,6 +182,7 @@ module.exports.register = (app) => {
             "year": 2017,
             "dailySmoker": 132887.56,
             "ocasionalSmoker": 4526.30,
+            "exSmoker": 541681.36,
             "nonSmoker": 307382.26
             },
         {
