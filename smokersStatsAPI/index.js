@@ -2,8 +2,6 @@ var _= require("underscore");
 var Datastore = require("nedb");
 var db = new Datastore();
 
-const { sortBy } = require("underscore");
-
 var BASE_API_PATH = "/api/v1";
 
 var smokersStats = [];
