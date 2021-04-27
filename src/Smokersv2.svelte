@@ -41,7 +41,7 @@
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
-            Smokers = json;
+            SmokersStats = json;
             console.log("Received " + SmokerStats.length + " Smokers Data.");
         } else {
             errorMSG= res.status + ": " + res.statusText;
@@ -228,6 +228,7 @@
             <tbody>
                 <tr>
                     <td><input bind:value="{newSmoker.country}"></td>
+                    <td><input bind:value="{newSmoker.province}"></td>
                     <td><input bind:value="{newSmoker.year}"></td>
                     <td><input bind:value="{newSmoker.dailySmoker}"></td> 
                     <td><input bind:value="{newSmoker.ocasionalSmoker}"></td>    
@@ -244,7 +245,7 @@
                         <td>{sc.ocasionalSmoker}</td>
                         <td>{sc.exSmoker}</td>
                         <td>{sc.nonSmoker}</td>
-                        <td><Button outline color="danger" on:click="{deleteSmokers(sc.country, sc.year)}">Borrar</Button></td>
+                        <td><Button outline color="danger" on:click="{deleteSmokers(sc.province, sc.year)}">Borrar</Button></td>
                         
                     </tr>
                 {/each}
