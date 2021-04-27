@@ -41,7 +41,7 @@
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
-            SmokersStats = json;
+            SmokerStats = json;
             console.log("Received " + SmokerStats.length + " Smokers Data.");
         } else {
             errorMSG= res.status + ": " + res.statusText;
