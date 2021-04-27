@@ -24,14 +24,6 @@
 
     onMount(getSmokers);
 
-    console.log("Before getSmokers");
-    getSmokers();
-    console.log("After getSmokers");
-
-
-
-
-
 </script>
 
 <main>
