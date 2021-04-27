@@ -45,7 +45,7 @@ module.exports.register = (app) => {
 
     //GET inicial (loadInitialData) para inicializar la BD (constructor)
     app.get(BASE_API_PATH+"/loadInitialData",(req,res)=>{
-    smokersStats=[
+    smokersStatsIni=[
         {   
             "id": 1,
             "country": "España",
@@ -83,7 +83,7 @@ module.exports.register = (app) => {
         db.remove({}, { multi: true }, function (err, numRemoved) {
         });
     // Inserta los datos iniciales en la base de datos
-       db.insert(smokersStats);
+       db.insert(smokersStatsIni);
        
        res.send(JSON.stringify(smokersStats,null,2));
 

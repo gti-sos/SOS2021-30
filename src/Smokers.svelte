@@ -15,7 +15,7 @@
             console.log("Ok.");
             const json = await res.json();
             SmokerStats = json;
-            console.log(`We have received ${SmokerStats.lenght} resources`);
+            console.log(`We have received ${SmokerStats.lenght} resources from smokers`);
         }else{
             console.log("Error!");
         }
