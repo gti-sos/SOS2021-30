@@ -6,8 +6,12 @@
 	import Router from 'svelte-spa-router';
   import LifeExpectancy from './lifeExpectancy.svelte';
 	import TablaAlcohol from "./TablaAlcohol.svelte";
+<<<<<<< HEAD
   import SmokerStats from "./Smokers.svelte";
   import FrontWeight from "./Weights.svelte";
+=======
+  import FrontWeight from "./TablaWeights.svelte";
+>>>>>>> c15757edf9dea403d123a070e07ddbf5ded0ea52
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
 
 	const routes = {
