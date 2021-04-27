@@ -1,65 +1,54 @@
 <script>
-    import { onMount } from "svelte";
+
+    import{
+        onMount
+    } from "svelte";
+
     import Table from "sveltestrap/src/Table.svelte";
-    let weights = [];
-    
-    async function getWeights(){
-        console.log("fetching data");
-        const res = await fetch("/api/v1/table-weights-stats/loadInitialData");
-        if (res.ok) {
-            console.log("Ok");
-            const json = await res.json();
-            weights = json;
-            console.log("We have " + weights.length +" datas.");
-        } else {
-            console.log("Error");
+
+    let weightsStats = [];
+
+    async function getStats(){
+        console.log("Fetching stats...");
+        const res= await fetch("/api/v1/table-weights-stats/loadInitialData");
+
+        if(res.ok){
+            console.log("ok");
+            const json= await res.json();
+            weightsStats=json;
+            console.log(`We have received ${weightsStats.length} alcohol stats`);
+        }else{
+            console.log("Error")
         }
     }
-    console.log("Before call");
-    onMount(getWeights)
-    console.log("After call");
+
+    onMount(getStats);
+
 </script>
 
 <main>
-    <body>
-        
-   
-    
-    <Table bordered responsive> 
-        <thead>
-            <tr>
-                <td>ID</td>
-                <td>Pais</td>
-                <td>Comunidad autonoma</td>
-                <td>Año</td>
-                <td>Peso normal</td>
-                <td>Sobrepeso</td>
-                <td>Obesidad</td>
-            </tr>
-    </thead>
-    <tbody>
-    {#each weights as data}
-        <tr>
-            <td>{data.id}</td>
-            <td>{data.country}</td>
-            <td>{data.provinces}</td>
-            <td>{data.year}</td>
-            <td>{data.normal_weight}</td>
-            <td>{data.overweight}</td>
-            <td>{data.obesity}</td>
-    </tr>
-            
-        {/each}
-    </tbody>
-    </Table>
-</body>
-</main>
+    <h1>Tabla sobre el IMC por comunidades</h1>
 
-<style>
-    td{
-        text-align: center;
-    }
-    thead{
-        font-weight: bold;
-    }
-</style>
+    <Table>
+        <thead>
+          <tr>
+            <th>Comunidad autónoma</th>
+            <th>Año</th>
+            <th>Peso normal</th>
+            <th>Sobrepeso</th>
+            <th>Obesidad</th>
+          </tr>
+        </thead>
+        <tbody>
+            {#each weightsStats as weightsStat}
+                <tr>
+                    <td>{weightsStat.provinces}</td>
+                    <td>{weightsStat.year}</td>
+                    <td>{weightsStat.normal_weight}</td>
+                    <td>{weightsStat.overweight}</td>
+                    <td>{weightsStat.obesity}</td>
+                </tr>
+            {/each}
+        </tbody>
+    </Table>
+</main>
