@@ -17,7 +17,7 @@
     let color = "danger";
     
     let page = 1;
-    let totaldata=5;
+    let totaldata=2;
     let SmokerStats = [];
 	let newSmoker = {
         province: "",
@@ -77,7 +77,7 @@
          console.log("Inserting smokers data...");
          //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
          if (newSmoker.country == "" || newSmoker.country == null || newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
-             alert("Los campos 'Pais','Año' y 'Provincia' no pueden estar vacios");
+             alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
          }
          else{
              const res = await fetch("/api/v1/smokers-stats",{
@@ -107,8 +107,8 @@
          }
      }
     //DELETE SPECIFIC
-    async function deleteSmokers(name, year) {
-        const res = await fetch("/api/v1/smokers-stats/" + name + "/" + year, {
+    async function deleteSmokers(province, year) {
+        const res = await fetch("/api/v1/smokers-stats/" + province + "/" + year, {
             method: "DELETE"
         }).then(function (res) {
             visible = true;
@@ -117,10 +117,10 @@
                 totaldata--;
                 color = "success";
                 errorMSG = "Recurso" + province + year + "borrado correctamente";
-                console.log("Deleted " + name);            
+                console.log("Deleted " + province);            
             }else if (res.status==404) {
                 color = "danger";
-                errorMSG = "No se ha encontrado el objeto" + name;
+                errorMSG = "No se ha encontrado el objeto" + province;
                 console.log("SUICIDE NOT FOUND");            
             } else {
                 color = "danger";
@@ -166,7 +166,7 @@
             page+=5
         }
         console.log("Charging page "+ page);
-        const res = await fetch("/api/v1/smokers-stats"+page);
+        const res = await fetch("/api/v1/smokers-stats"+ page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
