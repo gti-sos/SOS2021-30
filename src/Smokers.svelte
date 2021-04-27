@@ -14,7 +14,7 @@
         if(res.ok){
             console.log("Ok.");
             const json = await res.json();
-            SmokersStats = json;
+            SmokerStats = json;
             console.log(`We have received ${SmokerStats.lenght} resources`);
         }else{
             console.log("Error!");
