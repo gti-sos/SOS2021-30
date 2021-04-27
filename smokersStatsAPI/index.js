@@ -80,6 +80,11 @@ module.exports.register = (app) => {
         }
     ];
 
+    // Inicialización base de datos
+        //Borra todo lo anterior para evitar duplicidades al hacer loadInitialData
+        db.remove({}, { multi: true }, function (err, numRemoved) {
+        });
+        
         db.find({},(err, data) => {
             if(err){
                 console.error("ERROR accesing DB in GET: "+err);
