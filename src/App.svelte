@@ -6,6 +6,7 @@
 	import Router from 'svelte-spa-router';
   import LifeExpectancy from './lifeExpectancy.svelte';
 	import TablaAlcohol from "./TablaAlcohol.svelte";
+  import SmokerStats from "./Smokers.svelte";
   import FrontWeight from "./Weights.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
 
@@ -14,6 +15,7 @@
 		"/alcohol-stats": TablaAlcohol,
     "/life-stats" : LifeExpectancy,
     "/weights-stats" : FrontWeight,
+    "/smokers-stats" : SmokerStats,
 		'*': NotFound};
 </script>
 
@@ -27,6 +29,9 @@
               </NavItem>
               <NavItem>
                 <NavLink href="#/alcohol-stats">Tabla alcohol</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#/smokers-stats">Tabla fumadores</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="#/life-stats">Tabla esperanza de vida</NavLink>
