@@ -20,7 +20,6 @@
     let totaldata=5;
     let SmokerStats = [];
 	let newSmoker = {
-		country: "",
         province: "",
 		year: "",
 		dailySmoker:"",
@@ -215,7 +214,6 @@
         <Table bordered responsive>
             <thead>
                 <tr>
-                    <th>País</th>
                     <th>Comunidad Autónoma</th>
                     <th>Año</th>
                     <th>Fumadores diarios </th>
@@ -227,7 +225,6 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><input bind:value="{newSmoker.country}"></td>
                     <td><input bind:value="{newSmoker.province}"></td>
                     <td><input bind:value="{newSmoker.year}"></td>
                     <td><input bind:value="{newSmoker.dailySmoker}"></td> 
