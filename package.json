@@ -36,10 +36,14 @@
     "express": "^4.17.1",
     "grpc": "^1.24.6",
     "nedb": "^1.8.0",
+<<<<<<< HEAD
     "router": "^1.3.5",
     "svelte-routing": "^1.6.0",
     "svelte-spa-router": "^3.1.0",
     "sveltestrap": "^3.14.1",
+=======
+    "sveltestrap": "^4.0.0",
+>>>>>>> ee56ceae82e0b4675469dc90cce0ba014fa04fcc
     "underscore": "^1.13.1"
   }
 }

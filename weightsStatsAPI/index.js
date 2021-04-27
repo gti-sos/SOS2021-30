@@ -162,27 +162,27 @@ module.exports.register = (app) => {
         });
     });
 
-        //6.3 - GET a un recurso por PROVINCES/YEAR    
-        app.get(BASE_WEIGHTS_PATH + "/:provinces/:year", (req,res)=>{ 	
-            var reqprovinces = req.params.provinces;
-            var reqyear = parseInt(req.params.year);
-            db.find({provinces: reqprovinces, year:reqyear}, function(err, data) {            
-                console.log(data);
-                
-                if (data.length==0) {               
-                    res.status(404).send("Data not found");        
-                }else{                
-                var aux = data.map((c)=>{
-                    return {id: c.id, country:c.country, provinces: c.provinces, year: c.year, normal_weight:c.normal_weight, overweight: c.overweight, obesity: c.obesity }
-                    });
-                    if (aux.length == 1) {
-                      res.status(200).send(aux[0]);
-                    }else{
-                       res.status(200).send(aux);
-                    }  
-                }                
-            });        
-        });
+    //6.3 - GET a un recurso por PROVINCES/YEAR    
+    app.get(BASE_WEIGHTS_PATH + "/:provinces/:year", (req,res)=>{ 	
+        var reqprovinces = req.params.provinces;
+        var reqyear = parseInt(req.params.year);
+        db.find({provinces: reqprovinces, year:reqyear}, function(err, data) {            
+            console.log(data);
+            
+            if (data.length==0) {               
+                res.status(404).send("Data not found");        
+            }else{                
+            var aux = data.map((c)=>{
+                return {id: c.id, country:c.country, provinces: c.provinces, year: c.year, normal_weight:c.normal_weight, overweight: c.overweight, obesity: c.obesity }
+                });
+                if (aux.length == 1) {
+                    res.status(200).send(aux[0]);
+                }else{
+                    res.status(200).send(aux);
+                }  
+            }                
+        });        
+    });
 
     //6.4 - DELETE a un recurso por PROVINCES/YEAR
     app.delete(BASE_WEIGHTS_PATH + "/:provinces/:year", (req,res)=>{

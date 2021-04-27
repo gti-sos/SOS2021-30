@@ -715,9 +715,21 @@ var app = (function () {
     	const block_1 = {
     		c: function create() {
     			a = element("a");
+<<<<<<< HEAD
     			if_block.c();
     			set_attributes(a, a_data);
     			add_location(a, file$a, 33, 2, 752);
+=======
+    			a.textContent = "Svelte tutorial";
+    			t6 = text(" to learn how to build Svelte apps.");
+    			attr_dev(h1, "class", "svelte-1tky8bj");
+    			add_location(h1, file, 5, 1, 51);
+    			attr_dev(a, "href", "https://svelte.dev/tutorial");
+    			add_location(a, file, 6, 14, 89);
+    			add_location(p, file, 6, 1, 76);
+    			attr_dev(main, "class", "svelte-1tky8bj");
+    			add_location(main, file, 4, 0, 42);
+>>>>>>> ee56ceae82e0b4675469dc90cce0ba014fa04fcc
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
