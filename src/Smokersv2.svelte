@@ -17,7 +17,7 @@
     let color = "danger";
     
     let page = 1;
-    let totaldata=2;
+    let totaldata=5;
     let SmokerStats = [];
 	let newSmoker = {
         province: "",
@@ -59,7 +59,7 @@
             const json = await res.json();
             SmokerStats = json;
             totaldata=5;
-            console.log("Received " + SmokerStats.length + " Employment data.");
+            console.log("Received " + SmokerStats.length + " Smokers data.");
             color = "success";
             errorMSG = "Datos cargados correctamente";
         } 
@@ -76,7 +76,7 @@
 		 
          console.log("Inserting smokers data...");
          //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
-         if (newSmoker.country == "" || newSmoker.country == null || newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
+         if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
              alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
          }
          else{
@@ -116,7 +116,7 @@
             if (res.status==200) {
                 totaldata--;
                 color = "success";
-                errorMSG = "Recurso" + province + year + "borrado correctamente";
+                errorMSG = "Recurso "+province+" "+year+ " borrado correctamente";
                 console.log("Deleted " + province);            
             }else if (res.status==404) {
                 color = "danger";
@@ -225,12 +225,12 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><input bind:value="{newSmoker.province}"></td>
-                    <td><input bind:value="{newSmoker.year}"></td>
-                    <td><input bind:value="{newSmoker.dailySmoker}"></td> 
-                    <td><input bind:value="{newSmoker.ocasionalSmoker}"></td>    
-                    <td><input bind:value="{newSmoker.exSmoker}"></td>  
-                    <td><input bind:value="{newSmoker.nonSmoker}"></td>  
+                    <td><input type = "text" placeholder="Extremadura" bind:value="{newSmoker.province}"></td>
+                    <td><input type = "number" placeholder="2075" bind:value="{newSmoker.year}"></td>
+                    <td><input type = "number" placeholder="000000" bind:value="{newSmoker.dailySmoker}"></td> 
+                    <td><input type = "number" placeholder="000000" bind:value="{newSmoker.ocasionalSmoker}"></td>    
+                    <td><input type = "number" placeholder="000000" bind:value="{newSmoker.exSmoker}"></td>  
+                    <td><input type = "number" placeholder="000000" bind:value="{newSmoker.nonSmoker}"></td>  
                     <td><Button outline color="primary" on:click={insertSmokers}>Insertar</Button></td>           
                 </tr>
  
