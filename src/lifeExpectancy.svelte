@@ -37,6 +37,8 @@
 <main>
     <body>
  
+        <h1>Tabla sobre esperanza de vida</h1>
+
         <Table bordered responsive> 
             <thead>
                 <tr>

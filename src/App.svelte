@@ -4,12 +4,14 @@
 	import NotFound from "./NotFound.svelte";
 	import Home from "./Home.svelte";
 	import Router from 'svelte-spa-router';
+  import LifeExpectancy from './lifeExpectancy.svelte';
 	import TablaAlcohol from "./TablaAlcohol.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
 
 	const routes = {
 		"/":Home,
 		"/alcohol-stats": TablaAlcohol,
+    "/life-stats" : LifeExpectancy,
 		'*': NotFound};
 </script>
 
@@ -23,6 +25,9 @@
               </NavItem>
               <NavItem>
                 <NavLink href="#/alcohol-stats">Tabla alcohol</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#/life-stats">Tabla esperanza de vida</NavLink>
               </NavItem>
             </Nav>
         </Navbar>
