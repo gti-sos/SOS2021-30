@@ -91,7 +91,7 @@
                      getSmoker();
                      console.log("Data introduced");
                      color = "success";
-                     okayMSG="Entrada introducida correctamente a la base de datos";
+                     errorMSG="Entrada introducida correctamente a la base de datos";
                  }
                  else if(res.status == 400){
                      console.log("ERROR Data was not correctly introduced");
@@ -202,7 +202,7 @@
 </script>
 
 <main>
-    <h1>Administrador de datos de fumadores</h1>
+    <h1>Administración de datos de fumadores</h1>
 
     {#await SmokerStats}
         Loading smokers data...
@@ -230,10 +230,10 @@
                 <tr>
                     <td><input type = "text" placeholder="Extremadura" bind:value="{newSmoker.province}"></td>
                     <td><input type = "number" placeholder="2075" bind:value="{newSmoker.year}"></td>
-                    <td><input type = "number" placeholder="000000" bind:value="{newSmoker.dailySmoker}"></td> 
-                    <td><input type = "number" placeholder="000000" bind:value="{newSmoker.ocasionalSmoker}"></td>    
-                    <td><input type = "number" placeholder="000000" bind:value="{newSmoker.exSmoker}"></td>  
-                    <td><input type = "number" placeholder="000000" bind:value="{newSmoker.nonSmoker}"></td>  
+                    <td><input type = "number" placeholder="0000" bind:value="{newSmoker.dailySmoker}"></td> 
+                    <td><input type = "number" placeholder="0000" bind:value="{newSmoker.ocasionalSmoker}"></td>    
+                    <td><input type = "number" placeholder="0000" bind:value="{newSmoker.exSmoker}"></td>  
+                    <td><input type = "number" placeholder="0000" bind:value="{newSmoker.nonSmoker}"></td>  
                     <td><Button outline color="primary" on:click={insertSmokers}>Insertar</Button></td>           
                 </tr>
  
