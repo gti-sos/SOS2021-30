@@ -1,7 +1,6 @@
 <script>
     import{ 
         onMount
-
     } from "svelte";
 
     import Table from "sveltestrap/src/Table.svelte";
@@ -10,7 +9,7 @@
 
     async function getSmokers(){
         console.log("Fetching resources...");
-        const res = await fetch("/api/v1//smokers-stats/loadInitialData");
+        const res = await fetch("/api/v1/smokers-stats/loadInitialData");
 
         if(res.ok){
             console.log("Ok.");
