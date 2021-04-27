@@ -143,8 +143,11 @@
                     color = "success";
 					errorMSG="Datos eliminados correctamente";
 					console.log("OK All data erased");
-				}
-				else{
+				}else if (totaldata == 0){
+                    console.log("ERROR Data was not erased");
+                    color = "danger";
+					errorMSG= "No hay datos para borrar!";
+                }else{
 					console.log("ERROR Data was not erased");
                     color = "danger";
 					errorMSG= "No se han podido eliminar los datos";
