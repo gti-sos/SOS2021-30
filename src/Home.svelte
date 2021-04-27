@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <title>Información del grupo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
+<main>
     <h1>Equipo</h1>
     <li type="circle"><a href="https://github.com/Alesanmar">Alejandro Sánchez Márquez</a></li>
     <li type="circle"><a href="https://github.com/Juanpepitt">Juan Pedro Hurtado Masero</a></li>
@@ -33,5 +25,9 @@
     <li type="circle"><a href="https://documenter.getpostman.com/view/14966429/TzJoFgHe">Documentación de los tests de Postman sobre la API smokers-Stats (developed by Juan Pedro Hurtado Masero)</a></li>
     <li type="circle"><a href="https://documenter.getpostman.com/view/14975289/TzJsgyKg#e9ca3cfb-c54e-4c42-860e-b58fbe87205e">Documentación de los tests de Postman sobre la API Weights-Stats (developed by Jesús Ruiz Domínguez)</a></li>
     <li type="circle"><a href="https://documenter.getpostman.com/view/14942936/TzJsheDD">Documentación de los tests de Postman sobre la API alcohol-consumption-stats (developed by Víctor Caballero Sánchez)</a></li>
-</body>
-</html>
+
+    <h1>Enlaces Back-End</h1>
+    <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/alcohol-stats">Back-End API alcohol-consumption-stats</a></li>
+
+
+</main>

@@ -30,7 +30,7 @@ module.exports.register = (app) => {
         });
         // Inserta los datos iniciales en la base de datos
         db.insert(alcoholConsumptionStats);
-
+        
         res.send(JSON.stringify(alcoholConsumptionStats,null,2));
     });
 
@@ -54,7 +54,6 @@ module.exports.register = (app) => {
 			statsInDB.forEach((t)=>{
 				delete t._id
 			});
-
 			res.send(JSON.stringify(statsInDB,null,2));
 			console.log("The GET REQUEST have been send");
 		});
