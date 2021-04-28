@@ -145,7 +145,7 @@
                     color = "success";
 					errorMSG="Datos eliminados correctamente";
 					console.log("OK All data erased");
-				} else if (totaldata == 0 || totaldata == 1){
+				} else if (totaldata == 0 || totaldata == 1 || totaldata == 2){
                     console.log("ERROR Data was not erased");
                     color = "danger";
 					errorMSG= "¡No hay datos para borrar! (Debe haber al menos 1)";
