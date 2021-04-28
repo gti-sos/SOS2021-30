@@ -36,7 +36,7 @@
     async function getSmoker() {
  
         console.log("Fetching employment Data...");
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -53,12 +53,12 @@
  
         console.log("Fetching employment data...");
         await fetch("/api/v1/smokers-stats/loadInitialData");
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             SmokerStats = json;
-            totaldata=5;
+            totaldata=14;
             console.log("Received " + SmokerStats.length + " Smokers data.");
             color = "success";
             errorMSG = "Datos cargados correctamente";
