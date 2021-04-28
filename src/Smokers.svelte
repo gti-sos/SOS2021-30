@@ -173,7 +173,7 @@
             page+=5
         }
         console.log("Charging page "+ page);
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0"+ page);
+        const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+ page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -191,7 +191,7 @@
             page-=5; 
         } else page = 1
         console.log("Charging page " +page);
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0"+page);
+        const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
