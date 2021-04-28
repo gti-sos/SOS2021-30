@@ -139,7 +139,7 @@
 				method: "DELETE"
 			}).then(function (res) {
                 visible=true;
-				if (res.ok){
+				if (res.ok && totaldata>1){
                     totaldata = 0;
 					getSmoker();
                     color = "success";
