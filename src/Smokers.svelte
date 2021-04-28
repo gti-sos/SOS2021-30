@@ -17,7 +17,7 @@
     let color = "danger";
     
     let page = 1;
-    let totaldata=14;
+    let totaldata=13;
     let SmokerStats = [];
 	let newSmoker = {
         province: "",
@@ -36,7 +36,7 @@
     async function getSmoker() {
  
         console.log("Fetching employment Data...");
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -53,7 +53,7 @@
  
         console.log("Fetching employment data...");
         await fetch("/api/v1/smokers-stats/loadInitialData");
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -62,8 +62,7 @@
             console.log("Received " + SmokerStats.length + " Smokers data.");
             color = "success";
             errorMSG = "Datos cargados correctamente";
-        } 
-        else {
+        } else {
             color = "danger";
             errorMSG= res.status + ": " + res.statusText;
             console.log("ERROR!");
@@ -78,8 +77,7 @@
          //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
          if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
              alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
-         }
-         else{
+         } else{
              const res = await fetch("/api/v1/smokers-stats",{
              method:"POST",
              body:JSON.stringify(newSmoker),
@@ -88,7 +86,7 @@
              }
              }).then(function (res) {
                  visible=true;
-                 if(res.status == 201){
+                 if (res.status == 201){
                      getSmoker();
                      console.log("Data introduced");
                      color = "success";
@@ -120,7 +118,7 @@
                 color = "success";
                 errorMSG = "Recurso "+province+" "+year+ " borrado correctamente";
                 console.log("Deleted " + province);            
-            }else if (res.status==404) {
+            } else if (res.status==404) {
                 color = "danger";
                 errorMSG = "No se ha encontrado el objeto" + province;
                 console.log("SUICIDE NOT FOUND");            
@@ -135,23 +133,23 @@
     //DELETE ALL
     async function deleteALL() {
 		console.log("Deleting employment data...");
-		if(confirm("¿Está seguro de que desea eliminar todas las entradas?")){
+		if (confirm("¿Está seguro de que desea eliminar todas las entradas?")){
 			console.log("Deleting all employment data...");
 			const res = await fetch("/api/v1/smokers-stats/", {
 				method: "DELETE"
 			}).then(function (res) {
                 visible=true;
-				if(res.ok){
+				if (res.ok){
                     totaldata = 0;
 					getSmoker();
                     color = "success";
 					errorMSG="Datos eliminados correctamente";
 					console.log("OK All data erased");
-				}else if (totaldata == 0){
+				} else if (totaldata == 0){
                     console.log("ERROR Data was not erased");
                     color = "danger";
 					errorMSG= "No hay datos para borrar!";
-                }else{
+                } else{
 					console.log("ERROR Data was not erased");
                     color = "danger";
 					errorMSG= "No se han podido eliminar los datos";
