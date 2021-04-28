@@ -6,6 +6,43 @@
 	},
 	"item": [
 		{
+			"name": "loadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/loadinitialdata",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smokers-stats",
+						"loadinitialdata"
+					]
+				},
+				"description": "Inicializa la api."
+			},
+			"response": []
+		},
+		{
 			"name": "GET a lista completa inicial",
 			"event": [
 				{
@@ -18,7 +55,7 @@
 							"\r",
 							"pm.test(\"Hay 3 datos como al inicio.\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.length).to.eql(3);\r",
+							"    pm.expect(jsonData.length).to.eql(14);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -182,7 +219,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"id\": 4,\r\n\"country\": \"España\",\r\n\"province\": \"Cantabria\",\r\n\"year\": 2017,\r\n\"dailySmoker\": 132887.56,\r\n\"ocasionalSmoker\": 4526.30,\r\n\"nonSmoker\": 307382.26\r\n}",
+					"raw": "{\r\n\"country\": \"España\",\r\n\"province\": \"Ceuta\",\r\n\"year\": 2017,\r\n\"dailySmoker\": 5144548.56,\r\n\"ocasionalSmoker\": 3325216.30,\r\n\"nonSmoker\": 1212145.26\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -266,7 +303,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"id\": 4,\r\n\"country\": \"España\",\r\n\"province\": \"Cantabria\",\r\n\"year\": 2017,\r\n\"dailySmoker\": 132887.56,\r\n\"ocasionalSmoker\": 4526.30,\r\n\"exSmoker\": 541681.36,\r\n\"nonSmoker\": 307382.26\r\n}",
+					"raw": "{\r\n\"id\": 14,\r\n\"country\": \"España\",\r\n\"province\":\"Ceuta\",\r\n\"year\":2017,\r\n\"dailySmoker\": 12345678.96,\r\n\"ocasionalSmoker\": 11223344.48,\r\n\"exSmoker\": 321654.51,\r\n\"nonSmoker\": 555555.10\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -312,7 +349,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"id\": 4,\r\n\"country\": \"España\",\r\n\"province\": \"Cantabria\",\r\n\"year\": 2017,\r\n\"dailySmoker\": 132887.56,\r\n\"ocasionalSmoker\": 4526.30,\r\n\"exSmoker\": 541681.36,\r\n\"nonSmoker\": 307382.26\r\n}",
+					"raw": "{\r\n\"id\": 14,\r\n\"country\": \"España\",\r\n\"province\":\"Ceuta\",\r\n\"year\":2017,\r\n\"dailySmoker\": 12345678.96,\r\n\"ocasionalSmoker\": 11223344.48,\r\n\"exSmoker\": 321654.51,\r\n\"nonSmoker\": 555555.10\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -393,7 +430,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Cantabria/2017",
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Ceuta/2017",
 					"protocol": "https",
 					"host": [
 						"sos2021-30",
@@ -404,7 +441,7 @@
 						"api",
 						"v1",
 						"smokers-stats",
-						"Cantabria",
+						"Ceuta",
 						"2017"
 					]
 				},
@@ -440,7 +477,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Cantabria/2017",
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Ceuta/2017",
 					"protocol": "https",
 					"host": [
 						"sos2021-30",
@@ -451,7 +488,7 @@
 						"api",
 						"v1",
 						"smokers-stats",
-						"Cantabria",
+						"Ceuta",
 						"2017"
 					]
 				},
@@ -487,7 +524,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Cantabria/2017",
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Ceuta/2017",
 					"protocol": "https",
 					"host": [
 						"sos2021-30",
@@ -498,7 +535,7 @@
 						"api",
 						"v1",
 						"smokers-stats",
-						"Cantabria",
+						"Ceuta",
 						"2017"
 					]
 				},
@@ -525,7 +562,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Cantabria/2017",
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Ceuta/2017",
 					"protocol": "https",
 					"host": [
 						"sos2021-30",
@@ -536,7 +573,7 @@
 						"api",
 						"v1",
 						"smokers-stats",
-						"Cantabria",
+						"Ceuta",
 						"2017"
 					]
 				},
@@ -563,7 +600,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Cantabria/2017",
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Ceuta/2017",
 					"protocol": "https",
 					"host": [
 						"sos2021-30",
@@ -574,7 +611,7 @@
 						"api",
 						"v1",
 						"smokers-stats",
-						"Cantabria",
+						"Ceuta",
 						"2017"
 					]
 				},
@@ -602,7 +639,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"id\": 4,\r\n\"country\": \"España\",\r\n\"province\": \"Cantabria\",\r\n\"year\": 2017,\r\n\"dailySmoker\": 132887.56,\r\n\"ocasionalSmoker\": 4526.30,\r\n\"exSmoker\": 541681.36,\r\n\"nonSmoker\": 307382.26\r\n}",
+					"raw": "{\r\n\"id\": 14,\r\n\"country\": \"España\",\r\n\"province\":\"Ceuta\",\r\n\"year\":2017,\r\n\"dailySmoker\": 12345678.96,\r\n\"ocasionalSmoker\": 11223344.48,\r\n\"exSmoker\": 321654.51,\r\n\"nonSmoker\": 555555.10\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -648,7 +685,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"id\": 4,\r\n\"country\": \"España\",\r\n\"province\": \"Cantabria\",\r\n\"year\": 2017,\r\n\"dailySmoker\": 132887.56,\r\n\"ocasionalSmoker\": 4526.30,\r\n\"exSmoker\": 541681.36,\r\n\"nonSmoker\": 99999999.26\r\n}",
+					"raw": "{\r\n\"id\": 14,\r\n\"country\": \"España\",\r\n\"province\":\"Ceuta\",\r\n\"year\":2017,\r\n\"dailySmoker\": 12345678.96,\r\n\"ocasionalSmoker\": 11223344.48,\r\n\"exSmoker\": 321654.51,\r\n\"nonSmoker\": 99999999.26\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -656,7 +693,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Cantabria/2017",
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Ceuta/2017",
 					"protocol": "https",
 					"host": [
 						"sos2021-30",
@@ -667,7 +704,7 @@
 						"api",
 						"v1",
 						"smokers-stats",
-						"Cantabria",
+						"Ceuta",
 						"2017"
 					]
 				},
@@ -698,7 +735,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Cantabria/2017",
+					"raw": "https://sos2021-30.herokuapp.com/api/v1/smokers-stats/Ceuta/2017",
 					"protocol": "https",
 					"host": [
 						"sos2021-30",
@@ -709,7 +746,7 @@
 						"api",
 						"v1",
 						"smokers-stats",
-						"Cantabria",
+						"Ceuta",
 						"2017"
 					]
 				},
