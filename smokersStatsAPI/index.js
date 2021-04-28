@@ -156,6 +156,16 @@ module.exports.register = (app) => {
     app.get(BASE_API_PATH+"/loadInitialData",(req,res)=>{
     smokersStatsIni=[
         {   
+            "id": 0,
+            "country": "España",
+            "province":"Ninguna",
+            "year":2017,
+            "dailySmoker": 0,
+            "ocasionalSmoker": 0,
+            "exSmoker": 0,
+            "nonSmoker": 0
+        },
+        {   
             "id": 1,
             "country": "España",
             "province":"Andalucía",
