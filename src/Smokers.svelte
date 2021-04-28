@@ -172,8 +172,8 @@
         } else {
             page+=5
         }
-        console.log("Charging page "+ page);
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+ page);
+        console.log("Charging page "+page);
+        const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -186,19 +186,20 @@
     }
     //getPreviewPage
     async function getPreviewPage() {
- 
-        if (page-5>=1) {
+
+        console.log(totaldata);
+        if (page-5 > 1) {
             page-=5; 
         } else page = 1
-        console.log("Charging page " +page);
+        console.log("Charging page "+page);
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             SmokerStats = json;
-            console.log("Received " + SmokerStats.length + " resources.");
+            console.log("Received "+SmokerStats.length+" resources.");
         } else {
-            errorMSG= res.status + ": " + res.statusText;
+            errorMSG= res.status+": "+res.statusText;
             console.log("ERROR!");
         }
     }
