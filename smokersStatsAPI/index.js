@@ -9,16 +9,6 @@ module.exports.register = (app) => {
 /*--------------Variable Objeto-----------------------*/
     smokersStats=[
         {   
-            "id": 0,
-            "country": "España",
-            "province":"Ninguna",
-            "year":2017,
-            "dailySmoker": 0,
-            "ocasionalSmoker": 0,
-            "exSmoker": 0,
-            "nonSmoker": 0
-        },
-        {   
             "id": 1,
             "country": "España",
             "province":"Andalucía",
@@ -155,16 +145,6 @@ module.exports.register = (app) => {
     //GET inicial (loadInitialData) para inicializar la BD (constructor)
     app.get(BASE_API_PATH+"/loadInitialData",(req,res)=>{
     smokersStatsIni=[
-        {   
-            "id": 0,
-            "country": "España",
-            "province":"Ninguna",
-            "year":2017,
-            "dailySmoker": 0,
-            "ocasionalSmoker": 0,
-            "exSmoker": 0,
-            "nonSmoker": 0
-        },
         {   
             "id": 1,
             "country": "España",

@@ -53,7 +53,7 @@
  
         console.log("Fetching employment data...");
         await fetch("/api/v1/smokers-stats/loadInitialData");
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
