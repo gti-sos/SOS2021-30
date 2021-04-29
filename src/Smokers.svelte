@@ -169,11 +169,13 @@
         } else {
             page+=5
         }
+        
+        visible = true;
         console.log("Charging page... Listing since: "+page);
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
-        color = "success";
         //condicional imprime msg
-        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+(page+4) : "Mostrando elementos "+(page)+"-"+totaldata;
+        color = "success";
+        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
