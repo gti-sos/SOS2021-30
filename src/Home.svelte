@@ -1,9 +1,9 @@
 <main>
     <h1>Equipo</h1>
-    <li type="circle"><a href="https://github.com/Alesanmar">Alejandro Sánchez Márquez</a></li>
-    <li type="circle"><a href="https://github.com/Juanpepitt">Juan Pedro Hurtado Masero</a></li>
-    <li type="circle"><a href="https://github.com/jesruidom">Jesús Ruiz Domínguez</a></li>
-    <li type="circle"><a href="https://github.com/vic3214">Víctor Caballero Sánchez</a></li>
+    <li type="circle"><a href="https://github.com/Alesanmar">Alejandro Sánchez Márquez (life-expectancy-stats)</a></li>
+    <li type="circle"><a href="https://github.com/Juanpepitt">Juan Pedro Hurtado Masero (smokers-stats)</a></li>
+    <li type="circle"><a href="https://github.com/jesruidom">Jesús Ruiz Domínguez (table-weights-stats)</a></li>
+    <li type="circle"><a href="https://github.com/vic3214">Víctor Caballero Sánchez (alcohol-consumption-stats)</a></li>
     <h1>Descripción del proyecto</h1>
     <p>La relación entre la calidad de vida inducida por los factores de consumo de alcohol y tabaco, 
         el índice de masa corporal y la esperanza de vida al nacer según la región de España en el año 2017, 
