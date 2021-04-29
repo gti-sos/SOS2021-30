@@ -175,7 +175,8 @@
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
-        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        errorMSG= "Mostrando elementos "+(page)+"-"+SmokerStats.length;
+        /*errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+SmokerStats.length : "Mostrando elementos "+(page)+"-"+(page+4);*/
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
@@ -204,7 +205,7 @@
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
-        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+SmokerStats.length : "Mostrando elementos "+(page)+"-"+(page+4);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
@@ -250,7 +251,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><input type = "text" placeholder="Extremadura" bind:value="{newSmoker.province}"></td>
+                    <td><input type = "text" placeholder="Babylon" bind:value="{newSmoker.province}"></td>
                     <td><input type = "number" placeholder="2075" bind:value="{newSmoker.year}"></td>
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.dailySmoker}"></td> 
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.ocasionalSmoker}"></td>    
