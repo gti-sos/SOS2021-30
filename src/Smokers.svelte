@@ -138,13 +138,13 @@
 				method: "DELETE"
 			}).then(function (res) {
                 visible=true;
-				if (res.ok && totaldata>1){
+				if (res.ok && totaldata>0){
                     totaldata = 0;
 					getSmoker();
                     color = "success";
 					errorMSG="Datos eliminados correctamente";
 					console.log("OK All data erased");
-				} else if (totaldata == 0 || totaldata == 1){
+				} else if (totaldata == 0){
                     console.log("ERROR Data was not erased");
                     color = "danger";
 					errorMSG= "¡No hay datos para borrar!";
