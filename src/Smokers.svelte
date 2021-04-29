@@ -16,7 +16,7 @@
     let visible = false;
     let color = "danger";
     
-    let page = 0;
+    let page = 1;
     let totaldata=14;
     let SmokerStats = [];
 	let newSmoker = {
@@ -166,10 +166,10 @@
         if (page+5 > totaldata) {
             page = 1
         } else {
-            page+=4
+            page+=5
         }
         console.log("Charging page... Listing: "+page);
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+page);
+        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0+"+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -188,7 +188,7 @@
             page-=5; 
         } else page = 1
         console.log("Charging page... Listing: "+page);
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+page);
+        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0+"+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
