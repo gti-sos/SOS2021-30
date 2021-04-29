@@ -189,7 +189,7 @@
         } else page = 1
         console.log("Charging page... Listing: "+page);
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
-        if (res.ok) {
+        if (res.ok && (totaldata != 0 || totaldata != 1)) {
             console.log("Ok:");
             const json = await res.json();
             SmokerStats = json;
