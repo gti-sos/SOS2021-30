@@ -88,6 +88,7 @@
                  visible=true;
                  if (res.status == 201){
                      getSmoker();
+                     totaldata++;
                      console.log("Data introduced");
                      color = "success";
                      errorMSG="Entrada introducida correctamente a la base de datos";
@@ -96,9 +97,9 @@
                      color = "danger";
                      errorMSG= "Los datos de la entrada no fueron introducidos correctamente";
                  }else if(res.status == 409){
-                     console.log("ERROR There is already a data with that country and year in the da tabase");
+                     console.log("ERROR There is already a data with that province and year in the da tabase");
                      color = "danger";
-                     errorMSG= "Ya existe una entrada en la base de datos con la fecha y el país introducido";
+                     errorMSG= "Ya existe una entrada en la base de datos con la provincia y el año introducido";
                  }
              });	
          }
@@ -170,7 +171,14 @@
         }
         console.log("Charging page... Listing: "+page);
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
-        if (res.ok) {
+        color = "success";
+        errorMSG= "Mostrando página"+(-1+page);
+
+        if (totaldata == 0){
+            console.log("ERROR Data was not erased");
+            color = "danger";
+			errorMSG= "¡No hay datos!";
+        }else if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             SmokerStats = json;
@@ -187,12 +195,16 @@
         if (page-5 > 1) {
             page-=5; 
         } else page = 1
+
         console.log("Charging page... Listing: "+page);
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
-        if (totaldata == 0 || totaldata == 1){
-                    console.log("ERROR Data was not erased");
-                    color = "danger";
-					errorMSG= "¡No hay datos!";
+        color = "success";
+        errorMSG= "Mostrando página"+(-1+page);
+
+        if (totaldata == 0){
+            console.log("ERROR Data was not erased");
+            color = "danger";
+			errorMSG= "¡No hay datos!";
         }else if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
