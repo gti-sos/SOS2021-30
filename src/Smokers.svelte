@@ -131,9 +131,9 @@
 
     //DELETE ALL
     async function deleteALL() {
-		console.log("Deleting employment data...");
+		console.log("Deleting smokers data...");
 		if (confirm("¿Está seguro de que desea eliminar todas las entradas?")){
-			console.log("Deleting all employment data...");
+			console.log("Deleting all smokers data...");
 			const res = await fetch("/api/v1/smokers-stats/", {
 				method: "DELETE"
 			}).then(function (res) {
@@ -172,7 +172,8 @@
         console.log("Charging page... Listing since: "+page);
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
         color = "success";
-        errorMSG= "Mostrando elementos "+(page)+"-"+(page+4);
+        //condicional imprime msg
+        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+(page+4) : "Mostrando elementos "+(page)+"-"+totaldata;
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
