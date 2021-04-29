@@ -17,7 +17,7 @@
     let color = "danger";
     
     let page = 1;
-    let totaldata=14;
+    let totaldata=13;
     let SmokerStats = [];
 	let newSmoker = {
         province: "",
@@ -58,7 +58,7 @@
             console.log("Ok:");
             const json = await res.json();
             SmokerStats = json;
-            totaldata=14;
+            totaldata=13;
             console.log("Received " + SmokerStats.length + " Smokers data.");
             color = "success";
             errorMSG = "Datos cargados correctamente";
@@ -199,10 +199,12 @@
             page-=5; 
         } else page = 1
 
+        visible = true;
         console.log("Charging page... Listing since: "+page);
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
+        //condicional imprime msg
         color = "success";
-        errorMSG= "Mostrando elementos "+(page)+"-"+(page+4);
+        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
