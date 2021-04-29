@@ -29,7 +29,7 @@
 <main>
     <h1>Tabla sobre el IMC por comunidades</h1>
 
-    <Table>
+    <Table bordered responsive>
         <thead>
           <tr>
             <th>Comunidad autónoma</th>

@@ -13162,12 +13162,12 @@ var app = (function () {
     			td4 = element("td");
     			t8 = text(t8_value);
     			t9 = space();
-    			add_location(td0, file$1, 44, 20, 1042);
-    			add_location(td1, file$1, 45, 20, 1096);
-    			add_location(td2, file$1, 46, 20, 1145);
-    			add_location(td3, file$1, 47, 20, 1203);
-    			add_location(td4, file$1, 48, 20, 1258);
-    			add_location(tr, file$1, 43, 16, 1016);
+    			add_location(td0, file$1, 44, 20, 1062);
+    			add_location(td1, file$1, 45, 20, 1116);
+    			add_location(td2, file$1, 46, 20, 1165);
+    			add_location(td3, file$1, 47, 20, 1223);
+    			add_location(td4, file$1, 48, 20, 1278);
+    			add_location(tr, file$1, 43, 16, 1036);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -13210,7 +13210,7 @@ var app = (function () {
     	return block;
     }
 
-    // (32:4) <Table>
+    // (32:4) <Table bordered responsive>
     function create_default_slot$1(ctx) {
     	let thead;
     	let tr;
@@ -13258,14 +13258,14 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$1, 34, 12, 747);
-    			add_location(th1, file$1, 35, 12, 788);
-    			add_location(th2, file$1, 36, 12, 814);
-    			add_location(th3, file$1, 37, 12, 848);
-    			add_location(th4, file$1, 38, 12, 880);
-    			add_location(tr, file$1, 33, 10, 729);
-    			add_location(thead, file$1, 32, 8, 710);
-    			add_location(tbody, file$1, 41, 8, 942);
+    			add_location(th0, file$1, 34, 12, 767);
+    			add_location(th1, file$1, 35, 12, 808);
+    			add_location(th2, file$1, 36, 12, 834);
+    			add_location(th3, file$1, 37, 12, 868);
+    			add_location(th4, file$1, 38, 12, 900);
+    			add_location(tr, file$1, 33, 10, 749);
+    			add_location(thead, file$1, 32, 8, 730);
+    			add_location(tbody, file$1, 41, 8, 962);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -13323,7 +13323,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(32:4) <Table>",
+    		source: "(32:4) <Table bordered responsive>",
     		ctx
     	});
 
@@ -13339,6 +13339,8 @@ var app = (function () {
 
     	table = new Table({
     			props: {
+    				bordered: true,
+    				responsive: true,
     				$$slots: { default: [create_default_slot$1] },
     				$$scope: { ctx }
     			},
