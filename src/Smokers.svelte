@@ -166,10 +166,10 @@
         if (page+5 > totaldata) {
             page = 1
         } else {
-            page+=5
+            page+=4
         }
         console.log("Charging page... Listing: "+page);
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0"+page);
+        const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -185,10 +185,10 @@
 
         console.log(totaldata);
         if (page-5 > 1) {
-            page-=5; 
+            page-=4; 
         } else page = 1
         console.log("Charging page... Listing: "+page);
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0"+page);
+        const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
