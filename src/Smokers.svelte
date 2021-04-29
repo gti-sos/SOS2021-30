@@ -36,7 +36,7 @@
     async function getSmoker() {
  
         console.log("Fetching employment Data...");
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -78,7 +78,7 @@
          if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
              alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
          } else{
-             const res = await fetch("/api/v1/smokers-stats?offset=1",{
+             const res = await fetch("/api/v1/smokers-stats",{
              method:"POST",
              body:JSON.stringify(newSmoker),
              headers:{
