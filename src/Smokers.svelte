@@ -189,15 +189,15 @@
         } else page = 1
         console.log("Charging page... Listing: "+page);
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
-        if (res.ok && (totaldata != 0 || totaldata != 1)) {
+        if (totaldata == 0 || totaldata == 1){
+                    console.log("ERROR Data was not erased");
+                    color = "danger";
+					errorMSG= "¡No hay datos!";
+        }else if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             SmokerStats = json;
             console.log("Received "+SmokerStats.length+" resources.");
-        } else if (totaldata == 0 || totaldata == 1){
-                    console.log("ERROR Data was not erased");
-                    color = "danger";
-					errorMSG= "¡No hay datos!";
         } else {
             errorMSG= res.status+": "+res.statusText;
             console.log("ERROR!");
