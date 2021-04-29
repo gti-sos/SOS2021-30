@@ -143,7 +143,7 @@
                     color = "success";
 					errorMSG="Datos eliminados correctamente";
 					console.log("OK All data erased");
-				} else if (totaldata == 0){
+				} else if (totaldata == 0 || totaldata == 1){
                     console.log("ERROR Data was not erased");
                     color = "danger";
 					errorMSG= "¡No hay datos para borrar!";
@@ -194,7 +194,7 @@
             const json = await res.json();
             SmokerStats = json;
             console.log("Received "+SmokerStats.length+" resources.");
-        } else if (totaldata == 0){
+        } else if (totaldata == 0 || totaldata == 1){
                     console.log("ERROR Data was not erased");
                     color = "danger";
 					errorMSG= "¡No hay datos!";
