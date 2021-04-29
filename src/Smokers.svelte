@@ -169,10 +169,10 @@
         } else {
             page+=5
         }
-        console.log("Charging page... Listing: "+page);
+        console.log("Charging page... Listing since: "+page);
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
         color = "success";
-        errorMSG= "Mostrando datos a partir del elemento "+(page);
+        errorMSG= "Mostrando elementos "+(page)+"-"+(page+4);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
@@ -196,10 +196,10 @@
             page-=5; 
         } else page = 1
 
-        console.log("Charging page... Listing: "+page);
+        console.log("Charging page... Listing since: "+page);
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
         color = "success";
-        errorMSG= "Mostrando datos a partir del elemento "+(page);
+        errorMSG= "Mostrando elementos "+(page)+"-"+(page+4);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
