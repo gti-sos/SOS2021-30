@@ -16,7 +16,7 @@
     let visible = false;
     let color = "danger";
     
-    let page = 1;
+    let page = 0;
     let totaldata=14;
     let SmokerStats = [];
 	let newSmoker = {
@@ -185,7 +185,7 @@
 
         console.log(totaldata);
         if (page-5 > 1) {
-            page-=4; 
+            page-=5; 
         } else page = 1
         console.log("Charging page... Listing: "+page);
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+page);
