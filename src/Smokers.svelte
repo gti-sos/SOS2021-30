@@ -78,7 +78,7 @@
          if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
              alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
          } else{
-             const res = await fetch("/api/v1/smokers-stats",{
+             const res = await fetch("/api/v1/smokers-stats?offset=1",{
              method:"POST",
              body:JSON.stringify(newSmoker),
              headers:{
@@ -91,13 +91,11 @@
                      console.log("Data introduced");
                      color = "success";
                      errorMSG="Entrada introducida correctamente a la base de datos";
-                 }
-                 else if(res.status == 400){
+                 }else if(res.status == 400){
                      console.log("ERROR Data was not correctly introduced");
                      color = "danger";
                      errorMSG= "Los datos de la entrada no fueron introducidos correctamente";
-                 }
-                 else if(res.status == 409){
+                 }else if(res.status == 409){
                      console.log("ERROR There is already a data with that country and year in the da tabase");
                      color = "danger";
                      errorMSG= "Ya existe una entrada en la base de datos con la fecha y el país introducido";
