@@ -172,7 +172,7 @@
         console.log("Charging page... Listing: "+page);
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
         color = "success";
-        errorMSG= "Mostrando página"+(-1+page);
+        errorMSG= "Mostrando datos a partir del elemento "+(page);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
@@ -199,7 +199,7 @@
         console.log("Charging page... Listing: "+page);
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
         color = "success";
-        errorMSG= "Mostrando página"+(-1+page);
+        errorMSG= "Mostrando datos a partir del elemento "+(page);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
