@@ -175,7 +175,7 @@
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
-        errorMSG= "Mostrando elementos "+(page)+"-"+page+SmokerStats.length;
+        errorMSG= "Mostrando elementos "+(page)+"-"+(page+SmokerStats.length);
         /*errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+SmokerStats.length : "Mostrando elementos "+(page)+"-"+(page+4);*/
 
         if (totaldata == 0){
