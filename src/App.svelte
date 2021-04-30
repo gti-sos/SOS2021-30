@@ -4,6 +4,7 @@
 	
 	import NotFound from "./NotFound.svelte";
 	import Home from "./Home.svelte";
+  import Info from "./Info.svelte";
 	import Router from 'svelte-spa-router';
   import LifeExpectancy from './lifeExpectancy.svelte';
 	import TablaAlcohol from "./TablaAlcohol.svelte";
@@ -13,6 +14,7 @@
 
 	const routes = {
 		"/":Home,
+    "/info": Info,
 		"/alcohol-stats": TablaAlcohol,
     "/life-stats" : LifeExpectancy,
     "/weights-stats" : FrontWeight,

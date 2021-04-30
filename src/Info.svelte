@@ -1,0 +1,37 @@
+<main>
+    <h1>Equipo</h1>
+    <li type="circle"><a href="https://github.com/Alesanmar">Alejandro Sánchez Márquez (life-expectancy-stats)</a></li>
+    <li type="circle"><a href="https://github.com/Juanpepitt">Juan Pedro Hurtado Masero (smokers-stats)</a></li>
+    <li type="circle"><a href="https://github.com/jesruidom">Jesús Ruiz Domínguez (table-weights-stats)</a></li>
+    <li type="circle"><a href="https://github.com/vic3214">Víctor Caballero Sánchez (alcohol-consumption-stats)</a></li>
+    <h1>Descripción del proyecto</h1>
+    <p>La relación entre la calidad de vida inducida por los factores de consumo de alcohol y tabaco, 
+        el índice de masa corporal y la esperanza de vida al nacer según la región de España en el año 2017, 
+        ¿influye el imc o el consumo de alcohol y tabaco en la evolución de la esperanza de vida?
+        ¿Influye la situación geográfica, edad, género en el consumo de alcohol y tabaco?</p>
+
+    <h1>Repositorio</h1>
+    <a href="https://github.com/gti-sos/SOS2021-30">gti-sos/SOS2021-30</a>
+    <h1>Url</h1>
+    <a href="http://sos2021-30.herokuapp.com">http://sos2021-30.herokuapp.com</a>
+    <h1>APIS</h1>
+    <li type="circle"><a href="https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats">https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats (developed by Alejandro Sánchez Márquez)</a></li>    
+    <li type="circle"><a href="https://sos2021-30.herokuapp.com/api/v1/smokers-stats">https://sos2021-30.herokuapp.com/api/v1/smokers-stats (developed by Juan Pedro Hurtado Masero)</a></li>    
+    <li type="circle"><a href="https://sos2021-30.herokuapp.com/api/v1/table-weights-stats">https://sos2021-30.herokuapp.com/api/v1/table-weights-stats (developed by Jesús Ruiz Domínguez)</a></li>    
+    <li type="circle"><a href="https://sos2021-30.herokuapp.com/api/v1/alcohol-consumption-stats">https://sos2021-30.herokuapp.com/api/v1/alcohol-consumption-stats (developed by Víctor Caballero Sánchez)</a></li>
+    
+    <h1>DOCUMENTACIÓN POSTMAN DE LAS APIS</h1>
+    <li type="circle"><a href="https://documenter.getpostman.com/view/14968155/TzJsecsr">Documentación de los tests de Postman sobre la API life-expectancy-stats (developed by Alejandro Sánchez Márquez)</a></li>
+    <li type="circle"><a href="https://documenter.getpostman.com/view/14966429/TzJoFgHe">Documentación de los tests de Postman sobre la API smokers-Stats (developed by Juan Pedro Hurtado Masero)</a></li>
+    <li type="circle"><a href="https://documenter.getpostman.com/view/14975289/TzRLjpaY">Documentación de los tests de Postman sobre la API Weights-Stats (developed by Jesús Ruiz Domínguez)</a></li>
+    <li type="circle"><a href="https://documenter.getpostman.com/view/14942936/TzJsheDD">Documentación de los tests de Postman sobre la API alcohol-consumption-stats (developed by Víctor Caballero Sánchez)</a></li>
+
+    <h1>Enlaces Front-End</h1>
+    <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/life-stats">Front-End API life-expectancy-stats</a></li>
+    <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/alcohol-stats">Front-End API alcohol-consumption-stats</a></li>
+    <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/weights-stats">Front-End API weight-stats</a></li>
+    <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/smokers-stats">Front-End API smokers-stats</a></li>
+
+
+
+</main>
