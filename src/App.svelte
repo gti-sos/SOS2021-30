@@ -2,14 +2,14 @@
 <script lang="ts">
   
 	
-	import NotFound from "./NotFound.svelte";
-	import Home from "./Home.svelte";
-  import Info from "./Info.svelte";
+	import NotFound from "./front/NotFound.svelte";
+	import Home from "./front/Home.svelte";
+  import Info from "./front/Info.svelte";
 	import Router from 'svelte-spa-router';
   import LifeExpectancy from './lifeExpectancy.svelte';
 	import TablaAlcohol from "./TablaAlcohol.svelte";
   import SmokerStats from "./Smokers.svelte";
-  import FrontWeight from "./TablaWeights.svelte";
+  import FrontWeight from "./front/TablaWeights.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
 
 	const routes = {

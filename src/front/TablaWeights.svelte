@@ -10,6 +10,7 @@
     var BASE_WEIGHTS_PATH = "/api/v1/table-weights-stats";
     let weightsStats = [];
 
+    //Generar datos iniciales
     async function loadInitialData() { 
         console.log("Fetching data...");
         await fetch(BASE_WEIGHTS_PATH + "/loadInitialData");
@@ -29,6 +30,7 @@
         }
     }
 
+    //Mostrar todos los datos
     async function getStats(){
         console.log("Fetching stats...");
         const res= await fetch(BASE_WEIGHTS_PATH);
@@ -42,6 +44,34 @@
             console.log("Error")
         }
     }
+
+    //Eliminar todos los datos
+    async function deleteALL() {
+		console.log("Deleting weights data...");
+		if (confirm("¿Está seguro de que desea eliminar todas las entradas?")){
+			console.log("Deleting all weights data...");
+			const res = await fetch(BASE_WEIGHTS_PATH, {
+				method: "DELETE"
+			}).then(function (res) {
+                visible=true;
+				if (res.ok && totaldata>0){
+                    totaldata = 0;
+					getStats();
+                    color = "success";
+					errorMSG="Datos eliminados correctamente";
+					console.log("OK All data erased");
+				} else if (totaldata == 0){
+                    console.log("ERROR Data was not erased");
+                    color = "danger";
+					errorMSG= "¡No hay datos para borrar!";
+                } else{
+					console.log("ERROR Data was not erased");
+                    color = "danger";
+					errorMSG= "No se han podido eliminar los datos";
+				}
+			});
+		}
+	}
 
     onMount(getStats);
 
@@ -73,5 +103,8 @@
     </Table>
     <Button color="success" on:click="{loadInitialData}">
         Cargar datos inciales
+    </Button>
+    <Button color="danger" on:click="{deleteALL}">
+        Eliminar todos los datos
     </Button>
 </main>

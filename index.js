@@ -10,17 +10,13 @@ var port = process.env.PORT || 10000;
 
 const path = require("path");
 
-
-//RUTA BASE DE LA API
-var BASE_API_PATH = "/api/v1";
-
 //--------------------------- API REST ALCOHOL-CONSUMPTION-STATS-----------------
 var alcoholAPI = require("./alcoholConsumptionStatsAPI");
 alcoholAPI.register(app);
 //--------------------------- API REST ALCOHOL-CONSUMPTION-STATS-----------------
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
-var weightsStatsAPI = require("./weightsStatsAPI");
+var weightsStatsAPI = require("./src/back/weightsStatsAPI");
 weightsStatsAPI.register(app);
 //~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
