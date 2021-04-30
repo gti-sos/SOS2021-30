@@ -13796,7 +13796,7 @@ var app = (function () {
     const file = "src\\App.svelte";
 
     // (28:12) <NavbarBrand href="/">
-    function create_default_slot_12(ctx) {
+    function create_default_slot_14(ctx) {
     	let t;
 
     	const block = {
@@ -13813,7 +13813,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_12.name,
+    		id: create_default_slot_14.name,
     		type: "slot",
     		source: "(28:12) <NavbarBrand href=\\\"/\\\">",
     		ctx
@@ -13823,7 +13823,7 @@ var app = (function () {
     }
 
     // (31:16) <NavLink href="#/">
-    function create_default_slot_11(ctx) {
+    function create_default_slot_13(ctx) {
     	let t;
 
     	const block = {
@@ -13840,7 +13840,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_11.name,
+    		id: create_default_slot_13.name,
     		type: "slot",
     		source: "(31:16) <NavLink href=\\\"#/\\\">",
     		ctx
@@ -13850,13 +13850,96 @@ var app = (function () {
     }
 
     // (30:14) <NavItem  >
-    function create_default_slot_10(ctx) {
+    function create_default_slot_12(ctx) {
     	let navlink;
     	let current;
 
     	navlink = new NavLink({
     			props: {
     				href: "#/",
+    				$$slots: { default: [create_default_slot_13] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(navlink.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(navlink, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const navlink_changes = {};
+
+    			if (dirty & /*$$scope*/ 2) {
+    				navlink_changes.$$scope = { dirty, ctx };
+    			}
+
+    			navlink.$set(navlink_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(navlink.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(navlink.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(navlink, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_12.name,
+    		type: "slot",
+    		source: "(30:14) <NavItem  >",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (34:16) <NavLink href="#/info">
+    function create_default_slot_11(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Información");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_11.name,
+    		type: "slot",
+    		source: "(34:16) <NavLink href=\\\"#/info\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (33:14) <NavItem  >
+    function create_default_slot_10(ctx) {
+    	let navlink;
+    	let current;
+
+    	navlink = new NavLink({
+    			props: {
+    				href: "#/info",
     				$$slots: { default: [create_default_slot_11] },
     				$$scope: { ctx }
     			},
@@ -13898,14 +13981,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_10.name,
     		type: "slot",
-    		source: "(30:14) <NavItem  >",
+    		source: "(33:14) <NavItem  >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (34:16) <NavLink href="#/alcohol-stats">
+    // (37:16) <NavLink href="#/alcohol-stats">
     function create_default_slot_9(ctx) {
     	let t;
 
@@ -13925,14 +14008,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_9.name,
     		type: "slot",
-    		source: "(34:16) <NavLink href=\\\"#/alcohol-stats\\\">",
+    		source: "(37:16) <NavLink href=\\\"#/alcohol-stats\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (33:14) <NavItem>
+    // (36:14) <NavItem>
     function create_default_slot_8(ctx) {
     	let navlink;
     	let current;
@@ -13981,14 +14064,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8.name,
     		type: "slot",
-    		source: "(33:14) <NavItem>",
+    		source: "(36:14) <NavItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (37:16) <NavLink href="#/smokers-stats">
+    // (40:16) <NavLink href="#/smokers-stats">
     function create_default_slot_7(ctx) {
     	let t;
 
@@ -14008,14 +14091,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7.name,
     		type: "slot",
-    		source: "(37:16) <NavLink href=\\\"#/smokers-stats\\\">",
+    		source: "(40:16) <NavLink href=\\\"#/smokers-stats\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (36:14) <NavItem>
+    // (39:14) <NavItem>
     function create_default_slot_6(ctx) {
     	let navlink;
     	let current;
@@ -14064,14 +14147,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6.name,
     		type: "slot",
-    		source: "(36:14) <NavItem>",
+    		source: "(39:14) <NavItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (40:16) <NavLink href="#/life-stats">
+    // (43:16) <NavLink href="#/life-stats">
     function create_default_slot_5(ctx) {
     	let t;
 
@@ -14091,14 +14174,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(40:16) <NavLink href=\\\"#/life-stats\\\">",
+    		source: "(43:16) <NavLink href=\\\"#/life-stats\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (39:14) <NavItem>
+    // (42:14) <NavItem>
     function create_default_slot_4(ctx) {
     	let navlink;
     	let current;
@@ -14147,14 +14230,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(39:14) <NavItem>",
+    		source: "(42:14) <NavItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (43:16) <NavLink href="#/weights-stats">
+    // (46:16) <NavLink href="#/weights-stats">
     function create_default_slot_3(ctx) {
     	let t;
 
@@ -14174,14 +14257,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(43:16) <NavLink href=\\\"#/weights-stats\\\">",
+    		source: "(46:16) <NavLink href=\\\"#/weights-stats\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (42:14) <NavItem>
+    // (45:14) <NavItem>
     function create_default_slot_2(ctx) {
     	let navlink;
     	let current;
@@ -14230,7 +14313,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(42:14) <NavItem>",
+    		source: "(45:14) <NavItem>",
     		ctx
     	});
 
@@ -14248,11 +14331,13 @@ var app = (function () {
     	let navitem3;
     	let t3;
     	let navitem4;
+    	let t4;
+    	let navitem5;
     	let current;
 
     	navitem0 = new NavItem({
     			props: {
-    				$$slots: { default: [create_default_slot_10] },
+    				$$slots: { default: [create_default_slot_12] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -14260,7 +14345,7 @@ var app = (function () {
 
     	navitem1 = new NavItem({
     			props: {
-    				$$slots: { default: [create_default_slot_8] },
+    				$$slots: { default: [create_default_slot_10] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -14268,7 +14353,7 @@ var app = (function () {
 
     	navitem2 = new NavItem({
     			props: {
-    				$$slots: { default: [create_default_slot_6] },
+    				$$slots: { default: [create_default_slot_8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -14276,13 +14361,21 @@ var app = (function () {
 
     	navitem3 = new NavItem({
     			props: {
-    				$$slots: { default: [create_default_slot_4] },
+    				$$slots: { default: [create_default_slot_6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
     	navitem4 = new NavItem({
+    			props: {
+    				$$slots: { default: [create_default_slot_4] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	navitem5 = new NavItem({
     			props: {
     				$$slots: { default: [create_default_slot_2] },
     				$$scope: { ctx }
@@ -14301,6 +14394,8 @@ var app = (function () {
     			create_component(navitem3.$$.fragment);
     			t3 = space();
     			create_component(navitem4.$$.fragment);
+    			t4 = space();
+    			create_component(navitem5.$$.fragment);
     		},
     		m: function mount(target, anchor) {
     			mount_component(navitem0, target, anchor);
@@ -14312,6 +14407,8 @@ var app = (function () {
     			mount_component(navitem3, target, anchor);
     			insert_dev(target, t3, anchor);
     			mount_component(navitem4, target, anchor);
+    			insert_dev(target, t4, anchor);
+    			mount_component(navitem5, target, anchor);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -14350,6 +14447,13 @@ var app = (function () {
     			}
 
     			navitem4.$set(navitem4_changes);
+    			const navitem5_changes = {};
+
+    			if (dirty & /*$$scope*/ 2) {
+    				navitem5_changes.$$scope = { dirty, ctx };
+    			}
+
+    			navitem5.$set(navitem5_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -14358,6 +14462,7 @@ var app = (function () {
     			transition_in(navitem2.$$.fragment, local);
     			transition_in(navitem3.$$.fragment, local);
     			transition_in(navitem4.$$.fragment, local);
+    			transition_in(navitem5.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -14366,6 +14471,7 @@ var app = (function () {
     			transition_out(navitem2.$$.fragment, local);
     			transition_out(navitem3.$$.fragment, local);
     			transition_out(navitem4.$$.fragment, local);
+    			transition_out(navitem5.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -14378,6 +14484,8 @@ var app = (function () {
     			destroy_component(navitem3, detaching);
     			if (detaching) detach_dev(t3);
     			destroy_component(navitem4, detaching);
+    			if (detaching) detach_dev(t4);
+    			destroy_component(navitem5, detaching);
     		}
     	};
 
@@ -14402,7 +14510,7 @@ var app = (function () {
     	navbarbrand = new NavbarBrand({
     			props: {
     				href: "/",
-    				$$slots: { default: [create_default_slot_12] },
+    				$$slots: { default: [create_default_slot_14] },
     				$$scope: { ctx }
     			},
     			$$inline: true

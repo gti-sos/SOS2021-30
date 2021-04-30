@@ -30,6 +30,9 @@
               <NavItem  >
                 <NavLink href="#/">Inicio</NavLink>
               </NavItem>
+              <NavItem  >
+                <NavLink href="#/info">Información</NavLink>
+              </NavItem>
               <NavItem>
                 <NavLink href="#/alcohol-stats">Tabla alcohol</NavLink>
               </NavItem>
