@@ -23,7 +23,7 @@
     <h1>DOCUMENTACIÓN POSTMAN DE LAS APIS</h1>
     <li type="circle"><a href="https://documenter.getpostman.com/view/14968155/TzJsecsr">Documentación de los tests de Postman sobre la API life-expectancy-stats (developed by Alejandro Sánchez Márquez)</a></li>
     <li type="circle"><a href="https://documenter.getpostman.com/view/14966429/TzJoFgHe">Documentación de los tests de Postman sobre la API smokers-Stats (developed by Juan Pedro Hurtado Masero)</a></li>
-    <li type="circle"><a href="https://documenter.getpostman.com/view/14975289/TzJsgyKg#e9ca3cfb-c54e-4c42-860e-b58fbe87205e">Documentación de los tests de Postman sobre la API Weights-Stats (developed by Jesús Ruiz Domínguez)</a></li>
+    <li type="circle"><a href="https://documenter.getpostman.com/view/14975289/TzRLjpaY">Documentación de los tests de Postman sobre la API Weights-Stats (developed by Jesús Ruiz Domínguez)</a></li>
     <li type="circle"><a href="https://documenter.getpostman.com/view/14942936/TzJsheDD">Documentación de los tests de Postman sobre la API alcohol-consumption-stats (developed by Víctor Caballero Sánchez)</a></li>
 
     <h1>Enlaces Front-End</h1>
