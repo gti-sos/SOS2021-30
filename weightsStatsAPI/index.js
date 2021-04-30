@@ -94,14 +94,21 @@ module.exports.register = (app) => {
             },
         ];
 
-        // Inicialización base de datos
-        //Borra todo lo anterior para evitar duplicidades al hacer loadInitialData
-        db.remove({}, { multi: true }, function (err, numRemoved) {
+        db.find({},(err, data) => {
+            if (err) {
+                console.error("ERROR accesing DB in GET");
+                res.sendStatus(500);
+            } else {
+                if (data.length == 0) {
+                    db.insert(weights_stats);
+                    console.log(`Loaded initial data: <${JSON.stringify(weights_stats, null, 2)}>`);
+                    res.sendStatus(201);
+                } else {
+                    console.error(`initial data already exists`);
+                    res.sendStatus(409);
+                }
+            }
         });
-        // Inserta los datos iniciales en la base de datos
-        db.insert(weights_stats);
-        
-        res.send(JSON.stringify(weights_stats,null,2));
     });
 
     //6.1 - GET a la lista de recursos

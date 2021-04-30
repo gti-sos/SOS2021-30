@@ -5,12 +5,33 @@
     } from "svelte";
 
     import Table from "sveltestrap/src/Table.svelte";
+    import Button from "sveltestrap/src/Button.svelte";
 
+    var BASE_WEIGHTS_PATH = "/api/v1/table-weights-stats";
     let weightsStats = [];
+
+    async function loadInitialData() { 
+        console.log("Fetching data...");
+        await fetch(BASE_WEIGHTS_PATH + "/loadInitialData");
+        const res = await fetch(BASE_WEIGHTS_PATH);
+
+        if (res.ok) {
+            console.log("Ok:");
+            const json = await res.json();
+            weightsStats = json;
+            console.log("Received " + weightsStats.length + " datas.");
+            color = "success";
+            errorMSG = "Datos cargados correctamente";
+        } else {
+            color = "danger";
+            errorMSG= res.status + ": " + res.statusText;
+            console.log("ERROR!");
+        }
+    }
 
     async function getStats(){
         console.log("Fetching stats...");
-        const res= await fetch("/api/v1/table-weights-stats/loadInitialData");
+        const res= await fetch(BASE_WEIGHTS_PATH);
 
         if(res.ok){
             console.log("ok");
@@ -28,7 +49,6 @@
 
 <main>
     <h1>Tabla sobre el IMC por comunidades</h1>
-
     <Table bordered responsive>
         <thead>
           <tr>
@@ -51,4 +71,7 @@
             {/each}
         </tbody>
     </Table>
+    <Button color="success" on:click="{loadInitialData}">
+        Cargar datos inciales
+    </Button>
 </main>
