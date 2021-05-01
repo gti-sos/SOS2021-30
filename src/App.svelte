@@ -10,6 +10,7 @@
 	import TablaAlcohol from "./TablaAlcohol.svelte";
   import SmokerStats from "./Smokers.svelte";
   import FrontWeight from "./front/TablaWeights.svelte";
+  import EditWeight from "./front/EditWeight.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
 
 	const routes = {
@@ -18,6 +19,7 @@
 		"/alcohol-stats": TablaAlcohol,
     "/life-stats" : LifeExpectancy,
     "/weights-stats" : FrontWeight,
+    "/weights-stats/:provinces" : EditWeight,
     "/smokers-stats" : SmokerStats,
 		'*': NotFound};
 </script>
