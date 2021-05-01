@@ -147,6 +147,7 @@
              });	
          }
     }
+
     //getNextPage
     async function getNextPage() { 
         console.log(totaldata);
@@ -238,7 +239,7 @@
             </tr>
             {#each weightsStats as weightsStat}
                 <tr>
-                    <td>{weightsStat.provinces}</td>
+                    <td><a href="#/weights-stats/{weightsStat.provinces}">{weightsStat.provinces}</td>
                     <td>{weightsStat.year}</td>
                     <td>{weightsStat.normal_weight}</td>
                     <td>{weightsStat.overweight}</td>
