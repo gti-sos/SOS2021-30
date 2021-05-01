@@ -75,7 +75,7 @@
                 <td><input bind:value="{uptadatedNormalWeight}"></td>
                 <td><input bind:value="{updatedOverweight}"></td>
                 <td><input bind:value="{updatedObesity}"></td>
-                <td><Button outline color="primary" on:click={updateWeight}></Button></td>
+                <td><Button outline color="primary" on:click={updateWeight}>Actualizar</Button></td>
             </tr>
         </tbody>
     </Table>

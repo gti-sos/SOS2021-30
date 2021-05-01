@@ -11935,7 +11935,7 @@ var app = (function () {
     	button1 = new Button({
     			props: {
     				color: "danger",
-    				$$slots: { default: [create_default_slot_2$2] },
+    				$$slots: { default: [create_default_slot_2$3] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -12728,7 +12728,7 @@ var app = (function () {
     }
 
     // (279:8) <Button color="danger" on:click="{deleteALL}">
-    function create_default_slot_2$2(ctx) {
+    function create_default_slot_2$3(ctx) {
     	let t;
 
     	const block = {
@@ -12745,7 +12745,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$2.name,
+    		id: create_default_slot_2$3.name,
     		type: "slot",
     		source: "(279:8) <Button color=\\\"danger\\\" on:click=\\\"{deleteALL}\\\">",
     		ctx
@@ -13888,7 +13888,7 @@ var app = (function () {
     }
 
     // (257:4) <Button color="danger" on:click="{deleteALL}">
-    function create_default_slot_2$1(ctx) {
+    function create_default_slot_2$2(ctx) {
     	let t;
 
     	const block = {
@@ -13905,7 +13905,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$1.name,
+    		id: create_default_slot_2$2.name,
     		type: "slot",
     		source: "(257:4) <Button color=\\\"danger\\\" on:click=\\\"{deleteALL}\\\">",
     		ctx
@@ -14020,7 +14020,7 @@ var app = (function () {
     	button1 = new Button({
     			props: {
     				color: "danger",
-    				$$slots: { default: [create_default_slot_2$1] },
+    				$$slots: { default: [create_default_slot_2$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -14529,6 +14529,33 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$1 = "src\\front\\EditWeight.svelte";
 
+    // (78:20) <Button outline color="primary" on:click={updateWeight}>
+    function create_default_slot_2$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Actualizar");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_2$1.name,
+    		type: "slot",
+    		source: "(78:20) <Button outline color=\\\"primary\\\" on:click={updateWeight}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     // (61:4) <Table bordered>
     function create_default_slot_1$1(ctx) {
     	let thead;
@@ -14567,7 +14594,12 @@ var app = (function () {
     	let dispose;
 
     	button = new Button({
-    			props: { outline: true, color: "primary" },
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot_2$1] },
+    				$$scope: { ctx }
+    			},
     			$$inline: true
     		});
 
@@ -14698,6 +14730,14 @@ var app = (function () {
     			if (dirty & /*updatedObesity*/ 16 && input3.value !== /*updatedObesity*/ ctx[4]) {
     				set_input_value(input3, /*updatedObesity*/ ctx[4]);
     			}
+
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 32768) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -14741,7 +14781,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[5]);
     			set_style(p, "color", "red");
-    			add_location(p, file$1, 83, 8, 2767);
+    			add_location(p, file$1, 83, 8, 2777);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
