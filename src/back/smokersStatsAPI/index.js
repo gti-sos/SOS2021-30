@@ -133,7 +133,7 @@ module.exports.register = (app) => {
            return a[key] > b[key];
         });
     }
-    ordenar(smokersStats, "province");
+    ordenar(smokersStats, 'province');
     db.insert(smokersStats);
 /*--------------------fin constructor-----------------------*/
 
