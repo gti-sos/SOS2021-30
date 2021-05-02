@@ -8,7 +8,7 @@
 	import Router from 'svelte-spa-router';
   import LifeExpectancy from './lifeExpectancy.svelte';
 	import TablaAlcohol from "./TablaAlcohol.svelte";
-  import SmokerStats from "./Smokers.svelte";
+  import SmokerStats from "./front/Smokers.svelte";
   import FrontWeight from "./front/TablaWeights.svelte";
   import EditWeight from "./front/EditWeight.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
