@@ -127,7 +127,7 @@ module.exports.register = (app) => {
         }
     ];
     //Inserta
-    Array.sort(smokersStats);
+    Array.sort(smokersStats.province);
     db.insert(smokersStats);
 /*--------------------fin constructor-----------------------*/
 
