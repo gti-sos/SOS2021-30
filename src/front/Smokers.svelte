@@ -23,7 +23,6 @@
 	}
     
     let errorMSG = "";
-    let okayMSG = "";
     onMount(getSmoker);
  
     //GET
