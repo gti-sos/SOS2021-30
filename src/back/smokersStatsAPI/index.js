@@ -132,9 +132,8 @@ module.exports.register = (app) => {
         array.sort(function (a, b) {
            return a[key] > b[key];
         });
-     }
-    ordenar(smokersStats, "province");
-    db.insert(smokersStats);
+    }
+    db.insert(ordenar(smokersStats, 'province'));
 /*--------------------fin constructor-----------------------*/
 
     //GET inicial (loadInitialData) para inicializar la BD (constructor)
@@ -264,7 +263,7 @@ module.exports.register = (app) => {
         db.remove({}, { multi: true }, function (err, numRemoved) {
         });
     // Inserta los datos iniciales en la base de datos
-       db.insert(smokersStatsIni);
+    db.insert(ordenar(smokersStatsIni, 'province'));
        
        res.send(JSON.stringify(smokersStats,null,2));
 
