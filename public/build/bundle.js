@@ -13483,14 +13483,14 @@ var app = (function () {
     			td5 = element("td");
     			create_component(button.$$.fragment);
     			t10 = space();
-    			attr_dev(a, "href", a_href_value = "#/weights-stats/" + /*weightsStat*/ ctx[22].provinces + "/" + parseInt(/*weightsStats*/ ctx[0].year));
+    			attr_dev(a, "href", a_href_value = "#/weights-stats/" + /*weightsStat*/ ctx[22].provinces + "/" + /*weightsStat*/ ctx[22].year);
     			add_location(a, file$2, 241, 24, 8914);
     			add_location(td0, file$2, 241, 20, 8910);
-    			add_location(td1, file$2, 242, 20, 9044);
-    			add_location(td2, file$2, 243, 20, 9093);
-    			add_location(td3, file$2, 244, 20, 9151);
-    			add_location(td4, file$2, 245, 20, 9206);
-    			add_location(td5, file$2, 246, 20, 9258);
+    			add_location(td1, file$2, 242, 20, 9033);
+    			add_location(td2, file$2, 243, 20, 9082);
+    			add_location(td3, file$2, 244, 20, 9140);
+    			add_location(td4, file$2, 245, 20, 9195);
+    			add_location(td5, file$2, 246, 20, 9247);
     			add_location(tr, file$2, 240, 16, 8884);
     		},
     		m: function mount(target, anchor) {
@@ -13520,7 +13520,7 @@ var app = (function () {
     			ctx = new_ctx;
     			if ((!current || dirty & /*weightsStats*/ 1) && t0_value !== (t0_value = /*weightsStat*/ ctx[22].provinces + "")) set_data_dev(t0, t0_value);
 
-    			if (!current || dirty & /*weightsStats*/ 1 && a_href_value !== (a_href_value = "#/weights-stats/" + /*weightsStat*/ ctx[22].provinces + "/" + parseInt(/*weightsStats*/ ctx[0].year))) {
+    			if (!current || dirty & /*weightsStats*/ 1 && a_href_value !== (a_href_value = "#/weights-stats/" + /*weightsStat*/ ctx[22].provinces + "/" + /*weightsStat*/ ctx[22].year)) {
     				attr_dev(a, "href", a_href_value);
     			}
 
@@ -13790,7 +13790,7 @@ var app = (function () {
 
     			button.$set(button_changes);
 
-    			if (dirty & /*deleteWeights, weightsStats, parseInt*/ 129) {
+    			if (dirty & /*deleteWeights, weightsStats*/ 129) {
     				each_value = /*weightsStats*/ ctx[0];
     				validate_each_argument(each_value);
     				let i;
@@ -14395,16 +14395,15 @@ var app = (function () {
     	let t14_value = /*params*/ ctx[0].year + "";
     	let t14;
     	let t15;
-    	let t16;
     	let td2;
     	let input0;
-    	let t17;
+    	let t16;
     	let td3;
     	let input1;
-    	let t18;
+    	let t17;
     	let td4;
     	let input2;
-    	let t19;
+    	let t18;
     	let td5;
     	let button;
     	let current;
@@ -14452,17 +14451,16 @@ var app = (function () {
     			t13 = space();
     			td1 = element("td");
     			t14 = text(t14_value);
-    			t15 = text(">");
-    			t16 = space();
+    			t15 = space();
     			td2 = element("td");
     			input0 = element("input");
-    			t17 = space();
+    			t16 = space();
     			td3 = element("td");
     			input1 = element("input");
-    			t18 = space();
+    			t17 = space();
     			td4 = element("td");
     			input2 = element("input");
-    			t19 = space();
+    			t18 = space();
     			td5 = element("td");
     			create_component(button.$$.fragment);
     			add_location(th0, file$1, 58, 16, 2014);
@@ -14475,13 +14473,13 @@ var app = (function () {
     			add_location(thead, file$1, 56, 8, 1971);
     			add_location(td0, file$1, 68, 16, 2305);
     			add_location(td1, file$1, 69, 16, 2350);
-    			add_location(input0, file$1, 70, 20, 2395);
-    			add_location(td2, file$1, 70, 16, 2391);
-    			add_location(input1, file$1, 71, 20, 2466);
-    			add_location(td3, file$1, 71, 16, 2462);
-    			add_location(input2, file$1, 72, 20, 2533);
-    			add_location(td4, file$1, 72, 16, 2529);
-    			add_location(td5, file$1, 73, 16, 2593);
+    			add_location(input0, file$1, 70, 20, 2394);
+    			add_location(td2, file$1, 70, 16, 2390);
+    			add_location(input1, file$1, 71, 20, 2465);
+    			add_location(td3, file$1, 71, 16, 2461);
+    			add_location(input2, file$1, 72, 20, 2532);
+    			add_location(td4, file$1, 72, 16, 2528);
+    			add_location(td5, file$1, 73, 16, 2592);
     			add_location(tr1, file$1, 67, 12, 2283);
     			add_location(tbody, file$1, 66, 8, 2262);
     		},
@@ -14507,20 +14505,19 @@ var app = (function () {
     			append_dev(tr1, t13);
     			append_dev(tr1, td1);
     			append_dev(td1, t14);
-    			append_dev(td1, t15);
-    			append_dev(tr1, t16);
+    			append_dev(tr1, t15);
     			append_dev(tr1, td2);
     			append_dev(td2, input0);
     			set_input_value(input0, /*uptadatedNormalWeight*/ ctx[1]);
-    			append_dev(tr1, t17);
+    			append_dev(tr1, t16);
     			append_dev(tr1, td3);
     			append_dev(td3, input1);
     			set_input_value(input1, /*updatedOverweight*/ ctx[2]);
-    			append_dev(tr1, t18);
+    			append_dev(tr1, t17);
     			append_dev(tr1, td4);
     			append_dev(td4, input2);
     			set_input_value(input2, /*updatedObesity*/ ctx[3]);
-    			append_dev(tr1, t19);
+    			append_dev(tr1, t18);
     			append_dev(tr1, td5);
     			mount_component(button, td5, null);
     			current = true;
@@ -14601,7 +14598,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[4]);
     			set_style(p, "color", "red");
-    			add_location(p, file$1, 79, 8, 2760);
+    			add_location(p, file$1, 79, 8, 2759);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);

@@ -67,7 +67,7 @@
         <tbody>
             <tr>
                 <td>{params.provinces}</td>
-                <td>{params.year}></td>
+                <td>{params.year}</td>
                 <td><input bind:value="{uptadatedNormalWeight}"></td>
                 <td><input bind:value="{updatedOverweight}"></td>
                 <td><input bind:value="{updatedObesity}"></td>

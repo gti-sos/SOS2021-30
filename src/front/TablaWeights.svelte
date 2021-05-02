@@ -239,7 +239,7 @@
             </tr>
             {#each weightsStats as weightsStat}
                 <tr>
-                    <td><a href="#/weights-stats/{weightsStat.provinces}/{parseInt(weightsStats.year)}">{weightsStat.provinces}</td>
+                    <td><a href="#/weights-stats/{weightsStat.provinces}/{weightsStat.year}">{weightsStat.provinces}</td>
                     <td>{weightsStat.year}</td>
                     <td>{weightsStat.normal_weight}</td>
                     <td>{weightsStat.overweight}</td>
