@@ -285,7 +285,7 @@
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.ocasionalSmoker}"></td>    
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.exSmoker}"></td>  
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.nonSmoker}"></td>  
-                    <td><Button outline color="primary" on:click={insertSmokers}>Insertar</Button></td>          
+                    <td><Button outline color="primary" colspan="2" on:click={insertSmokers}>Insertar</Button></td>          
                 </tr>
  
                 {#each SmokerStats as sc}
