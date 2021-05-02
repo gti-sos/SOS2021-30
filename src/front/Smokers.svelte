@@ -35,7 +35,7 @@
     //GET
     async function getSmoker() {
  
-        console.log("Fetching employment Data...");
+        console.log("Fetching smokers Data...");
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0");
         if (res.ok) {
             console.log("Ok:");
@@ -69,18 +69,60 @@
         }
     }
     
-    //INSERT
-    
+    //INSERT  
     async function insertSmokers(){
 		 
-         console.log("Inserting smokers data...");
+        console.log("Inserting smokers data...");
+        //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
+        if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
+            alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
+        } else{
+            const res = await fetch("/api/v1/smokers-stats",{
+            method:"POST",
+            body:JSON.stringify(newSmoker),
+            headers:{
+                "Content-Type": "application/json"
+            }
+            }).then(function (res) {
+                visible=true;
+                if (res.status == 201){
+                    getSmoker();
+                    totaldata++;
+                    console.log("Data introduced");
+                    color = "success";
+                    errorMSG="Entrada introducida correctamente a la base de datos";
+                }else if(res.status == 400){
+                    console.log("ERROR Data was not correctly introduced");
+                    color = "danger";
+                    errorMSG= "Los datos de la entrada no fueron introducidos correctamente";
+                }else if(res.status == 409){
+                    console.log("ERROR There is already a data with that province and year in the da tabase");
+                    color = "danger";
+                    errorMSG= "Ya existe una entrada en la base de datos con la provincia y el año introducido";
+                }
+            });	
+        }
+    }
+    
+    //EDIT
+    async function editSmokers(){
+		 
+        console.log("Editing smokers data...");
+        let editSmoker = {
+        province: "",
+		year: "",
+		dailySmoker:"",
+		ocasionalSmoker:"",
+		exSmoker:"",
+        nonSmoker:""
+	}
          //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
-         if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
+         if (editSmoker.year == "" || editSmoker.year == null || editSmoker.province == "") {
              alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
          } else{
              const res = await fetch("/api/v1/smokers-stats",{
-             method:"POST",
-             body:JSON.stringify(newSmoker),
+             method:"PUT",
+             body:JSON.stringify(editSmoker),
              headers:{
                  "Content-Type": "application/json"
              }
@@ -99,7 +141,7 @@
                  }else if(res.status == 409){
                      console.log("ERROR There is already a data with that province and year in the da tabase");
                      color = "danger";
-                     errorMSG= "Ya existe una entrada en la base de datos con la provincia y el año introducido";
+                     errorMSG= "Ya existe una entrada en la base de datos con los datos introducidos";
                  }
              });	
          }
@@ -156,10 +198,9 @@
 			});
 		}
 	}
-    //SEARCH
-    /*
     
-    */
+    
+    //SEARCH
     //getNextPage
     async function getNextPage() {
  
@@ -191,6 +232,7 @@
             console.log("ERROR!");
         }
     }
+    
     //getPreviewPage
     async function getPreviewPage() {
 
@@ -256,7 +298,8 @@
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.ocasionalSmoker}"></td>    
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.exSmoker}"></td>  
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.nonSmoker}"></td>  
-                    <td><Button outline color="primary" on:click={insertSmokers}>Insertar</Button></td>           
+                    <td><Button outline color="primary" on:click={insertSmokers}>Insertar</Button></td>
+                    <td><Button outline color="primary" on:click={editSmokers}>Editar</Button></td>            
                 </tr>
  
                 {#each SmokerStats as sc}
