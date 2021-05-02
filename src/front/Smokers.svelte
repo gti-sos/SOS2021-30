@@ -114,8 +114,9 @@
          //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
         if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
             alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
-        } else{
-            newSmoker.id=totaldata+1;
+        }else if (province != newSmoker.province && year != newSmoker.year){
+            alert("Los campos 'Provincia' y 'Año' no pueden ser distintos");
+        }else{
             const res = await fetch("/api/v1/smokers-stats/" + province + "/" + year, {
                     method:"PUT",
                     body:JSON.stringify(newSmoker),
@@ -123,9 +124,9 @@
                         "Content-Type": "application/json"
                     }
                 }).then(function (res) {
-                    getSmoker();
                     visible=true;
                     if (res.status == 200){
+                        getSmoker();
                         console.log("Data updated");
                         color = "success";
                         errorMSG="Entrada modificada correctamente en la base de datos";
@@ -276,13 +277,13 @@
         <Table bordered responsive>
             <thead>
                 <tr>
-                    <th>Comunidad Autónoma</th>
-                    <th>Año</th>
-                    <th>Fumadores diarios </th>
-                    <th>Fumadores ocasionales </th>
-                    <th>Ex-fumadores </th>
-                    <th>No fumadores </th>
-                    <th>Acciones</th>
+                    <th align="center">Comunidad Autónoma</th>
+                    <th align="center">Año</th>
+                    <th align="center">Fumadores diarios </th>
+                    <th align="center">Fumadores ocasionales </th>
+                    <th align="center">Ex-fumadores </th>
+                    <th align="center">No fumadores </th>
+                    <th align="center" colspan="2" >Acciones</th>
                 </tr>
             </thead>
             <tbody>
