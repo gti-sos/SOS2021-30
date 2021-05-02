@@ -116,11 +116,13 @@
 		exSmoker:"",
         nonSmoker:""
 	}
+        
+        await fetch("/api/v1/smokers-stats/:province/:year");
          //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
-         if (editSmoker.year == "" || editSmoker.year == null || editSmoker.province == "") {
+         if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
              alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
          } else{
-             const res = await fetch("/api/v1/smokers-stats",{
+             const res = await fetch("/api/v1/smokers-stats/:province/:year",{
              method:"PUT",
              body:JSON.stringify(editSmoker),
              headers:{
@@ -232,7 +234,7 @@
             console.log("ERROR!");
         }
     }
-    
+
     //getPreviewPage
     async function getPreviewPage() {
 
