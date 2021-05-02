@@ -13288,7 +13288,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (215:8) {#if errorMSG}
+    // (214:8) {#if errorMSG}
     function create_if_block$1(ctx) {
     	let t;
 
@@ -13311,14 +13311,14 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(215:8) {#if errorMSG}",
+    		source: "(214:8) {#if errorMSG}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (214:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
+    // (213:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
     function create_default_slot_7$1(ctx) {
     	let if_block_anchor;
     	let if_block = /*errorMSG*/ ctx[4] && create_if_block$1(ctx);
@@ -13356,14 +13356,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$1.name,
     		type: "slot",
-    		source: "(214:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>",
+    		source: "(213:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (238:20) <Button on:click={insertWeight}>
+    // (237:20) <Button on:click={insertWeight}>
     function create_default_slot_6$1(ctx) {
     	let t;
 
@@ -13383,14 +13383,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$1.name,
     		type: "slot",
-    		source: "(238:20) <Button on:click={insertWeight}>",
+    		source: "(237:20) <Button on:click={insertWeight}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (247:24) <Button outline color="danger" on:click="{deleteWeights(weightsStat.provinces, weightsStat.year)}">
+    // (246:24) <Button outline color="danger" on:click="{deleteWeights(weightsStat.provinces, weightsStat.year)}">
     function create_default_slot_5$1(ctx) {
     	let t;
 
@@ -13410,14 +13410,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$1.name,
     		type: "slot",
-    		source: "(247:24) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteWeights(weightsStat.provinces, weightsStat.year)}\\\">",
+    		source: "(246:24) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteWeights(weightsStat.provinces, weightsStat.year)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (240:12) {#each weightsStats as weightsStat}
+    // (239:12) {#each weightsStats as weightsStat}
     function create_each_block(ctx) {
     	let tr;
     	let td0;
@@ -13483,15 +13483,15 @@ var app = (function () {
     			td5 = element("td");
     			create_component(button.$$.fragment);
     			t10 = space();
-    			attr_dev(a, "href", a_href_value = "#/weights-stats/" + /*weightsStat*/ ctx[24].provinces);
-    			add_location(a, file$2, 241, 24, 8912);
-    			add_location(td0, file$2, 241, 20, 8908);
-    			add_location(td1, file$2, 242, 20, 9012);
-    			add_location(td2, file$2, 243, 20, 9061);
-    			add_location(td3, file$2, 244, 20, 9119);
-    			add_location(td4, file$2, 245, 20, 9174);
-    			add_location(td5, file$2, 246, 20, 9226);
-    			add_location(tr, file$2, 240, 16, 8882);
+    			attr_dev(a, "href", a_href_value = "#/weights-stats/" + /*weightsStat*/ ctx[24].provinces + "/" + /*weightsStats*/ ctx[0].year);
+    			add_location(a, file$2, 240, 24, 8897);
+    			add_location(td0, file$2, 240, 20, 8893);
+    			add_location(td1, file$2, 241, 20, 9017);
+    			add_location(td2, file$2, 242, 20, 9066);
+    			add_location(td3, file$2, 243, 20, 9124);
+    			add_location(td4, file$2, 244, 20, 9179);
+    			add_location(td5, file$2, 245, 20, 9231);
+    			add_location(tr, file$2, 239, 16, 8867);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -13520,7 +13520,7 @@ var app = (function () {
     			ctx = new_ctx;
     			if ((!current || dirty & /*weightsStats*/ 1) && t0_value !== (t0_value = /*weightsStat*/ ctx[24].provinces + "")) set_data_dev(t0, t0_value);
 
-    			if (!current || dirty & /*weightsStats*/ 1 && a_href_value !== (a_href_value = "#/weights-stats/" + /*weightsStat*/ ctx[24].provinces)) {
+    			if (!current || dirty & /*weightsStats*/ 1 && a_href_value !== (a_href_value = "#/weights-stats/" + /*weightsStat*/ ctx[24].provinces + "/" + /*weightsStats*/ ctx[0].year)) {
     				attr_dev(a, "href", a_href_value);
     			}
 
@@ -13555,14 +13555,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(240:12) {#each weightsStats as weightsStat}",
+    		source: "(239:12) {#each weightsStats as weightsStat}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (220:4) <Table bordered responsive>
+    // (219:4) <Table bordered responsive>
     function create_default_slot_4$1(ctx) {
     	let thead;
     	let tr0;
@@ -13670,37 +13670,37 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$2, 222, 12, 7939);
-    			add_location(th1, file$2, 223, 12, 7980);
-    			add_location(th2, file$2, 224, 12, 8006);
-    			add_location(th3, file$2, 225, 12, 8040);
-    			add_location(th4, file$2, 226, 12, 8072);
-    			add_location(th5, file$2, 227, 12, 8103);
-    			add_location(tr0, file$2, 221, 10, 7921);
-    			add_location(thead, file$2, 220, 8, 7902);
+    			add_location(th0, file$2, 221, 12, 7924);
+    			add_location(th1, file$2, 222, 12, 7965);
+    			add_location(th2, file$2, 223, 12, 7991);
+    			add_location(th3, file$2, 224, 12, 8025);
+    			add_location(th4, file$2, 225, 12, 8057);
+    			add_location(th5, file$2, 226, 12, 8088);
+    			add_location(tr0, file$2, 220, 10, 7906);
+    			add_location(thead, file$2, 219, 8, 7887);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "Comunidad autónoma");
-    			add_location(input0, file$2, 232, 20, 8212);
-    			add_location(td0, file$2, 232, 16, 8208);
+    			add_location(input0, file$2, 231, 20, 8197);
+    			add_location(td0, file$2, 231, 16, 8193);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "placeholder", "2075");
-    			add_location(input1, file$2, 233, 20, 8328);
-    			add_location(td1, file$2, 233, 16, 8324);
+    			add_location(input1, file$2, 232, 20, 8313);
+    			add_location(td1, file$2, 232, 16, 8309);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "placeholder", "0000");
-    			add_location(input2, file$2, 234, 20, 8427);
-    			add_location(td2, file$2, 234, 16, 8423);
+    			add_location(input2, file$2, 233, 20, 8412);
+    			add_location(td2, file$2, 233, 16, 8408);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "0000");
-    			add_location(input3, file$2, 235, 20, 8535);
-    			add_location(td3, file$2, 235, 16, 8531);
+    			add_location(input3, file$2, 234, 20, 8520);
+    			add_location(td3, file$2, 234, 16, 8516);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "placeholder", "0000");
-    			add_location(input4, file$2, 236, 20, 8640);
-    			add_location(td4, file$2, 236, 16, 8636);
-    			add_location(td5, file$2, 237, 16, 8738);
-    			add_location(tr1, file$2, 231, 12, 8186);
-    			add_location(tbody, file$2, 230, 8, 8165);
+    			add_location(input4, file$2, 235, 20, 8625);
+    			add_location(td4, file$2, 235, 16, 8621);
+    			add_location(td5, file$2, 236, 16, 8723);
+    			add_location(tr1, file$2, 230, 12, 8171);
+    			add_location(tbody, file$2, 229, 8, 8150);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -13853,14 +13853,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$1.name,
     		type: "slot",
-    		source: "(220:4) <Table bordered responsive>",
+    		source: "(219:4) <Table bordered responsive>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (253:4) <Button color="success" on:click="{loadInitialData}">
+    // (252:4) <Button color="success" on:click="{loadInitialData}">
     function create_default_slot_3$1(ctx) {
     	let t;
 
@@ -13880,14 +13880,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$1.name,
     		type: "slot",
-    		source: "(253:4) <Button color=\\\"success\\\" on:click=\\\"{loadInitialData}\\\">",
+    		source: "(252:4) <Button color=\\\"success\\\" on:click=\\\"{loadInitialData}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (257:4) <Button color="danger" on:click="{deleteALL}">
+    // (256:4) <Button color="danger" on:click="{deleteALL}">
     function create_default_slot_2$2(ctx) {
     	let t;
 
@@ -13907,14 +13907,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$2.name,
     		type: "slot",
-    		source: "(257:4) <Button color=\\\"danger\\\" on:click=\\\"{deleteALL}\\\">",
+    		source: "(256:4) <Button color=\\\"danger\\\" on:click=\\\"{deleteALL}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (261:4) <Button outline color="primary" on:click="{getNextPage}">
+    // (260:4) <Button outline color="primary" on:click="{getNextPage}">
     function create_default_slot_1$2(ctx) {
     	let t;
 
@@ -13934,14 +13934,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$2.name,
     		type: "slot",
-    		source: "(261:4) <Button outline color=\\\"primary\\\" on:click=\\\"{getNextPage}\\\">",
+    		source: "(260:4) <Button outline color=\\\"primary\\\" on:click=\\\"{getNextPage}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (265:4) <Button outline color="primary" on:click="{getPreviewPage}">
+    // (264:4) <Button outline color="primary" on:click="{getPreviewPage}">
     function create_default_slot$2(ctx) {
     	let t;
 
@@ -13961,7 +13961,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$2.name,
     		type: "slot",
-    		source: "(265:4) <Button outline color=\\\"primary\\\" on:click=\\\"{getPreviewPage}\\\">",
+    		source: "(264:4) <Button outline color=\\\"primary\\\" on:click=\\\"{getPreviewPage}\\\">",
     		ctx
     	});
 
@@ -14070,8 +14070,8 @@ var app = (function () {
     			t6 = space();
     			create_component(button3.$$.fragment);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$2, 211, 4, 7638);
-    			add_location(main, file$2, 210, 0, 7626);
+    			add_location(h1, file$2, 210, 4, 7623);
+    			add_location(main, file$2, 209, 0, 7611);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -14197,10 +14197,7 @@ var app = (function () {
 
     	let isOpen = false;
     	let busquedas = BASE_WEIGHTS_PATH;
-
-    	//ALERTAS
     	let visible = false;
-
     	let color = "danger";
     	let page = 1;
     	let totaldata = weightsStats.length;
@@ -14529,7 +14526,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$1 = "src\\front\\EditWeight.svelte";
 
-    // (78:20) <Button outline color="primary" on:click={updateWeight}>
+    // (74:20) <Button outline color="primary" on:click={updateWeight}>
     function create_default_slot_2$1(ctx) {
     	let t;
 
@@ -14549,14 +14546,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$1.name,
     		type: "slot",
-    		source: "(78:20) <Button outline color=\\\"primary\\\" on:click={updateWeight}>",
+    		source: "(74:20) <Button outline color=\\\"primary\\\" on:click={updateWeight}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (61:4) <Table bordered>
+    // (56:4) <Table bordered>
     function create_default_slot_1$1(ctx) {
     	let thead;
     	let tr0;
@@ -14570,23 +14567,28 @@ var app = (function () {
     	let t7;
     	let th4;
     	let t9;
+    	let th5;
+    	let t11;
     	let tbody;
     	let tr1;
     	let td0;
-    	let t10;
-    	let t11;
-    	let td1;
-    	let input0;
+    	let t12_value = /*params*/ ctx[0].provinces + "";
     	let t12;
-    	let td2;
-    	let input1;
     	let t13;
-    	let td3;
-    	let input2;
+    	let td1;
+    	let t14_value = /*params*/ ctx[0].year + "";
     	let t14;
-    	let td4;
-    	let input3;
     	let t15;
+    	let t16;
+    	let td2;
+    	let input0;
+    	let t17;
+    	let td3;
+    	let input1;
+    	let t18;
+    	let td4;
+    	let input2;
+    	let t19;
     	let td5;
     	let button;
     	let current;
@@ -14603,7 +14605,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button.$on("click", /*updateWeight*/ ctx[6]);
+    	button.$on("click", /*updateWeight*/ ctx[5]);
 
     	const block = {
     		c: function create() {
@@ -14624,44 +14626,48 @@ var app = (function () {
     			th4 = element("th");
     			th4.textContent = "Obesidad";
     			t9 = space();
+    			th5 = element("th");
+    			th5.textContent = "Acciones";
+    			t11 = space();
     			tbody = element("tbody");
     			tr1 = element("tr");
     			td0 = element("td");
-    			t10 = text(/*updatedProvince*/ ctx[0]);
-    			t11 = space();
-    			td1 = element("td");
-    			input0 = element("input");
-    			t12 = space();
-    			td2 = element("td");
-    			input1 = element("input");
+    			t12 = text(t12_value);
     			t13 = space();
+    			td1 = element("td");
+    			t14 = text(t14_value);
+    			t15 = text(">");
+    			t16 = space();
+    			td2 = element("td");
+    			input0 = element("input");
+    			t17 = space();
     			td3 = element("td");
-    			input2 = element("input");
-    			t14 = space();
+    			input1 = element("input");
+    			t18 = space();
     			td4 = element("td");
-    			input3 = element("input");
-    			t15 = space();
+    			input2 = element("input");
+    			t19 = space();
     			td5 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$1, 63, 16, 2045);
-    			add_location(th1, file$1, 64, 16, 2090);
-    			add_location(th2, file$1, 65, 16, 2120);
-    			add_location(th3, file$1, 66, 16, 2158);
-    			add_location(th4, file$1, 67, 16, 2194);
-    			add_location(tr0, file$1, 62, 12, 2023);
-    			add_location(thead, file$1, 61, 8, 2002);
-    			add_location(td0, file$1, 72, 16, 2301);
-    			add_location(input0, file$1, 73, 20, 2349);
-    			add_location(td1, file$1, 73, 16, 2345);
-    			add_location(input1, file$1, 74, 20, 2412);
-    			add_location(td2, file$1, 74, 16, 2408);
-    			add_location(input2, file$1, 75, 20, 2483);
-    			add_location(td3, file$1, 75, 16, 2479);
-    			add_location(input3, file$1, 76, 20, 2550);
-    			add_location(td4, file$1, 76, 16, 2546);
-    			add_location(td5, file$1, 77, 16, 2610);
-    			add_location(tr1, file$1, 71, 12, 2279);
-    			add_location(tbody, file$1, 70, 8, 2258);
+    			add_location(th0, file$1, 58, 16, 2015);
+    			add_location(th1, file$1, 59, 16, 2060);
+    			add_location(th2, file$1, 60, 16, 2090);
+    			add_location(th3, file$1, 61, 16, 2128);
+    			add_location(th4, file$1, 62, 16, 2164);
+    			add_location(th5, file$1, 63, 16, 2199);
+    			add_location(tr0, file$1, 57, 12, 1993);
+    			add_location(thead, file$1, 56, 8, 1972);
+    			add_location(td0, file$1, 68, 16, 2306);
+    			add_location(td1, file$1, 69, 16, 2351);
+    			add_location(input0, file$1, 70, 20, 2396);
+    			add_location(td2, file$1, 70, 16, 2392);
+    			add_location(input1, file$1, 71, 20, 2467);
+    			add_location(td3, file$1, 71, 16, 2463);
+    			add_location(input2, file$1, 72, 20, 2534);
+    			add_location(td4, file$1, 72, 16, 2530);
+    			add_location(td5, file$1, 73, 16, 2594);
+    			add_location(tr1, file$1, 67, 12, 2284);
+    			add_location(tbody, file$1, 66, 8, 2263);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -14675,65 +14681,63 @@ var app = (function () {
     			append_dev(tr0, th3);
     			append_dev(tr0, t7);
     			append_dev(tr0, th4);
-    			insert_dev(target, t9, anchor);
+    			append_dev(tr0, t9);
+    			append_dev(tr0, th5);
+    			insert_dev(target, t11, anchor);
     			insert_dev(target, tbody, anchor);
     			append_dev(tbody, tr1);
     			append_dev(tr1, td0);
-    			append_dev(td0, t10);
-    			append_dev(tr1, t11);
-    			append_dev(tr1, td1);
-    			append_dev(td1, input0);
-    			set_input_value(input0, /*uptadatedYear*/ ctx[1]);
-    			append_dev(tr1, t12);
-    			append_dev(tr1, td2);
-    			append_dev(td2, input1);
-    			set_input_value(input1, /*uptadatedNormalWeight*/ ctx[2]);
+    			append_dev(td0, t12);
     			append_dev(tr1, t13);
+    			append_dev(tr1, td1);
+    			append_dev(td1, t14);
+    			append_dev(td1, t15);
+    			append_dev(tr1, t16);
+    			append_dev(tr1, td2);
+    			append_dev(td2, input0);
+    			set_input_value(input0, /*uptadatedNormalWeight*/ ctx[1]);
+    			append_dev(tr1, t17);
     			append_dev(tr1, td3);
-    			append_dev(td3, input2);
-    			set_input_value(input2, /*updatedOverweight*/ ctx[3]);
-    			append_dev(tr1, t14);
+    			append_dev(td3, input1);
+    			set_input_value(input1, /*updatedOverweight*/ ctx[2]);
+    			append_dev(tr1, t18);
     			append_dev(tr1, td4);
-    			append_dev(td4, input3);
-    			set_input_value(input3, /*updatedObesity*/ ctx[4]);
-    			append_dev(tr1, t15);
+    			append_dev(td4, input2);
+    			set_input_value(input2, /*updatedObesity*/ ctx[3]);
+    			append_dev(tr1, t19);
     			append_dev(tr1, td5);
     			mount_component(button, td5, null);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[8]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[9]),
-    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[10]),
-    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[11])
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[6]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[7]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[8])
     				];
 
     				mounted = true;
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (!current || dirty & /*updatedProvince*/ 1) set_data_dev(t10, /*updatedProvince*/ ctx[0]);
+    			if ((!current || dirty & /*params*/ 1) && t12_value !== (t12_value = /*params*/ ctx[0].provinces + "")) set_data_dev(t12, t12_value);
+    			if ((!current || dirty & /*params*/ 1) && t14_value !== (t14_value = /*params*/ ctx[0].year + "")) set_data_dev(t14, t14_value);
 
-    			if (dirty & /*uptadatedYear*/ 2 && input0.value !== /*uptadatedYear*/ ctx[1]) {
-    				set_input_value(input0, /*uptadatedYear*/ ctx[1]);
+    			if (dirty & /*uptadatedNormalWeight*/ 2 && input0.value !== /*uptadatedNormalWeight*/ ctx[1]) {
+    				set_input_value(input0, /*uptadatedNormalWeight*/ ctx[1]);
     			}
 
-    			if (dirty & /*uptadatedNormalWeight*/ 4 && input1.value !== /*uptadatedNormalWeight*/ ctx[2]) {
-    				set_input_value(input1, /*uptadatedNormalWeight*/ ctx[2]);
+    			if (dirty & /*updatedOverweight*/ 4 && input1.value !== /*updatedOverweight*/ ctx[2]) {
+    				set_input_value(input1, /*updatedOverweight*/ ctx[2]);
     			}
 
-    			if (dirty & /*updatedOverweight*/ 8 && input2.value !== /*updatedOverweight*/ ctx[3]) {
-    				set_input_value(input2, /*updatedOverweight*/ ctx[3]);
-    			}
-
-    			if (dirty & /*updatedObesity*/ 16 && input3.value !== /*updatedObesity*/ ctx[4]) {
-    				set_input_value(input3, /*updatedObesity*/ ctx[4]);
+    			if (dirty & /*updatedObesity*/ 8 && input2.value !== /*updatedObesity*/ ctx[3]) {
+    				set_input_value(input2, /*updatedObesity*/ ctx[3]);
     			}
 
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 32768) {
+    			if (dirty & /*$$scope*/ 4096) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14750,7 +14754,7 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(thead);
-    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(t11);
     			if (detaching) detach_dev(tbody);
     			destroy_component(button);
     			mounted = false;
@@ -14762,14 +14766,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$1.name,
     		type: "slot",
-    		source: "(61:4) <Table bordered>",
+    		source: "(56:4) <Table bordered>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (83:4) {#if errorMsg}
+    // (79:4) {#if errorMsg}
     function create_if_block(ctx) {
     	let p;
     	let t0;
@@ -14779,9 +14783,9 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t0 = text("ERROR: ");
-    			t1 = text(/*errorMsg*/ ctx[5]);
+    			t1 = text(/*errorMsg*/ ctx[4]);
     			set_style(p, "color", "red");
-    			add_location(p, file$1, 83, 8, 2777);
+    			add_location(p, file$1, 79, 8, 2761);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -14789,7 +14793,7 @@ var app = (function () {
     			append_dev(p, t1);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*errorMsg*/ 32) set_data_dev(t1, /*errorMsg*/ ctx[5]);
+    			if (dirty & /*errorMsg*/ 16) set_data_dev(t1, /*errorMsg*/ ctx[4]);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(p);
@@ -14800,14 +14804,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(83:4) {#if errorMsg}",
+    		source: "(79:4) {#if errorMsg}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (86:4) <Button outline color="secondary" on:click="{pop}">
+    // (82:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$1(ctx) {
     	let t;
 
@@ -14827,7 +14831,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(86:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(82:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -14837,10 +14841,17 @@ var app = (function () {
     function create_fragment$1(ctx) {
     	let main;
     	let h1;
+    	let t0;
+    	let t1_value = /*params*/ ctx[0].provinces + "";
     	let t1;
-    	let table;
     	let t2;
+    	let t3_value = /*params*/ ctx[0].year + "";
     	let t3;
+    	let t4;
+    	let t5;
+    	let table;
+    	let t6;
+    	let t7;
     	let button;
     	let current;
 
@@ -14853,7 +14864,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	let if_block = /*errorMsg*/ ctx[5] && create_if_block(ctx);
+    	let if_block = /*errorMsg*/ ctx[4] && create_if_block(ctx);
 
     	button = new Button({
     			props: {
@@ -14871,15 +14882,19 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			h1 = element("h1");
-    			h1.textContent = "Parámetro a editar";
-    			t1 = space();
-    			create_component(table.$$.fragment);
+    			t0 = text("Recurso ");
+    			t1 = text(t1_value);
     			t2 = space();
+    			t3 = text(t3_value);
+    			t4 = text(" listo para editar");
+    			t5 = space();
+    			create_component(table.$$.fragment);
+    			t6 = space();
     			if (if_block) if_block.c();
-    			t3 = space();
+    			t7 = space();
     			create_component(button.$$.fragment);
-    			add_location(h1, file$1, 59, 4, 1943);
-    			add_location(main, file$1, 58, 0, 1931);
+    			add_location(h1, file$1, 54, 4, 1873);
+    			add_location(main, file$1, 53, 0, 1861);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -14887,30 +14902,37 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
     			append_dev(main, h1);
-    			append_dev(main, t1);
+    			append_dev(h1, t0);
+    			append_dev(h1, t1);
+    			append_dev(h1, t2);
+    			append_dev(h1, t3);
+    			append_dev(h1, t4);
+    			append_dev(main, t5);
     			mount_component(table, main, null);
-    			append_dev(main, t2);
+    			append_dev(main, t6);
     			if (if_block) if_block.m(main, null);
-    			append_dev(main, t3);
+    			append_dev(main, t7);
     			mount_component(button, main, null);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
+    			if ((!current || dirty & /*params*/ 1) && t1_value !== (t1_value = /*params*/ ctx[0].provinces + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty & /*params*/ 1) && t3_value !== (t3_value = /*params*/ ctx[0].year + "")) set_data_dev(t3, t3_value);
     			const table_changes = {};
 
-    			if (dirty & /*$$scope, updatedObesity, updatedOverweight, uptadatedNormalWeight, uptadatedYear, updatedProvince*/ 32799) {
+    			if (dirty & /*$$scope, updatedObesity, updatedOverweight, uptadatedNormalWeight, params*/ 4111) {
     				table_changes.$$scope = { dirty, ctx };
     			}
 
     			table.$set(table_changes);
 
-    			if (/*errorMsg*/ ctx[5]) {
+    			if (/*errorMsg*/ ctx[4]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
     					if_block = create_if_block(ctx);
     					if_block.c();
-    					if_block.m(main, t3);
+    					if_block.m(main, t7);
     				}
     			} else if (if_block) {
     				if_block.d(1);
@@ -14919,7 +14941,7 @@ var app = (function () {
 
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 32768) {
+    			if (dirty & /*$$scope*/ 4096) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14960,31 +14982,26 @@ var app = (function () {
     	validate_slots("EditWeight", slots, []);
     	var BASE_WEIGHTS_PATH = "/api/v1/table-weights-stats";
     	let { params = {} } = $$props;
-    	let weight = {};
-    	let updatedProvince = "XXXX";
-    	let uptadatedYear = 2075;
-    	let uptadatedNormalWeight = 1000;
-    	let updatedOverweight = 1000;
-    	let updatedObesity = 1000;
+    	let weightsStats = {};
+    	let uptadatedNormalWeight = null;
+    	let updatedOverweight = null;
+    	let updatedObesity = null;
     	let errorMsg = "";
     	onMount(getStat);
 
     	async function getStat() {
     		console.log("Fetching datas...");
-    		const res = await fetch(BASE_WEIGHTS_PATH + params.provinces);
+    		const res = await fetch(BASE_WEIGHTS_PATH + "/" + params.provinces + "/" + params.year);
 
     		if (res.ok) {
     			console.log("Ok");
-    			const json = await res.json();
-    			weight = json;
-    			$$invalidate(0, updatedProvince = weight.provinces);
-    			$$invalidate(1, uptadatedYear = weight.year);
-    			$$invalidate(2, uptadatedNormalWeight = weight.normal_weight);
-    			$$invalidate(3, updatedOverweight = weight.overweight);
-    			$$invalidate(4, updatedObesity = weight.obesity);
+    			await res.json();
+    			$$invalidate(1, uptadatedNormalWeight = weightsStats.normal_weight);
+    			$$invalidate(2, updatedOverweight = weightsStats.overweight);
+    			$$invalidate(3, updatedObesity = weightsStats.obesity);
     			console.log("Recived data");
     		} else {
-    			$$invalidate(5, errorMsg = res.status + ": " + res.statusText);
+    			$$invalidate(4, errorMsg = res.status + ": " + res.statusText);
     			console.log("ERROR" + errorMsg);
     		}
     	}
@@ -14992,17 +15009,17 @@ var app = (function () {
     	async function updateWeight() {
     		console.log("Updating contact..." + JSON.stringify(params.provinces));
 
-    		await fetch(BASE_WEIGHTS_PATH + params.provinces, {
+    		await fetch(BASE_WEIGHTS_PATH + "/" + params.provinces + "/" + params.year, {
     			method: "PUT",
     			body: JSON.stringify({
     				provinces: params.provinces,
-    				year: uptadatedYear,
-    				normal_weight: uptadatedNormalWeight,
-    				overweight: updatedOverweight,
-    				obesity: updatedObesity
+    				year: parseInt(params.year),
+    				normal_weight: parseFloat(uptadatedNormalWeight),
+    				overweight: parseFloat(updatedOverweight),
+    				obesity: parseFloat(updatedObesity)
     			}),
     			headers: { "Content-Type": "application/json" }
-    		}).then(function (res) {
+    		}).then(res => {
     			getStat();
     		});
     	}
@@ -15014,27 +15031,22 @@ var app = (function () {
     	});
 
     	function input0_input_handler() {
-    		uptadatedYear = this.value;
-    		$$invalidate(1, uptadatedYear);
+    		uptadatedNormalWeight = this.value;
+    		$$invalidate(1, uptadatedNormalWeight);
     	}
 
     	function input1_input_handler() {
-    		uptadatedNormalWeight = this.value;
-    		$$invalidate(2, uptadatedNormalWeight);
+    		updatedOverweight = this.value;
+    		$$invalidate(2, updatedOverweight);
     	}
 
     	function input2_input_handler() {
-    		updatedOverweight = this.value;
-    		$$invalidate(3, updatedOverweight);
-    	}
-
-    	function input3_input_handler() {
     		updatedObesity = this.value;
-    		$$invalidate(4, updatedObesity);
+    		$$invalidate(3, updatedObesity);
     	}
 
     	$$self.$$set = $$props => {
-    		if ("params" in $$props) $$invalidate(7, params = $$props.params);
+    		if ("params" in $$props) $$invalidate(0, params = $$props.params);
     	};
 
     	$$self.$capture_state = () => ({
@@ -15044,9 +15056,7 @@ var app = (function () {
     		Button,
     		BASE_WEIGHTS_PATH,
     		params,
-    		weight,
-    		updatedProvince,
-    		uptadatedYear,
+    		weightsStats,
     		uptadatedNormalWeight,
     		updatedOverweight,
     		updatedObesity,
@@ -15057,14 +15067,12 @@ var app = (function () {
 
     	$$self.$inject_state = $$props => {
     		if ("BASE_WEIGHTS_PATH" in $$props) BASE_WEIGHTS_PATH = $$props.BASE_WEIGHTS_PATH;
-    		if ("params" in $$props) $$invalidate(7, params = $$props.params);
-    		if ("weight" in $$props) weight = $$props.weight;
-    		if ("updatedProvince" in $$props) $$invalidate(0, updatedProvince = $$props.updatedProvince);
-    		if ("uptadatedYear" in $$props) $$invalidate(1, uptadatedYear = $$props.uptadatedYear);
-    		if ("uptadatedNormalWeight" in $$props) $$invalidate(2, uptadatedNormalWeight = $$props.uptadatedNormalWeight);
-    		if ("updatedOverweight" in $$props) $$invalidate(3, updatedOverweight = $$props.updatedOverweight);
-    		if ("updatedObesity" in $$props) $$invalidate(4, updatedObesity = $$props.updatedObesity);
-    		if ("errorMsg" in $$props) $$invalidate(5, errorMsg = $$props.errorMsg);
+    		if ("params" in $$props) $$invalidate(0, params = $$props.params);
+    		if ("weightsStats" in $$props) weightsStats = $$props.weightsStats;
+    		if ("uptadatedNormalWeight" in $$props) $$invalidate(1, uptadatedNormalWeight = $$props.uptadatedNormalWeight);
+    		if ("updatedOverweight" in $$props) $$invalidate(2, updatedOverweight = $$props.updatedOverweight);
+    		if ("updatedObesity" in $$props) $$invalidate(3, updatedObesity = $$props.updatedObesity);
+    		if ("errorMsg" in $$props) $$invalidate(4, errorMsg = $$props.errorMsg);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -15072,25 +15080,22 @@ var app = (function () {
     	}
 
     	return [
-    		updatedProvince,
-    		uptadatedYear,
+    		params,
     		uptadatedNormalWeight,
     		updatedOverweight,
     		updatedObesity,
     		errorMsg,
     		updateWeight,
-    		params,
     		input0_input_handler,
     		input1_input_handler,
-    		input2_input_handler,
-    		input3_input_handler
+    		input2_input_handler
     	];
     }
 
     class EditWeight extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { params: 7 });
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { params: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -15930,8 +15935,8 @@ var app = (function () {
     			create_component(navbar.$$.fragment);
     			t = space();
     			create_component(router.$$.fragment);
-    			add_location(body, file, 27, 1, 834);
-    			add_location(main, file, 26, 0, 825);
+    			add_location(body, file, 27, 1, 840);
+    			add_location(main, file, 26, 0, 831);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -15992,7 +15997,7 @@ var app = (function () {
     		"/alcohol-stats": TablaAlcohol,
     		"/life-stats": LifeExpectancy,
     		"/weights-stats": TablaWeights,
-    		"/weights-stats/:provinces": EditWeight,
+    		"/weights-stats/:provinces/:year": EditWeight,
     		"/smokers-stats": Smokers,
     		"*": NotFound
     	};

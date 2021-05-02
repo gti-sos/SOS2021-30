@@ -6,28 +6,23 @@
 
     var BASE_WEIGHTS_PATH = "/api/v1/table-weights-stats";
     export let params = {};
-    let weight = {};
-    let updatedProvince = "XXXX";
-    let uptadatedYear = 2075;
-    let uptadatedNormalWeight = 1000;
-    let updatedOverweight = 1000;
-    let updatedObesity = 1000;
+    let weightsStats = {};
+    let uptadatedNormalWeight = null;
+    let updatedOverweight = null;
+    let updatedObesity = null;
     let errorMsg = "";
 
     onMount(getStat);
 
     async function getStat(){
         console.log("Fetching datas...");
-        const res = await fetch(BASE_WEIGHTS_PATH + params.provinces);
+        const res = await fetch(BASE_WEIGHTS_PATH + "/" + params.provinces + "/" + params.year);
         if(res.ok){
             console.log("Ok");
             const json = await res.json();
-            weight = json;
-            updatedProvince = weight.provinces;
-            uptadatedYear = weight.year;
-            uptadatedNormalWeight = weight.normal_weight;
-            updatedOverweight = weight.overweight;
-            updatedObesity = weight.obesity;
+            uptadatedNormalWeight = weightsStats.normal_weight;
+            updatedOverweight = weightsStats.overweight;
+            updatedObesity = weightsStats.obesity;
             console.log("Recived data");
         }else{
             errorMsg = res.status + ": " + res.statusText;
@@ -38,26 +33,26 @@
     async function updateWeight(){
         console.log("Updating contact..." + JSON.stringify(params.provinces));
         
-        const res = await fetch(BASE_WEIGHTS_PATH + params.provinces, {
+        const res = await fetch(BASE_WEIGHTS_PATH + "/" + params.provinces + "/" + params.year, {
             method: "PUT",
             body : JSON.stringify({
                 provinces: params.provinces,
-                year: uptadatedYear,
-                normal_weight: uptadatedNormalWeight,
-                overweight: updatedOverweight,
-                obesity: updatedObesity
+                year: parseInt(params.year),
+                normal_weight: parseFloat(uptadatedNormalWeight),
+                overweight: parseFloat(updatedOverweight),
+                obesity: parseFloat(updatedObesity)
             }),
             headers: {
                 "Content-Type": "application/json"
             }
-        }).then(function (res){
+        }).then( (res) =>{
             getStat();
         })
     }
 </script>
 
 <main>
-    <h1>Parámetro a editar</h1>
+    <h1>Recurso {params.provinces} {params.year} listo para editar</h1>
     <Table bordered>
         <thead>
             <tr>
@@ -66,12 +61,13 @@
                 <th>Peso normal</th>
                 <th>Sobrepeso</th>
                 <th>Obesidad</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>{updatedProvince}</td>
-                <td><input bind:value="{uptadatedYear}"></td>
+                <td>{params.provinces}</td>
+                <td>{params.year}></td>
                 <td><input bind:value="{uptadatedNormalWeight}"></td>
                 <td><input bind:value="{updatedOverweight}"></td>
                 <td><input bind:value="{updatedObesity}"></td>

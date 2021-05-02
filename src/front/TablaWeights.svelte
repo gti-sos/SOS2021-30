@@ -20,7 +20,6 @@
     }
     let isOpen = false;
     let busquedas = BASE_WEIGHTS_PATH;
-    //ALERTAS
     let visible = false;
     let color = "danger";
     let page = 1;
@@ -239,7 +238,7 @@
             </tr>
             {#each weightsStats as weightsStat}
                 <tr>
-                    <td><a href="#/weights-stats/{weightsStat.provinces}">{weightsStat.provinces}</td>
+                    <td><a href="#/weights-stats/{weightsStat.provinces}/{weightsStats.year}">{weightsStat.provinces}</td>
                     <td>{weightsStat.year}</td>
                     <td>{weightsStat.normal_weight}</td>
                     <td>{weightsStat.overweight}</td>

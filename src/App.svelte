@@ -19,7 +19,7 @@
 		"/alcohol-stats": TablaAlcohol,
     "/life-stats" : LifeExpectancy,
     "/weights-stats" : FrontWeight,
-    "/weights-stats/:provinces" : EditWeight,
+    "/weights-stats/:provinces/:year" : EditWeight,
     "/smokers-stats" : SmokerStats,
 		'*': NotFound};
 </script>
