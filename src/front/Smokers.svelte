@@ -115,7 +115,7 @@
         if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
             alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
         } else{
-            newSmoker.id=totaldata++;
+            newSmoker.id=totaldata+1;
             const res = await fetch("/api/v1/smokers-stats/" + province + "/" + year, {
                     method:"PUT",
                     body:JSON.stringify(newSmoker),
@@ -123,10 +123,10 @@
                         "Content-Type": "application/json"
                     }
                 }).then(function (res) {
-                    visible=true;
                     getSmoker();
-                    if (res.status == 201){
-                        console.log("Data introduced");
+                    visible=true;
+                    if (res.status == 200){
+                        console.log("Data updated");
                         color = "success";
                         errorMSG="Entrada modificada correctamente en la base de datos";
                     }else if(res.status == 400){
