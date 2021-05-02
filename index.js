@@ -21,7 +21,7 @@ weightsStatsAPI.register(app);
 //~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
 //--------------------------- API REST SMOKERS-CONSUMPTION-STATS-----------------
-var smokersAPI = require("./smokersStatsAPI");
+var smokersAPI = require("./src/back/smokersStatsAPI");
 smokersAPI.register(app);
 //---------------------------END: API REST SMOKERS-CONSUMPTION-STATS-----------------
 
