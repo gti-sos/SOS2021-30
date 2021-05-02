@@ -284,7 +284,7 @@
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.ocasionalSmoker}"></td>    
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.exSmoker}"></td>  
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.nonSmoker}"></td>  
-                    <td  colspan="2"><Button outline color="primary" on:click={insertSmokers}>Insertar</Button></td>          
+                    <td><Button outline color="primary" on:click={insertSmokers} colspan="2">Insertar</Button></td>          
                 </tr>
  
                 {#each SmokerStats as sc}
@@ -307,10 +307,10 @@
         <Button color="danger" on:click="{deleteALL}">
             Eliminar todo
         </Button>
-        <Button outline color="primary" on:click="{getPreviewPage}">
+        <Button style ="text-align: right;" outline color="primary" on:click="{getPreviewPage}">
            Atrás
         </Button>
-        <Button outline color="primary" on:click="{getNextPage}">
+        <Button style ="text-align: right;" outline color="primary" on:click="{getNextPage}">
             Siguiente
          </Button>
          
