@@ -32,7 +32,7 @@
     async function loadInitialData() { 
         console.log("Fetching data...");
         await fetch(BASE_WEIGHTS_PATH + "/loadInitialData");
-        const res = await fetch(BASE_WEIGHTS_PATH + "?limit=5&offset=0");
+        const res = await fetch(BASE_WEIGHTS_PATH + "?limit=100&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -51,7 +51,7 @@
     //Función GET para mostrar todos los datos
     async function getStats(){
         console.log("Fetching stats...");
-        const res= await fetch(BASE_WEIGHTS_PATH + "?limit=5&offset=0");
+        const res= await fetch(BASE_WEIGHTS_PATH + "?limit=100&offset=0");
         if(res.ok){
             console.log("ok");
             const json= await res.json();
@@ -74,9 +74,9 @@
                 if(res.ok && totaldata > 0){
                     totaldata = 0;
                     getStats();
-                   color = "succes"; 
-                   errorMSG = "Datos eliminados correctamente";
-                   console.log("OK all data have been deleted");
+                    color = "succes"; 
+                    errorMSG = "Datos eliminados correctamente";
+                    console.log("OK all data have been deleted");
                 }else if(totaldata == 0){
                     console.log("error");
                     color = "danger";
@@ -147,6 +147,7 @@
          }
     }
 
+    /*
     //getNextPage
     async function getNextPage() { 
         console.log(totaldata);
@@ -203,7 +204,7 @@
             errorMSG= res.status+": "+res.statusText;
             console.log("ERROR!");
         }
-    }
+    }*/
 
 </script>
 
@@ -238,7 +239,7 @@
             </tr>
             {#each weightsStats as weightsStat}
                 <tr>
-                    <td><a href="#/weights-stats/{weightsStat.provinces}/{weightsStats.year}">{weightsStat.provinces}</td>
+                    <td><a href="#/weights-stats/{weightsStat.provinces}/{parseInt(weightsStats.year)}">{weightsStat.provinces}</td>
                     <td>{weightsStat.year}</td>
                     <td>{weightsStat.normal_weight}</td>
                     <td>{weightsStat.overweight}</td>
@@ -256,12 +257,5 @@
     <Button color="danger" on:click="{deleteALL}">
         Eliminar todos los datos
     </Button>
-
-    <Button outline color="primary" on:click="{getNextPage}">
-        Siguiente
-    </Button>
-
-    <Button outline color="primary" on:click="{getPreviewPage}">
-        Atrás
-    </Button>
+ 
 </main>

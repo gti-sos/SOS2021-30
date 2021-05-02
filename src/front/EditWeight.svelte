@@ -25,7 +25,7 @@
             updatedObesity = weightsStats.obesity;
             console.log("Recived data");
         }else{
-            errorMsg = res.status + ": " + res.statusText;
+            errorMsg = res.status + " " + res.statusText;
             console.log("ERROR" + errorMsg);
         }
     }
