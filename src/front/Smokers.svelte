@@ -20,7 +20,6 @@
     let totaldata=13;
     let SmokerStats = [];
 	let newSmoker = {
-        id:"",
         country: "España",
         province: "",
 		year: "",
@@ -79,7 +78,6 @@
         if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
             alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
         } else{
-            newSmoker.id=totaldata + 1;
             const res = await fetch("/api/v1/smokers-stats",{
                 method:"POST",
                 body:JSON.stringify(newSmoker),
@@ -114,7 +112,7 @@
          //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
         if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
             alert("Los campos 'Provincia' y 'Año' no pueden estar vacíos");
-        }else if (province != newSmoker.province && year != newSmoker.year){
+        }else if (province != newSmoker.province || year != newSmoker.year){
             alert("Los campos 'Provincia' y 'Año' no pueden ser distintos");
         }else{
             const res = await fetch("/api/v1/smokers-stats/" + province + "/" + year, {
