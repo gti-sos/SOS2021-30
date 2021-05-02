@@ -266,14 +266,14 @@
 
         <Table bordered responsive>
             <thead>
-                <tr>
-                    <th align="center">Comunidad Autónoma</th>
-                    <th align="center">Año</th>
-                    <th align="center">Fumadores diarios </th>
-                    <th align="center">Fumadores ocasionales </th>
-                    <th align="center">Ex-fumadores </th>
-                    <th align="center">No fumadores </th>
-                    <th align="center" colspan="2" >Acciones</th>
+                <tr style ="text-align: center;">
+                    <th>Comunidad Autónoma</th>
+                    <th>Año</th>
+                    <th>Fumadores diarios </th>
+                    <th>Fumadores ocasionales </th>
+                    <th>Ex-fumadores </th>
+                    <th>No fumadores </th>
+                    <th colspan="2" >Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -284,7 +284,7 @@
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.ocasionalSmoker}"></td>    
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.exSmoker}"></td>  
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.nonSmoker}"></td>  
-                    <td><Button outline color="primary" colspan="2" on:click={insertSmokers}>Insertar</Button></td>          
+                    <td  colspan="2"><Button outline color="primary" on:click={insertSmokers}>Insertar</Button></td>          
                 </tr>
  
                 {#each SmokerStats as sc}
