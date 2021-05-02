@@ -126,7 +126,8 @@ module.exports.register = (app) => {
             "nonSmoker": 1083694.64
         }
     ];
-    //Inserta 
+    //Inserta
+    Array.sort(smokersStats);
     db.insert(smokersStats);
 /*--------------------fin constructor-----------------------*/
 

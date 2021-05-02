@@ -2,16 +2,9 @@
 	import { onMount } from "svelte";
 	import Table from "sveltestrap/src/Table.svelte"; 
 	import Button from "sveltestrap/src/Button.svelte";
-	import { Pagination, PaginationItem, PaginationLink } from 'sveltestrap';
-	import { Form, FormGroup, FormText, Input, Label } from 'sveltestrap';
 	import { Alert } from 'sveltestrap';
-    import { UncontrolledCollapse, Collapse, CardBody, Card } from "sveltestrap";
-	import { pop } from "svelte-spa-router";
-    import { get } from "svelte/store";
-	
     
-    let isOpen = false;
-    let busquedas = "/api/v1/smokers-stats";
+	
     //ALERTAS
     let visible = false;
     let color = "danger";
