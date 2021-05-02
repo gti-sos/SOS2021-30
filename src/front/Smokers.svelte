@@ -124,11 +124,11 @@
                     }
                 }).then(function (res) {
                     visible=true;
+                    getSmoker();
                     if (res.status == 201){
-                        getSmoker();
                         console.log("Data introduced");
                         color = "success";
-                        errorMSG="Entrada introducida correctamente a la base de datos";
+                        errorMSG="Entrada modificada correctamente en la base de datos";
                     }else if(res.status == 400){
                         console.log("ERROR Data was not correctly introduced");
                         color = "danger";
@@ -293,8 +293,7 @@
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.ocasionalSmoker}"></td>    
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.exSmoker}"></td>  
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.nonSmoker}"></td>  
-                    <td><Button outline color="primary" on:click={insertSmokers}>Insertar</Button></td>
-                    <td><Button outline color="primary" on:click={editSmokers}>Editar</Button></td>            
+                    <td><Button outline color="primary" on:click={insertSmokers}>Insertar</Button></td>          
                 </tr>
  
                 {#each SmokerStats as sc}
@@ -307,7 +306,6 @@
                         <td>{sc.nonSmoker}</td>
                         <td><Button outline color="danger" on:click="{deleteSmokers(sc.province, sc.year)}">Borrar</Button></td>
                         <td><Button outline color="primary" on:click="{editSmokers(sc.province, sc.year)}">Editar</Button></td>
-                        
                     </tr>
                 {/each}
             </tbody>
