@@ -301,6 +301,7 @@
                         <td>{sc.exSmoker}</td>
                         <td>{sc.nonSmoker}</td>
                         <td><Button outline color="danger" on:click="{deleteSmokers(sc.province, sc.year)}">Borrar</Button></td>
+                        <td><Button outline color="primary" on:click="{editSmokers(sc.province, sc.year)}">Editar</Button></td>
                         
                     </tr>
                 {/each}
