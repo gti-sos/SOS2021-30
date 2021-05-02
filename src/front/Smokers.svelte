@@ -79,12 +79,13 @@
         if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
             alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
         } else{
+            newSmoker.id=totaldata++;
             const res = await fetch("/api/v1/smokers-stats",{
-            method:"POST",
-            body:JSON.stringify(newSmoker),
-            headers:{
-                "Content-Type": "application/json"
-            }
+                method:"POST",
+                body:JSON.stringify(newSmoker),
+                headers:{
+                    "Content-Type": "application/json"
+                }
             }).then(function (res) {
                 visible=true;
                 if (res.status == 201){
@@ -111,36 +112,30 @@
         console.log("Editing smokers data...");
 
          //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
-         if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
-             alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
-         } else{
+        if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
+            alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
+        } else{
             newSmoker.id=totaldata++;
             const res = await fetch("/api/v1/smokers-stats/" + province + "/" + year, {
-               
-                method:"PUT",
-                body:JSON.stringify(newSmoker),
-                headers:{
-                    "Content-Type": "application/json"
-                }
-             }).then(function (res) {
-                 visible=true;
-                 if (res.status == 201){
-                     getSmoker();
-                     console.log("Data introduced");
-                     color = "success";
-                     errorMSG="Entrada introducida correctamente a la base de datos";
-                 }else if(res.status == 400){
-                     console.log("ERROR Data was not correctly introduced");
-                     color = "danger";
-                     errorMSG= "Los datos de la entrada no fueron introducidos correctamente";
-                 }else if(res.status == 409){
-                     console.log("ERROR There is already a data with that province and year in the da tabase");
-                     color = "danger";
-                     errorMSG= "Ya existe una entrada en la base de datos con los datos introducidos";
-                 }
-             });	
-         }
-     }
+                }).then(function (res) {
+                    visible=true;
+                    if (res.status == 201){
+                        insertSmokers();
+                        console.log("Data introduced");
+                        color = "success";
+                        errorMSG="Entrada introducida correctamente a la base de datos";
+                    }else if(res.status == 400){
+                        console.log("ERROR Data was not correctly introduced");
+                        color = "danger";
+                        errorMSG= "Los datos de la entrada no fueron introducidos correctamente";
+                    }else if(res.status == 409){
+                        console.log("ERROR There is already a data with that province and year in the da tabase");
+                        color = "danger";
+                        errorMSG= "Ya existe una entrada en la base de datos con los datos introducidos";
+                    }
+                });	
+            }
+    }
 
     //DELETE SPECIFIC
     async function deleteSmokers(province, year) {
