@@ -105,7 +105,7 @@
     }
     
     //EDIT
-    async function editSmokers(){
+    async function editSmokers(province, year){
         console.log("Editing smokers data...");
 
          //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
@@ -122,7 +122,6 @@
                  visible=true;
                  if (res.status == 201){
                      getSmoker();
-                     totaldata++;
                      console.log("Data introduced");
                      color = "success";
                      errorMSG="Entrada introducida correctamente a la base de datos";
