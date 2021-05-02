@@ -126,8 +126,14 @@ module.exports.register = (app) => {
             "nonSmoker": 1083694.64
         }
     ];
+
     //Inserta
-    Array.sort(smokersStats.province);
+    function ordenar(array, key) {
+        array.sort(function (a, b) {
+           return a[key] > b[key];
+        });
+     }
+    ordenar(smokersStats, "province");
     db.insert(smokersStats);
 /*--------------------fin constructor-----------------------*/
 
