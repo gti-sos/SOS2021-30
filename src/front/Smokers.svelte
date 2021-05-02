@@ -117,10 +117,15 @@
         } else{
             newSmoker.id=totaldata++;
             const res = await fetch("/api/v1/smokers-stats/" + province + "/" + year, {
+                    method:"PUT",
+                    body:JSON.stringify(newSmoker),
+                    headers:{
+                        "Content-Type": "application/json"
+                    }
                 }).then(function (res) {
                     visible=true;
                     if (res.status == 201){
-                        insertSmokers();
+                        getSmoker();
                         console.log("Data introduced");
                         color = "success";
                         errorMSG="Entrada introducida correctamente a la base de datos";
