@@ -13,7 +13,7 @@ const path = require("path");
 //--------------------------- API REST ALCOHOL-CONSUMPTION-STATS-----------------
 var alcoholAPI = require("./alcoholConsumptionStatsAPI");
 alcoholAPI.register(app);
-//--------------------------- API REST ALCOHOL-CONSUMPTION-STATS-----------------
+//---------------------------END: API REST ALCOHOL-CONSUMPTION-STATS-----------------
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 var weightsStatsAPI = require("./src/back/weightsStatsAPI");
@@ -23,7 +23,7 @@ weightsStatsAPI.register(app);
 //--------------------------- API REST SMOKERS-CONSUMPTION-STATS-----------------
 var smokersAPI = require("./smokersStatsAPI");
 smokersAPI.register(app);
-//--------------------------- API REST SMOKERS-CONSUMPTION-STATS-----------------
+//---------------------------END: API REST SMOKERS-CONSUMPTION-STATS-----------------
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST LIFE-EXPECTANCY-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 var lifeAPI = require("./lifeExpectancyStatsAPI");
