@@ -106,25 +106,15 @@
     
     //EDIT
     async function editSmokers(){
-		 
         console.log("Editing smokers data...");
-        let editSmoker = {
-        province: "",
-		year: "",
-		dailySmoker:"",
-		ocasionalSmoker:"",
-		exSmoker:"",
-        nonSmoker:""
-	}
-        
-        await fetch("/api/v1/smokers-stats/:province/:year");
+
          //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
          if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
              alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
          } else{
-             const res = await fetch("/api/v1/smokers-stats/:province/:year",{
+             const res = await fetch("/api/v1/smokers-stats/" + province + "/" + year, {
              method:"PUT",
-             body:JSON.stringify(editSmoker),
+             body:JSON.stringify(newSmoker),
              headers:{
                  "Content-Type": "application/json"
              }
