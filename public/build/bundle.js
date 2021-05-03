@@ -961,7 +961,7 @@ var app = (function () {
     const file$q = "node_modules\\sveltestrap\\src\\Alert.svelte";
 
     // (22:0) {#if isOpen}
-    function create_if_block$8(ctx) {
+    function create_if_block$9(ctx) {
     	let div;
     	let t;
     	let current_block_type_index;
@@ -1077,7 +1077,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$8.name,
+    		id: create_if_block$9.name,
     		type: "if",
     		source: "(22:0) {#if isOpen}",
     		ctx
@@ -1237,7 +1237,7 @@ var app = (function () {
     function create_fragment$s(ctx) {
     	let if_block_anchor;
     	let current;
-    	let if_block = /*isOpen*/ ctx[2] && create_if_block$8(ctx);
+    	let if_block = /*isOpen*/ ctx[2] && create_if_block$9(ctx);
 
     	const block = {
     		c: function create() {
@@ -1261,7 +1261,7 @@ var app = (function () {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block$8(ctx);
+    					if_block = create_if_block$9(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -1598,7 +1598,7 @@ var app = (function () {
     }
 
     // (33:0) {#if href}
-    function create_if_block$7(ctx) {
+    function create_if_block$8(ctx) {
     	let a;
     	let current_block_type_index;
     	let if_block;
@@ -1706,7 +1706,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block: block_1,
-    		id: create_if_block$7.name,
+    		id: create_if_block$8.name,
     		type: "if",
     		source: "(33:0) {#if href}",
     		ctx
@@ -1996,7 +1996,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$7, create_else_block_1];
+    	const if_block_creators = [create_if_block$8, create_else_block_1];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -2797,7 +2797,7 @@ var app = (function () {
     const file$m = "node_modules\\sveltestrap\\src\\Collapse.svelte";
 
     // (57:0) {#if isOpen}
-    function create_if_block$6(ctx) {
+    function create_if_block$7(ctx) {
     	let div;
     	let div_style_value;
     	let div_transition;
@@ -2937,7 +2937,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$6.name,
+    		id: create_if_block$7.name,
     		type: "if",
     		source: "(57:0) {#if isOpen}",
     		ctx
@@ -2952,7 +2952,7 @@ var app = (function () {
     	let mounted;
     	let dispose;
     	add_render_callback(/*onwindowresize*/ ctx[19]);
-    	let if_block = /*isOpen*/ ctx[0] && create_if_block$6(ctx);
+    	let if_block = /*isOpen*/ ctx[0] && create_if_block$7(ctx);
 
     	const block = {
     		c: function create() {
@@ -2981,7 +2981,7 @@ var app = (function () {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block$6(ctx);
+    					if_block = create_if_block$7(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -3487,7 +3487,7 @@ var app = (function () {
     }
 
     // (21:0) {#if tag === 'fieldset'}
-    function create_if_block$5(ctx) {
+    function create_if_block$6(ctx) {
     	let fieldset;
     	let current;
     	const default_slot_template = /*#slots*/ ctx[9].default;
@@ -3544,7 +3544,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$5.name,
+    		id: create_if_block$6.name,
     		type: "if",
     		source: "(21:0) {#if tag === 'fieldset'}",
     		ctx
@@ -3558,7 +3558,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$5, create_else_block$4];
+    	const if_block_creators = [create_if_block$6, create_else_block$4];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -4119,7 +4119,7 @@ var app = (function () {
     }
 
     // (82:0) {#if tag === 'input'}
-    function create_if_block$4(ctx) {
+    function create_if_block$5(ctx) {
     	let if_block_anchor;
 
     	function select_block_type_1(ctx, dirty) {
@@ -4175,7 +4175,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$4.name,
+    		id: create_if_block$5.name,
     		type: "if",
     		source: "(82:0) {#if tag === 'input'}",
     		ctx
@@ -5391,7 +5391,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$4, create_if_block_15, create_if_block_16];
+    	const if_block_creators = [create_if_block$5, create_if_block_15, create_if_block_16];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -8290,7 +8290,7 @@ var app = (function () {
     }
 
     // (42:2) {#if previous || next || first || last}
-    function create_if_block$3(ctx) {
+    function create_if_block$4(ctx) {
     	let span0;
     	let t0;
     	let span1;
@@ -8356,7 +8356,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$3.name,
+    		id: create_if_block$4.name,
     		type: "if",
     		source: "(42:2) {#if previous || next || first || last}",
     		ctx
@@ -8402,7 +8402,7 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	const if_block_creators = [create_if_block$3, create_else_block$2];
+    	const if_block_creators = [create_if_block$4, create_else_block$2];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -8776,7 +8776,7 @@ var app = (function () {
     }
 
     // (29:0) {#if responsive}
-    function create_if_block$2(ctx) {
+    function create_if_block$3(ctx) {
     	let div;
     	let table;
     	let current;
@@ -8842,7 +8842,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$2.name,
+    		id: create_if_block$3.name,
     		type: "if",
     		source: "(29:0) {#if responsive}",
     		ctx
@@ -8856,7 +8856,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$2, create_else_block$1];
+    	const if_block_creators = [create_if_block$3, create_else_block$1];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -10363,7 +10363,7 @@ var app = (function () {
     }
 
     // (202:0) {#if componentParams}
-    function create_if_block$1(ctx) {
+    function create_if_block$2(ctx) {
     	let switch_instance;
     	let switch_instance_anchor;
     	let current;
@@ -10451,7 +10451,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$1.name,
+    		id: create_if_block$2.name,
     		type: "if",
     		source: "(202:0) {#if componentParams}",
     		ctx
@@ -10465,7 +10465,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$1, create_else_block];
+    	const if_block_creators = [create_if_block$2, create_else_block];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -11508,45 +11508,419 @@ var app = (function () {
     	}
     }
 
-    /* src\TablaAlcohol.svelte generated by Svelte v3.37.0 */
+    /* src\front\TablaAlcohol.svelte generated by Svelte v3.37.0 */
 
     const { console: console_1$2 } = globals;
-    const file$3 = "src\\TablaAlcohol.svelte";
+    const file$3 = "src\\front\\TablaAlcohol.svelte";
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[2] = list[i];
+    	child_ctx[22] = list[i];
     	return child_ctx;
     }
 
-    // (43:12) {#each alcoholStats as alcoholStat}
+    // (1:0) <script>        import{          onMount      }
+    function create_catch_block$1(ctx) {
+    	const block = {
+    		c: noop,
+    		m: noop,
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: noop
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_catch_block$1.name,
+    		type: "catch",
+    		source: "(1:0) <script>        import{          onMount      }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (268:4) {:then alcoholStats}
+    function create_then_block$1(ctx) {
+    	let alert_1;
+    	let t0;
+    	let table;
+    	let t1;
+    	let button0;
+    	let t2;
+    	let button1;
+    	let t3;
+    	let button2;
+    	let t4;
+    	let button3;
+    	let current;
+
+    	alert_1 = new Alert({
+    			props: {
+    				color: /*color*/ ctx[1],
+    				isOpen: /*visible*/ ctx[0],
+    				toggle: /*func*/ ctx[11],
+    				$$slots: { default: [create_default_slot_7$2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	table = new Table({
+    			props: {
+    				bordered: true,
+    				responsive: true,
+    				$$slots: { default: [create_default_slot_4$2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button0 = new Button({
+    			props: {
+    				color: "success",
+    				$$slots: { default: [create_default_slot_3$2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button0.$on("click", /*loadInitialData*/ ctx[5]);
+
+    	button1 = new Button({
+    			props: {
+    				color: "danger",
+    				$$slots: { default: [create_default_slot_2$3] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button1.$on("click", /*deleteALL*/ ctx[7]);
+
+    	button2 = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot_1$3] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button2.$on("click", /*getPreviewPage*/ ctx[10]);
+
+    	button3 = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot$3] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button3.$on("click", /*getNextPage*/ ctx[9]);
+
+    	const block = {
+    		c: function create() {
+    			create_component(alert_1.$$.fragment);
+    			t0 = space();
+    			create_component(table.$$.fragment);
+    			t1 = space();
+    			create_component(button0.$$.fragment);
+    			t2 = space();
+    			create_component(button1.$$.fragment);
+    			t3 = space();
+    			create_component(button2.$$.fragment);
+    			t4 = space();
+    			create_component(button3.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(alert_1, target, anchor);
+    			insert_dev(target, t0, anchor);
+    			mount_component(table, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			mount_component(button0, target, anchor);
+    			insert_dev(target, t2, anchor);
+    			mount_component(button1, target, anchor);
+    			insert_dev(target, t3, anchor);
+    			mount_component(button2, target, anchor);
+    			insert_dev(target, t4, anchor);
+    			mount_component(button3, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const alert_1_changes = {};
+    			if (dirty & /*color*/ 2) alert_1_changes.color = /*color*/ ctx[1];
+    			if (dirty & /*visible*/ 1) alert_1_changes.isOpen = /*visible*/ ctx[0];
+    			if (dirty & /*visible*/ 1) alert_1_changes.toggle = /*func*/ ctx[11];
+
+    			if (dirty & /*$$scope, errorMSG*/ 33554436) {
+    				alert_1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			alert_1.$set(alert_1_changes);
+    			const table_changes = {};
+
+    			if (dirty & /*$$scope, alcoholStats, newAlcohol*/ 33554456) {
+    				table_changes.$$scope = { dirty, ctx };
+    			}
+
+    			table.$set(table_changes);
+    			const button0_changes = {};
+
+    			if (dirty & /*$$scope*/ 33554432) {
+    				button0_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button0.$set(button0_changes);
+    			const button1_changes = {};
+
+    			if (dirty & /*$$scope*/ 33554432) {
+    				button1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button1.$set(button1_changes);
+    			const button2_changes = {};
+
+    			if (dirty & /*$$scope*/ 33554432) {
+    				button2_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button2.$set(button2_changes);
+    			const button3_changes = {};
+
+    			if (dirty & /*$$scope*/ 33554432) {
+    				button3_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button3.$set(button3_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(alert_1.$$.fragment, local);
+    			transition_in(table.$$.fragment, local);
+    			transition_in(button0.$$.fragment, local);
+    			transition_in(button1.$$.fragment, local);
+    			transition_in(button2.$$.fragment, local);
+    			transition_in(button3.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(alert_1.$$.fragment, local);
+    			transition_out(table.$$.fragment, local);
+    			transition_out(button0.$$.fragment, local);
+    			transition_out(button1.$$.fragment, local);
+    			transition_out(button2.$$.fragment, local);
+    			transition_out(button3.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(alert_1, detaching);
+    			if (detaching) detach_dev(t0);
+    			destroy_component(table, detaching);
+    			if (detaching) detach_dev(t1);
+    			destroy_component(button0, detaching);
+    			if (detaching) detach_dev(t2);
+    			destroy_component(button1, detaching);
+    			if (detaching) detach_dev(t3);
+    			destroy_component(button2, detaching);
+    			if (detaching) detach_dev(t4);
+    			destroy_component(button3, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_then_block$1.name,
+    		type: "then",
+    		source: "(268:4) {:then alcoholStats}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (271:8) {#if errorMSG}
+    function create_if_block$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(/*errorMSG*/ ctx[2]);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*errorMSG*/ 4) set_data_dev(t, /*errorMSG*/ ctx[2]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$1.name,
+    		type: "if",
+    		source: "(271:8) {#if errorMSG}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (270:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
+    function create_default_slot_7$2(ctx) {
+    	let if_block_anchor;
+    	let if_block = /*errorMSG*/ ctx[2] && create_if_block$1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (/*errorMSG*/ ctx[2]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block$1(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_7$2.name,
+    		type: "slot",
+    		source: "(270:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (294:24) <Button outline color="primary" on:click={insertAlcohol}>
+    function create_default_slot_6$2(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Insertar");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_6$2.name,
+    		type: "slot",
+    		source: "(294:24) <Button outline color=\\\"primary\\\" on:click={insertAlcohol}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (304:28) <Button outline color="danger" on:click="{deleteSpecificAlcohol(stat.country, stat.ageRange,stat.year)}">
+    function create_default_slot_5$2(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Borrar");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_5$2.name,
+    		type: "slot",
+    		source: "(304:28) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteSpecificAlcohol(stat.country, stat.ageRange,stat.year)}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (297:16) {#each alcoholStats as stat}
     function create_each_block$2(ctx) {
     	let tr;
     	let td0;
-    	let t0_value = /*alcoholStat*/ ctx[2].country + "";
+    	let a;
+    	let t0_value = /*stat*/ ctx[22].country + "";
     	let t0;
+    	let a_href_value;
     	let t1;
     	let td1;
-    	let t2_value = /*alcoholStat*/ ctx[2].year + "";
+    	let t2_value = /*stat*/ ctx[22].year + "";
     	let t2;
     	let t3;
     	let td2;
-    	let t4_value = /*alcoholStat*/ ctx[2].ageRange + "";
+    	let t4_value = /*stat*/ ctx[22].ageRange + "";
     	let t4;
     	let t5;
     	let td3;
-    	let t6_value = /*alcoholStat*/ ctx[2].alcoholPrematureDeath + "";
+    	let t6_value = /*stat*/ ctx[22].alcoholPrematureDeath + "";
     	let t6;
     	let t7;
     	let td4;
-    	let t8_value = /*alcoholStat*/ ctx[2].prevalenceOfAlcoholUseDisorder + "";
+    	let t8_value = /*stat*/ ctx[22].prevalenceOfAlcoholUseDisorder + "";
     	let t8;
     	let t9;
+    	let td5;
+    	let button;
+    	let t10;
+    	let current;
+
+    	button = new Button({
+    			props: {
+    				outline: true,
+    				color: "danger",
+    				$$slots: { default: [create_default_slot_5$2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", function () {
+    		if (is_function(/*deleteSpecificAlcohol*/ ctx[8](/*stat*/ ctx[22].country, /*stat*/ ctx[22].ageRange, /*stat*/ ctx[22].year))) /*deleteSpecificAlcohol*/ ctx[8](/*stat*/ ctx[22].country, /*stat*/ ctx[22].ageRange, /*stat*/ ctx[22].year).apply(this, arguments);
+    	});
 
     	const block = {
     		c: function create() {
     			tr = element("tr");
     			td0 = element("td");
+    			a = element("a");
     			t0 = text(t0_value);
     			t1 = space();
     			td1 = element("td");
@@ -11561,17 +11935,24 @@ var app = (function () {
     			td4 = element("td");
     			t8 = text(t8_value);
     			t9 = space();
-    			add_location(td0, file$3, 44, 20, 1101);
-    			add_location(td1, file$3, 45, 20, 1153);
-    			add_location(td2, file$3, 46, 20, 1202);
-    			add_location(td3, file$3, 47, 20, 1255);
-    			add_location(td4, file$3, 48, 20, 1321);
-    			add_location(tr, file$3, 43, 16, 1075);
+    			td5 = element("td");
+    			create_component(button.$$.fragment);
+    			t10 = space();
+    			attr_dev(a, "href", a_href_value = "#/alcohol-stats/" + /*stat*/ ctx[22].country + "/" + /*stat*/ ctx[22].year + "/" + /*stat*/ ctx[22].ageRange);
+    			add_location(a, file$3, 298, 28, 11034);
+    			add_location(td0, file$3, 298, 24, 11030);
+    			add_location(td1, file$3, 299, 24, 11152);
+    			add_location(td2, file$3, 300, 24, 11198);
+    			add_location(td3, file$3, 301, 24, 11248);
+    			add_location(td4, file$3, 302, 24, 11311);
+    			add_location(td5, file$3, 303, 24, 11383);
+    			add_location(tr, file$3, 297, 20, 11000);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
     			append_dev(tr, td0);
-    			append_dev(td0, t0);
+    			append_dev(td0, a);
+    			append_dev(a, t0);
     			append_dev(tr, t1);
     			append_dev(tr, td1);
     			append_dev(td1, t2);
@@ -11585,16 +11966,43 @@ var app = (function () {
     			append_dev(tr, td4);
     			append_dev(td4, t8);
     			append_dev(tr, t9);
+    			append_dev(tr, td5);
+    			mount_component(button, td5, null);
+    			append_dev(tr, t10);
+    			current = true;
     		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*alcoholStats*/ 1 && t0_value !== (t0_value = /*alcoholStat*/ ctx[2].country + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*alcoholStats*/ 1 && t2_value !== (t2_value = /*alcoholStat*/ ctx[2].year + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*alcoholStats*/ 1 && t4_value !== (t4_value = /*alcoholStat*/ ctx[2].ageRange + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*alcoholStats*/ 1 && t6_value !== (t6_value = /*alcoholStat*/ ctx[2].alcoholPrematureDeath + "")) set_data_dev(t6, t6_value);
-    			if (dirty & /*alcoholStats*/ 1 && t8_value !== (t8_value = /*alcoholStat*/ ctx[2].prevalenceOfAlcoholUseDisorder + "")) set_data_dev(t8, t8_value);
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if ((!current || dirty & /*alcoholStats*/ 16) && t0_value !== (t0_value = /*stat*/ ctx[22].country + "")) set_data_dev(t0, t0_value);
+
+    			if (!current || dirty & /*alcoholStats*/ 16 && a_href_value !== (a_href_value = "#/alcohol-stats/" + /*stat*/ ctx[22].country + "/" + /*stat*/ ctx[22].year + "/" + /*stat*/ ctx[22].ageRange)) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+
+    			if ((!current || dirty & /*alcoholStats*/ 16) && t2_value !== (t2_value = /*stat*/ ctx[22].year + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty & /*alcoholStats*/ 16) && t4_value !== (t4_value = /*stat*/ ctx[22].ageRange + "")) set_data_dev(t4, t4_value);
+    			if ((!current || dirty & /*alcoholStats*/ 16) && t6_value !== (t6_value = /*stat*/ ctx[22].alcoholPrematureDeath + "")) set_data_dev(t6, t6_value);
+    			if ((!current || dirty & /*alcoholStats*/ 16) && t8_value !== (t8_value = /*stat*/ ctx[22].prevalenceOfAlcoholUseDisorder + "")) set_data_dev(t8, t8_value);
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 33554432) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(tr);
+    			destroy_component(button);
     		}
     	};
 
@@ -11602,17 +12010,17 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(43:12) {#each alcoholStats as alcoholStat}",
+    		source: "(297:16) {#each alcoholStats as stat}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (32:4) <Table>
-    function create_default_slot$3(ctx) {
+    // (276:8) <Table bordered responsive>
+    function create_default_slot_4$2(ctx) {
     	let thead;
-    	let tr;
+    	let tr0;
     	let th0;
     	let t1;
     	let th1;
@@ -11623,8 +12031,44 @@ var app = (function () {
     	let t7;
     	let th4;
     	let t9;
+    	let th5;
+    	let t11;
     	let tbody;
-    	let each_value = /*alcoholStats*/ ctx[0];
+    	let tr1;
+    	let td0;
+    	let input0;
+    	let t12;
+    	let td1;
+    	let input1;
+    	let t13;
+    	let td2;
+    	let input2;
+    	let t14;
+    	let td3;
+    	let input3;
+    	let t15;
+    	let td4;
+    	let input4;
+    	let t16;
+    	let td5;
+    	let button;
+    	let t17;
+    	let current;
+    	let mounted;
+    	let dispose;
+
+    	button = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot_6$2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", /*insertAlcohol*/ ctx[6]);
+    	let each_value = /*alcoholStats*/ ctx[4];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -11632,10 +12076,14 @@ var app = (function () {
     		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
     	}
 
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
     	const block = {
     		c: function create() {
     			thead = element("thead");
-    			tr = element("tr");
+    			tr0 = element("tr");
     			th0 = element("th");
     			th0.textContent = "País";
     			t1 = space();
@@ -11651,43 +12099,156 @@ var app = (function () {
     			th4 = element("th");
     			th4.textContent = "Prevalencia de trastornos por consumo de alcohol";
     			t9 = space();
+    			th5 = element("th");
+    			th5.textContent = "Acciones";
+    			t11 = space();
     			tbody = element("tbody");
+    			tr1 = element("tr");
+    			td0 = element("td");
+    			input0 = element("input");
+    			t12 = space();
+    			td1 = element("td");
+    			input1 = element("input");
+    			t13 = space();
+    			td2 = element("td");
+    			input2 = element("input");
+    			t14 = space();
+    			td3 = element("td");
+    			input3 = element("input");
+    			t15 = space();
+    			td4 = element("td");
+    			input4 = element("input");
+    			t16 = space();
+    			td5 = element("td");
+    			create_component(button.$$.fragment);
+    			t17 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$3, 34, 12, 749);
-    			add_location(th1, file$3, 35, 12, 776);
-    			add_location(th2, file$3, 36, 12, 802);
-    			add_location(th3, file$3, 37, 12, 838);
-    			add_location(th4, file$3, 38, 12, 899);
-    			add_location(tr, file$3, 33, 10, 731);
-    			add_location(thead, file$3, 32, 8, 712);
-    			add_location(tbody, file$3, 41, 8, 1001);
+    			add_location(th0, file$3, 278, 20, 9851);
+    			add_location(th1, file$3, 279, 20, 9886);
+    			add_location(th2, file$3, 280, 20, 9920);
+    			add_location(th3, file$3, 281, 20, 9965);
+    			add_location(th4, file$3, 282, 20, 10034);
+    			add_location(th5, file$3, 283, 20, 10113);
+    			add_location(tr0, file$3, 277, 16, 9825);
+    			add_location(thead, file$3, 276, 12, 9800);
+    			attr_dev(input0, "type", "text");
+    			attr_dev(input0, "placeholder", "España");
+    			add_location(input0, file$3, 288, 24, 10244);
+    			add_location(td0, file$3, 288, 20, 10240);
+    			attr_dev(input1, "type", "text");
+    			attr_dev(input1, "placeholder", "2017");
+    			add_location(input1, file$3, 289, 24, 10351);
+    			add_location(td1, file$3, 289, 20, 10347);
+    			attr_dev(input2, "type", "text");
+    			attr_dev(input2, "placeholder", "40-45");
+    			add_location(input2, file$3, 290, 24, 10454);
+    			add_location(td2, file$3, 290, 20, 10450);
+    			attr_dev(input3, "type", "number");
+    			attr_dev(input3, "placeholder", "10");
+    			add_location(input3, file$3, 291, 24, 10562);
+    			add_location(td3, file$3, 291, 20, 10558);
+    			attr_dev(input4, "type", "number");
+    			attr_dev(input4, "placeholder", "0.4");
+    			add_location(input4, file$3, 292, 24, 10685);
+    			add_location(td4, file$3, 292, 20, 10681);
+    			add_location(td5, file$3, 293, 20, 10812);
+    			add_location(tr1, file$3, 287, 16, 10214);
+    			add_location(tbody, file$3, 286, 12, 10189);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
-    			append_dev(thead, tr);
-    			append_dev(tr, th0);
-    			append_dev(tr, t1);
-    			append_dev(tr, th1);
-    			append_dev(tr, t3);
-    			append_dev(tr, th2);
-    			append_dev(tr, t5);
-    			append_dev(tr, th3);
-    			append_dev(tr, t7);
-    			append_dev(tr, th4);
-    			insert_dev(target, t9, anchor);
+    			append_dev(thead, tr0);
+    			append_dev(tr0, th0);
+    			append_dev(tr0, t1);
+    			append_dev(tr0, th1);
+    			append_dev(tr0, t3);
+    			append_dev(tr0, th2);
+    			append_dev(tr0, t5);
+    			append_dev(tr0, th3);
+    			append_dev(tr0, t7);
+    			append_dev(tr0, th4);
+    			append_dev(tr0, t9);
+    			append_dev(tr0, th5);
+    			insert_dev(target, t11, anchor);
     			insert_dev(target, tbody, anchor);
+    			append_dev(tbody, tr1);
+    			append_dev(tr1, td0);
+    			append_dev(td0, input0);
+    			set_input_value(input0, /*newAlcohol*/ ctx[3].country);
+    			append_dev(tr1, t12);
+    			append_dev(tr1, td1);
+    			append_dev(td1, input1);
+    			set_input_value(input1, /*newAlcohol*/ ctx[3].year);
+    			append_dev(tr1, t13);
+    			append_dev(tr1, td2);
+    			append_dev(td2, input2);
+    			set_input_value(input2, /*newAlcohol*/ ctx[3].ageRange);
+    			append_dev(tr1, t14);
+    			append_dev(tr1, td3);
+    			append_dev(td3, input3);
+    			set_input_value(input3, /*newAlcohol*/ ctx[3].alcoholPrematureDeath);
+    			append_dev(tr1, t15);
+    			append_dev(tr1, td4);
+    			append_dev(td4, input4);
+    			set_input_value(input4, /*newAlcohol*/ ctx[3].prevalenceOfAlcoholUseDisorder);
+    			append_dev(tr1, t16);
+    			append_dev(tr1, td5);
+    			mount_component(button, td5, null);
+    			append_dev(tbody, t17);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(tbody, null);
     			}
+
+    			current = true;
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[12]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[13]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[14]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[15]),
+    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[16])
+    				];
+
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*alcoholStats*/ 1) {
-    				each_value = /*alcoholStats*/ ctx[0];
+    			if (dirty & /*newAlcohol*/ 8 && input0.value !== /*newAlcohol*/ ctx[3].country) {
+    				set_input_value(input0, /*newAlcohol*/ ctx[3].country);
+    			}
+
+    			if (dirty & /*newAlcohol*/ 8 && input1.value !== /*newAlcohol*/ ctx[3].year) {
+    				set_input_value(input1, /*newAlcohol*/ ctx[3].year);
+    			}
+
+    			if (dirty & /*newAlcohol*/ 8 && input2.value !== /*newAlcohol*/ ctx[3].ageRange) {
+    				set_input_value(input2, /*newAlcohol*/ ctx[3].ageRange);
+    			}
+
+    			if (dirty & /*newAlcohol*/ 8 && to_number(input3.value) !== /*newAlcohol*/ ctx[3].alcoholPrematureDeath) {
+    				set_input_value(input3, /*newAlcohol*/ ctx[3].alcoholPrematureDeath);
+    			}
+
+    			if (dirty & /*newAlcohol*/ 8 && to_number(input4.value) !== /*newAlcohol*/ ctx[3].prevalenceOfAlcoholUseDisorder) {
+    				set_input_value(input4, /*newAlcohol*/ ctx[3].prevalenceOfAlcoholUseDisorder);
+    			}
+
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 33554432) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+
+    			if (dirty & /*deleteSpecificAlcohol, alcoholStats*/ 272) {
+    				each_value = /*alcoholStats*/ ctx[4];
     				validate_each_argument(each_value);
     				let i;
 
@@ -11696,25 +12257,160 @@ var app = (function () {
 
     					if (each_blocks[i]) {
     						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
     					} else {
     						each_blocks[i] = create_each_block$2(child_ctx);
     						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
     						each_blocks[i].m(tbody, null);
     					}
     				}
 
-    				for (; i < each_blocks.length; i += 1) {
-    					each_blocks[i].d(1);
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
     				}
 
-    				each_blocks.length = each_value.length;
+    				check_outros();
     			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(thead);
-    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(t11);
     			if (detaching) detach_dev(tbody);
+    			destroy_component(button);
     			destroy_each(each_blocks, detaching);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_4$2.name,
+    		type: "slot",
+    		source: "(276:8) <Table bordered responsive>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (310:10) <Button color="success" on:click="{loadInitialData}">
+    function create_default_slot_3$2(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Cargar datos inciales");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_3$2.name,
+    		type: "slot",
+    		source: "(310:10) <Button color=\\\"success\\\" on:click=\\\"{loadInitialData}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (313:8) <Button color="danger" on:click="{deleteALL}">
+    function create_default_slot_2$3(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Eliminar todo");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_2$3.name,
+    		type: "slot",
+    		source: "(313:8) <Button color=\\\"danger\\\" on:click=\\\"{deleteALL}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (316:8) <Button outline color="primary" on:click="{getPreviewPage}">
+    function create_default_slot_1$3(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Atrás");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$3.name,
+    		type: "slot",
+    		source: "(316:8) <Button outline color=\\\"primary\\\" on:click=\\\"{getPreviewPage}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (319:8) <Button outline color="primary" on:click="{getNextPage}">
+    function create_default_slot$3(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Siguiente");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
     		}
     	};
 
@@ -11722,7 +12418,37 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(32:4) <Table>",
+    		source: "(319:8) <Button outline color=\\\"primary\\\" on:click=\\\"{getNextPage}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (266:25)           Loading alcohol data...      {:then alcoholStats}
+    function create_pending_block$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Loading alcohol data...");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_pending_block$1.name,
+    		type: "pending",
+    		source: "(266:25)           Loading alcohol data...      {:then alcoholStats}",
     		ctx
     	});
 
@@ -11733,26 +12459,38 @@ var app = (function () {
     	let main;
     	let h1;
     	let t1;
-    	let table;
+    	let br;
+    	let t2;
+    	let promise;
     	let current;
 
-    	table = new Table({
-    			props: {
-    				$$slots: { default: [create_default_slot$3] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
+    	let info = {
+    		ctx,
+    		current: null,
+    		token: null,
+    		hasCatch: false,
+    		pending: create_pending_block$1,
+    		then: create_then_block$1,
+    		catch: create_catch_block$1,
+    		value: 4,
+    		blocks: [,,,]
+    	};
+
+    	handle_promise(promise = /*alcoholStats*/ ctx[4], info);
 
     	const block = {
     		c: function create() {
     			main = element("main");
     			h1 = element("h1");
-    			h1.textContent = "Tabla sobre consumo de alcohol";
+    			h1.textContent = "Datos sobre consumo de alcohol";
     			t1 = space();
-    			create_component(table.$$.fragment);
-    			add_location(h1, file$3, 29, 4, 648);
-    			add_location(main, file$3, 28, 0, 636);
+    			br = element("br");
+    			t2 = space();
+    			info.block.c();
+    			set_style(h1, "text-align", "center");
+    			add_location(h1, file$3, 261, 4, 9423);
+    			add_location(br, file$3, 262, 4, 9498);
+    			add_location(main, file$3, 260, 0, 9411);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -11761,30 +12499,41 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			append_dev(main, h1);
     			append_dev(main, t1);
-    			mount_component(table, main, null);
+    			append_dev(main, br);
+    			append_dev(main, t2);
+    			info.block.m(main, info.anchor = null);
+    			info.mount = () => main;
+    			info.anchor = null;
     			current = true;
     		},
-    		p: function update(ctx, [dirty]) {
-    			const table_changes = {};
+    		p: function update(new_ctx, [dirty]) {
+    			ctx = new_ctx;
+    			info.ctx = ctx;
 
-    			if (dirty & /*$$scope, alcoholStats*/ 33) {
-    				table_changes.$$scope = { dirty, ctx };
+    			if (dirty & /*alcoholStats*/ 16 && promise !== (promise = /*alcoholStats*/ ctx[4]) && handle_promise(promise, info)) ; else {
+    				const child_ctx = ctx.slice();
+    				child_ctx[4] = info.resolved;
+    				info.block.p(child_ctx, dirty);
     			}
-
-    			table.$set(table_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(table.$$.fragment, local);
+    			transition_in(info.block);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(table.$$.fragment, local);
+    			for (let i = 0; i < 3; i += 1) {
+    				const block = info.blocks[i];
+    				transition_out(block);
+    			}
+
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
-    			destroy_component(table);
+    			info.block.d();
+    			info.token = null;
+    			info = null;
     		}
     	};
 
@@ -11802,19 +12551,243 @@ var app = (function () {
     function instance$3($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("TablaAlcohol", slots, []);
+    	let visible = false;
+    	let color = "danger";
+    	let page = 1;
+    	let totaldata = 5; // Número total de los datos
+    	let errorMSG = "";
+    	var BASE_ALCOHOL_PATH = "/api/v1/alcohol-consumption-stats/";
     	let alcoholStats = [];
 
+    	let newAlcohol = {
+    		country: "",
+    		year: "",
+    		ageRange: "",
+    		alcoholPrematureDeath: "",
+    		prevalenceOfAlcoholUseDisorder: ""
+    	};
+
+    	//GET INITIALDATA
+    	async function loadInitialData() {
+    		console.log("Fetching employment data...");
+    		await fetch("/api/v1/alcohol-consumption-stats/loadInitialData");
+    		const res = await fetch("/api/v1/alcohol-consumption-stats?limit=3&offset=0");
+
+    		if (res.ok) {
+    			console.log("Ok:");
+    			const json = await res.json();
+    			$$invalidate(4, alcoholStats = json);
+    			totaldata = 13;
+    			console.log("Received " + alcoholStats.length + " alcohol data.");
+    			$$invalidate(1, color = "success");
+    			$$invalidate(2, errorMSG = "Datos cargados correctamente");
+    		} else {
+    			$$invalidate(1, color = "danger");
+    			$$invalidate(2, errorMSG = res.status + ": " + res.statusText);
+    			console.log("ERROR!");
+    		}
+    	}
+
+    	//Actualizarsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+    	async function updateStat() {
+    		console.log("Updating stat..." + JSON.stringify(params.country) + JSON.stringify(params.year));
+
+    		await fetch(BASE_ALCOHOL_PATH + params.country + "/" + params.year, {
+    			method: "PUT",
+    			body: JSON.stringify({
+    				"country": params.country,
+    				"year": params.year,
+    				"ageRange": updateAgeRange,
+    				"alcoholPrematureDeath": parseInt(updatePrematureDeath),
+    				"prevalenceOfAlcoholUseDisorder": parseInt(updateDisorder)
+    			}),
+    			headers: { "Content-Type": "application/json" }
+    		}).then(function (res) {
+    			if (res.ok) {
+    				console.log("OK");
+    				getStat();
+    				errorMsg = "";
+    				okMsg = `${params.country} ${params.year} ha sido actualizado correctamente`;
+    			} else {
+    				if (res.status === 500) {
+    					errorMsg = "No se han podido acceder a la base de datos";
+    				} else if (res.status === 404) {
+    					errorMsg = "No se han encontrado el dato solicitado";
+    				}
+
+    				okMsg = "";
+    				getStat();
+    				console.log("ERROR!" + errorMsg);
+    			}
+    		});
+    	}
+
+    	//INSERT
+    	async function insertAlcohol() {
+    		console.log("Inserting alcohol data...");
+
+    		if (newAlcohol.year == "" || newAlcohol.year == null || newAlcohol.country == "" || newAlcohol.ageRange == "") {
+    			alert("Los campos 'País' y 'Año' no pueden estar vacios");
+    		} else {
+    			await fetch("/api/v1/alcohol-consumption-stats", {
+    				method: "POST",
+    				body: JSON.stringify(newAlcohol),
+    				headers: { "Content-Type": "application/json" }
+    			}).then(function (res) {
+    				$$invalidate(0, visible = true);
+
+    				if (res.status == 201) {
+    					getStats();
+    					totaldata++;
+    					console.log("Data introduced");
+    					$$invalidate(1, color = "success");
+    					$$invalidate(2, errorMSG = "Entrada introducida correctamente a la base de datos");
+    				} else if (res.status == 400) {
+    					console.log("ERROR Data was not correctly introduced");
+    					$$invalidate(1, color = "danger");
+    					$$invalidate(2, errorMSG = "Los datos de la entrada no fueron introducidos correctamente");
+    				} else if (res.status == 409) {
+    					console.log("ERROR There is already a data with that province and year in the da tabase");
+    					$$invalidate(1, color = "danger");
+    					$$invalidate(2, errorMSG = "Ya existe una entrada en la base de datos con el país, el año y el rango de edad");
+    				}
+    			});
+    		}
+    	}
+
+    	//Mostrar datos
     	async function getStats() {
     		console.log("Fetching stats...");
-    		const res = await fetch("/api/v1/alcohol-consumption-stats/loadInitialData");
+    		const res = await fetch(BASE_ALCOHOL_PATH);
 
     		if (res.ok) {
     			console.log("ok");
     			const json = await res.json();
-    			$$invalidate(0, alcoholStats = json);
+    			$$invalidate(4, alcoholStats = json);
+    			updateAgeRange = alcoholStats.ageRange;
+    			updatePrematureDeath = alcoholStats.alcoholPrematureDeath;
+    			updateDisorder = alcoholStats.prevalenceOfAlcoholUseDisorder;
     			console.log(`We have received ${alcoholStats.length} alcohol stats`);
     		} else {
     			console.log("Error");
+    		}
+    	}
+
+    	//Borrar datos
+    	async function deleteALL() {
+    		console.log("Deleting weights data...");
+
+    		if (confirm("¿Está seguro de que desea eliminar todas las entradas?")) {
+    			console.log("Deleting all weights data...");
+
+    			await fetch(BASE_ALCOHOL_PATH, { method: "DELETE" }).then(function (res) {
+    				$$invalidate(0, visible = true);
+
+    				if (res.ok && totaldata > 0) {
+    					totaldata = 0;
+    					getStats();
+    					$$invalidate(1, color = "success");
+    					$$invalidate(2, errorMSG = "Datos eliminados correctamente");
+    					console.log("OK All data erased");
+    				} else if (totaldata == 0) {
+    					console.log("ERROR Data was not erased");
+    					$$invalidate(1, color = "danger");
+    					$$invalidate(2, errorMSG = "¡No hay datos para borrar!");
+    				} else {
+    					console.log("ERROR Data was not erased");
+    					$$invalidate(1, color = "danger");
+    					$$invalidate(2, errorMSG = "No se han podido eliminar los datos");
+    				}
+    			});
+    		}
+    	}
+
+    	//Borrar dato especifico
+    	async function deleteSpecificAlcohol(country, ageRange, year) {
+    		await fetch(BASE_ALCOHOL_PATH + country + "/" + year + "/" + ageRange, { method: "DELETE" }).then(function (res) {
+    			$$invalidate(0, visible = true);
+    			getStats();
+
+    			if (res.status == 200) {
+    				totaldata--;
+    				$$invalidate(1, color = "success");
+    				$$invalidate(2, errorMSG = "Recurso " + province + " " + year + +" " + ageRange + " borrado correctamente");
+    				console.log("Deleted " + country);
+    			} else if (res.status == 404) {
+    				$$invalidate(1, color = "danger");
+    				$$invalidate(2, errorMSG = "No se ha encontrado el objeto" + country);
+    				console.log("STAT NOT FOUND");
+    			} else {
+    				$$invalidate(1, color = "danger");
+    				$$invalidate(2, errorMSG = res.status + ": " + res.statusText);
+    				console.log("ERROR!");
+    			}
+    		});
+    	}
+
+    	//sigueinte pagina
+    	async function getNextPage() {
+    		console.log(totaldata);
+
+    		if (page + 5 > totaldata) {
+    			page = 1;
+    		} else {
+    			page += 5;
+    		}
+
+    		$$invalidate(0, visible = true);
+    		console.log("Charging page... Listing since: " + page);
+    		const res = await fetch("/api/v1/alcohol-consumption-stats?limit=3&offset=" + (-1 + page));
+    		$$invalidate(1, color = "success");
+
+    		$$invalidate(2, errorMSG = page + 5 > totaldata
+    		? "Mostrando elementos " + page + "-" + totaldata
+    		: "Mostrando elementos " + page + "-" + (page + 4));
+
+    		if (totaldata == 0) {
+    			console.log("ERROR Data was not erased");
+    			$$invalidate(1, color = "danger");
+    			$$invalidate(2, errorMSG = "¡No hay datos!");
+    		} else if (res.ok) {
+    			console.log("Ok:");
+    			const json = await res.json();
+    			SmokerStats = json;
+    			console.log("Received " + alcoholStats.length + " resources.");
+    		} else {
+    			$$invalidate(2, errorMSG = res.status + ": " + res.statusText);
+    			console.log("ERROR!");
+    		}
+    	}
+
+    	//getPreviewPage
+    	async function getPreviewPage() {
+    		console.log(totaldata);
+
+    		if (page - 5 > 1) {
+    			page -= 5;
+    		} else page = 1;
+
+    		$$invalidate(0, visible = true);
+    		console.log("Charging page... Listing since: " + page);
+    		const res = await fetch("/api/v1/alcohol-consumption-stats?limit=5&offset=" + (-1 + page));
+    		$$invalidate(1, color = "success");
+
+    		$$invalidate(2, errorMSG = page + 5 > totaldata
+    		? "Mostrando elementos " + page + "-" + totaldata
+    		: "Mostrando elementos " + page + "-" + (page + 4));
+
+    		if (totaldata == 0) {
+    			console.log("ERROR Data was not erased");
+    			$$invalidate(1, color = "danger");
+    			$$invalidate(2, errorMSG = "¡No hay datos!");
+    		} else if (res.ok) {
+    			console.log("Ok:");
+    			const json = await res.json();
+    			SmokerStats = json;
+    			console.log("Received " + alcoholStats.length + " resources.");
+    		} else {
+    			$$invalidate(2, errorMSG = res.status + ": " + res.statusText);
+    			console.log("ERROR!");
     		}
     	}
 
@@ -11825,17 +12798,90 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$2.warn(`<TablaAlcohol> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$capture_state = () => ({ onMount, Table, alcoholStats, getStats });
+    	const func = () => $$invalidate(0, visible = false);
+
+    	function input0_input_handler() {
+    		newAlcohol.country = this.value;
+    		$$invalidate(3, newAlcohol);
+    	}
+
+    	function input1_input_handler() {
+    		newAlcohol.year = this.value;
+    		$$invalidate(3, newAlcohol);
+    	}
+
+    	function input2_input_handler() {
+    		newAlcohol.ageRange = this.value;
+    		$$invalidate(3, newAlcohol);
+    	}
+
+    	function input3_input_handler() {
+    		newAlcohol.alcoholPrematureDeath = to_number(this.value);
+    		$$invalidate(3, newAlcohol);
+    	}
+
+    	function input4_input_handler() {
+    		newAlcohol.prevalenceOfAlcoholUseDisorder = to_number(this.value);
+    		$$invalidate(3, newAlcohol);
+    	}
+
+    	$$self.$capture_state = () => ({
+    		onMount,
+    		Table,
+    		Button,
+    		Alert,
+    		visible,
+    		color,
+    		page,
+    		totaldata,
+    		errorMSG,
+    		BASE_ALCOHOL_PATH,
+    		alcoholStats,
+    		newAlcohol,
+    		loadInitialData,
+    		updateStat,
+    		insertAlcohol,
+    		getStats,
+    		deleteALL,
+    		deleteSpecificAlcohol,
+    		getNextPage,
+    		getPreviewPage
+    	});
 
     	$$self.$inject_state = $$props => {
-    		if ("alcoholStats" in $$props) $$invalidate(0, alcoholStats = $$props.alcoholStats);
+    		if ("visible" in $$props) $$invalidate(0, visible = $$props.visible);
+    		if ("color" in $$props) $$invalidate(1, color = $$props.color);
+    		if ("page" in $$props) page = $$props.page;
+    		if ("totaldata" in $$props) totaldata = $$props.totaldata;
+    		if ("errorMSG" in $$props) $$invalidate(2, errorMSG = $$props.errorMSG);
+    		if ("BASE_ALCOHOL_PATH" in $$props) BASE_ALCOHOL_PATH = $$props.BASE_ALCOHOL_PATH;
+    		if ("alcoholStats" in $$props) $$invalidate(4, alcoholStats = $$props.alcoholStats);
+    		if ("newAlcohol" in $$props) $$invalidate(3, newAlcohol = $$props.newAlcohol);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [alcoholStats];
+    	return [
+    		visible,
+    		color,
+    		errorMSG,
+    		newAlcohol,
+    		alcoholStats,
+    		loadInitialData,
+    		insertAlcohol,
+    		deleteALL,
+    		deleteSpecificAlcohol,
+    		getNextPage,
+    		getPreviewPage,
+    		func,
+    		input0_input_handler,
+    		input1_input_handler,
+    		input2_input_handler,
+    		input3_input_handler,
+    		input4_input_handler
+    	];
     }
 
     class TablaAlcohol extends SvelteComponentDev {
@@ -14613,8 +15659,8 @@ var app = (function () {
     			create_component(navbar.$$.fragment);
     			t = space();
     			create_component(router.$$.fragment);
-    			add_location(body, file, 25, 1, 732);
-    			add_location(main, file, 24, 0, 723);
+    			add_location(body, file, 25, 1, 738);
+    			add_location(main, file, 24, 0, 729);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

@@ -20,8 +20,8 @@ module.exports.register = (app) => {
                 "country":"España",
                 "year":"2017",
                 "ageRange":"5-14",
-                "alcoholPrematureDeath":10,
-                "prevalenceOfAlcoholUseDisorder":0.05
+                "alcoholPrematureDeath":1,
+                "prevalenceOfAlcoholUseDisorder":0.003
             }
         ];
         // Inicialización base de datos
