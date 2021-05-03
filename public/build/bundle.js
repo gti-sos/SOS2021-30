@@ -11541,7 +11541,7 @@ var app = (function () {
     	return block;
     }
 
-    // (268:4) {:then alcoholStats}
+    // (259:4) {:then alcoholStats}
     function create_then_block$1(ctx) {
     	let alert_1;
     	let t0;
@@ -11560,8 +11560,8 @@ var app = (function () {
     			props: {
     				color: /*color*/ ctx[1],
     				isOpen: /*visible*/ ctx[0],
-    				toggle: /*func*/ ctx[11],
-    				$$slots: { default: [create_default_slot_7$2] },
+    				toggle: /*func*/ ctx[12],
+    				$$slots: { default: [create_default_slot_8$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11597,7 +11597,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button1.$on("click", /*deleteALL*/ ctx[7]);
+    	button1.$on("click", /*deleteALL*/ ctx[8]);
 
     	button2 = new Button({
     			props: {
@@ -11609,7 +11609,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button2.$on("click", /*getPreviewPage*/ ctx[10]);
+    	button2.$on("click", /*getPreviewPage*/ ctx[11]);
 
     	button3 = new Button({
     			props: {
@@ -11621,7 +11621,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button3.$on("click", /*getNextPage*/ ctx[9]);
+    	button3.$on("click", /*getNextPage*/ ctx[10]);
 
     	const block = {
     		c: function create() {
@@ -11655,7 +11655,7 @@ var app = (function () {
     			const alert_1_changes = {};
     			if (dirty & /*color*/ 2) alert_1_changes.color = /*color*/ ctx[1];
     			if (dirty & /*visible*/ 1) alert_1_changes.isOpen = /*visible*/ ctx[0];
-    			if (dirty & /*visible*/ 1) alert_1_changes.toggle = /*func*/ ctx[11];
+    			if (dirty & /*visible*/ 1) alert_1_changes.toggle = /*func*/ ctx[12];
 
     			if (dirty & /*$$scope, errorMSG*/ 33554436) {
     				alert_1_changes.$$scope = { dirty, ctx };
@@ -11736,14 +11736,14 @@ var app = (function () {
     		block,
     		id: create_then_block$1.name,
     		type: "then",
-    		source: "(268:4) {:then alcoholStats}",
+    		source: "(259:4) {:then alcoholStats}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (271:8) {#if errorMSG}
+    // (262:8) {#if errorMSG}
     function create_if_block$1(ctx) {
     	let t;
 
@@ -11766,15 +11766,15 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(271:8) {#if errorMSG}",
+    		source: "(262:8) {#if errorMSG}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (270:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
-    function create_default_slot_7$2(ctx) {
+    // (261:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
+    function create_default_slot_8$1(ctx) {
     	let if_block_anchor;
     	let if_block = /*errorMSG*/ ctx[2] && create_if_block$1(ctx);
 
@@ -11809,17 +11809,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_7$2.name,
+    		id: create_default_slot_8$1.name,
     		type: "slot",
-    		source: "(270:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>",
+    		source: "(261:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (294:24) <Button outline color="primary" on:click={insertAlcohol}>
-    function create_default_slot_6$2(ctx) {
+    // (285:64) <Button outline color="primary" on:click={insertAlcohol}>
+    function create_default_slot_7$2(ctx) {
     	let t;
 
     	const block = {
@@ -11836,17 +11836,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_6$2.name,
+    		id: create_default_slot_7$2.name,
     		type: "slot",
-    		source: "(294:24) <Button outline color=\\\"primary\\\" on:click={insertAlcohol}>",
+    		source: "(285:64) <Button outline color=\\\"primary\\\" on:click={insertAlcohol}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (304:28) <Button outline color="danger" on:click="{deleteSpecificAlcohol(stat.country, stat.ageRange,stat.year)}">
-    function create_default_slot_5$2(ctx) {
+    // (295:28) <Button outline color="danger" on:click="{deleteSpecificAlcohol(stat.country, stat.ageRange,stat.year)}">
+    function create_default_slot_6$2(ctx) {
     	let t;
 
     	const block = {
@@ -11863,16 +11863,43 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$2.name,
+    		id: create_default_slot_6$2.name,
     		type: "slot",
-    		source: "(304:28) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteSpecificAlcohol(stat.country, stat.ageRange,stat.year)}\\\">",
+    		source: "(295:28) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteSpecificAlcohol(stat.country, stat.ageRange,stat.year)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (297:16) {#each alcoholStats as stat}
+    // (296:28) <Button outline color="primary" on:click="{updateAlcohol(stat.country,stat.year,stat.ageRange)}">
+    function create_default_slot_5$2(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Editar");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_5$2.name,
+    		type: "slot",
+    		source: "(296:28) <Button outline color=\\\"primary\\\" on:click=\\\"{updateAlcohol(stat.country,stat.year,stat.ageRange)}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (288:16) {#each alcoholStats as stat}
     function create_each_block$2(ctx) {
     	let tr;
     	let td0;
@@ -11898,22 +11925,39 @@ var app = (function () {
     	let t8;
     	let t9;
     	let td5;
-    	let button;
+    	let button0;
     	let t10;
+    	let td6;
+    	let button1;
+    	let t11;
     	let current;
 
-    	button = new Button({
+    	button0 = new Button({
     			props: {
     				outline: true,
     				color: "danger",
+    				$$slots: { default: [create_default_slot_6$2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button0.$on("click", function () {
+    		if (is_function(/*deleteSpecificAlcohol*/ ctx[9](/*stat*/ ctx[22].country, /*stat*/ ctx[22].ageRange, /*stat*/ ctx[22].year))) /*deleteSpecificAlcohol*/ ctx[9](/*stat*/ ctx[22].country, /*stat*/ ctx[22].ageRange, /*stat*/ ctx[22].year).apply(this, arguments);
+    	});
+
+    	button1 = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
     				$$slots: { default: [create_default_slot_5$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	button.$on("click", function () {
-    		if (is_function(/*deleteSpecificAlcohol*/ ctx[8](/*stat*/ ctx[22].country, /*stat*/ ctx[22].ageRange, /*stat*/ ctx[22].year))) /*deleteSpecificAlcohol*/ ctx[8](/*stat*/ ctx[22].country, /*stat*/ ctx[22].ageRange, /*stat*/ ctx[22].year).apply(this, arguments);
+    	button1.$on("click", function () {
+    		if (is_function(/*updateAlcohol*/ ctx[6](/*stat*/ ctx[22].country, /*stat*/ ctx[22].year, /*stat*/ ctx[22].ageRange))) /*updateAlcohol*/ ctx[6](/*stat*/ ctx[22].country, /*stat*/ ctx[22].year, /*stat*/ ctx[22].ageRange).apply(this, arguments);
     	});
 
     	const block = {
@@ -11936,17 +11980,21 @@ var app = (function () {
     			t8 = text(t8_value);
     			t9 = space();
     			td5 = element("td");
-    			create_component(button.$$.fragment);
+    			create_component(button0.$$.fragment);
     			t10 = space();
+    			td6 = element("td");
+    			create_component(button1.$$.fragment);
+    			t11 = space();
     			attr_dev(a, "href", a_href_value = "#/alcohol-stats/" + /*stat*/ ctx[22].country + "/" + /*stat*/ ctx[22].year + "/" + /*stat*/ ctx[22].ageRange);
-    			add_location(a, file$3, 298, 28, 11034);
-    			add_location(td0, file$3, 298, 24, 11030);
-    			add_location(td1, file$3, 299, 24, 11152);
-    			add_location(td2, file$3, 300, 24, 11198);
-    			add_location(td3, file$3, 301, 24, 11248);
-    			add_location(td4, file$3, 302, 24, 11311);
-    			add_location(td5, file$3, 303, 24, 11383);
-    			add_location(tr, file$3, 297, 20, 11000);
+    			add_location(a, file$3, 289, 28, 11677);
+    			add_location(td0, file$3, 289, 24, 11673);
+    			add_location(td1, file$3, 290, 24, 11795);
+    			add_location(td2, file$3, 291, 24, 11841);
+    			add_location(td3, file$3, 292, 24, 11891);
+    			add_location(td4, file$3, 293, 24, 11954);
+    			add_location(td5, file$3, 294, 24, 12026);
+    			add_location(td6, file$3, 295, 24, 12181);
+    			add_location(tr, file$3, 288, 20, 11643);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -11967,8 +12015,11 @@ var app = (function () {
     			append_dev(td4, t8);
     			append_dev(tr, t9);
     			append_dev(tr, td5);
-    			mount_component(button, td5, null);
+    			mount_component(button0, td5, null);
     			append_dev(tr, t10);
+    			append_dev(tr, td6);
+    			mount_component(button1, td6, null);
+    			append_dev(tr, t11);
     			current = true;
     		},
     		p: function update(new_ctx, dirty) {
@@ -11983,26 +12034,36 @@ var app = (function () {
     			if ((!current || dirty & /*alcoholStats*/ 16) && t4_value !== (t4_value = /*stat*/ ctx[22].ageRange + "")) set_data_dev(t4, t4_value);
     			if ((!current || dirty & /*alcoholStats*/ 16) && t6_value !== (t6_value = /*stat*/ ctx[22].alcoholPrematureDeath + "")) set_data_dev(t6, t6_value);
     			if ((!current || dirty & /*alcoholStats*/ 16) && t8_value !== (t8_value = /*stat*/ ctx[22].prevalenceOfAlcoholUseDisorder + "")) set_data_dev(t8, t8_value);
-    			const button_changes = {};
+    			const button0_changes = {};
 
     			if (dirty & /*$$scope*/ 33554432) {
-    				button_changes.$$scope = { dirty, ctx };
+    				button0_changes.$$scope = { dirty, ctx };
     			}
 
-    			button.$set(button_changes);
+    			button0.$set(button0_changes);
+    			const button1_changes = {};
+
+    			if (dirty & /*$$scope*/ 33554432) {
+    				button1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button1.$set(button1_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(button.$$.fragment, local);
+    			transition_in(button0.$$.fragment, local);
+    			transition_in(button1.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(button.$$.fragment, local);
+    			transition_out(button0.$$.fragment, local);
+    			transition_out(button1.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(tr);
-    			destroy_component(button);
+    			destroy_component(button0);
+    			destroy_component(button1);
     		}
     	};
 
@@ -12010,14 +12071,14 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(297:16) {#each alcoholStats as stat}",
+    		source: "(288:16) {#each alcoholStats as stat}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (276:8) <Table bordered responsive>
+    // (267:8) <Table bordered responsive>
     function create_default_slot_4$2(ctx) {
     	let thead;
     	let tr0;
@@ -12061,13 +12122,13 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_6$2] },
+    				$$slots: { default: [create_default_slot_7$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	button.$on("click", /*insertAlcohol*/ ctx[6]);
+    	button.$on("click", /*insertAlcohol*/ ctx[7]);
     	let each_value = /*alcoholStats*/ ctx[4];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -12127,37 +12188,40 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$3, 278, 20, 9851);
-    			add_location(th1, file$3, 279, 20, 9886);
-    			add_location(th2, file$3, 280, 20, 9920);
-    			add_location(th3, file$3, 281, 20, 9965);
-    			add_location(th4, file$3, 282, 20, 10034);
-    			add_location(th5, file$3, 283, 20, 10113);
-    			add_location(tr0, file$3, 277, 16, 9825);
-    			add_location(thead, file$3, 276, 12, 9800);
+    			add_location(th0, file$3, 269, 20, 10442);
+    			add_location(th1, file$3, 270, 20, 10477);
+    			add_location(th2, file$3, 271, 20, 10511);
+    			add_location(th3, file$3, 272, 20, 10556);
+    			add_location(th4, file$3, 273, 20, 10625);
+    			attr_dev(th5, "colspan", "2");
+    			add_location(th5, file$3, 274, 20, 10704);
+    			add_location(tr0, file$3, 268, 16, 10416);
+    			add_location(thead, file$3, 267, 12, 10391);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "España");
-    			add_location(input0, file$3, 288, 24, 10244);
-    			add_location(td0, file$3, 288, 20, 10240);
+    			add_location(input0, file$3, 279, 24, 10847);
+    			add_location(td0, file$3, 279, 20, 10843);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "placeholder", "2017");
-    			add_location(input1, file$3, 289, 24, 10351);
-    			add_location(td1, file$3, 289, 20, 10347);
+    			add_location(input1, file$3, 280, 24, 10954);
+    			add_location(td1, file$3, 280, 20, 10950);
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "40-45");
-    			add_location(input2, file$3, 290, 24, 10454);
-    			add_location(td2, file$3, 290, 20, 10450);
+    			add_location(input2, file$3, 281, 24, 11057);
+    			add_location(td2, file$3, 281, 20, 11053);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "10");
-    			add_location(input3, file$3, 291, 24, 10562);
-    			add_location(td3, file$3, 291, 20, 10558);
+    			add_location(input3, file$3, 282, 24, 11165);
+    			add_location(td3, file$3, 282, 20, 11161);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "placeholder", "0.4");
-    			add_location(input4, file$3, 292, 24, 10685);
-    			add_location(td4, file$3, 292, 20, 10681);
-    			add_location(td5, file$3, 293, 20, 10812);
-    			add_location(tr1, file$3, 287, 16, 10214);
-    			add_location(tbody, file$3, 286, 12, 10189);
+    			add_location(input4, file$3, 283, 24, 11288);
+    			add_location(td4, file$3, 283, 20, 11284);
+    			attr_dev(td5, "colspan", "2");
+    			set_style(td5, "text-align", "center");
+    			add_location(td5, file$3, 284, 20, 11415);
+    			add_location(tr1, file$3, 278, 16, 10817);
+    			add_location(tbody, file$3, 277, 12, 10792);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -12208,11 +12272,11 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[12]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[13]),
-    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[14]),
-    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[15]),
-    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[16])
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[13]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[14]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[15]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[16]),
+    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[17])
     				];
 
     				mounted = true;
@@ -12247,7 +12311,7 @@ var app = (function () {
 
     			button.$set(button_changes);
 
-    			if (dirty & /*deleteSpecificAlcohol, alcoholStats*/ 272) {
+    			if (dirty & /*updateAlcohol, alcoholStats, deleteSpecificAlcohol*/ 592) {
     				each_value = /*alcoholStats*/ ctx[4];
     				validate_each_argument(each_value);
     				let i;
@@ -12310,14 +12374,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$2.name,
     		type: "slot",
-    		source: "(276:8) <Table bordered responsive>",
+    		source: "(267:8) <Table bordered responsive>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (310:10) <Button color="success" on:click="{loadInitialData}">
+    // (302:10) <Button color="success" on:click="{loadInitialData}">
     function create_default_slot_3$2(ctx) {
     	let t;
 
@@ -12337,14 +12401,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$2.name,
     		type: "slot",
-    		source: "(310:10) <Button color=\\\"success\\\" on:click=\\\"{loadInitialData}\\\">",
+    		source: "(302:10) <Button color=\\\"success\\\" on:click=\\\"{loadInitialData}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (313:8) <Button color="danger" on:click="{deleteALL}">
+    // (305:8) <Button color="danger" on:click="{deleteALL}">
     function create_default_slot_2$3(ctx) {
     	let t;
 
@@ -12364,14 +12428,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$3.name,
     		type: "slot",
-    		source: "(313:8) <Button color=\\\"danger\\\" on:click=\\\"{deleteALL}\\\">",
+    		source: "(305:8) <Button color=\\\"danger\\\" on:click=\\\"{deleteALL}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (316:8) <Button outline color="primary" on:click="{getPreviewPage}">
+    // (308:8) <Button outline color="primary" on:click="{getPreviewPage}">
     function create_default_slot_1$3(ctx) {
     	let t;
 
@@ -12391,14 +12455,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$3.name,
     		type: "slot",
-    		source: "(316:8) <Button outline color=\\\"primary\\\" on:click=\\\"{getPreviewPage}\\\">",
+    		source: "(308:8) <Button outline color=\\\"primary\\\" on:click=\\\"{getPreviewPage}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (319:8) <Button outline color="primary" on:click="{getNextPage}">
+    // (311:8) <Button outline color="primary" on:click="{getNextPage}">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -12418,14 +12482,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(319:8) <Button outline color=\\\"primary\\\" on:click=\\\"{getNextPage}\\\">",
+    		source: "(311:8) <Button outline color=\\\"primary\\\" on:click=\\\"{getNextPage}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (266:25)           Loading alcohol data...      {:then alcoholStats}
+    // (257:25)           Loading alcohol data...      {:then alcoholStats}
     function create_pending_block$1(ctx) {
     	let t;
 
@@ -12448,7 +12512,7 @@ var app = (function () {
     		block,
     		id: create_pending_block$1.name,
     		type: "pending",
-    		source: "(266:25)           Loading alcohol data...      {:then alcoholStats}",
+    		source: "(257:25)           Loading alcohol data...      {:then alcoholStats}",
     		ctx
     	});
 
@@ -12488,9 +12552,9 @@ var app = (function () {
     			t2 = space();
     			info.block.c();
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$3, 261, 4, 9423);
-    			add_location(br, file$3, 262, 4, 9498);
-    			add_location(main, file$3, 260, 0, 9411);
+    			add_location(h1, file$3, 252, 4, 10014);
+    			add_location(br, file$3, 253, 4, 10089);
+    			add_location(main, file$3, 251, 0, 10002);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -12589,37 +12653,37 @@ var app = (function () {
     	}
 
     	//Actualizarsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-    	async function updateStat() {
-    		console.log("Updating stat..." + JSON.stringify(params.country) + JSON.stringify(params.year));
+    	async function updateAlcohol(country, year, ageRange) {
+    		if (newAlcohol.year == "" || newAlcohol.year == null || newAlcohol.country == "" || newAlcohol.ageRange == "") {
+    			alert("Los campos País, Año y Rango de edad no pueden estar vacíos");
+    		} else if (country != newAlcohol.country || year != newAlcohol.year || ageRange != newAlcohol.ageRange) {
+    			alert("Los campos País, Año y Rango de edad no pueden ser distintos");
+    		} else {
+    			console.log("Editing alcohol data...");
 
-    		await fetch(BASE_ALCOHOL_PATH + params.country + "/" + params.year, {
-    			method: "PUT",
-    			body: JSON.stringify({
-    				"country": params.country,
-    				"year": params.year,
-    				"ageRange": updateAgeRange,
-    				"alcoholPrematureDeath": parseInt(updatePrematureDeath),
-    				"prevalenceOfAlcoholUseDisorder": parseInt(updateDisorder)
-    			}),
-    			headers: { "Content-Type": "application/json" }
-    		}).then(function (res) {
-    			if (res.ok) {
-    				console.log("OK");
-    				getStat();
-    				errorMsg = "";
-    				okMsg = `${params.country} ${params.year} ha sido actualizado correctamente`;
-    			} else {
-    				if (res.status === 500) {
-    					errorMsg = "No se han podido acceder a la base de datos";
-    				} else if (res.status === 404) {
-    					errorMsg = "No se han encontrado el dato solicitado";
+    			await fetch(BASE_ALCOHOL_PATH + country + "/" + year + "/" + ageRange, {
+    				method: "PUT",
+    				body: JSON.stringify(newAlcohol),
+    				headers: { "Content-Type": "application/json" }
+    			}).then(function (res) {
+    				$$invalidate(0, visible = true);
+
+    				if (res.status == 200) {
+    					console.log("Data updated");
+    					getStats();
+    					$$invalidate(1, color = "success");
+    					checkMSG = "Entrada modificada correctamente en la base de datos";
+    				} else if (res.status == 400) {
+    					console.log("ERROR Data was not correctly introduced");
+    					$$invalidate(1, color = "danger");
+    					checkMSG = "Los datos de la entrada no fueron introducidos correctamente";
+    				} else if (res.status == 409) {
+    					console.log("ERROR There is already a data with that province and year in the da tabase");
+    					$$invalidate(1, color = "danger");
+    					checkMSG = "Ya existe una entrada en la base de datos con los datos introducidos";
     				}
-
-    				okMsg = "";
-    				getStat();
-    				console.log("ERROR!" + errorMsg);
-    			}
-    		});
+    			});
+    		}
     	}
 
     	//INSERT
@@ -12839,7 +12903,7 @@ var app = (function () {
     		alcoholStats,
     		newAlcohol,
     		loadInitialData,
-    		updateStat,
+    		updateAlcohol,
     		insertAlcohol,
     		getStats,
     		deleteALL,
@@ -12870,6 +12934,7 @@ var app = (function () {
     		newAlcohol,
     		alcoholStats,
     		loadInitialData,
+    		updateAlcohol,
     		insertAlcohol,
     		deleteALL,
     		deleteSpecificAlcohol,

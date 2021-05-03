@@ -63,7 +63,6 @@ module.exports.register = (app) => {
     app.post(BASE_API_PATH+"/alcohol-consumption-stats",(req,res)=>{
         var newIncomingStat=req.body;
 
-        console.log(`new alcohol stat to be added <${JSON.stringify(newIncomingStat,null,2)}>`);
 
         if(Object.keys(newIncomingStat).length!=5){
             res.status(400).json({error: 'Bad request'});

@@ -48,48 +48,39 @@
     }
     //Actualizarsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
 
-    async function updateStat() {
-    console.log(
-      "Updating stat..." +
-        JSON.stringify(params.country) +
-        JSON.stringify(params.year)
-    );
-    const res = await fetch(
-        BASE_ALCOHOL_PATH +
-        params.country +
-        "/" +
-        params.year,
-      {
-        method: "PUT",
-        body: JSON.stringify({
-          "country": params.country,
-          "year": params.year,
-          "ageRange": updateAgeRange,
-          "alcoholPrematureDeath": parseInt(updatePrematureDeath),
-          "prevalenceOfAlcoholUseDisorder": parseInt(updateDisorder),
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        }
-      }
-    ).then(function (res) {
-      if (res.ok) {
-        console.log("OK");
-        getStat();
-        errorMsg = "";
-        okMsg = `${params.country} ${params.year} ha sido actualizado correctamente`;
-      } else {
-         if(res.status ===500){
-          errorMsg = "No se han podido acceder a la base de datos";
-        }else if(res.status ===404){
-          errorMsg = "No se han encontrado el dato solicitado";
-        }        
-        okMsg = "";
-        getStat();
-        console.log("ERROR!" + errorMsg);
-      }
-    });
-  }
+    async function updateAlcohol(country, year, ageRange){
+        if (newAlcohol.year == "" || newAlcohol.year == null || newAlcohol.country == "" || newAlcohol.ageRange == "") {
+            alert("Los campos País, Año y Rango de edad no pueden estar vacíos");
+        }else if (country != newAlcohol.country || year != newAlcohol.year || ageRange != newAlcohol.ageRange){
+            alert("Los campos País, Año y Rango de edad no pueden ser distintos");
+        }else{
+            
+            console.log("Editing alcohol data...");
+            const res = await fetch(BASE_ALCOHOL_PATH + country + "/" + year + "/" + ageRange, {
+                    method:"PUT",
+                    body:JSON.stringify(newAlcohol),
+                    headers:{
+                        "Content-Type": "application/json"
+                    }
+                }).then(function (res) {
+                    visible=true;
+                    if (res.status == 200){
+                        console.log("Data updated");
+                        getStats();
+                        color = "success";
+                        checkMSG ="Entrada modificada correctamente en la base de datos";
+                    }else if(res.status == 400){
+                        console.log("ERROR Data was not correctly introduced");
+                        color = "danger";
+                        checkMSG= "Los datos de la entrada no fueron introducidos correctamente";
+                    }else if(res.status == 409){
+                        console.log("ERROR There is already a data with that province and year in the da tabase");
+                        color = "danger";
+                        checkMSG= "Ya existe una entrada en la base de datos con los datos introducidos";
+                    }
+                });	
+            }
+    }
 
     //INSERT
     
@@ -281,7 +272,7 @@
                     <th>Rango de edad </th>
                     <th>Muertes prematuras a causa del alcohol</th>
                     <th>Prevalencia de trastornos por consumo de alcohol</th>
-                    <th>Acciones</th>
+                    <th colspan="2">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -291,7 +282,7 @@
                     <td><input type = "text" placeholder="40-45" bind:value="{newAlcohol.ageRange}"></td> 
                     <td><input type = "number" placeholder="10" bind:value="{newAlcohol.alcoholPrematureDeath}"></td>    
                     <td><input type = "number" placeholder="0.4" bind:value="{newAlcohol.prevalenceOfAlcoholUseDisorder}"></td>  
-                    <td><Button outline color="primary" on:click={insertAlcohol}>Insertar</Button></td>           
+                    <td colspan="2" style="text-align: center;"><Button outline color="primary" on:click={insertAlcohol}>Insertar</Button></td>           
                 </tr>
  
                 {#each alcoholStats as stat}
@@ -302,6 +293,7 @@
                         <td>{stat.alcoholPrematureDeath}</td>
                         <td>{stat.prevalenceOfAlcoholUseDisorder}</td>
                         <td><Button outline color="danger" on:click="{deleteSpecificAlcohol(stat.country, stat.ageRange,stat.year)}">Borrar</Button></td>
+                        <td><Button outline color="primary" on:click="{updateAlcohol(stat.country,stat.year,stat.ageRange)}">Editar</Button></td>
                         
                     </tr>
                 {/each}
