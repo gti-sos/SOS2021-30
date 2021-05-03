@@ -9,8 +9,8 @@
   import LifeExpectancy from './front/lifeExpectancy.svelte';
 	import TablaAlcohol from "./front/TablaAlcohol.svelte";
   import SmokerStats from "./front/Smokers.svelte";
-  import FrontWeight from "./front/TablaWeights.svelte";
-  import EditWeight from "./front/EditWeight.svelte";
+  import FrontWeight from "./front/weightsStats/TablaWeights.svelte";
+  import EditWeight from "./front/weightsStats/EditWeight.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
 
 	const routes = {
