@@ -9,8 +9,6 @@
     let visible = false;
     let color = "danger";
     
-    let isOpen = false;
-    let busquedas = BASE_API_PATH;
     let page = 1;
     let totaldata=13;
     let SmokerStats = [];
