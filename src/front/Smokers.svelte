@@ -23,6 +23,7 @@
 	}
     
     let errorMSG = "";
+    let validMSG = "";
     onMount(getSmoker);
  
     //GET
@@ -46,8 +47,6 @@
  
         console.log("Fetching smokers data...");
         await fetch("/api/v1/smokers-stats/loadInitialData");
-        totaldata = SmokerStats.length;
-        console.log("Sabe uste que hay "+totaldata+" cosas saben")
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0");
         if (res.ok) {
             console.log("Ok:");
@@ -56,7 +55,7 @@
             totaldata=13;
             console.log("Received " + SmokerStats.length + " Smokers data.");
             color = "success";
-            errorMSG = "Datos cargados correctamente";
+            validMSG = "Datos cargados correctamente";
         } else {
             color = "danger";
             errorMSG= res.status + ": " + res.statusText;
@@ -85,7 +84,7 @@
                     totaldata++;
                     console.log("Data introduced");
                     color = "success";
-                    errorMSG="Entrada introducida correctamente a la base de datos";
+                    validMSG="Entrada introducida correctamente a la base de datos";
                 }else if(res.status == 400){
                     console.log("ERROR Data was not correctly introduced");
                     color = "danger";
@@ -121,7 +120,7 @@
                         getSmoker();
                         console.log("Data updated");
                         color = "success";
-                        errorMSG="Entrada modificada correctamente en la base de datos";
+                        validMSG ="Entrada modificada correctamente en la base de datos";
                     }else if(res.status == 400){
                         console.log("ERROR Data was not correctly introduced");
                         color = "danger";
@@ -145,7 +144,7 @@
             if (res.status==200) {
                 totaldata--;
                 color = "success";
-                errorMSG = "Recurso "+province+" "+year+ " borrado correctamente";
+                validMSG = "Recurso "+province+" "+year+ " borrado correctamente";
                 console.log("Deleted " + province);            
             } else if (res.status==404) {
                 color = "danger";
@@ -172,7 +171,7 @@
                     totaldata = 0;
 					getSmoker();
                     color = "success";
-					errorMSG="Datos eliminados correctamente";
+					validMSG="Datos eliminados correctamente";
 					console.log("OK All data erased");
 				} else if (totaldata == 0){
                     console.log("ERROR Data was not erased");
@@ -204,7 +203,7 @@
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
-        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        validMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
@@ -234,7 +233,7 @@
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
-        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        validMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
@@ -261,8 +260,8 @@
     {:then SmokerStats}
     
     <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
-        {#if errorMSG}
-		    {errorMSG}
+        {#if errorMSG || validMSG}
+		    {errorMSG, validMSG}
 	    {/if}
     </Alert>
 
