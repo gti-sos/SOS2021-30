@@ -14153,7 +14153,7 @@ var app = (function () {
     function instance$2($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("TablaWeights", slots, []);
-    	var BASE_WEIGHTS_PATH = "/api/v1/table-weights-stats";
+    	var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
     	let weightsStats = [];
 
     	let newWeight = {

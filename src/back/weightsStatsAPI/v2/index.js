@@ -117,8 +117,7 @@ module.exports.register = (app) => {
         var limit = parseInt(query.limit);
         var offset = parseInt(query.offset);
         var dbquery = {};
-		
-		//BUSQUEDA
+
         if(req.query.id) dbquery["id"]= parseInt(req.query.id);
 		if(req.query.country) dbquery["country"]= req.query.country;
         if(req.query.provinces) dbquery["provinces"]= req.query.provinces;
@@ -210,7 +209,7 @@ module.exports.register = (app) => {
         var reqyear = parseInt(req.params.year);
         var data = req.body;
         
-        if (Object.keys(data).length != 7) {
+        if (Object.keys(data).length != 5) {
             console.log("Actualizacion de campos no valida")
             res.sendStatus(400);
         } else {
