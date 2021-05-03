@@ -9,7 +9,6 @@ module.exports.register = (app) => {
 /*--------------Variable Objeto-----------------------*/
     smokersStats=[
         {   
-            "id": 1,
             "country": "España",
             "province":"Andalucía",
             "year":2017,
@@ -19,7 +18,6 @@ module.exports.register = (app) => {
             "nonSmoker": 4294657.75
         },
         {
-            "id": 2,
             "country": "España",
             "province":"Aragón",
             "year":2017,
@@ -29,7 +27,6 @@ module.exports.register = (app) => {
             "nonSmoker": 603988.13
         },
         {
-            "id": 3,
             "country": "España",
             "province":"Asturias (Principado De)",
             "year":2017,
@@ -39,7 +36,6 @@ module.exports.register = (app) => {
             "nonSmoker": 559602.87
         },
         {
-            "id": 4,
             "country": "España",
             "province": "Cantabria",
             "year": 2017,
@@ -49,7 +45,6 @@ module.exports.register = (app) => {
             "nonSmoker": 307382.26
         },
         {
-            "id": 5,
             "country": "España",
             "province":"Castilla y León",
             "year":2017,
@@ -59,7 +54,6 @@ module.exports.register = (app) => {
             "nonSmoker": 1244193.33
         },
         {
-            "id": 6,
             "country": "España",
             "province":"Castilla-La Mancha",
             "year":2017,
@@ -69,7 +63,6 @@ module.exports.register = (app) => {
             "nonSmoker": 1129502.32
         },
         {
-            "id": 7,
             "country": "España",
             "province":"Cataluña",
             "year":2017,
@@ -79,7 +72,6 @@ module.exports.register = (app) => {
             "nonSmoker": 4125483.18
         },
         {
-            "id": 8,
             "country": "España",
             "province":"Comunidad Valenciana",
             "year":2017,
@@ -89,7 +81,6 @@ module.exports.register = (app) => {
             "nonSmoker": 2447035.26
         },
         {
-            "id": 9,
             "country": "España",
             "province":"Extremadura",
             "year":2017,
@@ -99,7 +90,6 @@ module.exports.register = (app) => {
             "nonSmoker": 573221.54
         },
         {
-            "id": 10,
             "country": "España",
             "province":"Galicia",
             "year":2017,
@@ -109,7 +99,6 @@ module.exports.register = (app) => {
             "nonSmoker": 1606045.03
         },
         {
-            "id": 11,
             "country": "España",
             "province":"Madrid (Comunidad De)",
             "year":2017,
@@ -119,7 +108,6 @@ module.exports.register = (app) => {
             "nonSmoker": 3586109.10
         },
         {
-            "id": 12,
             "country": "España",
             "province":"Navarra (Comunidad Foral De)",
             "year":2017,
@@ -129,7 +117,6 @@ module.exports.register = (app) => {
             "nonSmoker": 385747.43
         },
         {
-            "id": 13,
             "country": "España",
             "province":"País Vasco",
             "year":2017,
@@ -139,7 +126,8 @@ module.exports.register = (app) => {
             "nonSmoker": 1083694.64
         }
     ];
-    //Inserta 
+
+    //inserta en la bd
     db.insert(smokersStats);
 /*--------------------fin constructor-----------------------*/
 
@@ -147,7 +135,6 @@ module.exports.register = (app) => {
     app.get(BASE_API_PATH+"/loadInitialData",(req,res)=>{
     smokersStatsIni=[
         {   
-            "id": 1,
             "country": "España",
             "province":"Andalucía",
             "year":2017,
@@ -157,7 +144,6 @@ module.exports.register = (app) => {
             "nonSmoker": 4294657.75
         },
         {
-            "id": 2,
             "country": "España",
             "province":"Aragón",
             "year":2017,
@@ -167,7 +153,6 @@ module.exports.register = (app) => {
             "nonSmoker": 603988.13
         },
         {
-            "id": 3,
             "country": "España",
             "province":"Asturias (Principado De)",
             "year":2017,
@@ -177,7 +162,6 @@ module.exports.register = (app) => {
             "nonSmoker": 559602.87
         },
         {
-            "id": 4,
             "country": "España",
             "province": "Cantabria",
             "year": 2017,
@@ -187,7 +171,6 @@ module.exports.register = (app) => {
             "nonSmoker": 307382.26
         },
         {
-            "id": 5,
             "country": "España",
             "province":"Castilla y León",
             "year":2017,
@@ -197,7 +180,6 @@ module.exports.register = (app) => {
             "nonSmoker": 1244193.33
         },
         {
-            "id": 6,
             "country": "España",
             "province":"Castilla-La Mancha",
             "year":2017,
@@ -207,7 +189,6 @@ module.exports.register = (app) => {
             "nonSmoker": 1129502.32
         },
         {
-            "id": 7,
             "country": "España",
             "province":"Cataluña",
             "year":2017,
@@ -217,7 +198,6 @@ module.exports.register = (app) => {
             "nonSmoker": 4125483.18
         },
         {
-            "id": 8,
             "country": "España",
             "province":"Comunidad Valenciana",
             "year":2017,
@@ -227,7 +207,6 @@ module.exports.register = (app) => {
             "nonSmoker": 2447035.26
         },
         {
-            "id": 9,
             "country": "España",
             "province":"Extremadura",
             "year":2017,
@@ -237,7 +216,6 @@ module.exports.register = (app) => {
             "nonSmoker": 573221.54
         },
         {
-            "id": 10,
             "country": "España",
             "province":"Galicia",
             "year":2017,
@@ -247,7 +225,6 @@ module.exports.register = (app) => {
             "nonSmoker": 1606045.03
         },
         {
-            "id": 11,
             "country": "España",
             "province":"Madrid (Comunidad De)",
             "year":2017,
@@ -257,7 +234,6 @@ module.exports.register = (app) => {
             "nonSmoker": 3586109.10
         },
         {
-            "id": 12,
             "country": "España",
             "province":"Navarra (Comunidad Foral De)",
             "year":2017,
@@ -267,7 +243,6 @@ module.exports.register = (app) => {
             "nonSmoker": 385747.43
         },
         {
-            "id": 13,
             "country": "España",
             "province":"País Vasco",
             "year":2017,
@@ -283,9 +258,9 @@ module.exports.register = (app) => {
         db.remove({}, { multi: true }, function (err, numRemoved) {
         });
     // Inserta los datos iniciales en la base de datos
-       db.insert(smokersStatsIni);
-       
-       res.send(JSON.stringify(smokersStats,null,2));
+        db.insert(smokersStatsIni);
+        
+       res.send(JSON.stringify(smokersStatsIni,null,2));
 
     });
 
@@ -297,7 +272,6 @@ module.exports.register = (app) => {
         var dbquery = {};
 
         //"Parseamos" los datos a su tipo original antes de buscar
-        if (req.query.id) dbquery["id"] = parseInt(req.query.id);
         if (req.query.country) dbquery["country"] = req.query.country;
         if (req.query.province) dbquery["province"] = req.query.province;
         if (req.query.year) dbquery["year"] = parseInt(req.query.year);
@@ -308,7 +282,7 @@ module.exports.register = (app) => {
 
 
         //Búsqueda de datos 
-        db.find(dbquery).sort({id:1, year:-1}).skip(offset).limit(limit).exec((error, nonSmoker) => {
+        db.find(dbquery).sort({province:1, year:-1}).skip(offset).limit(limit).exec((error, nonSmoker) => {
 
 
             //Se elimina el _id creado automáticamente
@@ -321,8 +295,7 @@ module.exports.register = (app) => {
         });
     });
 
-    //POST A LA LISTA DE RECURSOS DE SMOKERS-STATS
-    
+    //POST A LA LISTA DE RECURSOS DE SMOKERS-STATS 
     app.post(BASE_API_PATH,(req,res)=>{
         var dataNew = req.body;
         var provinceNew = req.body.province;
@@ -409,7 +382,7 @@ module.exports.register = (app) => {
         var yearNew = parseInt(req.params.year);
         var dataNew = req.body;
 
-        if (Object.keys(dataNew).length !=8 ) {
+        if (Object.keys(dataNew).length !=7 ) {
             console.log("Actualizacion de campos no valida");
             res.sendStatus(400);
         }else{

@@ -685,7 +685,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"id\": 14,\r\n\"country\": \"España\",\r\n\"province\":\"Ceuta\",\r\n\"year\":2017,\r\n\"dailySmoker\": 12345678.96,\r\n\"ocasionalSmoker\": 11223344.48,\r\n\"exSmoker\": 321654.51,\r\n\"nonSmoker\": 99999999.26\r\n}",
+					"raw": "{\r\n\"country\": \"España\",\r\n\"province\":\"Ceuta\",\r\n\"year\":2017,\r\n\"dailySmoker\": 12345678.96,\r\n\"ocasionalSmoker\": 11223344.48,\r\n\"exSmoker\": 321654.51,\r\n\"nonSmoker\": 99999999.26\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -723,7 +723,7 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Se tiene Cantabria actualizado.\", function () {\r",
+							"pm.test(\"Se tiene Ceuta actualizado.\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include(\"99999999.26\");\r",
 							"});"
 						],

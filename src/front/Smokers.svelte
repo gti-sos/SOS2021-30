@@ -2,24 +2,19 @@
 	import { onMount } from "svelte";
 	import Table from "sveltestrap/src/Table.svelte"; 
 	import Button from "sveltestrap/src/Button.svelte";
-	import { Pagination, PaginationItem, PaginationLink } from 'sveltestrap';
-	import { Form, FormGroup, FormText, Input, Label } from 'sveltestrap';
 	import { Alert } from 'sveltestrap';
-    import { UncontrolledCollapse, Collapse, CardBody, Card } from "sveltestrap";
-	import { pop } from "svelte-spa-router";
-    import { get } from "svelte/store";
-	
     
-    let isOpen = false;
-    let busquedas = "/api/v1/smokers-stats";
+	
     //ALERTAS
     let visible = false;
     let color = "danger";
     
+    //Variables
     let page = 1;
     let totaldata=13;
     let SmokerStats = [];
 	let newSmoker = {
+        country: "España",
         province: "",
 		year: "",
 		dailySmoker:"",
@@ -27,15 +22,13 @@
 		exSmoker:"",
         nonSmoker:""
 	}
-    
-    let errorMSG = "";
-    let okayMSG = "";
+    let checkMSG = "";
     onMount(getSmoker);
  
     //GET
     async function getSmoker() {
  
-        console.log("Fetching employment Data...");
+        console.log("Fetching smokers Data...");
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0");
         if (res.ok) {
             console.log("Ok:");
@@ -43,7 +36,7 @@
             SmokerStats = json;
             console.log("Received " + SmokerStats.length + " Smokers Data.");
         } else {
-            errorMSG= res.status + ": " + res.statusText;
+            checkMSG= res.status + ": " + res.statusText;
             console.log("ERROR!");
         }
     }
@@ -51,7 +44,7 @@
     //GET INITIALDATA
     async function loadInitialData() {
  
-        console.log("Fetching employment data...");
+        console.log("Fetching smokers data...");
         await fetch("/api/v1/smokers-stats/loadInitialData");
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0");
         if (res.ok) {
@@ -61,49 +54,85 @@
             totaldata=13;
             console.log("Received " + SmokerStats.length + " Smokers data.");
             color = "success";
-            errorMSG = "Datos cargados correctamente";
+            checkMSG = "Datos cargados correctamente";
         } else {
             color = "danger";
-            errorMSG= res.status + ": " + res.statusText;
+            checkMSG= res.status + ": " + res.statusText;
             console.log("ERROR!");
         }
     }
     
-    //INSERT
-    
+    //INSERT  
     async function insertSmokers(){
 		 
-         console.log("Inserting smokers data...");
+        console.log("Inserting smokers data...");
+        //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
+        if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
+            alert("Los campos 'Comunidad Autónoma' y 'Año' no pueden estar vacios");
+        } else{
+            const res = await fetch("/api/v1/smokers-stats",{
+                method:"POST",
+                body:JSON.stringify(newSmoker),
+                headers:{
+                    "Content-Type": "application/json"
+                }
+            }).then(function (res) {
+                visible=true;
+                if (res.status == 201){
+                    getSmoker();
+                    totaldata++;
+                    console.log("Data introduced");
+                    color = "success";
+                    checkMSG="Entrada introducida correctamente a la base de datos";
+                }else if(res.status == 400){
+                    console.log("ERROR Data was not correctly introduced");
+                    color = "danger";
+                    checkMSG= "Los datos de la entrada no fueron introducidos correctamente";
+                }else if(res.status == 409){
+                    console.log("ERROR There is already a data with that province and year in the da tabase");
+                    color = "danger";
+                    checkMSG= "Ya existe una entrada en la base de datos con la provincia y el año introducido";
+                }
+            });	
+        }
+    }
+    
+    //EDIT
+    async function editSmokers(province, year){
+
          //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
-         if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
-             alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
-         } else{
-             const res = await fetch("/api/v1/smokers-stats",{
-             method:"POST",
-             body:JSON.stringify(newSmoker),
-             headers:{
-                 "Content-Type": "application/json"
-             }
-             }).then(function (res) {
-                 visible=true;
-                 if (res.status == 201){
-                     getSmoker();
-                     totaldata++;
-                     console.log("Data introduced");
-                     color = "success";
-                     errorMSG="Entrada introducida correctamente a la base de datos";
-                 }else if(res.status == 400){
-                     console.log("ERROR Data was not correctly introduced");
-                     color = "danger";
-                     errorMSG= "Los datos de la entrada no fueron introducidos correctamente";
-                 }else if(res.status == 409){
-                     console.log("ERROR There is already a data with that province and year in the da tabase");
-                     color = "danger";
-                     errorMSG= "Ya existe una entrada en la base de datos con la provincia y el año introducido";
-                 }
-             });	
-         }
-     }
+        if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
+            alert("Los campos 'Comunidad Autónoma' y 'Año' no pueden estar vacíos");
+        }else if (province != newSmoker.province || year != newSmoker.year){
+            alert("Los campos 'Comunidad Autónoma' y 'Año' no pueden ser distintos");
+        }else{
+            
+            console.log("Editing smokers data...");
+            const res = await fetch("/api/v1/smokers-stats/" + province + "/" + year, {
+                    method:"PUT",
+                    body:JSON.stringify(newSmoker),
+                    headers:{
+                        "Content-Type": "application/json"
+                    }
+                }).then(function (res) {
+                    visible=true;
+                    if (res.status == 200){
+                        console.log("Data updated");
+                        getSmoker();
+                        color = "success";
+                        checkMSG ="Entrada modificada correctamente en la base de datos";
+                    }else if(res.status == 400){
+                        console.log("ERROR Data was not correctly introduced");
+                        color = "danger";
+                        checkMSG= "Los datos de la entrada no fueron introducidos correctamente";
+                    }else if(res.status == 409){
+                        console.log("ERROR There is already a data with that province and year in the da tabase");
+                        color = "danger";
+                        checkMSG= "Ya existe una entrada en la base de datos con los datos introducidos";
+                    }
+                });	
+            }
+    }
 
     //DELETE SPECIFIC
     async function deleteSmokers(province, year) {
@@ -115,15 +144,15 @@
             if (res.status==200) {
                 totaldata--;
                 color = "success";
-                errorMSG = "Recurso "+province+" "+year+ " borrado correctamente";
+                checkMSG = "Recurso "+province+" "+year+ " borrado correctamente";
                 console.log("Deleted " + province);            
             } else if (res.status==404) {
                 color = "danger";
-                errorMSG = "No se ha encontrado el objeto" + province;
+                checkMSG = "No se ha encontrado el objeto " + province;
                 console.log("SUICIDE NOT FOUND");            
             } else {
                 color = "danger";
-                errorMSG= res.status + ": " + res.statusText;
+                checkMSG= res.status + ": " + res.statusText;
                 console.log("ERROR!");
             }      
         });
@@ -142,24 +171,23 @@
                     totaldata = 0;
 					getSmoker();
                     color = "success";
-					errorMSG="Datos eliminados correctamente";
+					checkMSG="Datos eliminados correctamente";
 					console.log("OK All data erased");
 				} else if (totaldata == 0){
                     console.log("ERROR Data was not erased");
                     color = "danger";
-					errorMSG= "¡No hay datos para borrar!";
+					checkMSG= "¡No hay datos para borrar!";
                 } else{
 					console.log("ERROR Data was not erased");
                     color = "danger";
-					errorMSG= "No se han podido eliminar los datos";
+					checkMSG= "No se han podido eliminar los datos";
 				}
 			});
 		}
 	}
-    //SEARCH
-    /*
     
-    */
+    
+    //SEARCH
     //getNextPage
     async function getNextPage() {
  
@@ -175,22 +203,23 @@
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
-        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
             color = "danger";
-			errorMSG= "¡No hay datos!";
+			checkMSG= "¡No hay datos!";
         }else if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             SmokerStats = json;
             console.log("Received " + SmokerStats.length + " resources.");
         } else {
-            errorMSG= res.status + ": " + res.statusText;
+            checkMSG= res.status + ": " + res.statusText;
             console.log("ERROR!");
         }
     }
+
     //getPreviewPage
     async function getPreviewPage() {
 
@@ -204,19 +233,19 @@
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
-        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
             color = "danger";
-			errorMSG= "¡No hay datos!";
+			checkMSG= "¡No hay datos!";
         }else if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             SmokerStats = json;
             console.log("Received "+SmokerStats.length+" resources.");
         } else {
-            errorMSG= res.status+": "+res.statusText;
+            checkMSG= res.status+": "+res.statusText;
             console.log("ERROR!");
         }
     }
@@ -231,21 +260,21 @@
     {:then SmokerStats}
     
     <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
-        {#if errorMSG}
-		    {errorMSG}
+        {#if checkMSG}
+		    {checkMSG}
 	    {/if}
     </Alert>
 
         <Table bordered responsive>
             <thead>
-                <tr>
+                <tr style ="text-align: center;">
                     <th>Comunidad Autónoma</th>
                     <th>Año</th>
-                    <th>Fumadores diarios </th>
-                    <th>Fumadores ocasionales </th>
-                    <th>Ex-fumadores </th>
-                    <th>No fumadores </th>
-                    <th>Acciones</th>
+                    <th>Fumadores diarios</th>
+                    <th>Fumadores ocasionales</th>
+                    <th>Ex-fumadores</th>
+                    <th>No fumadores</th>
+                    <th colspan="2">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -256,19 +285,19 @@
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.ocasionalSmoker}"></td>    
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.exSmoker}"></td>  
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.nonSmoker}"></td>  
-                    <td><Button outline color="primary" on:click={insertSmokers}>Insertar</Button></td>           
+                    <td colspan="2" style="text-align: center;"><Button outline color="primary" on:click={insertSmokers}>Insertar</Button></td>          
                 </tr>
  
                 {#each SmokerStats as sc}
                     <tr>
-                        <td><a href="#/smokers-stats/{sc.province}/{sc.year}">{sc.province}</a></td>
+                        <td><a href="api/v1/smokers-stats/{sc.province}/{sc.year}">{sc.province}</a></td>
                         <td>{sc.year}</td>
                         <td>{sc.dailySmoker}</td>
                         <td>{sc.ocasionalSmoker}</td>
                         <td>{sc.exSmoker}</td>
                         <td>{sc.nonSmoker}</td>
                         <td><Button outline color="danger" on:click="{deleteSmokers(sc.province, sc.year)}">Borrar</Button></td>
-                        
+                        <td><Button outline color="primary" on:click="{editSmokers(sc.province, sc.year)}">Editar</Button></td>
                     </tr>
                 {/each}
             </tbody>

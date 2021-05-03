@@ -6,10 +6,11 @@
 	import Home from "./front/Home.svelte";
   import Info from "./front/Info.svelte";
 	import Router from 'svelte-spa-router';
-  import LifeExpectancy from './lifeExpectancy.svelte';
+  import LifeExpectancy from './front/lifeExpectancy.svelte';
 	import TablaAlcohol from "./front/TablaAlcohol.svelte";
-  import SmokerStats from "./Smokers.svelte";
-  import FrontWeight from "./front/TablaWeights.svelte";
+  import SmokerStats from "./front/Smokers.svelte";
+  import FrontWeight from "./front/weightsStats/TablaWeights.svelte";
+  import EditWeight from "./front/weightsStats/EditWeight.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
 
 	const routes = {
@@ -18,6 +19,7 @@
 		"/alcohol-stats": TablaAlcohol,
     "/life-stats" : LifeExpectancy,
     "/weights-stats" : FrontWeight,
+    "/weights-stats/:provinces/:year" : EditWeight,
     "/smokers-stats" : SmokerStats,
 		'*': NotFound};
 </script>
