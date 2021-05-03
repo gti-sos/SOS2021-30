@@ -9,6 +9,7 @@
     let visible = false;
     let color = "danger";
     
+    //Variables
     let page = 1;
     let totaldata=13;
     let SmokerStats = [];
@@ -21,7 +22,6 @@
 		exSmoker:"",
         nonSmoker:""
 	}
-    
     let checkMSG = "";
     onMount(getSmoker);
  
