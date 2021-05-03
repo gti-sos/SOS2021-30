@@ -147,7 +147,7 @@
                 console.log("Deleted " + province);            
             } else if (res.status==404) {
                 color = "danger";
-                checkMSG = "No se ha encontrado el objeto" + province;
+                checkMSG = "No se ha encontrado el objeto " + province;
                 console.log("SUICIDE NOT FOUND");            
             } else {
                 color = "danger";
