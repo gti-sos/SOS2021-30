@@ -10,8 +10,8 @@
     let color = "danger";
     
     let page = 1;
-    let totaldata=13;
     let SmokerStats = [];
+    let totaldata=SmokerStats.length;
 	let newSmoker = {
         country: "España",
         province: "",
