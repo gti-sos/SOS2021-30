@@ -1,3 +1,8 @@
+<script>
+    import Button from "sveltestrap/src/Button.svelte";
+    import Table from "sveltestrap/src/Table.svelte"; 
+</script>
+
 <main>
     <h1>Equipo</h1>
     <li type="circle"><a href="https://github.com/Alesanmar">Alejandro Sánchez Márquez (life-expectancy-stats)</a></li>
@@ -21,17 +26,42 @@
     <li type="circle"><a href="https://sos2021-30.herokuapp.com/api/v1/alcohol-consumption-stats">https://sos2021-30.herokuapp.com/api/v1/alcohol-consumption-stats (developed by Víctor Caballero Sánchez)</a></li>
     
     <h1>DOCUMENTACIÓN POSTMAN DE LAS APIS</h1>
-    <li type="circle"><a href="https://documenter.getpostman.com/view/14968155/TzJsecsr">Documentación de los tests de Postman sobre la API life-expectancy-stats (developed by Alejandro Sánchez Márquez)</a></li>
-    <li type="circle"><a href="https://documenter.getpostman.com/view/14966429/TzJoFgHe">Documentación de los tests de Postman sobre la API smokers-Stats (developed by Juan Pedro Hurtado Masero)</a></li>
-    <li type="circle"><a href="https://documenter.getpostman.com/view/14975289/TzRLjpaY">Documentación de los tests de Postman sobre la API Weights-Stats (developed by Jesús Ruiz Domínguez)</a></li>
-    <li type="circle"><a href="https://documenter.getpostman.com/view/14942936/TzJsheDD">Documentación de los tests de Postman sobre la API alcohol-consumption-stats (developed by Víctor Caballero Sánchez)</a></li>
-
+    <Table bordered responsive>
+        <thead>
+          <tr>
+            <th>Desarrollador</th>
+            <th>API</th>
+            <th>Documentación</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alejandro Sánchez Márquez</td>
+                <td>API life-expectancy-stats</td>
+                <td><a href="https://documenter.getpostman.com/view/14968155/TzJsecsr"><Button color="info">Documentación v1</Button></a></td>
+            </tr>
+            <tr>
+                <td>Juan Pedro Hurtado Masero</td>
+                <td>API smokers-Stats</td>
+                <td><a href="https://documenter.getpostman.com/view/14966429/TzJoFgHe"><Button color="info">Documentación v1</Button></a></td>
+            </tr>
+            <tr>
+                <td>Jesús Ruiz Domínguez</td>
+                <td>API Weights-Stats</td>
+                <td><a href="https://documenter.getpostman.com/view/14975289/TzRLjpaY"><Button color="info">Documentación v1</Button></a>
+                    <a href="https://documenter.getpostman.com/view/14975289/TzRLnWWU"><Button color="info">Documentación v2</Button></a></td>
+            </tr>
+            <tr>
+                <td>Víctor Caballero Sánchez</td>
+                <td>API alcohol-consumption-stats</td>
+                <td><a href="https://documenter.getpostman.com/view/14942936/TzJsheDD"><Button color="info">Documentación v1</Button></a></td>
+            </tr>
+        </tbody>
+    </Table>
+    
     <h1>Enlaces Front-End</h1>
     <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/life-stats">Front-End API life-expectancy-stats</a></li>
     <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/alcohol-stats">Front-End API alcohol-consumption-stats</a></li>
     <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/weights-stats">Front-End API weight-stats</a></li>
     <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/smokers-stats">Front-End API smokers-stats</a></li>
-
-
 
 </main>

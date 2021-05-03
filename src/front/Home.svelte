@@ -10,8 +10,7 @@
         ¿influye el imc o el consumo de alcohol y tabaco en la evolución de la esperanza de vida?¿Influye la situación 
         geográfica, edad, género en el consumo de alcohol y tabaco?
     </body>
-    <a href="./#/info">
-        <Button color="info">Descubre más!</Button></a>
+    <a href="./#/info"><Button color="info">Descubre más!</Button></a>
 </main>
 
 <style>
