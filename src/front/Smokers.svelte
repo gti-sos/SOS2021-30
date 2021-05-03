@@ -24,7 +24,6 @@
     
     let errorMSG = "";
     onMount(getSmoker);
-    totaldata=SmokerStats.length
  
     //GET
     async function getSmoker() {
@@ -52,7 +51,8 @@
             console.log("Ok:");
             const json = await res.json();
             SmokerStats = json;
-            totaldata=13;
+            totaldata=SmokerStats.length;
+            console.log("Mecagoen hay "+SmokerStats.length+" datos");
             console.log("Received " + SmokerStats.length + " Smokers data.");
             color = "success";
             errorMSG = "Datos cargados correctamente";
