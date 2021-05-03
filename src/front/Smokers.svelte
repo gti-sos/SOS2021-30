@@ -260,8 +260,11 @@
     {:then SmokerStats}
     
     <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
-        {#if errorMSG || validMSG}
-		    {errorMSG, validMSG}
+        {#if errorMSG}
+		    {errorMSG}
+        {/if}
+        {#if validMSG}
+            {validMSG}
 	    {/if}
     </Alert>
 
@@ -270,11 +273,11 @@
                 <tr style ="text-align: center;">
                     <th>Comunidad Autónoma</th>
                     <th>Año</th>
-                    <th>Fumadores diarios </th>
-                    <th>Fumadores ocasionales </th>
-                    <th>Ex-fumadores </th>
-                    <th>No fumadores </th>
-                    <th colspan="2" >Acciones</th>
+                    <th>Fumadores diarios</th>
+                    <th>Fumadores ocasionales</th>
+                    <th>Ex-fumadores</th>
+                    <th>No fumadores</th>
+                    <th colspan="2">Acciones</th>
                 </tr>
             </thead>
             <tbody>
