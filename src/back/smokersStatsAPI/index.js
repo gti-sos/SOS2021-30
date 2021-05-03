@@ -127,6 +127,7 @@ module.exports.register = (app) => {
         }
     ];
 
+    //inserta en la bd
     db.insert(smokersStats);
 /*--------------------fin constructor-----------------------*/
 
