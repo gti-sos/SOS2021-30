@@ -4,7 +4,7 @@
     import Table from "sveltestrap/src/Table.svelte"; 
 	import Button from "sveltestrap/src/Button.svelte";
 
-    var BASE_WEIGHTS_PATH = "/api/v1/table-weights-stats";
+    var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
     export let params = {};
     let weightsStats = {};
     let uptadatedNormalWeight = null;

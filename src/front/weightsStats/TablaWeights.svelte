@@ -9,7 +9,7 @@
 	import { pop } from "svelte-spa-router";
     import { get } from "svelte/store";
 
-    var BASE_WEIGHTS_PATH = "/api/v1/table-weights-stats";
+    var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
     let weightsStats = [];
     let newWeight = {
         provinces: "",

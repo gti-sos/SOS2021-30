@@ -16,8 +16,11 @@ alcoholAPI.register(app);
 //---------------------------END: API REST ALCOHOL-CONSUMPTION-STATS-----------------
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
-var weightsStatsAPI = require("./src/back/weightsStatsAPI");
+var weightsStatsAPI = require("./src/back/weightsStatsAPI/v1");
 weightsStatsAPI.register(app);
+
+var weightsStatsAPIv2 = require("./src/back/weightsStatsAPI/v2");
+weightsStatsAPIv2.register(app);
 //~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
 //--------------------------- API REST SMOKERS-CONSUMPTION-STATS-----------------
