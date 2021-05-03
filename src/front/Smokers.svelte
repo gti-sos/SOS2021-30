@@ -44,7 +44,7 @@
     //GET INITIALDATA
     async function loadInitialData() {
  
-        console.log("Fetching employment data...");
+        console.log("Fetching smokers data...");
         await fetch("/api/v1/smokers-stats/loadInitialData");
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0");
         if (res.ok) {
@@ -68,7 +68,7 @@
         console.log("Inserting smokers data...");
         //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
         if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
-            alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
+            alert("Los campos 'Comunidad Autónoma' y 'Año' no pueden estar vacios");
         } else{
             const res = await fetch("/api/v1/smokers-stats",{
                 method:"POST",
@@ -103,9 +103,9 @@
 
          //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
         if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
-            alert("Los campos 'Provincia' y 'Año' no pueden estar vacíos");
+            alert("Los campos 'Comunidad Autónoma' y 'Año' no pueden estar vacíos");
         }else if (province != newSmoker.province || year != newSmoker.year){
-            alert("Los campos 'Provincia' y 'Año' no pueden ser distintos");
+            alert("Los campos 'Comunidad Autónoma' y 'Año' no pueden ser distintos");
         }else{
             const res = await fetch("/api/v1/smokers-stats/" + province + "/" + year, {
                     method:"PUT",
@@ -289,7 +289,7 @@
  
                 {#each SmokerStats as sc}
                     <tr>
-                        <td><a href="#/smokers-stats/{sc.province}/{sc.year}">{sc.province}</a></td>
+                        <td><a href="api/v1/smokers-stats/{sc.province}/{sc.year}">{sc.province}</a></td>
                         <td>{sc.year}</td>
                         <td>{sc.dailySmoker}</td>
                         <td>{sc.ocasionalSmoker}</td>
@@ -307,10 +307,10 @@
         <Button color="danger" on:click="{deleteALL}">
             Eliminar todo
         </Button>
-        <Button style ="align: right" outline color="primary" on:click="{getPreviewPage}">
+        <Button outline color="primary" on:click="{getPreviewPage}">
            Atrás
         </Button>
-        <Button style ="align: right" outline color="primary" on:click="{getNextPage}">
+        <Button outline color="primary" on:click="{getNextPage}">
             Siguiente
          </Button>
          
