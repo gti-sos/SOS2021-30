@@ -22,8 +22,7 @@
         nonSmoker:""
 	}
     
-    let errorMSG = "";
-    let validMSG = "";
+    let checkMSG = "";
     onMount(getSmoker);
  
     //GET
@@ -37,7 +36,7 @@
             SmokerStats = json;
             console.log("Received " + SmokerStats.length + " Smokers Data.");
         } else {
-            errorMSG= res.status + ": " + res.statusText;
+            checkMSG= res.status + ": " + res.statusText;
             console.log("ERROR!");
         }
     }
@@ -55,10 +54,10 @@
             totaldata=13;
             console.log("Received " + SmokerStats.length + " Smokers data.");
             color = "success";
-            validMSG = "Datos cargados correctamente";
+            checkMSG = "Datos cargados correctamente";
         } else {
             color = "danger";
-            errorMSG= res.status + ": " + res.statusText;
+            checkMSG= res.status + ": " + res.statusText;
             console.log("ERROR!");
         }
     }
@@ -84,15 +83,15 @@
                     totaldata++;
                     console.log("Data introduced");
                     color = "success";
-                    validMSG="Entrada introducida correctamente a la base de datos";
+                    checkMSG="Entrada introducida correctamente a la base de datos";
                 }else if(res.status == 400){
                     console.log("ERROR Data was not correctly introduced");
                     color = "danger";
-                    errorMSG= "Los datos de la entrada no fueron introducidos correctamente";
+                    checkMSG= "Los datos de la entrada no fueron introducidos correctamente";
                 }else if(res.status == 409){
                     console.log("ERROR There is already a data with that province and year in the da tabase");
                     color = "danger";
-                    errorMSG= "Ya existe una entrada en la base de datos con la provincia y el año introducido";
+                    checkMSG= "Ya existe una entrada en la base de datos con la provincia y el año introducido";
                 }
             });	
         }
@@ -120,15 +119,15 @@
                         getSmoker();
                         console.log("Data updated");
                         color = "success";
-                        validMSG ="Entrada modificada correctamente en la base de datos";
+                        checkMSG ="Entrada modificada correctamente en la base de datos";
                     }else if(res.status == 400){
                         console.log("ERROR Data was not correctly introduced");
                         color = "danger";
-                        errorMSG= "Los datos de la entrada no fueron introducidos correctamente";
+                        checkMSG= "Los datos de la entrada no fueron introducidos correctamente";
                     }else if(res.status == 409){
                         console.log("ERROR There is already a data with that province and year in the da tabase");
                         color = "danger";
-                        errorMSG= "Ya existe una entrada en la base de datos con los datos introducidos";
+                        checkMSG= "Ya existe una entrada en la base de datos con los datos introducidos";
                     }
                 });	
             }
@@ -144,15 +143,15 @@
             if (res.status==200) {
                 totaldata--;
                 color = "success";
-                validMSG = "Recurso "+province+" "+year+ " borrado correctamente";
+                checkMSG = "Recurso "+province+" "+year+ " borrado correctamente";
                 console.log("Deleted " + province);            
             } else if (res.status==404) {
                 color = "danger";
-                errorMSG = "No se ha encontrado el objeto" + province;
+                checkMSG = "No se ha encontrado el objeto" + province;
                 console.log("SUICIDE NOT FOUND");            
             } else {
                 color = "danger";
-                errorMSG= res.status + ": " + res.statusText;
+                checkMSG= res.status + ": " + res.statusText;
                 console.log("ERROR!");
             }      
         });
@@ -171,16 +170,16 @@
                     totaldata = 0;
 					getSmoker();
                     color = "success";
-					validMSG="Datos eliminados correctamente";
+					checkMSG="Datos eliminados correctamente";
 					console.log("OK All data erased");
 				} else if (totaldata == 0){
                     console.log("ERROR Data was not erased");
                     color = "danger";
-					errorMSG= "¡No hay datos para borrar!";
+					checkMSG= "¡No hay datos para borrar!";
                 } else{
 					console.log("ERROR Data was not erased");
                     color = "danger";
-					errorMSG= "No se han podido eliminar los datos";
+					checkMSG= "No se han podido eliminar los datos";
 				}
 			});
 		}
@@ -203,19 +202,19 @@
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
-        validMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
             color = "danger";
-			errorMSG= "¡No hay datos!";
+			checkMSG= "¡No hay datos!";
         }else if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             SmokerStats = json;
             console.log("Received " + SmokerStats.length + " resources.");
         } else {
-            errorMSG= res.status + ": " + res.statusText;
+            checkMSG= res.status + ": " + res.statusText;
             console.log("ERROR!");
         }
     }
@@ -233,19 +232,19 @@
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
-        validMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
             color = "danger";
-			errorMSG= "¡No hay datos!";
+			checkMSG= "¡No hay datos!";
         }else if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             SmokerStats = json;
             console.log("Received "+SmokerStats.length+" resources.");
         } else {
-            errorMSG= res.status+": "+res.statusText;
+            checkMSG= res.status+": "+res.statusText;
             console.log("ERROR!");
         }
     }
@@ -260,10 +259,8 @@
     {:then SmokerStats}
     
     <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
-        {#if errorMSG}
-		    {errorMSG}
-        {:else if validMSG}
-            {validMSG}
+        {#if checkMSG}
+		    {checkMSG}
 	    {/if}
     </Alert>
 
