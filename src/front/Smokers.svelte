@@ -46,13 +46,14 @@
  
         console.log("Fetching smokers data...");
         await fetch("/api/v1/smokers-stats/loadInitialData");
+        totaldata = SmokerStats.length;
+        console.log("Sabe uste que hay "+totaldata+" cosas saben")
         const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             SmokerStats = json;
-            totaldata=SmokerStats.length;
-            console.log("Mecagoen hay "+SmokerStats.length+" datos");
+            totaldata=13;
             console.log("Received " + SmokerStats.length + " Smokers data.");
             color = "success";
             errorMSG = "Datos cargados correctamente";
