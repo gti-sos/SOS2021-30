@@ -99,7 +99,6 @@
     
     //EDIT
     async function editSmokers(province, year){
-        console.log("Editing smokers data...");
 
          //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
         if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
@@ -107,6 +106,8 @@
         }else if (province != newSmoker.province || year != newSmoker.year){
             alert("Los campos 'Comunidad Autónoma' y 'Año' no pueden ser distintos");
         }else{
+            
+            console.log("Editing smokers data...");
             const res = await fetch("/api/v1/smokers-stats/" + province + "/" + year, {
                     method:"PUT",
                     body:JSON.stringify(newSmoker),
@@ -116,8 +117,8 @@
                 }).then(function (res) {
                     visible=true;
                     if (res.status == 200){
-                        getSmoker();
                         console.log("Data updated");
+                        getSmoker();
                         color = "success";
                         checkMSG ="Entrada modificada correctamente en la base de datos";
                     }else if(res.status == 400){
