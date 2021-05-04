@@ -11,6 +11,7 @@
         geográfica, edad, género en el consumo de alcohol y tabaco?
     </body>
     <a href="./#/info"><Button color="info">Descubre más!</Button></a>
+
 </main>
 
 <style>
@@ -21,6 +22,6 @@
     }
 
     h1{
-        color: rgb(73, 151, 214);
+        color: rgb(24, 112, 184);
     }
 </style>

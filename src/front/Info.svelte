@@ -16,9 +16,9 @@
         ¿Influye la situación geográfica, edad, género en el consumo de alcohol y tabaco?</p>
 
     <h1>Repositorio</h1>
-    <a href="https://github.com/gti-sos/SOS2021-30">gti-sos/SOS2021-30</a>
-    <h1>Url</h1>
-    <a href="http://sos2021-30.herokuapp.com">http://sos2021-30.herokuapp.com</a>
+    <a href="https://github.com/gti-sos/SOS2021-30"><Button color="info">gti-sos/SOS2021-30</Button></a>
+    <h1>URL</h1>
+    <a href="http://sos2021-30.herokuapp.com"><Button color="info">http://sos2021-30.herokuapp.com</Button></a>
     <h1>APIS</h1>
     <li type="circle"><a href="https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats">https://sos2021-30.herokuapp.com/api/v1/life-expectancy-stats (developed by Alejandro Sánchez Márquez)</a></li>    
     <li type="circle"><a href="https://sos2021-30.herokuapp.com/api/v1/smokers-stats">https://sos2021-30.herokuapp.com/api/v1/smokers-stats (developed by Juan Pedro Hurtado Masero)</a></li>    
@@ -58,10 +58,36 @@
         </tbody>
     </Table>
     
-    <h1>Enlaces Front-End</h1>
-    <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/life-stats">Front-End API life-expectancy-stats</a></li>
-    <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/alcohol-stats">Front-End API alcohol-consumption-stats</a></li>
-    <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/weights-stats">Front-End API weight-stats</a></li>
-    <li type="circle"><a href="http://sos2021-30.herokuapp.com/#/smokers-stats">Front-End API smokers-stats</a></li>
+    <h1>ENLACES FRONT-END</h1>
+    <Table bordered responsive>
+        <thead>
+          <tr>
+            <th>Desarrollador</th>
+            <th>Front-End</th>
+            <th>Enlace</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alejandro Sánchez Márquez</td>
+                <td>Front-End API life-expectancy-stats</td>
+                <td><a href="http://sos2021-30.herokuapp.com/#/life-stats"><Button color="info">life-expectancy-stats</Button></a></td>
+            </tr>
+            <tr>
+                <td>Juan Pedro Hurtado Masero</td>
+                <td>Front-End API smokers-stats</td>
+                <td><a href="http://sos2021-30.herokuapp.com/#/smokers-stats"><Button color="info">smokers-stats</Button></a></td>
+            </tr>
+            <tr>
+                <td>Jesús Ruiz Domínguez</td>
+                <td>Front-End API weight-stats</td>
+                <td><a href="http://sos2021-30.herokuapp.com/#/weights-stats"><Button color="info">weight-stats</Button></a></td>
+            </tr>
+            <tr>
+                <td>Víctor Caballero Sánchez</td>
+                <td>Front-End API alcohol-consumption-stats</td>
+                <td><a href="http://sos2021-30.herokuapp.com/#/alcohol-stats"><Button color="info">alcohol-consumption-stats</Button></a></td>
+            </tr>
+        </tbody>
+    </Table>
 
 </main>
