@@ -28,34 +28,40 @@
 
     //Get initialData
 
-    async function getLifeExpectancy(){
-        console.log("Fetching resources...");
-        const res = await fetch("/api/v1/life-expectancy-stats/loadInitialData");
-
-        if(res.ok){
-            console.log("Ok.");
+    async function getLifeExpectancy() {
+ 
+        console.log("Fetching life data...");
+        await fetch("/api/v1/life-expectancy-stats/loadInitialData");
+        const res = await fetch("/api/v1/life-expectancy-stats");
+        if (res.ok) {
+            console.log("Ok:");
             const json = await res.json();
             LifeExpectancyStats = json;
-            console.log(`We have received ${LifeExpectancyStats.lenght} resources`);
-        }else{
-            console.log("Error!");
+            totaldata=3;
+            console.log("Received " + LifeExpectancyStats.length + " life data.");
+            color = "success";
+            checkMSG = "Datos cargados correctamente";
+        } else {
+            color = "danger";
+            checkMSG= res.status + ": " + res.statusText;
+            console.log("ERROR!");
         }
-    }
+        }
 
 
     
     //Get
         async function getLife() {
             console.log("Fetching resources...");
-            const res = await fetch("/api/v1/life-expectancy-stats?limit=5&offset=0");
+            const res = await fetch("/api/v1/life-expectancy-stats");
             if (res.ok) {
                 console.log("Ok:");
                 const json = await res.json();
                 LifeExpectancyStats = json;
                 console.log("Received " + LifeExpectancyStats.length + " Life Data.");
             } else {
-                checkMSG= res.status + ": " + res.statusText;
-                console.log("ERROR!");
+                checkMSG= res.status + ": Recursos no encontrados ";
+                console.log("ERROR! no encontrado");
             }
         }
 
@@ -155,7 +161,7 @@
             } else if (res.status==404) {
                 color = "danger";
                 checkMSG = "No se ha encontrado el objeto " + province;
-                console.log("SUICIDE NOT FOUND");            
+                console.log("Resource NOT FOUND");            
             } else {
                 color = "danger";
                 checkMSG= res.status + ": " + res.statusText;
