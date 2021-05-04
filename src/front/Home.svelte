@@ -1,6 +1,5 @@
 <script>
     import Button from "sveltestrap/src/Button.svelte";
-
 </script>
 
 <main>
@@ -11,7 +10,6 @@
         geográfica, edad, género en el consumo de alcohol y tabaco?
     </body>
     <a href="./#/info"><Button color="info">Descubre más!</Button></a>
-
 </main>
 
 <style>
