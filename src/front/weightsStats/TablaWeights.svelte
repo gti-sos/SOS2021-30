@@ -2,15 +2,14 @@
 	import { onMount } from "svelte";
 	import Table from "sveltestrap/src/Table.svelte"; 
 	import Button from "sveltestrap/src/Button.svelte";
-	import { Pagination, PaginationItem, PaginationLink } from 'sveltestrap';
-	import { Form, FormGroup, FormText, Input, Label } from 'sveltestrap';
 	import { Alert } from 'sveltestrap';
-    import { UncontrolledCollapse, Collapse, CardBody, Card } from "sveltestrap";
-	import { pop } from "svelte-spa-router";
-    import { get } from "svelte/store";
-
-    var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
-    let weightsStats = [];
+    
+	
+    let visible = false;
+    let color = "danger";
+    let page = 1;
+    let totaldata=9;
+    let weightStats = [];
     let newWeight = {
         provinces: "",
         year: "",
@@ -18,136 +17,132 @@
         overweight: "",
         obesity:""
     }
-    let isOpen = false;
-    let busquedas = BASE_WEIGHTS_PATH;
-    let visible = false;
-    let color = "danger";
-    let page = 1;
-    let totaldata = weightsStats.length;
-    let errorMSG = "";
-    let okayMSG = "";    
+	let checkMSG = "";
+    var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
+    
     onMount(getStats);
-
-    //Función LOADINITIAL para generar datos iniciales
-    async function loadInitialData() { 
-        console.log("Fetching data...");
-        await fetch(BASE_WEIGHTS_PATH + "/loadInitialData");
-        const res = await fetch(BASE_WEIGHTS_PATH + "?limit=100&offset=0");
+ 
+    //Función GET para listar los recursos
+    async function getStats() { 
+        console.log("Fetching Data...");
+        const res = await fetch(BASE_WEIGHTS_PATH + "?limit=10&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
-            weightsStats = json;
-            totaldata = weightsStats.length;
-            console.log("Received " + weightsStats.length + " datas.");
-            color = "success";
-            errorMSG = "Datos cargados correctamente";
+            weightStats = json;
+            console.log("Received " + weightStats.length + " weight Data.");
         } else {
-            color = "danger";
-            errorMSG= res.status + ": " + res.statusText;
+            checkMSG= res.status + ": " + res.statusText;
             console.log("ERROR!");
         }
     }
-
-    //Función GET para mostrar todos los datos
-    async function getStats(){
-        console.log("Fetching stats...");
-        const res= await fetch(BASE_WEIGHTS_PATH + "?limit=100&offset=0");
-        if(res.ok){
-            console.log("ok");
-            const json= await res.json();
-            weightsStats=json;
-            console.log(`We have received ${weightsStats.length} alcohol stats`);
-        }else{
-            console.log("Error")
+ 
+    //Función LOADINITIALDATA para cargar los datos iniciales
+    async function loadInitialData() { 
+        console.log("Fetching data...");
+        await fetch(BASE_WEIGHTS_PATH + "/loadInitialData");
+        const res = await fetch(BASE_WEIGHTS_PATH + "?limit=10&offset=0");
+        if (res.ok) {
+            console.log("Ok:");
+            const json = await res.json();
+            weightStats = json;
+            totaldata=13;
+            console.log("Received " + weightStats.length + " weight data.");
+            color = "success";
+            checkMSG = "Datos cargados correctamente";
+        } else {
+            color = "danger";
+            checkMSG= res.status + ": " + res.statusText;
+            console.log("ERROR!");
         }
     }
+    
+    //Función POST para añadir nuevos recursos  
+    async function insertWeight(){		 
+        console.log("Inserting data...");
+        if (newWeight.year == "" || newWeight.year == null || newWeight.provinces == "") {
+            alert("Los campos 'Comunidad Autónoma' y 'Año' no pueden estar vacios");
+        } else{
+            const res = await fetch(BASE_WEIGHTS_PATH,{
+                method:"POST",
+                body:JSON.stringify(newWeight),
+                headers:{
+                    "Content-Type": "application/json"
+                }
+            }).then(function (res) {
+                visible=true;
+                if (res.status == 201){
+                    getStats();
+                    totaldata++;
+                    console.log("Data introduced");
+                    color = "success";
+                    checkMSG="Entrada introducida correctamente a la base de datos";
+                }else if(res.status == 400){
+                    console.log("ERROR Data was not correctly introduced");
+                    color = "danger";
+                    checkMSG= "Los datos de la entrada no fueron introducidos correctamente";
+                }else if(res.status == 409){
+                    console.log("ERROR There is already a data with that province and year in the da tabase");
+                    color = "danger";
+                    checkMSG= "Ya existe una entrada en la base de datos con la provincia y el año introducido";
+                }
+            });	
+        }
+    }    
+    
+    //Función DELETE para eliminar un recurso específico
+    async function deleteWeights(province, year) {
+        const res = await fetch(BASE_WEIGHTS_PATH + "/" + province + "/" + year, {
+            method: "DELETE"
+        }).then(function (res) {
+            visible = true;
+            getStats();      
+            if (res.status==200) {
+                totaldata--;
+                color = "success";
+                checkMSG = "Recurso "+province+" "+year+ " borrado correctamente";
+                console.log("Deleted " + province);            
+            } else if (res.status==404) {
+                color = "danger";
+                checkMSG = "No se ha encontrado el objeto " + province;
+                console.log("SUICIDE NOT FOUND");            
+            } else {
+                color = "danger";
+                checkMSG= res.status + ": " + res.statusText;
+                console.log("ERROR!");
+            }      
+        });
+    }
 
-    //Función DELETE para eliminar todos los datos
+    //Función DELETE para eliminar todos los recursos
     async function deleteALL() {
-		console.log("Deleting weights data...");
+		console.log("Deleting all weights data...");
 		if (confirm("¿Está seguro de que desea eliminar todas las entradas?")){
 			console.log("Deleting all weights data...");
 			const res = await fetch(BASE_WEIGHTS_PATH, {
 				method: "DELETE"
-			}).then( (res) => {
-                visible = true;
-                if(res.ok && totaldata > 0){
+			}).then(function (res) {
+                visible=true;
+				if (res.ok && totaldata>0){
                     totaldata = 0;
-                    getStats();
-                    color = "succes"; 
-                    errorMSG = "Datos eliminados correctamente";
-                    console.log("OK all data have been deleted");
-                }else if(totaldata == 0){
-                    console.log("error");
+					getStats();
+                    color = "success";
+					checkMSG="Datos eliminados correctamente";
+					console.log("OK All data erased");
+				} else if (totaldata == 0){
+                    console.log("ERROR Data was not erased");
                     color = "danger";
-                    errorMSG = "No hay datos para borrar";
-                }else{
-                    console.log("error");
+					checkMSG= "¡No hay datos para borrar!";
+                } else{
+					console.log("ERROR Data was not erased");
                     color = "danger";
-                    errorMSG = "No se han podido elminar los datos";
-                }
-            })
+					checkMSG= "No se han podido eliminar los datos";
+				}
+			});
 		}
-	}
-
-    //Función DELETE para elminar dato específico
-    async function deleteWeights(provinces, year) {
-        const res = await fetch(BASE_WEIGHTS_PATH + "/" + provinces + "/" + year, {
-            method: "DELETE"
-        }).then( (res) => {
-            visible = true;
-            getStats();
-            if(res.status == 200){
-                totaldata--;
-                color = "succes";
-                errorMSG = "recurso eliminado"
-                console.log("recurso eliminado");
-            }else if(res.status == 404){
-                color = "danger";
-                errorMSG = "no se ha encontrado el recurso";
-                console.log("error");
-            }else{
-                color = "danger";
-                errorMSG = "error"
-                console.log("error");
-            }
-        })
-    }
-
-    //Función POST para insertar un nuevo dato
-    async function insertWeight(){
-        console.log("Inserting weights data...");
-         if (newWeight.year == "" || newWeight.year == null || newWeight.provinces == "") {
-             alert("Los campos 'Provincia' y 'Año' no pueden estar vacios");
-         } else{
-             const res = await fetch(BASE_WEIGHTS_PATH,{
-             method:"POST",
-             body:JSON.stringify(newWeight),
-             headers:{
-                 "Content-Type": "application/json"
-             }
-             }).then( (res) => {
-                visible = true;
-                if(res.status == 201){
-                    getStats();
-                    totaldata++;
-                    console.log("Data introduced");
-                    color = "succes";
-                    errorMSG= "Entrada correcta";
-                }else if(res.status ==400){
-                    console.log("ERROR");
-                    color = "danger";
-                    errorMSG = "Los datos no fueron introducidos";
-                }else if(res.status == 409){
-                    console.log("error");
-                    color = "danger";
-                    errorMSG = "Ya existe esa entrada";
-                }
-             });	
-         }
-    }
-
-    /*
+	}    
+    
+    //Función SEARCH para la paginación
     //getNextPage
     async function getNextPage() { 
         console.log(totaldata);
@@ -155,65 +150,70 @@
             page = 1
         } else {
             page+=5
-        }        
+        }
+        
         visible = true;
         console.log("Charging page... Listing since: "+page);
         const res = await fetch(BASE_WEIGHTS_PATH + "?limit=5&offset="+(-1+page));
-        //condicional imprime msg
         color = "success";
-        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
             color = "danger";
-            errorMSG= "¡No hay datos!";
+			checkMSG= "¡No hay datos!";
         }else if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             weightStats = json;
             console.log("Received " + weightStats.length + " resources.");
         } else {
-            errorMSG= res.status + ": " + res.statusText;
+            checkMSG= res.status + ": " + res.statusText;
             console.log("ERROR!");
         }
     }
 
     //getPreviewPage
     async function getPreviewPage() {
+
         console.log(totaldata);
         if (page-5 > 1) {
             page-=5; 
         } else page = 1
+
         visible = true;
         console.log("Charging page... Listing since: "+page);
         const res = await fetch(BASE_WEIGHTS_PATH + "?limit=5&offset="+(-1+page));
-        //condicional imprime msg
         color = "success";
-        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
             color = "danger";
-            errorMSG= "¡No hay datos!";
+			checkMSG= "¡No hay datos!";
         }else if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             weightStats = json;
             console.log("Received "+weightStats.length+" resources.");
         } else {
-            errorMSG= res.status+": "+res.statusText;
+            checkMSG= res.status+": "+res.statusText;
             console.log("ERROR!");
         }
-    }*/
-
+    }
+    
 </script>
 
 <main>
     <h1 style ="text-align: center;">Tabla sobre el IMC por comunidades</h1>
 
+    {#await weightStats}
+        Loading smokers data...
+    {:then weightStats}
+
     <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
-        {#if errorMSG}
-		    {errorMSG}
+        {#if checkMSG}
+		    {checkMSG}
 	    {/if}
     </Alert>
 
@@ -237,7 +237,7 @@
                 <td><input type = "number" placeholder="0000" bind:value="{newWeight.obesity}"></td>
                 <td><Button on:click={insertWeight}>Insertar</Button></td>
             </tr>
-            {#each weightsStats as weightsStat}
+            {#each weightStats as weightsStat}
                 <tr>
                     <td><a href="#/weights-stats/{weightsStat.provinces}/{weightsStat.year}">{weightsStat.provinces}</td>
                     <td>{weightsStat.year}</td>
@@ -257,5 +257,13 @@
     <Button color="danger" on:click="{deleteALL}">
         Eliminar todos los datos
     </Button>
+    <Button outline color="primary" on:click="{getPreviewPage}">
+        Atrás
+     </Button>
+     <Button outline color="primary" on:click="{getNextPage}">
+         Siguiente
+      </Button>
+
+    {/await}
  
 </main>
