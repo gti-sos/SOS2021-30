@@ -22,9 +22,14 @@ import { } from "node:os";
     }
     let s_provinces= [];
     let current_province = "-";
-    let current_year = "";
 	let checkMSG = "";
     var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
+
+    let sProvince = "";
+    let sYear = "";
+    let sNormalWeight = "";
+    let sOverWeight = "";
+    let sObesity = "";
     
     onMount(getStats);
  
@@ -152,6 +157,37 @@ import { } from "node:os";
 			});
 		}
 	} 
+
+    //FUNCION DE BUSQUEDA COMPLETA
+    async function busqueda (sProvince, sYear, sNormalWeight, sOverWeight, sObesity){
+		if(typeof sProvince=='undefined'){
+			sProvince="";
+		}
+		if(typeof sYear=='undefined'){
+			sYear="";
+		}
+		if(typeof sNormalWeight=='undefined'){
+			sNormalWeight="";
+		}
+		if(typeof sOverWeight=='undefined'){
+			sOverWeight="";
+		}
+		if(typeof sObesity=='undefined'){
+			sObesity="";
+		}
+		const res = await fetch(BASE_WEIGHTS_PATH + "?provinces="+sProvince+"&year="+sYear+"&normal_weight="+sNormalWeight+"&overwight="+sOverWeight+"obesity="+sObesity)
+		if (res.ok){
+			const json = await res.json();
+			weightStats = json;
+			console.log("Found "+ weightStats.length + " data");
+			
+			if(weightStats.length==1){
+				checkMSG = "Se ha encontrado " + weightStats.length + " piloto";
+			}else{
+				checkMSG = "Se han encontrado " + weightStats.length + " pilotos";
+			}
+	    }
+    }
 
     //Función de busqueda por comunidades
     async function searchProvinces(provinces){
@@ -303,31 +339,46 @@ import { } from "node:os";
         </tbody>
     </Table>
 
+    <h4 style="text-align:center"><strong>Búsqueda general de parámetros</strong></h4>
+
     <Table>
         <th>Búsqueda por comunidad autónoma</th>
         <th>Búsqueda por año</th>
+        <th>Búsqueda por estadística de peso normal</th>
+        <th>Búsqueda por estadística de sobrepeso</th>
+        <th>Búsqueda por estadística de obesidad</th>
         <tr>
-            <td>
-                <FormGroup>
-                        <Input type="select" name="selectProvince" id="selectProvince" bind:value="{current_province}">
-                            {#each s_provinces as comunidad}
-                                <option>{comunidad}</option>
-                            {/each}
-                                <option>-</option>
-                        </Input>
-                </FormGroup>
-                <Button outline color="secondary" on:click="{searchProvinces(current_province)}">Buscar</Button>
-            </td>
-            <td><input type = "number" placeholder="2075" bind:value="{current_year}">
-                <Button outline color="secondary" on:click="{searchYear(current_year)}">Buscar</Button>
-            </td>
-
+            <td><input type = "text" placeholder="Comunidad autónoma" bind:value="{sProvince}"></td>
+            <td><input type = "number" placeholder="2075" bind:value="{sYear}"></td>
+            <td><input type = "number" placeholder="0000" bind:value="{sNormalWeight}"></td>
+            <td><input type = "number" placeholder="0000" bind:value="{sOverWeight}"></td>
+            <td><input type = "number" placeholder="0000" bind:value="{sObesity}"></td>
         </tr>
     </Table>
 
+    <div style="text-align:center">
+        <Button outline color="primary" on:click="{busqueda (sProvince, sYear, sNormalWeight, sOverWeight, sObesity)}">Buscar</Button>
+    </div>
+
+    <h4 style="text-align:center"><strong>Búsqueda específica por Comunidad Autónoma</strong></h4>
+
+    <p align="center">            
+        <FormGroup>
+                <Input type="select" name="selectProvince" id="selectProvince" bind:value="{current_province}">
+                    {#each s_provinces as comunidad}
+                        <option>{comunidad}</option>
+                    {/each}
+                        <option>-</option>
+                </Input>
+            </FormGroup>
+            <Button outline color="primary" on:click="{searchProvinces(current_province)}">Busca tu comunidad autónoma!</Button>
+    </p>
+
+
+
     <p align="center">   
-        <Button outline color="primary" on:click="{getPreviewPage}">Atrás</Button>
-        <Button outline color="primary" on:click="{getNextPage}">Siguiente</Button>
+        <Button color="primary" on:click="{getPreviewPage}">Atrás</Button>
+        <Button color="primary" on:click="{getNextPage}">Siguiente</Button>
     </p>
 
     <Button color="success" on:click="{loadInitialData}">
