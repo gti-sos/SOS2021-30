@@ -2,7 +2,10 @@
 	import { onMount } from "svelte";
 	import Table from "sveltestrap/src/Table.svelte"; 
 	import Button from "sveltestrap/src/Button.svelte";
+    import Input from "sveltestrap/src/Input.svelte";
+	import FormGroup from "sveltestrap/src/FormGroup.svelte";
 	import { Alert } from 'sveltestrap';
+import { } from "node:os";
     
 	
     let visible = false;
@@ -17,6 +20,9 @@
         overweight: "",
         obesity:""
     }
+    let s_provinces= [];
+    let current_province = "-";
+    let current_year = "";
 	let checkMSG = "";
     var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
     
@@ -30,6 +36,11 @@
             console.log("Ok:");
             const json = await res.json();
             weightStats = json;
+
+            s_provinces = json.map((d) =>{
+                return d.provinces;
+            });
+            s_provinces = Array.from(new Set(s_provinces));
             console.log("Received " + weightStats.length + " weight Data.");
         } else {
             checkMSG= res.status + ": " + res.statusText;
@@ -140,10 +151,49 @@
 				}
 			});
 		}
-	}    
-    
-    //Función SEARCH para la paginación
-    //getNextPage
+	} 
+
+    //Función de busqueda por comunidades
+    async function searchProvinces(provinces){
+        console.log("Buscando por comunidad autonoma...");
+		const res = await fetch(BASE_WEIGHTS_PATH + "?provinces=" + provinces)		
+		if (res.ok){
+            const json = await res.json();
+            weightStats = json;
+			
+			weightStats.map((d)=>{
+			return d.provinces;
+			});
+            color = "success";
+			checkMSG="Busqueda de la comunidad encontrada";
+			console.log("Data found");
+		}else {
+			alert("No existe");
+			console.log("ERROR!");
+		}
+	}   
+
+    //Función de busqueda por año
+    async function searchYear(year){
+        console.log("Buscando por año autonoma...");
+		const res = await fetch(BASE_WEIGHTS_PATH + "?year=" + year)		
+		if (res.ok){
+            const json = await res.json();
+            weightStats = json;
+			
+			weightStats.map((d)=>{
+			return d.year;
+			});
+            color = "success";
+			checkMSG="Busqueda de la comunidad encontrada";
+			console.log("Data found")
+		}else {
+			checkMSG="No existe";
+			console.log("ERROR!");
+		}
+	} 
+
+    ////Función de paginación que consigue la página posterior
     async function getNextPage() { 
         console.log(totaldata);
         if (page+5 > totaldata) {
@@ -154,7 +204,7 @@
         
         visible = true;
         console.log("Charging page... Listing since: "+page);
-        const res = await fetch(BASE_WEIGHTS_PATH + "?limit=5&offset="+(-1+page));
+        const res = await fetch(BASE_WEIGHTS_PATH + "?limit=10&offset="+(-1+page));
         color = "success";
         checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
 
@@ -173,7 +223,7 @@
         }
     }
 
-    //getPreviewPage
+    //Función de paginación que consigue la página anterior
     async function getPreviewPage() {
 
         console.log(totaldata);
@@ -183,7 +233,7 @@
 
         visible = true;
         console.log("Charging page... Listing since: "+page);
-        const res = await fetch(BASE_WEIGHTS_PATH + "?limit=5&offset="+(-1+page));
+        const res = await fetch(BASE_WEIGHTS_PATH + "?limit=10&offset="+(-1+page));
         color = "success";
         checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
 
@@ -235,7 +285,7 @@
                 <td><input type = "number" placeholder="0000" bind:value="{newWeight.normal_weight}"></td>
                 <td><input type = "number" placeholder="0000" bind:value="{newWeight.overweight}"></td>
                 <td><input type = "number" placeholder="0000" bind:value="{newWeight.obesity}"></td>
-                <td><Button on:click={insertWeight}>Insertar</Button></td>
+                <td><Button outline color="success" on:click={insertWeight}>Insertar</Button></td>
             </tr>
             {#each weightStats as weightsStat}
                 <tr>
@@ -244,11 +294,41 @@
                     <td>{weightsStat.normal_weight}</td>
                     <td>{weightsStat.overweight}</td>
                     <td>{weightsStat.obesity}</td>
-                    <td><Button outline color="danger" on:click="{deleteWeights(weightsStat.provinces, weightsStat.year)}">Borrar</Button></td>
+                    <td>
+                        <Button outline color="primary" on:click="{deleteWeights(weightsStat.provinces, weightsStat.year)}">Editar</Button>
+                        <Button outline color="danger" on:click="{deleteWeights(weightsStat.provinces, weightsStat.year)}">Borrar</Button>
+                    </td>
                 </tr>
             {/each}
         </tbody>
     </Table>
+
+    <Table>
+        <th>Búsqueda por comunidad autónoma</th>
+        <th>Búsqueda por año</th>
+        <tr>
+            <td>
+                <FormGroup>
+                        <Input type="select" name="selectProvince" id="selectProvince" bind:value="{current_province}">
+                            {#each s_provinces as comunidad}
+                                <option>{comunidad}</option>
+                            {/each}
+                                <option>-</option>
+                        </Input>
+                </FormGroup>
+                <Button outline color="secondary" on:click="{searchProvinces(current_province)}">Buscar</Button>
+            </td>
+            <td><input type = "number" placeholder="2075" bind:value="{current_year}">
+                <Button outline color="secondary" on:click="{searchYear(current_year)}">Buscar</Button>
+            </td>
+
+        </tr>
+    </Table>
+
+    <p align="center">   
+        <Button outline color="primary" on:click="{getPreviewPage}">Atrás</Button>
+        <Button outline color="primary" on:click="{getNextPage}">Siguiente</Button>
+    </p>
 
     <Button color="success" on:click="{loadInitialData}">
         Cargar datos inciales
@@ -257,12 +337,6 @@
     <Button color="danger" on:click="{deleteALL}">
         Eliminar todos los datos
     </Button>
-    <Button outline color="primary" on:click="{getPreviewPage}">
-        Atrás
-     </Button>
-     <Button outline color="primary" on:click="{getNextPage}">
-         Siguiente
-      </Button>
 
     {/await}
  

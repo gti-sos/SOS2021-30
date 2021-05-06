@@ -3,8 +3,13 @@
     import { pop }from "svelte-spa-router";
     import Table from "sveltestrap/src/Table.svelte"; 
 	import Button from "sveltestrap/src/Button.svelte";
+    import { Alert } from 'sveltestrap';
 
     var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
+
+    let visible = false;
+    let checkMSG = "";
+    let color = "danger";
     export let params = {};
     let weightsStats = {};
     let uptadatedNormalWeight = null;
@@ -45,13 +50,30 @@
             headers: {
                 "Content-Type": "application/json"
             }
-        }).then( (res) =>{
-            getStat();
+        }).then(function (res){
+            visible = true;
+            if(res.status == 200){
+               getStat(); 
+               console.log("Data introduced");
+               color = "success";
+               checkMSG="Recurso actualizado correctamente";
+            }else{
+                console.log("Data not edited");
+                checkMSG= "Se ha producido un error y no se ha podido editar correctamente el recurso solicitado";
+            }
+            
         })
     }
 </script>
 
 <main>
+
+    <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
+        {#if checkMSG}
+		    {checkMSG}
+	    {/if}
+    </Alert>
+
     <h1>Recurso {params.provinces} {params.year} listo para editar</h1>
     <Table bordered>
         <thead>
