@@ -325,13 +325,13 @@ import { } from "node:os";
             </tr>
             {#each weightStats as weightsStat}
                 <tr>
-                    <td><a href="#/weights-stats/{weightsStat.provinces}/{weightsStat.year}">{weightsStat.provinces}</td>
+                    <td>{weightsStat.provinces}</td>
                     <td>{weightsStat.year}</td>
                     <td>{weightsStat.normal_weight}</td>
                     <td>{weightsStat.overweight}</td>
                     <td>{weightsStat.obesity}</td>
                     <td>
-                        <Button outline color="primary" on:click="{deleteWeights(weightsStat.provinces, weightsStat.year)}">Editar</Button>
+                        <a href="#/weights-stats/{weightsStat.provinces}/{weightsStat.year}"><Button outline color="primary">Editar</Button></a>
                         <Button outline color="danger" on:click="{deleteWeights(weightsStat.provinces, weightsStat.year)}">Borrar</Button>
                     </td>
                 </tr>

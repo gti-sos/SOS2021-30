@@ -14014,18 +14014,18 @@ var app = (function () {
     			create_component(button4.$$.fragment);
     			t12 = space();
     			create_component(button5.$$.fragment);
-    			add_location(strong0, file$2, 341, 34, 12255);
+    			add_location(strong0, file$2, 341, 34, 12191);
     			set_style(h40, "text-align", "center");
-    			add_location(h40, file$2, 341, 4, 12225);
+    			add_location(h40, file$2, 341, 4, 12161);
     			set_style(div, "text-align", "center");
-    			add_location(div, file$2, 358, 4, 13090);
-    			add_location(strong1, file$2, 362, 34, 13307);
+    			add_location(div, file$2, 358, 4, 13026);
+    			add_location(strong1, file$2, 362, 34, 13243);
     			set_style(h41, "text-align", "center");
-    			add_location(h41, file$2, 362, 4, 13277);
+    			add_location(h41, file$2, 362, 4, 13213);
     			attr_dev(p0, "align", "center");
-    			add_location(p0, file$2, 364, 4, 13379);
+    			add_location(p0, file$2, 364, 4, 13315);
     			attr_dev(p1, "align", "center");
-    			add_location(p1, file$2, 378, 4, 13928);
+    			add_location(p1, file$2, 378, 4, 13864);
     		},
     		m: function mount(target, anchor) {
     			mount_component(alert_1, target, anchor);
@@ -14302,7 +14302,7 @@ var app = (function () {
     	return block;
     }
 
-    // (334:24) <Button outline color="primary" on:click="{deleteWeights(weightsStat.provinces, weightsStat.year)}">
+    // (334:93) <Button outline color="primary">
     function create_default_slot_11$1(ctx) {
     	let t;
 
@@ -14322,7 +14322,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_11$1.name,
     		type: "slot",
-    		source: "(334:24) <Button outline color=\\\"primary\\\" on:click=\\\"{deleteWeights(weightsStat.provinces, weightsStat.year)}\\\">",
+    		source: "(334:93) <Button outline color=\\\"primary\\\">",
     		ctx
     	});
 
@@ -14360,10 +14360,8 @@ var app = (function () {
     function create_each_block_1(ctx) {
     	let tr;
     	let td0;
-    	let a;
     	let t0_value = /*weightsStat*/ ctx[40].provinces + "";
     	let t0;
-    	let a_href_value;
     	let t1;
     	let td1;
     	let t2_value = /*weightsStat*/ ctx[40].year + "";
@@ -14382,7 +14380,9 @@ var app = (function () {
     	let t8;
     	let t9;
     	let td5;
+    	let a;
     	let button0;
+    	let a_href_value;
     	let t10;
     	let button1;
     	let t11;
@@ -14397,10 +14397,6 @@ var app = (function () {
     			},
     			$$inline: true
     		});
-
-    	button0.$on("click", function () {
-    		if (is_function(/*deleteWeights*/ ctx[14](/*weightsStat*/ ctx[40].provinces, /*weightsStat*/ ctx[40].year))) /*deleteWeights*/ ctx[14](/*weightsStat*/ ctx[40].provinces, /*weightsStat*/ ctx[40].year).apply(this, arguments);
-    	});
 
     	button1 = new Button({
     			props: {
@@ -14420,7 +14416,6 @@ var app = (function () {
     		c: function create() {
     			tr = element("tr");
     			td0 = element("td");
-    			a = element("a");
     			t0 = text(t0_value);
     			t1 = space();
     			td1 = element("td");
@@ -14436,25 +14431,25 @@ var app = (function () {
     			t8 = text(t8_value);
     			t9 = space();
     			td5 = element("td");
+    			a = element("a");
     			create_component(button0.$$.fragment);
     			t10 = space();
     			create_component(button1.$$.fragment);
     			t11 = space();
-    			attr_dev(a, "href", a_href_value = "#/weights-stats/" + /*weightsStat*/ ctx[40].provinces + "/" + /*weightsStat*/ ctx[40].year);
-    			add_location(a, file$2, 327, 24, 11496);
     			add_location(td0, file$2, 327, 20, 11492);
-    			add_location(td1, file$2, 328, 20, 11615);
-    			add_location(td2, file$2, 329, 20, 11664);
-    			add_location(td3, file$2, 330, 20, 11722);
-    			add_location(td4, file$2, 331, 20, 11777);
-    			add_location(td5, file$2, 332, 20, 11829);
+    			add_location(td1, file$2, 328, 20, 11546);
+    			add_location(td2, file$2, 329, 20, 11595);
+    			add_location(td3, file$2, 330, 20, 11653);
+    			add_location(td4, file$2, 331, 20, 11708);
+    			attr_dev(a, "href", a_href_value = "#/weights-stats/" + /*weightsStat*/ ctx[40].provinces + "/" + /*weightsStat*/ ctx[40].year);
+    			add_location(a, file$2, 333, 24, 11790);
+    			add_location(td5, file$2, 332, 20, 11760);
     			add_location(tr, file$2, 326, 16, 11466);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
     			append_dev(tr, td0);
-    			append_dev(td0, a);
-    			append_dev(a, t0);
+    			append_dev(td0, t0);
     			append_dev(tr, t1);
     			append_dev(tr, td1);
     			append_dev(td1, t2);
@@ -14469,7 +14464,8 @@ var app = (function () {
     			append_dev(td4, t8);
     			append_dev(tr, t9);
     			append_dev(tr, td5);
-    			mount_component(button0, td5, null);
+    			append_dev(td5, a);
+    			mount_component(button0, a, null);
     			append_dev(td5, t10);
     			mount_component(button1, td5, null);
     			append_dev(tr, t11);
@@ -14478,11 +14474,6 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
     			if ((!current || dirty[0] & /*weightStats*/ 2048) && t0_value !== (t0_value = /*weightsStat*/ ctx[40].provinces + "")) set_data_dev(t0, t0_value);
-
-    			if (!current || dirty[0] & /*weightStats*/ 2048 && a_href_value !== (a_href_value = "#/weights-stats/" + /*weightsStat*/ ctx[40].provinces + "/" + /*weightsStat*/ ctx[40].year)) {
-    				attr_dev(a, "href", a_href_value);
-    			}
-
     			if ((!current || dirty[0] & /*weightStats*/ 2048) && t2_value !== (t2_value = /*weightsStat*/ ctx[40].year + "")) set_data_dev(t2, t2_value);
     			if ((!current || dirty[0] & /*weightStats*/ 2048) && t4_value !== (t4_value = /*weightsStat*/ ctx[40].normal_weight + "")) set_data_dev(t4, t4_value);
     			if ((!current || dirty[0] & /*weightStats*/ 2048) && t6_value !== (t6_value = /*weightsStat*/ ctx[40].overweight + "")) set_data_dev(t6, t6_value);
@@ -14494,6 +14485,11 @@ var app = (function () {
     			}
 
     			button0.$set(button0_changes);
+
+    			if (!current || dirty[0] & /*weightStats*/ 2048 && a_href_value !== (a_href_value = "#/weights-stats/" + /*weightsStat*/ ctx[40].provinces + "/" + /*weightsStat*/ ctx[40].year)) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+
     			const button1_changes = {};
 
     			if (dirty[1] & /*$$scope*/ 4096) {
@@ -14893,32 +14889,32 @@ var app = (function () {
     			t13 = space();
     			td4 = element("td");
     			input4 = element("input");
-    			add_location(th0, file$2, 344, 8, 12332);
-    			add_location(th1, file$2, 345, 8, 12382);
-    			add_location(th2, file$2, 346, 8, 12417);
-    			add_location(th3, file$2, 347, 8, 12475);
-    			add_location(th4, file$2, 348, 8, 12531);
+    			add_location(th0, file$2, 344, 8, 12268);
+    			add_location(th1, file$2, 345, 8, 12318);
+    			add_location(th2, file$2, 346, 8, 12353);
+    			add_location(th3, file$2, 347, 8, 12411);
+    			add_location(th4, file$2, 348, 8, 12467);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "Comunidad autónoma");
-    			add_location(input0, file$2, 350, 16, 12608);
-    			add_location(td0, file$2, 350, 12, 12604);
+    			add_location(input0, file$2, 350, 16, 12544);
+    			add_location(td0, file$2, 350, 12, 12540);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "placeholder", "2075");
-    			add_location(input1, file$2, 351, 16, 12710);
-    			add_location(td1, file$2, 351, 12, 12706);
+    			add_location(input1, file$2, 351, 16, 12646);
+    			add_location(td1, file$2, 351, 12, 12642);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "placeholder", "0000");
-    			add_location(input2, file$2, 352, 16, 12796);
-    			add_location(td2, file$2, 352, 12, 12792);
+    			add_location(input2, file$2, 352, 16, 12732);
+    			add_location(td2, file$2, 352, 12, 12728);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "0000");
-    			add_location(input3, file$2, 353, 16, 12890);
-    			add_location(td3, file$2, 353, 12, 12886);
+    			add_location(input3, file$2, 353, 16, 12826);
+    			add_location(td3, file$2, 353, 12, 12822);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "placeholder", "0000");
-    			add_location(input4, file$2, 354, 16, 12982);
-    			add_location(td4, file$2, 354, 12, 12978);
-    			add_location(tr, file$2, 349, 8, 12586);
+    			add_location(input4, file$2, 354, 16, 12918);
+    			add_location(td4, file$2, 354, 12, 12914);
+    			add_location(tr, file$2, 349, 8, 12522);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, th0, anchor);
@@ -15053,7 +15049,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*comunidad*/ ctx[37];
     			option.value = option.__value;
-    			add_location(option, file$2, 368, 24, 13623);
+    			add_location(option, file$2, 368, 24, 13559);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -15106,7 +15102,7 @@ var app = (function () {
     			option.textContent = "-";
     			option.__value = "-";
     			option.value = option.__value;
-    			add_location(option, file$2, 370, 24, 13706);
+    			add_location(option, file$2, 370, 24, 13642);
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
