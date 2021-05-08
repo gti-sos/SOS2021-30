@@ -11,7 +11,7 @@ import { } from "node:os";
     let visible = false;
     let color = "danger";
     let page = 1;
-    let totaldata=9;
+    let totaldata=19;
     let weightStats = [];
     let newWeight = {
         provinces: "",
@@ -57,12 +57,12 @@ import { } from "node:os";
     async function loadInitialData() { 
         console.log("Fetching data...");
         await fetch(BASE_WEIGHTS_PATH + "/loadInitialData");
-        const res = await fetch(BASE_WEIGHTS_PATH + "?limit=10&offset=0");
+        const res = await fetch(BASE_WEIGHTS_PATH);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             weightStats = json;
-            totaldata=13;
+            totaldata=19;
             console.log("Received " + weightStats.length + " weight data.");
             color = "success";
             checkMSG = "Datos cargados correctamente";
@@ -209,33 +209,13 @@ import { } from "node:os";
 		}
 	}   
 
-    //Función de busqueda por año
-    async function searchYear(year){
-        console.log("Buscando por año autonoma...");
-		const res = await fetch(BASE_WEIGHTS_PATH + "?year=" + year)		
-		if (res.ok){
-            const json = await res.json();
-            weightStats = json;
-			
-			weightStats.map((d)=>{
-			return d.year;
-			});
-            color = "success";
-			checkMSG="Busqueda de la comunidad encontrada";
-			console.log("Data found")
-		}else {
-			checkMSG="No existe";
-			console.log("ERROR!");
-		}
-	} 
-
     ////Función de paginación que consigue la página posterior
     async function getNextPage() { 
         console.log(totaldata);
-        if (page+5 > totaldata) {
+        if (page+10 > totaldata) {
             page = 1
         } else {
-            page+=5
+            page+=10
         }
         
         visible = true;
@@ -377,8 +357,8 @@ import { } from "node:os";
 
 
     <p align="center">   
-        <Button color="primary" on:click="{getPreviewPage}">Atrás</Button>
-        <Button color="primary" on:click="{getNextPage}">Siguiente</Button>
+        <Button outline color="primary" on:click="{getPreviewPage}">Atrás</Button>
+        <Button outline color="primary" on:click="{getNextPage}">Siguiente</Button>
     </p>
 
     <Button color="success" on:click="{loadInitialData}">

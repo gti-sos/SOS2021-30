@@ -14,7 +14,7 @@ module.exports.register = (app) => {
             {
                 "id": 1,
                 "country": 'España',
-                "provinces": 'Andalucia',
+                "provinces": 'Andalucía',
                 "year": 2017,
                 "normal_weight": 41.5,
                 "overweight": 37.5,
@@ -32,7 +32,7 @@ module.exports.register = (app) => {
             {
                 "id": 3,
                 "country": 'España',
-                "provinces": 'Castilla y leon',
+                "provinces": 'Castilla y León',
                 "year": 2017,
                 "normal_weight": 47.6,
                 "overweight": 39.2,
@@ -91,6 +91,96 @@ module.exports.register = (app) => {
                 "normal_weight": 47.5,
                 "overweight": 37.5,
                 "obesity": 15.0
+            },
+            {
+                "id": 10,
+                "country": 'España',
+                "provinces": 'Asturias',
+                "year": 2017,
+                "normal_weight": 40.9,
+                "overweight": 37.4,
+                "obesity": 21.7
+            },
+            {
+                "id": 11,
+                "country": 'España',
+                "provinces": 'Islas Baleares',
+                "year": 2017,
+                "normal_weight": 53.4,
+                "overweight": 31.1,
+                "obesity": 15.5
+            },
+            {
+                "id": 12,
+                "country": 'España',
+                "provinces": 'Castilla la Mancha',
+                "year": 2017,
+                "normal_weight": 45,
+                "overweight": 38.1,
+                "obesity": 29.3
+            },
+            {
+                "id": 13,
+                "country": 'España',
+                "provinces": 'Extremadura',
+                "year": 2017,
+                "normal_weight": 42.6,
+                "overweight": 37.5,
+                "obesity": 15.0
+            },
+            {
+                "id": 14,
+                "country": 'España',
+                "provinces": 'Galicia',
+                "year": 2017,
+                "normal_weight": 40.2,
+                "overweight": 41.4,
+                "obesity": 18.4
+            },
+            {
+                "id": 15,
+                "country": 'España',
+                "provinces": 'Murcia',
+                "year": 2017,
+                "normal_weight": 38.9,
+                "overweight": 45.0,
+                "obesity": 16.1
+            },
+            {
+                "id": 16,
+                "country": 'España',
+                "provinces": 'Navarra',
+                "year": 2017,
+                "normal_weight": 49,
+                "overweight": 35.6,
+                "obesity": 15.4
+            },
+            {
+                "id": 17,
+                "country": 'España',
+                "provinces": 'Ceuta',
+                "year": 2017,
+                "normal_weight": 34.5,
+                "overweight": 41.4,
+                "obesity": 24.1
+            },
+            {
+                "id": 18,
+                "country": 'España',
+                "provinces": 'Melilla',
+                "year": 2017,
+                "normal_weight": 39.8,
+                "overweight": 40.5,
+                "obesity": 19.7
+            },
+            {
+                "id": 19,
+                "country": 'España',
+                "provinces": 'Cantabria',
+                "year": 2017,
+                "normal_weight": 46.3,
+                "overweight": 36.2,
+                "obesity": 17.5
             },
         ];
 
