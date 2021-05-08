@@ -11,13 +11,13 @@
     import { Alert } from 'sveltestrap';
 
     let visible = false;
-    let color = "danger";
+    let color = "white";
     let page = 1;
-    let totaldata=5; // Número total de los datos
+    let totaldata=2; // Número total de los datos
     let errorMSG = "";
 
     var BASE_ALCOHOL_PATH = "/api/v1/alcohol-consumption-stats/";
-
+    let b_ageRange = [];
     let alcoholStats = [];
     let newAlcohol = {
         country:"",
@@ -26,17 +26,22 @@
         alcoholPrematureDeath: "",
         prevalenceOfAlcoholUseDisorder:""
 	}
+    let busquedaCountry = "";
+    let busquedaYear = "";
+    let busquedaAgeRange = "";
+    let busquedaAlcoholPrematureDeath = "";
+    let busquedaPrevalenceOfAlcoholUseDisorder = "";
 
     //GET INITIALDATA
     async function loadInitialData() {
         console.log("Fetching employment data...");
         await fetch("/api/v1/alcohol-consumption-stats/loadInitialData");
-        const res = await fetch("/api/v1/alcohol-consumption-stats?limit=3&offset=0");
+        const res = await fetch("/api/v1/alcohol-consumption-stats?limit=10&offset=0");
             if (res.ok) {
                 console.log("Ok:");
                 const json = await res.json();
                 alcoholStats = json;
-                totaldata=13;
+                totaldata=2;
                 console.log("Received " + alcoholStats.length + " alcohol data.");
                 color = "success";
                 errorMSG = "Datos cargados correctamente";
@@ -46,42 +51,6 @@
                 console.log("ERROR!");
             }
     }
-    //Actualizarsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-
-    async function updateAlcohol(country, year, ageRange){
-        if (newAlcohol.year == "" || newAlcohol.year == null || newAlcohol.country == "" || newAlcohol.ageRange == "") {
-            alert("Los campos País, Año y Rango de edad no pueden estar vacíos");
-        }else if (country != newAlcohol.country || year != newAlcohol.year || ageRange != newAlcohol.ageRange){
-            alert("Los campos País, Año y Rango de edad no pueden ser distintos");
-        }else{
-            
-            console.log("Editing alcohol data...");
-            const res = await fetch(BASE_ALCOHOL_PATH + country + "/" + year + "/" + ageRange, {
-                    method:"PUT",
-                    body:JSON.stringify(newAlcohol),
-                    headers:{
-                        "Content-Type": "application/json"
-                    }
-                }).then(function (res) {
-                    visible=true;
-                    if (res.status == 200){
-                        console.log("Data updated");
-                        getStats();
-                        color = "success";
-                        checkMSG ="Entrada modificada correctamente en la base de datos";
-                    }else if(res.status == 400){
-                        console.log("ERROR Data was not correctly introduced");
-                        color = "danger";
-                        checkMSG= "Los datos de la entrada no fueron introducidos correctamente";
-                    }else if(res.status == 409){
-                        console.log("ERROR There is already a data with that province and year in the da tabase");
-                        color = "danger";
-                        checkMSG= "Ya existe una entrada en la base de datos con los datos introducidos";
-                    }
-                });	
-            }
-    }
-
     //INSERT
     
     async function insertAlcohol(){
@@ -118,20 +87,22 @@
      }
 
     //Mostrar datos
-    async function getStats(){
-        console.log("Fetching stats...");
-        const res= await fetch(BASE_ALCOHOL_PATH);
+    async function getStats() { 
+        console.log("Fetching Data...");
+        const res = await fetch(BASE_ALCOHOL_PATH + "?limit=10&offset=0");
+        if (res.ok) {
+            console.log("Ok:");
+            const json = await res.json();
+            alcoholStats = json;
 
-        if(res.ok){
-            console.log("ok");
-            const json= await res.json();
-            alcoholStats=json;
-            updateAgeRange=alcoholStats.ageRange;
-            updatePrematureDeath=alcoholStats.alcoholPrematureDeath;
-            updateDisorder=alcoholStats.prevalenceOfAlcoholUseDisorder;
-            console.log(`We have received ${alcoholStats.length} alcohol stats`);
-        }else{
-            console.log("Error")
+            b_ageRange = json.map((d) =>{
+                return d.ageRange;
+            });
+            b_ageRange = Array.from(new Set(b_ageRange));
+            console.log("Received " + alcoholStats.length + " alcohol Data.");
+        } else {
+            errorMSG= res.status + ": " + res.statusText;
+            console.log("ERROR!");
         }
     }
 
@@ -172,7 +143,7 @@
             if (res.status==200) {
                 totaldata--;
                 color = "success";
-                errorMSG = "Recurso "+province+" "+year+ + " " + ageRange+ " borrado correctamente";
+                errorMSG = "Recurso "+ "'" + country + ", " + year +  ", " + ageRange + "'" + " borrado correctamente";
                 console.log("Deleted " + country);            
             } else if (res.status==404) {
                 color = "danger";
@@ -185,65 +156,97 @@
             }      
         });
     }
-
-        //sigueinte pagina
-        async function getNextPage() {
- 
-            console.log(totaldata);
-            if (page+5 > totaldata) {
-                page = 1
-            } else {
-                page+=5
-            }
-            
-            visible = true;
-            console.log("Charging page... Listing since: "+page);
-            const res = await fetch("/api/v1/alcohol-consumption-stats?limit=3&offset="+(-1+page));
-            color = "success";
-            errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
-
-            if (totaldata == 0){
-                console.log("ERROR Data was not erased");
-                color = "danger";
-                errorMSG= "¡No hay datos!";
-            }else if (res.ok) {
-                console.log("Ok:");
-                const json = await res.json();
-                SmokerStats = json;
-                console.log("Received " + alcoholStats.length + " resources.");
-            } else {
-                errorMSG= res.status + ": " + res.statusText;
-                console.log("ERROR!");
-            }
+    //Funcion de busqueda
+    async function busqueda(busquedaCountry, busquedaYear, busquedaAgeRange, busquedaAlcoholPrematureDeath, busquedaPrevalenceOfAlcoholUseDisorder){
+    if(typeof busquedaCountry=='undefined'){
+        busquedaCountry="";
+    }
+    if(typeof busquedaYear=='undefined'){
+        busquedaYear="";
+    }
+    if(typeof busquedaAgeRange=='undefined'){
+        busquedaAgeRange="";
+    }
+    if(typeof busquedaAlcoholPrematureDeath=='undefined'){
+        busquedaAlcoholPrematureDeath="";
+    }
+    if(typeof busquedaPrevalenceOfAlcoholUseDisorder=='undefined'){
+        busquedaPrevalenceOfAlcoholUseDisorder="";
+    }
+    const res = await fetch(BASE_ALCOHOL_PATH + "?country="+busquedaCountry+"&year="+busquedaYear+"&ageRange="+busquedaAgeRange+"&alcoholPrematureDeath="+busquedaAlcoholPrematureDeath+"&prevalenceOfAlcoholUseDisorder="+busquedaPrevalenceOfAlcoholUseDisorder)
+    if (res.ok){
+        const json = await res.json();
+        alcoholStats = json;
+        console.log("Found "+ alcoholStats.length + " data");
+        
+        if(alcoholStats.length==1){
+            color = "success"
+            errorMSG = "Se ha encontrado " + alcoholStats.length + " dato";
+        }else{
+            color = "success"
+            errorMSG = "Se han encontrado " + alcoholStats.length + " datos";
         }
-            //getPreviewPage
-            async function getPreviewPage() {
+    }
+}
 
-                console.log(totaldata);
-                if (page-5 > 1) {
-                    page-=5; 
-                } else page = 1
+    //siguiente pagina
+    async function getNextPage() {
 
-                visible = true;
-                console.log("Charging page... Listing since: "+page);
-                const res = await fetch("/api/v1/alcohol-consumption-stats?limit=5&offset="+(-1+page));
-                color = "success";
-                errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        console.log(totaldata);
+        if (page+5 > totaldata) {
+            page = 1
+        } else {
+            page+=5
+        }
+        
+        visible = true;
+        console.log("Charging page... Listing since: "+page);
+        const res = await fetch("/api/v1/alcohol-consumption-stats?limit=3&offset="+(-1+page));
+        color = "success";
+        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
 
-                if (totaldata == 0){
-                    console.log("ERROR Data was not erased");
-                    color = "danger";
-                    errorMSG= "¡No hay datos!";
-                }else if (res.ok) {
-                    console.log("Ok:");
-                    const json = await res.json();
-                    SmokerStats = json;
-                    console.log("Received "+alcoholStats.length+" resources.");
-                } else {
-                    errorMSG= res.status+": "+res.statusText;
-                    console.log("ERROR!");
-                }
-            }
+        if (totaldata == 0){
+            console.log("ERROR Data was not erased");
+            color = "danger";
+            errorMSG= "¡No hay datos!";
+        }else if (res.ok) {
+            console.log("Ok:");
+            const json = await res.json();
+            SmokerStats = json;
+            console.log("Received " + alcoholStats.length + " resources.");
+        } else {
+            errorMSG= res.status + ": " + res.statusText;
+            console.log("ERROR!");
+        }
+    }
+    //getPreviewPage
+    async function getPreviewPage() {
+
+        console.log(totaldata);
+        if (page-5 > 1) {
+            page-=5; 
+        } else page = 1
+
+        visible = true;
+        console.log("Charging page... Listing since: "+page);
+        const res = await fetch("/api/v1/alcohol-consumption-stats?limit=5&offset="+(-1+page));
+        color = "success";
+        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+
+        if (totaldata == 0){
+            console.log("ERROR Data was not erased");
+            color = "danger";
+            errorMSG= "¡No hay datos!";
+        }else if (res.ok) {
+            console.log("Ok:");
+            const json = await res.json();
+            SmokerStats = json;
+            console.log("Received "+alcoholStats.length+" resources.");
+        } else {
+            errorMSG= res.status+": "+res.statusText;
+            console.log("ERROR!");
+        }
+    }
 
     onMount(getStats);
 
@@ -258,11 +261,32 @@
         Loading alcohol data...
     {:then alcoholStats}
     
-    <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
-        {#if errorMSG}
+    <Alert color={color} isOpen={true} toggle={() => (visible = false)}>
+        {#if errorMSG.length>0}
 		    {errorMSG}
 	    {/if}
     </Alert>
+    <h4 style="text-align:center"><strong>Búsqueda general de parámetros</strong></h4>
+
+    <Table>
+        <th>Búsqueda por país</th>
+        <th>Búsqueda por año</th>
+        <th>Búsqueda por rango de edad</th>
+        <th>Búsqueda por muertes prematuras</th>
+        <th>Búsqueda por prevalencia del trastorno por consumo de alcohol</th>
+        <tr>
+            <td><input type = "text" placeholder="País" bind:value="{busquedaCountry}"></td>
+            <td><input type = "text" placeholder="2017" bind:value="{busquedaYear}"></td>
+            <td><input type = "text" placeholder="0" bind:value="{busquedaAgeRange}"></td>
+            <td><input type = "number" placeholder="0.0" bind:value="{busquedaAlcoholPrematureDeath}"></td>
+            <td><input type = "number" placeholder="0.0" bind:value="{busquedaPrevalenceOfAlcoholUseDisorder}"></td>
+        </tr>
+    </Table>
+    <div style="text-align:center">
+        <Button outline color="primary" on:click="{busqueda (busquedaCountry, busquedaYear, busquedaAgeRange, busquedaAlcoholPrematureDeath, busquedaPrevalenceOfAlcoholUseDisorder)}">Buscar</Button>
+    </div>
+    <br>
+    <h4 style="text-align:center"><strong>Datos</strong></h4>
 
         <Table bordered responsive>
             <thead>
@@ -282,19 +306,18 @@
                     <td><input type = "text" placeholder="40-45" bind:value="{newAlcohol.ageRange}"></td> 
                     <td><input type = "number" placeholder="10" bind:value="{newAlcohol.alcoholPrematureDeath}"></td>    
                     <td><input type = "number" placeholder="0.4" bind:value="{newAlcohol.prevalenceOfAlcoholUseDisorder}"></td>  
-                    <td colspan="2" style="text-align: center;"><Button outline color="primary" on:click={insertAlcohol}>Insertar</Button></td>           
+                    <td><Button outline color="primary" on:click={insertAlcohol}>Insertar</Button></td>           
                 </tr>
  
                 {#each alcoholStats as stat}
                     <tr>
-                        <td><a href="#/alcohol-stats/{stat.country}/{stat.year}/{stat.ageRange}">{stat.country}</a></td>
+                        <td>{stat.country}</td>
                         <td>{stat.year}</td>
                         <td>{stat.ageRange}</td>
                         <td>{stat.alcoholPrematureDeath}</td>
                         <td>{stat.prevalenceOfAlcoholUseDisorder}</td>
+                        <td><a href="#/alcohol-stats/{stat.country}/{stat.year}/{stat.ageRange}"><Button outline color="primary">Editar</Button></a></td>
                         <td><Button outline color="danger" on:click="{deleteSpecificAlcohol(stat.country, stat.ageRange,stat.year)}">Borrar</Button></td>
-                        <td><Button outline color="primary" on:click="{updateAlcohol(stat.country,stat.year,stat.ageRange)}">Editar</Button></td>
-                        
                     </tr>
                 {/each}
             </tbody>
