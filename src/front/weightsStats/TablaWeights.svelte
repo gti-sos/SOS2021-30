@@ -11,7 +11,7 @@ import { } from "node:os";
     let visible = false;
     let color = "danger";
     let page = 1;
-    let totaldata=19;
+    let totaldata=38;
     let weightStats = [];
     let newWeight = {
         provinces: "",
@@ -57,12 +57,12 @@ import { } from "node:os";
     async function loadInitialData() { 
         console.log("Fetching data...");
         await fetch(BASE_WEIGHTS_PATH + "/loadInitialData");
-        const res = await fetch(BASE_WEIGHTS_PATH);
+        const res = await fetch(BASE_WEIGHTS_PATH + "?limit=10&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             weightStats = json;
-            totaldata=19;
+            totaldata=38;
             console.log("Received " + weightStats.length + " weight data.");
             color = "success";
             checkMSG = "Datos cargados correctamente";
@@ -160,21 +160,6 @@ import { } from "node:os";
 
     //FUNCION DE BUSQUEDA COMPLETA
     async function busqueda (sProvince, sYear, sNormalWeight, sOverWeight, sObesity){
-		if(typeof sProvince=='undefined'){
-			sProvince="";
-		}
-		if(typeof sYear=='undefined'){
-			sYear="";
-		}
-		if(typeof sNormalWeight=='undefined'){
-			sNormalWeight="";
-		}
-		if(typeof sOverWeight=='undefined'){
-			sOverWeight="";
-		}
-		if(typeof sObesity=='undefined'){
-			sObesity="";
-		}
 		const res = await fetch(BASE_WEIGHTS_PATH + "?provinces="+sProvince+"&year="+sYear+"&normal_weight="+sNormalWeight+"&overwight="+sOverWeight+"obesity="+sObesity)
 		if (res.ok){
 			const json = await res.json();
@@ -182,32 +167,12 @@ import { } from "node:os";
 			console.log("Found "+ weightStats.length + " data");
 			
 			if(weightStats.length==1){
-				checkMSG = "Se ha encontrado " + weightStats.length + " piloto";
+				checkMSG = "Se ha encontrado un dato para tu búsqueda";
 			}else{
-				checkMSG = "Se han encontrado " + weightStats.length + " pilotos";
+				checkMSG = "Se han encontrado " + weightStats.length + " datos para tu búsqueda";
 			}
 	    }
     }
-
-    //Función de busqueda por comunidades
-    async function searchProvinces(provinces){
-        console.log("Buscando por comunidad autonoma...");
-		const res = await fetch(BASE_WEIGHTS_PATH + "?provinces=" + provinces)		
-		if (res.ok){
-            const json = await res.json();
-            weightStats = json;
-			
-			weightStats.map((d)=>{
-			return d.provinces;
-			});
-            color = "success";
-			checkMSG="Busqueda de la comunidad encontrada";
-			console.log("Data found");
-		}else {
-			alert("No existe");
-			console.log("ERROR!");
-		}
-	}   
 
     ////Función de paginación que consigue la página posterior
     async function getNextPage() { 
@@ -243,7 +208,7 @@ import { } from "node:os";
     async function getPreviewPage() {
 
         console.log(totaldata);
-        if (page-5 > 1) {
+        if (page-10 > 1) {
             page-=5; 
         } else page = 1
 
@@ -319,6 +284,12 @@ import { } from "node:os";
         </tbody>
     </Table>
 
+    <p align="center">   
+        <Button color="primary" on:click="{getPreviewPage}">Atrás</Button>
+        <Button color="primary" on:click="{getNextPage}">Siguiente</Button>
+        <Button color="warning" on:click="{getPreviewPage}">Eliminar filtros de búsqueda</Button>
+    </p>
+
     <h4 style="text-align:center"><strong>Búsqueda general de parámetros</strong></h4>
 
     <Table>
@@ -339,27 +310,6 @@ import { } from "node:os";
     <div style="text-align:center">
         <Button outline color="primary" on:click="{busqueda (sProvince, sYear, sNormalWeight, sOverWeight, sObesity)}">Buscar</Button>
     </div>
-
-    <h4 style="text-align:center"><strong>Búsqueda específica por Comunidad Autónoma</strong></h4>
-
-    <p align="center">            
-        <FormGroup>
-                <Input type="select" name="selectProvince" id="selectProvince" bind:value="{current_province}">
-                    {#each s_provinces as comunidad}
-                        <option>{comunidad}</option>
-                    {/each}
-                        <option>-</option>
-                </Input>
-            </FormGroup>
-            <Button outline color="primary" on:click="{searchProvinces(current_province)}">Busca tu comunidad autónoma!</Button>
-    </p>
-
-
-
-    <p align="center">   
-        <Button outline color="primary" on:click="{getPreviewPage}">Atrás</Button>
-        <Button outline color="primary" on:click="{getNextPage}">Siguiente</Button>
-    </p>
 
     <Button color="success" on:click="{loadInitialData}">
         Cargar datos inciales

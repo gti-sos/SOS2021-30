@@ -182,6 +182,177 @@ module.exports.register = (app) => {
                 "overweight": 36.2,
                 "obesity": 17.5
             },
+            {
+                "id": 20,
+                "country": 'España',
+                "provinces": 'Andalucía',
+                "year": 2014,
+                "normal_weight": 43,
+                "overweight": 37.1,
+                "obesity": 19.9
+            },
+            {
+                "id": 21,
+                "country": 'España',
+                "provinces": 'Canarias',
+                "year": 2014,
+                "normal_weight": 45.3,
+                "overweight": 35.4,
+                "obesity": 19.3
+            },
+            {
+                "id": 22,
+                "country": 'España',
+                "provinces": 'Castilla y León',
+                "year": 2014,
+                "normal_weight": 48.4,
+                "overweight": 37.1,
+                "obesity": 15.5
+            },
+            {
+                "id": 23,
+                "country": 'España',
+                "provinces": 'Cataluña',
+                "year": 2014,
+                "normal_weight": 49.7,
+                "overweight": 35.3,
+                "obesity": 15
+            },
+            {
+                "id": 24,
+                "country": 'España',
+                "provinces": 'Comunidad Valenciana',
+                "year": 2014,
+                "normal_weight": 46.2,
+                "overweight": 36.5,
+                "obesity": 17.3
+            },
+            {
+                "id": 25,
+                "country": 'España',
+                "provinces": 'País Vasco',
+                "year": 2014,
+                "normal_weight": 52.6,
+                "overweight": 34.4,
+                "obesity": 13
+            },
+            {
+                "id": 26,
+                "country": 'España',
+                "provinces": 'Aragón',
+                "year": 2014,
+                "normal_weight": 45.2,
+                "overweight": 38.2,
+                "obesity": 16.6
+            },
+            {
+                "id": 27,
+                "country": 'España',
+                "provinces": 'Comunidad de Madrid',
+                "year": 2014,
+                "normal_weight": 53.5,
+                "overweight": 31.9,
+                "obesity": 14.6
+            },
+            {
+                "id": 28,
+                "country": 'España',
+                "provinces": 'La Rioja',
+                "year": 2014,
+                "normal_weight": 50.7,
+                "overweight": 34.9,
+                "obesity": 14.4
+            },
+            {
+                "id": 29,
+                "country": 'España',
+                "provinces": 'Asturias',
+                "year": 2014,
+                "normal_weight": 43.5,
+                "overweight": 37.9,
+                "obesity": 18.6
+            },
+            {
+                "id": 30,
+                "country": 'España',
+                "provinces": 'Islas Baleares',
+                "year": 2014,
+                "normal_weight": 53.4,
+                "overweight": 33.4,
+                "obesity": 13.2
+            },
+            {
+                "id": 31,
+                "country": 'España',
+                "provinces": 'Castilla la Mancha',
+                "year": 2014,
+                "normal_weight": 45,
+                "overweight": 35.3,
+                "obesity": 19.7
+            },
+            {
+                "id": 32,
+                "country": 'España',
+                "provinces": 'Extremadura',
+                "year": 2014,
+                "normal_weight": 45.4,
+                "overweight": 37.8,
+                "obesity": 16.8
+            },
+            {
+                "id": 33,
+                "country": 'España',
+                "provinces": 'Galicia',
+                "year": 2014,
+                "normal_weight": 41.3,
+                "overweight": 38,
+                "obesity": 20.7
+            },
+            {
+                "id": 34,
+                "country": 'España',
+                "provinces": 'Murcia',
+                "year": 2014,
+                "normal_weight": 44.8,
+                "overweight": 37.9,
+                "obesity": 17.3
+            },
+            {
+                "id": 35,
+                "country": 'España',
+                "provinces": 'Navarra',
+                "year": 2014,
+                "normal_weight": 51.2,
+                "overweight": 37.1,
+                "obesity": 11.7
+            },
+            {
+                "id": 36,
+                "country": 'España',
+                "provinces": 'Ceuta',
+                "year": 2014,
+                "normal_weight": 46.8,
+                "overweight": 35,
+                "obesity": 18.2
+            },
+            {
+                "id": 37,
+                "country": 'España',
+                "provinces": 'Melilla',
+                "year": 2014,
+                "normal_weight": 33.8,
+                "overweight": 46.8,
+                "obesity": 19.4
+            },
+            {
+                "id": 38,
+                "country": 'España',
+                "provinces": 'Cantabria',
+                "year": 2014,
+                "normal_weight": 47.9,
+                "overweight": 37,
+                "obesity": 15.1
+            }
         ];
 
         db.find({},(err, data) => {
