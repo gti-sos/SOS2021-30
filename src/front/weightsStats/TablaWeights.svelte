@@ -248,9 +248,9 @@ import { } from "node:os";
 	    {/if}
     </Alert>
 
-    <Table bordered responsive>
+    <Table bordered >
         <thead>
-          <tr>
+          <tr style="background-color: lightslategray;"> 
             <th>Comunidad autónoma</th>
             <th>Año</th>
             <th>Peso normal</th>
@@ -261,7 +261,7 @@ import { } from "node:os";
         </thead>
         <tbody>
             <tr>
-                <td><input type = "text" placeholder="Comunidad autónoma" bind:value="{newWeight.provinces}"></td>
+                <td style="background-color: lightskyblue;"><input type = "text" placeholder="Comunidad autónoma" bind:value="{newWeight.provinces}"></td>
                 <td><input type = "number" placeholder="2075" bind:value="{newWeight.year}"></td>
                 <td><input type = "number" placeholder="0000" bind:value="{newWeight.normal_weight}"></td>
                 <td><input type = "number" placeholder="0000" bind:value="{newWeight.overweight}"></td>
@@ -270,7 +270,7 @@ import { } from "node:os";
             </tr>
             {#each weightStats as weightsStat}
                 <tr>
-                    <td>{weightsStat.provinces}</td>
+                    <td style="background-color: lightskyblue;"><b>{weightsStat.provinces}</b></td>
                     <td>{weightsStat.year}</td>
                     <td>{weightsStat.normal_weight}</td>
                     <td>{weightsStat.overweight}</td>

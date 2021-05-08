@@ -13860,7 +13860,6 @@ var app = (function () {
     	table0 = new Table({
     			props: {
     				bordered: true,
-    				responsive: true,
     				$$slots: { default: [create_default_slot_7$1] },
     				$$scope: { ctx }
     			},
@@ -13970,12 +13969,12 @@ var app = (function () {
     			t9 = space();
     			create_component(button5.$$.fragment);
     			attr_dev(p, "align", "center");
-    			add_location(p, file$2, 286, 4, 10754);
-    			add_location(strong, file$2, 292, 34, 11075);
+    			add_location(p, file$2, 286, 4, 10874);
+    			add_location(strong, file$2, 292, 34, 11195);
     			set_style(h4, "text-align", "center");
-    			add_location(h4, file$2, 292, 4, 11045);
+    			add_location(h4, file$2, 292, 4, 11165);
     			set_style(div, "text-align", "center");
-    			add_location(div, file$2, 309, 4, 11910);
+    			add_location(div, file$2, 309, 4, 12030);
     		},
     		m: function mount(target, anchor) {
     			mount_component(alert_1, target, anchor);
@@ -14290,6 +14289,7 @@ var app = (function () {
     function create_each_block(ctx) {
     	let tr;
     	let td0;
+    	let b;
     	let t0_value = /*weightsStat*/ ctx[34].provinces + "";
     	let t0;
     	let t1;
@@ -14346,6 +14346,7 @@ var app = (function () {
     		c: function create() {
     			tr = element("tr");
     			td0 = element("td");
+    			b = element("b");
     			t0 = text(t0_value);
     			t1 = space();
     			td1 = element("td");
@@ -14366,20 +14367,23 @@ var app = (function () {
     			t10 = space();
     			create_component(button1.$$.fragment);
     			t11 = space();
-    			add_location(td0, file$2, 272, 20, 10085);
-    			add_location(td1, file$2, 273, 20, 10139);
-    			add_location(td2, file$2, 274, 20, 10188);
-    			add_location(td3, file$2, 275, 20, 10246);
-    			add_location(td4, file$2, 276, 20, 10301);
+    			add_location(b, file$2, 272, 64, 10202);
+    			set_style(td0, "background-color", "lightskyblue");
+    			add_location(td0, file$2, 272, 20, 10158);
+    			add_location(td1, file$2, 273, 20, 10259);
+    			add_location(td2, file$2, 274, 20, 10308);
+    			add_location(td3, file$2, 275, 20, 10366);
+    			add_location(td4, file$2, 276, 20, 10421);
     			attr_dev(a, "href", a_href_value = "#/weights-stats/" + /*weightsStat*/ ctx[34].provinces + "/" + /*weightsStat*/ ctx[34].year);
-    			add_location(a, file$2, 278, 24, 10383);
-    			add_location(td5, file$2, 277, 20, 10353);
-    			add_location(tr, file$2, 271, 16, 10059);
+    			add_location(a, file$2, 278, 24, 10503);
+    			add_location(td5, file$2, 277, 20, 10473);
+    			add_location(tr, file$2, 271, 16, 10132);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
     			append_dev(tr, td0);
-    			append_dev(td0, t0);
+    			append_dev(td0, b);
+    			append_dev(b, t0);
     			append_dev(tr, t1);
     			append_dev(tr, td1);
     			append_dev(td1, t2);
@@ -14457,7 +14461,7 @@ var app = (function () {
     	return block;
     }
 
-    // (251:4) <Table bordered responsive>
+    // (251:4) <Table bordered >
     function create_default_slot_7$1(ctx) {
     	let thead;
     	let tr0;
@@ -14567,37 +14571,39 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$2, 253, 12, 9093);
-    			add_location(th1, file$2, 254, 12, 9134);
-    			add_location(th2, file$2, 255, 12, 9160);
-    			add_location(th3, file$2, 256, 12, 9194);
-    			add_location(th4, file$2, 257, 12, 9226);
-    			add_location(th5, file$2, 258, 12, 9257);
-    			add_location(tr0, file$2, 252, 10, 9075);
-    			add_location(thead, file$2, 251, 8, 9056);
+    			add_location(th0, file$2, 253, 12, 9126);
+    			add_location(th1, file$2, 254, 12, 9167);
+    			add_location(th2, file$2, 255, 12, 9193);
+    			add_location(th3, file$2, 256, 12, 9227);
+    			add_location(th4, file$2, 257, 12, 9259);
+    			add_location(th5, file$2, 258, 12, 9290);
+    			set_style(tr0, "background-color", "lightslategray");
+    			add_location(tr0, file$2, 252, 10, 9065);
+    			add_location(thead, file$2, 251, 8, 9046);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "Comunidad autónoma");
-    			add_location(input0, file$2, 263, 20, 9366);
-    			add_location(td0, file$2, 263, 16, 9362);
+    			add_location(input0, file$2, 263, 60, 9439);
+    			set_style(td0, "background-color", "lightskyblue");
+    			add_location(td0, file$2, 263, 16, 9395);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "placeholder", "2075");
-    			add_location(input1, file$2, 264, 20, 9482);
-    			add_location(td1, file$2, 264, 16, 9478);
+    			add_location(input1, file$2, 264, 20, 9555);
+    			add_location(td1, file$2, 264, 16, 9551);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "placeholder", "0000");
-    			add_location(input2, file$2, 265, 20, 9581);
-    			add_location(td2, file$2, 265, 16, 9577);
+    			add_location(input2, file$2, 265, 20, 9654);
+    			add_location(td2, file$2, 265, 16, 9650);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "0000");
-    			add_location(input3, file$2, 266, 20, 9689);
-    			add_location(td3, file$2, 266, 16, 9685);
+    			add_location(input3, file$2, 266, 20, 9762);
+    			add_location(td3, file$2, 266, 16, 9758);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "placeholder", "0000");
-    			add_location(input4, file$2, 267, 20, 9794);
-    			add_location(td4, file$2, 267, 16, 9790);
-    			add_location(td5, file$2, 268, 16, 9892);
-    			add_location(tr1, file$2, 262, 12, 9340);
-    			add_location(tbody, file$2, 261, 8, 9319);
+    			add_location(input4, file$2, 267, 20, 9867);
+    			add_location(td4, file$2, 267, 16, 9863);
+    			add_location(td5, file$2, 268, 16, 9965);
+    			add_location(tr1, file$2, 262, 12, 9373);
+    			add_location(tbody, file$2, 261, 8, 9352);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -14750,7 +14756,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$1.name,
     		type: "slot",
-    		source: "(251:4) <Table bordered responsive>",
+    		source: "(251:4) <Table bordered >",
     		ctx
     	});
 
@@ -14900,32 +14906,32 @@ var app = (function () {
     			t13 = space();
     			td4 = element("td");
     			input4 = element("input");
-    			add_location(th0, file$2, 295, 8, 11152);
-    			add_location(th1, file$2, 296, 8, 11202);
-    			add_location(th2, file$2, 297, 8, 11237);
-    			add_location(th3, file$2, 298, 8, 11295);
-    			add_location(th4, file$2, 299, 8, 11351);
+    			add_location(th0, file$2, 295, 8, 11272);
+    			add_location(th1, file$2, 296, 8, 11322);
+    			add_location(th2, file$2, 297, 8, 11357);
+    			add_location(th3, file$2, 298, 8, 11415);
+    			add_location(th4, file$2, 299, 8, 11471);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "Comunidad autónoma");
-    			add_location(input0, file$2, 301, 16, 11428);
-    			add_location(td0, file$2, 301, 12, 11424);
+    			add_location(input0, file$2, 301, 16, 11548);
+    			add_location(td0, file$2, 301, 12, 11544);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "placeholder", "2075");
-    			add_location(input1, file$2, 302, 16, 11530);
-    			add_location(td1, file$2, 302, 12, 11526);
+    			add_location(input1, file$2, 302, 16, 11650);
+    			add_location(td1, file$2, 302, 12, 11646);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "placeholder", "0000");
-    			add_location(input2, file$2, 303, 16, 11616);
-    			add_location(td2, file$2, 303, 12, 11612);
+    			add_location(input2, file$2, 303, 16, 11736);
+    			add_location(td2, file$2, 303, 12, 11732);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "0000");
-    			add_location(input3, file$2, 304, 16, 11710);
-    			add_location(td3, file$2, 304, 12, 11706);
+    			add_location(input3, file$2, 304, 16, 11830);
+    			add_location(td3, file$2, 304, 12, 11826);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "placeholder", "0000");
-    			add_location(input4, file$2, 305, 16, 11802);
-    			add_location(td4, file$2, 305, 12, 11798);
-    			add_location(tr, file$2, 300, 8, 11406);
+    			add_location(input4, file$2, 305, 16, 11922);
+    			add_location(td4, file$2, 305, 12, 11918);
+    			add_location(tr, file$2, 300, 8, 11526);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, th0, anchor);
