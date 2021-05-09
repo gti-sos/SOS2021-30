@@ -7,8 +7,8 @@
   import Info from "./Info.svelte";
 	import Router from 'svelte-spa-router';
   import LifeExpectancy from './lifeExpectancy.svelte';
-	import TablaAlcohol from "./TablaAlcohol.svelte";
-  import EditAlcohol from "./EditAlcohol.svelte";
+	import TablaAlcohol from "./alcoholStats/TablaAlcohol.svelte";
+  import EditAlcohol from "./alcoholStats/EditAlcohol.svelte";
   import SmokerStats from "./Smokers.svelte";
   import FrontWeight from "./weightsStats/TablaWeights.svelte";
   import EditWeight from "./weightsStats/EditWeight.svelte";

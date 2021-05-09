@@ -14,14 +14,98 @@ module.exports.register = (app) => {
                 "year":"2017",
                 "ageRange":"0-5",
                 "alcoholPrematureDeath":0,
-                "prevalenceOfAlcoholUseDisorder":0.00
+                "prevalenceOfAlcoholUseDisorder":0.01
             },
             {
                 "country":"España",
                 "year":"2017",
                 "ageRange":"5-14",
+                "alcoholPrematureDeath":0,
+                "prevalenceOfAlcoholUseDisorder":0.08
+            },
+            {
+                "country":"España",
+                "year":"2017",
+                "ageRange":"15-19",
+                "alcoholPrematureDeath":0,
+                "prevalenceOfAlcoholUseDisorder":1.66
+            },
+            {
+                "country":"España",
+                "year":"2017",
+                "ageRange":"20-24",
                 "alcoholPrematureDeath":1,
-                "prevalenceOfAlcoholUseDisorder":0.003
+                "prevalenceOfAlcoholUseDisorder":4.04
+            },
+            {
+                "country":"España",
+                "year":"2017",
+                "ageRange":"25-29",
+                "alcoholPrematureDeath":2,
+                "prevalenceOfAlcoholUseDisorder":3.71
+            },
+            {
+                "country":"España",
+                "year":"2017",
+                "ageRange":"30-34",
+                "alcoholPrematureDeath":6,
+                "prevalenceOfAlcoholUseDisorder":3.02
+            },
+            {
+                "country":"España",
+                "year":"2017",
+                "ageRange":"35-39",
+                "alcoholPrematureDeath":15,
+                "prevalenceOfAlcoholUseDisorder":2.65
+            },
+            {
+                "country":"España",
+                "year":"2017",
+                "ageRange":"40-44",
+                "alcoholPrematureDeath":26,
+                "prevalenceOfAlcoholUseDisorder":2.31
+            },
+            {
+                "country":"España",
+                "year":"2017",
+                "ageRange":"45-49",
+                "alcoholPrematureDeath":49,
+                "prevalenceOfAlcoholUseDisorder":1.95
+            },
+            {
+                "country":"España",
+                "year":"2017",
+                "ageRange":"50-54",
+                "alcoholPrematureDeath":52,
+                "prevalenceOfAlcoholUseDisorder":1.64
+            },
+            {
+                "country":"España",
+                "year":"2017",
+                "ageRange":"55-59",
+                "alcoholPrematureDeath":54,
+                "prevalenceOfAlcoholUseDisorder":1.49
+            },
+            {
+                "country":"España",
+                "year":"2017",
+                "ageRange":"60-64",
+                "alcoholPrematureDeath":50,
+                "prevalenceOfAlcoholUseDisorder":1.34
+            },
+            {
+                "country":"España",
+                "year":"2017",
+                "ageRange":"65-69",
+                "alcoholPrematureDeath":47,
+                "prevalenceOfAlcoholUseDisorder":1.14
+            },
+            {
+                "country":"España",
+                "year":"2017",
+                "ageRange":"70-74",
+                "alcoholPrematureDeath":40,
+                "prevalenceOfAlcoholUseDisorder":0.96
             }
         ];
         // Inicialización base de datos

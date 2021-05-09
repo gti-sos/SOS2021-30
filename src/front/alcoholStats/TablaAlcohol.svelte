@@ -13,7 +13,7 @@
     let visible = false;
     let color = "white";
     let page = 1;
-    let totaldata=2; // Número total de los datos
+    let totaldata=0; // Número total de los datos
     let errorMSG = "";
 
     var BASE_ALCOHOL_PATH = "/api/v1/alcohol-consumption-stats/";
@@ -32,6 +32,8 @@
     let busquedaAlcoholPrematureDeath = "";
     let busquedaPrevalenceOfAlcoholUseDisorder = "";
 
+    onMount(getStats);
+
     //GET INITIALDATA
     async function loadInitialData() {
         console.log("Fetching employment data...");
@@ -41,7 +43,7 @@
                 console.log("Ok:");
                 const json = await res.json();
                 alcoholStats = json;
-                totaldata=2;
+                totaldata=14;
                 console.log("Received " + alcoholStats.length + " alcohol data.");
                 color = "success";
                 errorMSG = "Datos cargados correctamente";
@@ -173,7 +175,7 @@
     if(typeof busquedaPrevalenceOfAlcoholUseDisorder=='undefined'){
         busquedaPrevalenceOfAlcoholUseDisorder="";
     }
-    const res = await fetch(BASE_ALCOHOL_PATH + "?country="+busquedaCountry+"&year="+busquedaYear+"&ageRange="+busquedaAgeRange+"&alcoholPrematureDeath="+busquedaAlcoholPrematureDeath+"&prevalenceOfAlcoholUseDisorder="+busquedaPrevalenceOfAlcoholUseDisorder)
+    const res = await fetch(BASE_ALCOHOL_PATH + "?country="+busquedaCountry+"&year="+busquedaYear+"&ageRange="+busquedaAgeRange+"&alcoholPrematureDeath="+busquedaAlcoholPrematureDeath+"&prevalenceOfAlcoholUseDisorder="+busquedaPrevalenceOfAlcoholUseDisorder);
     if (res.ok){
         const json = await res.json();
         alcoholStats = json;
@@ -193,17 +195,17 @@
     async function getNextPage() {
 
         console.log(totaldata);
-        if (page+5 > totaldata) {
+        if (page+10 > totaldata) {
             page = 1
         } else {
-            page+=5
+            page+=10
         }
         
         visible = true;
         console.log("Charging page... Listing since: "+page);
-        const res = await fetch("/api/v1/alcohol-consumption-stats?limit=3&offset="+(-1+page));
+        const res = await fetch("/api/v1/alcohol-consumption-stats/?limit=10&offset="+(-1+page));
         color = "success";
-        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
@@ -212,26 +214,26 @@
         }else if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
-            SmokerStats = json;
+            alcoholStats = json;
             console.log("Received " + alcoholStats.length + " resources.");
         } else {
             errorMSG= res.status + ": " + res.statusText;
             console.log("ERROR!");
         }
     }
-    //getPreviewPage
+    //getPreviewPage    
     async function getPreviewPage() {
 
         console.log(totaldata);
-        if (page-5 > 1) {
+        if (page-10 > 1) {
             page-=5; 
         } else page = 1
 
         visible = true;
         console.log("Charging page... Listing since: "+page);
-        const res = await fetch("/api/v1/alcohol-consumption-stats?limit=5&offset="+(-1+page));
+        const res = await fetch(BASE_ALCOHOL_PATH + "?limit=10&offset="+(-1+page));
         color = "success";
-        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
@@ -240,15 +242,13 @@
         }else if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
-            SmokerStats = json;
+            alcoholStats = json;
             console.log("Received "+alcoholStats.length+" resources.");
         } else {
             errorMSG= res.status+": "+res.statusText;
             console.log("ERROR!");
         }
     }
-
-    onMount(getStats);
 
 </script>
 
@@ -329,7 +329,7 @@
             Eliminar todo
         </Button>
         <Button outline color="primary" on:click="{getPreviewPage}">
-           Atrás
+           Anterior
         </Button>
         <Button outline color="primary" on:click="{getNextPage}">
             Siguiente
