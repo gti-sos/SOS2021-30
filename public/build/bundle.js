@@ -9371,7 +9371,7 @@ var app = (function () {
     	return block;
     }
 
-    // (279:8) {:then LifeExpectancyStats}
+    // (278:8) {:then LifeExpectancyStats}
     function create_then_block$3(ctx) {
     	let alert_1;
     	let t0;
@@ -9566,14 +9566,14 @@ var app = (function () {
     		block,
     		id: create_then_block$3.name,
     		type: "then",
-    		source: "(279:8) {:then LifeExpectancyStats}",
+    		source: "(278:8) {:then LifeExpectancyStats}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (282:12) {#if checkMSG}
+    // (281:12) {#if checkMSG}
     function create_if_block$5(ctx) {
     	let t;
 
@@ -9596,14 +9596,14 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(282:12) {#if checkMSG}",
+    		source: "(281:12) {#if checkMSG}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (281:8) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
+    // (280:8) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
     function create_default_slot_8$4(ctx) {
     	let if_block_anchor;
     	let if_block = /*checkMSG*/ ctx[1] && create_if_block$5(ctx);
@@ -9641,14 +9641,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8$4.name,
     		type: "slot",
-    		source: "(281:8) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>",
+    		source: "(280:8) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (307:60) <Button outline color="primary" on:click={insertLife}>
+    // (306:60) <Button outline color="primary" on:click={insertLife}>
     function create_default_slot_7$4(ctx) {
     	let t;
 
@@ -9668,14 +9668,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$4.name,
     		type: "slot",
-    		source: "(307:60) <Button outline color=\\\"primary\\\" on:click={insertLife}>",
+    		source: "(306:60) <Button outline color=\\\"primary\\\" on:click={insertLife}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (319:20) <Button outline color="danger" on:click="{deleteLife(life.province, life.year)}">
+    // (318:20) <Button outline color="danger" on:click="{deleteLife(life.province, life.year)}">
     function create_default_slot_6$4(ctx) {
     	let t;
 
@@ -9695,14 +9695,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$4.name,
     		type: "slot",
-    		source: "(319:20) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteLife(life.province, life.year)}\\\">",
+    		source: "(318:20) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteLife(life.province, life.year)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (320:20) <Button outline color="primary" on:click="{editLife(life.province, life.year)}">
+    // (319:20) <Button outline color="primary" on:click="{editLife(life.province, life.year)}">
     function create_default_slot_5$4(ctx) {
     	let t;
 
@@ -9722,14 +9722,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$4.name,
     		type: "slot",
-    		source: "(320:20) <Button outline color=\\\"primary\\\" on:click=\\\"{editLife(life.province, life.year)}\\\">",
+    		source: "(319:20) <Button outline color=\\\"primary\\\" on:click=\\\"{editLife(life.province, life.year)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (310:8) {#each LifeExpectancyStats as life}
+    // (309:8) {#each LifeExpectancyStats as life}
     function create_each_block$3(ctx) {
     	let tr;
     	let td0;
@@ -9822,17 +9822,17 @@ var app = (function () {
     			td7 = element("td");
     			create_component(button1.$$.fragment);
     			t13 = space();
-    			add_location(td0, file$6, 312, 16, 11735);
+    			add_location(td0, file$6, 311, 16, 11971);
     			attr_dev(a, "href", a_href_value = "api/v1/life-expectancy-stats/" + /*life*/ ctx[22].province + "/" + /*life*/ ctx[22].year);
-    			add_location(a, file$6, 313, 20, 11780);
-    			add_location(td1, file$6, 313, 16, 11776);
-    			add_location(td2, file$6, 314, 16, 11889);
-    			add_location(td3, file$6, 315, 16, 11927);
-    			add_location(td4, file$6, 316, 16, 11980);
-    			add_location(td5, file$6, 317, 16, 12031);
-    			add_location(td6, file$6, 318, 16, 12086);
-    			add_location(td7, file$6, 319, 16, 12209);
-    			add_location(tr, file$6, 310, 12, 11695);
+    			add_location(a, file$6, 312, 20, 12016);
+    			add_location(td1, file$6, 312, 16, 12012);
+    			add_location(td2, file$6, 313, 16, 12125);
+    			add_location(td3, file$6, 314, 16, 12163);
+    			add_location(td4, file$6, 315, 16, 12216);
+    			add_location(td5, file$6, 316, 16, 12267);
+    			add_location(td6, file$6, 317, 16, 12322);
+    			add_location(td7, file$6, 318, 16, 12445);
+    			add_location(tr, file$6, 309, 12, 11931);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -9913,14 +9913,14 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(310:8) {#each LifeExpectancyStats as life}",
+    		source: "(309:8) {#each LifeExpectancyStats as life}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (287:8) <Table bordered responsive>
+    // (286:8) <Table bordered responsive>
     function create_default_slot_4$4(ctx) {
     	let thead;
     	let tr0;
@@ -10041,45 +10041,45 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$6, 289, 20, 10439);
-    			add_location(th1, file$6, 290, 20, 10474);
-    			add_location(th2, file$6, 291, 20, 10523);
-    			add_location(th3, file$6, 292, 20, 10557);
-    			add_location(th4, file$6, 293, 20, 10616);
-    			add_location(th5, file$6, 294, 20, 10674);
+    			add_location(th0, file$6, 288, 20, 10675);
+    			add_location(th1, file$6, 289, 20, 10710);
+    			add_location(th2, file$6, 290, 20, 10759);
+    			add_location(th3, file$6, 291, 20, 10793);
+    			add_location(th4, file$6, 292, 20, 10852);
+    			add_location(th5, file$6, 293, 20, 10910);
     			attr_dev(th6, "colspan", "2");
-    			add_location(th6, file$6, 295, 20, 10728);
-    			add_location(tr0, file$6, 288, 16, 10413);
-    			add_location(thead, file$6, 287, 12, 10388);
+    			add_location(th6, file$6, 294, 20, 10964);
+    			add_location(tr0, file$6, 287, 16, 10649);
+    			add_location(thead, file$6, 286, 12, 10624);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "España");
-    			add_location(input0, file$6, 300, 20, 10855);
-    			add_location(td0, file$6, 300, 16, 10851);
+    			add_location(input0, file$6, 299, 20, 11091);
+    			add_location(td0, file$6, 299, 16, 11087);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "placeholder", "Cataluña");
-    			add_location(input1, file$6, 301, 20, 10955);
-    			add_location(td1, file$6, 301, 16, 10951);
+    			add_location(input1, file$6, 300, 20, 11191);
+    			add_location(td1, file$6, 300, 16, 11187);
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "2017");
-    			add_location(input2, file$6, 302, 20, 11059);
-    			add_location(td2, file$6, 302, 16, 11055);
+    			add_location(input2, file$6, 301, 20, 11295);
+    			add_location(td2, file$6, 301, 16, 11291);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "80");
-    			add_location(input3, file$6, 303, 20, 11155);
-    			add_location(td3, file$6, 303, 16, 11151);
+    			add_location(input3, file$6, 302, 20, 11391);
+    			add_location(td3, file$6, 302, 16, 11387);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "placeholder", "81.4");
-    			add_location(input4, file$6, 304, 20, 11269);
-    			add_location(td4, file$6, 304, 16, 11265);
+    			add_location(input4, file$6, 303, 20, 11505);
+    			add_location(td4, file$6, 303, 16, 11501);
     			attr_dev(input5, "type", "number");
     			attr_dev(input5, "placeholder", "80.8");
-    			add_location(input5, file$6, 305, 20, 11381);
-    			add_location(td5, file$6, 305, 16, 11377);
+    			add_location(input5, file$6, 304, 20, 11617);
+    			add_location(td5, file$6, 304, 16, 11613);
     			attr_dev(td6, "colspan", "2");
     			set_style(td6, "text-align", "center");
-    			add_location(td6, file$6, 306, 16, 11493);
-    			add_location(tr1, file$6, 299, 12, 10829);
-    			add_location(tbody, file$6, 298, 8, 10808);
+    			add_location(td6, file$6, 305, 16, 11729);
+    			add_location(tr1, file$6, 298, 12, 11065);
+    			add_location(tbody, file$6, 297, 8, 11044);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -10243,14 +10243,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$4.name,
     		type: "slot",
-    		source: "(287:8) <Table bordered responsive>",
+    		source: "(286:8) <Table bordered responsive>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (326:8) <Button color="success" on:click="{getLifeExpectancy}">
+    // (325:8) <Button color="success" on:click="{getLifeExpectancy}">
     function create_default_slot_3$6(ctx) {
     	let t;
 
@@ -10270,14 +10270,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$6.name,
     		type: "slot",
-    		source: "(326:8) <Button color=\\\"success\\\" on:click=\\\"{getLifeExpectancy}\\\">",
+    		source: "(325:8) <Button color=\\\"success\\\" on:click=\\\"{getLifeExpectancy}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (329:8) <Button color="danger" on:click="{deleteALL}">
+    // (328:8) <Button color="danger" on:click="{deleteALL}">
     function create_default_slot_2$6(ctx) {
     	let t;
 
@@ -10297,14 +10297,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$6.name,
     		type: "slot",
-    		source: "(329:8) <Button color=\\\"danger\\\" on:click=\\\"{deleteALL}\\\">",
+    		source: "(328:8) <Button color=\\\"danger\\\" on:click=\\\"{deleteALL}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (332:8) <Button outline color="primary" on:click="{getPreviewPage}">
+    // (331:8) <Button outline color="primary" on:click="{getPreviewPage}">
     function create_default_slot_1$6(ctx) {
     	let t;
 
@@ -10324,14 +10324,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$6.name,
     		type: "slot",
-    		source: "(332:8) <Button outline color=\\\"primary\\\" on:click=\\\"{getPreviewPage}\\\">",
+    		source: "(331:8) <Button outline color=\\\"primary\\\" on:click=\\\"{getPreviewPage}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (335:8) <Button outline color="primary" on:click="{getNextPage}">
+    // (334:8) <Button outline color="primary" on:click="{getNextPage}">
     function create_default_slot$6(ctx) {
     	let t;
 
@@ -10351,14 +10351,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$6.name,
     		type: "slot",
-    		source: "(335:8) <Button outline color=\\\"primary\\\" on:click=\\\"{getNextPage}\\\">",
+    		source: "(334:8) <Button outline color=\\\"primary\\\" on:click=\\\"{getNextPage}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (277:36)               Loading life stats data...          {:then LifeExpectancyStats}
+    // (276:36)               Loading life stats data...          {:then LifeExpectancyStats}
     function create_pending_block$3(ctx) {
     	let t;
 
@@ -10381,7 +10381,7 @@ var app = (function () {
     		block,
     		id: create_pending_block$3.name,
     		type: "pending",
-    		source: "(277:36)               Loading life stats data...          {:then LifeExpectancyStats}",
+    		source: "(276:36)               Loading life stats data...          {:then LifeExpectancyStats}",
     		ctx
     	});
 
@@ -10417,8 +10417,8 @@ var app = (function () {
     			t1 = space();
     			info.block.c();
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$6, 274, 8, 9960);
-    			add_location(main, file$6, 272, 0, 9942);
+    			add_location(h1, file$6, 273, 8, 10196);
+    			add_location(main, file$6, 271, 0, 10178);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10490,20 +10490,20 @@ var app = (function () {
     	let visible = false;
     	let color = "danger";
     	let page = 1;
-    	let totaldata = 3; // Número total de los datos
+    	let totaldata = 19; // Número total de los datos
     	onMount(getLife);
 
-    	//Get initialData
+    	//Get initialData (B)
     	async function getLifeExpectancy() {
     		console.log("Fetching life data...");
     		await fetch("/api/v1/life-expectancy-stats/loadInitialData");
-    		const res = await fetch("/api/v1/life-expectancy-stats");
+    		const res = await fetch("/api/v1/life-expectancy-stats?limit=10&offset=0");
 
     		if (res.ok) {
     			console.log("Ok:");
     			const json = await res.json();
     			$$invalidate(4, LifeExpectancyStats = json);
-    			totaldata = 3;
+    			totaldata = 19;
     			console.log("Received " + LifeExpectancyStats.length + " life data.");
     			$$invalidate(3, color = "success");
     			$$invalidate(1, checkMSG = "Datos cargados correctamente");
@@ -10514,10 +10514,10 @@ var app = (function () {
     		}
     	}
 
-    	//Get
+    	//Get (B)
     	async function getLife() {
     		console.log("Fetching resources...");
-    		const res = await fetch("/api/v1/life-expectancy-stats");
+    		const res = await fetch("/api/v1/life-expectancy-stats?limit=10&offset=0");
 
     		if (res.ok) {
     			console.log("Ok:");
@@ -10530,12 +10530,12 @@ var app = (function () {
     		}
     	}
 
-    	//Insert
+    	//Insert (B)
     	async function insertLife() {
     		console.log("Inserting resources...");
 
-    		if (newLife.country == "" || newLife.province == "" || newLife.year == null) {
-    			alert("Los campos 'País' 'Comunidad Autonoma'y 'Año' no pueden estar vacios");
+    		if (newLife.country == "" || newLife.province == "" || newLife.year == null || newLife.lifeExpectancyWoman == null || newLife.lifeExpectancyMan == null || newLife.averageLifeExpectancy == null) {
+    			alert("Los campos no pueden estar vacios");
     		} else {
     			await fetch("/api/v1/life-expectancy-stats", {
     				method: "POST",
@@ -10563,13 +10563,12 @@ var app = (function () {
     		}
     	}
 
-    	//EDIT
+    	//EDIT (B)
     	async function editLife(province, year) {
-    		//Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
-    		if (newLife.province == "" || newLife.year == null) {
-    			alert("Los campos 'Comunidad Autonoma'y 'Año' no pueden estar vacios");
+    		if (newLife.country == "" || newLife.province == "" || newLife.year == null || newLife.lifeExpectancyWoman == null || newLife.lifeExpectancyMan == null || newLife.averageLifeExpectancy == null) {
+    			alert("Los campos no pueden estar vacios");
     		} else if (province != newLife.province || year != newLife.year) {
-    			alert("Los campos 'Comunidad Autónoma' y 'Año' no pueden ser distintos");
+    			alert("Los campos 'Comunidad Autónoma' y 'Año' no pueden ser distintos al recurso a actualizar");
     		} else {
     			console.log("Editing resources...");
 
@@ -10598,7 +10597,7 @@ var app = (function () {
     		}
     	}
 
-    	//Delete
+    	//Delete (B)
     	async function deleteLife(province, year) {
     		await fetch("/api/v1/life-expectancy-stats/" + province + "/" + year, { method: "DELETE" }).then(function (res) {
     			$$invalidate(2, visible = true);
@@ -10628,7 +10627,7 @@ var app = (function () {
     		if (confirm("¿Está seguro de que desea eliminar todas las entradas?")) {
     			console.log("Deleting all life stats data...");
 
-    			await fetch("/api/v1/life-expectancy-stats/", { method: "DELETE" }).then(function (res) {
+    			await fetch("/api/v1/life-expectancy-stats", { method: "DELETE" }).then(function (res) {
     				$$invalidate(2, visible = true);
 
     				if (res.ok && totaldata > 0) {
@@ -10650,27 +10649,27 @@ var app = (function () {
     		}
     	}
 
-    	//SEARCH
-    	//getNextPage
+    	//SEARCH 
+    	//getNextPage (B)
     	async function getNextPage() {
     		console.log(totaldata);
 
-    		if (page + 5 > totaldata) {
+    		if (page + 10 > totaldata) {
     			page = 1;
     		} else {
-    			page += 5;
+    			page += 10;
     		}
 
     		$$invalidate(2, visible = true);
     		console.log("Charging page... Listing since: " + page);
-    		const res = await fetch("/api/v1/life-expectancy-stats?limit=5&offset=" + (-1 + page));
+    		const res = await fetch("/api/v1/life-expectancy-stats?limit=10&offset=" + (-1 + page));
 
     		//condicional imprime msg
     		$$invalidate(3, color = "success");
 
     		$$invalidate(1, checkMSG = page + 5 > totaldata
     		? "Mostrando elementos " + page + "-" + totaldata
-    		: "Mostrando elementos " + page + "-" + (page + 4));
+    		: "Mostrando elementos " + page + "-" + (page + 9));
 
     		if (totaldata == 0) {
     			console.log("ERROR Data was not erased");
@@ -10679,7 +10678,7 @@ var app = (function () {
     		} else if (res.ok) {
     			console.log("Ok:");
     			const json = await res.json();
-    			SmokerStats = json;
+    			$$invalidate(4, LifeExpectancyStats = json);
     			console.log("Received " + LifeExpectancyStats.length + " resources.");
     		} else {
     			$$invalidate(1, checkMSG = res.status + ": " + res.statusText);
@@ -10687,34 +10686,34 @@ var app = (function () {
     		}
     	}
 
-    	//getPreviewPage
+    	//getPreviewPage (B)
     	async function getPreviewPage() {
     		console.log(totaldata);
 
-    		if (page - 5 > 1) {
-    			page -= 5;
+    		if (page - 10 > 1) {
+    			page -= 10;
     		} else page = 1;
 
     		$$invalidate(2, visible = true);
     		console.log("Charging page... Listing since: " + page);
-    		const res = await fetch("/api/v1/life-expectancy-stats?limit=5&offset=" + (-1 + page));
+    		const res = await fetch("/api/v1/life-expectancy-stats?limit=10&offset=" + (-1 + page));
     		$$invalidate(3, color = "success");
 
-    		errorMSG = page + 5 > totaldata
+    		$$invalidate(1, checkMSG = page + 5 > totaldata
     		? "Mostrando elementos " + page + "-" + totaldata
-    		: "Mostrando elementos " + page + "-" + (page + 4);
+    		: "Mostrando elementos " + page + "-" + (page + 9));
 
     		if (totaldata == 0) {
     			console.log("ERROR Data was not erased");
     			$$invalidate(3, color = "danger");
-    			errorMSG = "¡No hay datos!";
+    			$$invalidate(1, checkMSG = "¡No hay datos!");
     		} else if (res.ok) {
     			console.log("Ok:");
     			const json = await res.json();
-    			SmokerStats = json;
+    			$$invalidate(4, LifeExpectancyStats = json);
     			console.log("Received " + LifeExpectancyStats.length + " resources.");
     		} else {
-    			errorMSG = res.status + ": " + res.statusText;
+    			$$invalidate(1, checkMSG = res.status + ": " + res.statusText);
     			console.log("ERROR!");
     		}
     	}
