@@ -13,7 +13,7 @@
     let visible = false;
     let color = "white";
     let page = 1;
-    let totaldata=0; // Número total de los datos
+    let totaldata=14; // Número total de los datos
     let errorMSG = "";
 
     var BASE_ALCOHOL_PATH = "/api/v1/alcohol-consumption-stats/";
