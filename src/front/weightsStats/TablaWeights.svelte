@@ -187,7 +187,7 @@ import { } from "node:os";
         console.log("Charging page... Listing since: "+page);
         const res = await fetch(BASE_WEIGHTS_PATH + "?limit=10&offset="+(-1+page));
         color = "success";
-        checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
@@ -209,14 +209,14 @@ import { } from "node:os";
 
         console.log(totaldata);
         if (page-10 > 1) {
-            page-=5; 
+            page-=10; 
         } else page = 1
 
         visible = true;
         console.log("Charging page... Listing since: "+page);
         const res = await fetch(BASE_WEIGHTS_PATH + "?limit=10&offset="+(-1+page));
         color = "success";
-        checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");

@@ -15050,12 +15050,12 @@ var app = (function () {
     			t9 = space();
     			create_component(button5.$$.fragment);
     			attr_dev(p, "align", "center");
-    			add_location(p, file$2, 286, 4, 10874);
-    			add_location(strong, file$2, 292, 34, 11195);
+    			add_location(p, file$2, 286, 4, 10875);
+    			add_location(strong, file$2, 292, 34, 11196);
     			set_style(h4, "text-align", "center");
-    			add_location(h4, file$2, 292, 4, 11165);
+    			add_location(h4, file$2, 292, 4, 11166);
     			set_style(div, "text-align", "center");
-    			add_location(div, file$2, 309, 4, 12030);
+    			add_location(div, file$2, 309, 4, 12031);
     		},
     		m: function mount(target, anchor) {
     			mount_component(alert_1, target, anchor);
@@ -15448,17 +15448,17 @@ var app = (function () {
     			t10 = space();
     			create_component(button1.$$.fragment);
     			t11 = space();
-    			add_location(b, file$2, 272, 64, 10202);
+    			add_location(b, file$2, 272, 64, 10203);
     			set_style(td0, "background-color", "lightskyblue");
-    			add_location(td0, file$2, 272, 20, 10158);
-    			add_location(td1, file$2, 273, 20, 10259);
-    			add_location(td2, file$2, 274, 20, 10308);
-    			add_location(td3, file$2, 275, 20, 10366);
-    			add_location(td4, file$2, 276, 20, 10421);
+    			add_location(td0, file$2, 272, 20, 10159);
+    			add_location(td1, file$2, 273, 20, 10260);
+    			add_location(td2, file$2, 274, 20, 10309);
+    			add_location(td3, file$2, 275, 20, 10367);
+    			add_location(td4, file$2, 276, 20, 10422);
     			attr_dev(a, "href", a_href_value = "#/weights-stats/" + /*weightsStat*/ ctx[34].provinces + "/" + /*weightsStat*/ ctx[34].year);
-    			add_location(a, file$2, 278, 24, 10503);
-    			add_location(td5, file$2, 277, 20, 10473);
-    			add_location(tr, file$2, 271, 16, 10132);
+    			add_location(a, file$2, 278, 24, 10504);
+    			add_location(td5, file$2, 277, 20, 10474);
+    			add_location(tr, file$2, 271, 16, 10133);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -15652,39 +15652,39 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$2, 253, 12, 9126);
-    			add_location(th1, file$2, 254, 12, 9167);
-    			add_location(th2, file$2, 255, 12, 9193);
-    			add_location(th3, file$2, 256, 12, 9227);
-    			add_location(th4, file$2, 257, 12, 9259);
-    			add_location(th5, file$2, 258, 12, 9290);
+    			add_location(th0, file$2, 253, 12, 9127);
+    			add_location(th1, file$2, 254, 12, 9168);
+    			add_location(th2, file$2, 255, 12, 9194);
+    			add_location(th3, file$2, 256, 12, 9228);
+    			add_location(th4, file$2, 257, 12, 9260);
+    			add_location(th5, file$2, 258, 12, 9291);
     			set_style(tr0, "background-color", "lightslategray");
-    			add_location(tr0, file$2, 252, 10, 9065);
-    			add_location(thead, file$2, 251, 8, 9046);
+    			add_location(tr0, file$2, 252, 10, 9066);
+    			add_location(thead, file$2, 251, 8, 9047);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "Comunidad autónoma");
-    			add_location(input0, file$2, 263, 60, 9439);
+    			add_location(input0, file$2, 263, 60, 9440);
     			set_style(td0, "background-color", "lightskyblue");
-    			add_location(td0, file$2, 263, 16, 9395);
+    			add_location(td0, file$2, 263, 16, 9396);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "placeholder", "2075");
-    			add_location(input1, file$2, 264, 20, 9555);
-    			add_location(td1, file$2, 264, 16, 9551);
+    			add_location(input1, file$2, 264, 20, 9556);
+    			add_location(td1, file$2, 264, 16, 9552);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "placeholder", "0000");
-    			add_location(input2, file$2, 265, 20, 9654);
-    			add_location(td2, file$2, 265, 16, 9650);
+    			add_location(input2, file$2, 265, 20, 9655);
+    			add_location(td2, file$2, 265, 16, 9651);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "0000");
-    			add_location(input3, file$2, 266, 20, 9762);
-    			add_location(td3, file$2, 266, 16, 9758);
+    			add_location(input3, file$2, 266, 20, 9763);
+    			add_location(td3, file$2, 266, 16, 9759);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "placeholder", "0000");
-    			add_location(input4, file$2, 267, 20, 9867);
-    			add_location(td4, file$2, 267, 16, 9863);
-    			add_location(td5, file$2, 268, 16, 9965);
-    			add_location(tr1, file$2, 262, 12, 9373);
-    			add_location(tbody, file$2, 261, 8, 9352);
+    			add_location(input4, file$2, 267, 20, 9868);
+    			add_location(td4, file$2, 267, 16, 9864);
+    			add_location(td5, file$2, 268, 16, 9966);
+    			add_location(tr1, file$2, 262, 12, 9374);
+    			add_location(tbody, file$2, 261, 8, 9353);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -15987,32 +15987,32 @@ var app = (function () {
     			t13 = space();
     			td4 = element("td");
     			input4 = element("input");
-    			add_location(th0, file$2, 295, 8, 11272);
-    			add_location(th1, file$2, 296, 8, 11322);
-    			add_location(th2, file$2, 297, 8, 11357);
-    			add_location(th3, file$2, 298, 8, 11415);
-    			add_location(th4, file$2, 299, 8, 11471);
+    			add_location(th0, file$2, 295, 8, 11273);
+    			add_location(th1, file$2, 296, 8, 11323);
+    			add_location(th2, file$2, 297, 8, 11358);
+    			add_location(th3, file$2, 298, 8, 11416);
+    			add_location(th4, file$2, 299, 8, 11472);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "Comunidad autónoma");
-    			add_location(input0, file$2, 301, 16, 11548);
-    			add_location(td0, file$2, 301, 12, 11544);
+    			add_location(input0, file$2, 301, 16, 11549);
+    			add_location(td0, file$2, 301, 12, 11545);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "placeholder", "2075");
-    			add_location(input1, file$2, 302, 16, 11650);
-    			add_location(td1, file$2, 302, 12, 11646);
+    			add_location(input1, file$2, 302, 16, 11651);
+    			add_location(td1, file$2, 302, 12, 11647);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "placeholder", "0000");
-    			add_location(input2, file$2, 303, 16, 11736);
-    			add_location(td2, file$2, 303, 12, 11732);
+    			add_location(input2, file$2, 303, 16, 11737);
+    			add_location(td2, file$2, 303, 12, 11733);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "0000");
-    			add_location(input3, file$2, 304, 16, 11830);
-    			add_location(td3, file$2, 304, 12, 11826);
+    			add_location(input3, file$2, 304, 16, 11831);
+    			add_location(td3, file$2, 304, 12, 11827);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "placeholder", "0000");
-    			add_location(input4, file$2, 305, 16, 11922);
-    			add_location(td4, file$2, 305, 12, 11918);
-    			add_location(tr, file$2, 300, 8, 11526);
+    			add_location(input4, file$2, 305, 16, 11923);
+    			add_location(td4, file$2, 305, 12, 11919);
+    			add_location(tr, file$2, 300, 8, 11527);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, th0, anchor);
@@ -16247,8 +16247,8 @@ var app = (function () {
     			t1 = space();
     			info.block.c();
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$2, 238, 4, 8706);
-    			add_location(main, file$2, 237, 0, 8694);
+    			add_location(h1, file$2, 238, 4, 8707);
+    			add_location(main, file$2, 237, 0, 8695);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -16492,7 +16492,7 @@ var app = (function () {
 
     		$$invalidate(3, checkMSG = page + 5 > totaldata
     		? "Mostrando elementos " + page + "-" + totaldata
-    		: "Mostrando elementos " + page + "-" + (page + 4));
+    		: "Mostrando elementos " + page + "-" + (page + 9));
 
     		if (totaldata == 0) {
     			console.log("ERROR Data was not erased");
@@ -16514,7 +16514,7 @@ var app = (function () {
     		console.log(totaldata);
 
     		if (page - 10 > 1) {
-    			page -= 5;
+    			page -= 10;
     		} else page = 1;
 
     		$$invalidate(0, visible = true);
@@ -16524,7 +16524,7 @@ var app = (function () {
 
     		$$invalidate(3, checkMSG = page + 5 > totaldata
     		? "Mostrando elementos " + page + "-" + totaldata
-    		: "Mostrando elementos " + page + "-" + (page + 4));
+    		: "Mostrando elementos " + page + "-" + (page + 9));
 
     		if (totaldata == 0) {
     			console.log("ERROR Data was not erased");
