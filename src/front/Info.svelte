@@ -38,7 +38,7 @@
                 <td>Alejandro Sánchez Márquez</td>
                 <td>API life-expectancy-stats</td>
                 <td><a href="https://documenter.getpostman.com/view/14968155/TzJsecsr"><Button color="info">Documentación v1</Button></a>
-                    <a href="https://documenter.getpostman.com/view/14968155/TzJsecsr"><Button color="info">Documentación v2</Button></a></td>
+                    <a href="https://documenter.getpostman.com/view/14968155/TzRSgnE6"><Button color="info">Documentación v2</Button></a></td>
             </tr>
             <tr>
                 <td>Juan Pedro Hurtado Masero</td>
