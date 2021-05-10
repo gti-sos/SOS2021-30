@@ -40,133 +40,6 @@ module.exports.register = (app) => {
                 "lifeExpectancyWoman":85.51,
                 "lifeExpectancyMan":79.50,
                 "averageLifeExpectancy":82.58
-            },
-            {
-                "country":"España",
-                "province":"Cantabria",
-                "year":2017,
-                "lifeExpectancyWoman":86.22,
-                "lifeExpectancyMan":80.34,
-                "averageLifeExpectancy":83.33
-            },
-            {
-                "country":"España",
-                "province":"Ceuta",
-                "year":2017,
-                "lifeExpectancyWoman":82.11,
-                "lifeExpectancyMan":76.65,
-                "averageLifeExpectancy":79.31
-            },
-            {
-                "country":"España",
-                "province":"Castilla y León",
-                "year":2017,
-                "lifeExpectancyWoman":86.51,
-                "lifeExpectancyMan":81.18,
-                "averageLifeExpectancy":83.82
-            },            {
-                "country":"España",
-                "province":"Castilla La Mancha",
-                "year":2017,
-                "lifeExpectancyWoman":85.56,
-                "lifeExpectancyMan":80.53,
-                "averageLifeExpectancy":83.01
-            },
-            {
-                "country":"España",
-                "province":"Canarias",
-                "year":2017,
-                "lifeExpectancyWoman":84.79,
-                "lifeExpectancyMan":80.00,
-                "averageLifeExpectancy":82.39
-            },
-            {
-                "country":"España",
-                "province":"Cataluña",
-                "year":2017,
-                "lifeExpectancyWoman":86.01,
-                "lifeExpectancyMan":80.53,
-                "averageLifeExpectancy":83.33
-            },
-            {
-                "country":"España",
-                "province":"Extremadura",
-                "year":2017,
-                "lifeExpectancyWoman":85.03,
-                "lifeExpectancyMan":79.53,
-                "averageLifeExpectancy":82.24
-            },
-            {
-                "country":"España",
-                "province":"Galicia",
-                "year":2017,
-                "lifeExpectancyWoman":85.90,
-                "lifeExpectancyMan":80.15,
-                "averageLifeExpectancy":83.07
-            },
-            {
-                "country":"España",
-                "province":"Islas Baleares",
-                "year":2017,
-                "lifeExpectancyWoman":85.44,
-                "lifeExpectancyMan":80.36,
-                "averageLifeExpectancy":82.90
-            },
-            {
-                "country":"España",
-                "province":"Murcia",
-                "year":2017,
-                "lifeExpectancyWoman":85.03,
-                "lifeExpectancyMan":79.80,
-                "averageLifeExpectancy":82.41
-            },
-            {
-                "country":"España",
-                "province":"Madrid",
-                "year":2017,
-                "lifeExpectancyWoman":86.81,
-                "lifeExpectancyMan":81.91,
-                "averageLifeExpectancy":84.53
-            },
-            {
-                "country":"España",
-                "province":"Melilla",
-                "year":2017,
-                "lifeExpectancyWoman":82.78,
-                "lifeExpectancyMan":77.82,
-                "averageLifeExpectancy":80.28
-            },
-            {
-                "country":"España",
-                "province":"Navarra",
-                "year":2017,
-                "lifeExpectancyWoman":86.56,
-                "lifeExpectancyMan":81.07,
-                "averageLifeExpectancy":83.52
-            },
-            {
-                "country":"España",
-                "province":"País Vasco",
-                "year":2017,
-                "lifeExpectancyWoman":86.35,
-                "lifeExpectancyMan":80.58,
-                "averageLifeExpectancy":83.54
-            },
-            {
-                "country":"España",
-                "province":"La Rioja",
-                "year":2017,
-                "lifeExpectancyWoman":86.32,
-                "lifeExpectancyMan":80.90,
-                "averageLifeExpectancy":83.60
-            },
-            {
-                "country":"España",
-                "province":"Comunidad Valenciana",
-                "year":2017,
-                "lifeExpectancyWoman":85.09,
-                "lifeExpectancyMan":79.90,
-                "averageLifeExpectancy":82.50
             }
         ];
 
@@ -176,7 +49,7 @@ module.exports.register = (app) => {
         res.send(JSON.stringify(lifeExpectancyStats,null,2));
     });
 
-
+    
     //GET PAGINACION + BÚSQUEDA
     app.get(BASE_API_PATH , (req, res) =>{
         console.log("NEW GET OF SPECIFIC RESOURCE WITH SPECIFIC FIELDS: ")
@@ -235,6 +108,8 @@ module.exports.register = (app) => {
                 }
             });
     });
+    
+
 
 
     //POST A LA LISTA DE RECURSOS

@@ -29,8 +29,10 @@ smokersAPI.register(app);
 //---------------------------END: API REST SMOKERS-CONSUMPTION-STATS-----------------
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST LIFE-EXPECTANCY-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
-var lifeAPI = require("./src/back/lifeExpectancyStatsAPI");
+var lifeAPI = require("./src/back/lifeExpectancyStatsAPI/v1");
 lifeAPI.register(app);
+var lifeAPIv2 = require("./src/back/lifeExpectancyStatsAPI/v2");
+lifeAPIv2.register(app);
 //~~~~~~~~~~~~~~~~~~~ END: API LIFE-EXPECTANCY-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
