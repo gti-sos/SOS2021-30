@@ -394,10 +394,10 @@ module.exports.register = (app) => {
                     if (data.length == 0) {
                         console.error("No data found.");
                         res.status(404).send(`Not  found. Data is not in DB.`);
-                    }else if (data == 0){
+                    }/*else if (data == 0){
                         console.log("Data not found in DB.");
                         res.status(404).send(`Not Found. Data do not exists.`); 
-                    }else {
+                    }*/else {
                         console.log(`Valores del recurso actualizados.`);
                         res.status(200).send(`Se ha actualizado correctamente el recurso.`);
                     }

@@ -9,8 +9,8 @@
   import LifeExpectancy from './lifeExpectancy.svelte';
 	import TablaAlcohol from "./alcoholStats/TablaAlcohol.svelte";
   import EditAlcohol from "./alcoholStats/EditAlcohol.svelte";
-  import SmokerStats from "./Smokers.svelte";
-  import SmokersItems from "./SmokersItems.svelte";
+  import SmokerStats from "./smokersStats/Smokers.svelte";
+  import SmokersItems from "./smokersStats/SmokersItems.svelte";
   import FrontWeight from "./weightsStats/TablaWeights.svelte";
   import EditWeight from "./weightsStats/EditWeight.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
@@ -24,7 +24,7 @@
     "/weights-stats" : FrontWeight,
     "/weights-stats/:provinces/:year" : EditWeight,
     "/smokers-stats" : SmokerStats,
-    "/smokers-items" : SmokersItems,
+    "/smokers-stats/:province/:year" : SmokersItems,
 		'*': NotFound};
 </script>
 

@@ -3,6 +3,7 @@
 	import Table from "sveltestrap/src/Table.svelte"; 
 	import Button from "sveltestrap/src/Button.svelte";
 	import { Alert } from 'sveltestrap';
+    import { } from "node:os";
 	
     //ALERTAS
     let visible = false;
@@ -95,7 +96,7 @@
             });	
         }
     }
-    
+    /*
     //EDIT
     async function editSmokers(province, year){
 
@@ -132,7 +133,7 @@
                 });	
             }
     }
-
+*/
     //DELETE SPECIFIC
     async function deleteSmokers(province, year) {
         const res = await fetch("/api/v1/smokers-stats/" + province + "/" + year, {
@@ -252,7 +253,7 @@
 </script>
 
 <main>
-    <h1 style ="text-align: center;">Administración de datos de fumadores</h1>
+    <h1 style ="text-align: center;">Administración: Datos de fumadores en España por comunidad autónoma</h1>
 
     {#await SmokerStats}
         Loading smokers data...
@@ -266,7 +267,7 @@
 
         <Table bordered responsive>
             <thead>
-                <tr style ="text-align: center;">
+                <tr style ="text-align: center; background-color: lightslategray;">
                     <th>Comunidad Autónoma</th>
                     <th>Año</th>
                     <th>Fumadores diarios</th>
@@ -284,19 +285,19 @@
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.ocasionalSmoker}"></td>    
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.exSmoker}"></td>  
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.nonSmoker}"></td>  
-                    <td colspan="2" style="text-align: center;"><Button outline color="primary" on:click={insertSmokers}>Insertar</Button></td>          
+                    <td colspan="2" style="text-align: center;"><Button outline color="success" on:click={insertSmokers}>Insertar</Button></td>          
                 </tr>
  
                 {#each SmokerStats as sc}
                     <tr>
-                        <td><a href="https://sos2021-30.herokuapp.com/#/{sc.province}">{sc.province}</a></td>
+                        <td><b>{sc.province}</b></td>
                         <td>{sc.year}</td>
                         <td>{sc.dailySmoker}</td>
                         <td>{sc.ocasionalSmoker}</td>
                         <td>{sc.exSmoker}</td>
                         <td>{sc.nonSmoker}</td>
                         <td><Button outline color="danger" on:click="{deleteSmokers(sc.province, sc.year)}">Borrar</Button></td>
-                        <td><Button outline color="primary" on:click="{editSmokers(sc.province, sc.year)}">Editar</Button></td>
+                        <td><a href="#/smokers-stats/{sc.province}/{sc.year}"><Button outline color="primary">Editar</Button></a></td>
                     </tr>
                 {/each}
             </tbody>
