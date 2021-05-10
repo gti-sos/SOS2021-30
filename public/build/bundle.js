@@ -9570,13 +9570,13 @@ var app = (function () {
     			create_component(button3.$$.fragment);
     			t10 = space();
     			create_component(button4.$$.fragment);
-    			add_location(br0, file$7, 302, 8, 10366);
-    			add_location(strong, file$7, 303, 38, 10410);
+    			add_location(br0, file$7, 302, 8, 10398);
+    			add_location(strong, file$7, 303, 38, 10442);
     			set_style(h4, "text-align", "center");
-    			add_location(h4, file$7, 303, 8, 10380);
+    			add_location(h4, file$7, 303, 8, 10412);
     			set_style(div, "text-align", "center");
-    			add_location(div, file$7, 322, 8, 11433);
-    			add_location(br1, file$7, 325, 8, 11666);
+    			add_location(div, file$7, 322, 8, 11465);
+    			add_location(br1, file$7, 325, 8, 11698);
     		},
     		m: function mount(target, anchor) {
     			mount_component(alert_1, target, anchor);
@@ -9874,37 +9874,37 @@ var app = (function () {
     			t16 = space();
     			td5 = element("td");
     			input5 = element("input");
-    			add_location(th0, file$7, 307, 12, 10497);
-    			add_location(th1, file$7, 308, 12, 10537);
-    			add_location(th2, file$7, 309, 12, 10582);
-    			add_location(th3, file$7, 310, 12, 10621);
-    			add_location(th4, file$7, 311, 12, 10677);
-    			add_location(th5, file$7, 312, 12, 10733);
+    			add_location(th0, file$7, 307, 12, 10529);
+    			add_location(th1, file$7, 308, 12, 10569);
+    			add_location(th2, file$7, 309, 12, 10614);
+    			add_location(th3, file$7, 310, 12, 10653);
+    			add_location(th4, file$7, 311, 12, 10709);
+    			add_location(th5, file$7, 312, 12, 10765);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "País");
-    			add_location(input0, file$7, 314, 20, 10818);
-    			add_location(td0, file$7, 314, 16, 10814);
+    			add_location(input0, file$7, 314, 20, 10850);
+    			add_location(td0, file$7, 314, 16, 10846);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "placeholder", "Provincia");
-    			add_location(input1, file$7, 315, 20, 10909);
-    			add_location(td1, file$7, 315, 16, 10905);
+    			add_location(input1, file$7, 315, 20, 10941);
+    			add_location(td1, file$7, 315, 16, 10937);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "placeholder", "2017");
-    			add_location(input2, file$7, 316, 20, 11006);
-    			add_location(td2, file$7, 316, 16, 11002);
+    			add_location(input2, file$7, 316, 20, 11038);
+    			add_location(td2, file$7, 316, 16, 11034);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "0.0");
-    			add_location(input3, file$7, 317, 20, 11096);
-    			add_location(td3, file$7, 317, 16, 11092);
+    			add_location(input3, file$7, 317, 20, 11128);
+    			add_location(td3, file$7, 317, 16, 11124);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "placeholder", "0.0");
-    			add_location(input4, file$7, 318, 20, 11200);
-    			add_location(td4, file$7, 318, 16, 11196);
+    			add_location(input4, file$7, 318, 20, 11232);
+    			add_location(td4, file$7, 318, 16, 11228);
     			attr_dev(input5, "type", "number");
     			attr_dev(input5, "placeholder", "0.0");
-    			add_location(input5, file$7, 319, 20, 11302);
-    			add_location(td5, file$7, 319, 16, 11298);
-    			add_location(tr, file$7, 313, 12, 10792);
+    			add_location(input5, file$7, 319, 20, 11334);
+    			add_location(td5, file$7, 319, 16, 11330);
+    			add_location(tr, file$7, 313, 12, 10824);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, th0, anchor);
@@ -10212,19 +10212,19 @@ var app = (function () {
     			a1 = element("a");
     			create_component(button1.$$.fragment);
     			t13 = space();
-    			add_location(td0, file$7, 353, 16, 13047);
+    			add_location(td0, file$7, 353, 16, 13079);
     			attr_dev(a0, "href", a0_href_value = "api/v2/life-expectancy-stats/" + /*life*/ ctx[35].province + "/" + /*life*/ ctx[35].year);
-    			add_location(a0, file$7, 354, 20, 13092);
-    			add_location(td1, file$7, 354, 16, 13088);
-    			add_location(td2, file$7, 355, 16, 13201);
-    			add_location(td3, file$7, 356, 16, 13239);
-    			add_location(td4, file$7, 357, 16, 13292);
-    			add_location(td5, file$7, 358, 16, 13343);
-    			add_location(td6, file$7, 359, 16, 13398);
+    			add_location(a0, file$7, 354, 20, 13124);
+    			add_location(td1, file$7, 354, 16, 13120);
+    			add_location(td2, file$7, 355, 16, 13233);
+    			add_location(td3, file$7, 356, 16, 13271);
+    			add_location(td4, file$7, 357, 16, 13324);
+    			add_location(td5, file$7, 358, 16, 13375);
+    			add_location(td6, file$7, 359, 16, 13430);
     			attr_dev(a1, "href", a1_href_value = "#/life-stats/" + /*life*/ ctx[35].province + "/" + /*life*/ ctx[35].year);
-    			add_location(a1, file$7, 360, 20, 13525);
-    			add_location(td7, file$7, 360, 16, 13521);
-    			add_location(tr, file$7, 351, 12, 13007);
+    			add_location(a1, file$7, 360, 20, 13557);
+    			add_location(td7, file$7, 360, 16, 13553);
+    			add_location(tr, file$7, 351, 12, 13039);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -10442,46 +10442,46 @@ var app = (function () {
 
     			t21 = space();
     			br = element("br");
-    			add_location(th0, file$7, 330, 20, 11775);
-    			add_location(th1, file$7, 331, 20, 11810);
-    			add_location(th2, file$7, 332, 20, 11859);
-    			add_location(th3, file$7, 333, 20, 11893);
-    			add_location(th4, file$7, 334, 20, 11944);
-    			add_location(th5, file$7, 335, 20, 11994);
+    			add_location(th0, file$7, 330, 20, 11807);
+    			add_location(th1, file$7, 331, 20, 11842);
+    			add_location(th2, file$7, 332, 20, 11891);
+    			add_location(th3, file$7, 333, 20, 11925);
+    			add_location(th4, file$7, 334, 20, 11976);
+    			add_location(th5, file$7, 335, 20, 12026);
     			attr_dev(th6, "colspan", "2");
-    			add_location(th6, file$7, 336, 20, 12040);
-    			add_location(tr0, file$7, 329, 16, 11749);
-    			add_location(thead, file$7, 328, 12, 11724);
+    			add_location(th6, file$7, 336, 20, 12072);
+    			add_location(tr0, file$7, 329, 16, 11781);
+    			add_location(thead, file$7, 328, 12, 11756);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "España");
-    			add_location(input0, file$7, 341, 20, 12167);
-    			add_location(td0, file$7, 341, 16, 12163);
+    			add_location(input0, file$7, 341, 20, 12199);
+    			add_location(td0, file$7, 341, 16, 12195);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "placeholder", "Cataluña");
-    			add_location(input1, file$7, 342, 20, 12267);
-    			add_location(td1, file$7, 342, 16, 12263);
+    			add_location(input1, file$7, 342, 20, 12299);
+    			add_location(td1, file$7, 342, 16, 12295);
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "2017");
-    			add_location(input2, file$7, 343, 20, 12371);
-    			add_location(td2, file$7, 343, 16, 12367);
+    			add_location(input2, file$7, 343, 20, 12403);
+    			add_location(td2, file$7, 343, 16, 12399);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "80");
-    			add_location(input3, file$7, 344, 20, 12467);
-    			add_location(td3, file$7, 344, 16, 12463);
+    			add_location(input3, file$7, 344, 20, 12499);
+    			add_location(td3, file$7, 344, 16, 12495);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "placeholder", "81.4");
-    			add_location(input4, file$7, 345, 20, 12581);
-    			add_location(td4, file$7, 345, 16, 12577);
+    			add_location(input4, file$7, 345, 20, 12613);
+    			add_location(td4, file$7, 345, 16, 12609);
     			attr_dev(input5, "type", "number");
     			attr_dev(input5, "placeholder", "80.8");
-    			add_location(input5, file$7, 346, 20, 12693);
-    			add_location(td5, file$7, 346, 16, 12689);
+    			add_location(input5, file$7, 346, 20, 12725);
+    			add_location(td5, file$7, 346, 16, 12721);
     			attr_dev(td6, "colspan", "2");
     			set_style(td6, "text-align", "center");
-    			add_location(td6, file$7, 347, 16, 12805);
-    			add_location(tr1, file$7, 340, 12, 12141);
-    			add_location(tbody, file$7, 339, 8, 12120);
-    			add_location(br, file$7, 365, 8, 13714);
+    			add_location(td6, file$7, 347, 16, 12837);
+    			add_location(tr1, file$7, 340, 12, 12173);
+    			add_location(tbody, file$7, 339, 8, 12152);
+    			add_location(br, file$7, 365, 8, 13746);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -10823,8 +10823,8 @@ var app = (function () {
     			t1 = space();
     			info.block.c();
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$7, 291, 8, 9982);
-    			add_location(main, file$7, 289, 0, 9964);
+    			add_location(h1, file$7, 291, 8, 10014);
+    			add_location(main, file$7, 289, 0, 9996);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10922,8 +10922,8 @@ var app = (function () {
     			$$invalidate(1, checkMSG = "Datos cargados correctamente");
     		} else {
     			$$invalidate(3, color = "danger");
-    			$$invalidate(1, checkMSG = res.status + ": " + res.statusText);
-    			console.log("ERROR!");
+    			$$invalidate(1, checkMSG = res.status + ": " + "No se pudo cargar los datos");
+    			console.log("ERROR! ");
     		}
     	}
 
@@ -11000,7 +11000,7 @@ var app = (function () {
     				console.log("Resource NOT FOUND");
     			} else {
     				$$invalidate(3, color = "danger");
-    				$$invalidate(1, checkMSG = res.status + ": " + res.statusText);
+    				$$invalidate(1, checkMSG = res.status + ": " + "No se pudo borrar el recurso");
     				console.log("ERROR!");
     			}
     		});
@@ -11532,28 +11532,28 @@ var app = (function () {
     			t21 = space();
     			td6 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$6, 82, 16, 3219);
-    			add_location(th1, file$6, 83, 16, 3250);
-    			add_location(th2, file$6, 84, 16, 3295);
-    			add_location(th3, file$6, 85, 16, 3325);
-    			add_location(th4, file$6, 86, 16, 3372);
-    			add_location(th5, file$6, 87, 16, 3418);
-    			add_location(th6, file$6, 88, 16, 3468);
-    			add_location(tr0, file$6, 81, 12, 3197);
-    			add_location(thead, file$6, 80, 8, 3176);
-    			add_location(input0, file$6, 93, 20, 3579);
-    			add_location(td0, file$6, 93, 16, 3575);
-    			add_location(td1, file$6, 94, 16, 3639);
-    			add_location(td2, file$6, 95, 16, 3683);
-    			add_location(input1, file$6, 96, 20, 3727);
-    			add_location(td3, file$6, 96, 16, 3723);
-    			add_location(input2, file$6, 97, 20, 3803);
-    			add_location(td4, file$6, 97, 16, 3799);
-    			add_location(input3, file$6, 98, 20, 3877);
-    			add_location(td5, file$6, 98, 16, 3873);
-    			add_location(td6, file$6, 99, 16, 3951);
-    			add_location(tr1, file$6, 92, 12, 3553);
-    			add_location(tbody, file$6, 91, 8, 3532);
+    			add_location(th0, file$6, 82, 16, 3158);
+    			add_location(th1, file$6, 83, 16, 3189);
+    			add_location(th2, file$6, 84, 16, 3234);
+    			add_location(th3, file$6, 85, 16, 3264);
+    			add_location(th4, file$6, 86, 16, 3311);
+    			add_location(th5, file$6, 87, 16, 3357);
+    			add_location(th6, file$6, 88, 16, 3407);
+    			add_location(tr0, file$6, 81, 12, 3136);
+    			add_location(thead, file$6, 80, 8, 3115);
+    			add_location(input0, file$6, 93, 20, 3518);
+    			add_location(td0, file$6, 93, 16, 3514);
+    			add_location(td1, file$6, 94, 16, 3578);
+    			add_location(td2, file$6, 95, 16, 3622);
+    			add_location(input1, file$6, 96, 20, 3666);
+    			add_location(td3, file$6, 96, 16, 3662);
+    			add_location(input2, file$6, 97, 20, 3742);
+    			add_location(td4, file$6, 97, 16, 3738);
+    			add_location(input3, file$6, 98, 20, 3816);
+    			add_location(td5, file$6, 98, 16, 3812);
+    			add_location(td6, file$6, 99, 16, 3890);
+    			add_location(tr1, file$6, 92, 12, 3492);
+    			add_location(tbody, file$6, 91, 8, 3471);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -11761,8 +11761,8 @@ var app = (function () {
     			create_component(table.$$.fragment);
     			t7 = space();
     			create_component(button.$$.fragment);
-    			add_location(h1, file$6, 78, 4, 3073);
-    			add_location(main, file$6, 70, 0, 2912);
+    			add_location(h1, file$6, 78, 4, 3012);
+    			add_location(main, file$6, 70, 0, 2851);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -11901,7 +11901,7 @@ var app = (function () {
     				$$invalidate(7, errorMsg = "Recurso actualizado correctamente");
     			} else {
     				console.log("Data not edited");
-    				$$invalidate(7, errorMsg = "Se ha producido un error y no se ha podido editar correctamente el recurso solicitado");
+    				$$invalidate(7, errorMsg = "Rellene todos los campos");
     			}
     		});
     	}

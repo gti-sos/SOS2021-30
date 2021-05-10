@@ -61,7 +61,7 @@
                         errorMsg="Recurso actualizado correctamente";
                     }else{
                         console.log("Data not edited");
-                        errorMsg= "Se ha producido un error y no se ha podido editar correctamente el recurso solicitado";
+                        errorMsg= "Rellene todos los campos";
                     }
                 });	
     }

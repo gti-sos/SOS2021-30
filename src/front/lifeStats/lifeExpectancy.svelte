@@ -52,8 +52,8 @@
             checkMSG = "Datos cargados correctamente";
         } else {
             color = "danger";
-            checkMSG= res.status + ": " + res.statusText;
-            console.log("ERROR!");
+            checkMSG= res.status + ": " + "No se pudo cargar los datos";
+            console.log("ERROR! ");
         }
     }
 
@@ -139,7 +139,7 @@
                 console.log("Resource NOT FOUND");            
             } else {
                 color = "danger";
-                checkMSG= res.status + ": " + res.statusText;
+                checkMSG= res.status + ": " + "No se pudo borrar el recurso";
                 console.log("ERROR!");
             }      
         });
