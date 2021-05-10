@@ -79,7 +79,14 @@
          } else{
              const res = await fetch(BASE_API_PATH,{
                  method:"POST",
-                 body:JSON.stringify(newLife),
+                 body:JSON.stringify({
+                        country: newLife.country,
+                        province: newLife.province,
+                        year: parseInt(newLife.year),
+                        lifeExpectancyWoman: parseFloat(newLife.lifeExpectancyWoman),
+                        lifeExpectancyMan: parseFloat(newLife.lifeExpectancyMan),
+                        averageLifeExpectancy: parseFloat(newLife.averageLifeExpectancy)
+                    }),
                  headers:{
                      "Content-Type": "application/json"
                  }
@@ -104,46 +111,6 @@
          }
      }
 
-
-    //EDIT (B)
-
-  /*  async function editLife(province, year){
-
-                if (newLife.country == "" || newLife.province == "" || newLife.year == null ||
-          newLife.lifeExpectancyWoman == null || newLife.lifeExpectancyMan == null || newLife.averageLifeExpectancy == null) {
-                alert("Los campos no pueden estar vacios");
-                }else if (province != newLife.province || year != newLife.year){
-                alert("Los campos 'Comunidad Autónoma' y 'Año' no pueden ser distintos al recurso a actualizar");
-                }else{
-                
-                console.log("Editing resources...");
-                const res = await fetch(BASE_API_PATH + "/" + province + "/" + year, {
-                        method:"PUT",
-                        body:JSON.stringify(newLife),
-                        headers:{
-                            "Content-Type": "application/json"
-                        }
-                    }).then(function (res) {
-                        visible=true;
-                        if (res.status == 200){
-                            console.log("Data updated");
-                            getLife();
-                            color = "success";
-                            checkMSG ="Entrada modificada correctamente en la base de datos";
-                        }else if(res.status == 400){
-                            console.log("ERROR Data was not correctly introduced");
-                            color = "danger";
-                            checkMSG= "Los datos de la entrada no fueron introducidos correctamente";
-                        }else if(res.status == 409){
-                            console.log("ERROR There is already a data with that province and year in the da tabase");
-                            color = "danger";
-                            checkMSG= "Ya existe una entrada en la base de datos con los datos introducidos";
-                        }
-                    });	
-                }
-            }
-
-            */
      
 
      //Delete (B)

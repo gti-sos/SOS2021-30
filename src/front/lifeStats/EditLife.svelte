@@ -12,6 +12,7 @@
     let color = "danger";
     export let params = {};
     let lifeStats = {};
+    let updatedCountry = "";
     let updatedLifeExpectancyWoman = null;
     let updatedLifeExpectancyMan = null;
     let updatedAverageLifeExpectancy = null;
@@ -25,6 +26,7 @@
         if(res.ok){
             console.log("Ok");
             const json = await res.json();
+            updatedCountry = lifeStats.updatedCountry;
             updatedLifeExpectancyWoman = lifeStats.updatedLifeExpectancyWoman;
             updatedLifeExpectancyMan = lifeStats.updatedLifeExpectancyMan;
             updatedAverageLifeExpectancy = lifeStats.updatedAverageLifeExpectancy;
@@ -40,7 +42,7 @@
             const res = await fetch(BASE_API_PATH + "/" + params.province + "/" + params.year, {
                     method:"PUT",
                     body : JSON.stringify({
-                        country: "España",
+                        country: updatedCountry,
                         province: params.province,
                         year: parseInt(params.year),
                         lifeExpectancyWoman: parseFloat(updatedLifeExpectancyWoman),
@@ -89,7 +91,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>{params.country}</td>
+                <td><input bind:value="{updatedCountry}"></td>
                 <td>{params.province}</td>
                 <td>{params.year}</td>
                 <td><input bind:value="{updatedLifeExpectancyWoman}"></td>
