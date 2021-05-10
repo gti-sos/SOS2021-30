@@ -6,7 +6,8 @@
 	import Home from "./Home.svelte";
   import Info from "./Info.svelte";
 	import Router from 'svelte-spa-router';
-  import LifeExpectancy from './lifeExpectancy.svelte';
+  import LifeExpectancy from './lifeStats/lifeExpectancy.svelte';
+  import EditLife from './lifeStats/EditLife.svelte';
 	import TablaAlcohol from "./alcoholStats/TablaAlcohol.svelte";
   import EditAlcohol from "./alcoholStats/EditAlcohol.svelte";
   import SmokerStats from "./Smokers.svelte";
@@ -14,12 +15,14 @@
   import EditWeight from "./weightsStats/EditWeight.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
 
+
 	const routes = {
 		"/":Home,
     "/info": Info,
 		"/alcohol-stats": TablaAlcohol,
     "/alcohol-stats/:country/:year/:ageRange": EditAlcohol,
     "/life-stats" : LifeExpectancy,
+    "/life-stats/:province/:year" : EditLife,
     "/weights-stats" : FrontWeight,
     "/weights-stats/:provinces/:year" : EditWeight,
     "/smokers-stats" : SmokerStats,

@@ -324,7 +324,7 @@ module.exports.register = (app) => {
         var provinceToBeDeleted = req.params.province;
         var yearToBeDeleted = parseInt(req.params.year);
 
-        db.remove({province : provinceToBeDeleted,year : yearToBeDeleted},{},(err,numStatsRemoved)=>{
+        db.remove({province : provinceToBeDeleted,year : yearToBeDeleted},{multi:true},(err,numStatsRemoved)=>{
             if(err){
                 console.error("ERROR deleting DB stat in DELETE:" + err);
                 res.sendStatus(500);

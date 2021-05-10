@@ -8,14 +8,16 @@
     import Button from "sveltestrap/src/Button.svelte";
 	import { Alert } from 'sveltestrap';
 
+    var BASE_API_PATH = "/api/v2/life-expectancy-stats";
+
     let LifeExpectancyStats = [];
     let newLife = {
         country:"",
         province:"",
-        year:"",
-        lifeExpectancyWoman:"",
-        lifeExpectancyMan: "",
-        averageLifeExpectancy:""
+        year:null,
+        lifeExpectancyWoman:null,
+        lifeExpectancyMan: null,
+        averageLifeExpectancy:null
 	}
     let checkMSG = "";
     let visible = false;
@@ -31,8 +33,8 @@
     async function getLifeExpectancy() {
  
         console.log("Fetching life data...");
-        await fetch("/api/v2/life-expectancy-stats/loadInitialData");
-        const res = await fetch("/api/v2/life-expectancy-stats?limit=10&offset=0");
+        await fetch(BASE_API_PATH + "/loadInitialData");
+        const res = await fetch(BASE_API_PATH + "?limit=10&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -46,14 +48,14 @@
             checkMSG= res.status + ": " + res.statusText;
             console.log("ERROR!");
         }
-        }
+    }
 
 
     
     //Get (B)
         async function getLife() {
             console.log("Fetching resources...");
-            const res = await fetch("/api/v2/life-expectancy-stats");
+            const res = await fetch(BASE_API_PATH);
             if (res.ok) {
                 console.log("Ok:");
                 const json = await res.json();
@@ -75,7 +77,7 @@
           newLife.lifeExpectancyWoman == null || newLife.lifeExpectancyMan == null || newLife.averageLifeExpectancy == null) {
              alert("Los campos no pueden estar vacios");
          } else{
-             const res = await fetch("/api/v2/life-expectancy-stats",{
+             const res = await fetch(BASE_API_PATH,{
                  method:"POST",
                  body:JSON.stringify(newLife),
                  headers:{
@@ -105,7 +107,7 @@
 
     //EDIT (B)
 
-    async function editLife(province, year){
+  /*  async function editLife(province, year){
 
                 if (newLife.country == "" || newLife.province == "" || newLife.year == null ||
           newLife.lifeExpectancyWoman == null || newLife.lifeExpectancyMan == null || newLife.averageLifeExpectancy == null) {
@@ -115,7 +117,7 @@
                 }else{
                 
                 console.log("Editing resources...");
-                const res = await fetch("/api/v2/life-expectancy-stats/" + province + "/" + year, {
+                const res = await fetch(BASE_API_PATH + "/" + province + "/" + year, {
                         method:"PUT",
                         body:JSON.stringify(newLife),
                         headers:{
@@ -141,13 +143,13 @@
                 }
             }
 
-
+            */
      
 
      //Delete (B)
 
      async function deleteLife(province, year) {
-        const res = await fetch("/api/v2/life-expectancy-stats/" + province + "/" + year, {
+        const res = await fetch(BASE_API_PATH+ "/" + province + "/" + year, {
             method: "DELETE"
         }).then(function (res) {
             visible = true;
@@ -174,7 +176,7 @@
 		console.log("Deleting life data...");
 		if (confirm("¿Está seguro de que desea eliminar todas las entradas?")){
 			console.log("Deleting all life data...");
-			const res = await fetch("/api/v2/life-expectancy-stats", {
+			const res = await fetch(BASE_API_PATH, {
 				method: "DELETE"
 			}).then(function (res) {
                 visible=true;
@@ -211,7 +213,7 @@
             
             visible = true;
             console.log("Charging page... Listing since: "+page);
-            const res = await fetch("/api/v2/life-expectancy-stats?limit=10&offset="+(-1+page));
+            const res = await fetch(BASE_API_PATH + "?limit=10&offset="+(-1+page));
             //condicional imprime msg
             color = "success";
             checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
@@ -241,7 +243,7 @@
 
                 visible = true;
                 console.log("Charging page... Listing since: "+page);
-                const res = await fetch("/api/v2/life-expectancy-stats?limit=10&offset="+(-1+page));
+                const res = await fetch(BASE_API_PATH + "?limit=10&offset="+(-1+page));
                 color = "success";
                 checkMSG = (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
 
@@ -289,8 +291,8 @@
                     <th>Pais</th>
                     <th>Comunidad autonoma</th>
                     <th>Año</th>
-                    <th>Esperanza de vida en mujeres</th>
-                    <th>Esperanza de vida en hombre</th>
+                    <th>Esperanza en mujeres</th>
+                    <th>Esperanza en hombre</th>
                     <th>Esperanza de vida media</th>
                     <th colspan="2">Acciones</th>
                 </tr>
@@ -316,7 +318,7 @@
                 <td>{life.lifeExpectancyMan}</td>
                 <td>{life.averageLifeExpectancy}</td>
                 <td><Button outline color="danger" on:click="{deleteLife(life.province, life.year)}">Borrar</Button></td>
-                <td><Button outline color="primary" on:click="{editLife(life.province, life.year)}">Editar</Button></td>
+                <td><a href="#/life-stats/{life.province}/{life.year}"><Button outline color="primary">Editar</Button></a></td>
             </tr>
                 
         {/each}
