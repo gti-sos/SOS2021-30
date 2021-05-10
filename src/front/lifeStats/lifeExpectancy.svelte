@@ -46,6 +46,7 @@
             console.log("Ok:");
             const json = await res.json();
             LifeExpectancyStats = json;
+            visible = true;
             totaldata=19;
             console.log("Received " + LifeExpectancyStats.length + " life data.");
             color = "success";
@@ -198,6 +199,7 @@
         if(sAverageLifeExpectancy==null){
             sAverageLifeExpectancy="";
         }
+        visible = true;
 		const res = await fetch(BASE_API_PATH + "?country="+sCountry+"&province="+sProvince+"&year="+sYear+"&lifeExpectancyWoman="+sLifeExpectancyWoman+"&lifeExpectancyMan="+sLifeExpectancyMan+"&averageLifeExpectancy="+sAverageLifeExpectancy)
 		if (res.ok){
 			const json = await res.json();
