@@ -9,6 +9,7 @@
   import LifeExpectancy from './lifeExpectancy.svelte';
 	import TablaAlcohol from "./TablaAlcohol.svelte";
   import SmokerStats from "./Smokers.svelte";
+  import SmokersItems from "./SmokersItems.svelte";
   import FrontWeight from "./weightsStats/TablaWeights.svelte";
   import EditWeight from "./weightsStats/EditWeight.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
@@ -21,6 +22,7 @@
     "/weights-stats" : FrontWeight,
     "/weights-stats/:provinces/:year" : EditWeight,
     "/smokers-stats" : SmokerStats,
+    "/smokers-items" : SmokersItems,
 		'*': NotFound};
 </script>
 

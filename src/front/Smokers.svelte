@@ -3,7 +3,6 @@
 	import Table from "sveltestrap/src/Table.svelte"; 
 	import Button from "sveltestrap/src/Button.svelte";
 	import { Alert } from 'sveltestrap';
-    
 	
     //ALERTAS
     let visible = false;
@@ -290,7 +289,7 @@
  
                 {#each SmokerStats as sc}
                     <tr>
-                        <td><a href="api/v1/smokers-stats/{sc.province}/{sc.year}">{sc.province}</a></td>
+                        <td><a href="https://sos2021-30.herokuapp.com/#/{sc.province}">{sc.province}</a></td>
                         <td>{sc.year}</td>
                         <td>{sc.dailySmoker}</td>
                         <td>{sc.ocasionalSmoker}</td>
