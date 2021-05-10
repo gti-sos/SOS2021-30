@@ -8,7 +8,6 @@
     var BASE_API_PATH = "/api/v2/life-expectancy-stats";
 
     let visible = false;
-    let checkMSG = "";
     let color = "danger";
     export let params = {};
     let lifeStats = {};
@@ -32,7 +31,8 @@
             updatedAverageLifeExpectancy = lifeStats.updatedAverageLifeExpectancy;
             console.log("Recived data");
         }else{
-            errorMsg = res.status + " " + res.statusText;
+            color = "danger"
+            errorMsg = "Error " + res.status + " : " + "Ningún recurso con los parametros " + params.province +" " + params.year;
             console.log("ERROR" + errorMsg);
         }
     }
@@ -58,10 +58,10 @@
                         getLife(); 
                         console.log("Data introduced");
                         color = "success";
-                        checkMSG="Recurso actualizado correctamente";
+                        errorMsg="Recurso actualizado correctamente";
                     }else{
                         console.log("Data not edited");
-                        checkMSG= "Se ha producido un error y no se ha podido editar correctamente el recurso solicitado";
+                        errorMsg= "Se ha producido un error y no se ha podido editar correctamente el recurso solicitado";
                     }
                 });	
     }
@@ -71,8 +71,8 @@
 <main>
 
     <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
-        {#if checkMSG}
-		    {checkMSG}
+        {#if errorMsg}
+		    {errorMsg}
 	    {/if}
     </Alert>
 
@@ -102,8 +102,5 @@
         </tbody>
     </Table>
 
-    {#if errorMsg}
-        <p style="color: red">ERROR: {errorMsg}</p>
-    {/if}
     <Button outline color="secondary" on:click="{pop}">Atrás</Button>
 </main>

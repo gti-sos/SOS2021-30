@@ -164,11 +164,11 @@
 				} else if (totaldata == 0){
                     console.log("ERROR Data was not erased");
                     color = "danger";
-					errorMSG= "¡No hay datos para borrar!";
+					checkMSG= "¡No hay datos para borrar!";
                 } else{
 					console.log("ERROR Data was not erased");
                     color = "danger";
-					errorMSG= "No se han podido eliminar los datos";
+					checkMSG= "No se han podido eliminar los datos";
 				}
 			});
 		}
@@ -203,7 +203,6 @@
 			const json = await res.json();
 			LifeExpectancyStats = json;
 			console.log("Found "+ LifeExpectancyStats.length + " data");
-			console.log(sCountry,sProvince,sYear,sLifeExpectancyWoman,sLifeExpectancyMan,sAverageLifeExpectancy);
 			if(LifeExpectancyStats.length==1){
                 color = "success"
 				checkMSG = "Se ha encontrado un dato para tu búsqueda";
@@ -305,6 +304,7 @@
         <h4 style="text-align:center"><strong>Búsqueda general de parámetros</strong></h4>
 
         <Table>
+
             <th>Búsqueda por país</th>
             <th>Búsqueda por provincia</th>
             <th>Búsqueda por año</th>
