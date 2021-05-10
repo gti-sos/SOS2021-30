@@ -31,6 +31,7 @@
             updatedAverageLifeExpectancy = lifeStats.updatedAverageLifeExpectancy;
             console.log("Recived data");
         }else{
+            visible = true;
             color = "danger"
             errorMsg = "Error " + res.status + " : " + "Ningún recurso con los parametros " + params.province +" " + params.year;
             console.log("ERROR" + errorMsg);
