@@ -31,8 +31,8 @@
     async function getLifeExpectancy() {
  
         console.log("Fetching life data...");
-        await fetch("/api/v1/life-expectancy-stats/loadInitialData");
-        const res = await fetch("/api/v1/life-expectancy-stats?limit=10&offset=0");
+        await fetch("/api/v2/life-expectancy-stats/loadInitialData");
+        const res = await fetch("/api/v2/life-expectancy-stats?limit=10&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -53,7 +53,7 @@
     //Get (B)
         async function getLife() {
             console.log("Fetching resources...");
-            const res = await fetch("/api/v1/life-expectancy-stats?limit=10&offset=0");
+            const res = await fetch("/api/v2/life-expectancy-stats");
             if (res.ok) {
                 console.log("Ok:");
                 const json = await res.json();
@@ -75,7 +75,7 @@
           newLife.lifeExpectancyWoman == null || newLife.lifeExpectancyMan == null || newLife.averageLifeExpectancy == null) {
              alert("Los campos no pueden estar vacios");
          } else{
-             const res = await fetch("/api/v1/life-expectancy-stats",{
+             const res = await fetch("/api/v2/life-expectancy-stats",{
                  method:"POST",
                  body:JSON.stringify(newLife),
                  headers:{
@@ -115,7 +115,7 @@
                 }else{
                 
                 console.log("Editing resources...");
-                const res = await fetch("/api/v1/life-expectancy-stats/" + province + "/" + year, {
+                const res = await fetch("/api/v2/life-expectancy-stats/" + province + "/" + year, {
                         method:"PUT",
                         body:JSON.stringify(newLife),
                         headers:{
@@ -147,7 +147,7 @@
      //Delete (B)
 
      async function deleteLife(province, year) {
-        const res = await fetch("/api/v1/life-expectancy-stats/" + province + "/" + year, {
+        const res = await fetch("/api/v2/life-expectancy-stats/" + province + "/" + year, {
             method: "DELETE"
         }).then(function (res) {
             visible = true;
@@ -171,10 +171,10 @@
 
         //DELETE ALL
         async function deleteALL() {
-		console.log("Deleting life stats data...");
+		console.log("Deleting life data...");
 		if (confirm("¿Está seguro de que desea eliminar todas las entradas?")){
-			console.log("Deleting all life stats data...");
-			const res = await fetch("/api/v1/life-expectancy-stats", {
+			console.log("Deleting all life data...");
+			const res = await fetch("/api/v2/life-expectancy-stats", {
 				method: "DELETE"
 			}).then(function (res) {
                 visible=true;
@@ -187,11 +187,11 @@
 				} else if (totaldata == 0){
                     console.log("ERROR Data was not erased");
                     color = "danger";
-					checkMSG= "¡No hay datos para borrar!";
+					errorMSG= "¡No hay datos para borrar!";
                 } else{
 					console.log("ERROR Data was not erased");
                     color = "danger";
-					checkMSG= "No se han podido eliminar los datos";
+					errorMSG= "No se han podido eliminar los datos";
 				}
 			});
 		}
@@ -211,7 +211,7 @@
             
             visible = true;
             console.log("Charging page... Listing since: "+page);
-            const res = await fetch("/api/v1/life-expectancy-stats?limit=10&offset="+(-1+page));
+            const res = await fetch("/api/v2/life-expectancy-stats?limit=10&offset="+(-1+page));
             //condicional imprime msg
             color = "success";
             checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
@@ -241,7 +241,7 @@
 
                 visible = true;
                 console.log("Charging page... Listing since: "+page);
-                const res = await fetch("/api/v1/life-expectancy-stats?limit=10&offset="+(-1+page));
+                const res = await fetch("/api/v2/life-expectancy-stats?limit=10&offset="+(-1+page));
                 color = "success";
                 checkMSG = (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
 
@@ -310,7 +310,7 @@
             <tr>
                 
                 <td>{life.country}</td>
-                <td><a href="api/v1/life-expectancy-stats/{life.province}/{life.year}">{life.province}</a></td>
+                <td><a href="api/v2/life-expectancy-stats/{life.province}/{life.year}">{life.province}</a></td>
                 <td>{life.year}</td>
                 <td>{life.lifeExpectancyWoman}</td>
                 <td>{life.lifeExpectancyMan}</td>
