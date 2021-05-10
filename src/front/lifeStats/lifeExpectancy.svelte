@@ -25,6 +25,13 @@
     let page = 1;
     let totaldata=19; // Número total de los datos
 
+    let sCountry = "";
+    let sProvince = "";
+    let sYear = "";
+    let sLifeExpectancyWoman = "";
+    let sLifeExpectancyMan = "";
+    let sAverageLifeExpectancy = "";
+
     onMount(getLife);
 
 
@@ -113,7 +120,7 @@
 
      
 
-     //Delete (B)
+    //Delete (B)
 
      async function deleteLife(province, year) {
         const res = await fetch(BASE_API_PATH+ "/" + province + "/" + year, {
@@ -138,7 +145,8 @@
         });
     }
 
-        //DELETE ALL
+    //DELETE ALL
+
         async function deleteALL() {
 		console.log("Deleting life data...");
 		if (confirm("¿Está seguro de que desea eliminar todas las entradas?")){
@@ -167,67 +175,109 @@
 	}
 
 
-        //SEARCH 
-    //getNextPage (B)
-    async function getNextPage() {
- 
-            console.log(totaldata);
-            if (page+10 > totaldata) {
-                page = 1
-            } else {
-                page+=10
-            }
+    
+    //SEARCH 
+
+        async function search (sCountry, sProvince, sYear, sLifeExpectancyWoman, sLifeExpectancyMan, sAverageLifeExpectancy){
             
-            visible = true;
-            console.log("Charging page... Listing since: "+page);
-            const res = await fetch(BASE_API_PATH + "?limit=10&offset="+(-1+page));
-            //condicional imprime msg
-            color = "success";
-            checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
-
-            if (totaldata == 0){
-                console.log("ERROR Data was not erased");
-                color = "danger";
-                checkMSG= "¡No hay datos!";
-            }else if (res.ok) {
-                console.log("Ok:");
-                const json = await res.json();
-                LifeExpectancyStats = json;
-                console.log("Received " + LifeExpectancyStats.length + " resources.");
-            } else {
-                checkMSG= res.status + ": " + res.statusText;
-                console.log("ERROR!");
-            }
+        if(sCountry==null){
+            sCountry="";
         }
+        if(sProvince==null){
+            sProvince="";
+        }
+        if(sYear==null){
+            sYear="";
+        }
+        if(sLifeExpectancyWoman==null){
+            sLifeExpectancyWoman="";
+        }
+        if(sLifeExpectancyMan==null){
+            sLifeExpectancyMan="";
+        }
+        if(sAverageLifeExpectancy==null){
+            sAverageLifeExpectancy="";
+        }
+		const res = await fetch(BASE_API_PATH + "?country="+sCountry+"&province="+sProvince+"&year="+sYear+"&lifeExpectancyWoman="+sLifeExpectancyWoman+"&lifeExpectancyMan="+sLifeExpectancyMan+"&averageLifeExpectancy="+sAverageLifeExpectancy)
+		if (res.ok){
+			const json = await res.json();
+			LifeExpectancyStats = json;
+			console.log("Found "+ LifeExpectancyStats.length + " data");
+			console.log(sCountry,sProvince,sYear,sLifeExpectancyWoman,sLifeExpectancyMan,sAverageLifeExpectancy);
+			if(LifeExpectancyStats.length==1){
+                color = "success"
+				checkMSG = "Se ha encontrado un dato para tu búsqueda";
+			}else{
+                color = "success"
+				checkMSG = "Se han encontrado " + LifeExpectancyStats.length + " datos para tu búsqueda";
+			}
+	    }
+    }
 
-            //getPreviewPage (B)
-            async function getPreviewPage() {
 
+
+    //getNextPage (B)
+
+        async function getNextPage() {
+    
                 console.log(totaldata);
-                if (page-10 > 1) {
-                    page-=10; 
-                } else page = 1
-
+                if (page+10 > totaldata) {
+                    page = 1
+                } else {
+                    page+=10
+                }
+                
                 visible = true;
                 console.log("Charging page... Listing since: "+page);
                 const res = await fetch(BASE_API_PATH + "?limit=10&offset="+(-1+page));
+                //condicional imprime msg
                 color = "success";
-                checkMSG = (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
+                checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
 
                 if (totaldata == 0){
                     console.log("ERROR Data was not erased");
                     color = "danger";
-                    checkMSG = "¡No hay datos!";
+                    checkMSG= "¡No hay datos!";
                 }else if (res.ok) {
                     console.log("Ok:");
                     const json = await res.json();
                     LifeExpectancyStats = json;
-                    console.log("Received "+LifeExpectancyStats.length+" resources.");
+                    console.log("Received " + LifeExpectancyStats.length + " resources.");
                 } else {
-                    checkMSG = res.status+": "+res.statusText;
+                    checkMSG= res.status + ": " + res.statusText;
                     console.log("ERROR!");
                 }
             }
+
+    //getPreviewPage (B)
+
+        async function getPreviewPage() {
+
+            console.log(totaldata);
+            if (page-10 > 1) {
+                page-=10; 
+            } else page = 1
+
+            visible = true;
+            console.log("Charging page... Listing since: "+page);
+            const res = await fetch(BASE_API_PATH + "?limit=10&offset="+(-1+page));
+            color = "success";
+            checkMSG = (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
+
+            if (totaldata == 0){
+                console.log("ERROR Data was not erased");
+                color = "danger";
+                checkMSG = "¡No hay datos!";
+            }else if (res.ok) {
+                console.log("Ok:");
+                const json = await res.json();
+                LifeExpectancyStats = json;
+                console.log("Received "+LifeExpectancyStats.length+" resources.");
+            } else {
+                checkMSG = res.status+": "+res.statusText;
+                console.log("ERROR!");
+            }
+        }
 
 
 
@@ -251,6 +301,29 @@
                 {checkMSG}
             {/if}
         </Alert>
+        <br>
+        <h4 style="text-align:center"><strong>Búsqueda general de parámetros</strong></h4>
+
+        <Table>
+            <th>Búsqueda por país</th>
+            <th>Búsqueda por provincia</th>
+            <th>Búsqueda por año</th>
+            <th>Búsqueda por esperanza en mujeres</th>
+            <th>Búsqueda por esperanza en hombres</th>
+            <th>Búsqueda por esperanza de vida media</th>
+            <tr>
+                <td><input type = "text" placeholder="País" bind:value="{sCountry}"></td>
+                <td><input type = "text" placeholder="Provincia" bind:value="{sProvince}"></td>
+                <td><input type = "number" placeholder="2017" bind:value="{sYear}"></td>
+                <td><input type = "number" placeholder="0.0" bind:value="{sLifeExpectancyWoman}"></td>
+                <td><input type = "number" placeholder="0.0" bind:value="{sLifeExpectancyMan}"></td>
+                <td><input type = "number" placeholder="0.0" bind:value="{sAverageLifeExpectancy}"></td>
+            </tr>
+        </Table>
+        <div style="text-align:center">
+            <Button outline color="primary" on:click="{search (sCountry, sProvince, sYear, sLifeExpectancyWoman, sLifeExpectancyMan, sAverageLifeExpectancy)}">Buscar</Button>
+        </div>
+        <br>
 
         <Table bordered responsive> 
             <thead>
@@ -260,7 +333,7 @@
                     <th>Año</th>
                     <th>Esperanza en mujeres</th>
                     <th>Esperanza en hombre</th>
-                    <th>Esperanza de vida media</th>
+                    <th>Esperanza media</th>
                     <th colspan="2">Acciones</th>
                 </tr>
         </thead>
@@ -290,6 +363,7 @@
                 
         {/each}
         </tbody>
+        <br>
         </Table>
         <Button color="success" on:click="{getLifeExpectancy}">
             Cargar datos inciales

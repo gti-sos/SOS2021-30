@@ -7182,7 +7182,7 @@ var app = (function () {
     }
 
     // (41:87) <Button color="info">
-    function create_default_slot_10$3(ctx) {
+    function create_default_slot_10$4(ctx) {
     	let t;
 
     	const block = {
@@ -7199,7 +7199,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_10$3.name,
+    		id: create_default_slot_10$4.name,
     		type: "slot",
     		source: "(41:87) <Button color=\\\"info\\\">",
     		ctx
@@ -7209,7 +7209,7 @@ var app = (function () {
     }
 
     // (46:87) <Button color="info">
-    function create_default_slot_9$3(ctx) {
+    function create_default_slot_9$4(ctx) {
     	let t;
 
     	const block = {
@@ -7226,7 +7226,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_9$3.name,
+    		id: create_default_slot_9$4.name,
     		type: "slot",
     		source: "(46:87) <Button color=\\\"info\\\">",
     		ctx
@@ -7382,7 +7382,7 @@ var app = (function () {
     	button1 = new Button({
     			props: {
     				color: "info",
-    				$$slots: { default: [create_default_slot_10$3] },
+    				$$slots: { default: [create_default_slot_10$4] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7391,7 +7391,7 @@ var app = (function () {
     	button2 = new Button({
     			props: {
     				color: "info",
-    				$$slots: { default: [create_default_slot_9$3] },
+    				$$slots: { default: [create_default_slot_9$4] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -9402,7 +9402,7 @@ var app = (function () {
 
     function get_each_context$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[22] = list[i];
+    	child_ctx[35] = list[i];
     	return child_ctx;
     }
 
@@ -9428,33 +9428,67 @@ var app = (function () {
     	return block;
     }
 
-    // (247:8) {:then LifeExpectancyStats}
+    // (297:8) {:then LifeExpectancyStats}
     function create_then_block$3(ctx) {
     	let alert_1;
     	let t0;
-    	let table;
+    	let br0;
     	let t1;
-    	let button0;
-    	let t2;
-    	let button1;
+    	let h4;
+    	let strong;
     	let t3;
-    	let button2;
+    	let table0;
     	let t4;
+    	let div;
+    	let button0;
+    	let t5;
+    	let br1;
+    	let t6;
+    	let table1;
+    	let t7;
+    	let button1;
+    	let t8;
+    	let button2;
+    	let t9;
     	let button3;
+    	let t10;
+    	let button4;
     	let current;
 
     	alert_1 = new Alert({
     			props: {
     				color: /*color*/ ctx[3],
     				isOpen: /*visible*/ ctx[2],
-    				toggle: /*func*/ ctx[11],
+    				toggle: /*func*/ ctx[18],
+    				$$slots: { default: [create_default_slot_10$3] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	table0 = new Table({
+    			props: {
+    				$$slots: { default: [create_default_slot_9$3] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button0 = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
     				$$slots: { default: [create_default_slot_8$4] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	table = new Table({
+    	button0.$on("click", function () {
+    		if (is_function(/*search*/ ctx[15](/*sCountry*/ ctx[4], /*sProvince*/ ctx[5], /*sYear*/ ctx[6], /*sLifeExpectancyWoman*/ ctx[7], /*sLifeExpectancyMan*/ ctx[8], /*sAverageLifeExpectancy*/ ctx[9]))) /*search*/ ctx[15](/*sCountry*/ ctx[4], /*sProvince*/ ctx[5], /*sYear*/ ctx[6], /*sLifeExpectancyWoman*/ ctx[7], /*sLifeExpectancyMan*/ ctx[8], /*sAverageLifeExpectancy*/ ctx[9]).apply(this, arguments);
+    	});
+
+    	table1 = new Table({
     			props: {
     				bordered: true,
     				responsive: true,
@@ -9464,7 +9498,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button0 = new Button({
+    	button1 = new Button({
     			props: {
     				color: "success",
     				$$slots: { default: [create_default_slot_3$7] },
@@ -9473,9 +9507,9 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button0.$on("click", /*getLifeExpectancy*/ ctx[5]);
+    	button1.$on("click", /*getLifeExpectancy*/ ctx[11]);
 
-    	button1 = new Button({
+    	button2 = new Button({
     			props: {
     				color: "danger",
     				$$slots: { default: [create_default_slot_2$7] },
@@ -9484,9 +9518,9 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button1.$on("click", /*deleteALL*/ ctx[8]);
+    	button2.$on("click", /*deleteALL*/ ctx[14]);
 
-    	button2 = new Button({
+    	button3 = new Button({
     			props: {
     				outline: true,
     				color: "primary",
@@ -9496,9 +9530,9 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button2.$on("click", /*getPreviewPage*/ ctx[10]);
+    	button3.$on("click", /*getPreviewPage*/ ctx[17]);
 
-    	button3 = new Button({
+    	button4 = new Button({
     			props: {
     				outline: true,
     				color: "primary",
@@ -9508,114 +9542,176 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button3.$on("click", /*getNextPage*/ ctx[9]);
+    	button4.$on("click", /*getNextPage*/ ctx[16]);
 
     	const block = {
     		c: function create() {
     			create_component(alert_1.$$.fragment);
     			t0 = space();
-    			create_component(table.$$.fragment);
+    			br0 = element("br");
     			t1 = space();
-    			create_component(button0.$$.fragment);
-    			t2 = space();
-    			create_component(button1.$$.fragment);
+    			h4 = element("h4");
+    			strong = element("strong");
+    			strong.textContent = "Búsqueda general de parámetros";
     			t3 = space();
-    			create_component(button2.$$.fragment);
+    			create_component(table0.$$.fragment);
     			t4 = space();
+    			div = element("div");
+    			create_component(button0.$$.fragment);
+    			t5 = space();
+    			br1 = element("br");
+    			t6 = space();
+    			create_component(table1.$$.fragment);
+    			t7 = space();
+    			create_component(button1.$$.fragment);
+    			t8 = space();
+    			create_component(button2.$$.fragment);
+    			t9 = space();
     			create_component(button3.$$.fragment);
+    			t10 = space();
+    			create_component(button4.$$.fragment);
+    			add_location(br0, file$7, 303, 8, 10472);
+    			add_location(strong, file$7, 304, 38, 10516);
+    			set_style(h4, "text-align", "center");
+    			add_location(h4, file$7, 304, 8, 10486);
+    			set_style(div, "text-align", "center");
+    			add_location(div, file$7, 322, 8, 11537);
+    			add_location(br1, file$7, 325, 8, 11770);
     		},
     		m: function mount(target, anchor) {
     			mount_component(alert_1, target, anchor);
     			insert_dev(target, t0, anchor);
-    			mount_component(table, target, anchor);
+    			insert_dev(target, br0, anchor);
     			insert_dev(target, t1, anchor);
-    			mount_component(button0, target, anchor);
-    			insert_dev(target, t2, anchor);
-    			mount_component(button1, target, anchor);
+    			insert_dev(target, h4, anchor);
+    			append_dev(h4, strong);
     			insert_dev(target, t3, anchor);
-    			mount_component(button2, target, anchor);
+    			mount_component(table0, target, anchor);
     			insert_dev(target, t4, anchor);
+    			insert_dev(target, div, anchor);
+    			mount_component(button0, div, null);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, br1, anchor);
+    			insert_dev(target, t6, anchor);
+    			mount_component(table1, target, anchor);
+    			insert_dev(target, t7, anchor);
+    			mount_component(button1, target, anchor);
+    			insert_dev(target, t8, anchor);
+    			mount_component(button2, target, anchor);
+    			insert_dev(target, t9, anchor);
     			mount_component(button3, target, anchor);
+    			insert_dev(target, t10, anchor);
+    			mount_component(button4, target, anchor);
     			current = true;
     		},
-    		p: function update(ctx, dirty) {
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
     			const alert_1_changes = {};
-    			if (dirty & /*color*/ 8) alert_1_changes.color = /*color*/ ctx[3];
-    			if (dirty & /*visible*/ 4) alert_1_changes.isOpen = /*visible*/ ctx[2];
-    			if (dirty & /*visible*/ 4) alert_1_changes.toggle = /*func*/ ctx[11];
+    			if (dirty[0] & /*color*/ 8) alert_1_changes.color = /*color*/ ctx[3];
+    			if (dirty[0] & /*visible*/ 4) alert_1_changes.isOpen = /*visible*/ ctx[2];
+    			if (dirty[0] & /*visible*/ 4) alert_1_changes.toggle = /*func*/ ctx[18];
 
-    			if (dirty & /*$$scope, checkMSG*/ 33554434) {
+    			if (dirty[0] & /*checkMSG*/ 2 | dirty[1] & /*$$scope*/ 128) {
     				alert_1_changes.$$scope = { dirty, ctx };
     			}
 
     			alert_1.$set(alert_1_changes);
-    			const table_changes = {};
+    			const table0_changes = {};
 
-    			if (dirty & /*$$scope, LifeExpectancyStats, newLife*/ 33554449) {
-    				table_changes.$$scope = { dirty, ctx };
+    			if (dirty[0] & /*sAverageLifeExpectancy, sLifeExpectancyMan, sLifeExpectancyWoman, sYear, sProvince, sCountry*/ 1008 | dirty[1] & /*$$scope*/ 128) {
+    				table0_changes.$$scope = { dirty, ctx };
     			}
 
-    			table.$set(table_changes);
+    			table0.$set(table0_changes);
     			const button0_changes = {};
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty[1] & /*$$scope*/ 128) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
+    			const table1_changes = {};
+
+    			if (dirty[0] & /*LifeExpectancyStats, newLife*/ 1025 | dirty[1] & /*$$scope*/ 128) {
+    				table1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			table1.$set(table1_changes);
     			const button1_changes = {};
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty[1] & /*$$scope*/ 128) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
     			button1.$set(button1_changes);
     			const button2_changes = {};
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty[1] & /*$$scope*/ 128) {
     				button2_changes.$$scope = { dirty, ctx };
     			}
 
     			button2.$set(button2_changes);
     			const button3_changes = {};
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty[1] & /*$$scope*/ 128) {
     				button3_changes.$$scope = { dirty, ctx };
     			}
 
     			button3.$set(button3_changes);
+    			const button4_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 128) {
+    				button4_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button4.$set(button4_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(alert_1.$$.fragment, local);
-    			transition_in(table.$$.fragment, local);
+    			transition_in(table0.$$.fragment, local);
     			transition_in(button0.$$.fragment, local);
+    			transition_in(table1.$$.fragment, local);
     			transition_in(button1.$$.fragment, local);
     			transition_in(button2.$$.fragment, local);
     			transition_in(button3.$$.fragment, local);
+    			transition_in(button4.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(alert_1.$$.fragment, local);
-    			transition_out(table.$$.fragment, local);
+    			transition_out(table0.$$.fragment, local);
     			transition_out(button0.$$.fragment, local);
+    			transition_out(table1.$$.fragment, local);
     			transition_out(button1.$$.fragment, local);
     			transition_out(button2.$$.fragment, local);
     			transition_out(button3.$$.fragment, local);
+    			transition_out(button4.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			destroy_component(alert_1, detaching);
     			if (detaching) detach_dev(t0);
-    			destroy_component(table, detaching);
+    			if (detaching) detach_dev(br0);
     			if (detaching) detach_dev(t1);
-    			destroy_component(button0, detaching);
-    			if (detaching) detach_dev(t2);
-    			destroy_component(button1, detaching);
+    			if (detaching) detach_dev(h4);
     			if (detaching) detach_dev(t3);
-    			destroy_component(button2, detaching);
+    			destroy_component(table0, detaching);
     			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(div);
+    			destroy_component(button0);
+    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(br1);
+    			if (detaching) detach_dev(t6);
+    			destroy_component(table1, detaching);
+    			if (detaching) detach_dev(t7);
+    			destroy_component(button1, detaching);
+    			if (detaching) detach_dev(t8);
+    			destroy_component(button2, detaching);
+    			if (detaching) detach_dev(t9);
     			destroy_component(button3, detaching);
+    			if (detaching) detach_dev(t10);
+    			destroy_component(button4, detaching);
     		}
     	};
 
@@ -9623,14 +9719,14 @@ var app = (function () {
     		block,
     		id: create_then_block$3.name,
     		type: "then",
-    		source: "(247:8) {:then LifeExpectancyStats}",
+    		source: "(297:8) {:then LifeExpectancyStats}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (250:12) {#if checkMSG}
+    // (300:12) {#if checkMSG}
     function create_if_block$6(ctx) {
     	let t;
 
@@ -9642,7 +9738,7 @@ var app = (function () {
     			insert_dev(target, t, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*checkMSG*/ 2) set_data_dev(t, /*checkMSG*/ ctx[1]);
+    			if (dirty[0] & /*checkMSG*/ 2) set_data_dev(t, /*checkMSG*/ ctx[1]);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(t);
@@ -9653,15 +9749,15 @@ var app = (function () {
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(250:12) {#if checkMSG}",
+    		source: "(300:12) {#if checkMSG}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (249:8) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
-    function create_default_slot_8$4(ctx) {
+    // (299:8) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
+    function create_default_slot_10$3(ctx) {
     	let if_block_anchor;
     	let if_block = /*checkMSG*/ ctx[1] && create_if_block$6(ctx);
 
@@ -9696,16 +9792,254 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_8$4.name,
+    		id: create_default_slot_10$3.name,
     		type: "slot",
-    		source: "(249:8) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>",
+    		source: "(299:8) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (275:60) <Button outline color="primary" on:click={insertLife}>
+    // (307:8) <Table>
+    function create_default_slot_9$3(ctx) {
+    	let th0;
+    	let t1;
+    	let th1;
+    	let t3;
+    	let th2;
+    	let t5;
+    	let th3;
+    	let t7;
+    	let th4;
+    	let t9;
+    	let th5;
+    	let t11;
+    	let tr;
+    	let td0;
+    	let input0;
+    	let t12;
+    	let td1;
+    	let input1;
+    	let t13;
+    	let td2;
+    	let input2;
+    	let t14;
+    	let td3;
+    	let input3;
+    	let t15;
+    	let td4;
+    	let input4;
+    	let t16;
+    	let td5;
+    	let input5;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			th0 = element("th");
+    			th0.textContent = "Búsqueda por país";
+    			t1 = space();
+    			th1 = element("th");
+    			th1.textContent = "Búsqueda por provincia";
+    			t3 = space();
+    			th2 = element("th");
+    			th2.textContent = "Búsqueda por año";
+    			t5 = space();
+    			th3 = element("th");
+    			th3.textContent = "Búsqueda por esperanza en mujeres";
+    			t7 = space();
+    			th4 = element("th");
+    			th4.textContent = "Búsqueda por esperanza en hombres";
+    			t9 = space();
+    			th5 = element("th");
+    			th5.textContent = "Búsqueda por esperanza de vida media";
+    			t11 = space();
+    			tr = element("tr");
+    			td0 = element("td");
+    			input0 = element("input");
+    			t12 = space();
+    			td1 = element("td");
+    			input1 = element("input");
+    			t13 = space();
+    			td2 = element("td");
+    			input2 = element("input");
+    			t14 = space();
+    			td3 = element("td");
+    			input3 = element("input");
+    			t15 = space();
+    			td4 = element("td");
+    			input4 = element("input");
+    			t16 = space();
+    			td5 = element("td");
+    			input5 = element("input");
+    			add_location(th0, file$7, 307, 12, 10601);
+    			add_location(th1, file$7, 308, 12, 10641);
+    			add_location(th2, file$7, 309, 12, 10686);
+    			add_location(th3, file$7, 310, 12, 10725);
+    			add_location(th4, file$7, 311, 12, 10781);
+    			add_location(th5, file$7, 312, 12, 10837);
+    			attr_dev(input0, "type", "text");
+    			attr_dev(input0, "placeholder", "País");
+    			add_location(input0, file$7, 314, 20, 10922);
+    			add_location(td0, file$7, 314, 16, 10918);
+    			attr_dev(input1, "type", "text");
+    			attr_dev(input1, "placeholder", "Provincia");
+    			add_location(input1, file$7, 315, 20, 11013);
+    			add_location(td1, file$7, 315, 16, 11009);
+    			attr_dev(input2, "type", "number");
+    			attr_dev(input2, "placeholder", "2017");
+    			add_location(input2, file$7, 316, 20, 11110);
+    			add_location(td2, file$7, 316, 16, 11106);
+    			attr_dev(input3, "type", "number");
+    			attr_dev(input3, "placeholder", "0.0");
+    			add_location(input3, file$7, 317, 20, 11200);
+    			add_location(td3, file$7, 317, 16, 11196);
+    			attr_dev(input4, "type", "number");
+    			attr_dev(input4, "placeholder", "0.0");
+    			add_location(input4, file$7, 318, 20, 11304);
+    			add_location(td4, file$7, 318, 16, 11300);
+    			attr_dev(input5, "type", "number");
+    			attr_dev(input5, "placeholder", "0.0");
+    			add_location(input5, file$7, 319, 20, 11406);
+    			add_location(td5, file$7, 319, 16, 11402);
+    			add_location(tr, file$7, 313, 12, 10896);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, th0, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, th1, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, th2, anchor);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, th3, anchor);
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, th4, anchor);
+    			insert_dev(target, t9, anchor);
+    			insert_dev(target, th5, anchor);
+    			insert_dev(target, t11, anchor);
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, input0);
+    			set_input_value(input0, /*sCountry*/ ctx[4]);
+    			append_dev(tr, t12);
+    			append_dev(tr, td1);
+    			append_dev(td1, input1);
+    			set_input_value(input1, /*sProvince*/ ctx[5]);
+    			append_dev(tr, t13);
+    			append_dev(tr, td2);
+    			append_dev(td2, input2);
+    			set_input_value(input2, /*sYear*/ ctx[6]);
+    			append_dev(tr, t14);
+    			append_dev(tr, td3);
+    			append_dev(td3, input3);
+    			set_input_value(input3, /*sLifeExpectancyWoman*/ ctx[7]);
+    			append_dev(tr, t15);
+    			append_dev(tr, td4);
+    			append_dev(td4, input4);
+    			set_input_value(input4, /*sLifeExpectancyMan*/ ctx[8]);
+    			append_dev(tr, t16);
+    			append_dev(tr, td5);
+    			append_dev(td5, input5);
+    			set_input_value(input5, /*sAverageLifeExpectancy*/ ctx[9]);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[19]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[20]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[21]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[22]),
+    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[23]),
+    					listen_dev(input5, "input", /*input5_input_handler*/ ctx[24])
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*sCountry*/ 16 && input0.value !== /*sCountry*/ ctx[4]) {
+    				set_input_value(input0, /*sCountry*/ ctx[4]);
+    			}
+
+    			if (dirty[0] & /*sProvince*/ 32 && input1.value !== /*sProvince*/ ctx[5]) {
+    				set_input_value(input1, /*sProvince*/ ctx[5]);
+    			}
+
+    			if (dirty[0] & /*sYear*/ 64 && to_number(input2.value) !== /*sYear*/ ctx[6]) {
+    				set_input_value(input2, /*sYear*/ ctx[6]);
+    			}
+
+    			if (dirty[0] & /*sLifeExpectancyWoman*/ 128 && to_number(input3.value) !== /*sLifeExpectancyWoman*/ ctx[7]) {
+    				set_input_value(input3, /*sLifeExpectancyWoman*/ ctx[7]);
+    			}
+
+    			if (dirty[0] & /*sLifeExpectancyMan*/ 256 && to_number(input4.value) !== /*sLifeExpectancyMan*/ ctx[8]) {
+    				set_input_value(input4, /*sLifeExpectancyMan*/ ctx[8]);
+    			}
+
+    			if (dirty[0] & /*sAverageLifeExpectancy*/ 512 && to_number(input5.value) !== /*sAverageLifeExpectancy*/ ctx[9]) {
+    				set_input_value(input5, /*sAverageLifeExpectancy*/ ctx[9]);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(th0);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(th1);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(th2);
+    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(th3);
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(th4);
+    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(th5);
+    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(tr);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_9$3.name,
+    		type: "slot",
+    		source: "(307:8) <Table>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (324:12) <Button outline color="primary" on:click="{search (sCountry, sProvince, sYear, sLifeExpectancyWoman, sLifeExpectancyMan, sAverageLifeExpectancy)}">
+    function create_default_slot_8$4(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Buscar");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_8$4.name,
+    		type: "slot",
+    		source: "(324:12) <Button outline color=\\\"primary\\\" on:click=\\\"{search (sCountry, sProvince, sYear, sLifeExpectancyWoman, sLifeExpectancyMan, sAverageLifeExpectancy)}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (348:60) <Button outline color="primary" on:click={insertLife}>
     function create_default_slot_7$4(ctx) {
     	let t;
 
@@ -9725,14 +10059,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$4.name,
     		type: "slot",
-    		source: "(275:60) <Button outline color=\\\"primary\\\" on:click={insertLife}>",
+    		source: "(348:60) <Button outline color=\\\"primary\\\" on:click={insertLife}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (287:20) <Button outline color="danger" on:click="{deleteLife(life.province, life.year)}">
+    // (360:20) <Button outline color="danger" on:click="{deleteLife(life.province, life.year)}">
     function create_default_slot_6$4(ctx) {
     	let t;
 
@@ -9752,14 +10086,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$4.name,
     		type: "slot",
-    		source: "(287:20) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteLife(life.province, life.year)}\\\">",
+    		source: "(360:20) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteLife(life.province, life.year)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (288:71) <Button outline color="primary">
+    // (361:71) <Button outline color="primary">
     function create_default_slot_5$4(ctx) {
     	let t;
 
@@ -9779,40 +10113,40 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$4.name,
     		type: "slot",
-    		source: "(288:71) <Button outline color=\\\"primary\\\">",
+    		source: "(361:71) <Button outline color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (278:8) {#each LifeExpectancyStats as life}
+    // (351:8) {#each LifeExpectancyStats as life}
     function create_each_block$3(ctx) {
     	let tr;
     	let td0;
-    	let t0_value = /*life*/ ctx[22].country + "";
+    	let t0_value = /*life*/ ctx[35].country + "";
     	let t0;
     	let t1;
     	let td1;
     	let a0;
-    	let t2_value = /*life*/ ctx[22].province + "";
+    	let t2_value = /*life*/ ctx[35].province + "";
     	let t2;
     	let a0_href_value;
     	let t3;
     	let td2;
-    	let t4_value = /*life*/ ctx[22].year + "";
+    	let t4_value = /*life*/ ctx[35].year + "";
     	let t4;
     	let t5;
     	let td3;
-    	let t6_value = /*life*/ ctx[22].lifeExpectancyWoman + "";
+    	let t6_value = /*life*/ ctx[35].lifeExpectancyWoman + "";
     	let t6;
     	let t7;
     	let td4;
-    	let t8_value = /*life*/ ctx[22].lifeExpectancyMan + "";
+    	let t8_value = /*life*/ ctx[35].lifeExpectancyMan + "";
     	let t8;
     	let t9;
     	let td5;
-    	let t10_value = /*life*/ ctx[22].averageLifeExpectancy + "";
+    	let t10_value = /*life*/ ctx[35].averageLifeExpectancy + "";
     	let t10;
     	let t11;
     	let td6;
@@ -9836,7 +10170,7 @@ var app = (function () {
     		});
 
     	button0.$on("click", function () {
-    		if (is_function(/*deleteLife*/ ctx[7](/*life*/ ctx[22].province, /*life*/ ctx[22].year))) /*deleteLife*/ ctx[7](/*life*/ ctx[22].province, /*life*/ ctx[22].year).apply(this, arguments);
+    		if (is_function(/*deleteLife*/ ctx[13](/*life*/ ctx[35].province, /*life*/ ctx[35].year))) /*deleteLife*/ ctx[13](/*life*/ ctx[35].province, /*life*/ ctx[35].year).apply(this, arguments);
     	});
 
     	button1 = new Button({
@@ -9878,19 +10212,19 @@ var app = (function () {
     			a1 = element("a");
     			create_component(button1.$$.fragment);
     			t13 = space();
-    			add_location(td0, file$7, 280, 16, 10251);
-    			attr_dev(a0, "href", a0_href_value = "api/v2/life-expectancy-stats/" + /*life*/ ctx[22].province + "/" + /*life*/ ctx[22].year);
-    			add_location(a0, file$7, 281, 20, 10296);
-    			add_location(td1, file$7, 281, 16, 10292);
-    			add_location(td2, file$7, 282, 16, 10405);
-    			add_location(td3, file$7, 283, 16, 10443);
-    			add_location(td4, file$7, 284, 16, 10496);
-    			add_location(td5, file$7, 285, 16, 10547);
-    			add_location(td6, file$7, 286, 16, 10602);
-    			attr_dev(a1, "href", a1_href_value = "#/life-stats/" + /*life*/ ctx[22].province + "/" + /*life*/ ctx[22].year);
-    			add_location(a1, file$7, 287, 20, 10729);
-    			add_location(td7, file$7, 287, 16, 10725);
-    			add_location(tr, file$7, 278, 12, 10211);
+    			add_location(td0, file$7, 353, 16, 13151);
+    			attr_dev(a0, "href", a0_href_value = "api/v2/life-expectancy-stats/" + /*life*/ ctx[35].province + "/" + /*life*/ ctx[35].year);
+    			add_location(a0, file$7, 354, 20, 13196);
+    			add_location(td1, file$7, 354, 16, 13192);
+    			add_location(td2, file$7, 355, 16, 13305);
+    			add_location(td3, file$7, 356, 16, 13343);
+    			add_location(td4, file$7, 357, 16, 13396);
+    			add_location(td5, file$7, 358, 16, 13447);
+    			add_location(td6, file$7, 359, 16, 13502);
+    			attr_dev(a1, "href", a1_href_value = "#/life-stats/" + /*life*/ ctx[35].province + "/" + /*life*/ ctx[35].year);
+    			add_location(a1, file$7, 360, 20, 13629);
+    			add_location(td7, file$7, 360, 16, 13625);
+    			add_location(tr, file$7, 351, 12, 13111);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -9924,33 +10258,33 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if ((!current || dirty & /*LifeExpectancyStats*/ 16) && t0_value !== (t0_value = /*life*/ ctx[22].country + "")) set_data_dev(t0, t0_value);
-    			if ((!current || dirty & /*LifeExpectancyStats*/ 16) && t2_value !== (t2_value = /*life*/ ctx[22].province + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty[0] & /*LifeExpectancyStats*/ 1024) && t0_value !== (t0_value = /*life*/ ctx[35].country + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty[0] & /*LifeExpectancyStats*/ 1024) && t2_value !== (t2_value = /*life*/ ctx[35].province + "")) set_data_dev(t2, t2_value);
 
-    			if (!current || dirty & /*LifeExpectancyStats*/ 16 && a0_href_value !== (a0_href_value = "api/v2/life-expectancy-stats/" + /*life*/ ctx[22].province + "/" + /*life*/ ctx[22].year)) {
+    			if (!current || dirty[0] & /*LifeExpectancyStats*/ 1024 && a0_href_value !== (a0_href_value = "api/v2/life-expectancy-stats/" + /*life*/ ctx[35].province + "/" + /*life*/ ctx[35].year)) {
     				attr_dev(a0, "href", a0_href_value);
     			}
 
-    			if ((!current || dirty & /*LifeExpectancyStats*/ 16) && t4_value !== (t4_value = /*life*/ ctx[22].year + "")) set_data_dev(t4, t4_value);
-    			if ((!current || dirty & /*LifeExpectancyStats*/ 16) && t6_value !== (t6_value = /*life*/ ctx[22].lifeExpectancyWoman + "")) set_data_dev(t6, t6_value);
-    			if ((!current || dirty & /*LifeExpectancyStats*/ 16) && t8_value !== (t8_value = /*life*/ ctx[22].lifeExpectancyMan + "")) set_data_dev(t8, t8_value);
-    			if ((!current || dirty & /*LifeExpectancyStats*/ 16) && t10_value !== (t10_value = /*life*/ ctx[22].averageLifeExpectancy + "")) set_data_dev(t10, t10_value);
+    			if ((!current || dirty[0] & /*LifeExpectancyStats*/ 1024) && t4_value !== (t4_value = /*life*/ ctx[35].year + "")) set_data_dev(t4, t4_value);
+    			if ((!current || dirty[0] & /*LifeExpectancyStats*/ 1024) && t6_value !== (t6_value = /*life*/ ctx[35].lifeExpectancyWoman + "")) set_data_dev(t6, t6_value);
+    			if ((!current || dirty[0] & /*LifeExpectancyStats*/ 1024) && t8_value !== (t8_value = /*life*/ ctx[35].lifeExpectancyMan + "")) set_data_dev(t8, t8_value);
+    			if ((!current || dirty[0] & /*LifeExpectancyStats*/ 1024) && t10_value !== (t10_value = /*life*/ ctx[35].averageLifeExpectancy + "")) set_data_dev(t10, t10_value);
     			const button0_changes = {};
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty[1] & /*$$scope*/ 128) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
     			const button1_changes = {};
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty[1] & /*$$scope*/ 128) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
     			button1.$set(button1_changes);
 
-    			if (!current || dirty & /*LifeExpectancyStats*/ 16 && a1_href_value !== (a1_href_value = "#/life-stats/" + /*life*/ ctx[22].province + "/" + /*life*/ ctx[22].year)) {
+    			if (!current || dirty[0] & /*LifeExpectancyStats*/ 1024 && a1_href_value !== (a1_href_value = "#/life-stats/" + /*life*/ ctx[35].province + "/" + /*life*/ ctx[35].year)) {
     				attr_dev(a1, "href", a1_href_value);
     			}
     		},
@@ -9976,14 +10310,14 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(278:8) {#each LifeExpectancyStats as life}",
+    		source: "(351:8) {#each LifeExpectancyStats as life}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (255:8) <Table bordered responsive>
+    // (328:8) <Table bordered responsive>
     function create_default_slot_4$4(ctx) {
     	let thead;
     	let tr0;
@@ -10024,6 +10358,8 @@ var app = (function () {
     	let td6;
     	let button;
     	let t20;
+    	let t21;
+    	let br;
     	let current;
     	let mounted;
     	let dispose;
@@ -10038,8 +10374,8 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button.$on("click", /*insertLife*/ ctx[6]);
-    	let each_value = /*LifeExpectancyStats*/ ctx[4];
+    	button.$on("click", /*insertLife*/ ctx[12]);
+    	let each_value = /*LifeExpectancyStats*/ ctx[10];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -10071,7 +10407,7 @@ var app = (function () {
     			th4.textContent = "Esperanza en hombre";
     			t9 = space();
     			th5 = element("th");
-    			th5.textContent = "Esperanza de vida media";
+    			th5.textContent = "Esperanza media";
     			t11 = space();
     			th6 = element("th");
     			th6.textContent = "Acciones";
@@ -10104,45 +10440,48 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$7, 257, 20, 8971);
-    			add_location(th1, file$7, 258, 20, 9006);
-    			add_location(th2, file$7, 259, 20, 9055);
-    			add_location(th3, file$7, 260, 20, 9089);
-    			add_location(th4, file$7, 261, 20, 9140);
-    			add_location(th5, file$7, 262, 20, 9190);
+    			t21 = space();
+    			br = element("br");
+    			add_location(th0, file$7, 330, 20, 11879);
+    			add_location(th1, file$7, 331, 20, 11914);
+    			add_location(th2, file$7, 332, 20, 11963);
+    			add_location(th3, file$7, 333, 20, 11997);
+    			add_location(th4, file$7, 334, 20, 12048);
+    			add_location(th5, file$7, 335, 20, 12098);
     			attr_dev(th6, "colspan", "2");
-    			add_location(th6, file$7, 263, 20, 9244);
-    			add_location(tr0, file$7, 256, 16, 8945);
-    			add_location(thead, file$7, 255, 12, 8920);
+    			add_location(th6, file$7, 336, 20, 12144);
+    			add_location(tr0, file$7, 329, 16, 11853);
+    			add_location(thead, file$7, 328, 12, 11828);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "España");
-    			add_location(input0, file$7, 268, 20, 9371);
-    			add_location(td0, file$7, 268, 16, 9367);
+    			add_location(input0, file$7, 341, 20, 12271);
+    			add_location(td0, file$7, 341, 16, 12267);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "placeholder", "Cataluña");
-    			add_location(input1, file$7, 269, 20, 9471);
-    			add_location(td1, file$7, 269, 16, 9467);
+    			add_location(input1, file$7, 342, 20, 12371);
+    			add_location(td1, file$7, 342, 16, 12367);
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "2017");
-    			add_location(input2, file$7, 270, 20, 9575);
-    			add_location(td2, file$7, 270, 16, 9571);
+    			add_location(input2, file$7, 343, 20, 12475);
+    			add_location(td2, file$7, 343, 16, 12471);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "80");
-    			add_location(input3, file$7, 271, 20, 9671);
-    			add_location(td3, file$7, 271, 16, 9667);
+    			add_location(input3, file$7, 344, 20, 12571);
+    			add_location(td3, file$7, 344, 16, 12567);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "placeholder", "81.4");
-    			add_location(input4, file$7, 272, 20, 9785);
-    			add_location(td4, file$7, 272, 16, 9781);
+    			add_location(input4, file$7, 345, 20, 12685);
+    			add_location(td4, file$7, 345, 16, 12681);
     			attr_dev(input5, "type", "number");
     			attr_dev(input5, "placeholder", "80.8");
-    			add_location(input5, file$7, 273, 20, 9897);
-    			add_location(td5, file$7, 273, 16, 9893);
+    			add_location(input5, file$7, 346, 20, 12797);
+    			add_location(td5, file$7, 346, 16, 12793);
     			attr_dev(td6, "colspan", "2");
     			set_style(td6, "text-align", "center");
-    			add_location(td6, file$7, 274, 16, 10009);
-    			add_location(tr1, file$7, 267, 12, 9345);
-    			add_location(tbody, file$7, 266, 8, 9324);
+    			add_location(td6, file$7, 347, 16, 12909);
+    			add_location(tr1, file$7, 340, 12, 12245);
+    			add_location(tbody, file$7, 339, 8, 12224);
+    			add_location(br, file$7, 365, 8, 13818);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -10195,56 +10534,58 @@ var app = (function () {
     				each_blocks[i].m(tbody, null);
     			}
 
+    			insert_dev(target, t21, anchor);
+    			insert_dev(target, br, anchor);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[12]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[13]),
-    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[14]),
-    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[15]),
-    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[16]),
-    					listen_dev(input5, "input", /*input5_input_handler*/ ctx[17])
+    					listen_dev(input0, "input", /*input0_input_handler_1*/ ctx[25]),
+    					listen_dev(input1, "input", /*input1_input_handler_1*/ ctx[26]),
+    					listen_dev(input2, "input", /*input2_input_handler_1*/ ctx[27]),
+    					listen_dev(input3, "input", /*input3_input_handler_1*/ ctx[28]),
+    					listen_dev(input4, "input", /*input4_input_handler_1*/ ctx[29]),
+    					listen_dev(input5, "input", /*input5_input_handler_1*/ ctx[30])
     				];
 
     				mounted = true;
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*newLife*/ 1 && input0.value !== /*newLife*/ ctx[0].country) {
+    			if (dirty[0] & /*newLife*/ 1 && input0.value !== /*newLife*/ ctx[0].country) {
     				set_input_value(input0, /*newLife*/ ctx[0].country);
     			}
 
-    			if (dirty & /*newLife*/ 1 && input1.value !== /*newLife*/ ctx[0].province) {
+    			if (dirty[0] & /*newLife*/ 1 && input1.value !== /*newLife*/ ctx[0].province) {
     				set_input_value(input1, /*newLife*/ ctx[0].province);
     			}
 
-    			if (dirty & /*newLife*/ 1 && input2.value !== /*newLife*/ ctx[0].year) {
+    			if (dirty[0] & /*newLife*/ 1 && input2.value !== /*newLife*/ ctx[0].year) {
     				set_input_value(input2, /*newLife*/ ctx[0].year);
     			}
 
-    			if (dirty & /*newLife*/ 1 && to_number(input3.value) !== /*newLife*/ ctx[0].lifeExpectancyWoman) {
+    			if (dirty[0] & /*newLife*/ 1 && to_number(input3.value) !== /*newLife*/ ctx[0].lifeExpectancyWoman) {
     				set_input_value(input3, /*newLife*/ ctx[0].lifeExpectancyWoman);
     			}
 
-    			if (dirty & /*newLife*/ 1 && to_number(input4.value) !== /*newLife*/ ctx[0].lifeExpectancyMan) {
+    			if (dirty[0] & /*newLife*/ 1 && to_number(input4.value) !== /*newLife*/ ctx[0].lifeExpectancyMan) {
     				set_input_value(input4, /*newLife*/ ctx[0].lifeExpectancyMan);
     			}
 
-    			if (dirty & /*newLife*/ 1 && to_number(input5.value) !== /*newLife*/ ctx[0].averageLifeExpectancy) {
+    			if (dirty[0] & /*newLife*/ 1 && to_number(input5.value) !== /*newLife*/ ctx[0].averageLifeExpectancy) {
     				set_input_value(input5, /*newLife*/ ctx[0].averageLifeExpectancy);
     			}
 
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty[1] & /*$$scope*/ 128) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
     			button.$set(button_changes);
 
-    			if (dirty & /*LifeExpectancyStats, deleteLife*/ 144) {
-    				each_value = /*LifeExpectancyStats*/ ctx[4];
+    			if (dirty[0] & /*LifeExpectancyStats, deleteLife*/ 9216) {
+    				each_value = /*LifeExpectancyStats*/ ctx[10];
     				validate_each_argument(each_value);
     				let i;
 
@@ -10297,6 +10638,8 @@ var app = (function () {
     			if (detaching) detach_dev(tbody);
     			destroy_component(button);
     			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(t21);
+    			if (detaching) detach_dev(br);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -10306,14 +10649,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$4.name,
     		type: "slot",
-    		source: "(255:8) <Table bordered responsive>",
+    		source: "(328:8) <Table bordered responsive>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (294:8) <Button color="success" on:click="{getLifeExpectancy}">
+    // (368:8) <Button color="success" on:click="{getLifeExpectancy}">
     function create_default_slot_3$7(ctx) {
     	let t;
 
@@ -10333,14 +10676,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$7.name,
     		type: "slot",
-    		source: "(294:8) <Button color=\\\"success\\\" on:click=\\\"{getLifeExpectancy}\\\">",
+    		source: "(368:8) <Button color=\\\"success\\\" on:click=\\\"{getLifeExpectancy}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (297:8) <Button color="danger" on:click="{deleteALL}">
+    // (371:8) <Button color="danger" on:click="{deleteALL}">
     function create_default_slot_2$7(ctx) {
     	let t;
 
@@ -10360,14 +10703,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$7.name,
     		type: "slot",
-    		source: "(297:8) <Button color=\\\"danger\\\" on:click=\\\"{deleteALL}\\\">",
+    		source: "(371:8) <Button color=\\\"danger\\\" on:click=\\\"{deleteALL}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (300:8) <Button outline color="primary" on:click="{getPreviewPage}">
+    // (374:8) <Button outline color="primary" on:click="{getPreviewPage}">
     function create_default_slot_1$7(ctx) {
     	let t;
 
@@ -10387,14 +10730,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$7.name,
     		type: "slot",
-    		source: "(300:8) <Button outline color=\\\"primary\\\" on:click=\\\"{getPreviewPage}\\\">",
+    		source: "(374:8) <Button outline color=\\\"primary\\\" on:click=\\\"{getPreviewPage}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (303:8) <Button outline color="primary" on:click="{getNextPage}">
+    // (377:8) <Button outline color="primary" on:click="{getNextPage}">
     function create_default_slot$7(ctx) {
     	let t;
 
@@ -10414,14 +10757,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$7.name,
     		type: "slot",
-    		source: "(303:8) <Button outline color=\\\"primary\\\" on:click=\\\"{getNextPage}\\\">",
+    		source: "(377:8) <Button outline color=\\\"primary\\\" on:click=\\\"{getNextPage}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (245:36)               Loading life stats data...          {:then LifeExpectancyStats}
+    // (295:36)               Loading life stats data...          {:then LifeExpectancyStats}
     function create_pending_block$3(ctx) {
     	let t;
 
@@ -10444,7 +10787,7 @@ var app = (function () {
     		block,
     		id: create_pending_block$3.name,
     		type: "pending",
-    		source: "(245:36)               Loading life stats data...          {:then LifeExpectancyStats}",
+    		source: "(295:36)               Loading life stats data...          {:then LifeExpectancyStats}",
     		ctx
     	});
 
@@ -10466,11 +10809,11 @@ var app = (function () {
     		pending: create_pending_block$3,
     		then: create_then_block$3,
     		catch: create_catch_block$3,
-    		value: 4,
+    		value: 10,
     		blocks: [,,,]
     	};
 
-    	handle_promise(promise = /*LifeExpectancyStats*/ ctx[4], info);
+    	handle_promise(promise = /*LifeExpectancyStats*/ ctx[10], info);
 
     	const block = {
     		c: function create() {
@@ -10480,8 +10823,8 @@ var app = (function () {
     			t1 = space();
     			info.block.c();
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$7, 242, 8, 8492);
-    			add_location(main, file$7, 240, 0, 8474);
+    			add_location(h1, file$7, 292, 8, 10088);
+    			add_location(main, file$7, 290, 0, 10070);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10495,11 +10838,11 @@ var app = (function () {
     			info.anchor = null;
     			current = true;
     		},
-    		p: function update(new_ctx, [dirty]) {
+    		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
     			info.ctx = ctx;
 
-    			if (dirty & /*LifeExpectancyStats*/ 16 && promise !== (promise = /*LifeExpectancyStats*/ ctx[4]) && handle_promise(promise, info)) ; else {
+    			if (dirty[0] & /*LifeExpectancyStats*/ 1024 && promise !== (promise = /*LifeExpectancyStats*/ ctx[10]) && handle_promise(promise, info)) ; else {
     				update_await_block_branch(info, ctx, dirty);
     			}
     		},
@@ -10555,6 +10898,12 @@ var app = (function () {
     	let color = "danger";
     	let page = 1;
     	let totaldata = 19; // Número total de los datos
+    	let sCountry = "";
+    	let sProvince = "";
+    	let sYear = "";
+    	let sLifeExpectancyWoman = "";
+    	let sLifeExpectancyMan = "";
+    	let sAverageLifeExpectancy = "";
     	onMount(getLife);
 
     	//Get initialData (B)
@@ -10566,7 +10915,7 @@ var app = (function () {
     		if (res.ok) {
     			console.log("Ok:");
     			const json = await res.json();
-    			$$invalidate(4, LifeExpectancyStats = json);
+    			$$invalidate(10, LifeExpectancyStats = json);
     			totaldata = 19;
     			console.log("Received " + LifeExpectancyStats.length + " life data.");
     			$$invalidate(3, color = "success");
@@ -10586,7 +10935,7 @@ var app = (function () {
     		if (res.ok) {
     			console.log("Ok:");
     			const json = await res.json();
-    			$$invalidate(4, LifeExpectancyStats = json);
+    			$$invalidate(10, LifeExpectancyStats = json);
     			console.log("Received " + LifeExpectancyStats.length + " Life Data.");
     		} else {
     			$$invalidate(1, checkMSG = res.status + ": Recursos no encontrados ");
@@ -10687,6 +11036,56 @@ var app = (function () {
     	}
 
     	//SEARCH 
+    	async function search(
+    		sCountry,
+    	sProvince,
+    	sYear,
+    	sLifeExpectancyWoman,
+    	sLifeExpectancyMan,
+    	sAverageLifeExpectancy
+    	) {
+    		if (sCountry == null) {
+    			sCountry = "";
+    		}
+
+    		if (sProvince == null) {
+    			sProvince = "";
+    		}
+
+    		if (sYear == null) {
+    			sYear = "";
+    		}
+
+    		if (sLifeExpectancyWoman == null) {
+    			sLifeExpectancyWoman = "";
+    		}
+
+    		if (sLifeExpectancyMan == null) {
+    			sLifeExpectancyMan = "";
+    		}
+
+    		if (sAverageLifeExpectancy == null) {
+    			sAverageLifeExpectancy = "";
+    		}
+
+    		const res = await fetch(BASE_API_PATH + "?country=" + sCountry + "&province=" + sProvince + "&year=" + sYear + "&lifeExpectancyWoman=" + sLifeExpectancyWoman + "&lifeExpectancyMan=" + sLifeExpectancyMan + "&averageLifeExpectancy=" + sAverageLifeExpectancy);
+
+    		if (res.ok) {
+    			const json = await res.json();
+    			$$invalidate(10, LifeExpectancyStats = json);
+    			console.log("Found " + LifeExpectancyStats.length + " data");
+    			console.log(sCountry, sProvince, sYear, sLifeExpectancyWoman, sLifeExpectancyMan, sAverageLifeExpectancy);
+
+    			if (LifeExpectancyStats.length == 1) {
+    				$$invalidate(3, color = "success");
+    				$$invalidate(1, checkMSG = "Se ha encontrado un dato para tu búsqueda");
+    			} else {
+    				$$invalidate(3, color = "success");
+    				$$invalidate(1, checkMSG = "Se han encontrado " + LifeExpectancyStats.length + " datos para tu búsqueda");
+    			}
+    		}
+    	}
+
     	//getNextPage (B)
     	async function getNextPage() {
     		console.log(totaldata);
@@ -10715,7 +11114,7 @@ var app = (function () {
     		} else if (res.ok) {
     			console.log("Ok:");
     			const json = await res.json();
-    			$$invalidate(4, LifeExpectancyStats = json);
+    			$$invalidate(10, LifeExpectancyStats = json);
     			console.log("Received " + LifeExpectancyStats.length + " resources.");
     		} else {
     			$$invalidate(1, checkMSG = res.status + ": " + res.statusText);
@@ -10747,7 +11146,7 @@ var app = (function () {
     		} else if (res.ok) {
     			console.log("Ok:");
     			const json = await res.json();
-    			$$invalidate(4, LifeExpectancyStats = json);
+    			$$invalidate(10, LifeExpectancyStats = json);
     			console.log("Received " + LifeExpectancyStats.length + " resources.");
     		} else {
     			$$invalidate(1, checkMSG = res.status + ": " + res.statusText);
@@ -10764,31 +11163,61 @@ var app = (function () {
     	const func = () => $$invalidate(2, visible = false);
 
     	function input0_input_handler() {
+    		sCountry = this.value;
+    		$$invalidate(4, sCountry);
+    	}
+
+    	function input1_input_handler() {
+    		sProvince = this.value;
+    		$$invalidate(5, sProvince);
+    	}
+
+    	function input2_input_handler() {
+    		sYear = to_number(this.value);
+    		$$invalidate(6, sYear);
+    	}
+
+    	function input3_input_handler() {
+    		sLifeExpectancyWoman = to_number(this.value);
+    		$$invalidate(7, sLifeExpectancyWoman);
+    	}
+
+    	function input4_input_handler() {
+    		sLifeExpectancyMan = to_number(this.value);
+    		$$invalidate(8, sLifeExpectancyMan);
+    	}
+
+    	function input5_input_handler() {
+    		sAverageLifeExpectancy = to_number(this.value);
+    		$$invalidate(9, sAverageLifeExpectancy);
+    	}
+
+    	function input0_input_handler_1() {
     		newLife.country = this.value;
     		$$invalidate(0, newLife);
     	}
 
-    	function input1_input_handler() {
+    	function input1_input_handler_1() {
     		newLife.province = this.value;
     		$$invalidate(0, newLife);
     	}
 
-    	function input2_input_handler() {
+    	function input2_input_handler_1() {
     		newLife.year = this.value;
     		$$invalidate(0, newLife);
     	}
 
-    	function input3_input_handler() {
+    	function input3_input_handler_1() {
     		newLife.lifeExpectancyWoman = to_number(this.value);
     		$$invalidate(0, newLife);
     	}
 
-    	function input4_input_handler() {
+    	function input4_input_handler_1() {
     		newLife.lifeExpectancyMan = to_number(this.value);
     		$$invalidate(0, newLife);
     	}
 
-    	function input5_input_handler() {
+    	function input5_input_handler_1() {
     		newLife.averageLifeExpectancy = to_number(this.value);
     		$$invalidate(0, newLife);
     	}
@@ -10806,24 +11235,37 @@ var app = (function () {
     		color,
     		page,
     		totaldata,
+    		sCountry,
+    		sProvince,
+    		sYear,
+    		sLifeExpectancyWoman,
+    		sLifeExpectancyMan,
+    		sAverageLifeExpectancy,
     		getLifeExpectancy,
     		getLife,
     		insertLife,
     		deleteLife,
     		deleteALL,
+    		search,
     		getNextPage,
     		getPreviewPage
     	});
 
     	$$self.$inject_state = $$props => {
     		if ("BASE_API_PATH" in $$props) BASE_API_PATH = $$props.BASE_API_PATH;
-    		if ("LifeExpectancyStats" in $$props) $$invalidate(4, LifeExpectancyStats = $$props.LifeExpectancyStats);
+    		if ("LifeExpectancyStats" in $$props) $$invalidate(10, LifeExpectancyStats = $$props.LifeExpectancyStats);
     		if ("newLife" in $$props) $$invalidate(0, newLife = $$props.newLife);
     		if ("checkMSG" in $$props) $$invalidate(1, checkMSG = $$props.checkMSG);
     		if ("visible" in $$props) $$invalidate(2, visible = $$props.visible);
     		if ("color" in $$props) $$invalidate(3, color = $$props.color);
     		if ("page" in $$props) page = $$props.page;
     		if ("totaldata" in $$props) totaldata = $$props.totaldata;
+    		if ("sCountry" in $$props) $$invalidate(4, sCountry = $$props.sCountry);
+    		if ("sProvince" in $$props) $$invalidate(5, sProvince = $$props.sProvince);
+    		if ("sYear" in $$props) $$invalidate(6, sYear = $$props.sYear);
+    		if ("sLifeExpectancyWoman" in $$props) $$invalidate(7, sLifeExpectancyWoman = $$props.sLifeExpectancyWoman);
+    		if ("sLifeExpectancyMan" in $$props) $$invalidate(8, sLifeExpectancyMan = $$props.sLifeExpectancyMan);
+    		if ("sAverageLifeExpectancy" in $$props) $$invalidate(9, sAverageLifeExpectancy = $$props.sAverageLifeExpectancy);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -10835,11 +11277,18 @@ var app = (function () {
     		checkMSG,
     		visible,
     		color,
+    		sCountry,
+    		sProvince,
+    		sYear,
+    		sLifeExpectancyWoman,
+    		sLifeExpectancyMan,
+    		sAverageLifeExpectancy,
     		LifeExpectancyStats,
     		getLifeExpectancy,
     		insertLife,
     		deleteLife,
     		deleteALL,
+    		search,
     		getNextPage,
     		getPreviewPage,
     		func,
@@ -10848,14 +11297,20 @@ var app = (function () {
     		input2_input_handler,
     		input3_input_handler,
     		input4_input_handler,
-    		input5_input_handler
+    		input5_input_handler,
+    		input0_input_handler_1,
+    		input1_input_handler_1,
+    		input2_input_handler_1,
+    		input3_input_handler_1,
+    		input4_input_handler_1,
+    		input5_input_handler_1
     	];
     }
 
     class LifeExpectancy extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$7, create_fragment$7, safe_not_equal, {});
+    		init(this, options, instance$7, create_fragment$7, safe_not_equal, {}, [-1, -1]);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
