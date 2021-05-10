@@ -21,23 +21,23 @@
     let visible = false;
     let color = "danger";
     let page = 1;
-    let totaldata=3; // Número total de los datos
+    let totaldata=19; // Número total de los datos
 
     onMount(getLife);
 
 
-    //Get initialData
+    //Get initialData (B)
 
     async function getLifeExpectancy() {
  
         console.log("Fetching life data...");
         await fetch("/api/v1/life-expectancy-stats/loadInitialData");
-        const res = await fetch("/api/v1/life-expectancy-stats");
+        const res = await fetch("/api/v1/life-expectancy-stats?limit=10&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             LifeExpectancyStats = json;
-            totaldata=3;
+            totaldata=19;
             console.log("Received " + LifeExpectancyStats.length + " life data.");
             color = "success";
             checkMSG = "Datos cargados correctamente";
@@ -50,10 +50,10 @@
 
 
     
-    //Get
+    //Get (B)
         async function getLife() {
             console.log("Fetching resources...");
-            const res = await fetch("/api/v1/life-expectancy-stats");
+            const res = await fetch("/api/v1/life-expectancy-stats?limit=10&offset=0");
             if (res.ok) {
                 console.log("Ok:");
                 const json = await res.json();
@@ -66,15 +66,14 @@
         }
 
 
-
-
-    //Insert
+    //Insert (B)
 
     async function insertLife(){
 		 
          console.log("Inserting resources...");
-         if (newLife.country == "" || newLife.province == "" || newLife.year == null) {
-             alert("Los campos 'País' 'Comunidad Autonoma'y 'Año' no pueden estar vacios");
+         if (newLife.country == "" || newLife.province == "" || newLife.year == null ||
+          newLife.lifeExpectancyWoman == null || newLife.lifeExpectancyMan == null || newLife.averageLifeExpectancy == null) {
+             alert("Los campos no pueden estar vacios");
          } else{
              const res = await fetch("/api/v1/life-expectancy-stats",{
                  method:"POST",
@@ -104,15 +103,15 @@
      }
 
 
-    //EDIT
+    //EDIT (B)
 
     async function editLife(province, year){
 
-            //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
-                if (newLife.province == "" || newLife.year == null) {
-                alert("Los campos 'Comunidad Autonoma'y 'Año' no pueden estar vacios");
+                if (newLife.country == "" || newLife.province == "" || newLife.year == null ||
+          newLife.lifeExpectancyWoman == null || newLife.lifeExpectancyMan == null || newLife.averageLifeExpectancy == null) {
+                alert("Los campos no pueden estar vacios");
                 }else if (province != newLife.province || year != newLife.year){
-                alert("Los campos 'Comunidad Autónoma' y 'Año' no pueden ser distintos");
+                alert("Los campos 'Comunidad Autónoma' y 'Año' no pueden ser distintos al recurso a actualizar");
                 }else{
                 
                 console.log("Editing resources...");
@@ -145,7 +144,7 @@
 
      
 
-     //Delete
+     //Delete (B)
 
      async function deleteLife(province, year) {
         const res = await fetch("/api/v1/life-expectancy-stats/" + province + "/" + year, {
@@ -175,7 +174,7 @@
 		console.log("Deleting life stats data...");
 		if (confirm("¿Está seguro de que desea eliminar todas las entradas?")){
 			console.log("Deleting all life stats data...");
-			const res = await fetch("/api/v1/life-expectancy-stats/", {
+			const res = await fetch("/api/v1/life-expectancy-stats", {
 				method: "DELETE"
 			}).then(function (res) {
                 visible=true;
@@ -199,23 +198,23 @@
 	}
 
 
-        //SEARCH
-    //getNextPage
+        //SEARCH 
+    //getNextPage (B)
     async function getNextPage() {
  
             console.log(totaldata);
-            if (page+5 > totaldata) {
+            if (page+10 > totaldata) {
                 page = 1
             } else {
-                page+=5
+                page+=10
             }
             
             visible = true;
             console.log("Charging page... Listing since: "+page);
-            const res = await fetch("/api/v1/life-expectancy-stats?limit=5&offset="+(-1+page));
+            const res = await fetch("/api/v1/life-expectancy-stats?limit=10&offset="+(-1+page));
             //condicional imprime msg
             color = "success";
-            checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+            checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
 
             if (totaldata == 0){
                 console.log("ERROR Data was not erased");
@@ -224,7 +223,7 @@
             }else if (res.ok) {
                 console.log("Ok:");
                 const json = await res.json();
-                SmokerStats = json;
+                LifeExpectancyStats = json;
                 console.log("Received " + LifeExpectancyStats.length + " resources.");
             } else {
                 checkMSG= res.status + ": " + res.statusText;
@@ -232,31 +231,31 @@
             }
         }
 
-            //getPreviewPage
+            //getPreviewPage (B)
             async function getPreviewPage() {
 
                 console.log(totaldata);
-                if (page-5 > 1) {
-                    page-=5; 
+                if (page-10 > 1) {
+                    page-=10; 
                 } else page = 1
 
                 visible = true;
                 console.log("Charging page... Listing since: "+page);
-                const res = await fetch("/api/v1/life-expectancy-stats?limit=5&offset="+(-1+page));
+                const res = await fetch("/api/v1/life-expectancy-stats?limit=10&offset="+(-1+page));
                 color = "success";
-                errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+                checkMSG = (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
 
                 if (totaldata == 0){
                     console.log("ERROR Data was not erased");
                     color = "danger";
-                    errorMSG= "¡No hay datos!";
+                    checkMSG = "¡No hay datos!";
                 }else if (res.ok) {
                     console.log("Ok:");
                     const json = await res.json();
-                    SmokerStats = json;
+                    LifeExpectancyStats = json;
                     console.log("Received "+LifeExpectancyStats.length+" resources.");
                 } else {
-                    errorMSG= res.status+": "+res.statusText;
+                    checkMSG = res.status+": "+res.statusText;
                     console.log("ERROR!");
                 }
             }

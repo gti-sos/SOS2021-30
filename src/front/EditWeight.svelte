@@ -3,15 +3,12 @@
     import { pop }from "svelte-spa-router";
     import Table from "sveltestrap/src/Table.svelte"; 
 	import Button from "sveltestrap/src/Button.svelte";
-    import { Alert } from 'sveltestrap';
 
-    var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
-
-    let visible = false;
-    let checkMSG = "";
-    let color = "danger";
+    var BASE_WEIGHTS_PATH = "/api/v1/table-weights-stats";
     export let params = {};
     let weightsStats = {};
+    let updatedProvince = "XXXX";
+    let updatedYear = 2017;
     let uptadatedNormalWeight = null;
     let updatedOverweight = null;
     let updatedObesity = null;
@@ -25,6 +22,8 @@
         if(res.ok){
             console.log("Ok");
             const json = await res.json();
+            updatedProvince = params.provinces;
+            updatedYear = params.year;
             uptadatedNormalWeight = weightsStats.normal_weight;
             updatedOverweight = weightsStats.overweight;
             updatedObesity = weightsStats.obesity;
@@ -50,30 +49,13 @@
             headers: {
                 "Content-Type": "application/json"
             }
-        }).then(function (res){
-            visible = true;
-            if(res.status == 200){
-               getStat(); 
-               console.log("Data introduced");
-               color = "success";
-               checkMSG="Recurso actualizado correctamente";
-            }else{
-                console.log("Data not edited");
-                checkMSG= "Se ha producido un error y no se ha podido editar correctamente el recurso solicitado";
-            }
-            
+        }).then( (res) =>{
+            getStat();
         })
     }
 </script>
 
 <main>
-
-    <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
-        {#if checkMSG}
-		    {checkMSG}
-	    {/if}
-    </Alert>
-
     <h1>Recurso {params.provinces} {params.year} listo para editar</h1>
     <Table bordered>
         <thead>

@@ -7,7 +7,8 @@
   import Info from "./Info.svelte";
 	import Router from 'svelte-spa-router';
   import LifeExpectancy from './lifeExpectancy.svelte';
-	import TablaAlcohol from "./TablaAlcohol.svelte";
+	import TablaAlcohol from "./alcoholStats/TablaAlcohol.svelte";
+  import EditAlcohol from "./alcoholStats/EditAlcohol.svelte";
   import SmokerStats from "./Smokers.svelte";
   import SmokersItems from "./SmokersItems.svelte";
   import FrontWeight from "./weightsStats/TablaWeights.svelte";
@@ -18,6 +19,7 @@
 		"/":Home,
     "/info": Info,
 		"/alcohol-stats": TablaAlcohol,
+    "/alcohol-stats/:country/:year/:ageRange": EditAlcohol,
     "/life-stats" : LifeExpectancy,
     "/weights-stats" : FrontWeight,
     "/weights-stats/:provinces/:year" : EditWeight,

@@ -41,7 +41,7 @@
     "grpc": "^1.24.7",
     "heroku": "^7.53.0",
     "nedb": "^1.8.0",
-    "newman": "^5.2.2",
+    "newman": "^5.2.3",
     "resolve": "^1.20.0",
     "svelte-spa-router": "^3.1.0",
     "sveltestrap": "^3.14.1",
