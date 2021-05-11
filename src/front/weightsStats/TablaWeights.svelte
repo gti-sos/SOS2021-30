@@ -180,12 +180,16 @@ import { } from "node:os";
 			const json = await res.json();
 			weightStats = json;
 			console.log("Found "+ weightStats.length + " data");
+            visible = true;
 			
 			if(weightStats.length==1){
+                color = "success";
 				checkMSG = "Se ha encontrado un dato para tu búsqueda";
 			}else{
+                color = "success";
 				checkMSG = "Se han encontrado " + weightStats.length + " datos para tu búsqueda";
-			}
+                
+            }
 	    }
     }
 
