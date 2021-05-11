@@ -43,7 +43,8 @@
             <tr>
                 <td>Juan Pedro Hurtado Masero</td>
                 <td>API smokers-Stats</td>
-                <td><a href="https://documenter.getpostman.com/view/14966429/TzJoFgHe"><Button color="info">Documentación v1</Button></a></td>
+                <td><a href="https://documenter.getpostman.com/view/14966429/TzJoFgHe"><Button color="info">Documentación v1</Button></a>
+                    <a href="https://documenter.getpostman.com/view/14966429/TzRU9RjW"><Button color="info">Documentación v2</Button></a></td>
             </tr>
             <tr>
                 <td>Jesús Ruiz Domínguez</td>

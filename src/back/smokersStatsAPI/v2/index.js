@@ -2,14 +2,16 @@ var _= require("underscore");
 var Datastore = require("nedb");
 var db = new Datastore();
 
-var BASE_API_PATH = "/api/v1/smokers-stats";
+var BASE_API_PATH = "/api/v2/smokers-stats";
+
+var smokersStats = [];
 
 module.exports.register = (app) => {
 
 /*--------------Variable Objeto-----------------------*/
     smokersStats=[
         {   
-            "country": "España",
+            "country": 'España',
             "province":"Andalucía",
             "year":2017,
             "dailySmoker": 1902219.14,
@@ -18,7 +20,7 @@ module.exports.register = (app) => {
             "nonSmoker": 4294657.75
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Aragón",
             "year":2017,
             "dailySmoker": 315408.75,
@@ -27,7 +29,7 @@ module.exports.register = (app) => {
             "nonSmoker": 603988.13
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Asturias (Principado De)",
             "year":2017,
             "dailySmoker": 246320.48,
@@ -36,7 +38,7 @@ module.exports.register = (app) => {
             "nonSmoker": 559602.87
         },
         {
-            "country": "España",
+            "country": 'España',
             "province": "Cantabria",
             "year": 2017,
             "dailySmoker": 132887.56,
@@ -45,7 +47,7 @@ module.exports.register = (app) => {
             "nonSmoker": 307382.26
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Castilla y León",
             "year":2017,
             "dailySmoker": 550656.83,
@@ -54,7 +56,7 @@ module.exports.register = (app) => {
             "nonSmoker": 1244193.33
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Castilla-La Mancha",
             "year":2017,
             "dailySmoker": 499743.83,
@@ -63,7 +65,7 @@ module.exports.register = (app) => {
             "nonSmoker": 1129502.32
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Cataluña",
             "year":2017,
             "dailySmoker": 1700061.75,
@@ -72,7 +74,7 @@ module.exports.register = (app) => {
             "nonSmoker": 4125483.18
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Comunidad Valenciana",
             "year":2017,
             "dailySmoker": 1225494.23,
@@ -81,7 +83,7 @@ module.exports.register = (app) => {
             "nonSmoker": 2447035.26
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Extremadura",
             "year":2017,
             "dailySmoker": 258100.88,
@@ -90,7 +92,7 @@ module.exports.register = (app) => {
             "nonSmoker": 573221.54
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Galicia",
             "year":2017,
             "dailySmoker": 482084.34,
@@ -99,7 +101,7 @@ module.exports.register = (app) => {
             "nonSmoker": 1606045.03
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Madrid (Comunidad De)",
             "year":2017,
             "dailySmoker": 1236364.96,
@@ -108,7 +110,7 @@ module.exports.register = (app) => {
             "nonSmoker": 3586109.10
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Navarra (Comunidad Foral De)",
             "year":2017,
             "dailySmoker": 131219.74,
@@ -117,7 +119,7 @@ module.exports.register = (app) => {
             "nonSmoker": 385747.43
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"País Vasco",
             "year":2017,
             "dailySmoker": 434443.28,
@@ -127,15 +129,16 @@ module.exports.register = (app) => {
         }
     ];
 
-    //inserta en la bd
+    // Inserta los datos iniciales en la base de datos
     db.insert(smokersStats);
+    
 /*--------------------fin constructor-----------------------*/
 
     //GET inicial (loadInitialData) para inicializar la BD (constructor)
     app.get(BASE_API_PATH+"/loadInitialData",(req,res)=>{
     smokersStatsIni=[
         {   
-            "country": "España",
+            "country": 'España',
             "province":"Andalucía",
             "year":2017,
             "dailySmoker": 1902219.14,
@@ -144,7 +147,7 @@ module.exports.register = (app) => {
             "nonSmoker": 4294657.75
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Aragón",
             "year":2017,
             "dailySmoker": 315408.75,
@@ -153,7 +156,7 @@ module.exports.register = (app) => {
             "nonSmoker": 603988.13
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Asturias (Principado De)",
             "year":2017,
             "dailySmoker": 246320.48,
@@ -162,7 +165,7 @@ module.exports.register = (app) => {
             "nonSmoker": 559602.87
         },
         {
-            "country": "España",
+            "country": 'España',
             "province": "Cantabria",
             "year": 2017,
             "dailySmoker": 132887.56,
@@ -171,7 +174,7 @@ module.exports.register = (app) => {
             "nonSmoker": 307382.26
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Castilla y León",
             "year":2017,
             "dailySmoker": 550656.83,
@@ -180,7 +183,7 @@ module.exports.register = (app) => {
             "nonSmoker": 1244193.33
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Castilla-La Mancha",
             "year":2017,
             "dailySmoker": 499743.83,
@@ -189,7 +192,7 @@ module.exports.register = (app) => {
             "nonSmoker": 1129502.32
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Cataluña",
             "year":2017,
             "dailySmoker": 1700061.75,
@@ -198,7 +201,7 @@ module.exports.register = (app) => {
             "nonSmoker": 4125483.18
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Comunidad Valenciana",
             "year":2017,
             "dailySmoker": 1225494.23,
@@ -207,7 +210,7 @@ module.exports.register = (app) => {
             "nonSmoker": 2447035.26
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Extremadura",
             "year":2017,
             "dailySmoker": 258100.88,
@@ -216,7 +219,7 @@ module.exports.register = (app) => {
             "nonSmoker": 573221.54
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Galicia",
             "year":2017,
             "dailySmoker": 482084.34,
@@ -225,7 +228,7 @@ module.exports.register = (app) => {
             "nonSmoker": 1606045.03
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Madrid (Comunidad De)",
             "year":2017,
             "dailySmoker": 1236364.96,
@@ -234,7 +237,7 @@ module.exports.register = (app) => {
             "nonSmoker": 3586109.10
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"Navarra (Comunidad Foral De)",
             "year":2017,
             "dailySmoker": 131219.74,
@@ -243,7 +246,7 @@ module.exports.register = (app) => {
             "nonSmoker": 385747.43
         },
         {
-            "country": "España",
+            "country": 'España',
             "province":"País Vasco",
             "year":2017,
             "dailySmoker": 434443.28,
@@ -257,9 +260,10 @@ module.exports.register = (app) => {
         //Borra todo lo anterior para evitar duplicidades al hacer loadInitialData
         db.remove({}, { multi: true }, function (err, numRemoved) {
         });
+
     // Inserta los datos iniciales en la base de datos
         db.insert(smokersStatsIni);
-        
+
        res.send(JSON.stringify(smokersStatsIni,null,2));
 
     });
@@ -272,7 +276,6 @@ module.exports.register = (app) => {
         var dbquery = {};
 
         //"Parseamos" los datos a su tipo original antes de buscar
-        if (req.query.country) dbquery["country"] = req.query.country;
         if (req.query.province) dbquery["province"] = req.query.province;
         if (req.query.year) dbquery["year"] = parseInt(req.query.year);
         if (req.query.dailySmoker) dbquery["dailySmoker"] = parseFloat(req.query.dailySmoker);
@@ -376,61 +379,52 @@ module.exports.register = (app) => {
     });
 
     //PUT A UN RECURSO CONCRETO DE SMOKER POR PROVINCE/YEAR
-    app.put(BASE_API_PATH+"/:province/:year",(req,res)=>{
+    app.put(BASE_API_PATH+"/:province/:year", (req,res) => {
         
-        var provinceNew = req.params.province;
-        var yearNew = parseInt(req.params.year);
-        var dataNew = req.body;
+        var reqprovince = req.params.province;
+        var reqyear = parseInt(req.params.year);
+        var data = req.body;
 
-        if (Object.keys(dataNew).length !=7 ) {
+        if (Object.keys(data).length != 7) {
             console.log("Actualizacion de campos no valida");
             res.sendStatus(400);
-        }else{
-            db.update({$and: [{ province: provinceNew }, { year: yearNew }]} ,{$set:dataNew},{},(err, data)=>{
+        }else {
+            db.update({ province: reqprovince, year: reqyear }, { $set: data }, {}, function (err, dataUpdate) {
                 if (err) {
-                    console.log("Error accessing DB in GET: "+ err);
+                    console.error("ERROR accesing DB in GET");
                     res.sendStatus(500);
-                }else{
-                    if (data.length == 0) {
-                        console.error("No data found.");
-                        res.status(404).send(`Not  found. Data is not in DB.`);
-                    }else if (data == 0){
-                        console.log("Data not found in DB.");
-                        res.status(404).send(`Not Found. Data do not exists.`); 
-                    }else {
-                        console.log(`Valores del recurso actualizados.`);
-                        res.status(200).send(`Se ha actualizado correctamente el recurso.`);
+                } else {
+                    if (dataUpdate == 0) {
+                        console.error("No data found");
+                        res.sendStatus(404);
+                    } else {
+                        console.log("Campos actualizados")
+                        res.sendStatus(200);
                     }
                 }
             });
         }
     });
 
-    //DELETE A UN RECURSO CONCRETO DE SMOKER POR PROVINCE/YEAR
+    //DELETE A UN RECURSO DE SMOKER POR PROVINCE/YEAR
     app.delete(BASE_API_PATH + "/:province/:year", (req,res)=>{
         var reqprovince = req.params.province;
         var reqyear = parseInt(req.params.year);
-
         db.remove({province : reqprovince, year : reqyear},{multi:true}, (err, data) => {
             if (err) {
-                console.error("ERROR in GET: "+err);
+                console.error("ERROR in GET");
                 res.sendStatus(500);
-            } else if (data == 0){
-                console.log("Data not found in DB.");
-                res.status(404).send(`Not Found. Data <${reqprovince}>, <${reqyear}> do not exists.`);
-            }else {
+            } else {
                 if(data != 0){
                     console.log(`NEW DELETE request to <${reqprovince}>, <${reqyear}>`);
-                    res.status(200).send("The corresponding data for " + reqprovince + " and " + reqyear + " has been deleted.");
-                }else if(data != 1){
-                    console.log(`Previous error should have been detected. Deleted more than 1 data with the same attribute.`);
-                    res.sendStatus(200);
+                    res.status(200).send("The corresponding data for " + reqprovince + " and " + reqyear + " has been deleted");
                 }else{
-                    res.sendStatus(500); //En cualquier otro caso, habrá error.
+                    console.log("Data not found");
+                    res.sendStatus(404);
                 }
             }
         });
-    });
+});
 };
 
 /*----------------------------------------------------------------------------------------------------------------------------------------*/

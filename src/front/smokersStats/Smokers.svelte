@@ -3,18 +3,26 @@
 	import Table from "sveltestrap/src/Table.svelte"; 
 	import Button from "sveltestrap/src/Button.svelte";
 	import { Alert } from 'sveltestrap';
-    
+    import { } from "node:os";
 	
     //ALERTAS
     let visible = false;
     let color = "danger";
     
     //Variables
+    let BASE_SMOKERS_PATH = "/api/v2/smokers-stats";
     let page = 1;
     let totaldata=13;
     let SmokerStats = [];
+    let sProvince = "";
+    let sYear = "";
+    let sDaily = "";
+    let sOcasional = "";
+    let sExsmoker = "";
+    let sNonsmoker = "";
+
 	let newSmoker = {
-        country: "España",
+        country: "",
         province: "",
 		year: "",
 		dailySmoker:"",
@@ -29,7 +37,7 @@
     async function getSmoker() {
  
         console.log("Fetching smokers Data...");
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0");
+        const res = await fetch("/api/v2/smokers-stats?limit=5&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -45,8 +53,8 @@
     async function loadInitialData() {
  
         console.log("Fetching smokers data...");
-        await fetch("/api/v1/smokers-stats/loadInitialData");
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset=0");
+        await fetch("/api/v2/smokers-stats/loadInitialData");
+        const res = await fetch("/api/v2/smokers-stats?limit=5&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -70,7 +78,7 @@
         if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
             alert("Los campos 'Comunidad Autónoma' y 'Año' no pueden estar vacios");
         } else{
-            const res = await fetch("/api/v1/smokers-stats",{
+            const res = await fetch("/api/v2/smokers-stats",{
                 method:"POST",
                 body:JSON.stringify(newSmoker),
                 headers:{
@@ -108,7 +116,7 @@
         }else{
             
             console.log("Editing smokers data...");
-            const res = await fetch("/api/v1/smokers-stats/" + province + "/" + year, {
+            const res = await fetch("/api/v2/smokers-stats/" + province + "/" + year, {
                     method:"PUT",
                     body:JSON.stringify(newSmoker),
                     headers:{
@@ -136,7 +144,7 @@
 
     //DELETE SPECIFIC
     async function deleteSmokers(province, year) {
-        const res = await fetch("/api/v1/smokers-stats/" + province + "/" + year, {
+        const res = await fetch("/api/v2/smokers-stats/"+province+"/"+year, {
             method: "DELETE"
         }).then(function (res) {
             visible = true;
@@ -163,7 +171,7 @@
 		console.log("Deleting smokers data...");
 		if (confirm("¿Está seguro de que desea eliminar todas las entradas?")){
 			console.log("Deleting all smokers data...");
-			const res = await fetch("/api/v1/smokers-stats/", {
+			const res = await fetch("/api/v2/smokers-stats/", {
 				method: "DELETE"
 			}).then(function (res) {
                 visible=true;
@@ -187,7 +195,7 @@
 	}
     
     
-    //SEARCH
+    //PAGINATION
     //getNextPage
     async function getNextPage() {
  
@@ -200,7 +208,7 @@
         
         visible = true;
         console.log("Charging page... Listing since: "+page);
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
+        const res = await fetch("/api/v2/smokers-stats?limit=5&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
         checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
@@ -230,7 +238,7 @@
 
         visible = true;
         console.log("Charging page... Listing since: "+page);
-        const res = await fetch("/api/v1/smokers-stats?limit=5&offset="+(-1+page));
+        const res = await fetch("/api/v2/smokers-stats?limit=5&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
         checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
@@ -250,10 +258,51 @@
         }
     }
     
+    //SEARCH 
+    async function buscar (sProvince, sYear, sDaily, sOcasional, sExsmoker, sNonsmoker){
+        //previo puesta a 0 por si hay campos sin rellenar
+        if(sProvince==null){
+            sProvince="";
+        }
+        if(sYear==null){
+            sYear="";
+        }
+        if(sDaily==null){
+            sDaily="";
+        }
+        if(sOcasional==null){
+            sOcasional="";
+        }
+        if(sExsmoker==null){
+            sExsmoker="";
+        }
+        if(sNonsmoker==null){
+            sNonsmoker="";
+        }
+        visible = true;
+		const res = await fetch(BASE_SMOKERS_PATH+"?province="+sProvince+"&year="+sYear+"&dailySmoker="+sDaily+"&ocasionalSmoker="+sOcasional+"&exSmoker="+sExsmoker+"&nonSmoker="+sNonsmoker)
+		if (res.ok){
+			const json = await res.json();
+			SmokerStats = json;
+			console.log("Found "+ SmokerStats.length + " data");
+			
+			if(SmokerStats.length==0){
+                color = "danger";
+				checkMSG = "No se han encontrado datos para tu búsqueda";
+			}else if (SmokerStats.length==1){
+                color = "success";
+				checkMSG = "Se ha encontrado un dato para tu búsqueda";
+			}else{
+                color = "success";
+				checkMSG = "Se han encontrado " + SmokerStats.length + " datos para tu búsqueda";
+			}
+	    }
+    }
+
 </script>
 
 <main>
-    <h1 style ="text-align: center;">Administración de datos de fumadores</h1>
+    <h1 style ="text-align: center;">Administración: Datos de fumadores en España por comunidad autónoma</h1>
 
     {#await SmokerStats}
         Loading smokers data...
@@ -264,17 +313,40 @@
 		    {checkMSG}
 	    {/if}
     </Alert>
+    <h4 style="text-align:center"><strong>Búsqueda general de parámetros</strong></h4>
+    <Table>
+        <th>Búsqueda por comunidad autónoma</th>
+        <th>Búsqueda por año</th>
+        <th>Búsqueda por estadística de fumadores diarios</th>
+        <th>Búsqueda por estadística de fumadores ocasionales</th>
+        <th>Búsqueda por estadística de ex-fumadores</th>
+        <th>Búsqueda por estadística de no fumadores</th>
+        <tr>
+            <td><input type = "text" placeholder="Comunidad autónoma" bind:value="{sProvince}"></td>
+            <td><input type = "number" placeholder="2075" bind:value="{sYear}"></td>
+            <td><input type = "number" placeholder="0000" bind:value="{sDaily}"></td>
+            <td><input type = "number" placeholder="0000" bind:value="{sOcasional}"></td>
+            <td><input type = "number" placeholder="0000" bind:value="{sExsmoker}"></td>
+            <td><input type = "number" placeholder="0000" bind:value="{sNonsmoker}"></td>
+        </tr>
+    </Table>
+
+        <div style="text-align:center">
+            <Button outline color="primary" on:click="{buscar (sProvince, sYear, sDaily, sOcasional, sExsmoker, sNonsmoker)}">Buscar</Button>
+            <Button outline color="success" on:click="{loadInitialData}">Reiniciar</Button>
+        </div>
+        <br>
 
         <Table bordered responsive>
             <thead>
-                <tr style ="text-align: center;">
+                <tr style ="text-align: center; background-color: lightslategray;">
                     <th>Comunidad Autónoma</th>
                     <th>Año</th>
                     <th>Fumadores diarios</th>
                     <th>Fumadores ocasionales</th>
                     <th>Ex-fumadores</th>
                     <th>No fumadores</th>
-                    <th colspan="2">Acciones</th>
+                    <th colspan="3">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -285,35 +357,31 @@
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.ocasionalSmoker}"></td>    
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.exSmoker}"></td>  
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.nonSmoker}"></td>  
-                    <td colspan="2" style="text-align: center;"><Button outline color="primary" on:click={insertSmokers}>Insertar</Button></td>          
+                    <td colspan="3" style="text-align: center;"><Button outline color="success" on:click={insertSmokers}>Insertar</Button></td>          
                 </tr>
  
                 {#each SmokerStats as sc}
                     <tr>
-                        <td><a href="api/v1/smokers-stats/{sc.province}/{sc.year}">{sc.province}</a></td>
+                        <td><b>{sc.province}</b></td>
                         <td>{sc.year}</td>
                         <td>{sc.dailySmoker}</td>
                         <td>{sc.ocasionalSmoker}</td>
                         <td>{sc.exSmoker}</td>
                         <td>{sc.nonSmoker}</td>
                         <td><Button outline color="danger" on:click="{deleteSmokers(sc.province, sc.year)}">Borrar</Button></td>
-                        <td><Button outline color="primary" on:click="{editSmokers(sc.province, sc.year)}">Editar</Button></td>
+                        <td><Button outline color="primary" on:click="{editSmokers(sc.province, sc.year)}">Editar1</Button></td>
+                        <td><a href="#/smokers-stats/{sc.province}/{sc.year}"><Button outline color="primary">Editar2</Button></a></td>
                     </tr>
                 {/each}
             </tbody>
         </Table>
-          <Button color="success" on:click="{loadInitialData}">
-            Cargar datos inciales
-        </Button>
-        <Button color="danger" on:click="{deleteALL}">
-            Eliminar todo
-        </Button>
-        <Button outline color="primary" on:click="{getPreviewPage}">
-           Atrás
-        </Button>
-        <Button outline color="primary" on:click="{getNextPage}">
-            Siguiente
-         </Button>
+
+        <p align="center">
+        <Button color="success" on:click="{loadInitialData}">Cargar datos inciales</Button>
+        <Button color="danger" on:click="{deleteALL}">Eliminar todo</Button>
+        <Button outline color="primary" on:click="{getPreviewPage}">Atrás</Button>
+        <Button outline color="primary" on:click="{getNextPage}">Siguiente</Button>
+        </p>
          
     {/await}
 </main>
