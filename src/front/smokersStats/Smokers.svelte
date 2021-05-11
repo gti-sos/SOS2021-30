@@ -200,10 +200,10 @@
     async function getNextPage() {
  
         console.log(totaldata);
-        if (page+5 > totaldata) {
+        if (page+10 > totaldata) {
             page = 1
         } else {
-            page+=5
+            page+=10
         }
         
         visible = true;
@@ -211,7 +211,7 @@
         const res = await fetch("/api/v2/smokers-stats?limit=5&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
-        checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        checkMSG= (page+10 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
@@ -232,8 +232,8 @@
     async function getPreviewPage() {
 
         console.log(totaldata);
-        if (page-5 > 1) {
-            page-=5; 
+        if (page-10 > 1) {
+            page-=10; 
         } else page = 1
 
         visible = true;
@@ -241,7 +241,7 @@
         const res = await fetch("/api/v2/smokers-stats?limit=5&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
-        checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        checkMSG= (page+10 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
