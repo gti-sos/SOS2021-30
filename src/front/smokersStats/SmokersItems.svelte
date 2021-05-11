@@ -12,10 +12,14 @@
 
     //Variables
     export let params = {};
-    let BASE_SMOKERS_PATH = "/api/v2/smokers-stats";
-    let SmokerStats = {};
-    
-    let updatedSmoker = {
+    let BASE_SMOKERS_PATH = "/api/v2/smokers-stats/";
+    let stats = [];
+    let updDaily = null;
+    let updOcasional = null;
+    let updEx = null;
+    let updNon = null;
+
+    let updSmoker = {
         country: "",
         province: "",
 		year: "",
@@ -23,54 +27,55 @@
 		ocasionalSmoker:"",
 		exSmoker:"",
         nonSmoker:""
-    }
-
-    let newdailySmoker = "";
-    let newocasionalSmoker = "";
-    let newexSmoker = "";
-    let newnonSmoker = "";
+	}
 
     let checkMSG = "";
-    
-    
-    onMount(getSmoker);
  
+    onMount(stats);
+
     //GET
-    async function getSmoker() {
+    async function getStats() {
  
         console.log("Fetching smokers Data...");
         const res = await fetch(BASE_SMOKERS_PATH+"/"+params.province+"/"+params.year);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
-            console.log("Received smokers Data.");
+            stats = json;
+            updDaily = stats["dailySmoker"];
+            updOcasional = stats["dailySmoker"];
+            updEx = stats["exSmoker"];
+            updNon = stats["nonSmoker"];
+            console.log("Received smokers stats.");
         } else {
-            checkMSG= res.status + ": " + res.statusText;
-            console.log("ERROR! "+checkMSG);
+            checkMSG = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+            console.log("ERROR! ");
         }
     }
     
     //EDIT
-    async function editSmokers(){
+    async function updateStat(){
         console.log("Updating item..." + JSON.stringify(params.province));
-        const res = await fetch(BASE_SMOKERS_PATH+"/"+params.province+"/"+params.year, {
-            method: "PUT",
-            body : JSON.stringify({
+        if(confirm("¿Está seguro de que desea actualizar esta entrada?")){
+            const res = await fetch(BASE_SMOKERS_PATH+"/"+params.province+"/"+params.year, {
+                method: "PUT",
+                body : JSON.stringify({
                 country : "España",
                 province: params.province,
 		        year: params.year,
-		        dailySmoker: parseFloat(newdailySmoker),
-		        ocasionalSmoker: parseFloat(newocasionalSmoker),
-		        exSmoker: parseFloat(newexSmoker),
-                nonSmoker: parseFloat(newnonSmoker)
-                
+		        dailySmoker: parseFloat(updDaily),
+		        ocasionalSmoker: parseFloat(updOcasional),
+		        exSmoker: parseFloat(updEx),
+                nonSmoker: parseFloat(updNon)
             }),
             headers: {
                 "Content-Type": "application/json"
             }
+            
         }).then(function (res){
             visible = true;
             if(res.status == 200){
+               getStats(); 
                console.log("Data introduced");
                color = "success";
                checkMSG="Recurso actualizado correctamente";
@@ -80,8 +85,8 @@
             }
             
         })
+        }
     }
-
 
 /*
     onMount(getUpdaters);
@@ -139,7 +144,6 @@
 		    {checkMSG}
 	    {/if}
     </Alert>
-
         <Table bordered responsive>
             <thead>
                 <tr style ="text-align: center;">
@@ -156,14 +160,13 @@
                 <tr>
                     <td>{params.province}</td>
                     <td>{params.year}</td>
-                    <td><input bind:value="{newdailySmoker}"></td> 
-                    <td><input bind:value="{newocasionalSmoker}"></td>    
-                    <td><input bind:value="{newexSmoker}"></td>  
-                    <td><input bind:value="{newnonSmoker}"></td>  
-                    <td style="text-align: center;"><Button outline color="primary" on:click={editSmokers}>Actualizar</Button></td>          
+                    <td><input bind:value="{updSmoker.dailySmoker}"></td> 
+                    <td><input bind:value="{updSmoker.ocasionalSmoker}"></td>    
+                    <td><input bind:value="{updSmoker.exSmoker}"></td>  
+                    <td><input bind:value="{updSmoker.nonSmoker}"></td>  
+                    <td style="text-align: center;"><Button outline color="primary" on:click={updateStat}>Actualizar</Button></td>          
                 </tr>
             </tbody>
         </Table>
-        
         <Button outline color="secondary" on:click="{pop}">Atrás</Button>
 </main>
