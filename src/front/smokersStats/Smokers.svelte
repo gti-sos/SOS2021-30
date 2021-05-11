@@ -54,7 +54,7 @@
  
         console.log("Fetching smokers data...");
         await fetch("/api/v2/smokers-stats/loadInitialData");
-        const res = await fetch("/api/v2/smokers-stats?limit=5&offset=0");
+        const res = await fetch("/api/v2/smokers-stats?limit=10&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -211,7 +211,7 @@
         const res = await fetch("/api/v2/smokers-stats?limit=10&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
-        checkMSG= (page+10 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        checkMSG= (page+10 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
@@ -241,7 +241,7 @@
         const res = await fetch("/api/v2/smokers-stats?limit=10&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
-        checkMSG= (page+10 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
+        checkMSG= (page+10 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
 
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
