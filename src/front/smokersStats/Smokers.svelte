@@ -37,7 +37,7 @@
     async function getSmoker() {
  
         console.log("Fetching smokers Data...");
-        const res = await fetch("/api/v2/smokers-stats?limit=5&offset=0");
+        const res = await fetch("/api/v2/smokers-stats?limit=10&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
