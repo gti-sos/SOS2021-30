@@ -5,10 +5,11 @@
     import Input from "sveltestrap/src/Input.svelte";
 	import FormGroup from "sveltestrap/src/FormGroup.svelte";
 	import { Alert } from 'sveltestrap';
-import { } from "node:os";
+    import { } from "node:os";
     
 	
     let visible = false;
+    let wvisible = false;
     let color = "danger";
     let page = 1;
     let totaldata=38;
@@ -23,6 +24,7 @@ import { } from "node:os";
     let s_provinces= [];
     let current_province = "-";
 	let checkMSG = "";
+    let warningMSG = "";
     var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
 
     let sProvince = "";
@@ -182,10 +184,15 @@ import { } from "node:os";
 			console.log("Found "+ weightStats.length + " data");
             visible = true;
 			
-			if(weightStats.length==1){
+			if(weightStats.length == 1){
                 color = "success";
 				checkMSG = "Se ha encontrado un dato para tu búsqueda";
-			}else{
+			}else if(weightStats.length == 0){
+                wvisible = true;
+                color = "danger";
+				checkMSG = "No se han encontrado datos para tu búsqueda";
+                warningMSG = "Puede que haya un conflicto con los datos de tu búsqueda. Prueba a recargar la página!"			    
+            }else{
                 color = "success";
 				checkMSG = "Se han encontrado " + weightStats.length + " datos para tu búsqueda";
                 
@@ -264,6 +271,12 @@ import { } from "node:os";
     <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
         {#if checkMSG}
 		    {checkMSG}
+	    {/if}
+    </Alert>
+
+    <Alert color="warning" isOpen={wvisible} toggle={() => (visible = false)}>
+        {#if warningMSG}
+		    {warningMSG}
 	    {/if}
     </Alert>
 
