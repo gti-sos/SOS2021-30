@@ -160,7 +160,22 @@ import { } from "node:os";
 
     //FUNCION DE BUSQUEDA COMPLETA
     async function busqueda (sProvince, sYear, sNormalWeight, sOverWeight, sObesity){
-		const res = await fetch(BASE_WEIGHTS_PATH + "?provinces="+sProvince+"&year="+sYear+"&normal_weight="+sNormalWeight+"&overwight="+sOverWeight+"obesity="+sObesity)
+        if(typeof sProvince=='undefined'){
+        sProvince="";
+        }
+        if(typeof sYear=='undefined'){
+            sYear="";
+        }
+        if(typeof sNormalWeight=='undefined'){
+            sNormalWeight="";
+        }
+        if(typeof sOverWeight=='undefined'){
+            sOverWeight="";
+        }
+        if(typeof sObesity=='undefined'){
+            sObesity="";
+        }
+		const res = await fetch(BASE_WEIGHTS_PATH + "?provinces="+sProvince+"&year="+sYear+"&normal_weight="+sNormalWeight+"&overweight="+sOverWeight+"&obesity="+sObesity)
 		if (res.ok){
 			const json = await res.json();
 			weightStats = json;
@@ -287,7 +302,7 @@ import { } from "node:os";
     <p align="center">   
         <Button color="primary" on:click="{getPreviewPage}">Atrás</Button>
         <Button color="primary" on:click="{getNextPage}">Siguiente</Button>
-        <Button color="warning" on:click="{getPreviewPage}">Eliminar filtros de búsqueda</Button>
+        <Button color="warning" on:click="{loadInitialData}">Eliminar filtros de búsqueda</Button>
     </p>
 
     <h4 style="text-align:center"><strong>Búsqueda general de parámetros</strong></h4>
@@ -300,7 +315,7 @@ import { } from "node:os";
         <th>Búsqueda por estadística de obesidad</th>
         <tr>
             <td><input type = "text" placeholder="Comunidad autónoma" bind:value="{sProvince}"></td>
-            <td><input type = "number" placeholder="2075" bind:value="{sYear}"></td>
+            <td><input type = "number" placeholder="2017" bind:value="{sYear}"></td>
             <td><input type = "number" placeholder="0000" bind:value="{sNormalWeight}"></td>
             <td><input type = "number" placeholder="0000" bind:value="{sOverWeight}"></td>
             <td><input type = "number" placeholder="0000" bind:value="{sObesity}"></td>
