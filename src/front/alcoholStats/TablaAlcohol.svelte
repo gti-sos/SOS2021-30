@@ -40,6 +40,7 @@
         await fetch("/api/v1/alcohol-consumption-stats/loadInitialData");
         const res = await fetch("/api/v1/alcohol-consumption-stats?limit=10&offset=0");
             if (res.ok) {
+                visible =true;
                 console.log("Ok:");
                 const json = await res.json();
                 alcoholStats = json;
@@ -261,7 +262,7 @@
         Loading alcohol data...
     {:then alcoholStats}
     
-    <Alert color={color} isOpen={true} toggle={() => (visible = false)}>
+    <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
         {#if errorMSG.length>0}
 		    {errorMSG}
 	    {/if}
