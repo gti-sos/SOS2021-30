@@ -276,6 +276,7 @@ module.exports.register = (app) => {
         var dbquery = {};
 
         //"Parseamos" los datos a su tipo original antes de buscar
+        if (req.query.country) dbquery["country"] = req.query.country;
         if (req.query.province) dbquery["province"] = req.query.province;
         if (req.query.year) dbquery["year"] = parseInt(req.query.year);
         if (req.query.dailySmoker) dbquery["dailySmoker"] = parseFloat(req.query.dailySmoker);
@@ -285,7 +286,7 @@ module.exports.register = (app) => {
 
 
         //Búsqueda de datos 
-        db.find(dbquery).sort({province:1, year:-1}).skip(offset).limit(limit).exec((error, nonSmoker) => {
+        db.find(dbquery).sort({country:1, year:-1}).skip(offset).limit(limit).exec((error, nonSmoker) => {
 
 
             //Se elimina el _id creado automáticamente

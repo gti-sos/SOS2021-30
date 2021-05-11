@@ -12,26 +12,74 @@
 
     //Variables
     export let params = {};
-    let BASE_SMOKERS_PATH = "/api/v2/smokers-stats/";
-    let stats = [];
+    let BASE_SMOKERS_PATH = "/api/v2/smokers-stats";
+    let stats = {};
     let updDaily = null;
     let updOcasional = null;
     let updEx = null;
     let updNon = null;
 
-    let updSmoker = {
-        country: "",
-        province: "",
-		year: "",
-		dailySmoker:"",
-		ocasionalSmoker:"",
-		exSmoker:"",
-        nonSmoker:""
-	}
-
     let checkMSG = "";
  
-    onMount(stats);
+    onMount(getGET);
+
+    async function getGET() {
+        console.log("Fetching award...");
+        const res = await fetch(BASE_SMOKERS_PATH+"/"+params.province+"/"+params.year);
+        if (res.ok) {
+            console.log("Ok:");
+            const json = await res.json();
+            stats = json;
+            updDaily = stats.dailySmoker;
+            updOcasional = stats.ocasionalSmoker;
+            updEx = stats.exSmoker;
+            updNon = stats.nonSmoker;
+            console.log("Received data.");
+        }else {
+            if(res.status===404){
+                checkMSG = "No se encuentra el dato solicitado";
+                }else if(res.status ===500){
+                errorMsg = "No se han podido acceder a la base de datos";
+                }        
+                console.log("ERROR!" + checkMSG);
+            }
+    }
+
+    async function updateUPD() {
+        console.log("Updating award..." + JSON.stringify(params.province));
+        const res = await fetch(BASE_SMOKERS_PATH+"/" + params.province + "/" + params.year, {
+        method: "PUT",
+        body: JSON.stringify({
+                country : "España",
+                province: params.province,
+		        year: params.year,
+		        dailySmoker: updDaily,
+		        ocasionalSmoker: updOcasional,
+		        exSmoker: updEx,
+                nonSmoker: updNon
+            }),
+    headers: {
+        "Content-Type": "application/json"
+    }
+}).then(function (res) {
+      if (res.ok) {
+        console.log("OK");
+        checkMSG = "Operación realizada correctamente, vuelva atras para ver todos los datos en la tabla";
+      } else {
+        if(res.status===404){
+          checkMSG = "No se encuentra el dato a editar";
+        }else if(res.status ===500){
+          checkMSG = "No se han podido acceder a la base de datos";
+        }else if(res.status ===400){
+          checkMSG = "se han introducido datos erroneos";
+          }        
+        checkMSG = "";
+        console.log("ERROR!" + checkMSG);
+      }
+    });
+  }
+
+
 
     //GET
     async function getStats() {
@@ -41,11 +89,11 @@
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
+            updDaily = stats.dailySmoker;
+            updOcasional = stats.ocasionalSmoker;
+            updEx = stats.exSmoker;
+            updNon = stats.nonSmoker;
             stats = json;
-            updDaily = stats["dailySmoker"];
-            updOcasional = stats["dailySmoker"];
-            updEx = stats["exSmoker"];
-            updNon = stats["nonSmoker"];
             console.log("Received smokers stats.");
         } else {
             checkMSG = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
@@ -56,17 +104,16 @@
     //EDIT
     async function updateStat(){
         console.log("Updating item..." + JSON.stringify(params.province));
-        if(confirm("¿Está seguro de que desea actualizar esta entrada?")){
-            const res = await fetch(BASE_SMOKERS_PATH+"/"+params.province+"/"+params.year, {
-                method: "PUT",
-                body : JSON.stringify({
+        const res = await fetch(BASE_SMOKERS_PATH+"/"+params.province+"/"+params.year, {
+            method: "PUT",
+            body : JSON.stringify({
                 country : "España",
                 province: params.province,
 		        year: params.year,
-		        dailySmoker: parseFloat(updDaily),
-		        ocasionalSmoker: parseFloat(updOcasional),
-		        exSmoker: parseFloat(updEx),
-                nonSmoker: parseFloat(updNon)
+		        dailySmoker: updDaily,
+		        ocasionalSmoker: updOcasional,
+		        exSmoker: updEx,
+                nonSmoker: updNon
             }),
             headers: {
                 "Content-Type": "application/json"
@@ -75,7 +122,6 @@
         }).then(function (res){
             visible = true;
             if(res.status == 200){
-               getStats(); 
                console.log("Data introduced");
                color = "success";
                checkMSG="Recurso actualizado correctamente";
@@ -85,7 +131,6 @@
             }
             
         })
-        }
     }
 
 /*
@@ -160,11 +205,11 @@
                 <tr>
                     <td>{params.province}</td>
                     <td>{params.year}</td>
-                    <td><input bind:value="{updSmoker.dailySmoker}"></td> 
-                    <td><input bind:value="{updSmoker.ocasionalSmoker}"></td>    
-                    <td><input bind:value="{updSmoker.exSmoker}"></td>  
-                    <td><input bind:value="{updSmoker.nonSmoker}"></td>  
-                    <td style="text-align: center;"><Button outline color="primary" on:click={updateStat}>Actualizar</Button></td>          
+                    <td><input bind:value="{updDaily}"></td> 
+                    <td><input bind:value="{updOcasional}"></td>    
+                    <td><input bind:value="{updEx}"></td>  
+                    <td><input bind:value="{updNon}"></td>  
+                    <td style="text-align: center;"><Button outline color="primary" on:click={updateUPD}>Actualizar</Button></td>          
                 </tr>
             </tbody>
         </Table>
