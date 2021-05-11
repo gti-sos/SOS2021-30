@@ -14,8 +14,17 @@
     export let params = {};
     let BASE_SMOKERS_PATH = "/api/v2/smokers-stats";
     let SmokerStats = {};
-    let newprovince = "XXXXX";
-    let newyear = 2017;
+    
+    let updatedSmoker = {
+        country: "",
+        province: "",
+		year: "",
+		dailySmoker:"",
+		ocasionalSmoker:"",
+		exSmoker:"",
+        nonSmoker:""
+    }
+
     let newdailySmoker = "";
     let newocasionalSmoker = "";
     let newexSmoker = "";
@@ -34,7 +43,6 @@
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
-            SmokerStats = json;
             console.log("Received smokers Data.");
         } else {
             checkMSG= res.status + ": " + res.statusText;
@@ -55,6 +63,7 @@
 		        ocasionalSmoker: parseFloat(newocasionalSmoker),
 		        exSmoker: parseFloat(newexSmoker),
                 nonSmoker: parseFloat(newnonSmoker)
+                
             }),
             headers: {
                 "Content-Type": "application/json"

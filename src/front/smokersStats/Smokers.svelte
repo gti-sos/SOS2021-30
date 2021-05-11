@@ -22,6 +22,7 @@
     let sNonsmoker = "";
 
 	let newSmoker = {
+        country: "",
         province: "",
 		year: "",
 		dailySmoker:"",
@@ -103,7 +104,7 @@
             });	
         }
     }
-    /*
+    
     //EDIT
     async function editSmokers(province, year){
 
@@ -140,7 +141,7 @@
                 });	
             }
     }
-*/
+
     //DELETE SPECIFIC
     async function deleteSmokers(province, year) {
         const res = await fetch("/api/v2/smokers-stats/"+province+"/"+year, {
@@ -345,7 +346,7 @@
                     <th>Fumadores ocasionales</th>
                     <th>Ex-fumadores</th>
                     <th>No fumadores</th>
-                    <th colspan="2">Acciones</th>
+                    <th colspan="3">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -356,7 +357,7 @@
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.ocasionalSmoker}"></td>    
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.exSmoker}"></td>  
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.nonSmoker}"></td>  
-                    <td colspan="2" style="text-align: center;"><Button outline color="success" on:click={insertSmokers}>Insertar</Button></td>          
+                    <td colspan="3" style="text-align: center;"><Button outline color="success" on:click={insertSmokers}>Insertar</Button></td>          
                 </tr>
  
                 {#each SmokerStats as sc}
@@ -368,7 +369,8 @@
                         <td>{sc.exSmoker}</td>
                         <td>{sc.nonSmoker}</td>
                         <td><Button outline color="danger" on:click="{deleteSmokers(sc.province, sc.year)}">Borrar</Button></td>
-                        <td><a href="#/smokers-stats/{sc.province}/{sc.year}"><Button outline color="primary">Editar</Button></a></td>
+                        <td><Button outline color="primary" on:click="{editSmokers(sc.province, sc.year)}">Editar1</Button></td>
+                        <td><a href="#/smokers-stats/{sc.province}/{sc.year}"><Button outline color="primary">Editar2</Button></a></td>
                     </tr>
                 {/each}
             </tbody>

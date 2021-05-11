@@ -11,6 +11,7 @@ module.exports.register = (app) => {
 /*--------------Variable Objeto-----------------------*/
     smokersStats=[
         {   
+            "country": 'España',
             "province":"Andalucía",
             "year":2017,
             "dailySmoker": 1902219.14,
@@ -19,6 +20,7 @@ module.exports.register = (app) => {
             "nonSmoker": 4294657.75
         },
         {
+            "country": 'España',
             "province":"Aragón",
             "year":2017,
             "dailySmoker": 315408.75,
@@ -27,6 +29,7 @@ module.exports.register = (app) => {
             "nonSmoker": 603988.13
         },
         {
+            "country": 'España',
             "province":"Asturias (Principado De)",
             "year":2017,
             "dailySmoker": 246320.48,
@@ -35,6 +38,7 @@ module.exports.register = (app) => {
             "nonSmoker": 559602.87
         },
         {
+            "country": 'España',
             "province": "Cantabria",
             "year": 2017,
             "dailySmoker": 132887.56,
@@ -43,6 +47,7 @@ module.exports.register = (app) => {
             "nonSmoker": 307382.26
         },
         {
+            "country": 'España',
             "province":"Castilla y León",
             "year":2017,
             "dailySmoker": 550656.83,
@@ -51,6 +56,7 @@ module.exports.register = (app) => {
             "nonSmoker": 1244193.33
         },
         {
+            "country": 'España',
             "province":"Castilla-La Mancha",
             "year":2017,
             "dailySmoker": 499743.83,
@@ -59,6 +65,7 @@ module.exports.register = (app) => {
             "nonSmoker": 1129502.32
         },
         {
+            "country": 'España',
             "province":"Cataluña",
             "year":2017,
             "dailySmoker": 1700061.75,
@@ -67,6 +74,7 @@ module.exports.register = (app) => {
             "nonSmoker": 4125483.18
         },
         {
+            "country": 'España',
             "province":"Comunidad Valenciana",
             "year":2017,
             "dailySmoker": 1225494.23,
@@ -75,6 +83,7 @@ module.exports.register = (app) => {
             "nonSmoker": 2447035.26
         },
         {
+            "country": 'España',
             "province":"Extremadura",
             "year":2017,
             "dailySmoker": 258100.88,
@@ -83,6 +92,7 @@ module.exports.register = (app) => {
             "nonSmoker": 573221.54
         },
         {
+            "country": 'España',
             "province":"Galicia",
             "year":2017,
             "dailySmoker": 482084.34,
@@ -91,6 +101,7 @@ module.exports.register = (app) => {
             "nonSmoker": 1606045.03
         },
         {
+            "country": 'España',
             "province":"Madrid (Comunidad De)",
             "year":2017,
             "dailySmoker": 1236364.96,
@@ -99,6 +110,7 @@ module.exports.register = (app) => {
             "nonSmoker": 3586109.10
         },
         {
+            "country": 'España',
             "province":"Navarra (Comunidad Foral De)",
             "year":2017,
             "dailySmoker": 131219.74,
@@ -107,6 +119,7 @@ module.exports.register = (app) => {
             "nonSmoker": 385747.43
         },
         {
+            "country": 'España',
             "province":"País Vasco",
             "year":2017,
             "dailySmoker": 434443.28,
@@ -115,8 +128,9 @@ module.exports.register = (app) => {
             "nonSmoker": 1083694.64
         }
     ];
+
     // Inserta los datos iniciales en la base de datos
-    db.insert(smokersStatsIni);
+    db.insert(smokersStats);
     
 /*--------------------fin constructor-----------------------*/
 
@@ -124,6 +138,7 @@ module.exports.register = (app) => {
     app.get(BASE_API_PATH+"/loadInitialData",(req,res)=>{
     smokersStatsIni=[
         {   
+            "country": 'España',
             "province":"Andalucía",
             "year":2017,
             "dailySmoker": 1902219.14,
@@ -132,6 +147,7 @@ module.exports.register = (app) => {
             "nonSmoker": 4294657.75
         },
         {
+            "country": 'España',
             "province":"Aragón",
             "year":2017,
             "dailySmoker": 315408.75,
@@ -140,6 +156,7 @@ module.exports.register = (app) => {
             "nonSmoker": 603988.13
         },
         {
+            "country": 'España',
             "province":"Asturias (Principado De)",
             "year":2017,
             "dailySmoker": 246320.48,
@@ -148,6 +165,7 @@ module.exports.register = (app) => {
             "nonSmoker": 559602.87
         },
         {
+            "country": 'España',
             "province": "Cantabria",
             "year": 2017,
             "dailySmoker": 132887.56,
@@ -156,6 +174,7 @@ module.exports.register = (app) => {
             "nonSmoker": 307382.26
         },
         {
+            "country": 'España',
             "province":"Castilla y León",
             "year":2017,
             "dailySmoker": 550656.83,
@@ -164,6 +183,7 @@ module.exports.register = (app) => {
             "nonSmoker": 1244193.33
         },
         {
+            "country": 'España',
             "province":"Castilla-La Mancha",
             "year":2017,
             "dailySmoker": 499743.83,
@@ -172,6 +192,7 @@ module.exports.register = (app) => {
             "nonSmoker": 1129502.32
         },
         {
+            "country": 'España',
             "province":"Cataluña",
             "year":2017,
             "dailySmoker": 1700061.75,
@@ -180,6 +201,7 @@ module.exports.register = (app) => {
             "nonSmoker": 4125483.18
         },
         {
+            "country": 'España',
             "province":"Comunidad Valenciana",
             "year":2017,
             "dailySmoker": 1225494.23,
@@ -188,6 +210,7 @@ module.exports.register = (app) => {
             "nonSmoker": 2447035.26
         },
         {
+            "country": 'España',
             "province":"Extremadura",
             "year":2017,
             "dailySmoker": 258100.88,
@@ -196,6 +219,7 @@ module.exports.register = (app) => {
             "nonSmoker": 573221.54
         },
         {
+            "country": 'España',
             "province":"Galicia",
             "year":2017,
             "dailySmoker": 482084.34,
@@ -204,6 +228,7 @@ module.exports.register = (app) => {
             "nonSmoker": 1606045.03
         },
         {
+            "country": 'España',
             "province":"Madrid (Comunidad De)",
             "year":2017,
             "dailySmoker": 1236364.96,
@@ -212,6 +237,7 @@ module.exports.register = (app) => {
             "nonSmoker": 3586109.10
         },
         {
+            "country": 'España',
             "province":"Navarra (Comunidad Foral De)",
             "year":2017,
             "dailySmoker": 131219.74,
@@ -220,6 +246,7 @@ module.exports.register = (app) => {
             "nonSmoker": 385747.43
         },
         {
+            "country": 'España',
             "province":"País Vasco",
             "year":2017,
             "dailySmoker": 434443.28,
@@ -233,26 +260,9 @@ module.exports.register = (app) => {
         //Borra todo lo anterior para evitar duplicidades al hacer loadInitialData
         db.remove({}, { multi: true }, function (err, numRemoved) {
         });
+
     // Inserta los datos iniciales en la base de datos
         db.insert(smokersStatsIni);
-    
-    // Búsqueda de datos
-        db.find({},(err, data) => {
-            if (err) {
-                console.error("ERROR accesing DB in GET");
-                res.sendStatus(500);
-            } else {
-                if (data.length == 0) {
-                    db.insert(smokersStats);
-                    console.log(`Loaded initial data: <${JSON.stringify(smokersStats, null, 2)}>`);
-                    res.sendStatus(201);
-                } else {
-                    console.error(`initial data already exists`);
-                    res.sendStatus(409);
-                }
-            }
-        });
-
 
        res.send(JSON.stringify(smokersStatsIni,null,2));
 
@@ -375,7 +385,7 @@ module.exports.register = (app) => {
         var reqyear = parseInt(req.params.year);
         var data = req.body;
 
-        if (Object.keys(data).length != 6) {
+        if (Object.keys(data).length != 7) {
             console.log("Actualizacion de campos no valida");
             res.sendStatus(400);
         }else {
