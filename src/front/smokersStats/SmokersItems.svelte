@@ -64,7 +64,6 @@
 }).then(function (res) {
       if (res.ok) {
         console.log("OK");
-        getGET();
         checkMSG = "Operación realizada correctamente, vuelva atras para ver todos los datos en la tabla";
       } else {
         if(res.status===404){
