@@ -11,16 +11,19 @@
     
 
     //Variables
-    let BASE_SMOKERS_PATH = "/api/v1/smokers-stats";
-    let SmokerStats = {};
-    let newdailySmoker = null;
-    let newocasionalSmoker = null;
-    let newexSmoker = null;
-    let newnonSmoker = null;
-
     export let params = {};
+    let BASE_SMOKERS_PATH = "/api/v2/smokers-stats";
+    let SmokerStats = {};
+    let newprovince = "XXXXX";
+    let newyear = 2017;
+    let newdailySmoker = "";
+    let newocasionalSmoker = "";
+    let newexSmoker = "";
+    let newnonSmoker = "";
 
     let checkMSG = "";
+    
+    
     onMount(getSmoker);
  
     //GET
@@ -31,6 +34,7 @@
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
+            SmokerStats = json;
             console.log("Received smokers Data.");
         } else {
             checkMSG= res.status + ": " + res.statusText;
@@ -69,15 +73,57 @@
         })
     }
 
+
+/*
+    onMount(getUpdaters);
+    async function getUpdaters() {
+        console.log("Fetching data updated...");
+        const res = await fetch(BASE_SMOKERS_PATH+"/"+params.province+"/"+params.year);
+        if (res.ok) {
+            console.log("All OK");
+            const json = await res.json();
+            register = json;
+            newyear = parseInt(register.year);
+            newprovince = register.province;
+            newdailySmoker = parseFloat(register.dailySmoker);
+            newocasionalSmoker = parseFloat(register.ocasionalSmoker);
+            newexSmoker =parseFloat(register.exSmoker);
+            newnonSmoker =parseFloat(register.nonSmoker);
+            console.log("Received register.");
+        } else {
+            errorMsg = res.status + ": " + res.statusText;
+            console.log("ERROR!" + errorMsg);
+        }
+    }
+
+    async function updateReg() {
+        console.log("Updating register...");
+        const res = await fetch(BASE_SMOKERS_PATH+"/"+params.province+"/"+params.year, {
+            method: "PUT",
+            body: JSON.stringify({
+                province: params.province,
+		        year: params.year,
+		        dailySmoker: newdailySmoker,
+		        ocasionalSmoker: newocasionalSmoker,
+		        exSmoker: newexSmoker,
+                nonSmoker: newnonSmoker 
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (res) {
+            getUpdaters();
+            console.log("Data introduced");
+            color = "success";
+            checkMSG="Recurso actualizado correctamente";
+        });
+    }
+*/
 </script>
 
 <main>
     
     <h1 style ="text-align: center;">Modificación de {params.province} {params.year}</h1>
-    
-    {#await SmokerStats}
-        Loading smokers data...
-    {:then SmokerStats}
 
     <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
         {#if checkMSG}
@@ -101,16 +147,14 @@
                 <tr>
                     <td>{params.province}</td>
                     <td>{params.year}</td>
-                    <td><input type = "number" placeholder="0000" bind:value="{newdailySmoker}"></td> 
-                    <td><input type = "number" placeholder="0000" bind:value="{newocasionalSmoker}"></td>    
-                    <td><input type = "number" placeholder="0000" bind:value="{newexSmoker}"></td>  
-                    <td><input type = "number" placeholder="0000" bind:value="{newnonSmoker}"></td>  
+                    <td><input bind:value="{newdailySmoker}"></td> 
+                    <td><input bind:value="{newocasionalSmoker}"></td>    
+                    <td><input bind:value="{newexSmoker}"></td>  
+                    <td><input bind:value="{newnonSmoker}"></td>  
                     <td style="text-align: center;"><Button outline color="primary" on:click={editSmokers}>Actualizar</Button></td>          
                 </tr>
             </tbody>
         </Table>
         
         <Button outline color="secondary" on:click="{pop}">Atrás</Button>
-        
-    {/await}
 </main>
