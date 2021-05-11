@@ -208,7 +208,7 @@
         
         visible = true;
         console.log("Charging page... Listing since: "+page);
-        const res = await fetch("/api/v2/smokers-stats?limit=5&offset="+(-1+page));
+        const res = await fetch("/api/v2/smokers-stats?limit=10&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
         checkMSG= (page+10 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
@@ -238,7 +238,7 @@
 
         visible = true;
         console.log("Charging page... Listing since: "+page);
-        const res = await fetch("/api/v2/smokers-stats?limit=5&offset="+(-1+page));
+        const res = await fetch("/api/v2/smokers-stats?limit=10&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
         checkMSG= (page+10 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+4);
