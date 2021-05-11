@@ -24,15 +24,16 @@
         if(res.ok){
             console.log("Ok");
             const json = await res.json();
-            updatedAlcoholPrematureDeath = alcoholStats.AlcoholPrematureDeath;
+            updatedAlcoholPrematureDeath = alcoholStats.alcoholPrematureDeath;
             updatedPrevalenceOfAlcoholUseDisorder = alcoholStats.prevalenceOfAlcoholUseDisorder;
             console.log("Recived data");
         }else{
             errorMsg = res.status + " " + res.statusText;
             console.log("ERROR" + errorMsg);
         }
+        
     }
-    async function updateAlcohol(){            
+    async function updateAlcohol(){          
             console.log("Editing alcohol data...");
             const res = await fetch(BASE_ALCOHOL_PATH + "/" + params.country + "/" + params.year + "/" + params.ageRange, {
                     method:"PUT",

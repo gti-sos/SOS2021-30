@@ -59,8 +59,8 @@
     async function insertAlcohol(){
 		 
          console.log("Inserting alcohol data...");
-         if (newAlcohol.year == "" || newAlcohol.year == null || newAlcohol.country == "" || newAlcohol.ageRange=="") {
-             alert("Los campos 'País' y 'Año' no pueden estar vacios");
+         if (newAlcohol.year == "" || newAlcohol.alcoholPrematureDeath== "" ||newAlcohol.prevalenceOfAlcoholUseDisorder == "" || newAlcohol.country == "" || newAlcohol.ageRange=="") {
+             alert("No puede haber ningún campo vacío");
          } else{
              const res = await fetch("/api/v1/alcohol-consumption-stats",{
              method:"POST",
