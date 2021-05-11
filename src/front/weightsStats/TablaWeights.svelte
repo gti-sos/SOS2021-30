@@ -302,7 +302,7 @@ import { } from "node:os";
     <p align="center">   
         <Button color="primary" on:click="{getPreviewPage}">Atrás</Button>
         <Button color="primary" on:click="{getNextPage}">Siguiente</Button>
-        <Button color="warning" on:click="{getPreviewPage}">Eliminar filtros de búsqueda</Button>
+        <Button color="warning" on:click="{loadInitialData}">Eliminar filtros de búsqueda</Button>
     </p>
 
     <h4 style="text-align:center"><strong>Búsqueda general de parámetros</strong></h4>
