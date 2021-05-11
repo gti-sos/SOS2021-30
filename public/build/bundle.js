@@ -17269,19 +17269,19 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$3 = "src\\front\\smokersStats\\SmokersItems.svelte";
 
-    // (143:8) {#if checkMSG}
+    // (189:8) {#if checkMSG}
     function create_if_block$2(ctx) {
     	let t;
 
     	const block = {
     		c: function create() {
-    			t = text(/*checkMSG*/ ctx[4]);
+    			t = text(/*checkMSG*/ ctx[7]);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*checkMSG*/ 16) set_data_dev(t, /*checkMSG*/ ctx[4]);
+    			if (dirty & /*checkMSG*/ 128) set_data_dev(t, /*checkMSG*/ ctx[7]);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(t);
@@ -17292,17 +17292,17 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(143:8) {#if checkMSG}",
+    		source: "(189:8) {#if checkMSG}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (142:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
+    // (188:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
     function create_default_slot_3$3(ctx) {
     	let if_block_anchor;
-    	let if_block = /*checkMSG*/ ctx[4] && create_if_block$2(ctx);
+    	let if_block = /*checkMSG*/ ctx[7] && create_if_block$2(ctx);
 
     	const block = {
     		c: function create() {
@@ -17314,7 +17314,7 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*checkMSG*/ ctx[4]) {
+    			if (/*checkMSG*/ ctx[7]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -17337,14 +17337,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$3.name,
     		type: "slot",
-    		source: "(142:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>",
+    		source: "(188:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (167:52) <Button outline color="primary" on:click={updateStat}>
+    // (213:52) <Button outline color="primary" on:click={updateUPD}>
     function create_default_slot_2$3(ctx) {
     	let t;
 
@@ -17364,14 +17364,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$3.name,
     		type: "slot",
-    		source: "(167:52) <Button outline color=\\\"primary\\\" on:click={updateStat}>",
+    		source: "(213:52) <Button outline color=\\\"primary\\\" on:click={updateUPD}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (147:8) <Table bordered responsive>
+    // (193:8) <Table bordered responsive>
     function create_default_slot_1$3(ctx) {
     	let thead;
     	let tr0;
@@ -17427,7 +17427,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button.$on("click", /*updateStat*/ ctx[5]);
+    	button.$on("click", /*updateUPD*/ ctx[8]);
 
     	const block = {
     		c: function create() {
@@ -17476,31 +17476,31 @@ var app = (function () {
     			t21 = space();
     			td6 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$3, 149, 20, 4863);
-    			add_location(th1, file$3, 150, 20, 4912);
-    			add_location(th2, file$3, 151, 20, 4946);
-    			add_location(th3, file$3, 152, 20, 4994);
-    			add_location(th4, file$3, 153, 20, 5046);
-    			add_location(th5, file$3, 154, 20, 5089);
+    			add_location(th0, file$3, 195, 20, 6582);
+    			add_location(th1, file$3, 196, 20, 6631);
+    			add_location(th2, file$3, 197, 20, 6665);
+    			add_location(th3, file$3, 198, 20, 6713);
+    			add_location(th4, file$3, 199, 20, 6765);
+    			add_location(th5, file$3, 200, 20, 6808);
     			attr_dev(th6, "colspan", "2");
-    			add_location(th6, file$3, 155, 20, 5132);
+    			add_location(th6, file$3, 201, 20, 6851);
     			set_style(tr0, "text-align", "center");
-    			add_location(tr0, file$3, 148, 16, 4808);
-    			add_location(thead, file$3, 147, 12, 4783);
-    			add_location(td0, file$3, 160, 20, 5269);
-    			add_location(td1, file$3, 161, 20, 5317);
-    			add_location(input0, file$3, 162, 24, 5365);
-    			add_location(td2, file$3, 162, 20, 5361);
-    			add_location(input1, file$3, 163, 24, 5441);
-    			add_location(td3, file$3, 163, 20, 5437);
-    			add_location(input2, file$3, 164, 24, 5524);
-    			add_location(td4, file$3, 164, 20, 5520);
-    			add_location(input3, file$3, 165, 24, 5598);
-    			add_location(td5, file$3, 165, 20, 5594);
+    			add_location(tr0, file$3, 194, 16, 6527);
+    			add_location(thead, file$3, 193, 12, 6502);
+    			add_location(td0, file$3, 206, 20, 6988);
+    			add_location(td1, file$3, 207, 20, 7036);
+    			add_location(input0, file$3, 208, 24, 7084);
+    			add_location(td2, file$3, 208, 20, 7080);
+    			add_location(input1, file$3, 209, 24, 7147);
+    			add_location(td3, file$3, 209, 20, 7143);
+    			add_location(input2, file$3, 210, 24, 7217);
+    			add_location(td4, file$3, 210, 20, 7213);
+    			add_location(input3, file$3, 211, 24, 7278);
+    			add_location(td5, file$3, 211, 20, 7274);
     			set_style(td6, "text-align", "center");
-    			add_location(td6, file$3, 166, 20, 5669);
-    			add_location(tr1, file$3, 159, 16, 5243);
-    			add_location(tbody, file$3, 158, 12, 5218);
+    			add_location(td6, file$3, 212, 20, 7336);
+    			add_location(tr1, file$3, 205, 16, 6962);
+    			add_location(tbody, file$3, 204, 12, 6937);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -17529,19 +17529,19 @@ var app = (function () {
     			append_dev(tr1, t17);
     			append_dev(tr1, td2);
     			append_dev(td2, input0);
-    			set_input_value(input0, /*updSmoker*/ ctx[3].dailySmoker);
+    			set_input_value(input0, /*updDaily*/ ctx[3]);
     			append_dev(tr1, t18);
     			append_dev(tr1, td3);
     			append_dev(td3, input1);
-    			set_input_value(input1, /*updSmoker*/ ctx[3].ocasionalSmoker);
+    			set_input_value(input1, /*updOcasional*/ ctx[4]);
     			append_dev(tr1, t19);
     			append_dev(tr1, td4);
     			append_dev(td4, input2);
-    			set_input_value(input2, /*updSmoker*/ ctx[3].exSmoker);
+    			set_input_value(input2, /*updEx*/ ctx[5]);
     			append_dev(tr1, t20);
     			append_dev(tr1, td5);
     			append_dev(td5, input3);
-    			set_input_value(input3, /*updSmoker*/ ctx[3].nonSmoker);
+    			set_input_value(input3, /*updNon*/ ctx[6]);
     			append_dev(tr1, t21);
     			append_dev(tr1, td6);
     			mount_component(button, td6, null);
@@ -17549,10 +17549,10 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[7]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[8]),
-    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[9]),
-    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[10])
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[10]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[11]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[12]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[13])
     				];
 
     				mounted = true;
@@ -17562,25 +17562,25 @@ var app = (function () {
     			if ((!current || dirty & /*params*/ 1) && t14_value !== (t14_value = /*params*/ ctx[0].province + "")) set_data_dev(t14, t14_value);
     			if ((!current || dirty & /*params*/ 1) && t16_value !== (t16_value = /*params*/ ctx[0].year + "")) set_data_dev(t16, t16_value);
 
-    			if (dirty & /*updSmoker*/ 8 && input0.value !== /*updSmoker*/ ctx[3].dailySmoker) {
-    				set_input_value(input0, /*updSmoker*/ ctx[3].dailySmoker);
+    			if (dirty & /*updDaily*/ 8 && input0.value !== /*updDaily*/ ctx[3]) {
+    				set_input_value(input0, /*updDaily*/ ctx[3]);
     			}
 
-    			if (dirty & /*updSmoker*/ 8 && input1.value !== /*updSmoker*/ ctx[3].ocasionalSmoker) {
-    				set_input_value(input1, /*updSmoker*/ ctx[3].ocasionalSmoker);
+    			if (dirty & /*updOcasional*/ 16 && input1.value !== /*updOcasional*/ ctx[4]) {
+    				set_input_value(input1, /*updOcasional*/ ctx[4]);
     			}
 
-    			if (dirty & /*updSmoker*/ 8 && input2.value !== /*updSmoker*/ ctx[3].exSmoker) {
-    				set_input_value(input2, /*updSmoker*/ ctx[3].exSmoker);
+    			if (dirty & /*updEx*/ 32 && input2.value !== /*updEx*/ ctx[5]) {
+    				set_input_value(input2, /*updEx*/ ctx[5]);
     			}
 
-    			if (dirty & /*updSmoker*/ 8 && input3.value !== /*updSmoker*/ ctx[3].nonSmoker) {
-    				set_input_value(input3, /*updSmoker*/ ctx[3].nonSmoker);
+    			if (dirty & /*updNon*/ 64 && input3.value !== /*updNon*/ ctx[6]) {
+    				set_input_value(input3, /*updNon*/ ctx[6]);
     			}
 
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 262144) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -17609,14 +17609,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$3.name,
     		type: "slot",
-    		source: "(147:8) <Table bordered responsive>",
+    		source: "(193:8) <Table bordered responsive>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (171:8) <Button outline color="secondary" on:click="{pop}">
+    // (217:8) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -17636,7 +17636,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(171:8) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(217:8) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -17664,7 +17664,7 @@ var app = (function () {
     			props: {
     				color: /*color*/ ctx[2],
     				isOpen: /*visible*/ ctx[1],
-    				toggle: /*func*/ ctx[6],
+    				toggle: /*func*/ ctx[9],
     				$$slots: { default: [create_default_slot_3$3] },
     				$$scope: { ctx }
     			},
@@ -17708,8 +17708,8 @@ var app = (function () {
     			t6 = space();
     			create_component(button.$$.fragment);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$3, 139, 4, 4500);
-    			add_location(main, file$3, 137, 0, 4482);
+    			add_location(h1, file$3, 185, 4, 6219);
+    			add_location(main, file$3, 183, 0, 6201);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -17735,23 +17735,23 @@ var app = (function () {
     			const alert_changes = {};
     			if (dirty & /*color*/ 4) alert_changes.color = /*color*/ ctx[2];
     			if (dirty & /*visible*/ 2) alert_changes.isOpen = /*visible*/ ctx[1];
-    			if (dirty & /*visible*/ 2) alert_changes.toggle = /*func*/ ctx[6];
+    			if (dirty & /*visible*/ 2) alert_changes.toggle = /*func*/ ctx[9];
 
-    			if (dirty & /*$$scope, checkMSG*/ 262160) {
+    			if (dirty & /*$$scope, checkMSG*/ 524416) {
     				alert_changes.$$scope = { dirty, ctx };
     			}
 
     			alert.$set(alert_changes);
     			const table_changes = {};
 
-    			if (dirty & /*$$scope, updSmoker, params*/ 262153) {
+    			if (dirty & /*$$scope, updNon, updEx, updOcasional, updDaily, params*/ 524409) {
     				table_changes.$$scope = { dirty, ctx };
     			}
 
     			table.$set(table_changes);
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 262144) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -17795,25 +17795,73 @@ var app = (function () {
     	let visible = false;
     	let color = "danger";
     	let { params = {} } = $$props;
-    	let BASE_SMOKERS_PATH = "/api/v2/smokers-stats/";
-    	let stats = [];
+    	let BASE_SMOKERS_PATH = "/api/v2/smokers-stats";
+    	let stats = {};
     	let updDaily = null;
     	let updOcasional = null;
     	let updEx = null;
     	let updNon = null;
-
-    	let updSmoker = {
-    		country: "",
-    		province: "",
-    		year: "",
-    		dailySmoker: "",
-    		ocasionalSmoker: "",
-    		exSmoker: "",
-    		nonSmoker: ""
-    	};
-
     	let checkMSG = "";
-    	onMount(stats);
+    	onMount(getGET);
+
+    	async function getGET() {
+    		console.log("Fetching award...");
+    		const res = await fetch(BASE_SMOKERS_PATH + "/" + params.province + "/" + params.year);
+
+    		if (res.ok) {
+    			console.log("Ok:");
+    			const json = await res.json();
+    			stats = json;
+    			$$invalidate(3, updDaily = stats.dailySmoker);
+    			$$invalidate(4, updOcasional = stats.ocasionalSmoker);
+    			$$invalidate(5, updEx = stats.exSmoker);
+    			$$invalidate(6, updNon = stats.nonSmoker);
+    			console.log("Received data.");
+    		} else {
+    			if (res.status === 404) {
+    				$$invalidate(7, checkMSG = "No se encuentra el dato solicitado");
+    			} else if (res.status === 500) {
+    				errorMsg = "No se han podido acceder a la base de datos";
+    			}
+
+    			console.log("ERROR!" + checkMSG);
+    		}
+    	}
+
+    	async function updateUPD() {
+    		console.log("Updating award..." + JSON.stringify(params.province));
+
+    		await fetch(BASE_SMOKERS_PATH + "/" + params.province + "/" + params.year, {
+    			method: "PUT",
+    			body: JSON.stringify({
+    				country: "España",
+    				province: params.province,
+    				year: params.year,
+    				dailySmoker: updDaily,
+    				ocasionalSmoker: updOcasional,
+    				exSmoker: updEx,
+    				nonSmoker: updNon
+    			}),
+    			headers: { "Content-Type": "application/json" }
+    		}).then(function (res) {
+    			if (res.ok) {
+    				console.log("OK");
+    				getGET();
+    				$$invalidate(7, checkMSG = "Operación realizada correctamente, vuelva atras para ver todos los datos en la tabla");
+    			} else {
+    				if (res.status === 404) {
+    					$$invalidate(7, checkMSG = "No se encuentra el dato a editar");
+    				} else if (res.status === 500) {
+    					$$invalidate(7, checkMSG = "No se han podido acceder a la base de datos");
+    				} else if (res.status === 400) {
+    					$$invalidate(7, checkMSG = "se han introducido datos erroneos");
+    				}
+
+    				$$invalidate(7, checkMSG = "");
+    				console.log("ERROR!" + checkMSG);
+    			}
+    		});
+    	}
 
     	//GET
     	async function getStats() {
@@ -17823,14 +17871,14 @@ var app = (function () {
     		if (res.ok) {
     			console.log("Ok:");
     			const json = await res.json();
+    			$$invalidate(3, updDaily = stats.dailySmoker);
+    			$$invalidate(4, updOcasional = stats.ocasionalSmoker);
+    			$$invalidate(5, updEx = stats.exSmoker);
+    			$$invalidate(6, updNon = stats.nonSmoker);
     			stats = json;
-    			updDaily = stats["dailySmoker"];
-    			updOcasional = stats["dailySmoker"];
-    			updEx = stats["exSmoker"];
-    			updNon = stats["nonSmoker"];
     			console.log("Received smokers stats.");
     		} else {
-    			$$invalidate(4, checkMSG = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);
+    			$$invalidate(7, checkMSG = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);
     			console.log("ERROR! ");
     		}
     	}
@@ -17839,33 +17887,30 @@ var app = (function () {
     	async function updateStat() {
     		console.log("Updating item..." + JSON.stringify(params.province));
 
-    		if (confirm("¿Está seguro de que desea actualizar esta entrada?")) {
-    			await fetch(BASE_SMOKERS_PATH + "/" + params.province + "/" + params.year, {
-    				method: "PUT",
-    				body: JSON.stringify({
-    					country: "España",
-    					province: params.province,
-    					year: params.year,
-    					dailySmoker: parseFloat(updDaily),
-    					ocasionalSmoker: parseFloat(updOcasional),
-    					exSmoker: parseFloat(updEx),
-    					nonSmoker: parseFloat(updNon)
-    				}),
-    				headers: { "Content-Type": "application/json" }
-    			}).then(function (res) {
-    				$$invalidate(1, visible = true);
+    		await fetch(BASE_SMOKERS_PATH + "/" + params.province + "/" + params.year, {
+    			method: "PUT",
+    			body: JSON.stringify({
+    				country: "España",
+    				province: params.province,
+    				year: params.year,
+    				dailySmoker: updDaily,
+    				ocasionalSmoker: updOcasional,
+    				exSmoker: updEx,
+    				nonSmoker: updNon
+    			}),
+    			headers: { "Content-Type": "application/json" }
+    		}).then(function (res) {
+    			$$invalidate(1, visible = true);
 
-    				if (res.status == 200) {
-    					getStats();
-    					console.log("Data introduced");
-    					$$invalidate(2, color = "success");
-    					$$invalidate(4, checkMSG = "Recurso actualizado correctamente");
-    				} else {
-    					console.log("Data not edited");
-    					$$invalidate(4, checkMSG = "Se ha producido un error y no se ha podido editar correctamente el recurso solicitado");
-    				}
-    			});
-    		}
+    			if (res.status == 200) {
+    				console.log("Data introduced");
+    				$$invalidate(2, color = "success");
+    				$$invalidate(7, checkMSG = "Recurso actualizado correctamente");
+    			} else {
+    				console.log("Data not edited");
+    				$$invalidate(7, checkMSG = "Se ha producido un error y no se ha podido editar correctamente el recurso solicitado");
+    			}
+    		});
     	}
 
     	const writable_props = ["params"];
@@ -17877,23 +17922,23 @@ var app = (function () {
     	const func = () => $$invalidate(1, visible = false);
 
     	function input0_input_handler() {
-    		updSmoker.dailySmoker = this.value;
-    		$$invalidate(3, updSmoker);
+    		updDaily = this.value;
+    		$$invalidate(3, updDaily);
     	}
 
     	function input1_input_handler() {
-    		updSmoker.ocasionalSmoker = this.value;
-    		$$invalidate(3, updSmoker);
+    		updOcasional = this.value;
+    		$$invalidate(4, updOcasional);
     	}
 
     	function input2_input_handler() {
-    		updSmoker.exSmoker = this.value;
-    		$$invalidate(3, updSmoker);
+    		updEx = this.value;
+    		$$invalidate(5, updEx);
     	}
 
     	function input3_input_handler() {
-    		updSmoker.nonSmoker = this.value;
-    		$$invalidate(3, updSmoker);
+    		updNon = this.value;
+    		$$invalidate(6, updNon);
     	}
 
     	$$self.$$set = $$props => {
@@ -17915,8 +17960,9 @@ var app = (function () {
     		updOcasional,
     		updEx,
     		updNon,
-    		updSmoker,
     		checkMSG,
+    		getGET,
+    		updateUPD,
     		getStats,
     		updateStat
     	});
@@ -17927,12 +17973,11 @@ var app = (function () {
     		if ("params" in $$props) $$invalidate(0, params = $$props.params);
     		if ("BASE_SMOKERS_PATH" in $$props) BASE_SMOKERS_PATH = $$props.BASE_SMOKERS_PATH;
     		if ("stats" in $$props) stats = $$props.stats;
-    		if ("updDaily" in $$props) updDaily = $$props.updDaily;
-    		if ("updOcasional" in $$props) updOcasional = $$props.updOcasional;
-    		if ("updEx" in $$props) updEx = $$props.updEx;
-    		if ("updNon" in $$props) updNon = $$props.updNon;
-    		if ("updSmoker" in $$props) $$invalidate(3, updSmoker = $$props.updSmoker);
-    		if ("checkMSG" in $$props) $$invalidate(4, checkMSG = $$props.checkMSG);
+    		if ("updDaily" in $$props) $$invalidate(3, updDaily = $$props.updDaily);
+    		if ("updOcasional" in $$props) $$invalidate(4, updOcasional = $$props.updOcasional);
+    		if ("updEx" in $$props) $$invalidate(5, updEx = $$props.updEx);
+    		if ("updNon" in $$props) $$invalidate(6, updNon = $$props.updNon);
+    		if ("checkMSG" in $$props) $$invalidate(7, checkMSG = $$props.checkMSG);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -17943,9 +17988,12 @@ var app = (function () {
     		params,
     		visible,
     		color,
-    		updSmoker,
+    		updDaily,
+    		updOcasional,
+    		updEx,
+    		updNon,
     		checkMSG,
-    		updateStat,
+    		updateUPD,
     		func,
     		input0_input_handler,
     		input1_input_handler,
