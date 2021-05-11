@@ -187,7 +187,7 @@ import { } from "node:os";
 				checkMSG = "Se ha encontrado un dato para tu búsqueda";
 			}else{
                 color = "success";
-				checkMSG = "Se han encontrado" + weightStats.length + " para tu búsqueda";
+				checkMSG = "Se han encontrado " + weightStats.length + " datos para tu búsqueda";
                 
             }
 	    }
