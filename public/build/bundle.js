@@ -17269,7 +17269,7 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$3 = "src\\front\\smokersStats\\SmokersItems.svelte";
 
-    // (189:8) {#if checkMSG}
+    // (188:8) {#if checkMSG}
     function create_if_block$2(ctx) {
     	let t;
 
@@ -17292,14 +17292,14 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(189:8) {#if checkMSG}",
+    		source: "(188:8) {#if checkMSG}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (188:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
+    // (187:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
     function create_default_slot_3$3(ctx) {
     	let if_block_anchor;
     	let if_block = /*checkMSG*/ ctx[7] && create_if_block$2(ctx);
@@ -17337,14 +17337,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$3.name,
     		type: "slot",
-    		source: "(188:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>",
+    		source: "(187:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (213:52) <Button outline color="primary" on:click={updateUPD}>
+    // (212:52) <Button outline color="primary" on:click={updateUPD}>
     function create_default_slot_2$3(ctx) {
     	let t;
 
@@ -17364,14 +17364,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$3.name,
     		type: "slot",
-    		source: "(213:52) <Button outline color=\\\"primary\\\" on:click={updateUPD}>",
+    		source: "(212:52) <Button outline color=\\\"primary\\\" on:click={updateUPD}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (193:8) <Table bordered responsive>
+    // (192:8) <Table bordered responsive>
     function create_default_slot_1$3(ctx) {
     	let thead;
     	let tr0;
@@ -17476,31 +17476,31 @@ var app = (function () {
     			t21 = space();
     			td6 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$3, 195, 20, 6582);
-    			add_location(th1, file$3, 196, 20, 6631);
-    			add_location(th2, file$3, 197, 20, 6665);
-    			add_location(th3, file$3, 198, 20, 6713);
-    			add_location(th4, file$3, 199, 20, 6765);
-    			add_location(th5, file$3, 200, 20, 6808);
+    			add_location(th0, file$3, 194, 20, 6563);
+    			add_location(th1, file$3, 195, 20, 6612);
+    			add_location(th2, file$3, 196, 20, 6646);
+    			add_location(th3, file$3, 197, 20, 6694);
+    			add_location(th4, file$3, 198, 20, 6746);
+    			add_location(th5, file$3, 199, 20, 6789);
     			attr_dev(th6, "colspan", "2");
-    			add_location(th6, file$3, 201, 20, 6851);
+    			add_location(th6, file$3, 200, 20, 6832);
     			set_style(tr0, "text-align", "center");
-    			add_location(tr0, file$3, 194, 16, 6527);
-    			add_location(thead, file$3, 193, 12, 6502);
-    			add_location(td0, file$3, 206, 20, 6988);
-    			add_location(td1, file$3, 207, 20, 7036);
-    			add_location(input0, file$3, 208, 24, 7084);
-    			add_location(td2, file$3, 208, 20, 7080);
-    			add_location(input1, file$3, 209, 24, 7147);
-    			add_location(td3, file$3, 209, 20, 7143);
-    			add_location(input2, file$3, 210, 24, 7217);
-    			add_location(td4, file$3, 210, 20, 7213);
-    			add_location(input3, file$3, 211, 24, 7278);
-    			add_location(td5, file$3, 211, 20, 7274);
+    			add_location(tr0, file$3, 193, 16, 6508);
+    			add_location(thead, file$3, 192, 12, 6483);
+    			add_location(td0, file$3, 205, 20, 6969);
+    			add_location(td1, file$3, 206, 20, 7017);
+    			add_location(input0, file$3, 207, 24, 7065);
+    			add_location(td2, file$3, 207, 20, 7061);
+    			add_location(input1, file$3, 208, 24, 7128);
+    			add_location(td3, file$3, 208, 20, 7124);
+    			add_location(input2, file$3, 209, 24, 7198);
+    			add_location(td4, file$3, 209, 20, 7194);
+    			add_location(input3, file$3, 210, 24, 7259);
+    			add_location(td5, file$3, 210, 20, 7255);
     			set_style(td6, "text-align", "center");
-    			add_location(td6, file$3, 212, 20, 7336);
-    			add_location(tr1, file$3, 205, 16, 6962);
-    			add_location(tbody, file$3, 204, 12, 6937);
+    			add_location(td6, file$3, 211, 20, 7317);
+    			add_location(tr1, file$3, 204, 16, 6943);
+    			add_location(tbody, file$3, 203, 12, 6918);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -17609,14 +17609,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$3.name,
     		type: "slot",
-    		source: "(193:8) <Table bordered responsive>",
+    		source: "(192:8) <Table bordered responsive>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (217:8) <Button outline color="secondary" on:click="{pop}">
+    // (216:8) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -17636,7 +17636,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(217:8) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(216:8) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -17708,8 +17708,8 @@ var app = (function () {
     			t6 = space();
     			create_component(button.$$.fragment);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$3, 185, 4, 6219);
-    			add_location(main, file$3, 183, 0, 6201);
+    			add_location(h1, file$3, 184, 4, 6200);
+    			add_location(main, file$3, 182, 0, 6182);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -17846,7 +17846,6 @@ var app = (function () {
     		}).then(function (res) {
     			if (res.ok) {
     				console.log("OK");
-    				getGET();
     				$$invalidate(7, checkMSG = "Operación realizada correctamente, vuelva atras para ver todos los datos en la tabla");
     			} else {
     				if (res.status === 404) {
