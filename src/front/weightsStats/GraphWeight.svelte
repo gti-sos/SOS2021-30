@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from "svelte";
+  import { pop }from "svelte-spa-router";
 	import Table from "sveltestrap/src/Table.svelte"; 
 	import Button from "sveltestrap/src/Button.svelte";
     import Input from "sveltestrap/src/Input.svelte";
@@ -33,7 +34,7 @@
     let sOverWeight = "";
     let sObesity = "";
     
-    onMount(getStats);
+    //onMount(getStats);
  
     //Función GET para listar los recursos
     async function getStats() { 
@@ -258,101 +259,131 @@
             console.log("ERROR!");
         }
     }
+
+  async function loadGraph(){
+    Highcharts.chart('container', {
+
+      title: {
+          text: 'Gráfica IMC por comunidades'
+      },
+
+      yAxis: {
+          title: {
+              text: 'Porcentaje'
+          }
+      },
+
+      xAxis: {
+          accessibility: {
+              rangeDescription: 'Range: 2011 to 2017'
+          }
+      },
+
+      legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'middle'
+      },
+
+      plotOptions: {
+          series: {
+              label: {
+                  connectorAllowed: false
+              },
+              pointStart: 2011
+          }
+      },
+
+      series: [{
+          name: 'Peso normal',
+          data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+      }, {
+          name: 'Sobrepeso',
+          data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+      }, {
+          name: 'Obesidad',
+          data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+      }],
+
+      responsive: {
+          rules: [{
+              condition: {
+                  maxWidth: 500
+              },
+              chartOptions: {
+                  legend: {
+                      layout: 'horizontal',
+                      align: 'center',
+                      verticalAlign: 'bottom'
+                  }
+              }
+          }]
+      }
+
+      });
+  }
+  
+    
     
 </script>
 
+<svelte:head>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/series-label.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
+
+</svelte:head>
+
+
 <main>
-    <h1 style ="text-align: center;">Tabla sobre el IMC por comunidades</h1>
 
-    {#await weightStats}
-        Loading smokers data...
-    {:then weightStats}
-
-    <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
-        {#if checkMSG}
-		    {checkMSG}
-	    {/if}
-    </Alert>
-
-    <Alert color="warning" isOpen={wvisible} toggle={() => (visible = false)}>
-        {#if warningMSG}
-		    {warningMSG}
-	    {/if}
-    </Alert>
-
-    <Table bordered >
-        <thead>
-          <tr style="background-color: lightslategray;"> 
-            <th>Comunidad autónoma</th>
-            <th>Año</th>
-            <th>Peso normal</th>
-            <th>Sobrepeso</th>
-            <th>Obesidad</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td style="background-color: lightskyblue;"><input type = "text" placeholder="Comunidad autónoma" bind:value="{newWeight.provinces}"></td>
-                <td><input type = "number" placeholder="2075" bind:value="{newWeight.year}"></td>
-                <td><input type = "number" placeholder="0000" bind:value="{newWeight.normal_weight}"></td>
-                <td><input type = "number" placeholder="0000" bind:value="{newWeight.overweight}"></td>
-                <td><input type = "number" placeholder="0000" bind:value="{newWeight.obesity}"></td>
-                <td><Button outline color="success" on:click={insertWeight}>Insertar</Button></td>
-            </tr>
-            {#each weightStats as weightsStat}
-                <tr>
-                    <td style="background-color: lightskyblue;"><b>{weightsStat.provinces}</b></td>
-                    <td>{weightsStat.year}</td>
-                    <td>{weightsStat.normal_weight}</td>
-                    <td>{weightsStat.overweight}</td>
-                    <td>{weightsStat.obesity}</td>
-                    <td>
-                        <a href="#/weights-stats/{weightsStat.provinces}/{weightsStat.year}"><Button outline color="primary">Editar</Button></a>
-                        <Button outline color="danger" on:click="{deleteWeights(weightsStat.provinces, weightsStat.year)}">Borrar</Button>
-                    </td>
-                </tr>
-            {/each}
-        </tbody>
-    </Table>
-
-    <p align="center">   
-        <Button color="primary" on:click="{getPreviewPage}">Atrás</Button>
-        <Button color="primary" on:click="{getNextPage}">Siguiente</Button>
-        <Button color="warning" on:click="{loadInitialData}">Eliminar filtros de búsqueda</Button>
+  <figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+      Gráfico de líneas en el que se ve representado el porcentaje por comunidades autónomas en los años 2014 y 2017 el IMC
     </p>
+  </figure>
 
-    <h4 style="text-align:center"><strong>Búsqueda general de parámetros</strong></h4>
-
-    <Table>
-        <th>Búsqueda por comunidad autónoma</th>
-        <th>Búsqueda por año</th>
-        <th>Búsqueda por estadística de peso normal</th>
-        <th>Búsqueda por estadística de sobrepeso</th>
-        <th>Búsqueda por estadística de obesidad</th>
-        <tr>
-            <td><input type = "text" placeholder="Comunidad autónoma" bind:value="{sProvince}"></td>
-            <td><input type = "number" placeholder="2017" bind:value="{sYear}"></td>
-            <td><input type = "number" placeholder="0000" bind:value="{sNormalWeight}"></td>
-            <td><input type = "number" placeholder="0000" bind:value="{sOverWeight}"></td>
-            <td><input type = "number" placeholder="0000" bind:value="{sObesity}"></td>
-        </tr>
-    </Table>
-
-    <div style="text-align:center">
-        <Button outline color="primary" on:click="{busqueda (sProvince, sYear, sNormalWeight, sOverWeight, sObesity)}">Buscar</Button>
-    </div>
-
-    <Button color="success" on:click="{loadInitialData}">
-        Cargar datos inciales
-    </Button>
-
-    <Button color="danger" on:click="{deleteALL}">
-        Eliminar todos los datos
-    </Button>
-
-    <a href="./#/weights-graph"><Button color="info">Descubre nuestro gráfico!</Button></a>
-
-    {/await}
+  <Button outline color="secondary" on:click="{pop}">Atrás</Button>
  
 </main>
+
+<style>
+  .highcharts-figure, .highcharts-data-table table {
+    min-width: 360px; 
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+	font-family: Verdana, sans-serif;
+	border-collapse: collapse;
+	border: 1px solid #EBEBEB;
+	margin: 10px auto;
+	text-align: center;
+	width: 100%;
+	max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+</style>
