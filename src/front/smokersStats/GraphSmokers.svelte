@@ -149,9 +149,9 @@ async function loadGraph(){
       Fumadores diarios, ocasionales, ex-fumadores y no fumadores.
     </p>
   </figure>
-
-  <Button outline color="secondary" on:click="{pop}">Atrás</Button>
- 
+  <p align="center"><Button outline color="primary" on:click="{pop}">Atrás</Button></p>
+  
+  
 </main>
 
 <style>

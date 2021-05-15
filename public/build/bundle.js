@@ -18085,7 +18085,7 @@ var app = (function () {
     const { console: console_1$3 } = globals;
     const file$4 = "src\\front\\smokersStats\\GraphSmokers.svelte";
 
-    // (153:2) <Button outline color="secondary" on:click="{pop}">
+    // (152:20) <Button outline color="primary" on:click="{pop}">
     function create_default_slot$4(ctx) {
     	let t;
 
@@ -18105,7 +18105,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$4.name,
     		type: "slot",
-    		source: "(153:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(152:20) <Button outline color=\\\"primary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -18128,8 +18128,9 @@ var app = (function () {
     	let figure;
     	let div;
     	let t1;
-    	let p;
+    	let p0;
     	let t3;
+    	let p1;
     	let button;
     	let current;
     	let mounted;
@@ -18138,7 +18139,7 @@ var app = (function () {
     	button = new Button({
     			props: {
     				outline: true,
-    				color: "secondary",
+    				color: "primary",
     				$$slots: { default: [create_default_slot$4] },
     				$$scope: { ctx }
     			},
@@ -18159,9 +18160,10 @@ var app = (function () {
     			figure = element("figure");
     			div = element("div");
     			t1 = space();
-    			p = element("p");
-    			p.textContent = "En el gráfico se representa el dato por comunidades autónomas en el año 2017 en España.\r\n      Fumadores diarios, ocasionales, ex-fumadores y no fumadores.";
+    			p0 = element("p");
+    			p0.textContent = "En el gráfico se representa el dato por comunidades autónomas en el año 2017 en España.\r\n      Fumadores diarios, ocasionales, ex-fumadores y no fumadores.";
     			t3 = space();
+    			p1 = element("p");
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
     			add_location(script0, file$4, 133, 2, 3636);
@@ -18175,10 +18177,12 @@ var app = (function () {
     			add_location(script4, file$4, 137, 2, 3938);
     			attr_dev(div, "id", "container");
     			add_location(div, file$4, 145, 4, 4112);
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$4, 146, 4, 4144);
+    			attr_dev(p0, "class", "highcharts-description");
+    			add_location(p0, file$4, 146, 4, 4144);
     			attr_dev(figure, "class", "highcharts-figure svelte-nccje");
     			add_location(figure, file$4, 144, 2, 4072);
+    			attr_dev(p1, "align", "center");
+    			add_location(p1, file$4, 151, 2, 4368);
     			add_location(main, file$4, 142, 0, 4060);
     		},
     		l: function claim(nodes) {
@@ -18195,9 +18199,10 @@ var app = (function () {
     			append_dev(main, figure);
     			append_dev(figure, div);
     			append_dev(figure, t1);
-    			append_dev(figure, p);
+    			append_dev(figure, p0);
     			append_dev(main, t3);
-    			mount_component(button, main, null);
+    			append_dev(main, p1);
+    			mount_component(button, p1, null);
     			current = true;
 
     			if (!mounted) {
