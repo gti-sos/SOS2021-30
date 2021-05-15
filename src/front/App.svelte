@@ -12,6 +12,7 @@
   import EditAlcohol from "./alcoholStats/EditAlcohol.svelte";
   import SmokerStats from "./smokersStats/Smokers.svelte";
   import SmokersItems from "./smokersStats/SmokersItems.svelte";
+  import GraphSmokers from "./smokersStats/GraphSmokers.svelte";
   import FrontWeight from "./weightsStats/TablaWeights.svelte";
   import EditWeight from "./weightsStats/EditWeight.svelte";
   import GraphWeight from "./weightsStats/GraphWeight.svelte";
@@ -30,6 +31,7 @@
     "/weights-graph" : GraphWeight,
     "/smokers-stats" : SmokerStats,
     "/smokers-stats/:province/:year" : SmokersItems,
+    "/smokers-graph" : GraphSmokers,
 		'*': NotFound};
 </script>
 

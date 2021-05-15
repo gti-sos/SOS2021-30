@@ -381,7 +381,7 @@
         <Button color="danger" on:click="{deleteALL}">Eliminar todo</Button>
         <Button outline color="primary" on:click="{getPreviewPage}">Atrás</Button>
         <Button outline color="primary" on:click="{getNextPage}">Siguiente</Button>
+        <a href="./#/smokers-graph"><Button color="info">Gráfico</Button></a>
         </p>
-         
     {/await}
 </main>
