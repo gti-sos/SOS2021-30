@@ -20782,7 +20782,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$1 = "src\\front\\weightsStats\\GraphWeight.svelte";
 
-    // (350:2) <Button outline color="secondary" on:click="{pop}">
+    // (169:2) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$1(ctx) {
     	let t;
 
@@ -20802,7 +20802,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(350:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(169:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -20861,22 +20861,22 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$1, 331, 2, 11108);
+    			add_location(script0, file$1, 150, 2, 4083);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$1, 332, 2, 11177);
+    			add_location(script1, file$1, 151, 2, 4152);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$1, 333, 2, 11256);
+    			add_location(script2, file$1, 152, 2, 4231);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$1, 334, 2, 11332);
+    			add_location(script3, file$1, 153, 2, 4307);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$1, 335, 2, 11410);
+    			add_location(script4, file$1, 154, 2, 4385);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$1, 343, 4, 11584);
+    			add_location(div, file$1, 162, 4, 4559);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$1, 344, 4, 11616);
+    			add_location(p, file$1, 163, 4, 4591);
     			attr_dev(figure, "class", "highcharts-figure svelte-nccje");
-    			add_location(figure, file$1, 342, 2, 11544);
-    			add_location(main, file$1, 340, 0, 11532);
+    			add_location(figure, file$1, 161, 2, 4519);
+    			add_location(main, file$1, 159, 0, 4507);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -20898,14 +20898,14 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(script4, "load", loadGraph, false, false, false);
+    				dispose = listen_dev(script4, "load", /*loadGraph*/ ctx[0], false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty & /*$$scope*/ 512) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -20945,89 +20945,21 @@ var app = (function () {
     	return block;
     }
 
-    async function loadGraph() {
-    	Highcharts.chart("container", {
-    		title: { text: "Gráfica IMC por comunidades" },
-    		yAxis: { title: { text: "Porcentaje" } },
-    		xAxis: {
-    			accessibility: { rangeDescription: "Range: 2011 to 2017" }
-    		},
-    		legend: {
-    			layout: "vertical",
-    			align: "right",
-    			verticalAlign: "middle"
-    		},
-    		plotOptions: {
-    			series: {
-    				label: { connectorAllowed: false },
-    				pointStart: 2011
-    			}
-    		},
-    		series: [
-    			{
-    				name: "Peso normal",
-    				data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-    			},
-    			{
-    				name: "Sobrepeso",
-    				data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-    			},
-    			{
-    				name: "Obesidad",
-    				data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-    			}
-    		],
-    		responsive: {
-    			rules: [
-    				{
-    					condition: { maxWidth: 500 },
-    					chartOptions: {
-    						legend: {
-    							layout: "horizontal",
-    							align: "center",
-    							verticalAlign: "bottom"
-    						}
-    					}
-    				}
-    			]
-    		}
-    	});
-    }
-
     function instance$1($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("GraphWeight", slots, []);
-    	let visible = false;
-    	let wvisible = false;
-    	let color = "danger";
-    	let page = 1;
-    	let totaldata = 38;
-    	let weightStats = [];
-
-    	let newWeight = {
-    		provinces: "",
-    		year: "",
-    		normal_weight: "",
-    		overweight: "",
-    		obesity: ""
-    	};
-
-    	let s_provinces = [];
-    	let current_province = "-";
-    	let checkMSG = "";
-    	let warningMSG = "";
     	var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
-    	let sProvince = "";
-    	let sYear = "";
-    	let sNormalWeight = "";
-    	let sOverWeight = "";
-    	let sObesity = "";
+    	let weightData = [];
+    	let weightChartData = [];
+    	let weightChartInfo = [];
+    	let weightchartNormalWeight = [];
+    	let weightChartOverweight = [];
+    	let weightChartObesity = [];
 
-    	//onMount(getStats);
     	//Función GET para listar los recursos
     	async function getStats() {
     		console.log("Fetching Data...");
-    		const res = await fetch(BASE_WEIGHTS_PATH + "?limit=10&offset=0");
+    		const res = await fetch(BASE_WEIGHTS_PATH);
 
     		if (res.ok) {
     			console.log("Ok:");
@@ -21046,221 +20978,77 @@ var app = (function () {
     		}
     	}
 
-    	//Función LOADINITIALDATA para cargar los datos iniciales
-    	async function loadInitialData() {
+    	onMount(getStats);
+
+    	async function loadGraph() {
     		console.log("Fetching data...");
-    		await fetch(BASE_WEIGHTS_PATH + "/loadInitialData");
-    		const res = await fetch(BASE_WEIGHTS_PATH + "?limit=10&offset=0");
+    		const res = await fetch(BASE_WEIGHTS_PATH);
+    		weightData = await res.json();
 
     		if (res.ok) {
-    			console.log("Ok:");
-    			const json = await res.json();
-    			weightStats = json;
-    			totaldata = 38;
-    			console.log("Received " + weightStats.length + " weight data.");
-    			color = "success";
-    			checkMSG = "Datos cargados correctamente";
-    		} else {
-    			color = "danger";
-    			checkMSG = res.status + ": " + res.statusText;
-    			console.log("ERROR!");
-    		}
-    	}
-
-    	//Función POST para añadir nuevos recursos  
-    	async function insertWeight() {
-    		console.log("Inserting data...");
-
-    		if (newWeight.year == "" || newWeight.year == null || newWeight.provinces == "") {
-    			alert("Los campos 'Comunidad Autónoma' y 'Año' no pueden estar vacios");
-    		} else {
-    			await fetch(BASE_WEIGHTS_PATH, {
-    				method: "POST",
-    				body: JSON.stringify(newWeight),
-    				headers: { "Content-Type": "application/json" }
-    			}).then(function (res) {
-    				visible = true;
-
-    				if (res.status == 201) {
-    					getStats();
-    					totaldata++;
-    					console.log("Data introduced");
-    					color = "success";
-    					checkMSG = "Entrada introducida correctamente a la base de datos";
-    				} else if (res.status == 400) {
-    					console.log("ERROR Data was not correctly introduced");
-    					color = "danger";
-    					checkMSG = "Los datos de la entrada no fueron introducidos correctamente";
-    				} else if (res.status == 409) {
-    					console.log("ERROR There is already a data with that province and year in the da tabase");
-    					color = "danger";
-    					checkMSG = "Ya existe una entrada en la base de datos con la provincia y el año introducido";
-    				}
+    			weightData.forEach(stat => {
+    				weightChartInfo.push(stat.provinces + "/" + stat.year);
+    				weightchartNormalWeight.push(stat["normal_weight"]);
+    				weightChartOverweight.push(stat["overweight"]);
+    				weightChartObesity.push(stat["obesity"]);
     			});
     		}
-    	}
 
-    	//Función DELETE para eliminar un recurso específico
-    	async function deleteWeights(province, year) {
-    		await fetch(BASE_WEIGHTS_PATH + "/" + province + "/" + year, { method: "DELETE" }).then(function (res) {
-    			visible = true;
-    			getStats();
+    		console.log("Prueba");
 
-    			if (res.status == 200) {
-    				totaldata--;
-    				color = "success";
-    				checkMSG = "Recurso " + province + " " + year + " borrado correctamente";
-    				console.log("Deleted " + province);
-    			} else if (res.status == 404) {
-    				color = "danger";
-    				checkMSG = "No se ha encontrado el objeto " + province;
-    				console.log("SUICIDE NOT FOUND");
-    			} else {
-    				color = "danger";
-    				checkMSG = res.status + ": " + res.statusText;
-    				console.log("ERROR!");
+    		Highcharts.chart("container", {
+    			title: { text: "Gráfica IMC por comunidades" },
+    			yAxis: { title: { text: "Porcentaje" } },
+    			xAxis: {
+    				title: { text: "Comunidad autónoma/año" },
+    				categories: weightChartInfo
+    			},
+    			legend: {
+    				layout: "vertical",
+    				align: "right",
+    				verticalAlign: "middle"
+    			},
+    			annootations: [
+    				{
+    					labels: [
+    						{ point: "date", text: "" },
+    						{
+    							point: "min",
+    							text: "Min",
+    							backgroundColor: "white"
+    						}
+    					]
+    				}
+    			],
+    			series: [
+    				{
+    					name: "Peso normal",
+    					data: weightchartNormalWeight
+    				},
+    				{
+    					name: "Sobrepeso",
+    					data: weightChartOverweight
+    				},
+    				{
+    					name: "Obesidad",
+    					data: weightChartObesity
+    				}
+    			],
+    			responsive: {
+    				rules: [
+    					{
+    						condition: { maxWidth: 500 },
+    						chartOptions: {
+    							legend: {
+    								layout: "horizontal",
+    								align: "center",
+    								verticalAlign: "bottom"
+    							}
+    						}
+    					}
+    				]
     			}
     		});
-    	}
-
-    	//Función DELETE para eliminar todos los recursos
-    	async function deleteALL() {
-    		console.log("Deleting all weights data...");
-
-    		if (confirm("¿Está seguro de que desea eliminar todas las entradas?")) {
-    			console.log("Deleting all weights data...");
-
-    			await fetch(BASE_WEIGHTS_PATH, { method: "DELETE" }).then(function (res) {
-    				visible = true;
-
-    				if (res.ok && totaldata > 0) {
-    					totaldata = 0;
-    					getStats();
-    					color = "success";
-    					checkMSG = "Datos eliminados correctamente";
-    					console.log("OK All data erased");
-    				} else if (totaldata == 0) {
-    					console.log("ERROR Data was not erased");
-    					color = "danger";
-    					checkMSG = "¡No hay datos para borrar!";
-    				} else {
-    					console.log("ERROR Data was not erased");
-    					color = "danger";
-    					checkMSG = "No se han podido eliminar los datos";
-    				}
-    			});
-    		}
-    	}
-
-    	//FUNCION DE BUSQUEDA COMPLETA
-    	async function busqueda(sProvince, sYear, sNormalWeight, sOverWeight, sObesity) {
-    		if (typeof sProvince == "undefined") {
-    			sProvince = "";
-    		}
-
-    		if (typeof sYear == "undefined") {
-    			sYear = "";
-    		}
-
-    		if (typeof sNormalWeight == "undefined") {
-    			sNormalWeight = "";
-    		}
-
-    		if (typeof sOverWeight == "undefined") {
-    			sOverWeight = "";
-    		}
-
-    		if (typeof sObesity == "undefined") {
-    			sObesity = "";
-    		}
-
-    		const res = await fetch(BASE_WEIGHTS_PATH + "?provinces=" + sProvince + "&year=" + sYear + "&normal_weight=" + sNormalWeight + "&overweight=" + sOverWeight + "&obesity=" + sObesity);
-
-    		if (res.ok) {
-    			const json = await res.json();
-    			weightStats = json;
-    			console.log("Found " + weightStats.length + " data");
-    			visible = true;
-
-    			if (weightStats.length == 1) {
-    				color = "success";
-    				checkMSG = "Se ha encontrado un dato para tu búsqueda";
-    			} else if (weightStats.length == 0) {
-    				wvisible = true;
-    				color = "danger";
-    				checkMSG = "No se han encontrado datos para tu búsqueda";
-    				warningMSG = "Puede que haya un conflicto con los datos de tu búsqueda. Prueba a recargar la página!";
-    			} else {
-    				color = "success";
-    				checkMSG = "Se han encontrado " + weightStats.length + " datos para tu búsqueda";
-    			}
-    		}
-    	}
-
-    	////Función de paginación que consigue la página posterior
-    	async function getNextPage() {
-    		console.log(totaldata);
-
-    		if (page + 10 > totaldata) {
-    			page = 1;
-    		} else {
-    			page += 10;
-    		}
-
-    		visible = true;
-    		console.log("Charging page... Listing since: " + page);
-    		const res = await fetch(BASE_WEIGHTS_PATH + "?limit=10&offset=" + (-1 + page));
-    		color = "success";
-
-    		checkMSG = page + 5 > totaldata
-    		? "Mostrando elementos " + page + "-" + totaldata
-    		: "Mostrando elementos " + page + "-" + (page + 9);
-
-    		if (totaldata == 0) {
-    			console.log("ERROR Data was not erased");
-    			color = "danger";
-    			checkMSG = "¡No hay datos!";
-    		} else if (res.ok) {
-    			console.log("Ok:");
-    			const json = await res.json();
-    			weightStats = json;
-    			console.log("Received " + weightStats.length + " resources.");
-    		} else {
-    			checkMSG = res.status + ": " + res.statusText;
-    			console.log("ERROR!");
-    		}
-    	}
-
-    	//Función de paginación que consigue la página anterior
-    	async function getPreviewPage() {
-    		console.log(totaldata);
-
-    		if (page - 10 > 1) {
-    			page -= 10;
-    		} else page = 1;
-
-    		visible = true;
-    		console.log("Charging page... Listing since: " + page);
-    		const res = await fetch(BASE_WEIGHTS_PATH + "?limit=10&offset=" + (-1 + page));
-    		color = "success";
-
-    		checkMSG = page + 5 > totaldata
-    		? "Mostrando elementos " + page + "-" + totaldata
-    		: "Mostrando elementos " + page + "-" + (page + 9);
-
-    		if (totaldata == 0) {
-    			console.log("ERROR Data was not erased");
-    			color = "danger";
-    			checkMSG = "¡No hay datos!";
-    		} else if (res.ok) {
-    			console.log("Ok:");
-    			const json = await res.json();
-    			weightStats = json;
-    			console.log("Received " + weightStats.length + " resources.");
-    		} else {
-    			checkMSG = res.status + ": " + res.statusText;
-    			console.log("ERROR!");
-    		}
     	}
 
     	const writable_props = [];
@@ -21277,59 +21065,33 @@ var app = (function () {
     		Input,
     		FormGroup,
     		Alert,
-    		visible,
-    		wvisible,
-    		color,
-    		page,
-    		totaldata,
-    		weightStats,
-    		newWeight,
-    		s_provinces,
-    		current_province,
-    		checkMSG,
-    		warningMSG,
+    		text,
     		BASE_WEIGHTS_PATH,
-    		sProvince,
-    		sYear,
-    		sNormalWeight,
-    		sOverWeight,
-    		sObesity,
+    		weightData,
+    		weightChartData,
+    		weightChartInfo,
+    		weightchartNormalWeight,
+    		weightChartOverweight,
+    		weightChartObesity,
     		getStats,
-    		loadInitialData,
-    		insertWeight,
-    		deleteWeights,
-    		deleteALL,
-    		busqueda,
-    		getNextPage,
-    		getPreviewPage,
     		loadGraph
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("visible" in $$props) visible = $$props.visible;
-    		if ("wvisible" in $$props) wvisible = $$props.wvisible;
-    		if ("color" in $$props) color = $$props.color;
-    		if ("page" in $$props) page = $$props.page;
-    		if ("totaldata" in $$props) totaldata = $$props.totaldata;
-    		if ("weightStats" in $$props) weightStats = $$props.weightStats;
-    		if ("newWeight" in $$props) newWeight = $$props.newWeight;
-    		if ("s_provinces" in $$props) s_provinces = $$props.s_provinces;
-    		if ("current_province" in $$props) current_province = $$props.current_province;
-    		if ("checkMSG" in $$props) checkMSG = $$props.checkMSG;
-    		if ("warningMSG" in $$props) warningMSG = $$props.warningMSG;
     		if ("BASE_WEIGHTS_PATH" in $$props) BASE_WEIGHTS_PATH = $$props.BASE_WEIGHTS_PATH;
-    		if ("sProvince" in $$props) sProvince = $$props.sProvince;
-    		if ("sYear" in $$props) sYear = $$props.sYear;
-    		if ("sNormalWeight" in $$props) sNormalWeight = $$props.sNormalWeight;
-    		if ("sOverWeight" in $$props) sOverWeight = $$props.sOverWeight;
-    		if ("sObesity" in $$props) sObesity = $$props.sObesity;
+    		if ("weightData" in $$props) weightData = $$props.weightData;
+    		if ("weightChartData" in $$props) weightChartData = $$props.weightChartData;
+    		if ("weightChartInfo" in $$props) weightChartInfo = $$props.weightChartInfo;
+    		if ("weightchartNormalWeight" in $$props) weightchartNormalWeight = $$props.weightchartNormalWeight;
+    		if ("weightChartOverweight" in $$props) weightChartOverweight = $$props.weightChartOverweight;
+    		if ("weightChartObesity" in $$props) weightChartObesity = $$props.weightChartObesity;
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [];
+    	return [loadGraph];
     }
 
     class GraphWeight extends SvelteComponentDev {
