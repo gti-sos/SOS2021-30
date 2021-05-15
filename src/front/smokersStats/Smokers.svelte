@@ -383,5 +383,6 @@
         <Button outline color="primary" on:click="{getNextPage}">Siguiente</Button>
         <a href="./#/smokers-graph"><Button color="info">Gráfico</Button></a>
         </p>
+        <br>
     {/await}
 </main>

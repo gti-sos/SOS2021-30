@@ -62,7 +62,7 @@ async function loadGraph(){
 
         yAxis: {
             title: {
-                text: 'Porcentaje'
+                text: 'Cantidad'
             }
         },
 
