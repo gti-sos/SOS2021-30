@@ -351,6 +351,8 @@
         Eliminar todos los datos
     </Button>
 
+    <a href="./#/weights-graph"><Button color="info">Descubre nuestro gráfico!</Button></a>
+
     {/await}
  
 </main>

@@ -14,6 +14,7 @@
   import SmokersItems from "./smokersStats/SmokersItems.svelte";
   import FrontWeight from "./weightsStats/TablaWeights.svelte";
   import EditWeight from "./weightsStats/EditWeight.svelte";
+  import GraphWeight from "./weightsStats/GraphWeight.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
 
 
@@ -26,6 +27,7 @@
     "/life-stats/:province/:year" : EditLife,
     "/weights-stats" : FrontWeight,
     "/weights-stats/:provinces/:year" : EditWeight,
+    "/weights-graph" : GraphWeight,
     "/smokers-stats" : SmokerStats,
     "/smokers-stats/:province/:year" : SmokersItems,
 		'*': NotFound};
