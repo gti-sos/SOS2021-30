@@ -21,5 +21,6 @@
     - [Documentación POSTMAN-test smokers-stats v1](https://documenter.getpostman.com/view/14966429/TzJoFgHe)
     - [Documentación POSTMAN-test smokers-stats v2](https://documenter.getpostman.com/view/14966429/TzRU9RjW)
     - [Documentación POSTMAN-test table-weights-stats](https://documenter.getpostman.com/view/14975289/TzJoFM7R#f0bbc7c4-552f-43da-b8bf-7dfcf759037f)
-    - [Documentación POSTMAN-test alcohol-consumption-stats](https://documenter.getpostman.com/view/14942936/TzJoFMVa)
+    - [Documentación POSTMAN-test alcohol-consumption-stats v1](https://documenter.getpostman.com/view/14942936/TzJoFMVa)
+    - [Documentación POSTMAN-test alcohol-consumption-stats v2](https://documenter.getpostman.com/view/14942936/TzRX85Lc)
  

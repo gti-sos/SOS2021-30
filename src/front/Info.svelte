@@ -52,7 +52,8 @@
             <tr>
                 <td>Víctor Caballero Sánchez</td>
                 <td>API alcohol-consumption-stats</td>
-                <td><a href="https://sos2021-30.herokuapp.com/api/v1/alcohol-consumption-stats"><Button color="info">API v1</Button></a></td>
+                <td><a href="https://sos2021-30.herokuapp.com/api/v1/alcohol-consumption-stats"><Button color="info">API v1</Button></a>
+                    <a href="https://sos2021-30.herokuapp.com/api/v2/alcohol-consumption-stats"><Button color="info">API v2</Button></a></td>
             </tr>
         </tbody>
     </Table>
@@ -87,7 +88,10 @@
             <tr>
                 <td>Víctor Caballero Sánchez</td>
                 <td>API alcohol-consumption-stats</td>
-                <td><a href="https://documenter.getpostman.com/view/14942936/TzJsheDD"><Button color="info">Documentación v1</Button></a></td>
+                <td><a href="https://documenter.getpostman.com/view/14942936/TzJsheDD"><Button color="info">Documentación v1</Button></a>
+                    <a href="https://documenter.getpostman.com/view/14942936/TzRX85Lc"><Button color="info">Documentación v1</Button></a></td>
+
+                
             </tr>
         </tbody>
     </Table>
