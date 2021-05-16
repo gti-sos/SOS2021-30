@@ -10,6 +10,7 @@
   import EditLife from './lifeStats/EditLife.svelte';
 	import TablaAlcohol from "./alcoholStats/TablaAlcohol.svelte";
   import EditAlcohol from "./alcoholStats/EditAlcohol.svelte";
+  import GraphAlcohol from "./alcoholStats/GraphAlcohol.svelte";
   import SmokerStats from "./smokersStats/Smokers.svelte";
   import SmokersItems from "./smokersStats/SmokersItems.svelte";
   import GraphSmokers from "./smokersStats/GraphSmokers.svelte";
@@ -24,6 +25,7 @@
     "/info": Info,
 		"/alcohol-stats": TablaAlcohol,
     "/alcohol-stats/:country/:year/:ageRange": EditAlcohol,
+    "/alcohol-graph": GraphAlcohol,
     "/life-stats" : LifeExpectancy,
     "/life-stats/:province/:year" : EditLife,
     "/weights-stats" : FrontWeight,

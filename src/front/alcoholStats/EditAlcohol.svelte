@@ -5,7 +5,7 @@
 	import Button from "sveltestrap/src/Button.svelte";
     import { Alert } from 'sveltestrap';
 
-    var BASE_ALCOHOL_PATH = "/api/v1/alcohol-consumption-stats";
+    var BASE_ALCOHOL_PATH = "/api/v2/alcohol-consumption-stats";
 
     let visible = false;
     let checkMSG = "";

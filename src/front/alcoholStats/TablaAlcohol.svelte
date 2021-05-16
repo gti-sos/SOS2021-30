@@ -16,7 +16,7 @@
     let totaldata=14; // Número total de los datos
     let errorMSG = "";
 
-    var BASE_ALCOHOL_PATH = "/api/v1/alcohol-consumption-stats/";
+    var BASE_ALCOHOL_PATH = "/api/v2/alcohol-consumption-stats";
     let b_ageRange = [];
     let alcoholStats = [];
     let newAlcohol = {
@@ -37,8 +37,8 @@
     //GET INITIALDATA
     async function loadInitialData() {
         console.log("Fetching employment data...");
-        await fetch("/api/v1/alcohol-consumption-stats/loadInitialData");
-        const res = await fetch("/api/v1/alcohol-consumption-stats?limit=10&offset=0");
+        await fetch(BASE_ALCOHOL_PATH+"/loadInitialData");
+        const res = await fetch(BASE_ALCOHOL_PATH+"?limit=10&offset=0");
             if (res.ok) {
                 visible =true;
                 console.log("Ok:");
@@ -62,7 +62,7 @@
          if (newAlcohol.year == "" || newAlcohol.alcoholPrematureDeath== "" ||newAlcohol.prevalenceOfAlcoholUseDisorder == "" || newAlcohol.country == "" || newAlcohol.ageRange=="") {
              alert("No puede haber ningún campo vacío");
          } else{
-             const res = await fetch("/api/v1/alcohol-consumption-stats",{
+             const res = await fetch(BASE_ALCOHOL_PATH,{
              method:"POST",
              body:JSON.stringify(newAlcohol),
              headers:{
@@ -138,7 +138,7 @@
 	}
     //Borrar dato especifico
     async function deleteSpecificAlcohol(country,ageRange, year) {
-        const res = await fetch(BASE_ALCOHOL_PATH + country + "/" + year + "/" + ageRange, {
+        const res = await fetch(BASE_ALCOHOL_PATH +"/"+ country + "/" + year + "/" + ageRange, {
             method: "DELETE"
         }).then(function (res) {
             visible = true;
@@ -204,7 +204,7 @@
         
         visible = true;
         console.log("Charging page... Listing since: "+page);
-        const res = await fetch("/api/v1/alcohol-consumption-stats/?limit=10&offset="+(-1+page));
+        const res = await fetch(BASE_ALCOHOL_PATH+"/?limit=10&offset="+(-1+page));
         color = "success";
         errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
 
@@ -329,6 +329,7 @@
         <Button color="danger" on:click="{deleteALL}">
             Eliminar todo
         </Button>
+        <a href="#/alcohol-graph"><Button outline color="primary">Ver gráfico</Button></a>
         <Button outline color="primary" on:click="{getPreviewPage}">
            Anterior
         </Button>

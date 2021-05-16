@@ -11,8 +11,11 @@ var port = process.env.PORT || 10000;
 const path = require("path");
 
 //--------------------------- API REST ALCOHOL-CONSUMPTION-STATS-----------------
-var alcoholAPI = require("./src/back/alcoholConsumptionStatsAPI");
+var alcoholAPI = require("./src/back/alcoholConsumptionStatsAPI/v1");
 alcoholAPI.register(app);
+
+var alcoholAPIv2 = require("./src/back/alcoholConsumptionStatsAPI/v2");
+alcoholAPIv2.register(app);
 //---------------------------END: API REST ALCOHOL-CONSUMPTION-STATS-----------------
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
