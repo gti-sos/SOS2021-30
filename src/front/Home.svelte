@@ -10,6 +10,7 @@
         geográfica, edad, género en el consumo de alcohol y tabaco?
     </body>
     <a href="./#/info"><Button color="info">Descubre más!</Button></a>
+    <a href="./#/group-graph"><Button color="info">Gráfico conjunto</Button></a>
 </main>
 
 <style>

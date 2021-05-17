@@ -6,22 +6,20 @@
     var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
 
     let weightData = [];
-    let weightChartData = [];
     let weightChartInfo = [];
     let weightchartNormalWeight = [];
-    let weightChartOverweight = [];
-    let weightChartObesity = [];
+
+
 
     async function loadGraph(){
         console.log("Fetching data...");
-        const res = await fetch(BASE_WEIGHTS_PATH);
-        weightData = await res.json();
-        if(res.ok){
+        const resWeight = await fetch(BASE_WEIGHTS_PATH);
+        weightData = await resWeight.json();
+        if(resWeight.ok){
             weightData.forEach(stat => {
                 weightChartInfo.push(stat.provinces+"/"+stat.year);
                 weightchartNormalWeight.push(stat["normal_weight"]);
-                weightChartOverweight.push(stat["overweight"]);
-                weightChartObesity.push(stat["obesity"]);
+                //AÑADIR UN DATO DE CADA UNA DE LAS APIs (preferiblemente un porcentaje para que todo tenga relacion y se vea bien el grafico)
             });
         }
 
@@ -70,15 +68,9 @@
             {
             name: 'Peso normal',
             data: weightchartNormalWeight
-        }, {
-            name: 'Sobrepeso',
-            data: weightChartOverweight
-        }, {
-            name: 'Obesidad',
-            data: weightChartObesity
         }],
 
-        responsive: {
+        resWeightponsive: {
             rules: [{
                 condition: {
                     maxWidth: 500
