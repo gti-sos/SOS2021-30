@@ -11,7 +11,6 @@
     </body>
     <a href="./#/info"><Button color="info">Descubre más!</Button></a>
     <a href="./#/group-graph"><Button color="info">Gráfico conjunto</Button></a>
-    <a href="./#/group-graph2"><Button color="info">Gráfico conjunto 2</Button></a>
 </main>
 
 <style>
