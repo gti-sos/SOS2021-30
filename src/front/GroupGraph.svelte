@@ -6,7 +6,7 @@
     var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
     var BASE_SMOKERS_PATH = "/api/v2/smokers-stats";
     var BASE_ALCOHOL_PATH = "/api/v2/alcohol-consumption-stats";
-
+    var BASE_LIFE_PATH = "/api/v2/life-expectancy-stats";
 
     let weightData = [];
     let weightChartInfo = [];
@@ -22,6 +22,10 @@
     let alcoholChartInfo = [];
     let alcoholChartPrematureDeath = [];
 
+    let lifeData = [];
+    let lifeChartInfo = [];
+    let lifeChartAverageLifeExpectancy = [];
+
     async function loadGraph(){
         console.log("Fetching graphic data...");
 
@@ -29,12 +33,13 @@
         const resWeight = await fetch(BASE_WEIGHTS_PATH);
         const resSmokers = await fetch(BASE_SMOKERS_PATH);
         const resAlcohol = await fetch(BASE_ALCOHOL_PATH);
-        
+        const resLife = await fetch(BASE_LIFE_PATH);
+
         // UN AWAIT POR CADA CONST
         weightData = await resWeight.json();
         smokersData = await resSmokers.json();
         alcoholData = await resAlcohol.json();
-
+        lifeData = await resLife.json();
 
         // CONDICIONES PARA CADA API CON UNA VARIABLE BASADA EN EL PORCENTAJE
         //WEIGHTS-STATS
@@ -59,7 +64,13 @@
                 alcoholChartPrematureDeath.push(stat["alcoholPrematureDeath"]);
             })
         }
-
+        //LIFE-STATS
+        if(resLife.ok){
+            lifeData.forEach(stat => {
+                lifeChartInfo.push(stat.province+"/"+stat.year);
+                lifeChartAverageLifeExpectancy.push(stat["averageLifeExpectancy"]);
+            });
+        }
 
         // ADAPTACIÓN DE DATOS PUROS A PORCENTAJES REALES PARA REPRESENTACIÓN, SEGÚN POBLACIÓN DE CADA COMUNIDAD //
         let i = 0;
@@ -172,6 +183,9 @@
             },{
                 name: 'Muertes prematuras',
                 data: alcoholChartPrematureDeath
+            },{
+                name: 'Esperanza de vida ',
+                data: lifeChartAverageLifeExpectancy
             }],
 
         resWeightponsive: {
