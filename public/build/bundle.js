@@ -22106,7 +22106,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$1 = "src\\front\\GroupGraph.svelte";
 
-    // (199:2) <Button outline color="secondary" on:click="{pop}">
+    // (217:2) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$1(ctx) {
     	let t;
 
@@ -22126,7 +22126,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(199:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(217:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -22181,26 +22181,26 @@ var app = (function () {
     			div = element("div");
     			t1 = space();
     			p = element("p");
-    			p.textContent = "Gráfico de líneas en el que se representa el porcentaje por comunidades autónomas en los años 2014-2017 de cada API";
+    			p.textContent = "Gráfico de líneas en el que se representa el porcentaje por comunidades autónomas en el año 2017 de cada API";
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$1, 180, 2, 5786);
+    			add_location(script0, file$1, 198, 2, 6441);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$1, 181, 2, 5855);
+    			add_location(script1, file$1, 199, 2, 6510);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$1, 182, 2, 5934);
+    			add_location(script2, file$1, 200, 2, 6589);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$1, 183, 2, 6010);
+    			add_location(script3, file$1, 201, 2, 6665);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$1, 184, 2, 6088);
+    			add_location(script4, file$1, 202, 2, 6743);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$1, 192, 4, 6262);
+    			add_location(div, file$1, 210, 4, 6917);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$1, 193, 4, 6294);
+    			add_location(p, file$1, 211, 4, 6949);
     			attr_dev(figure, "class", "highcharts-figure svelte-x5xp2w");
-    			add_location(figure, file$1, 191, 2, 6222);
-    			add_location(main, file$1, 189, 0, 6210);
+    			add_location(figure, file$1, 209, 2, 6877);
+    			add_location(main, file$1, 207, 0, 6865);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -22229,7 +22229,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 1024) {
+    			if (dirty & /*$$scope*/ 16384) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -22274,6 +22274,7 @@ var app = (function () {
     	validate_slots("GroupGraph", slots, []);
     	var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
     	var BASE_SMOKERS_PATH = "/api/v2/smokers-stats";
+    	var BASE_ALCOHOL_PATH = "/api/v2/alcohol-consumption-stats";
     	let weightData = [];
     	let weightChartInfo = [];
     	let weightchartNormalWeight = [];
@@ -22281,6 +22282,9 @@ var app = (function () {
     	let smokerChartInfo = [];
     	let smokerChartDaily = [];
     	let smokerChartPercent = [];
+    	let alcoholData = [];
+    	let alcoholChartInfo = [];
+    	let alcoholChartPrematureDeath = [];
 
     	async function loadGraph() {
     		console.log("Fetching graphic data...");
@@ -22289,11 +22293,13 @@ var app = (function () {
     		const resWeight = await fetch(BASE_WEIGHTS_PATH);
 
     		const resSmokers = await fetch(BASE_SMOKERS_PATH);
+    		const resAlcohol = await fetch(BASE_ALCOHOL_PATH);
 
     		// UN AWAIT POR CADA CONST
     		weightData = await resWeight.json();
 
     		smokersData = await resSmokers.json();
+    		alcoholData = await resAlcohol.json();
 
     		// CONDICIONES PARA CADA API CON UNA VARIABLE BASADA EN EL PORCENTAJE
     		//WEIGHTS-STATS
@@ -22309,6 +22315,14 @@ var app = (function () {
     			smokersData.forEach(stat => {
     				smokerChartInfo.push(stat.province + "/" + stat.year);
     				smokerChartDaily.push(stat["dailySmoker"]);
+    			});
+    		}
+
+    		//ALCOHOL-STATS
+    		if (resAlcohol.ok) {
+    			alcoholData.forEach(stat => {
+    				alcoholChartInfo.push(stat.country + "/" + stat.year);
+    				alcoholChartPrematureDeath.push(stat["alcoholPrematureDeath"]);
     			});
     		}
 
@@ -22368,7 +22382,7 @@ var app = (function () {
     		console.log("Generando datos...");
 
     		Highcharts.chart("container", {
-    			title: { text: "Gráfica conjunta por comunidades" },
+    			title: { text: "Gráfica conjunta España" },
     			lang: {
     				viewFullscreen: "Ver en pantalla completa",
     				downloadJPEG: "Descargar en formato JPEG",
@@ -22382,7 +22396,7 @@ var app = (function () {
     			},
     			yAxis: { title: { text: "Porcentaje" } },
     			xAxis: {
-    				title: { text: "Comunidad autónoma/año" },
+    				title: { text: "Comunidad Autónoma/Año" },
     				categories: weightChartInfo
     			},
     			legend: {
@@ -22410,6 +22424,10 @@ var app = (function () {
     				{
     					name: "Fumadores diarios",
     					data: smokerChartPercent
+    				},
+    				{
+    					name: "Muertes prematuras",
+    					data: alcoholChartPrematureDeath
     				}
     			],
     			resWeightponsive: {
@@ -22440,6 +22458,7 @@ var app = (function () {
     		Button,
     		BASE_WEIGHTS_PATH,
     		BASE_SMOKERS_PATH,
+    		BASE_ALCOHOL_PATH,
     		weightData,
     		weightChartInfo,
     		weightchartNormalWeight,
@@ -22447,12 +22466,16 @@ var app = (function () {
     		smokerChartInfo,
     		smokerChartDaily,
     		smokerChartPercent,
+    		alcoholData,
+    		alcoholChartInfo,
+    		alcoholChartPrematureDeath,
     		loadGraph
     	});
 
     	$$self.$inject_state = $$props => {
     		if ("BASE_WEIGHTS_PATH" in $$props) BASE_WEIGHTS_PATH = $$props.BASE_WEIGHTS_PATH;
     		if ("BASE_SMOKERS_PATH" in $$props) BASE_SMOKERS_PATH = $$props.BASE_SMOKERS_PATH;
+    		if ("BASE_ALCOHOL_PATH" in $$props) BASE_ALCOHOL_PATH = $$props.BASE_ALCOHOL_PATH;
     		if ("weightData" in $$props) weightData = $$props.weightData;
     		if ("weightChartInfo" in $$props) weightChartInfo = $$props.weightChartInfo;
     		if ("weightchartNormalWeight" in $$props) weightchartNormalWeight = $$props.weightchartNormalWeight;
@@ -22460,6 +22483,9 @@ var app = (function () {
     		if ("smokerChartInfo" in $$props) smokerChartInfo = $$props.smokerChartInfo;
     		if ("smokerChartDaily" in $$props) smokerChartDaily = $$props.smokerChartDaily;
     		if ("smokerChartPercent" in $$props) smokerChartPercent = $$props.smokerChartPercent;
+    		if ("alcoholData" in $$props) alcoholData = $$props.alcoholData;
+    		if ("alcoholChartInfo" in $$props) alcoholChartInfo = $$props.alcoholChartInfo;
+    		if ("alcoholChartPrematureDeath" in $$props) alcoholChartPrematureDeath = $$props.alcoholChartPrematureDeath;
     	};
 
     	if ($$props && "$$inject" in $$props) {

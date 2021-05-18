@@ -5,6 +5,7 @@
 
     var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
     var BASE_SMOKERS_PATH = "/api/v2/smokers-stats";
+    var BASE_ALCOHOL_PATH = "/api/v2/alcohol-consumption-stats";
 
 
     let weightData = [];
@@ -17,16 +18,22 @@
     let smokerChartDaily = [];
     let smokerChartPercent = [];
 
+    let alcoholData = [];
+    let alcoholChartInfo = [];
+    let alcoholChartPrematureDeath = [];
+
     async function loadGraph(){
         console.log("Fetching graphic data...");
 
         // UNA CONST POR API
         const resWeight = await fetch(BASE_WEIGHTS_PATH);
         const resSmokers = await fetch(BASE_SMOKERS_PATH);
+        const resAlcohol = await fetch(BASE_ALCOHOL_PATH);
         
         // UN AWAIT POR CADA CONST
         weightData = await resWeight.json();
         smokersData = await resSmokers.json();
+        alcoholData = await resAlcohol.json();
 
 
         // CONDICIONES PARA CADA API CON UNA VARIABLE BASADA EN EL PORCENTAJE
@@ -45,6 +52,14 @@
                 smokerChartDaily.push(stat["dailySmoker"]);
             });
         }
+        //ALCOHOL-STATS
+        if (resAlcohol.ok) {
+            alcoholData.forEach(stat =>{
+                alcoholChartInfo.push(stat.country+"/"+stat.year);
+                alcoholChartPrematureDeath.push(stat["alcoholPrematureDeath"]);
+            })
+        }
+
 
         // ADAPTACIÓN DE DATOS PUROS A PORCENTAJES REALES PARA REPRESENTACIÓN, SEGÚN POBLACIÓN DE CADA COMUNIDAD //
         let i = 0;
@@ -101,7 +116,7 @@
         Highcharts.chart('container', {
         
         title: {
-            text: 'Gráfica conjunta por comunidades'
+            text: 'Gráfica conjunta España'
         },
         lang: {
             viewFullscreen:"Ver en pantalla completa",
@@ -122,7 +137,7 @@
 
         xAxis: {
             title: {
-                text: 'Comunidad autónoma/año'
+                text: 'Comunidad Autónoma/Año'
             },
             categories: (weightChartInfo),
         },
@@ -154,6 +169,9 @@
             },{
                 name: 'Fumadores diarios',
                 data: smokerChartPercent
+            },{
+                name: 'Muertes prematuras',
+                data: alcoholChartPrematureDeath
             }],
 
         resWeightponsive: {
@@ -192,7 +210,7 @@
   <figure class="highcharts-figure">
     <div id="container"></div>
     <p class="highcharts-description">
-      Gráfico de líneas en el que se representa el porcentaje por comunidades autónomas en los años 2014-2017 de cada API
+      Gráfico de líneas en el que se representa el porcentaje por comunidades autónomas en el año 2017 de cada API
     </p>
   </figure>
 
