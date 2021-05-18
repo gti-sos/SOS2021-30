@@ -113,7 +113,7 @@ module.exports.register = (app) => {
             {
                 "id": 12,
                 "country": 'España',
-                "provinces": 'Castilla la Mancha',
+                "provinces": 'Castilla La Mancha',
                 "year": 2017,
                 "normal_weight": 45,
                 "overweight": 38.1,
@@ -284,7 +284,7 @@ module.exports.register = (app) => {
             {
                 "id": 31,
                 "country": 'España',
-                "provinces": 'Castilla la Mancha',
+                "provinces": 'Castilla La Mancha',
                 "year": 2014,
                 "normal_weight": 45,
                 "overweight": 35.3,
