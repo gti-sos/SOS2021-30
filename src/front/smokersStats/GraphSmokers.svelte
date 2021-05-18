@@ -12,34 +12,14 @@ import { text } from "svelte/internal";
 	var BASE_SMOKER_PATH = "/api/v2/smokers-stats";
 
     let fullDat = [];
-    let smokerChartData = [];
     let smokerChartInfo = [];
     let smokerChartDaily = [];
     let smokerChartOcasional = [];
     let smokerChartEx = [];
     let smokerChartNon = [];
 
-    //Función GET para listar los recursos
-async function getSmoker() {
- 
-        console.log("Fetching smokers Data...");
-        const res = await fetch("/api/v2/smokers-stats?limit=10&offset=0");
-    if (res.ok) {
-        console.log("Ok:");
-        const json = await res.json();
-        SmokerStats = json;
-        console.log("Received " + SmokerStats.length + " Smokers Data.");
-    } else {
-        checkMSG= res.status + ": " + res.statusText;
-        console.log("ERROR!");
-    }
-}
-
-
-
-    onMount(getSmoker);
-
-async function loadGraph(){
+    
+    async function loadGraph(){
         console.log("Fetching data...");
         const res = await fetch(BASE_SMOKER_PATH);
         fullDat = await res.json();
@@ -53,7 +33,7 @@ async function loadGraph(){
             });
         }
 
-        console.log("Prueba");
+        console.log("Graphical data sent");
         Highcharts.chart('container', {
 
         title: {

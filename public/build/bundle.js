@@ -18736,7 +18736,7 @@ var app = (function () {
     const { console: console_1$4 } = globals;
     const file$5 = "src\\front\\smokersStats\\GraphSmokers.svelte";
 
-    // (152:20) <Button outline color="primary" on:click="{pop}">
+    // (132:20) <Button outline color="primary" on:click="{pop}">
     function create_default_slot$5(ctx) {
     	let t;
 
@@ -18756,7 +18756,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$5.name,
     		type: "slot",
-    		source: "(152:20) <Button outline color=\\\"primary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(132:20) <Button outline color=\\\"primary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -18817,24 +18817,24 @@ var app = (function () {
     			p1 = element("p");
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$5, 133, 2, 3634);
+    			add_location(script0, file$5, 113, 2, 3086);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$5, 134, 2, 3703);
+    			add_location(script1, file$5, 114, 2, 3155);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$5, 135, 2, 3782);
+    			add_location(script2, file$5, 115, 2, 3234);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$5, 136, 2, 3858);
+    			add_location(script3, file$5, 116, 2, 3310);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$5, 137, 2, 3936);
+    			add_location(script4, file$5, 117, 2, 3388);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$5, 145, 4, 4110);
+    			add_location(div, file$5, 125, 4, 3562);
     			attr_dev(p0, "class", "highcharts-description");
-    			add_location(p0, file$5, 146, 4, 4142);
+    			add_location(p0, file$5, 126, 4, 3594);
     			attr_dev(figure, "class", "highcharts-figure svelte-nccje");
-    			add_location(figure, file$5, 144, 2, 4070);
+    			add_location(figure, file$5, 124, 2, 3522);
     			attr_dev(p1, "align", "center");
-    			add_location(p1, file$5, 151, 2, 4366);
-    			add_location(main, file$5, 142, 0, 4058);
+    			add_location(p1, file$5, 131, 2, 3818);
+    			add_location(main, file$5, 122, 0, 3510);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -18864,7 +18864,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 512) {
+    			if (dirty & /*$$scope*/ 256) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -18904,33 +18904,16 @@ var app = (function () {
     	return block;
     }
 
-    async function getSmoker() {
-    	console.log("Fetching smokers Data...");
-    	const res = await fetch("/api/v2/smokers-stats?limit=10&offset=0");
-
-    	if (res.ok) {
-    		console.log("Ok:");
-    		const json = await res.json();
-    		SmokerStats = json;
-    		console.log("Received " + SmokerStats.length + " Smokers Data.");
-    	} else {
-    		checkMSG = res.status + ": " + res.statusText;
-    		console.log("ERROR!");
-    	}
-    }
-
     function instance$5($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("GraphSmokers", slots, []);
     	var BASE_SMOKER_PATH = "/api/v2/smokers-stats";
     	let fullDat = [];
-    	let smokerChartData = [];
     	let smokerChartInfo = [];
     	let smokerChartDaily = [];
     	let smokerChartOcasional = [];
     	let smokerChartEx = [];
     	let smokerChartNon = [];
-    	onMount(getSmoker);
 
     	async function loadGraph() {
     		console.log("Fetching data...");
@@ -18947,7 +18930,7 @@ var app = (function () {
     			});
     		}
 
-    		console.log("Prueba");
+    		console.log("Graphical data sent");
 
     		Highcharts.chart("container", {
     			title: { text: "Gráfica Smoker por comunidades" },
@@ -19025,20 +19008,17 @@ var app = (function () {
     		text,
     		BASE_SMOKER_PATH,
     		fullDat,
-    		smokerChartData,
     		smokerChartInfo,
     		smokerChartDaily,
     		smokerChartOcasional,
     		smokerChartEx,
     		smokerChartNon,
-    		getSmoker,
     		loadGraph
     	});
 
     	$$self.$inject_state = $$props => {
     		if ("BASE_SMOKER_PATH" in $$props) BASE_SMOKER_PATH = $$props.BASE_SMOKER_PATH;
     		if ("fullDat" in $$props) fullDat = $$props.fullDat;
-    		if ("smokerChartData" in $$props) smokerChartData = $$props.smokerChartData;
     		if ("smokerChartInfo" in $$props) smokerChartInfo = $$props.smokerChartInfo;
     		if ("smokerChartDaily" in $$props) smokerChartDaily = $$props.smokerChartDaily;
     		if ("smokerChartOcasional" in $$props) smokerChartOcasional = $$props.smokerChartOcasional;
@@ -22126,7 +22106,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$1 = "src\\front\\GroupGraph.svelte";
 
-    // (113:2) <Button outline color="secondary" on:click="{pop}">
+    // (199:2) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$1(ctx) {
     	let t;
 
@@ -22146,7 +22126,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(113:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(199:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -22201,26 +22181,26 @@ var app = (function () {
     			div = element("div");
     			t1 = space();
     			p = element("p");
-    			p.textContent = "Gráfico de líneas en el que se ve representado el porcentaje por comunidades autónomas en los años 2014 y 2017 el IMC";
+    			p.textContent = "Gráfico de líneas en el que se representa el porcentaje por comunidades autónomas en los años 2014-2017 de cada API";
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$1, 94, 2, 2432);
+    			add_location(script0, file$1, 180, 2, 5786);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$1, 95, 2, 2501);
+    			add_location(script1, file$1, 181, 2, 5855);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$1, 96, 2, 2580);
+    			add_location(script2, file$1, 182, 2, 5934);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$1, 97, 2, 2656);
+    			add_location(script3, file$1, 183, 2, 6010);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$1, 98, 2, 2734);
+    			add_location(script4, file$1, 184, 2, 6088);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$1, 106, 4, 2908);
+    			add_location(div, file$1, 192, 4, 6262);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$1, 107, 4, 2940);
-    			attr_dev(figure, "class", "highcharts-figure svelte-nccje");
-    			add_location(figure, file$1, 105, 2, 2868);
-    			add_location(main, file$1, 103, 0, 2856);
+    			add_location(p, file$1, 193, 4, 6294);
+    			attr_dev(figure, "class", "highcharts-figure svelte-x5xp2w");
+    			add_location(figure, file$1, 191, 2, 6222);
+    			add_location(main, file$1, 189, 0, 6210);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -22249,7 +22229,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 32) {
+    			if (dirty & /*$$scope*/ 1024) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -22293,26 +22273,113 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("GroupGraph", slots, []);
     	var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
+    	var BASE_SMOKERS_PATH = "/api/v2/smokers-stats";
     	let weightData = [];
     	let weightChartInfo = [];
     	let weightchartNormalWeight = [];
+    	let smokersData = [];
+    	let smokerChartInfo = [];
+    	let smokerChartDaily = [];
+    	let smokerChartPercent = [];
 
     	async function loadGraph() {
-    		console.log("Fetching data...");
+    		console.log("Fetching graphic data...");
+
+    		// UNA CONST POR API
     		const resWeight = await fetch(BASE_WEIGHTS_PATH);
+
+    		const resSmokers = await fetch(BASE_SMOKERS_PATH);
+
+    		// UN AWAIT POR CADA CONST
     		weightData = await resWeight.json();
 
+    		smokersData = await resSmokers.json();
+
+    		// CONDICIONES PARA CADA API CON UNA VARIABLE BASADA EN EL PORCENTAJE
+    		//WEIGHTS-STATS
     		if (resWeight.ok) {
     			weightData.forEach(stat => {
-    				weightChartInfo.push(stat.provinces + "/" + stat.year);
+    				weightChartInfo.push(stat.provinces + "/2017");
     				weightchartNormalWeight.push(stat["normal_weight"]);
     			}); //AÑADIR UN DATO DE CADA UNA DE LAS APIs (preferiblemente un porcentaje para que todo tenga relacion y se vea bien el grafico)
     		}
 
+    		//SMOKERS-STATS
+    		if (resSmokers.ok) {
+    			smokersData.forEach(stat => {
+    				smokerChartInfo.push(stat.province + "/" + stat.year);
+    				smokerChartDaily.push(stat["dailySmoker"]);
+    			});
+    		}
+
+    		// ADAPTACIÓN DE DATOS PUROS A PORCENTAJES REALES PARA REPRESENTACIÓN, SEGÚN POBLACIÓN DE CADA COMUNIDAD //
+    		let i = 0;
+
+    		while (i < smokerChartDaily.length) {
+    			switch (smokerChartDaily[i]) {
+    				case 1902219.14:
+    					smokerChartPercent[i] = 22.47;
+    					break;
+    				case 315408.75:
+    					smokerChartPercent[i] = 23.72;
+    					break;
+    				case 246320.48:
+    					smokerChartPercent[i] = 24.17;
+    					break;
+    				case 132887.56:
+    					smokerChartPercent[i] = 22.8;
+    					break;
+    				case 550656.83:
+    					smokerChartPercent[i] = 23;
+    					break;
+    				case 499743.83:
+    					smokerChartPercent[i] = 24.43;
+    					break;
+    				case 1700061.75:
+    					smokerChartPercent[i] = 21.85;
+    					break;
+    				case 1225494.23:
+    					smokerChartPercent[i] = 24.23;
+    					break;
+    				case 258100.88:
+    					smokerChartPercent[i] = 24.25;
+    					break;
+    				case 482084.34:
+    					smokerChartPercent[i] = 17.84;
+    					break;
+    				case 1236364.96:
+    					smokerChartPercent[i] = 18.23;
+    					break;
+    				case 131219.74:
+    					smokerChartPercent[i] = 19.84;
+    					break;
+    				case 434443.28:
+    					smokerChartPercent[i] = 19.56;
+    					break;
+    				default:
+    					smokerChartPercent[i] = 22;
+    			} //media
+
+    			i++;
+    		}
+
+    		/////////////////////////////////////////////////////////////////////////////////////////////////////////
+    		//ADMIN GRAFICA
     		console.log("Generando datos...");
 
     		Highcharts.chart("container", {
-    			title: { text: "Gráfica IMC por comunidades" },
+    			title: { text: "Gráfica conjunta por comunidades" },
+    			lang: {
+    				viewFullscreen: "Ver en pantalla completa",
+    				downloadJPEG: "Descargar en formato JPEG",
+    				downloadPDF: "Descargar en formato PDF",
+    				downloadPNG: "Descargar en formato JPEG",
+    				downloadSVG: "Descargar en formato JPEG",
+    				downloadCSV: "Descargar en formato CSV",
+    				downloadXLS: "Descargar en formato XLS",
+    				exitFullscreen: "Salir de pantalla completa",
+    				printChart: "Imprimir gráfico"
+    			},
     			yAxis: { title: { text: "Porcentaje" } },
     			xAxis: {
     				title: { text: "Comunidad autónoma/año" },
@@ -22339,6 +22406,10 @@ var app = (function () {
     				{
     					name: "Peso normal",
     					data: weightchartNormalWeight
+    				},
+    				{
+    					name: "Fumadores diarios",
+    					data: smokerChartPercent
     				}
     			],
     			resWeightponsive: {
@@ -22368,17 +22439,27 @@ var app = (function () {
     		pop,
     		Button,
     		BASE_WEIGHTS_PATH,
+    		BASE_SMOKERS_PATH,
     		weightData,
     		weightChartInfo,
     		weightchartNormalWeight,
+    		smokersData,
+    		smokerChartInfo,
+    		smokerChartDaily,
+    		smokerChartPercent,
     		loadGraph
     	});
 
     	$$self.$inject_state = $$props => {
     		if ("BASE_WEIGHTS_PATH" in $$props) BASE_WEIGHTS_PATH = $$props.BASE_WEIGHTS_PATH;
+    		if ("BASE_SMOKERS_PATH" in $$props) BASE_SMOKERS_PATH = $$props.BASE_SMOKERS_PATH;
     		if ("weightData" in $$props) weightData = $$props.weightData;
     		if ("weightChartInfo" in $$props) weightChartInfo = $$props.weightChartInfo;
     		if ("weightchartNormalWeight" in $$props) weightchartNormalWeight = $$props.weightchartNormalWeight;
+    		if ("smokersData" in $$props) smokersData = $$props.smokersData;
+    		if ("smokerChartInfo" in $$props) smokerChartInfo = $$props.smokerChartInfo;
+    		if ("smokerChartDaily" in $$props) smokerChartDaily = $$props.smokerChartDaily;
+    		if ("smokerChartPercent" in $$props) smokerChartPercent = $$props.smokerChartPercent;
     	};
 
     	if ($$props && "$$inject" in $$props) {
