@@ -19,6 +19,7 @@
   import GraphWeight from "./weightsStats/GraphWeight.svelte";
   import GroupGraph from "./GroupGraph.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
+import GraphLife from "./lifeStats/GraphLife.svelte";
 
 
 	const routes = {
@@ -29,6 +30,7 @@
     "/alcohol-graph": GraphAlcohol,
     "/life-stats" : LifeExpectancy,
     "/life-stats/:province/:year" : EditLife,
+    "/life-graph": GraphLife,
     "/weights-stats" : FrontWeight,
     "/weights-stats/:provinces/:year" : EditWeight,
     "/weights-graph" : GraphWeight,
