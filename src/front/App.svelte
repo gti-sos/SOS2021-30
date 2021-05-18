@@ -18,7 +18,6 @@
   import EditWeight from "./weightsStats/EditWeight.svelte";
   import GraphWeight from "./weightsStats/GraphWeight.svelte";
   import GroupGraph from "./GroupGraph.svelte";
-  import GroupGraph2 from "./GroupGraph2.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
 import GraphLife from "./lifeStats/GraphLife.svelte";
 
@@ -39,7 +38,6 @@ import GraphLife from "./lifeStats/GraphLife.svelte";
     "/smokers-stats/:province/:year" : SmokersItems,
     "/smokers-graph" : GraphSmokers,
     "/group-graph" : GroupGraph,
-    "/group-graph2" : GroupGraph2,
 		'*': NotFound};
 </script>
 
