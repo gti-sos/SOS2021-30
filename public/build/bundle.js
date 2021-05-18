@@ -22166,13 +22166,8 @@ var app = (function () {
     const { console: console_1$1 } = globals;
     const file$2 = "src\\front\\GroupGraph.svelte";
 
-<<<<<<< HEAD
     // (217:2) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot$1(ctx) {
-=======
-    // (199:2) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$2(ctx) {
->>>>>>> f28b5949a2bf87cd86732d56a3b15539c4e59e68
     	let t;
 
     	const block = {
@@ -22250,41 +22245,22 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-<<<<<<< HEAD
-    			add_location(script0, file$1, 198, 2, 6441);
+    			add_location(script0, file$2, 198, 2, 6441);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$1, 199, 2, 6510);
+    			add_location(script1, file$2, 199, 2, 6510);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$1, 200, 2, 6589);
+    			add_location(script2, file$2, 200, 2, 6589);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$1, 201, 2, 6665);
+    			add_location(script3, file$2, 201, 2, 6665);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$1, 202, 2, 6743);
+    			add_location(script4, file$2, 202, 2, 6743);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$1, 210, 4, 6917);
+    			add_location(div, file$2, 210, 4, 6917);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$1, 211, 4, 6949);
+    			add_location(p, file$2, 211, 4, 6949);
     			attr_dev(figure, "class", "highcharts-figure svelte-x5xp2w");
-    			add_location(figure, file$1, 209, 2, 6877);
-    			add_location(main, file$1, 207, 0, 6865);
-=======
-    			add_location(script0, file$2, 180, 2, 5786);
-    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$2, 181, 2, 5855);
-    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$2, 182, 2, 5934);
-    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$2, 183, 2, 6010);
-    			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$2, 184, 2, 6088);
-    			attr_dev(div, "id", "container");
-    			add_location(div, file$2, 192, 4, 6262);
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$2, 193, 4, 6294);
-    			attr_dev(figure, "class", "highcharts-figure svelte-x5xp2w");
-    			add_location(figure, file$2, 191, 2, 6222);
-    			add_location(main, file$2, 189, 0, 6210);
->>>>>>> f28b5949a2bf87cd86732d56a3b15539c4e59e68
+    			add_location(figure, file$2, 209, 2, 6877);
+    			add_location(main, file$2, 207, 0, 6865);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
