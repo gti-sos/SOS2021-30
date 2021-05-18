@@ -19,7 +19,7 @@ module.exports.register = (app) => {
         lifeExpectancyStats=[
             {
                 "country":"España",
-                "province":"Andalucia",
+                "province":"Andalucía",
                 "year":2017,
                 "lifeExpectancyWoman":84.41,
                 "lifeExpectancyMan":79.23,
@@ -122,7 +122,7 @@ module.exports.register = (app) => {
             },
             {
                 "country":"España",
-                "province":"Madrid",
+                "province":"Comunidad de Madrid",
                 "year":2017,
                 "lifeExpectancyWoman":86.81,
                 "lifeExpectancyMan":81.91,

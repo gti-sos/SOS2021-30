@@ -26,6 +26,16 @@
     let lifeChartInfo = [];
     let lifeChartAverageLifeExpectancy = [];
 
+    var provinces = [];
+    let msg = "";
+
+    function distinctRecords(MYJSON, prop) {
+      return MYJSON.filter((obj, pos, arr) => {
+        return arr.map((mapObj) => mapObj[prop]).indexOf(obj[prop]) === pos;
+      });
+    }
+
+
     async function loadGraph(){
         console.log("Fetching graphic data...");
 
@@ -34,18 +44,145 @@
         const resSmokers = await fetch(BASE_SMOKERS_PATH);
         const resAlcohol = await fetch(BASE_ALCOHOL_PATH);
         const resLife = await fetch(BASE_LIFE_PATH);
-
+        
         // UN AWAIT POR CADA CONST
         weightData = await resWeight.json();
         smokersData = await resSmokers.json();
         alcoholData = await resAlcohol.json();
         lifeData = await resLife.json();
+        
+       /*
+        // COMPROBACIÓN DE CAMPOS CONJUNTOS
+        if (resWeight.ok || resSmokers.ok || resAlcohol.ok || resLife.ok) {
+        console.log("procesing smokers data....");
+        if (resSmokers.ok) {
+          smokersData = await resSmokers.json();
+          console.log("RES OK");
+          //Quitamos fechas repetidas y las ordenamos
+          var distinctprovinces1 = distinctRecords(smokersData, "province");
+          distinctprovinces1.sort(function (a, b) {
+            return a.province - b.province;
+          });
+          distinctprovinces1.forEach((element) => {
+            provinces.push(element.province);
+            console.log("provinces: " + element.province);
+          });
+          console.log("Distinct provinces: " + provinces);
+          
+          //Sumamos los valores para las fechas iguales
+         
+          provinces.forEach((e) => {
+            var yAxis = smokersData
+              .filter((d) => d.province === e)
+              .map((dr) => dr["dailySmoker"])
+              .reduce((acc, dr) => dr + acc);
+            console.log("YAxis: " + yAxis);
+            smokerChartDaily.push(Math.round(yAxis));
+          });
+          msg = "";
+        }
+        console.log("procesing weight data....");
+        
+        if (resWeight.ok) {
+          weightData = await resWeight.json();
+          console.log("RES OK");
+          //Quitamos fechas repetidas y las ordenamos
+          var distinctprovinces = distinctRecords(weightData, "provinces");
+          distinctprovinces.sort(function (a, b) {
+            return a.province - b.province;
+          });
+          distinctprovinces.forEach((element) => {
+            if (!provinces.includes(element.province)) {
+              provinces.push(element.province);
+              console.log("provinces: " + element.province);
+            }
+          });
+          console.log("Distinct provinces: " + provinces);
+          //Sumamos los valores para las fechas iguales
+          
+          
+          //weightchartNormalWeight.push("");
+          
+          provinces.forEach((e) => {
+            var yAxis = weightData
+              .filter((d) => d.province === e)
+              .map((nr) => nr["normal_weight"])
+              .reduce((acc, nr) => nr + acc,0);
+            console.log("YAxis: " + yAxis);
+            weightchartNormalWeight.push(Math.round(yAxis));
+            
+          });
+          msg = "";
+        }
+        
+        if(resAlcohol.ok){
+          alcoholData = await resAlcohol.json();
+          console.log("resAlcohol OK");
+          //Quitamos fechas repetidas y las ordenamos
+          var distinctprovinces = distinctRecords(alcoholData, "country");
+          distinctprovinces.sort(function (a, b) {
+            return a.province - b.province;
+          });
+          distinctprovinces.forEach((element) => {
+            if (!provinces.includes(element.province)) {
+              provinces.push(element.province);
+              console.log("provinces: " + element.province);
+            }
+          });
+          console.log("Distinct provinces: " + provinces);
+          //Sumamos los valores para las fechas iguales         
+          provinces.forEach((e) => {
+            var yAxis = alcoholData
+              .filter((d) => d.province === e)
+              .map((qli) => qli["alcoholPrematureDeath"])
+              .reduce((acc, qli) => qli + acc,0);
+            console.log("YAxis: " + yAxis);
+            alcoholChartPrematureDeath.push(Math.round(yAxis));
+            
+          });
+          msg = "";
+        }
+        
+        if(resLife.ok){
+          lifeData = await resLife.json();
+          console.log("resLife OK");
+          //Quitamos fechas repetidas y las ordenamos
+          var distinctprovinces = distinctRecords(lifeData, "provinces");
+          distinctprovinces.sort(function (a, b) {
+            return a.province - b.province;
+          });
+          distinctprovinces.forEach((element) => {
+            if (!provinces.includes(element.province)) {
+              provinces.push(element.province);
+              console.log("provinces: " + element.province);
+            }
+          });
+          console.log("Distinct provinces: " + provinces);
+          //Sumamos los valores para las fechas iguales         
+          provinces.forEach((e) => {
+            var yAxis = alcoholData
+              .filter((d) => d.province === e)
+              .map((qli) => qli["averageLifeExpectancy"])
+              .reduce((acc, qli) => qli + acc,0);
+            console.log("YAxis: " + yAxis);
+            lifeChartAverageLifeExpectancy.push(Math.round(yAxis));
+            
+          });
+          msg = "";
+        }
+        
+      } else {
+        console.log("ERROR MSG");
+        msg = "Por favor primero cargue los datos en al menos una de las APIs";
+      }
+      */
+      
 
         // CONDICIONES PARA CADA API CON UNA VARIABLE BASADA EN EL PORCENTAJE
         //WEIGHTS-STATS
         if(resWeight.ok){
             weightData.forEach(stat => {
-                weightChartInfo.push(stat.provinces+"/2017");
+                weightChartInfo.push(stat.provinces+"/"+stat.year);
                 weightchartNormalWeight.push(stat["normal_weight"]);
                 //AÑADIR UN DATO DE CADA UNA DE LAS APIs (preferiblemente un porcentaje para que todo tenga relacion y se vea bien el grafico)
             });
@@ -145,12 +282,11 @@
                 text: 'Porcentaje'
             }
         },
-
         xAxis: {
             title: {
-                text: 'Comunidad Autónoma/Año'
+                text: 'Comunidad Autónoma/año'
             },
-            categories: (weightChartInfo),
+            categories: weightChartInfo,
         },
         legend: {
             layout: 'vertical',
@@ -181,7 +317,7 @@
                 name: 'Fumadores diarios',
                 data: smokerChartPercent
             },{
-                name: 'Muertes prematuras',
+                name: 'Muertes prematurass por alcohol',
                 data: alcoholChartPrematureDeath
             },{
                 name: 'Esperanza de vida ',

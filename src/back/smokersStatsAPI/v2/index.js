@@ -30,7 +30,7 @@ module.exports.register = (app) => {
         },
         {
             "country": 'España',
-            "province":"Asturias (Principado De)",
+            "province":"Asturias",
             "year":2017,
             "dailySmoker": 246320.48,
             "ocasionalSmoker": 45124.26,
@@ -57,7 +57,7 @@ module.exports.register = (app) => {
         },
         {
             "country": 'España',
-            "province":"Castilla-La Mancha",
+            "province":"Castilla la Mancha",
             "year":2017,
             "dailySmoker": 499743.83,
             "ocasionalSmoker": 55865.67,
@@ -102,7 +102,7 @@ module.exports.register = (app) => {
         },
         {
             "country": 'España',
-            "province":"Madrid (Comunidad De)",
+            "province":"Comunidad de Madrid",
             "year":2017,
             "dailySmoker": 1236364.96,
             "ocasionalSmoker": 211483.48,
@@ -111,7 +111,7 @@ module.exports.register = (app) => {
         },
         {
             "country": 'España',
-            "province":"Navarra (Comunidad Foral De)",
+            "province":"Navarra",
             "year":2017,
             "dailySmoker": 131219.74,
             "ocasionalSmoker": 16788.41,
@@ -157,7 +157,7 @@ module.exports.register = (app) => {
         },
         {
             "country": 'España',
-            "province":"Asturias (Principado De)",
+            "province":"Asturias",
             "year":2017,
             "dailySmoker": 246320.48,
             "ocasionalSmoker": 45124.26,
@@ -184,7 +184,7 @@ module.exports.register = (app) => {
         },
         {
             "country": 'España',
-            "province":"Castilla-La Mancha",
+            "province":"Castilla La Mancha",
             "year":2017,
             "dailySmoker": 499743.83,
             "ocasionalSmoker": 55865.67,
@@ -229,7 +229,7 @@ module.exports.register = (app) => {
         },
         {
             "country": 'España',
-            "province":"Madrid (Comunidad De)",
+            "province":"Comunidad de Madrid",
             "year":2017,
             "dailySmoker": 1236364.96,
             "ocasionalSmoker": 211483.48,
@@ -238,7 +238,7 @@ module.exports.register = (app) => {
         },
         {
             "country": 'España',
-            "province":"Navarra (Comunidad Foral De)",
+            "province":"Navarra",
             "year":2017,
             "dailySmoker": 131219.74,
             "ocasionalSmoker": 16788.41,
