@@ -13091,17 +13091,17 @@ var app = (function () {
     			create_component(button4.$$.fragment);
     			t12 = space();
     			create_component(button5.$$.fragment);
-    			add_location(strong0, file$b, 269, 34, 9778);
+    			add_location(strong0, file$b, 269, 34, 9775);
     			set_style(h40, "text-align", "center");
-    			add_location(h40, file$b, 269, 4, 9748);
+    			add_location(h40, file$b, 269, 4, 9745);
     			set_style(div, "text-align", "center");
-    			add_location(div, file$b, 285, 4, 10644);
-    			add_location(br, file$b, 288, 4, 10893);
-    			add_location(strong1, file$b, 289, 34, 10933);
+    			add_location(div, file$b, 285, 4, 10641);
+    			add_location(br, file$b, 288, 4, 10890);
+    			add_location(strong1, file$b, 289, 34, 10930);
     			set_style(h41, "text-align", "center");
-    			add_location(h41, file$b, 289, 4, 10903);
+    			add_location(h41, file$b, 289, 4, 10900);
     			attr_dev(a, "href", "#/alcohol-graph");
-    			add_location(a, file$b, 331, 8, 13142);
+    			add_location(a, file$b, 331, 8, 13139);
     		},
     		m: function mount(target, anchor) {
     			mount_component(alert_1, target, anchor);
@@ -13404,32 +13404,32 @@ var app = (function () {
     			t13 = space();
     			td4 = element("td");
     			input4 = element("input");
-    			add_location(th0, file$b, 272, 8, 9855);
-    			add_location(th1, file$b, 273, 8, 9891);
-    			add_location(th2, file$b, 274, 8, 9926);
-    			add_location(th3, file$b, 275, 8, 9971);
-    			add_location(th4, file$b, 276, 8, 10021);
+    			add_location(th0, file$b, 272, 8, 9852);
+    			add_location(th1, file$b, 273, 8, 9888);
+    			add_location(th2, file$b, 274, 8, 9923);
+    			add_location(th3, file$b, 275, 8, 9968);
+    			add_location(th4, file$b, 276, 8, 10018);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "País");
-    			add_location(input0, file$b, 278, 16, 10123);
-    			add_location(td0, file$b, 278, 12, 10119);
+    			add_location(input0, file$b, 278, 16, 10120);
+    			add_location(td0, file$b, 278, 12, 10116);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "placeholder", "2017");
-    			add_location(input1, file$b, 279, 16, 10217);
-    			add_location(td1, file$b, 279, 12, 10213);
+    			add_location(input1, file$b, 279, 16, 10214);
+    			add_location(td1, file$b, 279, 12, 10210);
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "0");
-    			add_location(input2, file$b, 280, 16, 10308);
-    			add_location(td2, file$b, 280, 12, 10304);
+    			add_location(input2, file$b, 280, 16, 10305);
+    			add_location(td2, file$b, 280, 12, 10301);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "0.0");
-    			add_location(input3, file$b, 281, 16, 10400);
-    			add_location(td3, file$b, 281, 12, 10396);
+    			add_location(input3, file$b, 281, 16, 10397);
+    			add_location(td3, file$b, 281, 12, 10393);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "placeholder", "0.0");
-    			add_location(input4, file$b, 282, 16, 10509);
-    			add_location(td4, file$b, 282, 12, 10505);
-    			add_location(tr, file$b, 277, 8, 10101);
+    			add_location(input4, file$b, 282, 16, 10506);
+    			add_location(td4, file$b, 282, 12, 10502);
+    			add_location(tr, file$b, 277, 8, 10098);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, th0, anchor);
@@ -13714,16 +13714,16 @@ var app = (function () {
     			td6 = element("td");
     			create_component(button1.$$.fragment);
     			t11 = space();
-    			add_location(td0, file$b, 314, 24, 12255);
-    			add_location(td1, file$b, 315, 24, 12304);
-    			add_location(td2, file$b, 316, 24, 12350);
-    			add_location(td3, file$b, 317, 24, 12400);
-    			add_location(td4, file$b, 318, 24, 12463);
+    			add_location(td0, file$b, 314, 24, 12252);
+    			add_location(td1, file$b, 315, 24, 12301);
+    			add_location(td2, file$b, 316, 24, 12347);
+    			add_location(td3, file$b, 317, 24, 12397);
+    			add_location(td4, file$b, 318, 24, 12460);
     			attr_dev(a, "href", a_href_value = "#/alcohol-stats/" + /*stat*/ ctx[33].country + "/" + /*stat*/ ctx[33].year + "/" + /*stat*/ ctx[33].ageRange);
-    			add_location(a, file$b, 319, 28, 12539);
-    			add_location(td5, file$b, 319, 24, 12535);
-    			add_location(td6, file$b, 320, 24, 12690);
-    			add_location(tr, file$b, 313, 20, 12225);
+    			add_location(a, file$b, 319, 28, 12536);
+    			add_location(td5, file$b, 319, 24, 12532);
+    			add_location(td6, file$b, 320, 24, 12687);
+    			add_location(tr, file$b, 313, 20, 12222);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -13917,38 +13917,38 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$b, 294, 20, 11064);
-    			add_location(th1, file$b, 295, 20, 11099);
-    			add_location(th2, file$b, 296, 20, 11133);
-    			add_location(th3, file$b, 297, 20, 11178);
-    			add_location(th4, file$b, 298, 20, 11247);
+    			add_location(th0, file$b, 294, 20, 11061);
+    			add_location(th1, file$b, 295, 20, 11096);
+    			add_location(th2, file$b, 296, 20, 11130);
+    			add_location(th3, file$b, 297, 20, 11175);
+    			add_location(th4, file$b, 298, 20, 11244);
     			attr_dev(th5, "colspan", "2");
-    			add_location(th5, file$b, 299, 20, 11326);
-    			add_location(tr0, file$b, 293, 16, 11038);
-    			add_location(thead, file$b, 292, 12, 11013);
+    			add_location(th5, file$b, 299, 20, 11323);
+    			add_location(tr0, file$b, 293, 16, 11035);
+    			add_location(thead, file$b, 292, 12, 11010);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "España");
-    			add_location(input0, file$b, 304, 24, 11469);
-    			add_location(td0, file$b, 304, 20, 11465);
+    			add_location(input0, file$b, 304, 24, 11466);
+    			add_location(td0, file$b, 304, 20, 11462);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "placeholder", "2017");
-    			add_location(input1, file$b, 305, 24, 11576);
-    			add_location(td1, file$b, 305, 20, 11572);
+    			add_location(input1, file$b, 305, 24, 11573);
+    			add_location(td1, file$b, 305, 20, 11569);
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "40-45");
-    			add_location(input2, file$b, 306, 24, 11679);
-    			add_location(td2, file$b, 306, 20, 11675);
+    			add_location(input2, file$b, 306, 24, 11676);
+    			add_location(td2, file$b, 306, 20, 11672);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "10");
-    			add_location(input3, file$b, 307, 24, 11787);
-    			add_location(td3, file$b, 307, 20, 11783);
+    			add_location(input3, file$b, 307, 24, 11784);
+    			add_location(td3, file$b, 307, 20, 11780);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "placeholder", "0.4");
-    			add_location(input4, file$b, 308, 24, 11910);
-    			add_location(td4, file$b, 308, 20, 11906);
-    			add_location(td5, file$b, 309, 20, 12037);
-    			add_location(tr1, file$b, 303, 16, 11439);
-    			add_location(tbody, file$b, 302, 12, 11414);
+    			add_location(input4, file$b, 308, 24, 11907);
+    			add_location(td4, file$b, 308, 20, 11903);
+    			add_location(td5, file$b, 309, 20, 12034);
+    			add_location(tr1, file$b, 303, 16, 11436);
+    			add_location(tbody, file$b, 302, 12, 11411);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -14306,9 +14306,9 @@ var app = (function () {
     			t2 = space();
     			info.block.c();
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$b, 256, 4, 9409);
-    			add_location(br, file$b, 257, 4, 9484);
-    			add_location(main, file$b, 255, 0, 9397);
+    			add_location(h1, file$b, 256, 4, 9406);
+    			add_location(br, file$b, 257, 4, 9481);
+    			add_location(main, file$b, 255, 0, 9394);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -14393,7 +14393,7 @@ var app = (function () {
 
     	//GET INITIALDATA
     	async function loadInitialData() {
-    		console.log("Fetching employment data...");
+    		console.log("Fetching alcohol data...");
     		await fetch(BASE_ALCOHOL_PATH + "/loadInitialData");
     		const res = await fetch(BASE_ALCOHOL_PATH + "?limit=10&offset=0");
 
