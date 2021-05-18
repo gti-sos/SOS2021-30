@@ -36,7 +36,7 @@
 
     //GET INITIALDATA
     async function loadInitialData() {
-        console.log("Fetching employment data...");
+        console.log("Fetching alcohol data...");
         await fetch(BASE_ALCOHOL_PATH+"/loadInitialData");
         const res = await fetch(BASE_ALCOHOL_PATH+"?limit=10&offset=0");
             if (res.ok) {
