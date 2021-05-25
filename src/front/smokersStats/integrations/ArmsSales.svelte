@@ -2,7 +2,7 @@
     import react from 'react';
     import { JSCharting } from 'jscharting-react';
 
-JSC.Chart("chartDiv", {
+("chartDiv", {
   series: [
     {
       points: [{ x: "A", y: 10 }, { x: "B", y: 5 }]
