@@ -24,9 +24,9 @@
       <CardBody>
         <CardSubtitle />
         <CardText />
-        <a href="/#/integraciones/anxiety-stats"
+        <a href="/#/integrations/anxiety-stats"
           ><Button color="primary">Estadísticas Ansiedad</Button></a>
-        <a href="/#/integraciones/poverty-risk-stats"
+        <a href="/#/integrations/poverty-risk-stats"
         ><Button color="primary">Estadísticas Riesgo de pobreza</Button></a>
       </CardBody>
     </Card>
@@ -39,11 +39,11 @@
       <CardBody>
         <CardSubtitle />
         <CardText />
-        <a href="/#/integraciones/rentals"
+        <a href="/#/integrations/rentals"
           ><Button color="primary">Estadísticas Alquileres por comunidades</Button></a>
         <a href="/#/integraciones/arms-sales"
         ><Button color="primary">Estadísticas Venta de armas por estado</Button></a>
-        <a href="/#/integraciones/unemploy"
+        <a href="/#/integrations/unemploy"
         ><Button color="primary">Estadísticas Desempleo por comunidades</Button></a>
       </CardBody>
     </Card>

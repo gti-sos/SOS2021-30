@@ -11,7 +11,7 @@
     </body>
     <a href="./#/info"><Button color="info">Descubre más!</Button></a>
     <a href="./#/group-graph"><Button color="info">Gráfico conjunto</Button></a>
-    <a href="/#/integraciones"><Button color="info">Integraciones</Button></a>
+    <a href="/#/integrations"><Button color="info">Integraciones</Button></a>
 </main>
 
 <style>
