@@ -254,6 +254,33 @@ module.exports.register = (app) => {
             "ocasionalSmoker": 83816.84,
             "exSmoker": 74051.46,
             "nonSmoker": 1083694.64
+        },
+        {
+            "country": 'España',
+            "province":"La Rioja",
+            "year":2017,
+            "dailySmoker": 63501.13,
+            "ocasionalSmoker": 7898.15,
+            "exSmoker": 79297.426,
+            "nonSmoker": 158910.778
+        },
+        {
+            "country": 'España',
+            "province":"Baleares",
+            "year":2017,
+            "dailySmoker": 279683.25,
+            "ocasionalSmoker": 27847.25,
+            "exSmoker": 303898.25,
+            "nonSmoker": 607796.5
+        },
+        {
+            "country": 'España',
+            "province":"Canarias",
+            "year":2017,
+            "dailySmoker": 498919.907,
+            "ocasionalSmoker": 51458.107,
+            "exSmoker": 561564.559,
+            "nonSmoker": 1123129.118
         }
     ];
 
