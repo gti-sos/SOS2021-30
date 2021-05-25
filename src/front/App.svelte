@@ -6,7 +6,7 @@
 	import Home from "./Home.svelte";
   import Info from "./Info.svelte";
 	import Router from 'svelte-spa-router';
-  import integrations from './integrations.svelte';
+  import Integrations from './Integrations.svelte';
   import LifeExpectancy from './lifeStats/lifeExpectancy.svelte';
   import EditLife from './lifeStats/EditLife.svelte';
 	import TablaAlcohol from "./alcoholStats/TablaAlcohol.svelte";
@@ -32,7 +32,7 @@
 	const routes = {
 		"/":Home,
     "/info": Info,
-    "/integrations":integrations,
+    "/integrations": Integrations,
 		"/alcohol-stats": TablaAlcohol,
     "/alcohol-stats/:country/:year/:ageRange": EditAlcohol,
     "/alcohol-graph": GraphAlcohol,
