@@ -31,6 +31,13 @@ import { text } from "svelte/internal";
                 smokerChartEx.push(stat["exSmoker"]);
                 smokerChartNon.push(stat["nonSmoker"]);
             });
+            
+            //Comprueba que la gráfica no aparezca vacía y vuelve atrás
+            if (fullDat.length == 0){
+            console.log("ERROR MSG");
+            alert("Por favor, primero cargue los datos de la API");
+            pop();
+            }
         }
 
         console.log("Graphical data sent");
