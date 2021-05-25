@@ -43,6 +43,22 @@ var smokersAPIv1 = require("./src/back/smokersStatsAPI/v1");
 smokersAPIv1.register(app);
 var smokersAPIv2 = require("./src/back/smokersStatsAPI/v2");
 smokersAPIv2.register(app);
+var smokersAPIv3 = require("./src/back/smokersStatsAPI/v3");
+smokersAPIv3.register(app);
+
+//INTEGRACIONES A SMOKER
+
+app.use("/api/v1/arms-sales-stats", function(req, res) {
+    var apiServerHostArmsSales = ' http://sos2021-05.herokuapp.com';
+
+    //SALES-STATS
+    var url = apiServerHostArmsSales + req.url;
+    console.log('piped: /api/v1/arms-sales-stats -> ' + url);
+    // request solo hace get, investigar como hacer put, post, delete, etc.
+    req.pipe(request(url)).pipe(res);
+});
+
+
 //---------------------------END: API REST SMOKERS-CONSUMPTION-STATS-----------------
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST LIFE-EXPECTANCY-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
