@@ -28965,36 +28965,59 @@ var app = (function () {
     const { console: console_1$c, document: document_1$1 } = globals;
     const file$d = "src\\front\\alcoholStats\\integrations\\AnxietyStats.svelte";
 
-    // (93:4) {:else}
+    // (83:4) {:else}
     function create_else_block$1(ctx) {
     	let style;
     	let t1;
     	let div;
     	let t2;
+    	let br0;
+    	let t3;
+    	let br1;
+    	let t4;
     	let h6;
 
     	const block = {
     		c: function create() {
     			style = element("style");
-    			style.textContent = ".dygraph-legend { text-align: right; background: none; }\r\n        #grafo1 .dygraph-label { font-family: Georgia, Verdana, serif; }\r\n\r\n        #grafo1 .dygraph-title { font-size: 30px; text-shadow: gray 2px 2px 2px; }\r\n\r\n        #grafo1 .dygraph-ylabel { font-size: 18px; text-shadow: gray -2px 2px 2px; }\r\n\r\n        #grafo1 .dygraph-xlabel { font-size: 18px; text-shadow: gray -2px 2px 2px; }\r\n\r\n        .chart { border: 1px hidden black; margin: 50px 5px 5px 400px; padding: 2px; }";
+    			style.textContent = ".dygraph-legend { text-align: right; background: none; }\r\n        #grafo1 .dygraph-label { font-family: Georgia, Verdana, serif; }\r\n\r\n        #grafo1 .dygraph-title { font-size: 20px; text-shadow: gray 2px 2px 2px; }\r\n\r\n        #grafo1 .dygraph-ylabel { font-size: 18px; text-shadow: gray -2px 2px 2px; margin: 0px 0px 0px 90px }\r\n\r\n        #grafo1 .dygraph-xlabel { font-size: 18px; text-shadow: gray -2px 2px 2px; margin: 20px 0px 0px 0px }\r\n\r\n        .chart { border: 1px hidden black; margin: 50px 5px 5px 400px; padding: 2px; }";
     			t1 = space();
     			div = element("div");
     			t2 = space();
+    			br0 = element("br");
+    			t3 = space();
+    			br1 = element("br");
+    			t4 = space();
     			h6 = element("h6");
     			h6.textContent = "Gráfico en dónde se muestra las muertes prematuras por consumo de alcohol en correlación con la ansiedad";
+<<<<<<< HEAD
     			add_location(style, file$d, 93, 4, 2884);
+=======
+    			add_location(style, file$a, 83, 4, 3009);
+>>>>>>> 68af0222ffd90bf47f5d0ba5ca4c7d1e76f2254a
     			attr_dev(div, "id", "grafo1");
     			attr_dev(div, "class", "chart svelte-1icl312");
     			set_style(div, "width", "600px");
     			set_style(div, "height", "300px");
+<<<<<<< HEAD
     			add_location(div, file$d, 104, 4, 3393);
     			add_location(h6, file$d, 105, 6, 3474);
+=======
+    			add_location(div, file$a, 94, 4, 3568);
+    			add_location(br0, file$a, 95, 4, 3647);
+    			add_location(br1, file$a, 96, 4, 3657);
+    			add_location(h6, file$a, 97, 4, 3667);
+>>>>>>> 68af0222ffd90bf47f5d0ba5ca4c7d1e76f2254a
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
     			insert_dev(target, t1, anchor);
     			insert_dev(target, div, anchor);
     			insert_dev(target, t2, anchor);
+    			insert_dev(target, br0, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, br1, anchor);
+    			insert_dev(target, t4, anchor);
     			insert_dev(target, h6, anchor);
     		},
     		p: noop,
@@ -29003,6 +29026,10 @@ var app = (function () {
     			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(div);
     			if (detaching) detach_dev(t2);
+    			if (detaching) detach_dev(br0);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(br1);
+    			if (detaching) detach_dev(t4);
     			if (detaching) detach_dev(h6);
     		}
     	};
@@ -29011,14 +29038,26 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(93:4) {:else}",
+    		source: "(83:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
+<<<<<<< HEAD
     // (91:4) {#if errorMsg}
+=======
+<<<<<<< HEAD
+    // (81:4) {#if errorMsg}
+=======
+<<<<<<< HEAD
+    // (98:4) {#if errorMsg}
+=======
+    // (91:4) {#if errorMsg}
+>>>>>>> ee42852833a6d6d6cd406b9bfaa9b653ba2cb09e
+>>>>>>> 24b7fb40f83561379c5de5528334fa7a9b0ce9ec
+>>>>>>> 68af0222ffd90bf47f5d0ba5ca4c7d1e76f2254a
     function create_if_block$6(ctx) {
     	let p;
     	let t;
@@ -29027,7 +29066,16 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t = text(/*errorMsg*/ ctx[0]);
+<<<<<<< HEAD
     			add_location(p, file$d, 91, 6, 2848);
+=======
+<<<<<<< HEAD
+    			add_location(p, file$a, 81, 6, 2973);
+=======
+    			add_location(p, file$a, 91, 6, 2848);
+>>>>>>> ee42852833a6d6d6cd406b9bfaa9b653ba2cb09e
+>>>>>>> 24b7fb40f83561379c5de5528334fa7a9b0ce9ec
+>>>>>>> 68af0222ffd90bf47f5d0ba5ca4c7d1e76f2254a
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29045,14 +29093,14 @@ var app = (function () {
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(91:4) {#if errorMsg}",
+    		source: "(81:4) {#if errorMsg}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (108:4) <Button outline color="secondary" on:click="{pop}">
+    // (100:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$a(ctx) {
     	let t;
 
@@ -29072,7 +29120,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$a.name,
     		type: "slot",
-    		source: "(108:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(100:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -29125,6 +29173,7 @@ var app = (function () {
     			if_block.c();
     			t3 = space();
     			create_component(button.$$.fragment);
+<<<<<<< HEAD
     			if (script.src !== (script_src_value = "https://cdn.jsdelivr.net/npm/chart.js")) attr_dev(script, "src", script_src_value);
     			add_location(script, file$d, 81, 4, 2620);
     			add_location(h2, file$d, 88, 6, 2766);
@@ -29132,6 +29181,20 @@ var app = (function () {
     			add_location(div, file$d, 87, 4, 2753);
     			attr_dev(main, "class", "svelte-1icl312");
     			add_location(main, file$d, 86, 2, 2741);
+=======
+    			if (script.src !== (script_src_value = "//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js")) attr_dev(script, "src", script_src_value);
+    			add_location(script, file$a, 73, 4, 2735);
+    			add_location(h2, file$a, 78, 6, 2891);
+    			attr_dev(div, "class", "svelte-1icl312");
+    			add_location(div, file$a, 77, 4, 2878);
+    			attr_dev(main, "class", "svelte-1icl312");
+<<<<<<< HEAD
+    			add_location(main, file$a, 76, 2, 2866);
+=======
+    			add_location(main, file$a, 86, 2, 2741);
+>>>>>>> ee42852833a6d6d6cd406b9bfaa9b653ba2cb09e
+>>>>>>> 24b7fb40f83561379c5de5528334fa7a9b0ce9ec
+>>>>>>> 68af0222ffd90bf47f5d0ba5ca4c7d1e76f2254a
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -29168,7 +29231,7 @@ var app = (function () {
 
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 128) {
+    			if (dirty & /*$$scope*/ 64) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -29216,32 +29279,15 @@ var app = (function () {
     	var errorMsg = "";
     	console.log("Cargando página...");
 
-    	async function loadStats() {
-    		console.log("Loading loadInitialData alcohol data...");
-
-    		await fetch(BASE_API_PATH$2 + "/alcohol-consumption-stats/loadInitialData").then(function (res) {
-    			if (res.ok) {
-    				getStats();
-    				$$invalidate(0, errorMsg = "");
-    				console.log("OK");
-    			} else {
-    				if (res.status === 500) {
-    					$$invalidate(0, errorMsg = "No se ha podido acceder a la base de datos");
-    				}
-
-    				console.log("ERROR!" + errorMsg);
-    			}
-    		});
-    	}
-
     	async function getStats() {
     		console.log("Fetching alcohol data...");
-    		await loadStats();
-    		const res = await fetch(BASE_API_PATH$2 + "/alcohol-consumption-stats");
+    		const res = await fetch(BASE_API_PATH$2 + "/alcohol-consumption-stats/loadInitialData");
 
     		if (res.ok) {
     			console.log("OK");
     			alcoholData = await res.json();
+    			console.log("Datos alcohol recibidos ahora mismo");
+    			console.log(alcoholData);
     			console.log(`We have received ${alcoholData.length} alcohol-consumption-stats.`);
     		} else {
     			console.log("Error");
@@ -29266,25 +29312,34 @@ var app = (function () {
     	}
 
     	async function loadGraph() {
-    		console.log("Alcohol data -> " + alcoholData);
-    		console.log("Anxiety data -> " + anxietyStats);
+    		//await getAnxietyStats();
+    		console.log("Inicio getStats");
+
+    		await getStats();
+    		console.log("Datos alcohol recibidos para pintar el grafo:");
+    		console.log(alcoholData);
+    		console.log("Datos ansiedad recibidos para pintar el grafo:");
+    		console.log(anxietyStats);
+    		let arrayDatos = [];
+
+    		for (let index = 0; index < alcoholData.length; index++) {
+    			let separa = alcoholData[index].ageRange.split("-");
+    			let parseo = parseInt(separa[1]);
+    			arrayDatos.push([parseo, alcoholData[index].alcoholPrematureDeath, 0]); /*anxietyStats[index].DATOQUEQUIERO*/
+    		} // Etiqueta (Valorx) Numero asociado al rango de edad, Dato grafica muertes , Dato grafica ansiedad
+
+    		console.log("Array de datos para el grafo:");
+    		console.log(arrayDatos);
 
     		new Dygraph(document.getElementById("grafo1"),
-    		[
-    				//Datos
-    				[1, 2, 3],
-    				[4, 5, 6],
-    				[7, 8, 9]
-    			],
+    		arrayDatos,
     		{
-    				labels: ["A", "B", "C"],
-    				rollPeriod: 7,
+    				labels: ["RangoEdad", "Muertes", "Ansiedad"],
     				legend: "always",
-    				title: "Muertes prematuras y ansiedad",
+    				title: "Muertes prematuras y ansiedad España 2017",
     				titleHeight: 32,
     				ylabel: "Valor",
-    				xlabel: "Rango de edad / Año / País",
-    				strokeWidth: 1.5
+    				xlabel: "Rango de edad"
     			});
     	}
 
@@ -29299,13 +29354,11 @@ var app = (function () {
     		pop,
     		Button,
     		Dygraph,
-    		insert,
     		BASE_API_PATH: BASE_API_PATH$2,
     		BASE_ANXIETY_API_PATH,
     		anxietyStats,
     		alcoholData,
     		errorMsg,
-    		loadStats,
     		getStats,
     		getAnxietyStats,
     		loadGraph
