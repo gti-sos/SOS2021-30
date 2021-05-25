@@ -6,11 +6,14 @@
 	import Home from "./Home.svelte";
   import Info from "./Info.svelte";
 	import Router from 'svelte-spa-router';
+  import Integraciones from './Integraciones.svelte';
   import LifeExpectancy from './lifeStats/lifeExpectancy.svelte';
   import EditLife from './lifeStats/EditLife.svelte';
 	import TablaAlcohol from "./alcoholStats/TablaAlcohol.svelte";
   import EditAlcohol from "./alcoholStats/EditAlcohol.svelte";
   import GraphAlcohol from "./alcoholStats/GraphAlcohol.svelte";
+  import AnxietyStats from "./alcoholStats/integraciones/AnxietyStats.svelte";
+  import PovertyRiskStats from "./alcoholStats/integraciones/PovertyRisk.svelte";
   import SmokerStats from "./smokersStats/Smokers.svelte";
   import SmokersItems from "./smokersStats/SmokersItems.svelte";
   import GraphSmokers from "./smokersStats/GraphSmokers.svelte";
@@ -19,15 +22,19 @@
   import GraphWeight from "./weightsStats/GraphWeight.svelte";
   import GroupGraph from "./GroupGraph.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
-import GraphLife from "./lifeStats/GraphLife.svelte";
+  import GraphLife from "./lifeStats/GraphLife.svelte";
+
 
 
 	const routes = {
 		"/":Home,
     "/info": Info,
+    "/integraciones":Integraciones,
 		"/alcohol-stats": TablaAlcohol,
     "/alcohol-stats/:country/:year/:ageRange": EditAlcohol,
     "/alcohol-graph": GraphAlcohol,
+    "/integraciones/anxiety-stats": AnxietyStats,
+    "/integraciones/poverty-risk-stats": PovertyRiskStats,
     "/life-stats" : LifeExpectancy,
     "/life-stats/:province/:year" : EditLife,
     "/life-graph": GraphLife,

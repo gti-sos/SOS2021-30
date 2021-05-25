@@ -1,6 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var _= require("underscore");
+const request = require("request");
 
 var app = express();
 
@@ -16,6 +17,17 @@ alcoholAPI.register(app);
 
 var alcoholAPIv2 = require("./src/back/alcoholConsumptionStatsAPI/v2");
 alcoholAPIv2.register(app);
+
+//Integración grupo 11
+
+app.use("/anxiety-stats", function(req, res) {
+    var apiServerHostAnxietyStats = ' http://sos2021-11.herokuapp.com';
+    //anxiety-stats/api/v2/anxiety_stats
+    var url = apiServerHostAnxietyStats + req.url;
+    console.log('piped: /anxiety-stats -> ' + url);
+    // request solo hace get, investigar como hacer put, post, delete, etc.
+    req.pipe(request(url)).pipe(res);
+});
 //---------------------------END: API REST ALCOHOL-CONSUMPTION-STATS-----------------
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
