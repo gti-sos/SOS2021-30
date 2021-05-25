@@ -10,7 +10,7 @@ module.exports.register = (app) => {
 
 /*--------------Variable Objeto-----------------------*/
     smokersStats=[
-        /*
+        //
         {   
             "country": 'España',
             "province":"Andalucía",
@@ -128,7 +128,7 @@ module.exports.register = (app) => {
             "exSmoker": 74051.46,
             "nonSmoker": 1083694.64
         }
-        */
+        //
     ];
     // Inserta los datos iniciales en la base de datos
     db.insert(smokersStats);
@@ -286,9 +286,12 @@ module.exports.register = (app) => {
         if (req.query.nonSmoker) dbquery["nonSmoker"] = parseFloat(req.query.nonSmoker);
 
 
-        //Búsqueda de datos 
-        db.find(dbquery).sort({country:1, year:-1}).skip(offset).limit(limit).exec((error, nonSmoker) => {
-
+        //Búsqueda de datos y ordenación por parámetro provincia
+        db.find(dbquery).sort({province:1, year:-1}).skip(offset).limit(limit).exec((error, nonSmoker) => {
+            if (error){
+                console.error("Error accessing DB in POST: " + err);
+                res.sendStatus(500);
+            }else {
 
             //Se elimina el _id creado automáticamente
             nonSmoker.forEach((t) => {
@@ -297,6 +300,7 @@ module.exports.register = (app) => {
 
             res.send(JSON.stringify(nonSmoker, null, 2));
             console.log("GET REQUEST have been sent.");
+            }
         });
     });
 

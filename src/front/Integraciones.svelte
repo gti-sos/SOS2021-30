@@ -31,7 +31,23 @@
       </CardBody>
     </Card>
   </div>
-
+  <div>
+    <Card class="mb-3">
+      <CardHeader>
+        <CardTitle><h2>Integrado con las estadísticas sobre consumo de tabaco en España</h2></CardTitle>
+      </CardHeader>
+      <CardBody>
+        <CardSubtitle />
+        <CardText />
+        <a href="/#/integraciones/rentals"
+          ><Button color="primary">Estadísticas Alquileres por comunidades</Button></a>
+        <a href="/#/integraciones/arms-sales"
+        ><Button color="primary">Estadísticas Venta de armas por estado</Button></a>
+        <a href="/#/integraciones/unemploy"
+        ><Button color="primary">Estadísticas Desempleo por comunidades</Button></a>
+      </CardBody>
+    </Card>
+  </div>
   <Button outline color="secondary" on:click="{pop}">Atrás</Button>
   
   </main>

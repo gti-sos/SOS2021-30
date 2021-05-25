@@ -38,13 +38,17 @@
 
     async function loadGraph(){
         console.log("Fetching graphic data...");
+        
 
         // UNA CONST POR API
         const resWeight = await fetch(BASE_WEIGHTS_PATH);
         const resSmokers = await fetch(BASE_SMOKERS_PATH);
         const resAlcohol = await fetch(BASE_ALCOHOL_PATH);
         const resLife = await fetch(BASE_LIFE_PATH);
-        
+         
+      if (resWeight.ok || resSmokers.ok || resAlcohol.ok || resLife.ok) {
+        console.log("procesing all data....");
+
         // UN AWAIT POR CADA CONST
         weightData = await resWeight.json();
         smokersData = await resSmokers.json();
@@ -176,8 +180,7 @@
         msg = "Por favor primero cargue los datos en al menos una de las APIs";
       }
       */
-      
-
+     
         // CONDICIONES PARA CADA API CON UNA VARIABLE BASADA EN EL PORCENTAJE
         //WEIGHTS-STATS
         if(resWeight.ok){
@@ -259,8 +262,14 @@
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+      } else {
+        console.log("ERROR MSG");
+        alert("Por favor primero cargue los datos en al menos una de las APIs");
+      }
+
         //ADMIN GRAFICA
         console.log("Generando datos...");
+        console.log(lifeChartAverageLifeExpectancy);
         Highcharts.chart('container', {
         
         title: {
@@ -364,7 +373,7 @@
     </p>
   </figure>
 
-  <Button outline color="secondary" on:click="{pop}">Atrás</Button>
+  <p align="center"><Button outline color="secondary" on:click="{pop}">Atrás</Button></p>
  
 </main>
 
