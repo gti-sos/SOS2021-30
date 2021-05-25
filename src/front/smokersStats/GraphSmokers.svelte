@@ -9,7 +9,7 @@
     import { } from "node:os";
 import { text } from "svelte/internal";
     
-	var BASE_SMOKER_PATH = "/api/v2/smokers-stats";
+	var BASE_SMOKER_PATH = "/api/v3/smokers-stats";
 
     let fullDat = [];
     let smokerChartInfo = [];

@@ -10,7 +10,7 @@
     let color = "danger";
     
     //Variables
-    let BASE_SMOKERS_PATH = "/api/v2/smokers-stats";
+    let BASE_SMOKERS_PATH = "/api/v3/smokers-stats";
     let page = 1;
     let totaldata=13;
     let SmokerStats = [];
@@ -37,7 +37,7 @@
     async function getSmoker() {
  
         console.log("Fetching smokers Data...");
-        const res = await fetch("/api/v2/smokers-stats?limit=10&offset=0");
+        const res = await fetch(BASE_SMOKERS_PATH+"?limit=10&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -53,8 +53,8 @@
     async function loadInitialData() {
  
         console.log("Fetching smokers data...");
-        await fetch("/api/v2/smokers-stats/loadInitialData");
-        const res = await fetch("/api/v2/smokers-stats?limit=10&offset=0");
+        await fetch(BASE_SMOKERS_PATH+"/loadInitialData");
+        const res = await fetch(BASE_SMOKERS_PATH+"?limit=10&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -78,7 +78,7 @@
         if (newSmoker.year == "" || newSmoker.year == null || newSmoker.province == "") {
             alert("Los campos 'Comunidad Autónoma' y 'Año' no pueden estar vacios");
         } else{
-            const res = await fetch("/api/v2/smokers-stats",{
+            const res = await fetch(BASE_SMOKERS_PATH,{
                 method:"POST",
                 body:JSON.stringify(newSmoker),
                 headers:{
@@ -116,7 +116,7 @@
         }else{
             
             console.log("Editing smokers data...");
-            const res = await fetch("/api/v2/smokers-stats/" + province + "/" + year, {
+            const res = await fetch(BASE_SMOKERS_PATH+"/"+province+"/"+year, {
                     method:"PUT",
                     body:JSON.stringify(newSmoker),
                     headers:{
@@ -144,7 +144,7 @@
 
     //DELETE SPECIFIC
     async function deleteSmokers(province, year) {
-        const res = await fetch("/api/v2/smokers-stats/"+province+"/"+year, {
+        const res = await fetch(BASE_SMOKERS_PATH+"/"+province+"/"+year, {
             method: "DELETE"
         }).then(function (res) {
             visible = true;
@@ -171,7 +171,7 @@
 		console.log("Deleting smokers data...");
 		if (confirm("¿Está seguro de que desea eliminar todas las entradas?")){
 			console.log("Deleting all smokers data...");
-			const res = await fetch("/api/v2/smokers-stats/", {
+			const res = await fetch(BASE_SMOKERS_PATH+"/", {
 				method: "DELETE"
 			}).then(function (res) {
                 visible=true;
@@ -208,7 +208,7 @@
         
         visible = true;
         console.log("Charging page... Listing since: "+page);
-        const res = await fetch("/api/v2/smokers-stats?limit=10&offset="+(-1+page));
+        const res = await fetch(BASE_SMOKERS_PATH+"?limit=10&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
         checkMSG= (page+10 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
@@ -238,7 +238,7 @@
 
         visible = true;
         console.log("Charging page... Listing since: "+page);
-        const res = await fetch("/api/v2/smokers-stats?limit=10&offset="+(-1+page));
+        const res = await fetch(BASE_SMOKERS_PATH+"?limit=10&offset="+(-1+page));
         //condicional imprime msg
         color = "success";
         checkMSG= (page+10 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
@@ -346,7 +346,7 @@
                     <th>Fumadores ocasionales</th>
                     <th>Ex-fumadores</th>
                     <th>No fumadores</th>
-                    <th colspan="3">Acciones</th>
+                    <th colspan="2">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -357,7 +357,7 @@
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.ocasionalSmoker}"></td>    
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.exSmoker}"></td>  
                     <td><input type = "number" placeholder="0000" bind:value="{newSmoker.nonSmoker}"></td>  
-                    <td colspan="3" style="text-align: center;"><Button outline color="success" on:click={insertSmokers}>Insertar</Button></td>          
+                    <td colspan="2" style="text-align: center;"><Button outline color="success" on:click={insertSmokers}>Insertar</Button></td>          
                 </tr>
  
                 {#each SmokerStats as sc}
@@ -370,7 +370,6 @@
                         <td>{sc.nonSmoker}</td>
                         <td><Button outline color="danger" on:click="{deleteSmokers(sc.province, sc.year)}">Borrar</Button></td>
                         <td><Button outline color="primary" on:click="{editSmokers(sc.province, sc.year)}">Editar1</Button></td>
-                        <td><a href="#/smokers-stats/{sc.province}/{sc.year}"><Button outline color="primary">Editar2</Button></a></td>
                     </tr>
                 {/each}
             </tbody>
