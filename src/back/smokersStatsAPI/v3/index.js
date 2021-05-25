@@ -266,6 +266,15 @@ module.exports.register = (app) => {
         },
         {
             "country": 'España',
+            "province":"Murcia",
+            "year":2017,
+            "dailySmoker": 334022.75,
+            "ocasionalSmoker": 353582.64,
+            "exSmoker": 377656.36,
+            "nonSmoker": 1084069.344
+        },
+        {
+            "country": 'España',
             "province":"Baleares",
             "year":2017,
             "dailySmoker": 279683.25,

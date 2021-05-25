@@ -11,7 +11,7 @@
     //Variables
     let BASE_SMOKERS_PATH = "/api/v3/smokers-stats";
     let page = 1;
-    let totaldata = 13;
+    let totaldata = 18;
     let SmokerStats = [];
     let sProvince = "";
     let sYear = "";
@@ -56,7 +56,7 @@
             console.log("Ok:");
             const json = await res.json();
             SmokerStats = json;
-            totaldata = 13;
+            totaldata = 18;
             console.log("Received " + SmokerStats.length + " Smokers data.");
             color = "success";
             checkMSG = "Datos cargados correctamente";
