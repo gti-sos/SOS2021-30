@@ -10,7 +10,7 @@
     var checkMSG = "";
 
     //Uso API grupo 05 rental-arms
-    const BASE_ARMS_API_PATH = "/api/v1/arms-sales-stats";
+    const BASE_RENTALS_API_PATH = "/api/v1/rentals";
     const BASE_SMOKERS_PATH = "/api/v3/smokers-stats";
 
     //Variables SMOKER
@@ -35,7 +35,17 @@
             console.log("ERROR al cargar los datos de SMOKERS");
         }
     }
-    
+    //GET RENTAL
+    async function getRental() {
+        const res = await fetch(BASE_RENTALS_API_PATH);
+        if (res.ok) {
+            rentalData = await res.json();
+            console.log("Received Rental Data.");
+        } else {
+            checkMSG = res.status + ": " + res.statusText;
+            console.log("ERROR al cargar los datos de RENTALS");
+        }
+    }
     async function loadGraph() {
         await getSmoker();
         console.log("Datos smoker recibidos para pintar: "+smokersData);
@@ -44,6 +54,7 @@
             smokerChartProvince.push(stat.province);
             smokerChartDaily.push(stat["dailySmoker"]);
         });
+
 
         //Comprueba que la gráfica no aparezca vacía y vuelve atrás
         if (smokersData.length == 0) {
@@ -59,21 +70,24 @@
                 return {
                     x: key,
                     y: JSC.sum(value, "dailySmoker"),
-                    z: JSC.sum(value, "nonSmoker"),
                 };
             }) // Y values
             .series(smokersData); // Generate series
-
-            var chart = JSC.chart("chartDiv", {
-                type: "bubble",
-                defaultBox_boxVisible: false,
-                legend_visible: false,
-                toolbar_items_export_visible: false,
-                xAxis_label_text: "Provincias",
-                yAxis_label_text: "FumDiario",
-                zAxis_label_text: "NO fumadores",
-                series:series
-            });     
+        console.log(series);
+            
+        //Convert data to series array.
+        var chart = JSC.chart('chartDiv', {
+        debug: true,
+        type: 'column',
+        title_label_text: 'SmokerVSRentals',
+        xAxis_label_text: 'Provincia',
+        yAxis: [
+          { id: 'normal', 
+            label_text: 'Número de elementos' 
+            }
+        ],
+        series: series
+      });
     }
 
 loadGraph();
