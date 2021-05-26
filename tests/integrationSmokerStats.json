@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "ce30774c-eecd-44a2-9304-71d4af0cbfba",
-		"name": "TESTs SMOKERS v2",
+		"_postman_id": "79f33105-e4e5-4188-9c15-7cd8395f34be",
+		"name": "TESTs SMOKERS v3",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -24,16 +24,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/loadinitialdata",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/loadinitialdata",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						"loadinitialdata"
 					]
@@ -55,7 +52,7 @@
 							"\r",
 							"pm.test(\"Hay 13 datos como al inicio.\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.length).to.eql(13);\r",
+							"    pm.expect(jsonData.length).to.eql(17);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -66,16 +63,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						""
 					]
@@ -105,18 +99,22 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
 					]
 				},
 				"description": "Se elimina la lista por completo, siempre que contenga elementos."
@@ -144,16 +142,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						""
 					]
@@ -181,16 +176,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/loadinitialdata",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/loadinitialdata",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						"loadinitialdata"
 					]
@@ -227,16 +219,13 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						""
 					]
@@ -265,16 +254,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						""
 					]
@@ -311,16 +297,13 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						""
 					]
@@ -357,16 +340,13 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						""
 					]
@@ -394,16 +374,13 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats"
 					]
 				},
@@ -430,16 +407,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/Ceuta/2017",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/Ceuta/2017",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						"Ceuta",
 						"2017"
@@ -477,16 +451,13 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/Ceuta/2017",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/Ceuta/2017",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						"Ceuta",
 						"2017"
@@ -524,16 +495,13 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/Ceuta/2017",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/Ceuta/2017",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						"Ceuta",
 						"2017"
@@ -562,16 +530,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/Ceuta/2017",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/Ceuta/2017",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						"Ceuta",
 						"2017"
@@ -600,16 +565,13 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/Ceuta/2017",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/Ceuta/2017",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						"Ceuta",
 						"2017"
@@ -647,16 +609,13 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						""
 					]
@@ -693,16 +652,13 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/Ceuta/2017",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/Ceuta/2017",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						"Ceuta",
 						"2017"
@@ -735,16 +691,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/Ceuta/2017",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/Ceuta/2017",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						"Ceuta",
 						"2017"
@@ -775,16 +728,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						""
 					]
@@ -812,16 +762,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-30.herokuapp.com/api/v2/smokers-stats/loadinitialdata",
-					"protocol": "https",
+					"raw": "{{Heroku30}}/api/v3/smokers-stats/loadinitialdata",
 					"host": [
-						"sos2021-30",
-						"herokuapp",
-						"com"
+						"{{Heroku30}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"smokers-stats",
 						"loadinitialdata"
 					]

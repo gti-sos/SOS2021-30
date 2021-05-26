@@ -24,7 +24,7 @@
     onMount(getGET);
 
     async function getGET() {
-        console.log("Fetching award...");
+        console.log("Fetching item...");
         const res = await fetch(BASE_SMOKERS_PATH+"/"+params.province+"/"+params.year);
         if (res.ok) {
             console.log("Ok:");
@@ -45,8 +45,8 @@
             }
     }
 
-    async function updateUPD() {
-        console.log("Updating award..." + JSON.stringify(params.province));
+    async function updateSmoker() {
+        console.log("Updating item..." + JSON.stringify(params.province));
         const res = await fetch(BASE_SMOKERS_PATH+"/" + params.province + "/" + params.year, {
         method: "PUT",
         body: JSON.stringify({
@@ -209,7 +209,7 @@
                     <td><input bind:value="{updOcasional}"></td>    
                     <td><input bind:value="{updEx}"></td>  
                     <td><input bind:value="{updNon}"></td>  
-                    <td style="text-align: center;"><Button outline color="primary" on:click={updateUPD}>Actualizar</Button></td>          
+                    <td style="text-align: center;"><Button outline color="primary" on:click={updateSmoker}>Actualizar</Button></td>          
                 </tr>
             </tbody>
         </Table>

@@ -446,7 +446,7 @@
                 >Reiniciar</Button
             >
         </div>
-        <br />
+        <br/>
 
         <Table bordered responsive>
             <thead>
@@ -543,7 +543,7 @@
                 {/each}
             </tbody>
         </Table>
-
+        <br>
         <p align="center">
             <Button color="success" on:click={loadInitialData}
                 >Cargar datos inciales</Button
@@ -558,6 +558,6 @@
             <a href="./#/smokers-graph"><Button color="info">Gráfico</Button></a
             >
         </p>
-        <br />
+        <br>
     {/await}
 </main>
