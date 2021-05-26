@@ -37,13 +37,13 @@
     }
     //GET unemployRate
     async function getUnemploy() {
-        const res = await fetch(BASE_UMEMPLOY_API_PATH+"/loadInitialData");
+        const res = await fetch(BASE_UMEMPLOY_API_PATH);
         if (res.ok) {
             unemployData = await res.json();
-            console.log("Received Rental Data.");
+            console.log("Received Unemploy Data.");
         } else {
             checkMSG = res.status + ": " + res.statusText;
-            console.log("ERROR al cargar los datos de RENTALS");
+            console.log("ERROR al cargar los datos de UNEMPLOY");
         }
     }
     async function loadGraph() {

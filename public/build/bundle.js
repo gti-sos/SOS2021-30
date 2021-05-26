@@ -34782,8 +34782,8 @@ var app = (function () {
     			set_style(div, "max-width", "740px");
     			set_style(div, "height", "400px");
     			set_style(div, "margin", "0px auto");
-    			add_location(div, file$6, 96, 4, 2952);
-    			add_location(main, file$6, 95, 0, 2940);
+    			add_location(div, file$6, 103, 4, 3229);
+    			add_location(main, file$6, 102, 0, 3217);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -34831,7 +34831,7 @@ var app = (function () {
     	var unemployData = [];
 
     	var unemployProvince = [];
-    	var rental = [];
+    	var unemployRate = [];
     	console.log("Cargando datos...");
 
     	//GET SMOKER
@@ -34848,25 +34848,32 @@ var app = (function () {
     	}
 
     	//GET unemployRate
-    	async function getunemploy() {
-    		const res = await fetch(BASE_UMEMPLOY_API_PATH + "/loadInitialData");
+    	async function getUnemploy() {
+    		const res = await fetch(BASE_UMEMPLOY_API_PATH);
 
     		if (res.ok) {
     			unemployData = await res.json();
-    			console.log("Received Rental Data.");
+    			console.log("Received Unemploy Data.");
     		} else {
     			checkMSG = res.status + ": " + res.statusText;
-    			console.log("ERROR al cargar los datos de RENTALS");
+    			console.log("ERROR al cargar los datos de UNEMPLOY");
     		}
     	}
 
     	async function loadGraph() {
     		await getSmoker();
-    		console.log("Datos smoker recibidos para pintar: " + smokersData);
+    		await getUnemploy();
+    		console.log("Datos smoker recibidos para pintar smoker: " + smokersData);
+    		console.log("Datos smoker recibidos para pintar unemploy: " + unemployData);
 
     		smokersData.forEach(stat => {
     			smokerChartProvince.push(stat.province);
     			smokerChartDaily.push(stat["dailySmoker"]);
+    		});
+
+    		unemployData.forEach(stat => {
+    			unemployProvince.push(stat.province);
+    			unemployRate.push(stat["unemployment_rate"]);
     		});
 
     		//Comprueba que la gráfica no aparezca vacía y vuelve atrás
@@ -34925,9 +34932,9 @@ var app = (function () {
     		smokerChartDaily,
     		unemployData,
     		unemployProvince,
-    		rental,
+    		unemployRate,
     		getSmoker,
-    		getunemploy,
+    		getUnemploy,
     		loadGraph
     	});
 
@@ -34940,7 +34947,7 @@ var app = (function () {
     		if ("smokerChartDaily" in $$props) smokerChartDaily = $$props.smokerChartDaily;
     		if ("unemployData" in $$props) unemployData = $$props.unemployData;
     		if ("unemployProvince" in $$props) unemployProvince = $$props.unemployProvince;
-    		if ("rental" in $$props) rental = $$props.rental;
+    		if ("unemployRate" in $$props) unemployRate = $$props.unemployRate;
     	};
 
     	if ($$props && "$$inject" in $$props) {
