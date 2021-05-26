@@ -84,7 +84,7 @@
     <style>.dygraph-legend { text-align: right; background: none; }
         #grafo1 .dygraph-label { font-family: Georgia, Verdana, serif; }
 
-        #grafo1 .dygraph-title { font-size: 20px; text-shadow: gray 2px 2px 2px; }
+        #grafo1 .dygraph-title { font-size: 20px; text-shadow: gray 2px 2px 2px; margin: -30px 0px 0px 50px}
 
         #grafo1 .dygraph-ylabel { font-size: 18px; text-shadow: gray -2px 2px 2px; margin: 0px 0px 0px 90px }
 
