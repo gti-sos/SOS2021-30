@@ -78,7 +78,7 @@
             });
         }
 
-        // ADAPTACIÓN DE DATOS PUROS A PORCENTAJES REALES PARA REPRESENTACIÓN, SEGÚN POBLACIÓN DE CADA COMUNIDAD //
+        // ADAPTACIÓN DE DATOS SMOKER PUROS A PORCENTAJES REALES PARA REPRESENTACIÓN, SEGÚN POBLACIÓN DE CADA COMUNIDAD //
         let i = 0;
         while (i < smokerChartDaily.length){
             switch (smokerChartDaily[i]){

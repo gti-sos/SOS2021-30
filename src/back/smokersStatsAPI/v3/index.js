@@ -67,7 +67,7 @@ module.exports.register = (app) => {
         },
         {
             "country": 'España',
-            "province":"Cataluña",
+            "province":"Catalunya",
             "year":2017,
             "dailySmoker": 1700061.75,
             "ocasionalSmoker": 174539.67,
@@ -194,7 +194,7 @@ module.exports.register = (app) => {
         },
         {
             "country": 'España',
-            "province":"Cataluña",
+            "province":"Catalunya",
             "year":2017,
             "dailySmoker": 1700061.75,
             "ocasionalSmoker": 174539.67,
