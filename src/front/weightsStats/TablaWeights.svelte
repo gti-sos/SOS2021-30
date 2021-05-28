@@ -353,6 +353,9 @@
 
     <a href="./#/weights-graph"><Button color="info">Descubre nuestro gráfico!</Button></a>
 
+    <a href="./#/weights-graph-morris"><Button color="info">Gráfico libreria morris.js</Button></a>
+
+
     {/await}
  
 </main>
