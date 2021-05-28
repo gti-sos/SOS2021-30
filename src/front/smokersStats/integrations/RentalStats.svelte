@@ -121,11 +121,11 @@
         var series = [
             JSC.merge(
                 { name: "Fumadores diarios (en miles)" },
-                nido.rollup("dailySmoker").series(dataFin)[0]
+                nido.rollup("dailySmoker").series(dataFin)[0] //primera parte de la serie, dailySmoker
             ),
             JSC.merge(
                 { name: "Renta en miles" },
-                nido.rollup("rent").series(dataFin)[0]
+                nido.rollup("rent").series(dataFin)[0]  //segunda parte de la serie, rent
             ),
         ];
         //Convert data to series array.
