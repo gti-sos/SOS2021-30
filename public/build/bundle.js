@@ -8991,7 +8991,7 @@ var app = (function () {
     }
 
     // (74:87) <Button color="info">
-    function create_default_slot_14$1(ctx) {
+    function create_default_slot_14$2(ctx) {
     	let t;
 
     	const block = {
@@ -9008,7 +9008,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_14$1.name,
+    		id: create_default_slot_14$2.name,
     		type: "slot",
     		source: "(74:87) <Button color=\\\"info\\\">",
     		ctx
@@ -9299,7 +9299,7 @@ var app = (function () {
     	button0 = new Button({
     			props: {
     				color: "info",
-    				$$slots: { default: [create_default_slot_14$1] },
+    				$$slots: { default: [create_default_slot_14$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -17603,7 +17603,11 @@ var app = (function () {
     			p.textContent = `ERROR: ${/*errorMsg*/ ctx[0]}`;
     			attr_dev(p, "class", "msgRed svelte-lhbtsa");
     			set_style(p, "color", "#9d1c24");
+<<<<<<< HEAD
     			add_location(p, file$f, 112, 8, 3264);
+=======
+    			add_location(p, file$f, 166, 8, 5280);
+>>>>>>> 464a96383bbe0f0202b9c5d8bb7bb7ed3bd461a7
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -17635,7 +17639,11 @@ var app = (function () {
     			p.textContent = `${/*okMsg*/ ctx[1]}`;
     			attr_dev(p, "class", "msgGreen svelte-lhbtsa");
     			set_style(p, "color", "#155724");
+<<<<<<< HEAD
     			add_location(p, file$f, 115, 8, 3368);
+=======
+    			add_location(p, file$f, 169, 8, 5384);
+>>>>>>> 464a96383bbe0f0202b9c5d8bb7bb7ed3bd461a7
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -17684,6 +17692,7 @@ var app = (function () {
     	return block;
     }
 
+<<<<<<< HEAD
     // (129:31) <Button outline color="primary">
     function create_default_slot_1$7(ctx) {
     	let t;
@@ -17712,6 +17721,9 @@ var app = (function () {
     }
 
     // (130:30) <Button outline color="primary">
+=======
+    // (183:30) <Button outline color="primary">
+>>>>>>> 464a96383bbe0f0202b9c5d8bb7bb7ed3bd461a7
     function create_default_slot$e(ctx) {
     	let t;
 
@@ -17791,6 +17803,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
+<<<<<<< HEAD
     				$$slots: { default: [create_default_slot_1$7] },
     				$$scope: { ctx }
     			},
@@ -17801,6 +17814,8 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
+=======
+>>>>>>> 464a96383bbe0f0202b9c5d8bb7bb7ed3bd461a7
     				$$slots: { default: [create_default_slot$e] },
     				$$scope: { ctx }
     			},
@@ -17841,6 +17856,7 @@ var app = (function () {
     			a2 = element("a");
     			create_component(button2.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
+<<<<<<< HEAD
     			add_location(script0, file$f, 94, 4, 2702);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
     			add_location(script1, file$f, 95, 4, 2773);
@@ -17872,6 +17888,37 @@ var app = (function () {
     			add_location(a2, file$f, 129, 4, 3926);
     			attr_dev(main, "class", "svelte-lhbtsa");
     			add_location(main, file$f, 103, 2, 3146);
+=======
+    			add_location(script0, file$f, 148, 4, 4718);
+    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$f, 149, 4, 4789);
+    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
+    			add_location(script2, file$f, 150, 4, 4870);
+    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
+    			add_location(script3, file$f, 151, 4, 4948);
+    			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
+    			add_location(script4, file$f, 152, 4, 5028);
+    			add_location(h2, file$f, 159, 6, 5187);
+    			attr_dev(div0, "class", "svelte-lhbtsa");
+    			add_location(div0, file$f, 158, 4, 5174);
+    			attr_dev(div1, "class", "svelte-lhbtsa");
+    			add_location(div1, file$f, 164, 4, 5243);
+    			attr_dev(div2, "id", "container");
+    			attr_dev(div2, "class", "svelte-lhbtsa");
+    			add_location(div2, file$f, 175, 8, 5530);
+    			attr_dev(p, "class", "highcharts-description svelte-lhbtsa");
+    			add_location(p, file$f, 176, 8, 5562);
+    			attr_dev(figure, "class", "highcharts-figure");
+    			add_location(figure, file$f, 174, 6, 5486);
+    			attr_dev(div3, "class", "svelte-lhbtsa");
+    			add_location(div3, file$f, 173, 4, 5473);
+    			attr_dev(a0, "href", "#/alcohol-graph2");
+    			add_location(a0, file$f, 181, 4, 5708);
+    			attr_dev(a1, "href", "#/alcohol-stats");
+    			add_location(a1, file$f, 182, 4, 5809);
+    			attr_dev(main, "class", "svelte-lhbtsa");
+    			add_location(main, file$f, 157, 2, 5162);
+>>>>>>> 464a96383bbe0f0202b9c5d8bb7bb7ed3bd461a7
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -18167,7 +18214,11 @@ var app = (function () {
     			p.textContent = `ERROR: ${/*errorMsg*/ ctx[0]}`;
     			attr_dev(p, "class", "msgRed svelte-lhbtsa");
     			set_style(p, "color", "#9d1c24");
+<<<<<<< HEAD
     			add_location(p, file$e, 86, 8, 3012);
+=======
+    			add_location(p, file$e, 85, 8, 2998);
+>>>>>>> 464a96383bbe0f0202b9c5d8bb7bb7ed3bd461a7
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -18199,7 +18250,11 @@ var app = (function () {
     			p.textContent = `${/*okMsg*/ ctx[1]}`;
     			attr_dev(p, "class", "msgGreen svelte-lhbtsa");
     			set_style(p, "color", "#155724");
+<<<<<<< HEAD
     			add_location(p, file$e, 89, 8, 3116);
+=======
+    			add_location(p, file$e, 88, 8, 3102);
+>>>>>>> 464a96383bbe0f0202b9c5d8bb7bb7ed3bd461a7
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -18248,6 +18303,7 @@ var app = (function () {
     	return block;
     }
 
+<<<<<<< HEAD
     // (103:30) <Button outline color="primary">
     function create_default_slot_1$6(ctx) {
     	let t;
@@ -18276,6 +18332,9 @@ var app = (function () {
     }
 
     // (104:30) <Button outline color="primary">
+=======
+    // (102:30) <Button outline color="primary">
+>>>>>>> 464a96383bbe0f0202b9c5d8bb7bb7ed3bd461a7
     function create_default_slot$d(ctx) {
     	let t;
 
@@ -18355,6 +18414,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
+<<<<<<< HEAD
     				$$slots: { default: [create_default_slot_1$6] },
     				$$scope: { ctx }
     			},
@@ -18365,6 +18425,8 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
+=======
+>>>>>>> 464a96383bbe0f0202b9c5d8bb7bb7ed3bd461a7
     				$$slots: { default: [create_default_slot$d] },
     				$$scope: { ctx }
     			},
@@ -18405,6 +18467,7 @@ var app = (function () {
     			a2 = element("a");
     			create_component(button2.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
+<<<<<<< HEAD
     			add_location(script0, file$e, 70, 4, 2465);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/item-series.js")) attr_dev(script1, "src", script1_src_value);
     			add_location(script1, file$e, 71, 4, 2536);
@@ -18436,6 +18499,37 @@ var app = (function () {
     			add_location(a2, file$e, 103, 4, 3641);
     			attr_dev(main, "class", "svelte-lhbtsa");
     			add_location(main, file$e, 77, 2, 2894);
+=======
+    			add_location(script0, file$e, 69, 4, 2451);
+    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/item-series.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$e, 70, 4, 2522);
+    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
+    			add_location(script2, file$e, 71, 4, 2622);
+    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
+    			add_location(script3, file$e, 72, 4, 2700);
+    			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
+    			add_location(script4, file$e, 73, 4, 2780);
+    			add_location(h2, file$e, 78, 6, 2905);
+    			attr_dev(div0, "class", "svelte-lhbtsa");
+    			add_location(div0, file$e, 77, 4, 2892);
+    			attr_dev(div1, "class", "svelte-lhbtsa");
+    			add_location(div1, file$e, 83, 4, 2961);
+    			attr_dev(div2, "id", "container");
+    			attr_dev(div2, "class", "svelte-lhbtsa");
+    			add_location(div2, file$e, 94, 8, 3248);
+    			attr_dev(p, "class", "highcharts-description svelte-lhbtsa");
+    			add_location(p, file$e, 95, 8, 3280);
+    			attr_dev(figure, "class", "highcharts-figure");
+    			add_location(figure, file$e, 93, 6, 3204);
+    			attr_dev(div3, "class", "svelte-lhbtsa");
+    			add_location(div3, file$e, 92, 4, 3191);
+    			attr_dev(a0, "href", "#/alcohol-graph");
+    			add_location(a0, file$e, 100, 4, 3403);
+    			attr_dev(a1, "href", "#/alcohol-stats");
+    			add_location(a1, file$e, 101, 4, 3503);
+    			attr_dev(main, "class", "svelte-lhbtsa");
+    			add_location(main, file$e, 76, 2, 2880);
+>>>>>>> 464a96383bbe0f0202b9c5d8bb7bb7ed3bd461a7
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -30162,8 +30256,8 @@ var app = (function () {
 
     /* src\front\alcoholStats\integrations\AnxietyStats.svelte generated by Svelte v3.38.2 */
 
-    const { console: console_1$b, document: document_1$1 } = globals;
-    const file$c = "src\\front\\alcoholStats\\integrations\\AnxietyStats.svelte";
+    const { console: console_1$c, document: document_1$1 } = globals;
+    const file$d = "src\\front\\alcoholStats\\integrations\\AnxietyStats.svelte";
 
     // (85:4) {:else}
     function create_else_block$1(ctx) {
@@ -30190,15 +30284,15 @@ var app = (function () {
     			t4 = space();
     			h6 = element("h6");
     			h6.textContent = "Gráfico en dónde se muestra las muertes prematuras por consumo de alcohol en correlación con la ansiedad";
-    			add_location(style, file$c, 85, 4, 3057);
+    			add_location(style, file$d, 85, 4, 3057);
     			attr_dev(div, "id", "grafo1");
     			attr_dev(div, "class", "chart svelte-1icl312");
     			set_style(div, "width", "600px");
     			set_style(div, "height", "300px");
-    			add_location(div, file$c, 96, 4, 3642);
-    			add_location(br0, file$c, 97, 4, 3721);
-    			add_location(br1, file$c, 98, 4, 3731);
-    			add_location(h6, file$c, 99, 4, 3741);
+    			add_location(div, file$d, 96, 4, 3642);
+    			add_location(br0, file$d, 97, 4, 3721);
+    			add_location(br1, file$d, 98, 4, 3731);
+    			add_location(h6, file$d, 99, 4, 3741);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -30245,7 +30339,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t = text(/*errorMsg*/ ctx[0]);
-    			add_location(p, file$c, 83, 6, 3021);
+    			add_location(p, file$d, 83, 6, 3021);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30271,7 +30365,7 @@ var app = (function () {
     }
 
     // (102:4) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot$b(ctx) {
+    function create_default_slot$c(ctx) {
     	let t;
 
     	const block = {
@@ -30288,7 +30382,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$b.name,
+    		id: create_default_slot$c.name,
     		type: "slot",
     		source: "(102:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
@@ -30297,7 +30391,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$c(ctx) {
+    function create_fragment$d(ctx) {
     	let script;
     	let script_src_value;
     	let t0;
@@ -30323,7 +30417,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot$b] },
+    				$$slots: { default: [create_default_slot$c] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -30344,12 +30438,12 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script.src !== (script_src_value = "//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js")) attr_dev(script, "src", script_src_value);
-    			add_location(script, file$c, 75, 4, 2783);
-    			add_location(h2, file$c, 80, 6, 2939);
+    			add_location(script, file$d, 75, 4, 2783);
+    			add_location(h2, file$d, 80, 6, 2939);
     			attr_dev(div, "class", "svelte-1icl312");
-    			add_location(div, file$c, 79, 4, 2926);
+    			add_location(div, file$d, 79, 4, 2926);
     			attr_dev(main, "class", "svelte-1icl312");
-    			add_location(main, file$c, 78, 2, 2914);
+    			add_location(main, file$d, 78, 2, 2914);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -30414,7 +30508,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$c.name,
+    		id: create_fragment$d.name,
     		type: "component",
     		source: "",
     		ctx
@@ -30426,7 +30520,7 @@ var app = (function () {
     const BASE_API_PATH$2 = "/api/v2";
     const BASE_ANXIETY_API_PATH = "/anxiety-stats/api/v2";
 
-    function instance$c($$self, $$props, $$invalidate) {
+    function instance$d($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("AnxietyStats", slots, []);
     	var anxietyStats = [];
@@ -30506,7 +30600,7 @@ var app = (function () {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$b.warn(`<AnxietyStats> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$c.warn(`<AnxietyStats> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({
@@ -30539,21 +30633,21 @@ var app = (function () {
     class AnxietyStats extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$c, create_fragment$c, safe_not_equal, {});
+    		init(this, options, instance$d, create_fragment$d, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "AnxietyStats",
     			options,
-    			id: create_fragment$c.name
+    			id: create_fragment$d.name
     		});
     	}
     }
 
     /* src\front\alcoholStats\integrations\PovertyRisk.svelte generated by Svelte v3.38.2 */
 
-    const { console: console_1$a, document: document_1 } = globals;
-    const file$b = "src\\front\\alcoholStats\\integrations\\PovertyRisk.svelte";
+    const { console: console_1$b, document: document_1 } = globals;
+    const file$c = "src\\front\\alcoholStats\\integrations\\PovertyRisk.svelte";
 
     // (89:2) {:else}
     function create_else_block(ctx) {
@@ -30580,15 +30674,26 @@ var app = (function () {
     			t4 = space();
     			h6 = element("h6");
     			h6.textContent = "Gráfico en dónde se muestra el riesgo de pobreza junto con las muertes prematuras";
+<<<<<<< HEAD
     			add_location(style, file$b, 89, 2, 3297);
+=======
+    			add_location(style, file$c, 88, 2, 3206);
+>>>>>>> 464a96383bbe0f0202b9c5d8bb7bb7ed3bd461a7
     			attr_dev(div, "id", "grafo1");
     			attr_dev(div, "class", "chart svelte-z6xnyu");
     			set_style(div, "width", "600px");
     			set_style(div, "height", "300px");
+<<<<<<< HEAD
     			add_location(div, file$b, 100, 2, 3868);
     			add_location(br0, file$b, 101, 2, 3945);
     			add_location(br1, file$b, 102, 2, 3953);
     			add_location(h6, file$b, 103, 2, 3961);
+=======
+    			add_location(div, file$c, 99, 2, 3777);
+    			add_location(br0, file$c, 100, 2, 3854);
+    			add_location(br1, file$c, 101, 2, 3862);
+    			add_location(h6, file$c, 102, 2, 3870);
+>>>>>>> 464a96383bbe0f0202b9c5d8bb7bb7ed3bd461a7
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -30635,7 +30740,11 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t = text(/*errorMsg*/ ctx[0]);
+<<<<<<< HEAD
     			add_location(p, file$b, 87, 4, 3265);
+=======
+    			add_location(p, file$c, 86, 4, 3174);
+>>>>>>> 464a96383bbe0f0202b9c5d8bb7bb7ed3bd461a7
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30660,8 +30769,13 @@ var app = (function () {
     	return block;
     }
 
+<<<<<<< HEAD
     // (106:2) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$a(ctx) {
+=======
+    // (105:2) <Button outline color="secondary" on:click="{pop}">
+    function create_default_slot$b(ctx) {
+>>>>>>> 464a96383bbe0f0202b9c5d8bb7bb7ed3bd461a7
     	let t;
 
     	const block = {
@@ -30678,7 +30792,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$a.name,
+    		id: create_default_slot$b.name,
     		type: "slot",
     		source: "(106:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
@@ -30687,7 +30801,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$b(ctx) {
+    function create_fragment$c(ctx) {
     	let script;
     	let script_src_value;
     	let t0;
@@ -30713,7 +30827,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot$a] },
+    				$$slots: { default: [create_default_slot$b] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -30734,12 +30848,21 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script.src !== (script_src_value = "//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js")) attr_dev(script, "src", script_src_value);
+<<<<<<< HEAD
     			add_location(script, file$b, 79, 2, 3043);
     			add_location(h2, file$b, 84, 4, 3189);
     			attr_dev(div, "class", "svelte-z6xnyu");
     			add_location(div, file$b, 83, 2, 3178);
     			attr_dev(main, "class", "svelte-z6xnyu");
     			add_location(main, file$b, 82, 0, 3168);
+=======
+    			add_location(script, file$c, 78, 2, 2952);
+    			add_location(h2, file$c, 83, 4, 3098);
+    			attr_dev(div, "class", "svelte-z6xnyu");
+    			add_location(div, file$c, 82, 2, 3087);
+    			attr_dev(main, "class", "svelte-z6xnyu");
+    			add_location(main, file$c, 81, 0, 3077);
+>>>>>>> 464a96383bbe0f0202b9c5d8bb7bb7ed3bd461a7
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -30804,7 +30927,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$b.name,
+    		id: create_fragment$c.name,
     		type: "component",
     		source: "",
     		ctx
@@ -30815,7 +30938,7 @@ var app = (function () {
 
     const BASE_API_PATH$1 = "/api/v2";
 
-    function instance$b($$self, $$props, $$invalidate) {
+    function instance$c($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("PovertyRisk", slots, []);
     	var povertyStats = [];
@@ -30903,7 +31026,7 @@ var app = (function () {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$a.warn(`<PovertyRisk> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$b.warn(`<PovertyRisk> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({
@@ -30935,21 +31058,21 @@ var app = (function () {
     class PovertyRisk extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$b, create_fragment$b, safe_not_equal, {});
+    		init(this, options, instance$c, create_fragment$c, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "PovertyRisk",
     			options,
-    			id: create_fragment$b.name
+    			id: create_fragment$c.name
     		});
     	}
     }
 
     /* src\front\smokersStats\Smokers.svelte generated by Svelte v3.38.2 */
 
-    const { console: console_1$9 } = globals;
-    const file$a = "src\\front\\smokersStats\\Smokers.svelte";
+    const { console: console_1$a } = globals;
+    const file$b = "src\\front\\smokersStats\\Smokers.svelte";
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
@@ -31118,7 +31241,7 @@ var app = (function () {
     	button6 = new Button({
     			props: {
     				color: "info",
-    				$$slots: { default: [create_default_slot$9] },
+    				$$slots: { default: [create_default_slot$a] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -31158,18 +31281,18 @@ var app = (function () {
     			create_component(button6.$$.fragment);
     			t13 = space();
     			br2 = element("br");
-    			add_location(strong, file$a, 376, 12, 12894);
+    			add_location(strong, file$b, 376, 12, 12894);
     			set_style(h4, "text-align", "center");
-    			add_location(h4, file$a, 375, 8, 12850);
+    			add_location(h4, file$b, 375, 8, 12850);
     			set_style(div, "text-align", "center");
-    			add_location(div, file$a, 431, 8, 14774);
-    			add_location(br0, file$a, 448, 8, 15304);
-    			add_location(br1, file$a, 545, 8, 18996);
+    			add_location(div, file$b, 431, 8, 14774);
+    			add_location(br0, file$b, 448, 8, 15304);
+    			add_location(br1, file$b, 545, 8, 18996);
     			attr_dev(a, "href", "./#/smokers-graph");
-    			add_location(a, file$a, 557, 12, 19486);
+    			add_location(a, file$b, 557, 12, 19486);
     			attr_dev(p, "align", "center");
-    			add_location(p, file$a, 546, 8, 19010);
-    			add_location(br2, file$a, 560, 8, 19593);
+    			add_location(p, file$b, 546, 8, 19010);
+    			add_location(br2, file$b, 560, 8, 19593);
     		},
     		m: function mount(target, anchor) {
     			mount_component(alert_1, target, anchor);
@@ -31495,37 +31618,37 @@ var app = (function () {
     			t16 = space();
     			td5 = element("td");
     			input5 = element("input");
-    			add_location(th0, file$a, 379, 12, 12987);
-    			add_location(th1, file$a, 380, 12, 13041);
-    			add_location(th2, file$a, 381, 12, 13080);
-    			add_location(th3, file$a, 382, 12, 13148);
-    			add_location(th4, file$a, 383, 12, 13220);
-    			add_location(th5, file$a, 384, 12, 13283);
+    			add_location(th0, file$b, 379, 12, 12987);
+    			add_location(th1, file$b, 380, 12, 13041);
+    			add_location(th2, file$b, 381, 12, 13080);
+    			add_location(th3, file$b, 382, 12, 13148);
+    			add_location(th4, file$b, 383, 12, 13220);
+    			add_location(th5, file$b, 384, 12, 13283);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "Comunidad autónoma");
-    			add_location(input0, file$a, 387, 21, 13394);
-    			add_location(td0, file$a, 386, 16, 13368);
+    			add_location(input0, file$b, 387, 21, 13394);
+    			add_location(td0, file$b, 386, 16, 13368);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "placeholder", "2075");
-    			add_location(input1, file$a, 394, 21, 13634);
-    			add_location(td1, file$a, 393, 16, 13608);
+    			add_location(input1, file$b, 394, 21, 13634);
+    			add_location(td1, file$b, 393, 16, 13608);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "placeholder", "0000");
-    			add_location(input2, file$a, 401, 21, 13858);
-    			add_location(td2, file$a, 400, 16, 13832);
+    			add_location(input2, file$b, 401, 21, 13858);
+    			add_location(td2, file$b, 400, 16, 13832);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "0000");
-    			add_location(input3, file$a, 408, 21, 14083);
-    			add_location(td3, file$a, 407, 16, 14057);
+    			add_location(input3, file$b, 408, 21, 14083);
+    			add_location(td3, file$b, 407, 16, 14057);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "placeholder", "0000");
-    			add_location(input4, file$a, 415, 21, 14312);
-    			add_location(td4, file$a, 414, 16, 14286);
+    			add_location(input4, file$b, 415, 21, 14312);
+    			add_location(td4, file$b, 414, 16, 14286);
     			attr_dev(input5, "type", "number");
     			attr_dev(input5, "placeholder", "0000");
-    			add_location(input5, file$a, 422, 21, 14540);
-    			add_location(td5, file$a, 421, 16, 14514);
-    			add_location(tr, file$a, 385, 12, 13346);
+    			add_location(input5, file$b, 422, 21, 14540);
+    			add_location(td5, file$b, 421, 16, 14514);
+    			add_location(tr, file$b, 385, 12, 13346);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, th0, anchor);
@@ -31860,16 +31983,16 @@ var app = (function () {
     			td7 = element("td");
     			create_component(button1.$$.fragment);
     			t13 = space();
-    			add_location(b, file$a, 519, 28, 17928);
-    			add_location(td0, file$a, 519, 24, 17924);
-    			add_location(td1, file$a, 520, 24, 17979);
-    			add_location(td2, file$a, 521, 24, 18023);
-    			add_location(td3, file$a, 522, 24, 18074);
-    			add_location(td4, file$a, 523, 24, 18129);
-    			add_location(td5, file$a, 524, 24, 18177);
-    			add_location(td6, file$a, 525, 24, 18226);
-    			add_location(td7, file$a, 533, 24, 18573);
-    			add_location(tr, file$a, 518, 20, 17894);
+    			add_location(b, file$b, 519, 28, 17928);
+    			add_location(td0, file$b, 519, 24, 17924);
+    			add_location(td1, file$b, 520, 24, 17979);
+    			add_location(td2, file$b, 521, 24, 18023);
+    			add_location(td3, file$b, 522, 24, 18074);
+    			add_location(td4, file$b, 523, 24, 18129);
+    			add_location(td5, file$b, 524, 24, 18177);
+    			add_location(td6, file$b, 525, 24, 18226);
+    			add_location(td7, file$b, 533, 24, 18573);
+    			add_location(tr, file$b, 518, 20, 17894);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -32073,47 +32196,47 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$a, 455, 20, 15514);
-    			add_location(th1, file$a, 456, 20, 15563);
-    			add_location(th2, file$a, 457, 20, 15597);
-    			add_location(th3, file$a, 458, 20, 15645);
-    			add_location(th4, file$a, 459, 20, 15697);
-    			add_location(th5, file$a, 460, 20, 15740);
+    			add_location(th0, file$b, 455, 20, 15514);
+    			add_location(th1, file$b, 456, 20, 15563);
+    			add_location(th2, file$b, 457, 20, 15597);
+    			add_location(th3, file$b, 458, 20, 15645);
+    			add_location(th4, file$b, 459, 20, 15697);
+    			add_location(th5, file$b, 460, 20, 15740);
     			attr_dev(th6, "colspan", "2");
-    			add_location(th6, file$a, 461, 20, 15783);
+    			add_location(th6, file$b, 461, 20, 15783);
     			set_style(tr0, "text-align", "center");
     			set_style(tr0, "background-color", "lightslategray");
-    			add_location(tr0, file$a, 452, 16, 15387);
-    			add_location(thead, file$a, 451, 12, 15362);
+    			add_location(tr0, file$b, 452, 16, 15387);
+    			add_location(thead, file$b, 451, 12, 15362);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "Babylon");
-    			add_location(input0, file$a, 467, 25, 15952);
-    			add_location(td0, file$a, 466, 20, 15922);
+    			add_location(input0, file$b, 467, 25, 15952);
+    			add_location(td0, file$b, 466, 20, 15922);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "placeholder", "2075");
-    			add_location(input1, file$a, 474, 25, 16218);
-    			add_location(td1, file$a, 473, 20, 16188);
+    			add_location(input1, file$b, 474, 25, 16218);
+    			add_location(td1, file$b, 473, 20, 16188);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "placeholder", "0000");
-    			add_location(input2, file$a, 481, 25, 16479);
-    			add_location(td2, file$a, 480, 20, 16449);
+    			add_location(input2, file$b, 481, 25, 16479);
+    			add_location(td2, file$b, 480, 20, 16449);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "0000");
-    			add_location(input3, file$a, 488, 25, 16747);
-    			add_location(td3, file$a, 487, 20, 16717);
+    			add_location(input3, file$b, 488, 25, 16747);
+    			add_location(td3, file$b, 487, 20, 16717);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "placeholder", "0000");
-    			add_location(input4, file$a, 495, 25, 17019);
-    			add_location(td4, file$a, 494, 20, 16989);
+    			add_location(input4, file$b, 495, 25, 17019);
+    			add_location(td4, file$b, 494, 20, 16989);
     			attr_dev(input5, "type", "number");
     			attr_dev(input5, "placeholder", "0000");
-    			add_location(input5, file$a, 502, 25, 17284);
-    			add_location(td5, file$a, 501, 20, 17254);
+    			add_location(input5, file$b, 502, 25, 17284);
+    			add_location(td5, file$b, 501, 20, 17254);
     			attr_dev(td6, "colspan", "2");
     			set_style(td6, "text-align", "center");
-    			add_location(td6, file$a, 508, 20, 17520);
-    			add_location(tr1, file$a, 465, 16, 15896);
-    			add_location(tbody, file$a, 464, 12, 15871);
+    			add_location(td6, file$b, 508, 20, 17520);
+    			add_location(tr1, file$b, 465, 16, 15896);
+    			add_location(tbody, file$b, 464, 12, 15871);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -32393,7 +32516,7 @@ var app = (function () {
     }
 
     // (558:40) <Button color="info">
-    function create_default_slot$9(ctx) {
+    function create_default_slot$a(ctx) {
     	let t;
 
     	const block = {
@@ -32410,7 +32533,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$9.name,
+    		id: create_default_slot$a.name,
     		type: "slot",
     		source: "(558:40) <Button color=\\\"info\\\">",
     		ctx
@@ -32449,7 +32572,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$a(ctx) {
+    function create_fragment$b(ctx) {
     	let main;
     	let h1;
     	let t1;
@@ -32478,8 +32601,8 @@ var app = (function () {
     			t1 = space();
     			info.block.c();
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$a, 363, 4, 12466);
-    			add_location(main, file$a, 362, 0, 12454);
+    			add_location(h1, file$b, 363, 4, 12466);
+    			add_location(main, file$b, 362, 0, 12454);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -32524,7 +32647,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$a.name,
+    		id: create_fragment$b.name,
     		type: "component",
     		source: "",
     		ctx
@@ -32533,7 +32656,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$a($$self, $$props, $$invalidate) {
+    function instance$b($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Smokers", slots, []);
     	let visible = false;
@@ -32845,7 +32968,7 @@ var app = (function () {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$9.warn(`<Smokers> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$a.warn(`<Smokers> was created with unknown prop '${key}'`);
     	});
 
     	const func = () => $$invalidate(0, visible = false);
@@ -33000,21 +33123,21 @@ var app = (function () {
     class Smokers extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$a, create_fragment$a, safe_not_equal, {}, [-1, -1]);
+    		init(this, options, instance$b, create_fragment$b, safe_not_equal, {}, [-1, -1]);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Smokers",
     			options,
-    			id: create_fragment$a.name
+    			id: create_fragment$b.name
     		});
     	}
     }
 
     /* src\front\smokersStats\SmokersItems.svelte generated by Svelte v3.38.2 */
 
-    const { console: console_1$8 } = globals;
-    const file$9 = "src\\front\\smokersStats\\SmokersItems.svelte";
+    const { console: console_1$9 } = globals;
+    const file$a = "src\\front\\smokersStats\\SmokersItems.svelte";
 
     // (188:8) {#if checkMSG}
     function create_if_block$3(ctx) {
@@ -33223,31 +33346,31 @@ var app = (function () {
     			t21 = space();
     			td6 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$9, 194, 20, 6564);
-    			add_location(th1, file$9, 195, 20, 6613);
-    			add_location(th2, file$9, 196, 20, 6647);
-    			add_location(th3, file$9, 197, 20, 6695);
-    			add_location(th4, file$9, 198, 20, 6747);
-    			add_location(th5, file$9, 199, 20, 6790);
+    			add_location(th0, file$a, 194, 20, 6564);
+    			add_location(th1, file$a, 195, 20, 6613);
+    			add_location(th2, file$a, 196, 20, 6647);
+    			add_location(th3, file$a, 197, 20, 6695);
+    			add_location(th4, file$a, 198, 20, 6747);
+    			add_location(th5, file$a, 199, 20, 6790);
     			attr_dev(th6, "colspan", "2");
-    			add_location(th6, file$9, 200, 20, 6833);
+    			add_location(th6, file$a, 200, 20, 6833);
     			set_style(tr0, "text-align", "center");
-    			add_location(tr0, file$9, 193, 16, 6509);
-    			add_location(thead, file$9, 192, 12, 6484);
-    			add_location(td0, file$9, 205, 20, 6970);
-    			add_location(td1, file$9, 206, 20, 7018);
-    			add_location(input0, file$9, 207, 24, 7066);
-    			add_location(td2, file$9, 207, 20, 7062);
-    			add_location(input1, file$9, 208, 24, 7129);
-    			add_location(td3, file$9, 208, 20, 7125);
-    			add_location(input2, file$9, 209, 24, 7199);
-    			add_location(td4, file$9, 209, 20, 7195);
-    			add_location(input3, file$9, 210, 24, 7260);
-    			add_location(td5, file$9, 210, 20, 7256);
+    			add_location(tr0, file$a, 193, 16, 6509);
+    			add_location(thead, file$a, 192, 12, 6484);
+    			add_location(td0, file$a, 205, 20, 6970);
+    			add_location(td1, file$a, 206, 20, 7018);
+    			add_location(input0, file$a, 207, 24, 7066);
+    			add_location(td2, file$a, 207, 20, 7062);
+    			add_location(input1, file$a, 208, 24, 7129);
+    			add_location(td3, file$a, 208, 20, 7125);
+    			add_location(input2, file$a, 209, 24, 7199);
+    			add_location(td4, file$a, 209, 20, 7195);
+    			add_location(input3, file$a, 210, 24, 7260);
+    			add_location(td5, file$a, 210, 20, 7256);
     			set_style(td6, "text-align", "center");
-    			add_location(td6, file$9, 211, 20, 7318);
-    			add_location(tr1, file$9, 204, 16, 6944);
-    			add_location(tbody, file$9, 203, 12, 6919);
+    			add_location(td6, file$a, 211, 20, 7318);
+    			add_location(tr1, file$a, 204, 16, 6944);
+    			add_location(tbody, file$a, 203, 12, 6919);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -33364,7 +33487,7 @@ var app = (function () {
     }
 
     // (216:8) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot$8(ctx) {
+    function create_default_slot$9(ctx) {
     	let t;
 
     	const block = {
@@ -33381,7 +33504,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$8.name,
+    		id: create_default_slot$9.name,
     		type: "slot",
     		source: "(216:8) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
@@ -33390,7 +33513,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$9(ctx) {
+    function create_fragment$a(ctx) {
     	let main;
     	let h1;
     	let t0;
@@ -33432,7 +33555,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot$8] },
+    				$$slots: { default: [create_default_slot$9] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -33455,8 +33578,8 @@ var app = (function () {
     			t6 = space();
     			create_component(button.$$.fragment);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$9, 184, 4, 6201);
-    			add_location(main, file$9, 182, 0, 6183);
+    			add_location(h1, file$a, 184, 4, 6201);
+    			add_location(main, file$a, 182, 0, 6183);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -33527,7 +33650,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$9.name,
+    		id: create_fragment$a.name,
     		type: "component",
     		source: "",
     		ctx
@@ -33536,7 +33659,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$9($$self, $$props, $$invalidate) {
+    function instance$a($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("SmokersItems", slots, []);
     	let visible = false;
@@ -33662,7 +33785,7 @@ var app = (function () {
     	const writable_props = ["params"];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$8.warn(`<SmokersItems> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$9.warn(`<SmokersItems> was created with unknown prop '${key}'`);
     	});
 
     	const func = () => $$invalidate(1, visible = false);
@@ -33751,13 +33874,13 @@ var app = (function () {
     class SmokersItems extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$9, create_fragment$9, safe_not_equal, { params: 0 });
+    		init(this, options, instance$a, create_fragment$a, safe_not_equal, { params: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "SmokersItems",
     			options,
-    			id: create_fragment$9.name
+    			id: create_fragment$a.name
     		});
     	}
 
@@ -33772,11 +33895,11 @@ var app = (function () {
 
     /* src\front\smokersStats\GraphSmokers.svelte generated by Svelte v3.38.2 */
 
-    const { console: console_1$7 } = globals;
-    const file$8 = "src\\front\\smokersStats\\GraphSmokers.svelte";
+    const { console: console_1$8 } = globals;
+    const file$9 = "src\\front\\smokersStats\\GraphSmokers.svelte";
 
     // (139:20) <Button outline color="primary" on:click="{pop}">
-    function create_default_slot$7(ctx) {
+    function create_default_slot$8(ctx) {
     	let t;
 
     	const block = {
@@ -33793,7 +33916,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$7.name,
+    		id: create_default_slot$8.name,
     		type: "slot",
     		source: "(139:20) <Button outline color=\\\"primary\\\" on:click=\\\"{pop}\\\">",
     		ctx
@@ -33802,7 +33925,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$8(ctx) {
+    function create_fragment$9(ctx) {
     	let script0;
     	let script0_src_value;
     	let script1;
@@ -33830,7 +33953,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot$7] },
+    				$$slots: { default: [create_default_slot$8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -33856,24 +33979,24 @@ var app = (function () {
     			p1 = element("p");
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$8, 120, 2, 3286);
+    			add_location(script0, file$9, 120, 2, 3286);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$8, 121, 2, 3355);
+    			add_location(script1, file$9, 121, 2, 3355);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$8, 122, 2, 3434);
+    			add_location(script2, file$9, 122, 2, 3434);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$8, 123, 2, 3510);
+    			add_location(script3, file$9, 123, 2, 3510);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$8, 124, 2, 3588);
+    			add_location(script4, file$9, 124, 2, 3588);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$8, 132, 4, 3762);
+    			add_location(div, file$9, 132, 4, 3762);
     			attr_dev(p0, "class", "highcharts-description");
-    			add_location(p0, file$8, 133, 4, 3794);
+    			add_location(p0, file$9, 133, 4, 3794);
     			attr_dev(figure, "class", "highcharts-figure svelte-nccje");
-    			add_location(figure, file$8, 131, 2, 3722);
+    			add_location(figure, file$9, 131, 2, 3722);
     			attr_dev(p1, "align", "center");
-    			add_location(p1, file$8, 138, 2, 4018);
-    			add_location(main, file$8, 129, 0, 3710);
+    			add_location(p1, file$9, 138, 2, 4018);
+    			add_location(main, file$9, 129, 0, 3710);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -33934,7 +34057,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$8.name,
+    		id: create_fragment$9.name,
     		type: "component",
     		source: "",
     		ctx
@@ -33943,7 +34066,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$8($$self, $$props, $$invalidate) {
+    function instance$9($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("GraphSmokers", slots, []);
     	var BASE_SMOKER_PATH = "/api/v3/smokers-stats";
@@ -34040,7 +34163,7 @@ var app = (function () {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$7.warn(`<GraphSmokers> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$8.warn(`<GraphSmokers> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({
@@ -34081,13 +34204,13 @@ var app = (function () {
     class GraphSmokers extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$8, create_fragment$8, safe_not_equal, {});
+    		init(this, options, instance$9, create_fragment$9, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "GraphSmokers",
     			options,
-    			id: create_fragment$8.name
+    			id: create_fragment$9.name
     		});
     	}
     }
@@ -35570,11 +35693,11 @@ var app = (function () {
 
     /* src\front\smokersStats\integrations\RentalStats.svelte generated by Svelte v3.38.2 */
 
-    const { Object: Object_1, console: console_1$6 } = globals;
-    const file$7 = "src\\front\\smokersStats\\integrations\\RentalStats.svelte";
+    const { Object: Object_1, console: console_1$7 } = globals;
+    const file$8 = "src\\front\\smokersStats\\integrations\\RentalStats.svelte";
 
     // (147:22) <Button outline color="primary" on:click={pop}>
-    function create_default_slot$6(ctx) {
+    function create_default_slot$7(ctx) {
     	let t;
 
     	const block = {
@@ -35591,7 +35714,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$6.name,
+    		id: create_default_slot$7.name,
     		type: "slot",
     		source: "(147:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
     		ctx
@@ -35600,7 +35723,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$7(ctx) {
+    function create_fragment$8(ctx) {
     	let main;
     	let div;
     	let t;
@@ -35612,7 +35735,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot$6] },
+    				$$slots: { default: [create_default_slot$7] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -35631,10 +35754,10 @@ var app = (function () {
     			set_style(div, "max-width", "740px");
     			set_style(div, "height", "400px");
     			set_style(div, "margin", "0px auto");
-    			add_location(div, file$7, 145, 4, 5261);
+    			add_location(div, file$8, 145, 4, 5261);
     			attr_dev(p, "align", "center");
-    			add_location(p, file$7, 146, 4, 5343);
-    			add_location(main, file$7, 144, 0, 5249);
+    			add_location(p, file$8, 146, 4, 5343);
+    			add_location(main, file$8, 144, 0, 5249);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -35673,7 +35796,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$7.name,
+    		id: create_fragment$8.name,
     		type: "component",
     		source: "",
     		ctx
@@ -35685,7 +35808,7 @@ var app = (function () {
     const BASE_RENTALS_API_PATH = "https://sos2021-07.herokuapp.com/api/v1/integration/rentals";
     const BASE_SMOKERS_PATH$1 = "/api/v3/smokers-stats";
 
-    function instance$7($$self, $$props, $$invalidate) {
+    function instance$8($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("RentalStats", slots, []);
     	let visible = false;
@@ -35835,7 +35958,7 @@ var app = (function () {
     	const writable_props = [];
 
     	Object_1.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$6.warn(`<RentalStats> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$7.warn(`<RentalStats> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({
@@ -35888,23 +36011,23 @@ var app = (function () {
     class RentalStats extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$7, create_fragment$7, safe_not_equal, {});
+    		init(this, options, instance$8, create_fragment$8, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "RentalStats",
     			options,
-    			id: create_fragment$7.name
+    			id: create_fragment$8.name
     		});
     	}
     }
 
     /* src\front\smokersStats\integrations\Hostelries.svelte generated by Svelte v3.38.2 */
 
-    const { console: console_1$5 } = globals;
-    const file$6 = "src\\front\\smokersStats\\integrations\\Hostelries.svelte";
+    const { console: console_1$6 } = globals;
+    const file$7 = "src\\front\\smokersStats\\integrations\\Hostelries.svelte";
 
-    function create_fragment$6(ctx) {
+    function create_fragment$7(ctx) {
     	let main;
     	let div;
 
@@ -35916,8 +36039,8 @@ var app = (function () {
     			set_style(div, "max-width", "740px");
     			set_style(div, "height", "400px");
     			set_style(div, "margin", "0px auto");
-    			add_location(div, file$6, 130, 4, 3942);
-    			add_location(main, file$6, 129, 0, 3930);
+    			add_location(div, file$7, 130, 4, 3942);
+    			add_location(main, file$7, 129, 0, 3930);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -35936,7 +36059,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$6.name,
+    		id: create_fragment$7.name,
     		type: "component",
     		source: "",
     		ctx
@@ -35948,7 +36071,7 @@ var app = (function () {
     const BASE_HOSTEL_API_PATH = "https://sos2021-26.herokuapp.com/api/v2/hostelries";
     const BASE_SMOKERS_PATH = "/api/v3/smokers-stats";
 
-    function instance$6($$self, $$props, $$invalidate) {
+    function instance$7($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Hostelries", slots, []);
     	let visible = false;
@@ -36068,7 +36191,7 @@ var app = (function () {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$5.warn(`<Hostelries> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$6.warn(`<Hostelries> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({
@@ -36114,21 +36237,21 @@ var app = (function () {
     class Hostelries extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$6, create_fragment$6, safe_not_equal, {});
+    		init(this, options, instance$7, create_fragment$7, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Hostelries",
     			options,
-    			id: create_fragment$6.name
+    			id: create_fragment$7.name
     		});
     	}
     }
 
     /* src\front\weightsStats\TablaWeights.svelte generated by Svelte v3.38.2 */
 
-    const { console: console_1$4 } = globals;
-    const file$5 = "src\\front\\weightsStats\\TablaWeights.svelte";
+    const { console: console_1$5 } = globals;
+    const file$6 = "src\\front\\weightsStats\\TablaWeights.svelte";
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
@@ -36185,8 +36308,11 @@ var app = (function () {
     	let t10;
     	let button5;
     	let t11;
-    	let a;
+    	let a0;
     	let button6;
+    	let t12;
+    	let a1;
+    	let button7;
     	let current;
 
     	alert0 = new Alert({
@@ -36194,7 +36320,7 @@ var app = (function () {
     				color: /*color*/ ctx[2],
     				isOpen: /*visible*/ ctx[0],
     				toggle: /*func*/ ctx[19],
-    				$$slots: { default: [create_default_slot_13$1] },
+    				$$slots: { default: [create_default_slot_14$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -36205,7 +36331,7 @@ var app = (function () {
     				color: "warning",
     				isOpen: /*wvisible*/ ctx[1],
     				toggle: /*func_1*/ ctx[20],
-    				$$slots: { default: [create_default_slot_12$1] },
+    				$$slots: { default: [create_default_slot_13$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -36214,7 +36340,7 @@ var app = (function () {
     	table0 = new Table({
     			props: {
     				bordered: true,
-    				$$slots: { default: [create_default_slot_8$1] },
+    				$$slots: { default: [create_default_slot_9$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -36223,7 +36349,7 @@ var app = (function () {
     	button0 = new Button({
     			props: {
     				color: "primary",
-    				$$slots: { default: [create_default_slot_7$1] },
+    				$$slots: { default: [create_default_slot_8$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -36234,7 +36360,7 @@ var app = (function () {
     	button1 = new Button({
     			props: {
     				color: "primary",
-    				$$slots: { default: [create_default_slot_6$1] },
+    				$$slots: { default: [create_default_slot_7$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -36245,7 +36371,7 @@ var app = (function () {
     	button2 = new Button({
     			props: {
     				color: "warning",
-    				$$slots: { default: [create_default_slot_5$1] },
+    				$$slots: { default: [create_default_slot_6$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -36255,7 +36381,7 @@ var app = (function () {
 
     	table1 = new Table({
     			props: {
-    				$$slots: { default: [create_default_slot_4$1] },
+    				$$slots: { default: [create_default_slot_5$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -36265,7 +36391,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_3$2] },
+    				$$slots: { default: [create_default_slot_4$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -36278,7 +36404,7 @@ var app = (function () {
     	button4 = new Button({
     			props: {
     				color: "success",
-    				$$slots: { default: [create_default_slot_2$2] },
+    				$$slots: { default: [create_default_slot_3$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -36289,7 +36415,7 @@ var app = (function () {
     	button5 = new Button({
     			props: {
     				color: "danger",
-    				$$slots: { default: [create_default_slot_1$2] },
+    				$$slots: { default: [create_default_slot_2$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -36300,7 +36426,16 @@ var app = (function () {
     	button6 = new Button({
     			props: {
     				color: "info",
-    				$$slots: { default: [create_default_slot$5] },
+    				$$slots: { default: [create_default_slot_1$2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button7 = new Button({
+    			props: {
+    				color: "info",
+    				$$slots: { default: [create_default_slot$6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -36334,17 +36469,22 @@ var app = (function () {
     			t10 = space();
     			create_component(button5.$$.fragment);
     			t11 = space();
-    			a = element("a");
+    			a0 = element("a");
     			create_component(button6.$$.fragment);
+    			t12 = space();
+    			a1 = element("a");
+    			create_component(button7.$$.fragment);
     			attr_dev(p, "align", "center");
-    			add_location(p, file$5, 318, 4, 11932);
-    			add_location(strong, file$5, 324, 34, 12254);
+    			add_location(p, file$6, 318, 4, 11932);
+    			add_location(strong, file$6, 324, 34, 12254);
     			set_style(h4, "text-align", "center");
-    			add_location(h4, file$5, 324, 4, 12224);
+    			add_location(h4, file$6, 324, 4, 12224);
     			set_style(div, "text-align", "center");
-    			add_location(div, file$5, 341, 4, 13089);
-    			attr_dev(a, "href", "./#/weights-graph");
-    			add_location(a, file$5, 353, 4, 13486);
+    			add_location(div, file$6, 341, 4, 13089);
+    			attr_dev(a0, "href", "./#/weights-graph");
+    			add_location(a0, file$6, 353, 4, 13486);
+    			attr_dev(a1, "href", "./#/weights-graph-morris");
+    			add_location(a1, file$6, 355, 4, 13581);
     		},
     		m: function mount(target, anchor) {
     			mount_component(alert0, target, anchor);
@@ -36372,8 +36512,11 @@ var app = (function () {
     			insert_dev(target, t10, anchor);
     			mount_component(button5, target, anchor);
     			insert_dev(target, t11, anchor);
-    			insert_dev(target, a, anchor);
-    			mount_component(button6, a, null);
+    			insert_dev(target, a0, anchor);
+    			mount_component(button6, a0, null);
+    			insert_dev(target, t12, anchor);
+    			insert_dev(target, a1, anchor);
+    			mount_component(button7, a1, null);
     			current = true;
     		},
     		p: function update(new_ctx, dirty) {
@@ -36460,6 +36603,13 @@ var app = (function () {
     			}
 
     			button6.$set(button6_changes);
+    			const button7_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 512) {
+    				button7_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button7.$set(button7_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -36474,6 +36624,7 @@ var app = (function () {
     			transition_in(button4.$$.fragment, local);
     			transition_in(button5.$$.fragment, local);
     			transition_in(button6.$$.fragment, local);
+    			transition_in(button7.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -36488,6 +36639,7 @@ var app = (function () {
     			transition_out(button4.$$.fragment, local);
     			transition_out(button5.$$.fragment, local);
     			transition_out(button6.$$.fragment, local);
+    			transition_out(button7.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -36513,8 +36665,11 @@ var app = (function () {
     			if (detaching) detach_dev(t10);
     			destroy_component(button5, detaching);
     			if (detaching) detach_dev(t11);
-    			if (detaching) detach_dev(a);
+    			if (detaching) detach_dev(a0);
     			destroy_component(button6);
+    			if (detaching) detach_dev(t12);
+    			if (detaching) detach_dev(a1);
+    			destroy_component(button7);
     		}
     	};
 
@@ -36560,7 +36715,7 @@ var app = (function () {
     }
 
     // (271:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
-    function create_default_slot_13$1(ctx) {
+    function create_default_slot_14$1(ctx) {
     	let if_block_anchor;
     	let if_block = /*checkMSG*/ ctx[4] && create_if_block_1$2(ctx);
 
@@ -36595,7 +36750,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_13$1.name,
+    		id: create_default_slot_14$1.name,
     		type: "slot",
     		source: "(271:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>",
     		ctx
@@ -36635,7 +36790,7 @@ var app = (function () {
     }
 
     // (277:4) <Alert color="warning" isOpen={wvisible} toggle={() => (visible = false)}>
-    function create_default_slot_12$1(ctx) {
+    function create_default_slot_13$1(ctx) {
     	let if_block_anchor;
     	let if_block = /*warningMSG*/ ctx[5] && create_if_block$2(ctx);
 
@@ -36670,7 +36825,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_12$1.name,
+    		id: create_default_slot_13$1.name,
     		type: "slot",
     		source: "(277:4) <Alert color=\\\"warning\\\" isOpen={wvisible} toggle={() => (visible = false)}>",
     		ctx
@@ -36680,7 +36835,7 @@ var app = (function () {
     }
 
     // (301:20) <Button outline color="success" on:click={insertWeight}>
-    function create_default_slot_11$1(ctx) {
+    function create_default_slot_12$1(ctx) {
     	let t;
 
     	const block = {
@@ -36697,7 +36852,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_11$1.name,
+    		id: create_default_slot_12$1.name,
     		type: "slot",
     		source: "(301:20) <Button outline color=\\\"success\\\" on:click={insertWeight}>",
     		ctx
@@ -36707,7 +36862,7 @@ var app = (function () {
     }
 
     // (311:93) <Button outline color="primary">
-    function create_default_slot_10$1(ctx) {
+    function create_default_slot_11$1(ctx) {
     	let t;
 
     	const block = {
@@ -36724,7 +36879,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_10$1.name,
+    		id: create_default_slot_11$1.name,
     		type: "slot",
     		source: "(311:93) <Button outline color=\\\"primary\\\">",
     		ctx
@@ -36734,7 +36889,7 @@ var app = (function () {
     }
 
     // (312:24) <Button outline color="danger" on:click="{deleteWeights(weightsStat.provinces, weightsStat.year)}">
-    function create_default_slot_9$1(ctx) {
+    function create_default_slot_10$1(ctx) {
     	let t;
 
     	const block = {
@@ -36751,7 +36906,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_9$1.name,
+    		id: create_default_slot_10$1.name,
     		type: "slot",
     		source: "(312:24) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteWeights(weightsStat.provinces, weightsStat.year)}\\\">",
     		ctx
@@ -36797,7 +36952,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_10$1] },
+    				$$slots: { default: [create_default_slot_11$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -36807,7 +36962,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "danger",
-    				$$slots: { default: [create_default_slot_9$1] },
+    				$$slots: { default: [create_default_slot_10$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -36842,17 +36997,17 @@ var app = (function () {
     			t10 = space();
     			create_component(button1.$$.fragment);
     			t11 = space();
-    			add_location(b, file$5, 304, 64, 11260);
+    			add_location(b, file$6, 304, 64, 11260);
     			set_style(td0, "background-color", "lightskyblue");
-    			add_location(td0, file$5, 304, 20, 11216);
-    			add_location(td1, file$5, 305, 20, 11317);
-    			add_location(td2, file$5, 306, 20, 11366);
-    			add_location(td3, file$5, 307, 20, 11424);
-    			add_location(td4, file$5, 308, 20, 11479);
+    			add_location(td0, file$6, 304, 20, 11216);
+    			add_location(td1, file$6, 305, 20, 11317);
+    			add_location(td2, file$6, 306, 20, 11366);
+    			add_location(td3, file$6, 307, 20, 11424);
+    			add_location(td4, file$6, 308, 20, 11479);
     			attr_dev(a, "href", a_href_value = "#/weights-stats/" + /*weightsStat*/ ctx[37].provinces + "/" + /*weightsStat*/ ctx[37].year);
-    			add_location(a, file$5, 310, 24, 11561);
-    			add_location(td5, file$5, 309, 20, 11531);
-    			add_location(tr, file$5, 303, 16, 11190);
+    			add_location(a, file$6, 310, 24, 11561);
+    			add_location(td5, file$6, 309, 20, 11531);
+    			add_location(tr, file$6, 303, 16, 11190);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -36937,7 +37092,7 @@ var app = (function () {
     }
 
     // (283:4) <Table bordered >
-    function create_default_slot_8$1(ctx) {
+    function create_default_slot_9$1(ctx) {
     	let thead;
     	let tr0;
     	let th0;
@@ -36980,7 +37135,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "success",
-    				$$slots: { default: [create_default_slot_11$1] },
+    				$$slots: { default: [create_default_slot_12$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -37046,39 +37201,39 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$5, 285, 12, 10184);
-    			add_location(th1, file$5, 286, 12, 10225);
-    			add_location(th2, file$5, 287, 12, 10251);
-    			add_location(th3, file$5, 288, 12, 10285);
-    			add_location(th4, file$5, 289, 12, 10317);
-    			add_location(th5, file$5, 290, 12, 10348);
+    			add_location(th0, file$6, 285, 12, 10184);
+    			add_location(th1, file$6, 286, 12, 10225);
+    			add_location(th2, file$6, 287, 12, 10251);
+    			add_location(th3, file$6, 288, 12, 10285);
+    			add_location(th4, file$6, 289, 12, 10317);
+    			add_location(th5, file$6, 290, 12, 10348);
     			set_style(tr0, "background-color", "lightslategray");
-    			add_location(tr0, file$5, 284, 10, 10123);
-    			add_location(thead, file$5, 283, 8, 10104);
+    			add_location(tr0, file$6, 284, 10, 10123);
+    			add_location(thead, file$6, 283, 8, 10104);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "Comunidad autónoma");
-    			add_location(input0, file$5, 295, 60, 10497);
+    			add_location(input0, file$6, 295, 60, 10497);
     			set_style(td0, "background-color", "lightskyblue");
-    			add_location(td0, file$5, 295, 16, 10453);
+    			add_location(td0, file$6, 295, 16, 10453);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "placeholder", "2075");
-    			add_location(input1, file$5, 296, 20, 10613);
-    			add_location(td1, file$5, 296, 16, 10609);
+    			add_location(input1, file$6, 296, 20, 10613);
+    			add_location(td1, file$6, 296, 16, 10609);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "placeholder", "0000");
-    			add_location(input2, file$5, 297, 20, 10712);
-    			add_location(td2, file$5, 297, 16, 10708);
+    			add_location(input2, file$6, 297, 20, 10712);
+    			add_location(td2, file$6, 297, 16, 10708);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "0000");
-    			add_location(input3, file$5, 298, 20, 10820);
-    			add_location(td3, file$5, 298, 16, 10816);
+    			add_location(input3, file$6, 298, 20, 10820);
+    			add_location(td3, file$6, 298, 16, 10816);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "placeholder", "0000");
-    			add_location(input4, file$5, 299, 20, 10925);
-    			add_location(td4, file$5, 299, 16, 10921);
-    			add_location(td5, file$5, 300, 16, 11023);
-    			add_location(tr1, file$5, 294, 12, 10431);
-    			add_location(tbody, file$5, 293, 8, 10410);
+    			add_location(input4, file$6, 299, 20, 10925);
+    			add_location(td4, file$6, 299, 16, 10921);
+    			add_location(td5, file$6, 300, 16, 11023);
+    			add_location(tr1, file$6, 294, 12, 10431);
+    			add_location(tbody, file$6, 293, 8, 10410);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -37229,7 +37384,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_8$1.name,
+    		id: create_default_slot_9$1.name,
     		type: "slot",
     		source: "(283:4) <Table bordered >",
     		ctx
@@ -37239,7 +37394,7 @@ var app = (function () {
     }
 
     // (320:8) <Button color="primary" on:click="{getPreviewPage}">
-    function create_default_slot_7$1(ctx) {
+    function create_default_slot_8$1(ctx) {
     	let t;
 
     	const block = {
@@ -37256,7 +37411,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_7$1.name,
+    		id: create_default_slot_8$1.name,
     		type: "slot",
     		source: "(320:8) <Button color=\\\"primary\\\" on:click=\\\"{getPreviewPage}\\\">",
     		ctx
@@ -37266,7 +37421,7 @@ var app = (function () {
     }
 
     // (321:8) <Button color="primary" on:click="{getNextPage}">
-    function create_default_slot_6$1(ctx) {
+    function create_default_slot_7$1(ctx) {
     	let t;
 
     	const block = {
@@ -37283,7 +37438,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_6$1.name,
+    		id: create_default_slot_7$1.name,
     		type: "slot",
     		source: "(321:8) <Button color=\\\"primary\\\" on:click=\\\"{getNextPage}\\\">",
     		ctx
@@ -37293,7 +37448,7 @@ var app = (function () {
     }
 
     // (322:8) <Button color="warning" on:click="{loadInitialData}">
-    function create_default_slot_5$1(ctx) {
+    function create_default_slot_6$1(ctx) {
     	let t;
 
     	const block = {
@@ -37310,7 +37465,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$1.name,
+    		id: create_default_slot_6$1.name,
     		type: "slot",
     		source: "(322:8) <Button color=\\\"warning\\\" on:click=\\\"{loadInitialData}\\\">",
     		ctx
@@ -37320,7 +37475,7 @@ var app = (function () {
     }
 
     // (327:4) <Table>
-    function create_default_slot_4$1(ctx) {
+    function create_default_slot_5$1(ctx) {
     	let th0;
     	let t1;
     	let th1;
@@ -37381,32 +37536,32 @@ var app = (function () {
     			t13 = space();
     			td4 = element("td");
     			input4 = element("input");
-    			add_location(th0, file$5, 327, 8, 12331);
-    			add_location(th1, file$5, 328, 8, 12381);
-    			add_location(th2, file$5, 329, 8, 12416);
-    			add_location(th3, file$5, 330, 8, 12474);
-    			add_location(th4, file$5, 331, 8, 12530);
+    			add_location(th0, file$6, 327, 8, 12331);
+    			add_location(th1, file$6, 328, 8, 12381);
+    			add_location(th2, file$6, 329, 8, 12416);
+    			add_location(th3, file$6, 330, 8, 12474);
+    			add_location(th4, file$6, 331, 8, 12530);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "Comunidad autónoma");
-    			add_location(input0, file$5, 333, 16, 12607);
-    			add_location(td0, file$5, 333, 12, 12603);
+    			add_location(input0, file$6, 333, 16, 12607);
+    			add_location(td0, file$6, 333, 12, 12603);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "placeholder", "2017");
-    			add_location(input1, file$5, 334, 16, 12709);
-    			add_location(td1, file$5, 334, 12, 12705);
+    			add_location(input1, file$6, 334, 16, 12709);
+    			add_location(td1, file$6, 334, 12, 12705);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "placeholder", "0000");
-    			add_location(input2, file$5, 335, 16, 12795);
-    			add_location(td2, file$5, 335, 12, 12791);
+    			add_location(input2, file$6, 335, 16, 12795);
+    			add_location(td2, file$6, 335, 12, 12791);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "0000");
-    			add_location(input3, file$5, 336, 16, 12889);
-    			add_location(td3, file$5, 336, 12, 12885);
+    			add_location(input3, file$6, 336, 16, 12889);
+    			add_location(td3, file$6, 336, 12, 12885);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "placeholder", "0000");
-    			add_location(input4, file$5, 337, 16, 12981);
-    			add_location(td4, file$5, 337, 12, 12977);
-    			add_location(tr, file$5, 332, 8, 12585);
+    			add_location(input4, file$6, 337, 16, 12981);
+    			add_location(td4, file$6, 337, 12, 12977);
+    			add_location(tr, file$6, 332, 8, 12585);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, th0, anchor);
@@ -37492,7 +37647,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$1.name,
+    		id: create_default_slot_5$1.name,
     		type: "slot",
     		source: "(327:4) <Table>",
     		ctx
@@ -37502,7 +37657,7 @@ var app = (function () {
     }
 
     // (343:8) <Button outline color="primary" on:click="{busqueda (sProvince, sYear, sNormalWeight, sOverWeight, sObesity)}">
-    function create_default_slot_3$2(ctx) {
+    function create_default_slot_4$1(ctx) {
     	let t;
 
     	const block = {
@@ -37519,7 +37674,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$2.name,
+    		id: create_default_slot_4$1.name,
     		type: "slot",
     		source: "(343:8) <Button outline color=\\\"primary\\\" on:click=\\\"{busqueda (sProvince, sYear, sNormalWeight, sOverWeight, sObesity)}\\\">",
     		ctx
@@ -37529,7 +37684,7 @@ var app = (function () {
     }
 
     // (346:4) <Button color="success" on:click="{loadInitialData}">
-    function create_default_slot_2$2(ctx) {
+    function create_default_slot_3$2(ctx) {
     	let t;
 
     	const block = {
@@ -37546,7 +37701,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$2.name,
+    		id: create_default_slot_3$2.name,
     		type: "slot",
     		source: "(346:4) <Button color=\\\"success\\\" on:click=\\\"{loadInitialData}\\\">",
     		ctx
@@ -37556,7 +37711,7 @@ var app = (function () {
     }
 
     // (350:4) <Button color="danger" on:click="{deleteALL}">
-    function create_default_slot_1$2(ctx) {
+    function create_default_slot_2$2(ctx) {
     	let t;
 
     	const block = {
@@ -37573,7 +37728,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$2.name,
+    		id: create_default_slot_2$2.name,
     		type: "slot",
     		source: "(350:4) <Button color=\\\"danger\\\" on:click=\\\"{deleteALL}\\\">",
     		ctx
@@ -37583,7 +37738,7 @@ var app = (function () {
     }
 
     // (354:32) <Button color="info">
-    function create_default_slot$5(ctx) {
+    function create_default_slot_1$2(ctx) {
     	let t;
 
     	const block = {
@@ -37600,9 +37755,36 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$5.name,
+    		id: create_default_slot_1$2.name,
     		type: "slot",
     		source: "(354:32) <Button color=\\\"info\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (356:39) <Button color="info">
+    function create_default_slot$6(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Gráfico libreria morris.js");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$6.name,
+    		type: "slot",
+    		source: "(356:39) <Button color=\\\"info\\\">",
     		ctx
     	});
 
@@ -37639,7 +37821,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$5(ctx) {
+    function create_fragment$6(ctx) {
     	let main;
     	let h1;
     	let t1;
@@ -37668,8 +37850,8 @@ var app = (function () {
     			t1 = space();
     			info.block.c();
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$5, 264, 4, 9610);
-    			add_location(main, file$5, 263, 0, 9598);
+    			add_location(h1, file$6, 264, 4, 9610);
+    			add_location(main, file$6, 263, 0, 9598);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -37714,7 +37896,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$5.name,
+    		id: create_fragment$6.name,
     		type: "component",
     		source: "",
     		ctx
@@ -37723,7 +37905,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$5($$self, $$props, $$invalidate) {
+    function instance$6($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("TablaWeights", slots, []);
     	let visible = false;
@@ -37995,7 +38177,7 @@ var app = (function () {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$4.warn(`<TablaWeights> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$5.warn(`<TablaWeights> was created with unknown prop '${key}'`);
     	});
 
     	const func = () => $$invalidate(0, visible = false);
@@ -38147,21 +38329,21 @@ var app = (function () {
     class TablaWeights extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$5, create_fragment$5, safe_not_equal, {}, [-1, -1]);
+    		init(this, options, instance$6, create_fragment$6, safe_not_equal, {}, [-1, -1]);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "TablaWeights",
     			options,
-    			id: create_fragment$5.name
+    			id: create_fragment$6.name
     		});
     	}
     }
 
     /* src\front\weightsStats\EditWeight.svelte generated by Svelte v3.38.2 */
 
-    const { console: console_1$3 } = globals;
-    const file$4 = "src\\front\\weightsStats\\EditWeight.svelte";
+    const { console: console_1$4 } = globals;
+    const file$5 = "src\\front\\weightsStats\\EditWeight.svelte";
 
     // (72:8) {#if checkMSG}
     function create_if_block_1$1(ctx) {
@@ -38359,25 +38541,25 @@ var app = (function () {
     			t18 = space();
     			td5 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$4, 80, 16, 2717);
-    			add_location(th1, file$4, 81, 16, 2762);
-    			add_location(th2, file$4, 82, 16, 2792);
-    			add_location(th3, file$4, 83, 16, 2830);
-    			add_location(th4, file$4, 84, 16, 2866);
-    			add_location(th5, file$4, 85, 16, 2901);
-    			add_location(tr0, file$4, 79, 12, 2695);
-    			add_location(thead, file$4, 78, 8, 2674);
-    			add_location(td0, file$4, 90, 16, 3008);
-    			add_location(td1, file$4, 91, 16, 3053);
-    			add_location(input0, file$4, 92, 20, 3097);
-    			add_location(td2, file$4, 92, 16, 3093);
-    			add_location(input1, file$4, 93, 20, 3168);
-    			add_location(td3, file$4, 93, 16, 3164);
-    			add_location(input2, file$4, 94, 20, 3235);
-    			add_location(td4, file$4, 94, 16, 3231);
-    			add_location(td5, file$4, 95, 16, 3295);
-    			add_location(tr1, file$4, 89, 12, 2986);
-    			add_location(tbody, file$4, 88, 8, 2965);
+    			add_location(th0, file$5, 80, 16, 2717);
+    			add_location(th1, file$5, 81, 16, 2762);
+    			add_location(th2, file$5, 82, 16, 2792);
+    			add_location(th3, file$5, 83, 16, 2830);
+    			add_location(th4, file$5, 84, 16, 2866);
+    			add_location(th5, file$5, 85, 16, 2901);
+    			add_location(tr0, file$5, 79, 12, 2695);
+    			add_location(thead, file$5, 78, 8, 2674);
+    			add_location(td0, file$5, 90, 16, 3008);
+    			add_location(td1, file$5, 91, 16, 3053);
+    			add_location(input0, file$5, 92, 20, 3097);
+    			add_location(td2, file$5, 92, 16, 3093);
+    			add_location(input1, file$5, 93, 20, 3168);
+    			add_location(td3, file$5, 93, 16, 3164);
+    			add_location(input2, file$5, 94, 20, 3235);
+    			add_location(td4, file$5, 94, 16, 3231);
+    			add_location(td5, file$5, 95, 16, 3295);
+    			add_location(tr1, file$5, 89, 12, 2986);
+    			add_location(tbody, file$5, 88, 8, 2965);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -38494,7 +38676,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[7]);
     			set_style(p, "color", "red");
-    			add_location(p, file$4, 101, 8, 3462);
+    			add_location(p, file$5, 101, 8, 3462);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -38521,7 +38703,7 @@ var app = (function () {
     }
 
     // (104:4) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot$4(ctx) {
+    function create_default_slot$5(ctx) {
     	let t;
 
     	const block = {
@@ -38538,7 +38720,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$4.name,
+    		id: create_default_slot$5.name,
     		type: "slot",
     		source: "(104:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
@@ -38547,7 +38729,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$4(ctx) {
+    function create_fragment$5(ctx) {
     	let main;
     	let alert;
     	let t0;
@@ -38592,7 +38774,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot$4] },
+    				$$slots: { default: [create_default_slot$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -38617,8 +38799,8 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t8 = space();
     			create_component(button.$$.fragment);
-    			add_location(h1, file$4, 76, 4, 2575);
-    			add_location(main, file$4, 68, 0, 2414);
+    			add_location(h1, file$5, 76, 4, 2575);
+    			add_location(main, file$5, 68, 0, 2414);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -38707,7 +38889,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$4.name,
+    		id: create_fragment$5.name,
     		type: "component",
     		source: "",
     		ctx
@@ -38716,7 +38898,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$4($$self, $$props, $$invalidate) {
+    function instance$5($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("EditWeight", slots, []);
     	var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
@@ -38779,7 +38961,7 @@ var app = (function () {
     	const writable_props = ["params"];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$3.warn(`<EditWeight> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$4.warn(`<EditWeight> was created with unknown prop '${key}'`);
     	});
 
     	const func = () => $$invalidate(1, visible = false);
@@ -38860,13 +39042,13 @@ var app = (function () {
     class EditWeight extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$4, create_fragment$4, safe_not_equal, { params: 0 });
+    		init(this, options, instance$5, create_fragment$5, safe_not_equal, { params: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "EditWeight",
     			options,
-    			id: create_fragment$4.name
+    			id: create_fragment$5.name
     		});
     	}
 
@@ -38881,11 +39063,11 @@ var app = (function () {
 
     /* src\front\weightsStats\GraphWeight.svelte generated by Svelte v3.38.2 */
 
-    const { console: console_1$2 } = globals;
-    const file$3 = "src\\front\\weightsStats\\GraphWeight.svelte";
+    const { console: console_1$3 } = globals;
+    const file$4 = "src\\front\\weightsStats\\GraphWeight.svelte";
 
     // (121:2) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot$3(ctx) {
+    function create_default_slot$4(ctx) {
     	let t;
 
     	const block = {
@@ -38902,7 +39084,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$3.name,
+    		id: create_default_slot$4.name,
     		type: "slot",
     		source: "(121:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
@@ -38911,7 +39093,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$3(ctx) {
+    function create_fragment$4(ctx) {
     	let script0;
     	let script0_src_value;
     	let script1;
@@ -38938,7 +39120,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot$3] },
+    				$$slots: { default: [create_default_slot$4] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -38963,22 +39145,22 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 102, 2, 2656);
+    			add_location(script0, file$4, 102, 2, 2656);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 103, 2, 2725);
+    			add_location(script1, file$4, 103, 2, 2725);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 104, 2, 2804);
+    			add_location(script2, file$4, 104, 2, 2804);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$3, 105, 2, 2880);
+    			add_location(script3, file$4, 105, 2, 2880);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$3, 106, 2, 2958);
+    			add_location(script4, file$4, 106, 2, 2958);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$3, 114, 4, 3132);
+    			add_location(div, file$4, 114, 4, 3132);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$3, 115, 4, 3164);
-    			attr_dev(figure, "class", "highcharts-figure svelte-nccje");
-    			add_location(figure, file$3, 113, 2, 3092);
-    			add_location(main, file$3, 111, 0, 3080);
+    			add_location(p, file$4, 115, 4, 3164);
+    			attr_dev(figure, "class", "highcharts-figure");
+    			add_location(figure, file$4, 113, 2, 3092);
+    			add_location(main, file$4, 111, 0, 3080);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -39038,7 +39220,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$3.name,
+    		id: create_fragment$4.name,
     		type: "component",
     		source: "",
     		ctx
@@ -39047,7 +39229,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$3($$self, $$props, $$invalidate) {
+    function instance$4($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("GraphWeight", slots, []);
     	var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
@@ -39132,7 +39314,7 @@ var app = (function () {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$2.warn(`<GraphWeight> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$3.warn(`<GraphWeight> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({
@@ -39168,11 +39350,273 @@ var app = (function () {
     class GraphWeight extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$3, create_fragment$3, safe_not_equal, {});
+    		init(this, options, instance$4, create_fragment$4, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "GraphWeight",
+    			options,
+    			id: create_fragment$4.name
+    		});
+    	}
+    }
+
+    /* src\front\weightsStats\GraphWeightMorris.svelte generated by Svelte v3.38.2 */
+
+    const { console: console_1$2 } = globals;
+    const file$3 = "src\\front\\weightsStats\\GraphWeightMorris.svelte";
+
+    // (53:8) <Button outline color="secondary" on:click="{pop}">
+    function create_default_slot$3(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Atrás");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$3.name,
+    		type: "slot",
+    		source: "(53:8) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$3(ctx) {
+    	let link0;
+    	let link1;
+    	let script0;
+    	let script0_src_value;
+    	let script1;
+    	let script1_src_value;
+    	let script2;
+    	let script2_src_value;
+    	let t0;
+    	let main;
+    	let h1;
+    	let t2;
+    	let div;
+    	let t3;
+    	let p;
+    	let t5;
+    	let h7;
+    	let t7;
+    	let button;
+    	let current;
+    	let mounted;
+    	let dispose;
+
+    	button = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				$$slots: { default: [create_default_slot$3] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", pop);
+
+    	const block = {
+    		c: function create() {
+    			link0 = element("link");
+    			link1 = element("link");
+    			script0 = element("script");
+    			script1 = element("script");
+    			script2 = element("script");
+    			t0 = space();
+    			main = element("main");
+    			h1 = element("h1");
+    			h1.textContent = "Estadística de peso normal en los años 2014 y 2017";
+    			t2 = space();
+    			div = element("div");
+    			t3 = space();
+    			p = element("p");
+    			p.textContent = "Gráfico en el que se muestra la suma de los porcentajes del peso normal en los años 2014 y 2017 en cada comunidad autónoma de España";
+    			t5 = space();
+    			h7 = element("h7");
+    			h7.textContent = "Gráfica diseñada con Morris.js";
+    			t7 = space();
+    			create_component(button.$$.fragment);
+    			attr_dev(link0, "href", "https://fonts.googleapis.com/css?family=Lato");
+    			attr_dev(link0, "rel", "stylesheet");
+    			add_location(link0, file$3, 38, 4, 1143);
+    			attr_dev(link1, "rel", "stylesheet");
+    			attr_dev(link1, "href", "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css");
+    			add_location(link1, file$3, 39, 4, 1224);
+    			if (script0.src !== (script0_src_value = "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js")) attr_dev(script0, "src", script0_src_value);
+    			add_location(script0, file$3, 40, 4, 1320);
+    			if (script1.src !== (script1_src_value = "//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$3, 41, 4, 1434);
+    			if (script2.src !== (script2_src_value = "//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js")) attr_dev(script2, "src", script2_src_value);
+    			add_location(script2, file$3, 42, 4, 1522);
+    			set_style(h1, "text-align", "center");
+    			add_location(h1, file$3, 46, 8, 1655);
+    			attr_dev(div, "id", "AwesomeChart");
+    			set_style(div, "height", "250px");
+    			add_location(div, file$3, 48, 8, 1757);
+    			add_location(p, file$3, 50, 8, 1825);
+    			set_style(h7, "color", "gray");
+    			add_location(h7, file$3, 51, 8, 1974);
+    			add_location(main, file$3, 45, 4, 1639);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			append_dev(document.head, link0);
+    			append_dev(document.head, link1);
+    			append_dev(document.head, script0);
+    			append_dev(document.head, script1);
+    			append_dev(document.head, script2);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, main, anchor);
+    			append_dev(main, h1);
+    			append_dev(main, t2);
+    			append_dev(main, div);
+    			append_dev(main, t3);
+    			append_dev(main, p);
+    			append_dev(main, t5);
+    			append_dev(main, h7);
+    			append_dev(main, t7);
+    			mount_component(button, main, null);
+    			current = true;
+
+    			if (!mounted) {
+    				dispose = listen_dev(script0, "load", /*loadGraph*/ ctx[0], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 4) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			detach_dev(link0);
+    			detach_dev(link1);
+    			detach_dev(script0);
+    			detach_dev(script1);
+    			detach_dev(script2);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(main);
+    			destroy_component(button);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$3.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$3($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("GraphWeightMorris", slots, []);
+    	var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
+
+    	async function loadGraph() {
+    		let datos = [];
+    		var dic = {};
+    		const resData = await fetch(BASE_WEIGHTS_PATH);
+    		const json = await resData.json();
+
+    		json.forEach(v => {
+    			if (v.provinces in dic) {
+    				dic[v.provinces] += Math.round(v.normal_weight);
+    			} else {
+    				dic[v.provinces] = v.normal_weight;
+    			}
+    		});
+
+    		console.log(dic);
+
+    		for (var v in dic) {
+    			datos.push({ label: v, value: dic[v] });
+    		}
+
+    		console.log(datos);
+
+    		new Morris.Donut({
+    				element: "AwesomeChart",
+    				data: datos,
+    				colors: [
+    					"#3c8dbc",
+    					"red",
+    					"#A9DFBF",
+    					"yellow",
+    					"purple",
+    					"black",
+    					"#138D75",
+    					"silver"
+    				]
+    			});
+    	}
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$2.warn(`<GraphWeightMorris> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$capture_state = () => ({
+    		Button,
+    		pop,
+    		BASE_WEIGHTS_PATH,
+    		loadGraph
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("BASE_WEIGHTS_PATH" in $$props) BASE_WEIGHTS_PATH = $$props.BASE_WEIGHTS_PATH;
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [loadGraph];
+    }
+
+    class GraphWeightMorris extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$3, create_fragment$3, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "GraphWeightMorris",
     			options,
     			id: create_fragment$3.name
     		});
@@ -40864,8 +41308,13 @@ var app = (function () {
     			create_component(navbar.$$.fragment);
     			t = space();
     			create_component(router.$$.fragment);
+<<<<<<< HEAD
     			add_location(body, file, 57, 1, 2511);
     			add_location(main, file, 56, 0, 2502);
+=======
+    			add_location(body, file, 57, 1, 2529);
+    			add_location(main, file, 56, 0, 2520);
+>>>>>>> 464a96383bbe0f0202b9c5d8bb7bb7ed3bd461a7
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -40937,6 +41386,7 @@ var app = (function () {
     		"/weights-stats": TablaWeights,
     		"/weights-stats/:provinces/:year": EditWeight,
     		"/weights-graph": GraphWeight,
+    		"/weights-graph-morris": GraphWeightMorris,
     		"/smokers-stats": Smokers,
     		"/smokers-stats/:province/:year": SmokersItems,
     		"/smokers-graph": GraphSmokers,
@@ -40975,6 +41425,7 @@ var app = (function () {
     		FrontWeight: TablaWeights,
     		EditWeight,
     		GraphWeight,
+    		GraphWeightMorris,
     		GroupGraph,
     		Navbar,
     		NavbarBrand,
