@@ -17,6 +17,7 @@
         nombres.push(alcoholData[index].ageRange)
         muertes.push(alcoholData[index].alcoholPrematureDeath);
       }
+
       Highcharts.chart('container', {
 
         chart: {
@@ -24,7 +25,7 @@
         },
 
         title: {
-            text: 'Muertes prematuras por rango de edad'
+            text: 'Muertes prematuras por rango de edad España 2017'
         },
 
         legend: {
@@ -98,7 +99,8 @@
         </p>
       </figure>
     </div>
-    <a href="#/alcohol-graph"><Button outline color="primary">Ver otra representación</Button></a>
+    <a href="#/alcohol-graph3"><Button outline color="primary">Ver representación lineal dygraph</Button></a>
+    <a href="#/alcohol-graph"><Button outline color="primary">Ver representación lineal Highcharts</Button></a>
     <a href="#/alcohol-stats"><Button outline color="primary">Ver datos</Button></a>
   </main>
   

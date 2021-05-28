@@ -13,6 +13,7 @@
   import EditAlcohol from "./alcoholStats/EditAlcohol.svelte";
   import GraphAlcohol from "./alcoholStats/GraphAlcohol.svelte";
   import GraphAlcohol2 from "./alcoholStats/GraphAlcohol2.svelte";
+  import GraphAlcohol3 from "./alcoholStats/GraphAlcohol3.svelte";
   import AnxietyStats from "./alcoholStats/integrations/AnxietyStats.svelte";
   import PovertyRiskStats from "./alcoholStats/integrations/PovertyRisk.svelte";
   import SmokerStats from "./smokersStats/Smokers.svelte";
@@ -35,6 +36,7 @@
     "/alcohol-stats/:country/:year/:ageRange": EditAlcohol,
     "/alcohol-graph": GraphAlcohol,
     "/alcohol-graph2": GraphAlcohol2,
+    "/alcohol-graph3": GraphAlcohol3,
     "/integrations/anxiety-stats": AnxietyStats,
     "/integrations/poverty-risk-stats": PovertyRiskStats,
     "/life-stats" : LifeExpectancy,

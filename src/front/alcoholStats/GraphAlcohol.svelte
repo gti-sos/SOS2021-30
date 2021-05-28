@@ -88,60 +88,6 @@
           ],
         },
       });
-      //Calculos para los datos de Highchart2
-      let nombres = [];
-      let muertes = [];
-      for (let index = 0; index < alcoholData.length; index++) {
-        nombres.push(alcoholData[index].ageRange)
-        muertes.push(alcoholData[index].alcoholPrematureDeath);
-      }
-      console.log(nombres);
-      console.log(muertes);
-      Highcharts.chart('container2', {
-
-        chart: {
-            type: 'item'
-        },
-
-        title: {
-            text: 'Muertes prematuras por rango de edad'
-        },
-
-        legend: {
-            labelFormat: '{name} <span style="opacity: 0.4">{y}</span>'
-        },
-
-        series: [{
-            name: 'Muertes prematuras',
-            keys: ['name', 'y', 'color', 'label'],
-            data: [
-                [nombres[0], muertes[0], '#BE3075', nombres[0]],
-                [nombres[1], muertes[1], '#EB001F', nombres[1]],
-                [nombres[2], muertes[2], '#64A12D', nombres[2]],
-                [nombres[3], muertes[3], '#FFED00', nombres[3]],
-                [nombres[4], muertes[4], '#000000', nombres[4]],
-                [nombres[5], muertes[5], '#008AC5', nombres[5]],
-                [nombres[6], muertes[6], '#009EE0', nombres[6]]
-                [nombres[7], muertes[7], '#008AC5', nombres[7]],
-                [nombres[8], muertes[8], '#008AC5', nombres[8]],
-                [nombres[9], muertes[9], '#008AC5', nombres[9]],
-                [nombres[10], muertes[10], '#008AC5', nombres[10]],
-                [nombres[11], muertes[11], '#008AC5', nombres[11]],
-                [nombres[12], muertes[12], '#008AC5', nombres[12]],
-                [nombres[13], muertes[13], '#008AC5', nombres[13]]
-            ],
-            dataLabels: {
-                enabled: true,
-                format: '{point.label}'
-            },
-
-            // Circular options
-            center: ['50%', '88%'],
-            size: '170%',
-            startAngle: -100,
-            endAngle: 100
-        }]
-});
     }
    
   </script>
@@ -179,7 +125,8 @@
         </p>
       </figure>
     </div>
-    <a href="#/alcohol-graph2"><Button outline color="primary">Ver otra representación</Button></a>
+    <a href="#/alcohol-graph3"><Button outline color="primary">Ver representación lineal dygraph</Button></a>
+    <a href="#/alcohol-graph2"><Button outline color="primary">Ver representación Highcharts en otro formato</Button></a>
     <a href="#/alcohol-stats"><Button outline color="primary">Ver datos</Button></a>
   </main>
   

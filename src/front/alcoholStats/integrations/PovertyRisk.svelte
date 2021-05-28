@@ -27,6 +27,7 @@
 
   async function getPovertyStats() {
       console.log("Fetching poverty data...");
+      await fetch("https://endpoint-poverty-risks.herokuapp.com/api/v1/loadInitialData");
       const res = await fetch("https://endpoint-poverty-risks.herokuapp.com/api/v1/");
       console.log(res);
       if (res.ok) {
