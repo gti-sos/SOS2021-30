@@ -39329,25 +39329,25 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			attr_dev(link0, "href", "https://fonts.googleapis.com/css?family=Lato");
     			attr_dev(link0, "rel", "stylesheet");
-    			add_location(link0, file$3, 38, 4, 1138);
+    			add_location(link0, file$3, 38, 4, 1172);
     			attr_dev(link1, "rel", "stylesheet");
     			attr_dev(link1, "href", "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css");
-    			add_location(link1, file$3, 39, 4, 1219);
+    			add_location(link1, file$3, 39, 4, 1253);
     			if (script0.src !== (script0_src_value = "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 40, 4, 1315);
+    			add_location(script0, file$3, 40, 4, 1349);
     			if (script1.src !== (script1_src_value = "//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 41, 4, 1429);
+    			add_location(script1, file$3, 41, 4, 1463);
     			if (script2.src !== (script2_src_value = "//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 42, 4, 1517);
+    			add_location(script2, file$3, 42, 4, 1551);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$3, 46, 8, 1650);
+    			add_location(h1, file$3, 46, 8, 1684);
     			attr_dev(div, "id", "AwesomeChart");
     			set_style(div, "height", "250px");
-    			add_location(div, file$3, 48, 8, 1752);
-    			add_location(p, file$3, 50, 8, 1820);
+    			add_location(div, file$3, 48, 8, 1786);
+    			add_location(p, file$3, 50, 8, 1854);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$3, 51, 8, 1969);
-    			add_location(main, file$3, 45, 4, 1634);
+    			add_location(h7, file$3, 51, 8, 2003);
+    			add_location(main, file$3, 45, 4, 1668);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -39425,7 +39425,6 @@ var app = (function () {
     	var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
 
     	async function loadGraph() {
-    		let datos = [];
     		var dic = {};
     		const res = await fetch(BASE_WEIGHTS_PATH);
     		const weightData = await res.json();
@@ -39440,15 +39439,15 @@ var app = (function () {
 
     		console.log(dic);
 
-    		for (var v in dic) {
-    			datos.push({ label: v, value: dic[v] });
+    		for (var data in dic) {
+    			weightData.push({ label: data, value: dic[data] });
     		}
 
-    		console.log(datos);
+    		console.log(weightData);
 
     		new Morris.Donut({
     				element: "AwesomeChart",
-    				data: datos,
+    				data: weightData,
     				colors: [
     					"#3c8dbc",
     					"red",

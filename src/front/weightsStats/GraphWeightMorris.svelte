@@ -29,7 +29,7 @@
         console.log(weightData);
         new Morris.Donut({
             element: 'AwesomeChart',
-            data: weightData,
+            data: weightChartData,
             colors: ["#3c8dbc", "red", "#A9DFBF", "yellow", "purple", "black", "#138D75", "silver"] 
         });
     }
