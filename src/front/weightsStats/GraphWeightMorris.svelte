@@ -21,12 +21,12 @@
         });
         console.log(dic);
         for(var data in dic){
-             weightData.push({
+             weightChartData.push({
                 label: data,
                 value: dic[data]
             })
         }
-        console.log(weightData);
+        console.log(weightChartData);
         new Morris.Donut({
             element: 'AwesomeChart',
             data: weightChartData,
