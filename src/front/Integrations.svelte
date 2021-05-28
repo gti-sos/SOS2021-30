@@ -14,7 +14,7 @@
   <main>
   
     <div>
-    <h1>Integraciones</h1>
+    <h1>integrations</h1>
   </div>
   <div>
     <Card class="mb-3">
@@ -41,7 +41,7 @@
         <CardText />
         <a href="/#/integrations/rentals"
           ><Button color="primary">Estadísticas Alquileres por comunidades</Button></a>
-        <a href="/#/integraciones/arms-sales"
+        <a href="/#/integrations/arms-sales"
         ><Button color="primary">Estadísticas Venta de armas por estado</Button></a>
         <a href="/#/integrations/unemploy"
         ><Button color="primary">Estadísticas Desempleo por comunidades</Button></a>

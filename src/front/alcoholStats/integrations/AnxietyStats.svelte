@@ -11,6 +11,8 @@
 
     console.log("Cargando página...");
 
+    
+
     async function getStats() {
       console.log("Fetching alcohol data...");
       const res = await fetch(BASE_API_PATH + "/alcohol-consumption-stats/loadInitialData");
@@ -27,7 +29,7 @@
     }
     async function getAnxietyStats() {
       console.log("Fetching anxiety data...");
-      const res = await fetch(BASE_ANXIETY_API_PATH + "/anxiety_stats");
+      const res = await fetch(BASE_ANXIETY_API_PATH + "/anxiety_stats"); // Modificar cuando nos den el endpoint
       console.log(res);
       if (res.ok) {
         const json = await res.json();
@@ -40,18 +42,18 @@
       }
     }
     async function loadGraph() {
-      //await getAnxietyStats();
       console.log("Inicio getStats");
+      await getAnxietyStats();
       await getStats();
       console.log('Datos alcohol recibidos para pintar el grafo:');
       console.log(alcoholData);
       console.log('Datos ansiedad recibidos para pintar el grafo:');
       console.log(anxietyStats);
       let arrayDatos = [];
-      for (let index = 0; index < alcoholData.length; index++) {
+      for (let index = 0; index < alcoholData.length-2; index++) {
         let separa = alcoholData[index].ageRange.split('-'); 
         let parseo = parseInt(separa[1]);
-        arrayDatos.push([parseo,alcoholData[index].alcoholPrematureDeath,0/*anxietyStats[index].DATOQUEQUIERO*/]);
+        arrayDatos.push([parseo,alcoholData[index].alcoholPrematureDeath,anxietyStats[index].anxiety_population]);
         
       } // Etiqueta (Valorx) Numero asociado al rango de edad, Dato grafica muertes , Dato grafica ansiedad
       console.log("Array de datos para el grafo:");

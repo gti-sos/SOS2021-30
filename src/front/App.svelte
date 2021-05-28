@@ -6,17 +6,21 @@
 	import Home from "./Home.svelte";
   import Info from "./Info.svelte";
 	import Router from 'svelte-spa-router';
-  import Integraciones from './Integraciones.svelte';
+  import Integrations from './Integrations.svelte';
   import LifeExpectancy from './lifeStats/lifeExpectancy.svelte';
   import EditLife from './lifeStats/EditLife.svelte';
 	import TablaAlcohol from "./alcoholStats/TablaAlcohol.svelte";
   import EditAlcohol from "./alcoholStats/EditAlcohol.svelte";
   import GraphAlcohol from "./alcoholStats/GraphAlcohol.svelte";
-  import AnxietyStats from "./alcoholStats/integraciones/AnxietyStats.svelte";
-  import PovertyRiskStats from "./alcoholStats/integraciones/PovertyRisk.svelte";
+  import GraphAlcohol2 from "./alcoholStats/GraphAlcohol2.svelte";
+  import AnxietyStats from "./alcoholStats/integrations/AnxietyStats.svelte";
+  import PovertyRiskStats from "./alcoholStats/integrations/PovertyRisk.svelte";
   import SmokerStats from "./smokersStats/Smokers.svelte";
   import SmokersItems from "./smokersStats/SmokersItems.svelte";
   import GraphSmokers from "./smokersStats/GraphSmokers.svelte";
+  import RentalStats from "./smokersStats/integrations/RentalStats.svelte";
+  import ArmsSales from "./smokersStats/integrations/ArmsSales.svelte";
+  import Unemployment from "./smokersStats/integrations/Unemployment.svelte";
   import FrontWeight from "./weightsStats/TablaWeights.svelte";
   import EditWeight from "./weightsStats/EditWeight.svelte";
   import GraphWeight from "./weightsStats/GraphWeight.svelte";
@@ -24,15 +28,14 @@
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
   import GraphLife from "./lifeStats/GraphLife.svelte";
 
-
-
 	const routes = {
 		"/":Home,
     "/info": Info,
-    "/integrations":Integraciones,
+    "/integrations": Integrations,
 		"/alcohol-stats": TablaAlcohol,
     "/alcohol-stats/:country/:year/:ageRange": EditAlcohol,
     "/alcohol-graph": GraphAlcohol,
+    "/alcohol-graph2": GraphAlcohol2,
     "/integrations/anxiety-stats": AnxietyStats,
     "/integrations/poverty-risk-stats": PovertyRiskStats,
     "/life-stats" : LifeExpectancy,
@@ -44,6 +47,9 @@
     "/smokers-stats" : SmokerStats,
     "/smokers-stats/:province/:year" : SmokersItems,
     "/smokers-graph" : GraphSmokers,
+    "/integrations/rentals": RentalStats,
+    "/integrations/arms-sales": ArmsSales,
+    "/integrations/unemploy": Unemployment,
     "/group-graph" : GroupGraph,
 		'*': NotFound};
 </script>
