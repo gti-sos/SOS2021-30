@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-<!-- <script>
-
-=======
 <script>
->>>>>>> e3d57d6b00e06d5b16c73c44250b6051f11562c8
     import * as JSC from "jscharting";
     import { onMount } from "svelte";
     import { Alert } from "sveltestrap";
@@ -148,15 +143,6 @@
 </script>
 
 <main>
-<<<<<<< HEAD
-    
-    <div id="chartDiv" style="width: 100%; height: 400px;">
-        <p> Hola que pasa no funciona</p>
-    </div>
-
-</main> -->
-=======
     <div id="chartDiv" style="max-width: 740px;height: 400px;margin: 0px auto"/>
     <p align="center"><Button outline color="primary" on:click={pop}>Atrás</Button></p>
 </main>
->>>>>>> e3d57d6b00e06d5b16c73c44250b6051f11562c8
