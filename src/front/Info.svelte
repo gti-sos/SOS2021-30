@@ -41,7 +41,8 @@
                 <td>Juan Pedro Hurtado Masero</td>
                 <td>API smokers-Stats</td>
                 <td><a href="https://sos2021-30.herokuapp.com/api/v1/smokers-stats"><Button color="info">API v1</Button></a>
-                    <a href="https://sos2021-30.herokuapp.com/api/v2/smokers-stats"><Button color="info">API v2</Button></a></td>
+                    <a href="https://sos2021-30.herokuapp.com/api/v2/smokers-stats"><Button color="info">API v2</Button></a>
+                    <a href="https://sos2021-30.herokuapp.com/api/v3/smokers-stats"><Button color="info">API v3</Button></a></td>
             </tr>
             <tr>
                 <td>Jesús Ruiz Domínguez</td>
@@ -77,7 +78,8 @@
                 <td>Juan Pedro Hurtado Masero</td>
                 <td>API smokers-Stats</td>
                 <td><a href="https://documenter.getpostman.com/view/14966429/TzJoFgHe"><Button color="info">Documentación v1</Button></a>
-                    <a href="https://documenter.getpostman.com/view/14966429/TzRU9RjW"><Button color="info">Documentación v2</Button></a></td>
+                    <a href="https://documenter.getpostman.com/view/14966429/TzRU9RjW"><Button color="info">Documentación v2</Button></a>
+                    <a href="https://documenter.getpostman.com/view/14966429/TzXwGers"><Button color="info">Documentación v3</Button></a></td>
             </tr>
             <tr>
                 <td>Jesús Ruiz Domínguez</td>

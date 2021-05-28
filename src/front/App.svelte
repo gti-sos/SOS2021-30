@@ -19,8 +19,7 @@
   import SmokersItems from "./smokersStats/SmokersItems.svelte";
   import GraphSmokers from "./smokersStats/GraphSmokers.svelte";
   import RentalStats from "./smokersStats/integrations/RentalStats.svelte";
-  import ArmsSales from "./smokersStats/integrations/ArmsSales.svelte";
-  import Unemployment from "./smokersStats/integrations/Unemployment.svelte";
+  import Hostelries from "./smokersStats/integrations/Hostelries.svelte";
   import FrontWeight from "./weightsStats/TablaWeights.svelte";
   import EditWeight from "./weightsStats/EditWeight.svelte";
   import GraphWeight from "./weightsStats/GraphWeight.svelte";
@@ -48,8 +47,7 @@
     "/smokers-stats/:province/:year" : SmokersItems,
     "/smokers-graph" : GraphSmokers,
     "/integrations/rentals": RentalStats,
-    "/integrations/arms-sales": ArmsSales,
-    "/integrations/unemploy": Unemployment,
+    "/integrations/hostelries": Hostelries,
     "/group-graph" : GroupGraph,
 		'*': NotFound};
 </script>

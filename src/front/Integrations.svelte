@@ -41,10 +41,8 @@
         <CardText />
         <a href="/#/integrations/rentals"
           ><Button color="primary">Estadísticas Alquileres por comunidades</Button></a>
-        <a href="/#/integrations/arms-sales"
-        ><Button color="primary">Estadísticas Venta de armas por estado</Button></a>
-        <a href="/#/integrations/unemploy"
-        ><Button color="primary">Estadísticas Desempleo por comunidades</Button></a>
+        <a href="/#/integrations/hostelries"
+        ><Button color="primary">Estadísticas Hostelries-Smoker</Button></a>
       </CardBody>
     </Card>
   </div>
