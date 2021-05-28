@@ -14,6 +14,7 @@
   import GraphAlcohol from "./alcoholStats/GraphAlcohol.svelte";
   import GraphAlcohol2 from "./alcoholStats/GraphAlcohol2.svelte";
   import GraphAlcohol3 from "./alcoholStats/GraphAlcohol3.svelte";
+  import CovidStats from "./alcoholStats/integrations/CovidStats.svelte";
   import AnxietyStats from "./alcoholStats/integrations/AnxietyStats.svelte";
   import PovertyRiskStats from "./alcoholStats/integrations/PovertyRisk.svelte";
   import SmokerStats from "./smokersStats/Smokers.svelte";
@@ -40,6 +41,7 @@
     "/alcohol-graph3": GraphAlcohol3,
     "/integrations/anxiety-stats": AnxietyStats,
     "/integrations/poverty-risk-stats": PovertyRiskStats,
+    "/integrations/covid-stats": CovidStats,
     "/life-stats" : LifeExpectancy,
     "/life-stats/:province/:year" : EditLife,
     "/life-graph": GraphLife,

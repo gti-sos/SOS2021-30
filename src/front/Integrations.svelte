@@ -28,6 +28,8 @@
           ><Button color="primary">Estadísticas Ansiedad</Button></a>
         <a href="/#/integrations/poverty-risk-stats"
         ><Button color="primary">Estadísticas Riesgo de pobreza</Button></a>
+        <a href="/#/integrations/covid-stats"
+        ><Button color="primary">Estadísticas sobre coronavirus</Button></a>
       </CardBody>
     </Card>
   </div>

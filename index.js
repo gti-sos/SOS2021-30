@@ -31,12 +31,27 @@ app.use("/anxiety-stats", function(req, res) {
 //Integración grupo 4
 
 app.use("/poverty-risk-stats", function(req, res) {
-    var apiServerHostAnxietyStats = ' http://sos2021-04.herokuapp.com';
+    var apiServerHostAnxietyStats = 'http://sos2021-04.herokuapp.com';
     //  poverty-risk-stats/api/v1/poverty_risks
     var url = apiServerHostAnxietyStats + req.url;
     console.log('piped: /poverty-risk-stats -> ' + url);
     req.pipe(request(url)).pipe(res);
 });
+
+/* // Integracion API externa Cocktails
+app.use("/cocktails", function(req, res) {
+    var apiServerHostAnxietyStats = 'https://corona-virus-world-and-india-data.p.rapidapi.com/api';
+    var url = apiServerHostAnxietyStats + req.url;
+    console.log('piped: /cocktail-stats -> ' + url);
+    req.headers({
+        "x-rapidapi-key": "8bc009cf62msh21716bede95b074p10450fjsnae5393291199",
+        "x-rapidapi-host": "corona-virus-world-and-india-data.p.rapidapi.com",
+        "useQueryString": true
+    });
+    req.pipe(request(url)).pipe(res);
+}); */
+
+
 //---------------------------END: API REST ALCOHOL-CONSUMPTION-STATS-----------------
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~

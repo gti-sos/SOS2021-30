@@ -29,6 +29,7 @@
     }
     async function getAnxietyStats() {
       console.log("Fetching anxiety data...");
+      await fetch(BASE_ANXIETY_API_PATH + "/anxiety_stats/loadInitialData");
       const res = await fetch(BASE_ANXIETY_API_PATH + "/anxiety_stats"); // Modificar cuando nos den el endpoint
       console.log(res);
       if (res.ok) {
