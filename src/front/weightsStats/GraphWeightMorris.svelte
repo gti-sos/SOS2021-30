@@ -1,35 +1,33 @@
-<!-- Hecho con morris-->
-
 <script type="text/javascript">
     import Button from "sveltestrap/src/Button.svelte";
     import { pop } from "svelte-spa-router";
 
     var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
-
     async function loadGraph(){     
-        let weightChartData = [];
+        let datos = [];
+        let cos_total = [];
         var dic = {};
-        const res = await fetch(BASE_WEIGHTS_PATH);
-        const weightData = await res.json();
-        weightData.forEach( (data) => {
-             if(data.provinces in dic){
-              dic[data.provinces] += Math.round(data.normal_weight)
+        const resData = await fetch(BASE_WEIGHTS_PATH);
+        const json = await resData.json();
+        json.forEach( (v) => {
+             if(v.provinces in dic){
+              dic[v.provinces] += Math.round(v.normal_weight)
             }
             else{
-              dic[data.provinces]= data.normal_weight;
+              dic[v.provinces]= v.normal_weight;
             }  
         });
         console.log(dic);
-        for(var data in dic){
-             weightChartData.push({
-                label: data,
-                value: dic[data]
+        for(var v in dic){
+             datos.push({
+                label: v,
+                value: dic[v]
             })
         }
-        console.log(weightChartData);
+        console.log(datos);
         new Morris.Donut({
             element: 'AwesomeChart',
-            data: weightChartData,
+            data: datos,
             colors: ["#3c8dbc", "red", "#A9DFBF", "yellow", "purple", "black", "#138D75", "silver"] 
         });
     }

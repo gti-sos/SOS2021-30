@@ -39243,7 +39243,7 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$3 = "src\\front\\weightsStats\\GraphWeightMorris.svelte";
 
-    // (53:8) <Button outline color="secondary" on:click="{pop}">
+    // (51:8) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -39263,7 +39263,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(53:8) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(51:8) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -39329,25 +39329,25 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			attr_dev(link0, "href", "https://fonts.googleapis.com/css?family=Lato");
     			attr_dev(link0, "rel", "stylesheet");
-    			add_location(link0, file$3, 38, 4, 1172);
+    			add_location(link0, file$3, 36, 4, 1115);
     			attr_dev(link1, "rel", "stylesheet");
     			attr_dev(link1, "href", "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css");
-    			add_location(link1, file$3, 39, 4, 1253);
+    			add_location(link1, file$3, 37, 4, 1196);
     			if (script0.src !== (script0_src_value = "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 40, 4, 1349);
+    			add_location(script0, file$3, 38, 4, 1292);
     			if (script1.src !== (script1_src_value = "//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 41, 4, 1463);
+    			add_location(script1, file$3, 39, 4, 1406);
     			if (script2.src !== (script2_src_value = "//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 42, 4, 1551);
+    			add_location(script2, file$3, 40, 4, 1494);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$3, 46, 8, 1684);
+    			add_location(h1, file$3, 44, 8, 1627);
     			attr_dev(div, "id", "AwesomeChart");
     			set_style(div, "height", "250px");
-    			add_location(div, file$3, 48, 8, 1786);
-    			add_location(p, file$3, 50, 8, 1854);
+    			add_location(div, file$3, 46, 8, 1729);
+    			add_location(p, file$3, 48, 8, 1797);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$3, 51, 8, 2003);
-    			add_location(main, file$3, 45, 4, 1668);
+    			add_location(h7, file$3, 49, 8, 1946);
+    			add_location(main, file$3, 43, 4, 1611);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -39425,29 +39425,30 @@ var app = (function () {
     	var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
 
     	async function loadGraph() {
+    		let datos = [];
     		var dic = {};
-    		const res = await fetch(BASE_WEIGHTS_PATH);
-    		const weightData = await res.json();
+    		const resData = await fetch(BASE_WEIGHTS_PATH);
+    		const json = await resData.json();
 
-    		weightData.forEach(data => {
-    			if (data.provinces in dic) {
-    				dic[data.provinces] += Math.round(data.normal_weight);
+    		json.forEach(v => {
+    			if (v.provinces in dic) {
+    				dic[v.provinces] += Math.round(v.normal_weight);
     			} else {
-    				dic[data.provinces] = data.normal_weight;
+    				dic[v.provinces] = v.normal_weight;
     			}
     		});
 
     		console.log(dic);
 
-    		for (var data in dic) {
-    			weightData.push({ label: data, value: dic[data] });
+    		for (var v in dic) {
+    			datos.push({ label: v, value: dic[v] });
     		}
 
-    		console.log(weightData);
+    		console.log(datos);
 
     		new Morris.Donut({
     				element: "AwesomeChart",
-    				data: weightData,
+    				data: datos,
     				colors: [
     					"#3c8dbc",
     					"red",
