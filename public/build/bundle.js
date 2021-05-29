@@ -36710,7 +36710,7 @@ var app = (function () {
     const { Object: Object_1, console: console_1$9 } = globals;
     const file$a = "src\\front\\smokersStats\\integrations\\RentalStats.svelte";
 
-    // (147:22) <Button outline color="primary" on:click={pop}>
+    // (151:22) <Button outline color="primary" on:click={pop}>
     function create_default_slot$9(ctx) {
     	let t;
 
@@ -36730,7 +36730,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$9.name,
     		type: "slot",
-    		source: "(147:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
+    		source: "(151:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
     		ctx
     	});
 
@@ -36768,10 +36768,10 @@ var app = (function () {
     			set_style(div, "max-width", "740px");
     			set_style(div, "height", "400px");
     			set_style(div, "margin", "0px auto");
-    			add_location(div, file$a, 145, 4, 5261);
+    			add_location(div, file$a, 149, 4, 5402);
     			attr_dev(p, "align", "center");
-    			add_location(p, file$a, 146, 4, 5343);
-    			add_location(main, file$a, 144, 0, 5249);
+    			add_location(p, file$a, 150, 4, 5484);
+    			add_location(main, file$a, 148, 0, 5390);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -36942,10 +36942,10 @@ var app = (function () {
     			pop();
     		}
 
-    		//Define the nest object that applies to both series    
+    		//Define del nido con el que se desarrolla la gráfica
     		var nido = jscharting.nest().key("province");
 
-    		//Reuse myNest with different rollup calls.
+    		//Reúso del nido para cada uno de los diferentes datos del objeto que se quiere mostrar (rollup calls)
     		var series = [
     			jscharting.merge({ name: "Fumadores diarios (en miles)" }, nido.rollup("dailySmoker").series(dataFin)[0]),
     			jscharting.merge(
@@ -36958,6 +36958,7 @@ var app = (function () {
     		]; //segunda parte de la serie, rent
 
     		//Convert data to series array.
+    		//Convierte los datos en grafo
     		jscharting.chart("chartDiv", {
     			debug: true,
     			type: "column",
@@ -36968,7 +36969,9 @@ var app = (function () {
     		});
     	}
 
+    	//Llamada a la función constructora
     	loadGraph();
+
     	const writable_props = [];
 
     	Object_1.keys($$props).forEach(key => {

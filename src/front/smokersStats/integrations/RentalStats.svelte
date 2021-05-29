@@ -114,10 +114,11 @@
             pop();
         }
         
-        //Define the nest object that applies to both series    
+
+        //Define del nido con el que se desarrolla la gráfica
         var nido = JSC.nest().key("province");
 
-        //Reuse myNest with different rollup calls.
+        //Reúso del nido para cada uno de los diferentes datos del objeto que se quiere mostrar (rollup calls)
         var series = [
             JSC.merge(
                 { name: "Fumadores diarios (en miles)" },
@@ -128,7 +129,9 @@
                 nido.rollup("rent").series(dataFin)[0]  //segunda parte de la serie, rent
             ),
         ];
+
         //Convert data to series array.
+        //Convierte los datos en grafo
         var chart = JSC.chart("chartDiv", {
             debug: true,
             type: "column",
@@ -139,6 +142,7 @@
         });
     }
 
+    //Llamada a la función constructora
     loadGraph();
 </script>
 
