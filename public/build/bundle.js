@@ -8339,7 +8339,7 @@ var app = (function () {
     }
 
     // (38:92) <Button color="info">
-    function create_default_slot_23(ctx) {
+    function create_default_slot_23$1(ctx) {
     	let t;
 
     	const block = {
@@ -8356,7 +8356,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_23.name,
+    		id: create_default_slot_23$1.name,
     		type: "slot",
     		source: "(38:92) <Button color=\\\"info\\\">",
     		ctx
@@ -8366,7 +8366,7 @@ var app = (function () {
     }
 
     // (43:84) <Button color="info">
-    function create_default_slot_22(ctx) {
+    function create_default_slot_22$1(ctx) {
     	let t;
 
     	const block = {
@@ -8383,7 +8383,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_22.name,
+    		id: create_default_slot_22$1.name,
     		type: "slot",
     		source: "(43:84) <Button color=\\\"info\\\">",
     		ctx
@@ -8393,7 +8393,7 @@ var app = (function () {
     }
 
     // (44:84) <Button color="info">
-    function create_default_slot_21(ctx) {
+    function create_default_slot_21$1(ctx) {
     	let t;
 
     	const block = {
@@ -8410,7 +8410,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_21.name,
+    		id: create_default_slot_21$1.name,
     		type: "slot",
     		source: "(44:84) <Button color=\\\"info\\\">",
     		ctx
@@ -8420,7 +8420,7 @@ var app = (function () {
     }
 
     // (45:84) <Button color="info">
-    function create_default_slot_20(ctx) {
+    function create_default_slot_20$1(ctx) {
     	let t;
 
     	const block = {
@@ -8437,7 +8437,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_20.name,
+    		id: create_default_slot_20$1.name,
     		type: "slot",
     		source: "(45:84) <Button color=\\\"info\\\">",
     		ctx
@@ -8447,7 +8447,7 @@ var app = (function () {
     }
 
     // (50:90) <Button color="info">
-    function create_default_slot_19(ctx) {
+    function create_default_slot_19$1(ctx) {
     	let t;
 
     	const block = {
@@ -8464,7 +8464,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_19.name,
+    		id: create_default_slot_19$1.name,
     		type: "slot",
     		source: "(50:90) <Button color=\\\"info\\\">",
     		ctx
@@ -8629,7 +8629,7 @@ var app = (function () {
     	button1 = new Button({
     			props: {
     				color: "info",
-    				$$slots: { default: [create_default_slot_23] },
+    				$$slots: { default: [create_default_slot_23$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -8638,7 +8638,7 @@ var app = (function () {
     	button2 = new Button({
     			props: {
     				color: "info",
-    				$$slots: { default: [create_default_slot_22] },
+    				$$slots: { default: [create_default_slot_22$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -8647,7 +8647,7 @@ var app = (function () {
     	button3 = new Button({
     			props: {
     				color: "info",
-    				$$slots: { default: [create_default_slot_21] },
+    				$$slots: { default: [create_default_slot_21$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -8656,7 +8656,7 @@ var app = (function () {
     	button4 = new Button({
     			props: {
     				color: "info",
-    				$$slots: { default: [create_default_slot_20] },
+    				$$slots: { default: [create_default_slot_20$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -8665,7 +8665,7 @@ var app = (function () {
     	button5 = new Button({
     			props: {
     				color: "info",
-    				$$slots: { default: [create_default_slot_19] },
+    				$$slots: { default: [create_default_slot_19$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11432,7 +11432,7 @@ var app = (function () {
     const file$n = "src\\front\\Integrations.svelte";
 
     // (22:8) <CardTitle>
-    function create_default_slot_18(ctx) {
+    function create_default_slot_23(ctx) {
     	let h2;
 
     	const block = {
@@ -11451,7 +11451,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_18.name,
+    		id: create_default_slot_23.name,
     		type: "slot",
     		source: "(22:8) <CardTitle>",
     		ctx
@@ -11461,13 +11461,13 @@ var app = (function () {
     }
 
     // (21:6) <CardHeader>
-    function create_default_slot_17(ctx) {
+    function create_default_slot_22(ctx) {
     	let cardtitle;
     	let current;
 
     	cardtitle = new CardTitle({
     			props: {
-    				$$slots: { default: [create_default_slot_18] },
+    				$$slots: { default: [create_default_slot_23] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11506,7 +11506,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_17.name,
+    		id: create_default_slot_22.name,
     		type: "slot",
     		source: "(21:6) <CardHeader>",
     		ctx
@@ -11516,7 +11516,7 @@ var app = (function () {
     }
 
     // (28:11) <Button color="primary">
-    function create_default_slot_16(ctx) {
+    function create_default_slot_21(ctx) {
     	let t;
 
     	const block = {
@@ -11533,7 +11533,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_16.name,
+    		id: create_default_slot_21.name,
     		type: "slot",
     		source: "(28:11) <Button color=\\\"primary\\\">",
     		ctx
@@ -11543,7 +11543,7 @@ var app = (function () {
     }
 
     // (30:9) <Button color="primary">
-    function create_default_slot_15(ctx) {
+    function create_default_slot_20(ctx) {
     	let t;
 
     	const block = {
@@ -11560,7 +11560,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_15.name,
+    		id: create_default_slot_20.name,
     		type: "slot",
     		source: "(30:9) <Button color=\\\"primary\\\">",
     		ctx
@@ -11570,7 +11570,7 @@ var app = (function () {
     }
 
     // (32:9) <Button color="primary">
-    function create_default_slot_14$2(ctx) {
+    function create_default_slot_19(ctx) {
     	let t;
 
     	const block = {
@@ -11587,7 +11587,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_14$2.name,
+    		id: create_default_slot_19.name,
     		type: "slot",
     		source: "(32:9) <Button color=\\\"primary\\\">",
     		ctx
@@ -11597,7 +11597,7 @@ var app = (function () {
     }
 
     // (24:6) <CardBody>
-    function create_default_slot_13$2(ctx) {
+    function create_default_slot_18(ctx) {
     	let cardsubtitle;
     	let t0;
     	let cardtext;
@@ -11617,7 +11617,7 @@ var app = (function () {
     	button0 = new Button({
     			props: {
     				color: "primary",
-    				$$slots: { default: [create_default_slot_16] },
+    				$$slots: { default: [create_default_slot_21] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11626,7 +11626,7 @@ var app = (function () {
     	button1 = new Button({
     			props: {
     				color: "primary",
-    				$$slots: { default: [create_default_slot_15] },
+    				$$slots: { default: [create_default_slot_20] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11635,7 +11635,7 @@ var app = (function () {
     	button2 = new Button({
     			props: {
     				color: "primary",
-    				$$slots: { default: [create_default_slot_14$2] },
+    				$$slots: { default: [create_default_slot_19] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11735,7 +11735,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_13$2.name,
+    		id: create_default_slot_18.name,
     		type: "slot",
     		source: "(24:6) <CardBody>",
     		ctx
@@ -11745,7 +11745,7 @@ var app = (function () {
     }
 
     // (20:4) <Card class="mb-3">
-    function create_default_slot_12$3(ctx) {
+    function create_default_slot_17(ctx) {
     	let cardheader;
     	let t;
     	let cardbody;
@@ -11753,7 +11753,7 @@ var app = (function () {
 
     	cardheader = new CardHeader({
     			props: {
-    				$$slots: { default: [create_default_slot_17] },
+    				$$slots: { default: [create_default_slot_22] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11761,7 +11761,7 @@ var app = (function () {
 
     	cardbody = new CardBody({
     			props: {
-    				$$slots: { default: [create_default_slot_13$2] },
+    				$$slots: { default: [create_default_slot_18] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11815,7 +11815,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_12$3.name,
+    		id: create_default_slot_17.name,
     		type: "slot",
     		source: "(20:4) <Card class=\\\"mb-3\\\">",
     		ctx
@@ -11825,7 +11825,7 @@ var app = (function () {
     }
 
     // (39:8) <CardTitle>
-    function create_default_slot_11$5(ctx) {
+    function create_default_slot_16(ctx) {
     	let h2;
 
     	const block = {
@@ -11844,7 +11844,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_11$5.name,
+    		id: create_default_slot_16.name,
     		type: "slot",
     		source: "(39:8) <CardTitle>",
     		ctx
@@ -11854,13 +11854,13 @@ var app = (function () {
     }
 
     // (38:6) <CardHeader>
-    function create_default_slot_10$5(ctx) {
+    function create_default_slot_15(ctx) {
     	let cardtitle;
     	let current;
 
     	cardtitle = new CardTitle({
     			props: {
-    				$$slots: { default: [create_default_slot_11$5] },
+    				$$slots: { default: [create_default_slot_16] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11899,7 +11899,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_10$5.name,
+    		id: create_default_slot_15.name,
     		type: "slot",
     		source: "(38:6) <CardHeader>",
     		ctx
@@ -11909,7 +11909,7 @@ var app = (function () {
     }
 
     // (45:11) <Button color="primary">
-    function create_default_slot_9$5(ctx) {
+    function create_default_slot_14$2(ctx) {
     	let t;
 
     	const block = {
@@ -11926,7 +11926,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_9$5.name,
+    		id: create_default_slot_14$2.name,
     		type: "slot",
     		source: "(45:11) <Button color=\\\"primary\\\">",
     		ctx
@@ -11936,7 +11936,7 @@ var app = (function () {
     }
 
     // (47:9) <Button color="primary">
-    function create_default_slot_8$5(ctx) {
+    function create_default_slot_13$2(ctx) {
     	let t;
 
     	const block = {
@@ -11953,7 +11953,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_8$5.name,
+    		id: create_default_slot_13$2.name,
     		type: "slot",
     		source: "(47:9) <Button color=\\\"primary\\\">",
     		ctx
@@ -11963,7 +11963,7 @@ var app = (function () {
     }
 
     // (41:6) <CardBody>
-    function create_default_slot_7$5(ctx) {
+    function create_default_slot_12$3(ctx) {
     	let cardsubtitle;
     	let t0;
     	let cardtext;
@@ -11980,7 +11980,7 @@ var app = (function () {
     	button0 = new Button({
     			props: {
     				color: "primary",
-    				$$slots: { default: [create_default_slot_9$5] },
+    				$$slots: { default: [create_default_slot_14$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11989,7 +11989,7 @@ var app = (function () {
     	button1 = new Button({
     			props: {
     				color: "primary",
-    				$$slots: { default: [create_default_slot_8$5] },
+    				$$slots: { default: [create_default_slot_13$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -12069,7 +12069,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_7$5.name,
+    		id: create_default_slot_12$3.name,
     		type: "slot",
     		source: "(41:6) <CardBody>",
     		ctx
@@ -12079,6 +12079,281 @@ var app = (function () {
     }
 
     // (37:4) <Card class="mb-3">
+    function create_default_slot_11$5(ctx) {
+    	let cardheader;
+    	let t;
+    	let cardbody;
+    	let current;
+
+    	cardheader = new CardHeader({
+    			props: {
+    				$$slots: { default: [create_default_slot_15] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	cardbody = new CardBody({
+    			props: {
+    				$$slots: { default: [create_default_slot_12$3] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(cardheader.$$.fragment);
+    			t = space();
+    			create_component(cardbody.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(cardheader, target, anchor);
+    			insert_dev(target, t, anchor);
+    			mount_component(cardbody, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const cardheader_changes = {};
+
+    			if (dirty & /*$$scope*/ 1) {
+    				cardheader_changes.$$scope = { dirty, ctx };
+    			}
+
+    			cardheader.$set(cardheader_changes);
+    			const cardbody_changes = {};
+
+    			if (dirty & /*$$scope*/ 1) {
+    				cardbody_changes.$$scope = { dirty, ctx };
+    			}
+
+    			cardbody.$set(cardbody_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(cardheader.$$.fragment, local);
+    			transition_in(cardbody.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(cardheader.$$.fragment, local);
+    			transition_out(cardbody.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(cardheader, detaching);
+    			if (detaching) detach_dev(t);
+    			destroy_component(cardbody, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_11$5.name,
+    		type: "slot",
+    		source: "(37:4) <Card class=\\\"mb-3\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (54:8) <CardTitle>
+    function create_default_slot_10$5(ctx) {
+    	let h2;
+
+    	const block = {
+    		c: function create() {
+    			h2 = element("h2");
+    			h2.textContent = "Integrado con las estadísticas sobre IMC";
+    			add_location(h2, file$n, 53, 19, 1570);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, h2, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(h2);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_10$5.name,
+    		type: "slot",
+    		source: "(54:8) <CardTitle>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (53:6) <CardHeader>
+    function create_default_slot_9$5(ctx) {
+    	let cardtitle;
+    	let current;
+
+    	cardtitle = new CardTitle({
+    			props: {
+    				$$slots: { default: [create_default_slot_10$5] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(cardtitle.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(cardtitle, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const cardtitle_changes = {};
+
+    			if (dirty & /*$$scope*/ 1) {
+    				cardtitle_changes.$$scope = { dirty, ctx };
+    			}
+
+    			cardtitle.$set(cardtitle_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(cardtitle.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(cardtitle.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(cardtitle, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_9$5.name,
+    		type: "slot",
+    		source: "(53:6) <CardHeader>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (59:46) <Button color="primary">
+    function create_default_slot_8$5(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Estadísticas CulturaBASE-Weights");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_8$5.name,
+    		type: "slot",
+    		source: "(59:46) <Button color=\\\"primary\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (56:6) <CardBody>
+    function create_default_slot_7$5(ctx) {
+    	let cardsubtitle;
+    	let t0;
+    	let cardtext;
+    	let t1;
+    	let a;
+    	let button;
+    	let current;
+    	cardsubtitle = new CardSubtitle({ $$inline: true });
+    	cardtext = new CardText({ $$inline: true });
+
+    	button = new Button({
+    			props: {
+    				color: "primary",
+    				$$slots: { default: [create_default_slot_8$5] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(cardsubtitle.$$.fragment);
+    			t0 = space();
+    			create_component(cardtext.$$.fragment);
+    			t1 = space();
+    			a = element("a");
+    			create_component(button.$$.fragment);
+    			attr_dev(a, "href", "/#/integrations/culturaBASE");
+    			add_location(a, file$n, 58, 8, 1728);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(cardsubtitle, target, anchor);
+    			insert_dev(target, t0, anchor);
+    			mount_component(cardtext, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, a, anchor);
+    			mount_component(button, a, null);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 1) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(cardsubtitle.$$.fragment, local);
+    			transition_in(cardtext.$$.fragment, local);
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(cardsubtitle.$$.fragment, local);
+    			transition_out(cardtext.$$.fragment, local);
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(cardsubtitle, detaching);
+    			if (detaching) detach_dev(t0);
+    			destroy_component(cardtext, detaching);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(a);
+    			destroy_component(button);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_7$5.name,
+    		type: "slot",
+    		source: "(56:6) <CardBody>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (52:4) <Card class="mb-3">
     function create_default_slot_6$5(ctx) {
     	let cardheader;
     	let t;
@@ -12087,7 +12362,7 @@ var app = (function () {
 
     	cardheader = new CardHeader({
     			props: {
-    				$$slots: { default: [create_default_slot_10$5] },
+    				$$slots: { default: [create_default_slot_9$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -12151,22 +12426,22 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$5.name,
     		type: "slot",
-    		source: "(37:4) <Card class=\\\"mb-3\\\">",
+    		source: "(52:4) <Card class=\\\"mb-3\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (54:8) <CardTitle>
+    // (66:8) <CardTitle>
     function create_default_slot_5$5(ctx) {
     	let h2;
 
     	const block = {
     		c: function create() {
     			h2 = element("h2");
-    			h2.textContent = "Integrado con las estadísticas sobre IMC";
-    			add_location(h2, file$n, 53, 19, 1570);
+    			h2.textContent = "Integrado con las estadísticas sobre la esperanza de vida";
+    			add_location(h2, file$n, 65, 19, 1952);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -12180,14 +12455,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$5.name,
     		type: "slot",
-    		source: "(54:8) <CardTitle>",
+    		source: "(66:8) <CardTitle>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (53:6) <CardHeader>
+    // (65:6) <CardHeader>
     function create_default_slot_4$5(ctx) {
     	let cardtitle;
     	let current;
@@ -12235,20 +12510,20 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$5.name,
     		type: "slot",
-    		source: "(53:6) <CardHeader>",
+    		source: "(65:6) <CardHeader>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (59:46) <Button color="primary">
+    // (72:11) <Button color="primary">
     function create_default_slot_3$9(ctx) {
     	let t;
 
     	const block = {
     		c: function create() {
-    			t = text("Estadísticas CulturaBASE-Weights");
+    			t = text("Estadísticas Desempleo");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -12262,14 +12537,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$9.name,
     		type: "slot",
-    		source: "(59:46) <Button color=\\\"primary\\\">",
+    		source: "(72:11) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (56:6) <CardBody>
+    // (68:6) <CardBody>
     function create_default_slot_2$c(ctx) {
     	let cardsubtitle;
     	let t0;
@@ -12298,8 +12573,8 @@ var app = (function () {
     			t1 = space();
     			a = element("a");
     			create_component(button.$$.fragment);
-    			attr_dev(a, "href", "/#/integrations/culturaBASE");
-    			add_location(a, file$n, 58, 8, 1728);
+    			attr_dev(a, "href", "/#/integrations/unemployment");
+    			add_location(a, file$n, 70, 8, 2127);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -12346,14 +12621,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$c.name,
     		type: "slot",
-    		source: "(56:6) <CardBody>",
+    		source: "(68:6) <CardBody>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (52:4) <Card class="mb-3">
+    // (64:4) <Card class="mb-3">
     function create_default_slot_1$c(ctx) {
     	let cardheader;
     	let t;
@@ -12426,14 +12701,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$c.name,
     		type: "slot",
-    		source: "(52:4) <Card class=\\\"mb-3\\\">",
+    		source: "(64:4) <Card class=\\\"mb-3\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (63:2) <Button outline color="secondary" on:click="{pop}">
+    // (76:2) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$m(ctx) {
     	let t;
 
@@ -12453,7 +12728,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$m.name,
     		type: "slot",
-    		source: "(63:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(76:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -12474,13 +12749,16 @@ var app = (function () {
     	let div3;
     	let card2;
     	let t4;
+    	let div4;
+    	let card3;
+    	let t5;
     	let button;
     	let current;
 
     	card0 = new Card({
     			props: {
     				class: "mb-3",
-    				$$slots: { default: [create_default_slot_12$3] },
+    				$$slots: { default: [create_default_slot_17] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -12489,13 +12767,22 @@ var app = (function () {
     	card1 = new Card({
     			props: {
     				class: "mb-3",
-    				$$slots: { default: [create_default_slot_6$5] },
+    				$$slots: { default: [create_default_slot_11$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
     	card2 = new Card({
+    			props: {
+    				class: "mb-3",
+    				$$slots: { default: [create_default_slot_6$5] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	card3 = new Card({
     			props: {
     				class: "mb-3",
     				$$slots: { default: [create_default_slot_1$c] },
@@ -12532,6 +12819,9 @@ var app = (function () {
     			div3 = element("div");
     			create_component(card2.$$.fragment);
     			t4 = space();
+    			div4 = element("div");
+    			create_component(card3.$$.fragment);
+    			t5 = space();
     			create_component(button.$$.fragment);
     			attr_dev(h1, "class", "svelte-egmbdb");
     			add_location(h1, file$n, 16, 4, 262);
@@ -12543,6 +12833,8 @@ var app = (function () {
     			add_location(div2, file$n, 35, 2, 954);
     			attr_dev(div3, "class", "svelte-egmbdb");
     			add_location(div3, file$n, 50, 2, 1499);
+    			attr_dev(div4, "class", "svelte-egmbdb");
+    			add_location(div4, file$n, 62, 2, 1881);
     			attr_dev(main, "class", "svelte-egmbdb");
     			add_location(main, file$n, 13, 2, 235);
     		},
@@ -12563,6 +12855,9 @@ var app = (function () {
     			append_dev(main, div3);
     			mount_component(card2, div3, null);
     			append_dev(main, t4);
+    			append_dev(main, div4);
+    			mount_component(card3, div4, null);
+    			append_dev(main, t5);
     			mount_component(button, main, null);
     			current = true;
     		},
@@ -12588,6 +12883,13 @@ var app = (function () {
     			}
 
     			card2.$set(card2_changes);
+    			const card3_changes = {};
+
+    			if (dirty & /*$$scope*/ 1) {
+    				card3_changes.$$scope = { dirty, ctx };
+    			}
+
+    			card3.$set(card3_changes);
     			const button_changes = {};
 
     			if (dirty & /*$$scope*/ 1) {
@@ -12601,6 +12903,7 @@ var app = (function () {
     			transition_in(card0.$$.fragment, local);
     			transition_in(card1.$$.fragment, local);
     			transition_in(card2.$$.fragment, local);
+    			transition_in(card3.$$.fragment, local);
     			transition_in(button.$$.fragment, local);
     			current = true;
     		},
@@ -12608,6 +12911,7 @@ var app = (function () {
     			transition_out(card0.$$.fragment, local);
     			transition_out(card1.$$.fragment, local);
     			transition_out(card2.$$.fragment, local);
+    			transition_out(card3.$$.fragment, local);
     			transition_out(button.$$.fragment, local);
     			current = false;
     		},
@@ -12616,6 +12920,7 @@ var app = (function () {
     			destroy_component(card0);
     			destroy_component(card1);
     			destroy_component(card2);
+    			destroy_component(card3);
     			destroy_component(button);
     		}
     	};

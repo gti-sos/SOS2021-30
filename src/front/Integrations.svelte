@@ -60,6 +60,19 @@
       </CardBody>
     </Card>
   </div>
+  <div>
+    <Card class="mb-3">
+      <CardHeader>
+        <CardTitle><h2>Integrado con las estadísticas sobre la esperanza de vida</h2></CardTitle>
+      </CardHeader>
+      <CardBody>
+        <CardSubtitle />
+        <CardText />
+        <a href="/#/integrations/unemployment"
+          ><Button color="primary">Estadísticas Desempleo</Button></a>
+      </CardBody>
+    </Card>
+  </div>
   <Button outline color="secondary" on:click="{pop}">Atrás</Button>
   
   </main>
