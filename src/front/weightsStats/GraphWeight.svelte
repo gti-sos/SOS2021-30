@@ -6,7 +6,6 @@
     var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
 
     let weightData = [];
-    let weightChartData = [];
     let weightChartInfo = [];
     let weightchartNormalWeight = [];
     let weightChartOverweight = [];

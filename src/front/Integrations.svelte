@@ -56,7 +56,7 @@
       <CardBody>
         <CardSubtitle />
         <CardText />
-        
+        <a href="/#/integrations/culturaBASE"><Button color="primary">Estadísticas CulturaBASE-Weights</Button></a>
       </CardBody>
     </Card>
   </div>
