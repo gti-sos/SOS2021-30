@@ -26,6 +26,7 @@
   import EditWeight from "./weightsStats/EditWeight.svelte";
   import GraphWeight from "./weightsStats/GraphWeight.svelte";
   import GraphWeightMorris from "./weightsStats/GraphWeightMorris.svelte"
+  import GraphColumns from "./weightsStats/GraphColumns.svelte";
   import Cultura from "./weightsStats/integrations/culturaBASE.svelte";
   import GroupGraph from "./GroupGraph.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
@@ -49,6 +50,7 @@
     "/weights-stats" : FrontWeight,
     "/weights-stats/:provinces/:year" : EditWeight,
     "/weights-graph" : GraphWeight,
+    "/weights-graph-colums" : GraphColumns,
     "/weights-graph-morris" : GraphWeightMorris,
     "/integrations/culturaBASE" : Cultura,
     "/smokers-stats" : SmokerStats,
