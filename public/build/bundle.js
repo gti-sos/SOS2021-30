@@ -42079,7 +42079,7 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$3 = "src\\front\\weightsStats\\integrations\\culturaBASE.svelte";
 
-    // (35:4) <Button outline color="secondary" on:click="{pop}">
+    // (148:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -42099,7 +42099,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(35:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(148:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -42107,9 +42107,27 @@ var app = (function () {
     }
 
     function create_fragment$3(ctx) {
+    	let script0;
+    	let script0_src_value;
+    	let script1;
+    	let script1_src_value;
+    	let script2;
+    	let script2_src_value;
+    	let script3;
+    	let script3_src_value;
+    	let script4;
+    	let script4_src_value;
+    	let t0;
     	let main;
+    	let figure;
+    	let div;
+    	let t1;
+    	let p;
+    	let t3;
     	let button;
     	let current;
+    	let mounted;
+    	let dispose;
 
     	button = new Button({
     			props: {
@@ -42125,22 +42143,66 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			script0 = element("script");
+    			script1 = element("script");
+    			script2 = element("script");
+    			script3 = element("script");
+    			script4 = element("script");
+    			t0 = space();
     			main = element("main");
+    			figure = element("figure");
+    			div = element("div");
+    			t1 = space();
+    			p = element("p");
+    			p.textContent = "Gráfico de líneas en el que se representa el porcentaje por comunidades autónomas en el año 2017 de cada API";
+    			t3 = space();
     			create_component(button.$$.fragment);
-    			add_location(main, file$3, 33, 0, 968);
+    			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
+    			add_location(script0, file$3, 131, 2, 3773);
+    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$3, 132, 2, 3842);
+    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
+    			add_location(script2, file$3, 133, 2, 3921);
+    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
+    			add_location(script3, file$3, 134, 2, 3997);
+    			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
+    			add_location(script4, file$3, 135, 2, 4075);
+    			attr_dev(div, "id", "container");
+    			add_location(div, file$3, 142, 4, 4249);
+    			attr_dev(p, "class", "highcharts-description");
+    			add_location(p, file$3, 143, 4, 4281);
+    			attr_dev(figure, "class", "highcharts-figure");
+    			add_location(figure, file$3, 141, 4, 4209);
+    			add_location(main, file$3, 140, 0, 4197);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
+    			append_dev(document.head, script0);
+    			append_dev(document.head, script1);
+    			append_dev(document.head, script2);
+    			append_dev(document.head, script3);
+    			append_dev(document.head, script4);
+    			insert_dev(target, t0, anchor);
     			insert_dev(target, main, anchor);
+    			append_dev(main, figure);
+    			append_dev(figure, div);
+    			append_dev(figure, t1);
+    			append_dev(figure, p);
+    			append_dev(main, t3);
     			mount_component(button, main, null);
     			current = true;
+
+    			if (!mounted) {
+    				dispose = listen_dev(script4, "load", /*loadGraph*/ ctx[0], false, false, false);
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, [dirty]) {
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 128) {
+    			if (dirty & /*$$scope*/ 256) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -42156,8 +42218,16 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
+    			detach_dev(script0);
+    			detach_dev(script1);
+    			detach_dev(script2);
+    			detach_dev(script3);
+    			detach_dev(script4);
+    			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
     			destroy_component(button);
+    			mounted = false;
+    			dispose();
     		}
     	};
 
@@ -42173,7 +42243,7 @@ var app = (function () {
     }
 
     const BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
-    const culturaBASE_PATh = "https://sos2021-26.herokuapp.com/api/v2/culturaBASE";
+    const culturaBASE_PATH = "https://sos2021-26.herokuapp.com/integration/api/v2/culturaBASE";
 
     function instance$3($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
@@ -42184,20 +42254,107 @@ var app = (function () {
     	let culturaStats = [];
     	let culturaProvinces = [];
 
-    	async function loadWeight() {
-    		console.log("Fetching data...");
+    	//let culturaFundraising = [];
+    	//let pruebaStats = [];
+    	async function getWeight() {
     		const res = await fetch(BASE_WEIGHTS_PATH);
-    		weightStats = await res.json();
-    		console.log("Recived weights data");
+
+    		if (res.ok) {
+    			weightStats = await res.json();
+    			console.log("Recived weights data...");
+    		}
     	}
 
-    	async function loadGraph() {
-    		await loadWeight();
-    		console.log(weightStats.length + " recived from loadWeight");
+    	async function getCultura() {
+    		const res = await fetch(culturaBASE_PATH);
 
-    		weightStats.forEach(data => {
-    			weightProvinces.push(data.provinces);
-    			weightNormalWeight.push(data["normal_weight"]);
+    		if (res.ok) {
+    			culturaStats = await res.json();
+    			console.log("Recived cultura data...");
+    		}
+    	}
+
+    	/*
+        async function getPrueba(){
+            const res = await fetch(prueba);
+            if(res.ok){
+                pruebaStats = await res.json();
+            }
+        }*/
+    	async function loadGraph() {
+    		console.log("Fetching data...");
+    		await getWeight();
+    		await getCultura();
+    		console.log("Procesing all data...");
+
+    		weightStats.forEach(stat => {
+    			weightProvinces.push(stat.provinces);
+    			weightNormalWeight.push(stat["normal_weight"]);
+    		});
+
+    		culturaStats.forEach(stat => {
+    			culturaProvinces.push(stat.district);
+    		});
+
+    		console.log("Generando datos para la gráfica...");
+
+    		Highcharts.chart("container", {
+    			title: {
+    				text: "Gráfica de la primera integracion"
+    			},
+    			lang: {
+    				viewFullscreen: "Ver en pantalla completa",
+    				downloadJPEG: "Descargar en formato JPEG",
+    				downloadPDF: "Descargar en formato PDF",
+    				downloadPNG: "Descargar en formato JPEG",
+    				downloadSVG: "Descargar en formato JPEG",
+    				downloadCSV: "Descargar en formato CSV",
+    				downloadXLS: "Descargar en formato XLS",
+    				exitFullscreen: "Salir de pantalla completa",
+    				printChart: "Imprimir gráfico"
+    			},
+    			yAxis: { title: { text: "Porcentaje" } },
+    			xAxis: {
+    				title: { text: "Comunidad Autónoma" },
+    				categories: weightProvinces
+    			},
+    			legend: {
+    				layout: "vertical",
+    				align: "right",
+    				verticalAlign: "middle"
+    			},
+    			annootations: [
+    				{
+    					labels: [
+    						{ point: "date", text: "" },
+    						{
+    							point: "min",
+    							text: "Min",
+    							backgroundColor: "white"
+    						}
+    					]
+    				}
+    			],
+    			series: [
+    				{
+    					name: "Peso normal",
+    					data: weightNormalWeight
+    				}
+    			],
+    			resWeightponsive: {
+    				rules: [
+    					{
+    						condition: { maxWidth: 500 },
+    						chartOptions: {
+    							legend: {
+    								layout: "horizontal",
+    								align: "center",
+    								verticalAlign: "bottom"
+    							}
+    						}
+    					}
+    				]
+    			}
     		});
     	}
 
@@ -42211,13 +42368,14 @@ var app = (function () {
     		pop,
     		Button,
     		BASE_WEIGHTS_PATH,
-    		culturaBASE_PATh,
+    		culturaBASE_PATH,
     		weightStats,
     		weightProvinces,
     		weightNormalWeight,
     		culturaStats,
     		culturaProvinces,
-    		loadWeight,
+    		getWeight,
+    		getCultura,
     		loadGraph
     	});
 
@@ -42233,7 +42391,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [];
+    	return [loadGraph];
     }
 
     class CulturaBASE extends SvelteComponentDev {
