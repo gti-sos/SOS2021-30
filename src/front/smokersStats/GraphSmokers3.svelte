@@ -11,6 +11,8 @@
     var smokerChartEx = [];
     var smokerChartNon = [];
 
+    var checkMSG = [];
+
     async function loadGraph() {
         console.log("Fetching data...");
         const res = await fetch(BASE_SMOKER_PATH);
@@ -111,6 +113,12 @@
 </svelte:head>
 
 <main>
+    <div>
+        {#if checkMSG.length != 0}
+            <p class="msgRed" style="color: #9d1c24">ERROR: {checkMSG}</p>
+        {/if}
+    </div>
+
     <figure class="highcharts-figure">
         <div id="container" />
         <p class="highcharts-description">
@@ -125,41 +133,20 @@
 </main>
 
 <style>
-    .highcharts-figure,
-    .highcharts-data-table table {
-        min-width: 360px;
-        max-width: 600px;
-        margin: 1em auto;
-    }
-
-    .highcharts-data-table table {
-        font-family: Verdana, sans-serif;
-        border-collapse: collapse;
-        border: 1px solid #ebebeb;
-        margin: 10px auto;
+    main {
         text-align: center;
-        width: 100%;
-        max-width: 500px;
+        padding: 1em;
+        margin: 0 auto;
+        text-align: center;
     }
-    .highcharts-data-table caption {
-        padding: 1em 0;
-        font-size: 1.2em;
-        color: #555;
+    div {
+        margin-bottom: 15px;
     }
-    .highcharts-data-table th {
-        font-weight: 600;
-        padding: 0.5em;
+    p {
+        display: inline;
     }
-    .highcharts-data-table td,
-    .highcharts-data-table th,
-    .highcharts-data-table caption {
-        padding: 0.5em;
-    }
-    .highcharts-data-table thead tr,
-    .highcharts-data-table tr:nth-child(even) {
-        background: #f8f8f8;
-    }
-    .highcharts-data-table tr:hover {
-        background: #f1f7ff;
+    .msgRed {
+        padding: 8px;
+        background-color: #ffffff;
     }
 </style>

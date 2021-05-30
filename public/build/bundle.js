@@ -922,7 +922,7 @@ var app = (function () {
     const file$J = "node_modules\\sveltestrap\\src\\Alert.svelte";
 
     // (22:0) {#if isOpen}
-    function create_if_block$n(ctx) {
+    function create_if_block$o(ctx) {
     	let div;
     	let t;
     	let current_block_type_index;
@@ -1038,7 +1038,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$n.name,
+    		id: create_if_block$o.name,
     		type: "if",
     		source: "(22:0) {#if isOpen}",
     		ctx
@@ -1198,7 +1198,7 @@ var app = (function () {
     function create_fragment$K(ctx) {
     	let if_block_anchor;
     	let current;
-    	let if_block = /*isOpen*/ ctx[2] && create_if_block$n(ctx);
+    	let if_block = /*isOpen*/ ctx[2] && create_if_block$o(ctx);
 
     	const block = {
     		c: function create() {
@@ -1222,7 +1222,7 @@ var app = (function () {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block$n(ctx);
+    					if_block = create_if_block$o(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -1559,7 +1559,7 @@ var app = (function () {
     }
 
     // (33:0) {#if href}
-    function create_if_block$m(ctx) {
+    function create_if_block$n(ctx) {
     	let a;
     	let current_block_type_index;
     	let if_block;
@@ -1667,7 +1667,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block: block_1,
-    		id: create_if_block$m.name,
+    		id: create_if_block$n.name,
     		type: "if",
     		source: "(33:0) {#if href}",
     		ctx
@@ -1957,7 +1957,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$m, create_else_block_1];
+    	const if_block_creators = [create_if_block$n, create_else_block_1];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -2834,7 +2834,7 @@ var app = (function () {
     }
 
     // (11:0) {#if tag === 'h3'}
-    function create_if_block$l(ctx) {
+    function create_if_block$m(ctx) {
     	let h3;
     	let current;
     	let mounted;
@@ -2900,7 +2900,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$l.name,
+    		id: create_if_block$m.name,
     		type: "if",
     		source: "(11:0) {#if tag === 'h3'}",
     		ctx
@@ -2914,7 +2914,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$l, create_else_block$8];
+    	const if_block_creators = [create_if_block$m, create_else_block$8];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -3534,7 +3534,7 @@ var app = (function () {
     }
 
     // (21:0) {#if tag === 'fieldset'}
-    function create_if_block$k(ctx) {
+    function create_if_block$l(ctx) {
     	let fieldset;
     	let current;
     	const default_slot_template = /*#slots*/ ctx[9].default;
@@ -3591,7 +3591,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$k.name,
+    		id: create_if_block$l.name,
     		type: "if",
     		source: "(21:0) {#if tag === 'fieldset'}",
     		ctx
@@ -3605,7 +3605,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$k, create_else_block$7];
+    	const if_block_creators = [create_if_block$l, create_else_block$7];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -4009,7 +4009,7 @@ var app = (function () {
     }
 
     // (82:0) {#if tag === 'input'}
-    function create_if_block$j(ctx) {
+    function create_if_block$k(ctx) {
     	let if_block_anchor;
 
     	function select_block_type_1(ctx, dirty) {
@@ -4065,7 +4065,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$j.name,
+    		id: create_if_block$k.name,
     		type: "if",
     		source: "(82:0) {#if tag === 'input'}",
     		ctx
@@ -5281,7 +5281,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$j, create_if_block_15, create_if_block_16];
+    	const if_block_creators = [create_if_block$k, create_if_block_15, create_if_block_16];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -7510,7 +7510,7 @@ var app = (function () {
     }
 
     // (29:0) {#if responsive}
-    function create_if_block$i(ctx) {
+    function create_if_block$j(ctx) {
     	let div;
     	let table;
     	let current;
@@ -7576,7 +7576,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$i.name,
+    		id: create_if_block$j.name,
     		type: "if",
     		source: "(29:0) {#if responsive}",
     		ctx
@@ -7590,7 +7590,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$i, create_else_block$5];
+    	const if_block_creators = [create_if_block$j, create_else_block$5];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -10661,7 +10661,7 @@ var app = (function () {
     }
 
     // (202:0) {#if componentParams}
-    function create_if_block$h(ctx) {
+    function create_if_block$i(ctx) {
     	let switch_instance;
     	let switch_instance_anchor;
     	let current;
@@ -10749,7 +10749,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$h.name,
+    		id: create_if_block$i.name,
     		type: "if",
     		source: "(202:0) {#if componentParams}",
     		ctx
@@ -10763,7 +10763,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$h, create_else_block$4];
+    	const if_block_creators = [create_if_block$i, create_else_block$4];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -13338,7 +13338,7 @@ var app = (function () {
     }
 
     // (301:12) {#if checkMSG}
-    function create_if_block$g(ctx) {
+    function create_if_block$h(ctx) {
     	let t;
 
     	const block = {
@@ -13358,7 +13358,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$g.name,
+    		id: create_if_block$h.name,
     		type: "if",
     		source: "(301:12) {#if checkMSG}",
     		ctx
@@ -13370,7 +13370,7 @@ var app = (function () {
     // (300:8) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
     function create_default_slot_11$4(ctx) {
     	let if_block_anchor;
-    	let if_block = /*checkMSG*/ ctx[1] && create_if_block$g(ctx);
+    	let if_block = /*checkMSG*/ ctx[1] && create_if_block$h(ctx);
 
     	const block = {
     		c: function create() {
@@ -13386,7 +13386,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$g(ctx);
+    					if_block = create_if_block$h(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -14966,7 +14966,7 @@ var app = (function () {
     const file$o = "src\\front\\lifeStats\\EditLife.svelte";
 
     // (75:8) {#if errorMsg}
-    function create_if_block$f(ctx) {
+    function create_if_block$g(ctx) {
     	let t;
 
     	const block = {
@@ -14986,7 +14986,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$f.name,
+    		id: create_if_block$g.name,
     		type: "if",
     		source: "(75:8) {#if errorMsg}",
     		ctx
@@ -14998,7 +14998,7 @@ var app = (function () {
     // (74:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
     function create_default_slot_3$7(ctx) {
     	let if_block_anchor;
-    	let if_block = /*errorMsg*/ ctx[7] && create_if_block$f(ctx);
+    	let if_block = /*errorMsg*/ ctx[7] && create_if_block$g(ctx);
 
     	const block = {
     		c: function create() {
@@ -15014,7 +15014,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$f(ctx);
+    					if_block = create_if_block$g(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -16027,7 +16027,7 @@ var app = (function () {
     }
 
     // (266:8) {#if errorMSG.length>0}
-    function create_if_block$e(ctx) {
+    function create_if_block$f(ctx) {
     	let t;
 
     	const block = {
@@ -16047,7 +16047,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$e.name,
+    		id: create_if_block$f.name,
     		type: "if",
     		source: "(266:8) {#if errorMSG.length>0}",
     		ctx
@@ -16059,7 +16059,7 @@ var app = (function () {
     // (265:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
     function create_default_slot_11$3(ctx) {
     	let if_block_anchor;
-    	let if_block = /*errorMSG*/ ctx[2].length > 0 && create_if_block$e(ctx);
+    	let if_block = /*errorMSG*/ ctx[2].length > 0 && create_if_block$f(ctx);
 
     	const block = {
     		c: function create() {
@@ -16075,7 +16075,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$e(ctx);
+    					if_block = create_if_block$f(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -17864,7 +17864,7 @@ var app = (function () {
     }
 
     // (98:4) {#if errorMsg}
-    function create_if_block$d(ctx) {
+    function create_if_block$e(ctx) {
     	let p;
     	let t0;
     	let t1;
@@ -17892,7 +17892,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$d.name,
+    		id: create_if_block$e.name,
     		type: "if",
     		source: "(98:4) {#if errorMsg}",
     		ctx
@@ -17970,7 +17970,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	let if_block = /*errorMsg*/ ctx[6] && create_if_block$d(ctx);
+    	let if_block = /*errorMsg*/ ctx[6] && create_if_block$e(ctx);
 
     	button = new Button({
     			props: {
@@ -18055,7 +18055,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$d(ctx);
+    					if_block = create_if_block$e(ctx);
     					if_block.c();
     					if_block.m(main, t10);
     				}
@@ -18295,7 +18295,7 @@ var app = (function () {
     }
 
     // (115:6) {#if okMsg}
-    function create_if_block$c(ctx) {
+    function create_if_block$d(ctx) {
     	let p;
 
     	const block = {
@@ -18317,7 +18317,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$c.name,
+    		id: create_if_block$d.name,
     		type: "if",
     		source: "(115:6) {#if okMsg}",
     		ctx
@@ -18444,7 +18444,7 @@ var app = (function () {
     	let mounted;
     	let dispose;
     	let if_block0 = /*errorMsg*/ ctx[0] && create_if_block_1$4(ctx);
-    	let if_block1 = /*okMsg*/ ctx[1] && create_if_block$c(ctx);
+    	let if_block1 = /*okMsg*/ ctx[1] && create_if_block$d(ctx);
 
     	button0 = new Button({
     			props: {
@@ -18859,7 +18859,7 @@ var app = (function () {
     }
 
     // (89:6) {#if okMsg}
-    function create_if_block$b(ctx) {
+    function create_if_block$c(ctx) {
     	let p;
 
     	const block = {
@@ -18881,7 +18881,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$b.name,
+    		id: create_if_block$c.name,
     		type: "if",
     		source: "(89:6) {#if okMsg}",
     		ctx
@@ -19008,7 +19008,7 @@ var app = (function () {
     	let mounted;
     	let dispose;
     	let if_block0 = /*errorMsg*/ ctx[0] && create_if_block_1$3(ctx);
-    	let if_block1 = /*okMsg*/ ctx[1] && create_if_block$b(ctx);
+    	let if_block1 = /*okMsg*/ ctx[1] && create_if_block$c(ctx);
 
     	button0 = new Button({
     			props: {
@@ -30417,7 +30417,7 @@ var app = (function () {
     }
 
     // (68:4) {#if errorMsg}
-    function create_if_block$a(ctx) {
+    function create_if_block$b(ctx) {
     	let p;
     	let t;
 
@@ -30441,7 +30441,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$a.name,
+    		id: create_if_block$b.name,
     		type: "if",
     		source: "(68:4) {#if errorMsg}",
     		ctx
@@ -30553,7 +30553,7 @@ var app = (function () {
     	let dispose;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*errorMsg*/ ctx[0]) return create_if_block$a;
+    		if (/*errorMsg*/ ctx[0]) return create_if_block$b;
     		return create_else_block$3;
     	}
 
@@ -30909,7 +30909,7 @@ var app = (function () {
     }
 
     // (134:2) {#if errorMsg}
-    function create_if_block$9(ctx) {
+    function create_if_block$a(ctx) {
     	let p;
     	let t;
 
@@ -30933,7 +30933,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$9.name,
+    		id: create_if_block$a.name,
     		type: "if",
     		source: "(134:2) {#if errorMsg}",
     		ctx
@@ -30990,7 +30990,7 @@ var app = (function () {
     	let dispose;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*errorMsg*/ ctx[0]) return create_if_block$9;
+    		if (/*errorMsg*/ ctx[0]) return create_if_block$a;
     		return create_else_block$2;
     	}
 
@@ -31373,7 +31373,7 @@ var app = (function () {
     }
 
     // (84:4) {#if errorMsg}
-    function create_if_block$8(ctx) {
+    function create_if_block$9(ctx) {
     	let p;
     	let t;
 
@@ -31397,7 +31397,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$8.name,
+    		id: create_if_block$9.name,
     		type: "if",
     		source: "(84:4) {#if errorMsg}",
     		ctx
@@ -31448,7 +31448,7 @@ var app = (function () {
     	let dispose;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*errorMsg*/ ctx[0]) return create_if_block$8;
+    		if (/*errorMsg*/ ctx[0]) return create_if_block$9;
     		return create_else_block$1;
     	}
 
@@ -31764,7 +31764,7 @@ var app = (function () {
     }
 
     // (87:2) {#if errorMsg}
-    function create_if_block$7(ctx) {
+    function create_if_block$8(ctx) {
     	let p;
     	let t;
 
@@ -31788,7 +31788,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$7.name,
+    		id: create_if_block$8.name,
     		type: "if",
     		source: "(87:2) {#if errorMsg}",
     		ctx
@@ -31839,7 +31839,7 @@ var app = (function () {
     	let dispose;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*errorMsg*/ ctx[0]) return create_if_block$7;
+    		if (/*errorMsg*/ ctx[0]) return create_if_block$8;
     		return create_else_block;
     	}
 
@@ -32485,7 +32485,7 @@ var app = (function () {
     }
 
     // (372:12) {#if checkMSG}
-    function create_if_block$6(ctx) {
+    function create_if_block$7(ctx) {
     	let t;
 
     	const block = {
@@ -32505,7 +32505,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$6.name,
+    		id: create_if_block$7.name,
     		type: "if",
     		source: "(372:12) {#if checkMSG}",
     		ctx
@@ -32517,7 +32517,7 @@ var app = (function () {
     // (371:8) <Alert {color} isOpen={visible} toggle={() => (visible = false)}>
     function create_default_slot_12$2(ctx) {
     	let if_block_anchor;
-    	let if_block = /*checkMSG*/ ctx[9] && create_if_block$6(ctx);
+    	let if_block = /*checkMSG*/ ctx[9] && create_if_block$7(ctx);
 
     	const block = {
     		c: function create() {
@@ -32533,7 +32533,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$6(ctx);
+    					if_block = create_if_block$7(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -34154,7 +34154,7 @@ var app = (function () {
     const file$e = "src\\front\\smokersStats\\SmokersItems.svelte";
 
     // (188:8) {#if checkMSG}
-    function create_if_block$5(ctx) {
+    function create_if_block$6(ctx) {
     	let t;
 
     	const block = {
@@ -34174,7 +34174,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$5.name,
+    		id: create_if_block$6.name,
     		type: "if",
     		source: "(188:8) {#if checkMSG}",
     		ctx
@@ -34186,7 +34186,7 @@ var app = (function () {
     // (187:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
     function create_default_slot_3$3(ctx) {
     	let if_block_anchor;
-    	let if_block = /*checkMSG*/ ctx[7] && create_if_block$5(ctx);
+    	let if_block = /*checkMSG*/ ctx[7] && create_if_block$6(ctx);
 
     	const block = {
     		c: function create() {
@@ -34202,7 +34202,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$5(ctx);
+    					if_block = create_if_block$6(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -34913,7 +34913,7 @@ var app = (function () {
     const file$d = "src\\front\\smokersStats\\GraphSmokers.svelte";
 
     // (143:8) {#if checkMSG.length!=0}
-    function create_if_block$4(ctx) {
+    function create_if_block$5(ctx) {
     	let p;
 
     	const block = {
@@ -34935,7 +34935,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$4.name,
+    		id: create_if_block$5.name,
     		type: "if",
     		source: "(143:8) {#if checkMSG.length!=0}",
     		ctx
@@ -35026,7 +35026,7 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block = /*checkMSG*/ ctx[0].length != 0 && create_if_block$4(ctx);
+    	let if_block = /*checkMSG*/ ctx[0].length != 0 && create_if_block$5(ctx);
 
     	button0 = new Button({
     			props: {
@@ -35352,7 +35352,7 @@ var app = (function () {
     const file$c = "src\\front\\smokersStats\\GraphSmokers2.svelte";
 
     // (177:8) {#if checkMSG.length != 0}
-    function create_if_block$3(ctx) {
+    function create_if_block$4(ctx) {
     	let p;
     	let t0;
     	let t1;
@@ -35381,7 +35381,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$3.name,
+    		id: create_if_block$4.name,
     		type: "if",
     		source: "(177:8) {#if checkMSG.length != 0}",
     		ctx
@@ -35444,7 +35444,7 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block = /*checkMSG*/ ctx[0].length != 0 && create_if_block$3(ctx);
+    	let if_block = /*checkMSG*/ ctx[0].length != 0 && create_if_block$4(ctx);
 
     	button = new Button({
     			props: {
@@ -35540,7 +35540,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$3(ctx);
+    					if_block = create_if_block$4(ctx);
     					if_block.c();
     					if_block.m(div0, null);
     				}
@@ -35804,7 +35804,39 @@ var app = (function () {
     const { console: console_1$a } = globals;
     const file$b = "src\\front\\smokersStats\\GraphSmokers3.svelte";
 
-    // (123:8) <Button outline color="primary" on:click={pop}>
+    // (117:8) {#if checkMSG.length != 0}
+    function create_if_block$3(ctx) {
+    	let p;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = `ERROR: ${/*checkMSG*/ ctx[0]}`;
+    			attr_dev(p, "class", "msgRed svelte-18nzhp5");
+    			set_style(p, "color", "#9d1c24");
+    			add_location(p, file$b, 117, 12, 3967);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$3.name,
+    		type: "if",
+    		source: "(117:8) {#if checkMSG.length != 0}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (131:8) <Button outline color="primary" on:click={pop}>
     function create_default_slot$a(ctx) {
     	let t;
 
@@ -35824,7 +35856,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$a.name,
     		type: "slot",
-    		source: "(123:8) <Button outline color=\\\"primary\\\" on:click={pop}>",
+    		source: "(131:8) <Button outline color=\\\"primary\\\" on:click={pop}>",
     		ctx
     	});
 
@@ -35851,14 +35883,17 @@ var app = (function () {
     	let t4;
     	let t5;
     	let main;
-    	let figure1;
     	let div1;
     	let t6;
+    	let figure1;
+    	let div2;
+    	let t7;
     	let p1;
-    	let t8;
+    	let t9;
     	let p2;
     	let button;
     	let current;
+    	let if_block = /*checkMSG*/ ctx[0].length != 0 && create_if_block$3(ctx);
 
     	button = new Button({
     			props: {
@@ -35885,43 +35920,52 @@ var app = (function () {
     			p0 = element("p");
     			p0.textContent = "Pyramid charts are related to funnel charts, and show a hierarchical\r\n            structure that has a progressive order, such as a sales process.";
     			t2 = text("\r\n    \r\n        on:load=");
-    			t3 = text(/*loadGraph*/ ctx[0]);
+    			t3 = text(/*loadGraph*/ ctx[1]);
     			t4 = text(">");
     			t5 = space();
     			main = element("main");
-    			figure1 = element("figure");
     			div1 = element("div");
+    			if (if_block) if_block.c();
     			t6 = space();
+    			figure1 = element("figure");
+    			div2 = element("div");
+    			t7 = space();
     			p1 = element("p");
     			p1.textContent = "En el gráfico se representa el dato por comunidades autónomas en el\r\n            año 2017 en España. Fumadores diarios, ocasionales, ex-fumadores y\r\n            no fumadores.";
-    			t8 = space();
+    			t9 = space();
     			p2 = element("p");
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$b, 95, 4, 3123);
+    			add_location(script0, file$b, 97, 4, 3149);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/funnel.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$b, 96, 4, 3194);
+    			add_location(script1, file$b, 98, 4, 3220);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$b, 97, 4, 3269);
+    			add_location(script2, file$b, 99, 4, 3295);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$b, 98, 4, 3347);
+    			add_location(script3, file$b, 100, 4, 3373);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$b, 99, 4, 3427);
+    			add_location(script4, file$b, 101, 4, 3453);
     			attr_dev(div0, "id", "container");
-    			add_location(div0, file$b, 102, 8, 3559);
-    			attr_dev(p0, "class", "highcharts-description");
-    			add_location(p0, file$b, 103, 8, 3595);
-    			attr_dev(figure0, "class", "highcharts-figure svelte-14kx1k0");
-    			add_location(figure0, file$b, 101, 4, 3515);
-    			attr_dev(div1, "id", "container");
-    			add_location(div1, file$b, 114, 8, 3930);
-    			attr_dev(p1, "class", "highcharts-description");
-    			add_location(p1, file$b, 115, 8, 3962);
-    			attr_dev(figure1, "class", "highcharts-figure svelte-14kx1k0");
-    			add_location(figure1, file$b, 113, 4, 3886);
+    			attr_dev(div0, "class", "svelte-18nzhp5");
+    			add_location(div0, file$b, 104, 8, 3585);
+    			attr_dev(p0, "class", "highcharts-description svelte-18nzhp5");
+    			add_location(p0, file$b, 105, 8, 3621);
+    			attr_dev(figure0, "class", "highcharts-figure");
+    			add_location(figure0, file$b, 103, 4, 3541);
+    			attr_dev(div1, "class", "svelte-18nzhp5");
+    			add_location(div1, file$b, 115, 4, 3912);
+    			attr_dev(div2, "id", "container");
+    			attr_dev(div2, "class", "svelte-18nzhp5");
+    			add_location(div2, file$b, 122, 8, 4108);
+    			attr_dev(p1, "class", "highcharts-description svelte-18nzhp5");
+    			add_location(p1, file$b, 123, 8, 4140);
+    			attr_dev(figure1, "class", "highcharts-figure");
+    			add_location(figure1, file$b, 121, 4, 4064);
     			attr_dev(p2, "align", "center");
-    			add_location(p2, file$b, 121, 4, 4219);
-    			add_location(main, file$b, 112, 0, 3874);
+    			attr_dev(p2, "class", "svelte-18nzhp5");
+    			add_location(p2, file$b, 129, 4, 4397);
+    			attr_dev(main, "class", "svelte-18nzhp5");
+    			add_location(main, file$b, 114, 0, 3900);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -35941,19 +35985,23 @@ var app = (function () {
     			append_dev(document.head, t4);
     			insert_dev(target, t5, anchor);
     			insert_dev(target, main, anchor);
+    			append_dev(main, div1);
+    			if (if_block) if_block.m(div1, null);
+    			append_dev(main, t6);
     			append_dev(main, figure1);
-    			append_dev(figure1, div1);
-    			append_dev(figure1, t6);
+    			append_dev(figure1, div2);
+    			append_dev(figure1, t7);
     			append_dev(figure1, p1);
-    			append_dev(main, t8);
+    			append_dev(main, t9);
     			append_dev(main, p2);
     			mount_component(button, p2, null);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
+    			if (/*checkMSG*/ ctx[0].length != 0) if_block.p(ctx, dirty);
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 256) {
+    			if (dirty & /*$$scope*/ 512) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -35980,6 +36028,7 @@ var app = (function () {
     			detach_dev(t4);
     			if (detaching) detach_dev(t5);
     			if (detaching) detach_dev(main);
+    			if (if_block) if_block.d();
     			destroy_component(button);
     		}
     	};
@@ -36005,6 +36054,7 @@ var app = (function () {
     	var smokerChartOcasional = [];
     	var smokerChartEx = [];
     	var smokerChartNon = [];
+    	var checkMSG = [];
 
     	async function loadGraph() {
     		console.log("Fetching data...");
@@ -36092,6 +36142,7 @@ var app = (function () {
     		smokerChartOcasional,
     		smokerChartEx,
     		smokerChartNon,
+    		checkMSG,
     		loadGraph
     	});
 
@@ -36103,13 +36154,14 @@ var app = (function () {
     		if ("smokerChartOcasional" in $$props) smokerChartOcasional = $$props.smokerChartOcasional;
     		if ("smokerChartEx" in $$props) smokerChartEx = $$props.smokerChartEx;
     		if ("smokerChartNon" in $$props) smokerChartNon = $$props.smokerChartNon;
+    		if ("checkMSG" in $$props) $$invalidate(0, checkMSG = $$props.checkMSG);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [loadGraph];
+    	return [checkMSG, loadGraph];
     }
 
     class GraphSmokers3 extends SvelteComponentDev {
