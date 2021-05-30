@@ -52,7 +52,7 @@
                 title: {
                     text: 'Comunidad autónoma/año'
                 },
-                categories: weightChartInfo,
+                categories: weightChartInfo
             },
             plotOptions: {
                 column: {

@@ -41790,67 +41790,67 @@ var app = (function () {
     			t15 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$4, 96, 4, 2912);
+    			add_location(script0, file$4, 96, 4, 2911);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/highcharts-3d.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$4, 97, 4, 2983);
+    			add_location(script1, file$4, 97, 4, 2982);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$4, 98, 4, 3057);
+    			add_location(script2, file$4, 98, 4, 3056);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$4, 99, 4, 3135);
+    			add_location(script3, file$4, 99, 4, 3134);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$4, 100, 4, 3215);
+    			add_location(script4, file$4, 100, 4, 3214);
     			attr_dev(div0, "id", "container");
-    			add_location(div0, file$4, 108, 8, 3395);
+    			add_location(div0, file$4, 108, 8, 3394);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$4, 109, 8, 3431);
+    			add_location(p, file$4, 109, 8, 3430);
     			attr_dev(label0, "for", "alpha");
-    			add_location(label0, file$4, 115, 24, 3710);
-    			add_location(td0, file$4, 115, 20, 3706);
+    			add_location(label0, file$4, 115, 24, 3709);
+    			add_location(td0, file$4, 115, 20, 3705);
     			attr_dev(input0, "id", "alpha");
     			attr_dev(input0, "type", "range");
     			attr_dev(input0, "min", "0");
     			attr_dev(input0, "max", "45");
     			input0.value = "15";
-    			add_location(input0, file$4, 116, 24, 3779);
+    			add_location(input0, file$4, 116, 24, 3778);
     			attr_dev(span0, "id", "alpha-value");
     			attr_dev(span0, "class", "value");
-    			add_location(span0, file$4, 116, 85, 3840);
-    			add_location(td1, file$4, 116, 20, 3775);
-    			add_location(tr0, file$4, 114, 16, 3680);
+    			add_location(span0, file$4, 116, 85, 3839);
+    			add_location(td1, file$4, 116, 20, 3774);
+    			add_location(tr0, file$4, 114, 16, 3679);
     			attr_dev(label1, "for", "beta");
-    			add_location(label1, file$4, 119, 24, 3960);
-    			add_location(td2, file$4, 119, 20, 3956);
+    			add_location(label1, file$4, 119, 24, 3959);
+    			add_location(td2, file$4, 119, 20, 3955);
     			attr_dev(input1, "id", "beta");
     			attr_dev(input1, "type", "range");
     			attr_dev(input1, "min", "-45");
     			attr_dev(input1, "max", "45");
     			input1.value = "15";
-    			add_location(input1, file$4, 120, 24, 4027);
+    			add_location(input1, file$4, 120, 24, 4026);
     			attr_dev(span1, "id", "beta-value");
     			attr_dev(span1, "class", "value");
-    			add_location(span1, file$4, 120, 86, 4089);
-    			add_location(td3, file$4, 120, 20, 4023);
-    			add_location(tr1, file$4, 118, 16, 3930);
+    			add_location(span1, file$4, 120, 86, 4088);
+    			add_location(td3, file$4, 120, 20, 4022);
+    			add_location(tr1, file$4, 118, 16, 3929);
     			attr_dev(label2, "for", "depth");
-    			add_location(label2, file$4, 123, 24, 4208);
-    			add_location(td4, file$4, 123, 20, 4204);
+    			add_location(label2, file$4, 123, 24, 4207);
+    			add_location(td4, file$4, 123, 20, 4203);
     			attr_dev(input2, "id", "depth");
     			attr_dev(input2, "type", "range");
     			attr_dev(input2, "min", "20");
     			attr_dev(input2, "max", "100");
     			input2.value = "50";
-    			add_location(input2, file$4, 124, 24, 4271);
+    			add_location(input2, file$4, 124, 24, 4270);
     			attr_dev(span2, "id", "depth-value");
     			attr_dev(span2, "class", "value");
-    			add_location(span2, file$4, 124, 87, 4334);
-    			add_location(td5, file$4, 124, 20, 4267);
-    			add_location(tr2, file$4, 122, 16, 4178);
-    			add_location(table, file$4, 113, 12, 3655);
+    			add_location(span2, file$4, 124, 87, 4333);
+    			add_location(td5, file$4, 124, 20, 4266);
+    			add_location(tr2, file$4, 122, 16, 4177);
+    			add_location(table, file$4, 113, 12, 3654);
     			attr_dev(div1, "id", "sliders");
-    			add_location(div1, file$4, 112, 8, 3623);
+    			add_location(div1, file$4, 112, 8, 3622);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$4, 107, 4, 3351);
-    			add_location(main, file$4, 105, 0, 3337);
+    			add_location(figure, file$4, 107, 4, 3350);
+    			add_location(main, file$4, 105, 0, 3336);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -42079,7 +42079,7 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$3 = "src\\front\\weightsStats\\integrations\\culturaBASE.svelte";
 
-    // (147:4) <Button outline color="secondary" on:click="{pop}">
+    // (126:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -42099,7 +42099,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(147:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(126:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -42111,12 +42111,6 @@ var app = (function () {
     	let script0_src_value;
     	let script1;
     	let script1_src_value;
-    	let script2;
-    	let script2_src_value;
-    	let script3;
-    	let script3_src_value;
-    	let script4;
-    	let script4_src_value;
     	let t0;
     	let main;
     	let figure;
@@ -42145,9 +42139,6 @@ var app = (function () {
     		c: function create() {
     			script0 = element("script");
     			script1 = element("script");
-    			script2 = element("script");
-    			script3 = element("script");
-    			script4 = element("script");
     			t0 = space();
     			main = element("main");
     			figure = element("figure");
@@ -42158,22 +42149,16 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 130, 2, 3869);
-    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 131, 2, 3938);
-    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 132, 2, 4017);
-    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$3, 133, 2, 4093);
-    			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$3, 134, 2, 4171);
+    			add_location(script0, file$3, 113, 4, 3030);
+    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/highcharts-3d.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$3, 114, 4, 3101);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$3, 141, 4, 4345);
+    			add_location(div, file$3, 120, 4, 3265);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$3, 142, 4, 4377);
+    			add_location(p, file$3, 121, 4, 3297);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$3, 140, 4, 4305);
-    			add_location(main, file$3, 139, 0, 4293);
+    			add_location(figure, file$3, 119, 4, 3225);
+    			add_location(main, file$3, 118, 0, 3213);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -42181,9 +42166,6 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			append_dev(document.head, script0);
     			append_dev(document.head, script1);
-    			append_dev(document.head, script2);
-    			append_dev(document.head, script3);
-    			append_dev(document.head, script4);
     			insert_dev(target, t0, anchor);
     			insert_dev(target, main, anchor);
     			append_dev(main, figure);
@@ -42195,7 +42177,7 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(script4, "load", /*loadGraph*/ ctx[0], false, false, false);
+    				dispose = listen_dev(script1, "load", /*loadGraph*/ ctx[0], false, false, false);
     				mounted = true;
     			}
     		},
@@ -42220,9 +42202,6 @@ var app = (function () {
     		d: function destroy(detaching) {
     			detach_dev(script0);
     			detach_dev(script1);
-    			detach_dev(script2);
-    			detach_dev(script3);
-    			detach_dev(script4);
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
     			destroy_component(button);
@@ -42296,66 +42275,44 @@ var app = (function () {
     		console.log("Generando datos para la gráfica...");
 
     		Highcharts.chart("container", {
-    			title: {
-    				text: "Gráfica de la primera integracion"
-    			},
-    			lang: {
-    				viewFullscreen: "Ver en pantalla completa",
-    				downloadJPEG: "Descargar en formato JPEG",
-    				downloadPDF: "Descargar en formato PDF",
-    				downloadPNG: "Descargar en formato JPEG",
-    				downloadSVG: "Descargar en formato JPEG",
-    				downloadCSV: "Descargar en formato CSV",
-    				downloadXLS: "Descargar en formato XLS",
-    				exitFullscreen: "Salir de pantalla completa",
-    				printChart: "Imprimir gráfico"
-    			},
-    			yAxis: { title: { text: "Porcentaje" } },
-    			xAxis: {
-    				title: { text: "Comunidad Autónoma" },
-    				categories: weightProvinces
-    			},
-    			legend: {
-    				layout: "vertical",
-    				align: "right",
-    				verticalAlign: "middle"
-    			},
-    			annootations: [
-    				{
-    					labels: [
-    						{ point: "date", text: "" },
-    						{
-    							point: "min",
-    							text: "Min",
-    							backgroundColor: "white"
-    						}
-    					]
+    			chart: {
+    				type: "area",
+    				options3d: {
+    					enabled: true,
+    					alpha: 15,
+    					beta: 30,
+    					depth: 200
     				}
-    			],
+    			},
+    			title: { text: "Integración CulturalBASE API" },
+    			yAxis: {
+    				title: { text: "Porcentaje y €(en M)", x: -40 }
+    			},
+    			xAxis: [{ visible: false }, { visible: false }, { visible: false }],
+    			plotOptions: {
+    				area: {
+    					depth: 100,
+    					marker: { enabled: false },
+    					states: { inactive: { enabled: false } }
+    				}
+    			},
     			series: [
     				{
-    					name: "Peso normal",
+    					name: "Porcentaje de peso normal en el año 2017",
+    					lineColor: "rgb(180,90,50)",
+    					color: "rgb(200,110,50)",
+    					fillColor: "rgb(200,110,50)",
     					data: weightNormalWeight
     				},
     				{
-    					name: "Recaudación total",
+    					xAxis: 1,
+    					lineColor: "rgb(120,160,180)",
+    					color: "rgb(140,180,200)",
+    					fillColor: "rgb(140,180,200)",
+    					name: "Recaudación total de la industria cinematográfica(contada por millones)",
     					data: culturaFundraising
     				}
-    			],
-    			resWeightponsive: {
-    				rules: [
-    					{
-    						condition: { maxWidth: 500 },
-    						chartOptions: {
-    							legend: {
-    								layout: "horizontal",
-    								align: "center",
-    								verticalAlign: "bottom"
-    							}
-    						}
-    					}
-    				]
-    			}
+    			]
     		});
     	}
 
