@@ -19,7 +19,7 @@
         const res = await fetch(BASE_WEIGHTS_PATH);
         if(res.ok){
             weightStats = await res.json();
-            console.log("Recived weights data...");
+            console.log("Recived " + weightNormalWeight.length + " weights data...");
         }
     }
 
@@ -27,7 +27,7 @@
         const res = await fetch(culturaBASE_PATH);
         if(res.ok){
             culturaStats = await res.json();
-            console.log("Recived cultura data...");
+            console.log("Recived " + culturaStats.length + " cultura data...");
         }
     }
 
