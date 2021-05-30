@@ -13,13 +13,13 @@
 
     let culturaStats = [];
     let culturaProvinces = [];
-    //let culturaFundraising = [];
+    let culturaFundraising = [];
 
     async function getWeight(){
         const res = await fetch(BASE_WEIGHTS_PATH);
         if(res.ok){
             weightStats = await res.json();
-            console.log("Recived " + weightNormalWeight.length + " weights data...");
+            console.log("Recived " + weightStats.length + " weights data...");
         }
     }
 
@@ -45,6 +45,7 @@
 
         culturaStats.forEach((stat) => {
             culturaProvinces.push(stat.district);
+            culturaFundraising.push(stat["fundraising"]);
         });
 
         console.log("Generando datos para la gráfica...");
@@ -99,6 +100,10 @@
             {
                 name: 'Peso normal',
                 data: weightNormalWeight
+            },
+            {
+                name : 'Recaudación total',
+                data: culturaFundraising
             }],
         resWeightponsive: {
             rules: [{
