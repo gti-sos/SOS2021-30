@@ -437,7 +437,7 @@ module.exports.register = (app) => {
     //PROXY
     app.use(BASE_API_PATH+"/proxySmoker", function(req, res) {
         console.log("New proxy call");
-        var apiServerHost = 'https://sos2021-30.herokuapp.com'+BASE_API_PATH;
+        var apiServerHost = "https://sos2021-30.herokuapp.com"+BASE_API_PATH;
         var url = apiServerHost + req.url;
         console.log("piped: /proxyHeroku -> " + url);
 
