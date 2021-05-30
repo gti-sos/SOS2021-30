@@ -5,7 +5,6 @@
 
     const BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
     const culturaBASE_PATH = "https://sos2021-26.herokuapp.com/integration/api/v2/culturaBASE";
-    //const prueba = "https://sos2021-11.herokuapp.com/api/v2/stress_stats";
 
     let weightStats = [];
     let weightProvinces = [];
@@ -14,8 +13,6 @@
     let culturaStats = [];
     let culturaProvinces = [];
     //let culturaFundraising = [];
-
-    //let pruebaStats = [];
 
     async function getWeight(){
         const res = await fetch(BASE_WEIGHTS_PATH);
@@ -32,19 +29,12 @@
             console.log("Recived cultura data...");
         }
     }
-/*
-    async function getPrueba(){
-        const res = await fetch(prueba);
-        if(res.ok){
-            pruebaStats = await res.json();
-        }
-    }*/
 
     async function loadGraph(){
         console.log("Fetching data...");
 
         await getWeight();
-        await getCultura();
+        //await getCultura();
         console.log("Procesing all data...");
 
         weightStats.forEach((stat) => {

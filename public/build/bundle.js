@@ -42079,7 +42079,7 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$3 = "src\\front\\weightsStats\\integrations\\culturaBASE.svelte";
 
-    // (148:4) <Button outline color="secondary" on:click="{pop}">
+    // (138:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -42099,7 +42099,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(148:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(138:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -42158,22 +42158,22 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 131, 2, 3773);
+    			add_location(script0, file$3, 121, 2, 3501);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 132, 2, 3842);
+    			add_location(script1, file$3, 122, 2, 3570);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 133, 2, 3921);
+    			add_location(script2, file$3, 123, 2, 3649);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$3, 134, 2, 3997);
+    			add_location(script3, file$3, 124, 2, 3725);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$3, 135, 2, 4075);
+    			add_location(script4, file$3, 125, 2, 3803);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$3, 142, 4, 4249);
+    			add_location(div, file$3, 132, 4, 3977);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$3, 143, 4, 4281);
+    			add_location(p, file$3, 133, 4, 4009);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$3, 141, 4, 4209);
-    			add_location(main, file$3, 140, 0, 4197);
+    			add_location(figure, file$3, 131, 4, 3937);
+    			add_location(main, file$3, 130, 0, 3925);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -42255,7 +42255,6 @@ var app = (function () {
     	let culturaProvinces = [];
 
     	//let culturaFundraising = [];
-    	//let pruebaStats = [];
     	async function getWeight() {
     		const res = await fetch(BASE_WEIGHTS_PATH);
 
@@ -42274,17 +42273,11 @@ var app = (function () {
     		}
     	}
 
-    	/*
-        async function getPrueba(){
-            const res = await fetch(prueba);
-            if(res.ok){
-                pruebaStats = await res.json();
-            }
-        }*/
     	async function loadGraph() {
     		console.log("Fetching data...");
     		await getWeight();
-    		await getCultura();
+
+    		//await getCultura();
     		console.log("Procesing all data...");
 
     		weightStats.forEach(stat => {
