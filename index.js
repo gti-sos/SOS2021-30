@@ -72,15 +72,13 @@ var smokersAPIv3 = require("./src/back/smokersStatsAPI/v3");
 smokersAPIv3.register(app);
 
 //INTEGRACIONES A SMOKER
+//HOSTELRIES
+app.use("/proxy/api/v2/hostelries", function(req, res) {
+    console.log("New proxy call hostelries");
+    var apiServerHost = "https://sos2021-26.herokuapp.com";
+    var url = apiServerHost + req.url;
+    console.log("piped: /proxy/api/v2/hostelries -> " + url);
 
-app.use("/api/v1/arms-sales-stats", function(req, res) {
-    var apiServerHostArmsSales = ' http://sos2021-05.herokuapp.com';
-
-    //SALES-STATS
-    var url = apiServerHostArmsSales + req.url;
-    console.log('piped: /api/v1/arms-sales-stats -> ' + url);
-    // request solo hace get, investigar como hacer put, post, delete, etc.
-    req.pipe(request(url)).pipe(res);
 });
 
 

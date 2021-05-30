@@ -10,7 +10,7 @@
     var checkMSG = "";
 
     //Constantes
-    const BASE_HOSTEL_API_PATH = "https://sos2021-26.herokuapp.com/api/v2/hostelries";
+    const BASE_HOSTEL_API_PATH = "https://sos2021-26.herokuapp.com/proxy/api/v2/hostelries";
     const BASE_SMOKERS_PATH = "/api/v3/smokers-stats";
 
     //Variables SMOKER

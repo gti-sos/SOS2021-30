@@ -38014,8 +38014,8 @@ var app = (function () {
     			set_style(div, "max-width", "740px");
     			set_style(div, "height", "400px");
     			set_style(div, "margin", "0px auto");
-    			add_location(div, file$9, 130, 4, 3942);
-    			add_location(main, file$9, 129, 0, 3930);
+    			add_location(div, file$9, 130, 4, 3948);
+    			add_location(main, file$9, 129, 0, 3936);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -38043,7 +38043,7 @@ var app = (function () {
     	return block;
     }
 
-    const BASE_HOSTEL_API_PATH = "https://sos2021-26.herokuapp.com/api/v2/hostelries";
+    const BASE_HOSTEL_API_PATH = "https://sos2021-26.herokuapp.com/proxy/api/v2/hostelries";
     const BASE_SMOKERS_PATH = "/api/v3/smokers-stats";
 
     function instance$9($$self, $$props, $$invalidate) {
