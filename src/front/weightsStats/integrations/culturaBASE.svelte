@@ -53,87 +53,66 @@
 
         console.log("Generando datos para la gráfica...");
         Highcharts.chart('container', {
-        
-        title: {
-            text: 'Gráfica de la primera integracion'
-        },
-        lang: {
-            viewFullscreen:"Ver en pantalla completa",
-            downloadJPEG: "Descargar en formato JPEG",
-            downloadPDF: "Descargar en formato PDF",
-            downloadPNG:"Descargar en formato JPEG",
-            downloadSVG:"Descargar en formato JPEG",
-            downloadCSV:"Descargar en formato CSV",
-            downloadXLS:"Descargar en formato XLS",
-            exitFullscreen:"Salir de pantalla completa",
-  	        printChart: 'Imprimir gráfico',
-        },
-        yAxis: {
-            title: {
-                text: 'Porcentaje'
-            }
-        },
-        xAxis: {
-            title: {
-                text: 'Comunidad Autónoma'
-            },
-            categories: weightProvinces,
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle'
-        },
-        annootations: [
-            {
-                labels: [
-                    {
-                      point: "date",
-                      text: "",  
-                    },
-                    {
-                        point: "min",
-                        text: "Min",
-                        backgroundColor: "white",
-                    },                    
-                ],
-            },
-        ],
-        series: [
-            {
-                name: 'Peso normal',
-                data: weightNormalWeight
-            },
-            {
-                name : 'Recaudación total',
-                data: culturaFundraising
-            }],
-        resWeightponsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
-                }
-            }]
+    chart: {
+        type: 'area',
+        options3d: {
+            enabled: true,
+            alpha: 15,
+            beta: 30,
+            depth: 200
         }
-        });
+    },
+    title: {
+        text: "Integración CulturalBASE API"
+    },
+    yAxis: {
+        title: {
+            text: 'Porcentaje y €(en M)',
+            x: -40
+        }
+    },
+    xAxis: [{
+        visible: false
+    }, {
+        visible: false
+    }, {
+        visible: false
+    }],
+    plotOptions: {
+        area: {
+            depth: 100,
+            marker: {
+                enabled: false
+            },
+            states: {
+                inactive: {
+                    enabled: false
+                }
+            }
+        }
+    },
+    series: [{
+        name: "Porcentaje de peso normal en el año 2017",
+        lineColor: 'rgb(180,90,50)',
+        color: 'rgb(200,110,50)',
+        fillColor: 'rgb(200,110,50)',
+        data: weightNormalWeight
+    }, {
+        xAxis: 1,
+        lineColor: 'rgb(120,160,180)',
+        color: 'rgb(140,180,200)',
+        fillColor: 'rgb(140,180,200)',
+        name: "Recaudación total de la industria cinematográfica(contada por millones)",
+        data: culturaFundraising
+    }]
+});
+
     }    
 </script>
 
 <svelte:head>
-
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/modules/series-label.js"></script>
-  <script src="https://code.highcharts.com/modules/exporting.js"></script>
-  <script src="https://code.highcharts.com/modules/export-data.js"></script>
-  <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
-
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js" on:load="{loadGraph}"></script>
 </svelte:head>
 
 
