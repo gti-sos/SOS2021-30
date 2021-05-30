@@ -22,10 +22,10 @@
         if (res.ok) {
             fullDat.forEach((stat) => {
                 smokerChartInfo.push(stat.province);
-                smokerChartDaily.push(stat["dailySmoker"] / 1000);
-                smokerChartOcasional.push(stat["ocasionalSmoker"] / 1000);
-                smokerChartEx.push(stat["exSmoker"] / 1000);
-                smokerChartNon.push(stat["nonSmoker"] / 1000);
+                smokerChartDaily.push(stat["dailySmoker"]);
+                smokerChartOcasional.push(stat["ocasionalSmoker"]);
+                smokerChartEx.push(stat["exSmoker"]);
+                smokerChartNon.push(stat["nonSmoker"]);
             });
 
             //Comprueba que la gráfica no aparezca vacía y vuelve atrás
@@ -56,30 +56,21 @@
             let objSmoker = new Object();
             objSmoker.name = smokerChartInfo[i];
             objSmoker.id = smokerChartInfo[i];
+            //for interno
             for (var j = 0; j < tipos.length; j++) {
                 let minitablaAux = [];
                 minitablaAux.push(tipos[j]);
                 switch (tipos[j]) {
-                    case "Fumadores diarios":
-                        minitablaAux.push(smokerChartDaily[i]);
-                        break;
-                    case "Fumadores ocasionales":
-                        minitablaAux.push(smokerChartOcasional[i]);
-                        break;
-                    case "Ex-fumadores":
-                        minitablaAux.push(smokerChartEx[i]);
-                        break;
-                    case "No fumadores":
-                        minitablaAux.push(smokerChartNon[i]);
-                        break;
-                    default:
-                        checkMSG = "No se ha podido completar el objeto para formar la gráfica."
-                        break;
+                    case "Fumadores diarios": minitablaAux.push(smokerChartDaily[i]); break;
+                    case "Fumadores ocasionales": minitablaAux.push(smokerChartOcasional[i]); break;
+                    case "Ex-fumadores": minitablaAux.push(smokerChartEx[i]); break;
+                    case "No fumadores": minitablaAux.push(smokerChartNon[i]); break;
+                    default: checkMSG = "No se ha podido completar el objeto para formar la gráfica."; break;
                 }
-                tablaAux.push(minitablaAux);
-                objSmoker.data = tablaAux;
+                tablaAux.push(minitablaAux); //se rellena la tabla con tablas de 2 elementos
+                objSmoker.data = tablaAux; //se establece como nuevo elemento del objeto
             }   
-            dataFin2.push(objSmoker);
+            dataFin2.push(objSmoker);   //se pushea a dataFin por requerimientos de formato
         }
         console.log(dataFin2);
 
@@ -107,13 +98,17 @@
             subtitle: {
                 text: 'Click para ver el origen de los datos => <a href="#/smokers-stats" target="_blank">API fuente de datos</a>',
             },
-
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
             accessibility: {
                 announceNewData: {
                     enabled: true,
                 },
                 point: {
-                    valueSuffix: "%",
+                    valueSuffix: "personas",
                 },
             },
 
@@ -121,7 +116,7 @@
                 series: {
                     dataLabels: {
                         enabled: true,
-                        format: "{point.name}: {point.y:.1f} en miles",
+                        format: "{point.name}: {point.y:.1f}",
                     },
                 },
             },
@@ -130,7 +125,7 @@
                 headerFormat:
                     '<span style="font-size:11px">{series.name}</span><br>',
                 pointFormat:
-                    '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f} en miles</b> de la población total de la comunidad<br/>',
+                    '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}</b> de la población total de la comunidad<br/>',
             },
 
             series: [

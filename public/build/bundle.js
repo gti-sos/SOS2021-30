@@ -34912,7 +34912,7 @@ var app = (function () {
     const { console: console_1$c } = globals;
     const file$d = "src\\front\\smokersStats\\GraphSmokers.svelte";
 
-    // (143:8) {#if checkMSG.length!=0}
+    // (145:8) {#if checkMSG.length!=0}
     function create_if_block$5(ctx) {
     	let p;
 
@@ -34922,7 +34922,7 @@ var app = (function () {
     			p.textContent = `ERROR: ${/*checkMSG*/ ctx[0]}`;
     			attr_dev(p, "class", "msgRed svelte-1kd7xek");
     			set_style(p, "color", "#9d1c24");
-    			add_location(p, file$d, 143, 10, 4169);
+    			add_location(p, file$d, 145, 10, 4345);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -34937,14 +34937,14 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(143:8) {#if checkMSG.length!=0}",
+    		source: "(145:8) {#if checkMSG.length!=0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (155:20) <Button outline color="primary" on:click="{pop}">
+    // (157:20) <Button outline color="primary" on:click="{pop}">
     function create_default_slot_1$3(ctx) {
     	let t;
 
@@ -34964,20 +34964,20 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$3.name,
     		type: "slot",
-    		source: "(155:20) <Button outline color=\\\"primary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(157:20) <Button outline color=\\\"primary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (156:32) <Button outline color="primary" >
+    // (158:32) <Button outline color="primary" >
     function create_default_slot$c(ctx) {
     	let t;
 
     	const block = {
     		c: function create() {
-    			t = text("Ir al gráfico interactivo");
+    			t = text("Ir al gráfico interactivo Highcharts");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -34991,7 +34991,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$c.name,
     		type: "slot",
-    		source: "(156:32) <Button outline color=\\\"primary\\\" >",
+    		source: "(158:32) <Button outline color=\\\"primary\\\" >",
     		ctx
     	});
 
@@ -35074,31 +35074,31 @@ var app = (function () {
     			a = element("a");
     			create_component(button1.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$d, 131, 2, 3682);
+    			add_location(script0, file$d, 133, 4, 3850);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$d, 132, 2, 3751);
+    			add_location(script1, file$d, 134, 4, 3921);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$d, 133, 2, 3830);
+    			add_location(script2, file$d, 135, 4, 4002);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$d, 134, 2, 3906);
+    			add_location(script3, file$d, 136, 4, 4080);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$d, 135, 2, 3984);
+    			add_location(script4, file$d, 137, 4, 4160);
     			attr_dev(div0, "class", "svelte-1kd7xek");
-    			add_location(div0, file$d, 141, 4, 4118);
+    			add_location(div0, file$d, 143, 4, 4294);
     			attr_dev(div1, "id", "container");
     			attr_dev(div1, "class", "svelte-1kd7xek");
-    			add_location(div1, file$d, 148, 4, 4306);
+    			add_location(div1, file$d, 150, 4, 4482);
     			attr_dev(p0, "class", "highcharts-description svelte-1kd7xek");
-    			add_location(p0, file$d, 149, 4, 4338);
+    			add_location(p0, file$d, 151, 4, 4514);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$d, 147, 2, 4266);
+    			add_location(figure, file$d, 149, 2, 4442);
     			attr_dev(a, "href", "#/smokers-graph2");
-    			add_location(a, file$d, 155, 4, 4649);
+    			add_location(a, file$d, 157, 4, 4825);
     			attr_dev(p1, "align", "center");
     			attr_dev(p1, "class", "svelte-1kd7xek");
-    			add_location(p1, file$d, 154, 2, 4562);
+    			add_location(p1, file$d, 156, 2, 4738);
     			attr_dev(main, "class", "svelte-1kd7xek");
-    			add_location(main, file$d, 140, 0, 4106);
+    			add_location(main, file$d, 142, 0, 4282);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -35237,9 +35237,12 @@ var app = (function () {
     				printChart: "Imprimir gráfico"
     			},
     			title: { text: "Gráfica Smoker por comunidades" },
-    			yAxis: { title: { text: "Cantidad" } },
+    			subtitle: {
+    				text: "Click para ver el origen de los datos => <a href=\"#/smokers-stats\" target=\"_blank\">API fuente de datos</a>"
+    			},
+    			yAxis: { title: { text: "Nº de personas" } },
     			xAxis: {
-    				title: { text: "Comunidad autónoma/año" },
+    				title: { text: "Comunidad autónoma" },
     				categories: smokerChartInfo
     			},
     			legend: {
@@ -35351,7 +35354,7 @@ var app = (function () {
     const { Object: Object_1$1, console: console_1$b } = globals;
     const file$c = "src\\front\\smokersStats\\GraphSmokers2.svelte";
 
-    // (177:8) {#if checkMSG.length != 0}
+    // (172:8) {#if checkMSG.length != 0}
     function create_if_block$4(ctx) {
     	let p;
     	let t0;
@@ -35364,7 +35367,7 @@ var app = (function () {
     			t1 = text(/*checkMSG*/ ctx[0]);
     			attr_dev(p, "class", "msgRed svelte-1vbfi7c");
     			set_style(p, "color", "#9d1c24");
-    			add_location(p, file$c, 177, 12, 6833);
+    			add_location(p, file$c, 172, 12, 6868);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -35383,14 +35386,14 @@ var app = (function () {
     		block,
     		id: create_if_block$4.name,
     		type: "if",
-    		source: "(177:8) {#if checkMSG.length != 0}",
+    		source: "(172:8) {#if checkMSG.length != 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (191:8) <Button outline color="primary" on:click={pop}>
+    // (186:8) <Button outline color="primary" on:click={pop}>
     function create_default_slot$b(ctx) {
     	let t;
 
@@ -35410,7 +35413,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$b.name,
     		type: "slot",
-    		source: "(191:8) <Button outline color=\\\"primary\\\" on:click={pop}>",
+    		source: "(186:8) <Button outline color=\\\"primary\\\" on:click={pop}>",
     		ctx
     	});
 
@@ -35480,31 +35483,31 @@ var app = (function () {
     			p1 = element("p");
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$c, 164, 4, 6252);
+    			add_location(script0, file$c, 159, 4, 6287);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/data.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$c, 165, 4, 6323);
+    			add_location(script1, file$c, 160, 4, 6358);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/drilldown.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$c, 166, 4, 6396);
+    			add_location(script2, file$c, 161, 4, 6431);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$c, 167, 4, 6474);
+    			add_location(script3, file$c, 162, 4, 6509);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$c, 168, 4, 6552);
+    			add_location(script4, file$c, 163, 4, 6587);
     			if (script5.src !== (script5_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script5, "src", script5_src_value);
-    			add_location(script5, file$c, 169, 4, 6632);
+    			add_location(script5, file$c, 164, 4, 6667);
     			attr_dev(div0, "class", "svelte-1vbfi7c");
-    			add_location(div0, file$c, 175, 4, 6778);
+    			add_location(div0, file$c, 170, 4, 6813);
     			attr_dev(div1, "id", "container");
     			attr_dev(div1, "class", "svelte-1vbfi7c");
-    			add_location(div1, file$c, 182, 8, 6974);
+    			add_location(div1, file$c, 177, 8, 7009);
     			attr_dev(p0, "class", "highcharts-description svelte-1vbfi7c");
-    			add_location(p0, file$c, 183, 8, 7006);
+    			add_location(p0, file$c, 178, 8, 7041);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$c, 181, 4, 6930);
+    			add_location(figure, file$c, 176, 4, 6965);
     			attr_dev(p1, "align", "center");
     			attr_dev(p1, "class", "svelte-1vbfi7c");
-    			add_location(p1, file$c, 189, 4, 7263);
+    			add_location(p1, file$c, 184, 4, 7298);
     			attr_dev(main, "class", "svelte-1vbfi7c");
-    			add_location(main, file$c, 174, 0, 6766);
+    			add_location(main, file$c, 169, 0, 6801);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -35615,10 +35618,10 @@ var app = (function () {
     		if (res.ok) {
     			fullDat.forEach(stat => {
     				smokerChartInfo.push(stat.province);
-    				smokerChartDaily.push(stat["dailySmoker"] / 1000);
-    				smokerChartOcasional.push(stat["ocasionalSmoker"] / 1000);
-    				smokerChartEx.push(stat["exSmoker"] / 1000);
-    				smokerChartNon.push(stat["nonSmoker"] / 1000);
+    				smokerChartDaily.push(stat["dailySmoker"]);
+    				smokerChartOcasional.push(stat["ocasionalSmoker"]);
+    				smokerChartEx.push(stat["exSmoker"]);
+    				smokerChartNon.push(stat["nonSmoker"]);
     			});
 
     			//Comprueba que la gráfica no aparezca vacía y vuelve atrás
@@ -35650,6 +35653,7 @@ var app = (function () {
     			objSmoker.name = smokerChartInfo[i];
     			objSmoker.id = smokerChartInfo[i];
 
+    			//for interno
     			for (var j = 0; j < tipos.length; j++) {
     				let minitablaAux = [];
     				minitablaAux.push(tipos[j]);
@@ -35672,11 +35676,11 @@ var app = (function () {
     						break;
     				}
 
-    				tablaAux.push(minitablaAux);
-    				objSmoker.data = tablaAux;
+    				tablaAux.push(minitablaAux); //se rellena la tabla con tablas de 2 elementos
+    				objSmoker.data = tablaAux; //se establece como nuevo elemento del objeto
     			}
 
-    			dataFin2.push(objSmoker);
+    			dataFin2.push(objSmoker); //se pushea a dataFin por requerimientos de formato
     		}
 
     		console.log(dataFin2);
@@ -35702,21 +35706,26 @@ var app = (function () {
     			subtitle: {
     				text: "Click para ver el origen de los datos => <a href=\"#/smokers-stats\" target=\"_blank\">API fuente de datos</a>"
     			},
+    			legend: {
+    				layout: "vertical",
+    				align: "right",
+    				verticalAlign: "middle"
+    			},
     			accessibility: {
     				announceNewData: { enabled: true },
-    				point: { valueSuffix: "%" }
+    				point: { valueSuffix: "personas" }
     			},
     			plotOptions: {
     				series: {
     					dataLabels: {
     						enabled: true,
-    						format: "{point.name}: {point.y:.1f} en miles"
+    						format: "{point.name}: {point.y:.1f}"
     					}
     				}
     			},
     			tooltip: {
     				headerFormat: "<span style=\"font-size:11px\">{series.name}</span><br>",
-    				pointFormat: "<span style=\"color:{point.color}\">{point.name}</span>: <b>{point.y:.2f} en miles</b> de la población total de la comunidad<br/>"
+    				pointFormat: "<span style=\"color:{point.color}\">{point.name}</span>: <b>{point.y:.2f}</b> de la población total de la comunidad<br/>"
     			},
     			series: [
     				{
@@ -37659,7 +37668,7 @@ var app = (function () {
     const { Object: Object_1, console: console_1$9 } = globals;
     const file$a = "src\\front\\smokersStats\\integrations\\RentalStats.svelte";
 
-    // (151:22) <Button outline color="primary" on:click={pop}>
+    // (152:22) <Button outline color="primary" on:click={pop}>
     function create_default_slot$9(ctx) {
     	let t;
 
@@ -37679,7 +37688,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$9.name,
     		type: "slot",
-    		source: "(151:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
+    		source: "(152:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
     		ctx
     	});
 
@@ -37717,10 +37726,10 @@ var app = (function () {
     			set_style(div, "max-width", "740px");
     			set_style(div, "height", "400px");
     			set_style(div, "margin", "0px auto");
-    			add_location(div, file$a, 149, 4, 5402);
+    			add_location(div, file$a, 150, 4, 5401);
     			attr_dev(p, "align", "center");
-    			add_location(p, file$a, 150, 4, 5484);
-    			add_location(main, file$a, 148, 0, 5390);
+    			add_location(p, file$a, 151, 4, 5483);
+    			add_location(main, file$a, 148, 0, 5387);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -37899,7 +37908,7 @@ var app = (function () {
     			jscharting.merge({ name: "Fumadores diarios (en miles)" }, nido.rollup("dailySmoker").series(dataFin)[0]),
     			jscharting.merge(
     				{
-    					name: "Renta en miles", //segunda parte de la serie, rent
+    					name: "Renta media", //segunda parte de la serie, rent
     					
     				},
     				nido.rollup("rent").series(dataFin)[0]
