@@ -6,6 +6,7 @@ const request = require("request");
 var app = express();
 
 app.use(bodyParser.json());
+//app.use(cors());
 
 var port = process.env.PORT || 10000;
 

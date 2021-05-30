@@ -57,16 +57,18 @@
         title: {
             text: 'Gráfica Smoker por comunidades'
         },
-
+        subtitle: {
+                text: 'Click para ver el origen de los datos => <a href="#/smokers-stats" target="_blank">API fuente de datos</a>',
+        },
         yAxis: {
             title: {
-                text: 'Cantidad'
+                text: 'Nº de personas'
             }
         },
 
         xAxis: {
             title: {
-                text: 'Comunidad autónoma/año'
+                text: 'Comunidad autónoma'
             },
             categories: smokerChartInfo,
         },
@@ -129,11 +131,11 @@
 
 <svelte:head>
 
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/modules/series-label.js"></script>
-  <script src="https://code.highcharts.com/modules/exporting.js"></script>
-  <script src="https://code.highcharts.com/modules/export-data.js"></script>
-  <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
 
 </svelte:head>
 
@@ -153,7 +155,7 @@
     </p>
   </figure>
   <p align="center"><Button outline color="primary" on:click="{pop}">Atrás</Button>
-    <a href= "#/smokers-graph2"><Button outline color="primary" >Ir al gráfico interactivo</Button></a>
+    <a href= "#/smokers-graph2"><Button outline color="primary" >Ir al gráfico interactivo Highcharts</Button></a>
     
     </p>
   

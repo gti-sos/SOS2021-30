@@ -125,7 +125,7 @@
                 nido.rollup("dailySmoker").series(dataFin)[0] //primera parte de la serie, dailySmoker
             ),
             JSC.merge(
-                { name: "Renta en miles" },
+                { name: "Renta media" },
                 nido.rollup("rent").series(dataFin)[0]  //segunda parte de la serie, rent
             ),
         ];
@@ -147,6 +147,8 @@
 </script>
 
 <main>
+
     <div id="chartDiv" style="max-width: 740px;height: 400px;margin: 0px auto"/>
     <p align="center"><Button outline color="primary" on:click={pop}>Atrás</Button></p>
+
 </main>

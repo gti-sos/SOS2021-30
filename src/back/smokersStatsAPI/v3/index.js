@@ -2,6 +2,8 @@ var _= require("underscore");
 var Datastore = require("nedb");
 var db = new Datastore();
 
+const request = require("request");
+
 var BASE_API_PATH = "/api/v3/smokers-stats";
 
 var smokersStats = [];
@@ -467,4 +469,14 @@ module.exports.register = (app) => {
             }
         });
 });
+
+    //PROXY
+    app.use(BASE_API_PATH+"/proxySmoker", function(req, res) {
+        console.log("New proxy call");
+        var apiServerHost = "https://sos2021-30.herokuapp.com"+BASE_API_PATH;
+        var url = apiServerHost + req.url;
+        console.log("piped: /proxyHeroku -> " + url);
+
+        req.pipe(request(url)).pipe(res);
+    });
 };
