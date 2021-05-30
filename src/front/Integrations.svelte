@@ -30,6 +30,8 @@
         ><Button color="primary">Estadísticas Riesgo de pobreza</Button></a>
         <a href="/#/integrations/covid-stats"
         ><Button color="primary">Estadísticas sobre coronavirus</Button></a>
+        <a href="/#/integrations/co2-stats"
+        ><Button color="primary">Estadísticas sobre CO2</Button></a>
       </CardBody>
     </Card>
   </div>
