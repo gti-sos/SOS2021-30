@@ -1,23 +1,19 @@
 <script>
-	import { onMount } from "svelte";
   import { pop }from "svelte-spa-router";
-	import Table from "sveltestrap/src/Table.svelte"; 
 	import Button from "sveltestrap/src/Button.svelte";
-    import Input from "sveltestrap/src/Input.svelte";
-	import FormGroup from "sveltestrap/src/FormGroup.svelte";
-	import { Alert } from 'sveltestrap';
 
 
     
 	var BASE_SMOKER_PATH = "/api/v3/smokers-stats";
 
-    let fullDat = [];
-    let smokerChartInfo = [];
-    let smokerChartDaily = [];
-    let smokerChartOcasional = [];
-    let smokerChartEx = [];
-    let smokerChartNon = [];
+    var fullDat = [];
+    var smokerChartInfo = [];
+    var smokerChartDaily = [];
+    var smokerChartOcasional = [];
+    var smokerChartEx = [];
+    var smokerChartNon = [];
 
+    var checkMSG = [];
     
     async function loadGraph(){
         console.log("Fetching data...");
@@ -25,7 +21,7 @@
         fullDat = await res.json();
         if(res.ok){
             fullDat.forEach(stat => {
-                smokerChartInfo.push(stat.province+"/"+stat.year);
+                smokerChartInfo.push(stat.province);
                 smokerChartDaily.push(stat["dailySmoker"]);
                 smokerChartOcasional.push(stat["ocasionalSmoker"]);
                 smokerChartEx.push(stat["exSmoker"]);
@@ -41,7 +37,22 @@
         }
 
         console.log("Graphical data sent");
+        ///////////////////////////////////////////GRAPH
         Highcharts.chart('container', {
+            chart: {
+            type: 'line'
+        },
+        lang: {
+            viewFullscreen:"Ver en pantalla completa",
+            downloadJPEG: "Descargar en formato JPEG",
+            downloadPDF: "Descargar en formato PDF",
+            downloadPNG:"Descargar en formato JPEG",
+            downloadSVG:"Descargar en formato JPEG",
+            downloadCSV:"Descargar en formato CSV",
+            downloadXLS:"Descargar en formato XLS",
+            exitFullscreen:"Salir de pantalla completa",
+  	        printChart: 'Imprimir gráfico',
+        },
 
         title: {
             text: 'Gráfica Smoker por comunidades'
@@ -128,6 +139,11 @@
 
 
 <main>
+    <div>
+        {#if checkMSG.length!=0}
+          <p class="msgRed" style="color: #9d1c24">ERROR: {checkMSG}</p>
+        {/if}
+      </div>
 
   <figure class="highcharts-figure">
     <div id="container"></div>
@@ -136,44 +152,29 @@
       Fumadores diarios, ocasionales, ex-fumadores y no fumadores.
     </p>
   </figure>
-  <p align="center"><Button outline color="primary" on:click="{pop}">Atrás</Button></p>
+  <p align="center"><Button outline color="primary" on:click="{pop}">Atrás</Button>
+    <a href= "#/smokers-graph2"><Button outline color="primary" >Ir al gráfico interactivo</Button></a>
+    
+    </p>
   
   
 </main>
 
 <style>
-  .highcharts-figure, .highcharts-data-table table {
-    min-width: 360px; 
-    max-width: 800px;
-    margin: 1em auto;
-}
-
-.highcharts-data-table table {
-	font-family: Verdana, sans-serif;
-	border-collapse: collapse;
-	border: 1px solid #EBEBEB;
-	margin: 10px auto;
-	text-align: center;
-	width: 100%;
-	max-width: 500px;
-}
-.highcharts-data-table caption {
-    padding: 1em 0;
-    font-size: 1.2em;
-    color: #555;
-}
-.highcharts-data-table th {
-	font-weight: 600;
-    padding: 0.5em;
-}
-.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
-    padding: 0.5em;
-}
-.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
-    background: #f8f8f8;
-}
-.highcharts-data-table tr:hover {
-    background: #f1f7ff;
-}
+  main {
+      text-align: center;
+      padding: 1em;
+      margin: 0 auto;
+    }
+    div{
+      margin-bottom: 15px;
+    }
+    p {
+      display: inline;
+    }
+    .msgRed {
+      padding: 8px;
+      background-color: #ffffff;
+    }
 
 </style>
