@@ -1,5 +1,6 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 var _= require("underscore");
+const request = require("request");
 var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
 
 var Datastore = require("nedb");
@@ -514,6 +515,16 @@ module.exports.register = (app) => {
             }
         });
     });
+
+    //PROXY
+    app.use("/proxyHeroku", function(req, res) {
+        console.log("New proxy call");
+        var apiServerHost = 'https://sos2021-26.herokuapp.com';
+        var url = apiServerHost + req.url;
+        console.log("piped: /proxyHeroku -> " + url);
+
+        req.pipe(request(url)).pipe(res);
+    })
 };
 
 //~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~

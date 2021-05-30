@@ -4,7 +4,8 @@
 
 
     const BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
-    const culturaBASE_PATH = "https://sos2021-26.herokuapp.com/integration/api/v2/culturaBASE";
+    //const culturaBASE_PATH = "https://sos2021-26.herokuapp.com/integration/api/v2/culturaBASE";
+    const culturaBASE_PATH = "/proxyHeroku/integration/api/v2/culturaBASE";
 
     let weightStats = [];
     let weightProvinces = [];
@@ -34,7 +35,7 @@
         console.log("Fetching data...");
 
         await getWeight();
-        //await getCultura();
+        await getCultura();
         console.log("Procesing all data...");
 
         weightStats.forEach((stat) => {
