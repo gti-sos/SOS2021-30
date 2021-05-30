@@ -39,8 +39,11 @@
         console.log("Procesing all data...");
 
         weightStats.forEach((stat) => {
-            weightProvinces.push(stat.provinces);
-            weightNormalWeight.push(stat["normal_weight"]);
+            if(stat.year == 2017){
+                weightProvinces.push(stat.provinces);
+                weightNormalWeight.push(stat["normal_weight"]);
+            }
+
         });
 
         culturaStats.forEach((stat) => {

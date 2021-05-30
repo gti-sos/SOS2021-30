@@ -42079,7 +42079,7 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$3 = "src\\front\\weightsStats\\integrations\\culturaBASE.svelte";
 
-    // (139:4) <Button outline color="secondary" on:click="{pop}">
+    // (147:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -42099,7 +42099,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(139:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(147:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -42158,22 +42158,22 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 122, 2, 3578);
+    			add_location(script0, file$3, 130, 2, 3869);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 123, 2, 3647);
+    			add_location(script1, file$3, 131, 2, 3938);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 124, 2, 3726);
+    			add_location(script2, file$3, 132, 2, 4017);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$3, 125, 2, 3802);
+    			add_location(script3, file$3, 133, 2, 4093);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$3, 126, 2, 3880);
+    			add_location(script4, file$3, 134, 2, 4171);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$3, 133, 4, 4054);
+    			add_location(div, file$3, 141, 4, 4345);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$3, 134, 4, 4086);
+    			add_location(p, file$3, 142, 4, 4377);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$3, 132, 4, 4014);
-    			add_location(main, file$3, 131, 0, 4002);
+    			add_location(figure, file$3, 140, 4, 4305);
+    			add_location(main, file$3, 139, 0, 4293);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -42202,7 +42202,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 256) {
+    			if (dirty & /*$$scope*/ 512) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -42255,14 +42255,14 @@ var app = (function () {
     	let weightNormalWeight = [];
     	let culturaStats = [];
     	let culturaProvinces = [];
+    	let culturaFundraising = [];
 
-    	//let culturaFundraising = [];
     	async function getWeight() {
     		const res = await fetch(BASE_WEIGHTS_PATH);
 
     		if (res.ok) {
     			weightStats = await res.json();
-    			console.log("Recived weights data...");
+    			console.log("Recived " + weightStats.length + " weights data...");
     		}
     	}
 
@@ -42271,7 +42271,7 @@ var app = (function () {
 
     		if (res.ok) {
     			culturaStats = await res.json();
-    			console.log("Recived cultura data...");
+    			console.log("Recived " + culturaStats.length + " cultura data...");
     		}
     	}
 
@@ -42282,12 +42282,15 @@ var app = (function () {
     		console.log("Procesing all data...");
 
     		weightStats.forEach(stat => {
-    			weightProvinces.push(stat.provinces);
-    			weightNormalWeight.push(stat["normal_weight"]);
+    			if (stat.year == 2017) {
+    				weightProvinces.push(stat.provinces);
+    				weightNormalWeight.push(stat["normal_weight"]);
+    			}
     		});
 
     		culturaStats.forEach(stat => {
     			culturaProvinces.push(stat.district);
+    			culturaFundraising.push(stat["fundraising"]);
     		});
 
     		console.log("Generando datos para la gráfica...");
@@ -42333,6 +42336,10 @@ var app = (function () {
     				{
     					name: "Peso normal",
     					data: weightNormalWeight
+    				},
+    				{
+    					name: "Recaudación total",
+    					data: culturaFundraising
     				}
     			],
     			resWeightponsive: {
@@ -42368,6 +42375,7 @@ var app = (function () {
     		weightNormalWeight,
     		culturaStats,
     		culturaProvinces,
+    		culturaFundraising,
     		getWeight,
     		getCultura,
     		loadGraph
@@ -42379,6 +42387,7 @@ var app = (function () {
     		if ("weightNormalWeight" in $$props) weightNormalWeight = $$props.weightNormalWeight;
     		if ("culturaStats" in $$props) culturaStats = $$props.culturaStats;
     		if ("culturaProvinces" in $$props) culturaProvinces = $$props.culturaProvinces;
+    		if ("culturaFundraising" in $$props) culturaFundraising = $$props.culturaFundraising;
     	};
 
     	if ($$props && "$$inject" in $$props) {
