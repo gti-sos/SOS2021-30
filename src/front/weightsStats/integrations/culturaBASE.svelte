@@ -70,9 +70,7 @@
                     text: 'Porcentaje y €(en M)'
                 }
             },
-            tooltip: {
-                pointFormat: '{series.name} had stockpiled <b>{point.y:,.0f}</b><br/>warheads in {point.x}'
-            },series: [{
+            series: [{
                 name: 'Porcentaje de peso normal en el año 2017',
                 data: weightNormalWeight
             }, {

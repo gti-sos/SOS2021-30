@@ -42577,7 +42577,7 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$3 = "src\\front\\weightsStats\\integrations\\culturaBASE.svelte";
 
-    // (105:4) <Button outline color="secondary" on:click="{pop}">
+    // (103:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -42597,7 +42597,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(105:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(103:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -42653,20 +42653,20 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 88, 4, 2713);
+    			add_location(script0, file$3, 86, 4, 2578);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 89, 4, 2784);
+    			add_location(script1, file$3, 87, 4, 2649);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 90, 4, 2862);
+    			add_location(script2, file$3, 88, 4, 2727);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$3, 91, 4, 2942);
+    			add_location(script3, file$3, 89, 4, 2807);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$3, 98, 8, 3120);
+    			add_location(div, file$3, 96, 8, 2985);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$3, 99, 8, 3156);
+    			add_location(p, file$3, 97, 8, 3021);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$3, 97, 4, 3076);
-    			add_location(main, file$3, 96, 0, 3064);
+    			add_location(figure, file$3, 95, 4, 2941);
+    			add_location(main, file$3, 94, 0, 2929);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -42794,9 +42794,6 @@ var app = (function () {
     				categories: weightProvinces
     			},
     			yAxis: { title: { text: "Porcentaje y €(en M)" } },
-    			tooltip: {
-    				pointFormat: "{series.name} had stockpiled <b>{point.y:,.0f}</b><br/>warheads in {point.x}"
-    			},
     			series: [
     				{
     					name: "Porcentaje de peso normal en el año 2017",
