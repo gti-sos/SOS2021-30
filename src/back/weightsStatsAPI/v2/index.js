@@ -516,12 +516,22 @@ module.exports.register = (app) => {
         });
     });
 
-    //PROXY
+    //PROXY PARA CULTURA
     app.use("/proxyHeroku", function(req, res) {
         console.log("New proxy call");
         var apiServerHost = 'https://sos2021-26.herokuapp.com';
         var url = apiServerHost + req.url;
         console.log("piped: /proxyHeroku -> " + url);
+
+        req.pipe(request(url)).pipe(res);
+    })
+
+    //PROXY PARA STRESS-STATS
+    app.use("/proxyStress", function(req, res) {
+        console.log("New proxy stress call");
+        var apiServerHost = 'https://sos2021-11.herokuapp.com';
+        var url = apiServerHost + req.url;
+        console.log("piped: /proxyStress -> " + url);
 
         req.pipe(request(url)).pipe(res);
     })
