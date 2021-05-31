@@ -44279,17 +44279,17 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css");
-    			add_location(link, file$3, 87, 4, 3030);
+    			add_location(link, file$3, 87, 4, 3029);
     			if (script0.src !== (script0_src_value = "//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 88, 4, 3126);
+    			add_location(script0, file$3, 88, 4, 3125);
     			if (script1.src !== (script1_src_value = "//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 89, 4, 3214);
+    			add_location(script1, file$3, 89, 4, 3213);
     			if (script2.src !== (script2_src_value = "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 90, 4, 3305);
+    			add_location(script2, file$3, 90, 4, 3304);
     			attr_dev(div, "id", "myfirstchart");
     			set_style(div, "height", "250px");
-    			add_location(div, file$3, 97, 4, 3455);
-    			add_location(main, file$3, 95, 0, 3437);
+    			add_location(div, file$3, 97, 4, 3454);
+    			add_location(main, file$3, 95, 0, 3436);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -44406,7 +44406,7 @@ var app = (function () {
 
     		console.log("Generando datos para la gráfica...");
 
-    		new Morris.Line({
+    		new Morris.Bar({
     				// ID of the element in which to draw the chart.
     				element: "myfirstchart",
     				// Chart data records -- each entry in this array corresponds to a point on
