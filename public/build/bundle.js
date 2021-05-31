@@ -42577,7 +42577,7 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$3 = "src\\front\\weightsStats\\integrations\\culturaBASE.svelte";
 
-    // (126:4) <Button outline color="secondary" on:click="{pop}">
+    // (105:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -42597,7 +42597,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(126:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(105:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -42609,6 +42609,10 @@ var app = (function () {
     	let script0_src_value;
     	let script1;
     	let script1_src_value;
+    	let script2;
+    	let script2_src_value;
+    	let script3;
+    	let script3_src_value;
     	let t0;
     	let main;
     	let figure;
@@ -42637,6 +42641,8 @@ var app = (function () {
     		c: function create() {
     			script0 = element("script");
     			script1 = element("script");
+    			script2 = element("script");
+    			script3 = element("script");
     			t0 = space();
     			main = element("main");
     			figure = element("figure");
@@ -42647,16 +42653,20 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 113, 4, 3030);
-    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/highcharts-3d.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 114, 4, 3101);
+    			add_location(script0, file$3, 88, 4, 2713);
+    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$3, 89, 4, 2784);
+    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
+    			add_location(script2, file$3, 90, 4, 2862);
+    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
+    			add_location(script3, file$3, 91, 4, 2942);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$3, 120, 4, 3265);
+    			add_location(div, file$3, 98, 8, 3120);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$3, 121, 4, 3297);
+    			add_location(p, file$3, 99, 8, 3156);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$3, 119, 4, 3225);
-    			add_location(main, file$3, 118, 0, 3213);
+    			add_location(figure, file$3, 97, 4, 3076);
+    			add_location(main, file$3, 96, 0, 3064);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -42664,6 +42674,8 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			append_dev(document.head, script0);
     			append_dev(document.head, script1);
+    			append_dev(document.head, script2);
+    			append_dev(document.head, script3);
     			insert_dev(target, t0, anchor);
     			insert_dev(target, main, anchor);
     			append_dev(main, figure);
@@ -42675,7 +42687,7 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(script1, "load", /*loadGraph*/ ctx[0], false, false, false);
+    				dispose = listen_dev(script3, "load", /*loadGraph*/ ctx[0], false, false, false);
     				mounted = true;
     			}
     		},
@@ -42700,6 +42712,8 @@ var app = (function () {
     		d: function destroy(detaching) {
     			detach_dev(script0);
     			detach_dev(script1);
+    			detach_dev(script2);
+    			detach_dev(script3);
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
     			destroy_component(button);
@@ -42773,40 +42787,22 @@ var app = (function () {
     		console.log("Generando datos para la gráfica...");
 
     		Highcharts.chart("container", {
-    			chart: {
-    				type: "area",
-    				options3d: {
-    					enabled: true,
-    					alpha: 15,
-    					beta: 30,
-    					depth: 200
-    				}
-    			},
+    			chart: { type: "area" },
     			title: { text: "Integración CulturalBASE API" },
-    			yAxis: {
-    				title: { text: "Porcentaje y €(en M)", x: -40 }
+    			xAxis: {
+    				title: { text: "Comunidad autónoma" },
+    				categories: weightProvinces
     			},
-    			xAxis: [{ visible: false }, { visible: false }, { visible: false }],
-    			plotOptions: {
-    				area: {
-    					depth: 100,
-    					marker: { enabled: false },
-    					states: { inactive: { enabled: false } }
-    				}
+    			yAxis: { title: { text: "Porcentaje y €(en M)" } },
+    			tooltip: {
+    				pointFormat: "{series.name} had stockpiled <b>{point.y:,.0f}</b><br/>warheads in {point.x}"
     			},
     			series: [
     				{
     					name: "Porcentaje de peso normal en el año 2017",
-    					lineColor: "rgb(180,90,50)",
-    					color: "rgb(200,110,50)",
-    					fillColor: "rgb(200,110,50)",
     					data: weightNormalWeight
     				},
     				{
-    					xAxis: 1,
-    					lineColor: "rgb(120,160,180)",
-    					color: "rgb(140,180,200)",
-    					fillColor: "rgb(140,180,200)",
     					name: "Recaudación total de la industria cinematográfica(contada por millones)",
     					data: culturaFundraising
     				}
