@@ -1,8 +1,7 @@
 <script>
     import * as JSC from "jscharting";
-    import { onMount } from "svelte";
-    import { Alert } from "sveltestrap";
     import { pop } from "svelte-spa-router";
+    import Button from "sveltestrap/src/Button.svelte";
 
     //ALERTAS
     let visible = false;
@@ -75,6 +74,7 @@
 
         //Tratamiento de datos
 
+
         //Convert data to serieSmoker
         var serieSmoker = JSC.nest()
             .key("province") // X values
@@ -101,25 +101,95 @@
         //Convert data to series array.
         var chart = JSC.chart('chartDiv', {
         debug: true,
-        type: 'column',
-        title_label_text: 'SmokerVSHostelries',
-        xAxis_label_text: 'Provincia',
-        yAxis: [
-          { id: 'normal', 
-            label_text: 'Número de elementos' 
-            }
+        type: 'bubble',
+        defaultSeries_size_max: '40%',
+        xAxis_formatString: 'n1',
+        annotations: [
+          {
+            label: { text: 'Data shown represents regional averages' },
+            position: 'inside bottom left'
+          }
         ],
+        defaultPoint: {
+          tooltip:
+            '<b>%name</b> <br/>Population: <b>{%zValue/1000000} Mil</b><br/>Fertility Rate: <b>{%yValue:n2}</b><br/>Life Expectancy:<b> %xValue</b>',
+          label_text: '%code'
+        },
+        legend: {
+          position: 'bottom',
+          template: '%icon,%name,{%zSum/1000000}M,{%yAverage:n2},{%xAverage:n2}',
+          header: ',Region,Population,Fertility Rate,Life Expectancy'
+        },
+        title: {
+          label_text: 'Correlation between life expectancy, fertility rate, and population.'
+        },
+        xAxis_label_text: 'Life Expectancy',
+        yAxis_label_text: 'Fertility Rate',
         series: [
-            {
-                name: 'Fumadores diarios',
-                id: 's1',
-                points: serieSmoker[0].points
-            },
-            {
-                name: 'Establecimientos abiertos',
-                id: 's2',
-                points: serieHostel[0].points
-            }
+          {
+            name: 'Eastern Asia',
+            points: [
+              {
+                name: 'China',
+                x: 74.99,
+                y: 1.55,
+                z: 254547,
+                attributes: { code: 'CHN' }
+              },
+              {
+                name: 'Japan',
+                x: 84.19,
+                y: 1.39,
+                z: 127253075,
+                attributes: { code: 'JPN' }
+              }
+            ]
+          },
+          {
+            name: 'South-Central Asia',
+            points: [
+              {
+                name: 'India',
+                x: 67.48,
+                y: 2.55,
+                z: 1220800359,
+                attributes: { code: 'IND' }
+              },
+              {
+                name: 'Pakistan',
+                x: 66.71,
+                y: 2.96,
+                z: 193238868,
+                attributes: { code: 'PAK' }
+              },
+              {
+                name: 'Bangladesh',
+                x: 70.36,
+                y: 2.5,
+                z: 163654860,
+                attributes: { code: 'BGD' }
+              }
+            ]
+          },
+          {
+            name: 'North America',
+            points: [
+              {
+                name: 'United States',
+                x: 78.62,
+                y: 2.06,
+                z: 316438601,
+                attributes: { code: 'USA' }
+              },
+              {
+                name: 'Mexico',
+                x: 76.86,
+                y: 2.25,
+                z: 118818228,
+                attributes: { code: 'MEX' }
+              }
+            ]
+          },
         ]
       });
     }
@@ -128,5 +198,7 @@ loadGraph();
 </script>
 
 <main>
-    <div id="chartDiv" style="max-width: 740px;height: 400px;margin: 0px auto"></div>
+    <div id="chartDiv" style="max-width: 770px; height: 600px; margin: 0px auto;"></div>
+    <p align="center"><Button outline color="primary" on:click={pop}>Atrás</Button></p>
+
 </main>

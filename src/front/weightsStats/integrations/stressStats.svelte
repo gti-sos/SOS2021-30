@@ -9,7 +9,7 @@
 
     let weightStats = [];
     let weightProvinces = [];
-    let weightNormalWeight = [];
+    let weightObesity = [];
 
     let stressStats = [];
     let stressProvinces = [];
@@ -27,7 +27,7 @@
         const res = await fetch(stressBASE_PATH);
         if(res.ok){
             stressStats = await res.json();
-            console.log("Recived " + stressStats.length + " cultura data...");
+            console.log("Recived " + stressStats.length + " stress data...");
         }
     }
 
@@ -40,8 +40,16 @@
 
         weightStats.forEach((stat) => {
             if(stat.year == 2017){
-                weightProvinces.push(stat.provinces);
-                weightNormalWeight.push(stat["normal_weight"]);
+                if(stat.provinces == "Cataluña"
+                || stat.provinces == "Melilla"
+                || stat.provinces == "Aragón"
+                || stat.provinces == "Navarra"
+                || stat.provinces == "Islas Baleares"
+                || stat.provinces == "Comunidad de Madrid"){
+                    weightProvinces.push(stat.provinces);
+                    weightObesity.push(stat["obesity"]);
+                }
+
             }
 
         });
@@ -72,7 +80,7 @@
             },
             series: [{
                 name: 'Porcentaje de peso normal en el año 2017',
-                data: weightNormalWeight
+                data: weightObesity
             }, {
                 name: 'Recaudación total de la industria cinematográfica(contada por millones)',
                 data: stressPoblation
