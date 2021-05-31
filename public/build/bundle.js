@@ -43997,20 +43997,20 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$4, 94, 4, 2870);
+    			add_location(script0, file$4, 94, 4, 2843);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$4, 95, 4, 2941);
+    			add_location(script1, file$4, 95, 4, 2914);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$4, 96, 4, 3019);
+    			add_location(script2, file$4, 96, 4, 2992);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$4, 97, 4, 3099);
+    			add_location(script3, file$4, 97, 4, 3072);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$4, 104, 8, 3277);
+    			add_location(div, file$4, 104, 8, 3250);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$4, 105, 8, 3313);
+    			add_location(p, file$4, 105, 8, 3286);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$4, 103, 4, 3233);
-    			add_location(main, file$4, 102, 0, 3221);
+    			add_location(figure, file$4, 103, 4, 3206);
+    			add_location(main, file$4, 102, 0, 3194);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -44146,7 +44146,7 @@ var app = (function () {
     					data: weightObesity
     				},
     				{
-    					name: "Recaudación total de la industria cinematográfica(contada por millones)",
+    					name: "Datos de estres de la poblacion(radio/media)",
     					data: stressPoblation
     				}
     			]
@@ -44210,7 +44210,7 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$3 = "src\\front\\weightsStats\\integrations\\pruebaMorris.svelte";
 
-    // (100:4) <Button outline color="secondary" on:click="{pop}">
+    // (99:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -44230,7 +44230,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(100:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(99:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -44247,8 +44247,14 @@ var app = (function () {
     	let script2_src_value;
     	let t0;
     	let main;
+    	let h1;
+    	let t2;
     	let div;
-    	let t1;
+    	let t3;
+    	let p;
+    	let t5;
+    	let h7;
+    	let t7;
     	let button;
     	let current;
     	let mounted;
@@ -44274,22 +44280,36 @@ var app = (function () {
     			script2 = element("script");
     			t0 = space();
     			main = element("main");
+    			h1 = element("h1");
+    			h1.textContent = "Estadística de obesidad integradas con el estrés";
+    			t2 = space();
     			div = element("div");
-    			t1 = space();
+    			t3 = space();
+    			p = element("p");
+    			p.textContent = "Gráfico en el que se muestra el porcentaje de obesidad en algunas comunidades autónomas de españa\r\n        en el año 2017 combinado con el retio medio de estrés.";
+    			t5 = space();
+    			h7 = element("h7");
+    			h7.textContent = "Gráfica diseñada con Morris.js";
+    			t7 = space();
     			create_component(button.$$.fragment);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css");
-    			add_location(link, file$3, 87, 4, 3029);
+    			add_location(link, file$3, 83, 4, 2999);
     			if (script0.src !== (script0_src_value = "//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 88, 4, 3125);
+    			add_location(script0, file$3, 84, 4, 3095);
     			if (script1.src !== (script1_src_value = "//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 89, 4, 3213);
+    			add_location(script1, file$3, 85, 4, 3183);
     			if (script2.src !== (script2_src_value = "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 90, 4, 3304);
+    			add_location(script2, file$3, 86, 4, 3274);
+    			set_style(h1, "text-align", "center");
+    			add_location(h1, file$3, 92, 4, 3418);
     			attr_dev(div, "id", "myfirstchart");
     			set_style(div, "height", "250px");
-    			add_location(div, file$3, 97, 4, 3454);
-    			add_location(main, file$3, 95, 0, 3436);
+    			add_location(div, file$3, 93, 4, 3508);
+    			add_location(p, file$3, 94, 4, 3566);
+    			set_style(h7, "color", "gray");
+    			add_location(h7, file$3, 97, 4, 3746);
+    			add_location(main, file$3, 91, 0, 3406);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -44301,8 +44321,14 @@ var app = (function () {
     			append_dev(document.head, script2);
     			insert_dev(target, t0, anchor);
     			insert_dev(target, main, anchor);
+    			append_dev(main, h1);
+    			append_dev(main, t2);
     			append_dev(main, div);
-    			append_dev(main, t1);
+    			append_dev(main, t3);
+    			append_dev(main, p);
+    			append_dev(main, t5);
+    			append_dev(main, h7);
+    			append_dev(main, t7);
     			mount_component(button, main, null);
     			current = true;
 
@@ -44392,8 +44418,10 @@ var app = (function () {
 
     		weightStats.forEach(stat => {
     			if (stat.year == 2017) {
-    				if (stat.provinces == "Cataluña" || stat.provinces == "Melilla" || stat.provinces == "Aragón" || stat.provinces == "Navarra" || stat.provinces == "Islas Baleares" || stat.provinces == "Comunidad de Madrid") {
+    				if (stat.provinces == "Asturias" || stat.provinces == "Islas Baleares" || stat.provinces == "Aragón" || stat.provinces == "Cantabria" || stat.provinces == "Canarias" || stat.provinces == "Andalucía") {
     					weightProvinces.push(stat.provinces);
+    					var comunidadesAutonomas = [];
+    					comunidadesAutonomas.push(stat.provinces);
     					weightObesity.push(stat["obesity"]);
     				}
     			}
@@ -44407,51 +44435,45 @@ var app = (function () {
     		console.log("Generando datos para la gráfica...");
 
     		new Morris.Bar({
-    				// ID of the element in which to draw the chart.
     				element: "myfirstchart",
-    				// Chart data records -- each entry in this array corresponds to a point on
-    				// the chart.
+    				//Tratamiento de datos de la integración manual
     				data: [
     					{
-    						year: "2008",
+    						province: "Aragón",
     						value: weightObesity[0],
     						value2: stressPoblation[0]
     					},
     					{
-    						year: "2009",
+    						province: "Islas Baleares",
     						value: weightObesity[1],
     						value2: stressPoblation[1]
     					},
     					{
-    						year: "2010",
+    						province: "Asturias",
     						value: weightObesity[2],
     						value2: stressPoblation[2]
     					},
     					{
-    						year: "2011",
+    						province: "Andalucía",
     						value: weightObesity[3],
     						value2: stressPoblation[3]
     					},
     					{
-    						year: "2012",
+    						province: "Canarias",
     						value: weightObesity[4],
     						value2: stressPoblation[4]
     					},
     					{
-    						year: "2013",
+    						province: "Cantabria",
     						value: weightObesity[5],
     						value2: stressPoblation[5]
     					}
     				],
-    				// The name of the data record attribute that contains x-values.
-    				xkey: "year",
-    				// A list of names of data record attributes that contain y-values.
+    				xkey: "province",
     				ykeys: ["value", "value2"],
-    				// Labels for the ykeys -- will be displayed when you hover over the
-    				// chart.
     				labels: [
-    					"Porcentaje de peso normal en el año 2017",
-    					"Recaudación total de la industria cinematográfica(contada por millones)"
+    					"Porcentaje de obesidad en el año 2017",
+    					"Datos de estres de la poblacion(radio/media)"
     				]
     			});
     	}

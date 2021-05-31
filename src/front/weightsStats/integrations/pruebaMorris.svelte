@@ -39,13 +39,15 @@
 
         weightStats.forEach((stat) => {
             if(stat.year == 2017){
-                if(stat.provinces == "Cataluña"
-                || stat.provinces == "Melilla"
-                || stat.provinces == "Aragón"
-                || stat.provinces == "Navarra"
+                if(stat.provinces == "Asturias"
                 || stat.provinces == "Islas Baleares"
-                || stat.provinces == "Comunidad de Madrid"){
+                || stat.provinces == "Aragón"
+                || stat.provinces == "Cantabria"
+                || stat.provinces == "Canarias"
+                || stat.provinces == "Andalucía"){
                     weightProvinces.push(stat.provinces);
+                    var comunidadesAutonomas = [];
+                    comunidadesAutonomas.push(stat.provinces);
                     weightObesity.push(stat["obesity"]);
                 }
 
@@ -60,26 +62,20 @@
 
         console.log("Generando datos para la gráfica...");
         new Morris.Bar({
-  // ID of the element in which to draw the chart.
-  element: 'myfirstchart',
-  // Chart data records -- each entry in this array corresponds to a point on
-  // the chart.
-  data: [
-    { year: '2008', value: weightObesity[0] , value2: stressPoblation[0]},
-    { year: '2009', value: weightObesity[1] , value2: stressPoblation[1]},
-    { year: '2010', value: weightObesity[2] , value2: stressPoblation[2]},
-    { year: '2011', value: weightObesity[3] , value2: stressPoblation[3]},
-    { year: '2012', value: weightObesity[4] , value2: stressPoblation[4]},
-    { year: '2013', value: weightObesity[5] , value2: stressPoblation[5]},
-  ],
-  // The name of the data record attribute that contains x-values.
-  xkey: 'year',
-  // A list of names of data record attributes that contain y-values.
-  ykeys: ['value', 'value2'],
-  // Labels for the ykeys -- will be displayed when you hover over the
-  // chart.
-  labels: ['Porcentaje de peso normal en el año 2017', 'Recaudación total de la industria cinematográfica(contada por millones)']
-});
+            element: 'myfirstchart',
+            //Tratamiento de datos de la integración manual
+            data: [
+                { province: "Aragón", value: weightObesity[0] , value2: stressPoblation[0]},
+                { province: "Islas Baleares", value: weightObesity[1] , value2: stressPoblation[1]},
+                { province: "Asturias", value: weightObesity[2] , value2: stressPoblation[2]},
+                { province: "Andalucía", value: weightObesity[3] , value2: stressPoblation[3]},
+                { province: "Canarias", value: weightObesity[4] , value2: stressPoblation[4]},
+                { province: "Cantabria", value: weightObesity[5] , value2: stressPoblation[5]},
+            ],
+            xkey: 'province',
+            ykeys: ['value', 'value2'],
+            labels: ['Porcentaje de obesidad en el año 2017', 'Datos de estres de la poblacion(radio/media)']
+            });
         
     }    
 </script>
@@ -94,8 +90,11 @@
 
 
 <main>
-    
+    <h1 style="text-align: center">Estadística de obesidad integradas con el estrés</h1>
     <div id="myfirstchart" style="height: 250px;"></div>
-    
+    <p>Gráfico en el que se muestra el porcentaje de obesidad en algunas comunidades autónomas de españa
+        en el año 2017 combinado con el retio medio de estrés.
+    </p>
+    <h7 style="color: gray;">Gráfica diseñada con Morris.js</h7>    
     <Button outline color="secondary" on:click="{pop}">Atrás</Button>
 </main>
