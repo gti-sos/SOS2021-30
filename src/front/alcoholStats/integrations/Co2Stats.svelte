@@ -33,7 +33,7 @@
       let ciclo = [];
       let tendencia = [];
 
-      for (let index = co2Stats.co2.length-29; index < co2Stats.co2.length; index++) {
+      for (let index = co2Stats.co2.length-30; index < co2Stats.co2.length; index++) {
           categorias.push("Mes: " + co2Stats.co2[index].month + " Día: " + co2Stats.co2[index].day);
           ciclo.push(parseFloat(co2Stats.co2[index].cycle));
           tendencia.push(parseFloat(co2Stats.co2[index].trend));
