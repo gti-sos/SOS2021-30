@@ -52,8 +52,8 @@
     async function loadGraph() {
         await getSmoker();
         await getHostel();
-        console.log("Datos smoker recibidos para pintar smoker: "+smokersData);
-        console.log("Datos smoker recibidos para pintar hostelries: "+hostelData);
+        console.log("Datos recibidos para pintar smoker: "+smokersData.length);
+        console.log("Datos recibidos para pintar hostelries: "+hostelData.length);
 
         smokersData.forEach((stat) => {
             smokerChartProvince.push(stat.province);
@@ -87,7 +87,7 @@
             .series(smokersData); // Generate series
 
         //Convert data to serieRental
-        var serieSmoker = JSC.nest()
+        var serieHostel = JSC.nest()
             .key("district") // X values
             .pointRollup(function (key, value) {
                 return {
@@ -113,12 +113,12 @@
             {
                 name: 'Fumadores diarios',
                 id: 's1',
-                points: serie1[0].points
+                points: serieSmoker[0].points
             },
             {
                 name: 'Establecimientos abiertos',
                 id: 's2',
-                points: serie2[0].points
+                points: serieHostel[0].points
             }
         ]
       });

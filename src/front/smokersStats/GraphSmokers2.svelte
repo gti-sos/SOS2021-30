@@ -177,9 +177,8 @@
     <figure class="highcharts-figure">
         <div id="container" />
         <p class="highcharts-description">
-            En el gráfico se representa el dato por comunidades autónomas en el
-            año 2017 en España. Fumadores diarios, ocasionales, ex-fumadores y
-            no fumadores.
+            En el gráfico se representa el dato 'Fumadores diarios' por comunidad autónoma en el
+            año 2017 en España. Cada comunidad contiene un desglose de sus diferentes datos.
         </p>
     </figure>
     <p align="center">
