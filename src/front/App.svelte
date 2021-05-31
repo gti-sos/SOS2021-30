@@ -32,6 +32,7 @@
   import GraphWeightMorris from "./weightsStats/GraphWeightMorris.svelte"
   import GraphColumns from "./weightsStats/GraphColumns.svelte";
   import Cultura from "./weightsStats/integrations/culturaBASE.svelte";
+  import Stress from "./weightsStats/integrations/stressStats.svelte";
   import GroupGraph from "./GroupGraph.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
   import GraphLife from "./lifeStats/GraphLife.svelte";
@@ -59,6 +60,7 @@
     "/weights-graph-colums" : GraphColumns,
     "/weights-graph-morris" : GraphWeightMorris,
     "/integrations/culturaBASE" : Cultura,
+    "/integrations/stress-stats" : Stress,
     "/smokers-stats" : SmokerStats,
     "/smokers-stats/:province/:year" : SmokersItems,
     "/smokers-graph" : GraphSmokers,

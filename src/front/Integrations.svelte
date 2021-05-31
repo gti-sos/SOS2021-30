@@ -59,6 +59,7 @@
         <CardSubtitle />
         <CardText />
         <a href="/#/integrations/culturaBASE"><Button color="primary">Estadísticas CulturaBASE-Weights</Button></a>
+        <a href="/#/integrations/stress-stats"><Button color="primary">Estadísticas Stress-Stats-Weights</Button></a>
       </CardBody>
     </Card>
   </div>

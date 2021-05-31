@@ -5,15 +5,15 @@
 
     const BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
     //const culturaBASE_PATH = "https://sos2021-26.herokuapp.com/integration/api/v2/culturaBASE";
-    const culturaBASE_PATH = "/proxyHeroku/integration/api/v2/culturaBASE";
+    const stressBASE_PATH = "/proxyStress/api/v2/stress_stats/";
 
     let weightStats = [];
     let weightProvinces = [];
     let weightNormalWeight = [];
 
-    let culturaStats = [];
-    let culturaProvinces = [];
-    let culturaFundraising = [];
+    let stressStats = [];
+    let stressProvinces = [];
+    let stressPoblation = [];
 
     async function getWeight(){
         const res = await fetch(BASE_WEIGHTS_PATH);
@@ -23,11 +23,11 @@
         }
     }
 
-    async function getCultura(){
-        const res = await fetch(culturaBASE_PATH);
+    async function getStress(){
+        const res = await fetch(stressBASE_PATH);
         if(res.ok){
-            culturaStats = await res.json();
-            console.log("Recived " + culturaStats.length + " cultura data...");
+            stressStats = await res.json();
+            console.log("Recived " + stressStats.length + " cultura data...");
         }
     }
 
@@ -35,7 +35,7 @@
         console.log("Fetching data...");
 
         await getWeight();
-        await getCultura();
+        await getStress();
         console.log("Procesing all data...");
 
         weightStats.forEach((stat) => {
@@ -46,9 +46,9 @@
 
         });
 
-        culturaStats.forEach((stat) => {
-            culturaProvinces.push(stat.district);
-            culturaFundraising.push(stat["fundraising"]);
+        stressStats.forEach((stat) => {
+            stressProvinces.push(stat.country);
+            stressPoblation.push(stat["stress_population"]);
         });
 
         console.log("Generando datos para la gráfica...");
@@ -57,7 +57,7 @@
                 type: 'area'
             },
             title: {
-                text: 'Integración CulturalBASE API'
+                text: 'Integración Stress-Stats API'
             },
             xAxis: {
                 title: {
@@ -75,7 +75,7 @@
                 data: weightNormalWeight
             }, {
                 name: 'Recaudación total de la industria cinematográfica(contada por millones)',
-                data: culturaFundraising
+                data: stressPoblation
             }]
         });
         
