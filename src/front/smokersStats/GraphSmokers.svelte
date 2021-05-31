@@ -55,7 +55,7 @@
         },
 
         title: {
-            text: 'Gráfica Smoker por comunidades'
+            text: 'Gráfica sobre la frecuencia de fumadores en España en 2017'
         },
         subtitle: {
                 text: 'Click para ver el origen de los datos => <a href="#/smokers-stats" target="_blank">API fuente de datos</a>',
@@ -156,6 +156,7 @@
   </figure>
   <p align="center"><Button outline color="primary" on:click="{pop}">Atrás</Button>
     <a href= "#/smokers-graph2"><Button outline color="primary" >Ir al gráfico interactivo Highcharts</Button></a>
+    <a href= "#/smokers-graph3"><Button outline color="primary" >Ir al gráfico JSCharting</Button></a>
     
     </p>
   

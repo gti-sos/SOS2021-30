@@ -5,6 +5,7 @@
 	import NotFound from "./NotFound.svelte";
 	import Home from "./Home.svelte";
   import Info from "./Info.svelte";
+  import About from "./About.svelte";
 	import Router from 'svelte-spa-router';
   import Integrations from './Integrations.svelte';
   import LifeExpectancy from './lifeStats/lifeExpectancy.svelte';
@@ -38,6 +39,7 @@
 	const routes = {
 		"/":Home,
     "/info": Info,
+    "/about": About,
     "/integrations": Integrations,
 		"/alcohol-stats": TablaAlcohol,
     "/alcohol-stats/:country/:year/:ageRange": EditAlcohol,
@@ -62,8 +64,8 @@
     "/smokers-graph" : GraphSmokers,
     "/smokers-graph2" : GraphSmokers2,
     "/smokers-graph3" : GraphSmokers3,
-    "/integrations/rentals": RentalStats,
-    "/integrations/hostelries": Hostelries,
+    "/integrations/rentals" : RentalStats,
+    "/integrations/hostelries" : Hostelries,
     "/group-graph" : GroupGraph,
 		'*': NotFound};
 </script>

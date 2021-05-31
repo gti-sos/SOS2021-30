@@ -1,6 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var _= require("underscore");
+//var cors = require('cors')
 const request = require("request");
 
 var app = express();
@@ -60,11 +61,10 @@ smokersAPIv3.register(app);
 //INTEGRACIONES A SMOKER
 //HOSTELRIES
 app.use("/proxy/api/v2/hostelries", function(req, res) {
-    console.log("New proxy call hostelries");
-    var apiServerHost = "https://sos2021-26.herokuapp.com";
-    var url = apiServerHost + req.url;
-    console.log("piped: /proxy/api/v2/hostelries -> " + url);
-
+    var apiServerHostHostelStats = 'https://sos2021-26.herokuapp.com';
+    var url = apiServerHostHostelStats + req.url;
+    console.log('piped: /proxy/api/v2/hostelries -> ' + url);
+    req.pipe(request(url)).pipe(res);
 });
 
 

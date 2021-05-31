@@ -1,10 +1,7 @@
 <script>
     import * as JSC from "jscharting";
-    import { onMount } from "svelte";
-    import { Alert } from "sveltestrap";
-    import { pop, replace } from "svelte-spa-router";
+    import { pop } from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
-    import { select_multiple_value } from "svelte/internal";
 
     //ALERTAS
     let visible = false;

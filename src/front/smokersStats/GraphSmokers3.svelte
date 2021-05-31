@@ -1,4 +1,5 @@
 <script>
+    import * as JSC from "jscharting";
     import { pop } from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
 
@@ -11,7 +12,9 @@
     var smokerChartEx = [];
     var smokerChartNon = [];
 
-    var checkMSG = [];
+    var smokerFin = [];
+
+    var checkMSG = "";
 
     async function loadGraph() {
         console.log("Fetching data...");
@@ -19,7 +22,7 @@
         fullDat = await res.json();
         if (res.ok) {
             fullDat.forEach((stat) => {
-                smokerChartInfo.push(stat.province + "/" + stat.year);
+                smokerChartInfo.push(stat.province);
                 smokerChartDaily.push(stat["dailySmoker"]);
                 smokerChartOcasional.push(stat["ocasionalSmoker"]);
                 smokerChartEx.push(stat["exSmoker"]);
@@ -34,83 +37,64 @@
             }
         }
 
+        //Tratamiento de datos
+        var tipos = ["Fumadores diarios", "Fumadores ocasionales", "Ex-fumadores", "No fumadores",];
+
+        for (let i = 0; i < tipos.length; i++){
+            let tablaPoint = [];
+            let objSmoker = new Object();
+            objSmoker.name = tipos[i];
+            for (let j = 0; j<smokerChartInfo.length; j++){
+                let objInterno = new Object();
+                objInterno.x = smokerChartInfo[j];
+                switch (tipos[i]) {
+                    case tipos[0]: objInterno.y = smokerChartDaily[j]; break;
+                    case tipos[1]: objInterno.y = smokerChartOcasional[j]; break;
+                    case tipos[2]: objInterno.y = smokerChartEx[j]; break;
+                    case tipos[3]: objInterno.y = smokerChartNon[j]; break;
+                    default: checkMSG = "No se ha podido completar el objeto para formar la gráfica."; break;
+                }
+                tablaPoint.push(objInterno);
+            }
+        objSmoker.points = tablaPoint;
+        smokerFin.push(objSmoker);
+        }
+
+        console.log(smokerFin);
+
         console.log("Graphical data sent");
-        Highcharts.chart("container", {
-            chart: {
-                type: "pyramid",
-            },
-            title: {
-                text: "Sales pyramid",
-                x: -50,
-            },
-            plotOptions: {
-                series: {
-                    dataLabels: {
-                        enabled: true,
-                        format: "<b>{point.name}</b> ({point.y:,.0f})",
-                        softConnector: true,
-                    },
-                    center: ["40%", "50%"],
-                    width: "80%",
-                },
-            },
-            legend: {
-                enabled: false,
-            },
-            series: [
-                {
-                    name: "Unique users",
-                    data: [
-                        ["Website visits", 15654],
-                        ["Downloads", 4064],
-                        ["Requested price list", 1987],
-                        ["Invoice sent", 976],
-                        ["Finalized", 846],
-                    ],
-                },
-            ],
 
-            responsive: {
-                rules: [
-                    {
-                        condition: {
-                            maxWidth: 500,
-                        },
-                        chartOptions: {
-                            plotOptions: {
-                                series: {
-                                    dataLabels: {
-                                        inside: true,
-                                    },
-                                    center: ["50%", "50%"],
-                                    width: "100%",
-                                },
-                            },
-                        },
-                    },
-                ],
-            },
-        });
+
+        //Variable principal del gráfico
+        var chart = JSC.chart('chartDiv', {
+        debug: true,
+        type: 'column',
+        yAxis: {
+          scale_type: 'stacked',
+          label_text: 'Nº de personas'
+        },
+        title_label_text: 'Gráfica sobre la frecuencia de fumadores en España en 2017',
+        xAxis_label_text: 'Comunidad Autónoma',
+        series: smokerFin
+        /*
+        [
+          {
+            name: 'Grinder',
+            points: [
+              { x: 'Q1', y: 285 },
+              { x: 'Q2', y: 292 },
+              { x: 'Q3', y: 267 },
+              { x: 'Q4', y: 218 }
+            ]
+          }
+        ]
+        */
+      });
     }
-</script>
 
-<svelte:head>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/funnel.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-    
-    <figure class="highcharts-figure">
-        <div id="container"></div>
-        <p class="highcharts-description">
-            Pyramid charts are related to funnel charts, and show a hierarchical
-            structure that has a progressive order, such as a sales process.
-        </p>
-    </figure>
-    
-        on:load={loadGraph}>
-</svelte:head>
+    // Llamada a la función
+    loadGraph();
+</script>
 
 <main>
     <div>
@@ -119,34 +103,6 @@
         {/if}
     </div>
 
-    <figure class="highcharts-figure">
-        <div id="container" />
-        <p class="highcharts-description">
-            En el gráfico se representa el dato por comunidades autónomas en el
-            año 2017 en España. Fumadores diarios, ocasionales, ex-fumadores y
-            no fumadores.
-        </p>
-    </figure>
-    <p align="center">
-        <Button outline color="primary" on:click={pop}>Atrás</Button>
-    </p>
+    <div id="chartDiv" style="max-width: 740px; height: 400px; margin: 0px auto;"></div>
+    <p align="center"><Button outline color="primary" on:click={pop}>Volver al gráfico Highcharts Line</Button></p>
 </main>
-
-<style>
-    main {
-        text-align: center;
-        padding: 1em;
-        margin: 0 auto;
-        text-align: center;
-    }
-    div {
-        margin-bottom: 15px;
-    }
-    p {
-        display: inline;
-    }
-    .msgRed {
-        padding: 8px;
-        background-color: #ffffff;
-    }
-</style>
