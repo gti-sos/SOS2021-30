@@ -60,6 +60,7 @@
         <CardText />
         <a href="/#/integrations/culturaBASE"><Button color="primary">Estadísticas CulturaBASE-Weights</Button></a>
         <a href="/#/integrations/stress-stats"><Button color="primary">Estadísticas Stress-Stats-Weights</Button></a>
+        <a href="/#/integrations/prueba"><Button color="primary">Prueba</Button></a>
       </CardBody>
     </Card>
   </div>
