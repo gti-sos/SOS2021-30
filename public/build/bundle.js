@@ -44535,7 +44535,7 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$3 = "src\\front\\weightsStats\\integrations\\integracionExt1.svelte";
 
-    // (153:1) <Button outline color="secondary" on:click="{pop}">
+    // (155:1) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -44555,7 +44555,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(153:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(155:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -44579,14 +44579,13 @@ var app = (function () {
     	let figure;
     	let div;
     	let t4;
-    	let h4;
-    	let a;
-    	let t6;
     	let p0;
-    	let t7;
-    	let button;
-    	let t8;
+    	let t6;
     	let p1;
+    	let t7;
+    	let a;
+    	let t9;
+    	let button;
     	let current;
     	let mounted;
     	let dispose;
@@ -44617,34 +44616,32 @@ var app = (function () {
     			figure = element("figure");
     			div = element("div");
     			t4 = space();
-    			h4 = element("h4");
-    			a = element("a");
-    			a.textContent = "Fuente";
-    			t6 = space();
     			p0 = element("p");
-    			t7 = space();
-    			create_component(button.$$.fragment);
-    			t8 = space();
+    			p0.textContent = "Gráfico de burbujas en el que cada una de las burbujas representa una posición en el campo de jugadores de \r\n\t\tla NBA y cada una de las burbujas interiores es un jugador que juega en dicha posición.";
+    			t6 = space();
     			p1 = element("p");
+    			t7 = text("Datos obtenidos de: ");
+    			a = element("a");
+    			a.textContent = "https://www.balldontlie.io";
+    			t9 = space();
+    			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 139, 4, 3280);
+    			add_location(script0, file$3, 139, 4, 3317);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/highcharts-more.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 140, 4, 3372);
+    			add_location(script1, file$3, 140, 4, 3409);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 141, 4, 3469);
+    			add_location(script2, file$3, 141, 4, 3506);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$3, 142, 4, 3568);
+    			add_location(script3, file$3, 142, 4, 3605);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$3, 147, 2, 3735);
-    			attr_dev(figure, "class", "highcharts-figure svelte-jt8hhq");
-    			add_location(figure, file$3, 146, 1, 3697);
-    			attr_dev(a, "href", "https://www.balldontlie.io/api/v1/players");
-    			add_location(a, file$3, 150, 5, 3783);
-    			add_location(h4, file$3, 150, 1, 3779);
-    			add_location(p0, file$3, 151, 1, 3853);
-    			add_location(p1, file$3, 153, 1, 3933);
-    			attr_dev(main, "class", "svelte-jt8hhq");
-    			add_location(main, file$3, 145, 0, 3688);
+    			add_location(div, file$3, 147, 2, 3772);
+    			attr_dev(figure, "class", "highcharts-figure svelte-yxl85i");
+    			add_location(figure, file$3, 146, 1, 3734);
+    			add_location(p0, file$3, 149, 1, 3813);
+    			attr_dev(a, "href", "https://www.balldontlie.io");
+    			add_location(a, file$3, 152, 24, 4047);
+    			add_location(p1, file$3, 152, 1, 4024);
+    			add_location(main, file$3, 145, 0, 3725);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -44662,14 +44659,13 @@ var app = (function () {
     			append_dev(main, figure);
     			append_dev(figure, div);
     			append_dev(main, t4);
-    			append_dev(main, h4);
-    			append_dev(h4, a);
-    			append_dev(main, t6);
     			append_dev(main, p0);
-    			append_dev(main, t7);
-    			mount_component(button, main, null);
-    			append_dev(main, t8);
+    			append_dev(main, t6);
     			append_dev(main, p1);
+    			append_dev(p1, t7);
+    			append_dev(p1, a);
+    			append_dev(main, t9);
+    			mount_component(button, main, null);
     			current = true;
 
     			if (!mounted) {
@@ -44820,21 +44816,27 @@ var app = (function () {
 
     		let datosJuntos = [
     			{
-    				name: "Jugadores Posicion G",
+    				name: "Jugadores Posicion Escolta",
     				data: positionG
     			},
-    			{ name: "Jugadores NBA C", data: positionC },
-    			{ name: "Jugadores NBA F", data: positionF },
     			{
-    				name: "Jugadores NBA C-F",
+    				name: "Jugadores NBA Pívot",
+    				data: positionC
+    			},
+    			{
+    				name: "Jugadores NBA Base",
+    				data: positionF
+    			},
+    			{
+    				name: "Jugadores NBA Ala-Pívot",
     				data: positionCF
     			},
     			{
-    				name: "Jugadores NBA F-C",
+    				name: "Jugadores NBA Alero",
     				data: positionFC
     			},
     			{
-    				name: "Jugadores NBA G-F",
+    				name: "Jugadores NBA Escolta-Base",
     				data: positionGF
     			}
     		];
@@ -44842,7 +44844,7 @@ var app = (function () {
     		Highcharts.chart("container", {
     			chart: { type: "packedbubble", height: "100%" },
     			title: {
-    				text: "Gráfica que representa el ID de los jugadores de la NBA de posición \"G\"."
+    				text: "Integración que representa algunos de los jugadores de la NBA según su posición"
     			},
     			tooltip: {
     				useHTML: true,
