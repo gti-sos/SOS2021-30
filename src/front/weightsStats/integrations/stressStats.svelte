@@ -82,7 +82,7 @@
                 name: 'Porcentaje de peso normal en el año 2017',
                 data: weightObesity
             }, {
-                name: 'Recaudación total de la industria cinematográfica(contada por millones)',
+                name: 'Datos de estres de la poblacion(radio/media)',
                 data: stressPoblation
             }]
         });

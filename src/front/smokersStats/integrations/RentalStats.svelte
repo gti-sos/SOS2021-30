@@ -42,6 +42,7 @@
     }
     //GET RENTAL
     async function getRental() {
+        //await fetch(BASE_RENTALS_API_PATH+"/loadInitialData"); //si no tiene persistencia
         const res = await fetch(BASE_RENTALS_API_PATH);
         if (res.ok) {
             rentalData = await res.json();
@@ -81,6 +82,14 @@
         smokerChartProvince.sort();
         rentalProvince.sort();
 
+        //Comprueba que la gráfica no aparezca vacía y vuelve atrás
+        if (smokersData.length == 0) {
+            console.log("No hay datos cargados en la API!");
+            alert("Por favor, primero cargue los datos de la API 'FUMADORES' ");
+            pop();
+        }
+
+        
         //Bucle para reemplazar las provincias
         for (var i = 0; i < rentalRent.length; i++) {
             rentalFin.push(rentalProvince[i]
@@ -104,12 +113,7 @@
 
         console.log(dataFin);
 
-        //Comprueba que la gráfica no aparezca vacía y vuelve atrás
-        if (smokersData.length == 0) {
-            console.log("No hay datos cargados en la API!");
-            alert("Por favor, primero cargue los datos de la API 'FUMADORES' ");
-            pop();
-        }
+        
         
 
         //Define del nido con el que se desarrolla la gráfica

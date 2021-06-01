@@ -16,10 +16,17 @@
     var smokersData = [];
     var smokerChartProvince = [];
     var smokerChartDaily = [];
+    var smokerDailyAsoc = [];
+
     //Variables RENTAL
     var hostelData = [];
     var hostelProvince = [];
+    var hostelProvinceParsed = [];
+    var hostelYear = [];
     var hostelSites = [];
+    var hostelTraveler = [];
+
+    var dataFin = [];
 
     console.log("Cargando datos...");
 
@@ -36,6 +43,7 @@
     }
     //GET HOSTELRIES
     async function getHostel() {
+        await fetch(BASE_HOSTEL_API_PATH+"/loadInitialData"); //no tiene persistencia
         const res = await fetch(BASE_HOSTEL_API_PATH);
         if (res.ok) {
             hostelData = await res.json();
@@ -46,6 +54,14 @@
         }
     }
 
+    //Función auxiliar para parsear las provincias y dejarlas con el mismo formato
+    String.prototype.allReplace = function (obj) {
+        var retStr = this;
+        for (var x in obj) {
+            retStr = retStr.replace(new RegExp(x, "g"), obj[x]);
+        }
+        return retStr;
+    };
 
     //LOADGRAPH
     async function loadGraph() {
@@ -54,6 +70,7 @@
         console.log("Datos recibidos para pintar smoker: "+smokersData.length);
         console.log("Datos recibidos para pintar hostelries: "+hostelData.length);
 
+        //Gestión de datos de ambas apis y reparto en variables
         smokersData.forEach((stat) => {
             smokerChartProvince.push(stat.province);
             smokerChartDaily.push(stat["dailySmoker"]);
@@ -61,9 +78,14 @@
 
         hostelData.forEach((stat) => {
             hostelProvince.push(stat.district);
+            hostelYear.push(stat.year);
             hostelSites.push(stat["establishment_open"]);
-        })
-
+            let sum1 = hostelSites.reduce((previous, current) => current += previous);
+            hostelSitesAverage = sum1/hostelSites.length;
+            hostelTraveler.push(stat["traveler_numer"]);
+            let sum2 = hostelTraveler.reduce((previous, current) => current += previous);
+            hostelTravelerAverage = sum2/hostelTraveler.length;
+        });
 
         //Comprueba que la gráfica no aparezca vacía y vuelve atrás
         if (smokersData.length == 0) {
@@ -72,124 +94,84 @@
             pop();
         }
 
-        //Tratamiento de datos
+        //Bucle para reemplazar las provincias y sacar las medias de locales abiertos y de travelers
+        for (var i = 0; i < hostelProvince.length; i++) {
+          hostelProvinceParsed.push(hostelProvince[i]
+                .allReplace({"Andalucia": "Andalucía", "Aragon": "Aragón", "Madrid": "Comunidad de Madrid",}));
+          let AndSites = hostelSites[0] + hostelSites[1] + hostelSites[2];
+          let AraSites = hostelSites[3] + hostelSites[4] + hostelSites[5];
+          let CanSites = hostelSites[6] + hostelSites[7] + hostelSites[8];
+          let CatSites = hostelSites[9] + hostelSites[10] + hostelSites[11];
+          let MadSites = hostelSites[12] + hostelSites[13] + hostelSites[14];
+          var AndSitesAv = AndSites/3;
+          var AraSitesAv = AraSites/3;
+          var CanSitesAv = CanSites/3;
+          var CatSitesAv = CatSites/3;
+          var MadSitesAv = MadSites/3;
+        }
+       //Tratamiento de los datos: al final quedan todos los objetos en un array dataFin, que será la serie del gráfico
+       for (let i = 0; i < smokerChartProvince.length; i++) {
+            //creando el objeto e insertandolo en dataFin
+            let objSeries = new Object();
+            objSeries.province = smokerChartProvince[i]; 
+            objSeries.dailySmoker = smokerChartDaily[i];
 
+            for (var j = 0; j < hostelProvinceParsed.length; j++) {
+              if(objSeries.province == hostelProvinceParsed[j]){
+                objSeries.sitesAv = hostelSites[j];
+                objSeries.travelAv = hostelTravelerAverage;
+              }
+            }
 
-        //Convert data to serieSmoker
-        var serieSmoker = JSC.nest()
-            .key("province") // X values
-            .pointRollup(function (key, value) {
-                return {
-                    x: key,
-                    y: JSC.sum(value, "dailySmoker"),
-                };
-            }) // Y values
-            .series(smokersData); // Generate series
-
-        //Convert data to serieRental
-        var serieHostel = JSC.nest()
-            .key("district") // X values
-            .pointRollup(function (key, value) {
-                return {
-                    x: key,
-                    y: JSC.sum(value, "establishment_open"),
-                };
-            }) // Y values
-            .series(smokersData); // Generate series
+            dataFin.push(objSeries);
+        }
         
-            
+        console.log(dataFin);
+        
         //Convert data to series array.
         var chart = JSC.chart('chartDiv', {
         debug: true,
-        type: 'bubble',
-        defaultSeries_size_max: '40%',
-        xAxis_formatString: 'n1',
-        annotations: [
-          {
-            label: { text: 'Data shown represents regional averages' },
-            position: 'inside bottom left'
-          }
-        ],
-        defaultPoint: {
-          tooltip:
-            '<b>%name</b> <br/>Population: <b>{%zValue/1000000} Mil</b><br/>Fertility Rate: <b>{%yValue:n2}</b><br/>Life Expectancy:<b> %xValue</b>',
-          label_text: '%code'
-        },
-        legend: {
-          position: 'bottom',
-          template: '%icon,%name,{%zSum/1000000}M,{%yAverage:n2},{%xAverage:n2}',
-          header: ',Region,Population,Fertility Rate,Life Expectancy'
-        },
-        title: {
-          label_text: 'Correlation between life expectancy, fertility rate, and population.'
-        },
-        xAxis_label_text: 'Life Expectancy',
-        yAxis_label_text: 'Fertility Rate',
+        defaultSeries_type: 'column',
+        title_label_text: 'Acme Tool Sales',
+        yAxis: { label_text: 'Units Sold' },
+        xAxis_label_text: 'Quarter',
         series: [
           {
-            name: 'Eastern Asia',
+            name: 'Saw',
             points: [
-              {
-                name: 'China',
-                x: 74.99,
-                y: 1.55,
-                z: 254547,
-                attributes: { code: 'CHN' }
-              },
-              {
-                name: 'Japan',
-                x: 84.19,
-                y: 1.39,
-                z: 127253075,
-                attributes: { code: 'JPN' }
-              }
+              { x: 'Q1', y: 230 },
+              { x: 'Q2', y: 240 },
+              { x: 'Q3', y: 267 },
+              { x: 'Q4', y: 238 }
             ]
           },
           {
-            name: 'South-Central Asia',
+            name: 'Hammer',
             points: [
-              {
-                name: 'India',
-                x: 67.48,
-                y: 2.55,
-                z: 1220800359,
-                attributes: { code: 'IND' }
-              },
-              {
-                name: 'Pakistan',
-                x: 66.71,
-                y: 2.96,
-                z: 193238868,
-                attributes: { code: 'PAK' }
-              },
-              {
-                name: 'Bangladesh',
-                x: 70.36,
-                y: 2.5,
-                z: 163654860,
-                attributes: { code: 'BGD' }
-              }
+              { x: 'Q1', y: 325 },
+              { x: 'Q2', y: 367 },
+              { x: 'Q3', y: 382 },
+              { x: 'Q4', y: 371 }
             ]
           },
           {
-            name: 'North America',
+            name: 'Grinder',
             points: [
-              {
-                name: 'United States',
-                x: 78.62,
-                y: 2.06,
-                z: 316438601,
-                attributes: { code: 'USA' }
-              },
-              {
-                name: 'Mexico',
-                x: 76.86,
-                y: 2.25,
-                z: 118818228,
-                attributes: { code: 'MEX' }
-              }
+              { x: 'Q1', y: 285 },
+              { x: 'Q2', y: 292 },
+              { x: 'Q3', y: 267 },
+              { x: 'Q4', y: 218 }
             ]
           },
+          {
+            name: 'Drill',
+            points: [
+              { x: 'Q1', y: 185 },
+              { x: 'Q2', y: 192 },
+              { x: 'Q3', y: 198 },
+              { x: 'Q4', y: 248 }
+            ]
+          }
         ]
       });
     }
