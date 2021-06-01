@@ -2,7 +2,6 @@
     import { pop } from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
 
-
     const BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
     //const culturaBASE_PATH = "https://sos2021-26.herokuapp.com/integration/api/v2/culturaBASE";
     const culturaBASE_PATH = "/proxyHeroku/integration/api/v2/culturaBASE";
@@ -96,7 +95,8 @@
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            Gráfico de líneas en el que se representa el porcentaje por comunidades autónomas en el año 2017 de cada API
+            Gráfico de área en el que se representa el porcentaje de peso normal según IMC por comunidades autónomas en el año 2017
+            integrado con los datos de la recaudación total en la industria cinematográfica en cada comunidad autónoma.
         </p>
     </figure>
     
