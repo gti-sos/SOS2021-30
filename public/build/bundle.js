@@ -44535,7 +44535,7 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$3 = "src\\front\\weightsStats\\integrations\\integracionExt1.svelte";
 
-    // (91:1) <Button outline color="secondary" on:click="{pop}">
+    // (153:1) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -44555,7 +44555,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(91:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(153:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -44627,24 +44627,24 @@ var app = (function () {
     			t8 = space();
     			p1 = element("p");
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 77, 4, 1782);
+    			add_location(script0, file$3, 139, 4, 3280);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/highcharts-more.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 78, 4, 1874);
+    			add_location(script1, file$3, 140, 4, 3372);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 79, 4, 1971);
+    			add_location(script2, file$3, 141, 4, 3469);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$3, 80, 4, 2070);
+    			add_location(script3, file$3, 142, 4, 3568);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$3, 85, 2, 2237);
+    			add_location(div, file$3, 147, 2, 3735);
     			attr_dev(figure, "class", "highcharts-figure svelte-jt8hhq");
-    			add_location(figure, file$3, 84, 1, 2199);
+    			add_location(figure, file$3, 146, 1, 3697);
     			attr_dev(a, "href", "https://www.balldontlie.io/api/v1/players");
-    			add_location(a, file$3, 88, 5, 2285);
-    			add_location(h4, file$3, 88, 1, 2281);
-    			add_location(p0, file$3, 89, 1, 2355);
-    			add_location(p1, file$3, 91, 1, 2435);
+    			add_location(a, file$3, 150, 5, 3783);
+    			add_location(h4, file$3, 150, 1, 3779);
+    			add_location(p0, file$3, 151, 1, 3853);
+    			add_location(p1, file$3, 153, 1, 3933);
     			attr_dev(main, "class", "svelte-jt8hhq");
-    			add_location(main, file$3, 83, 0, 2190);
+    			add_location(main, file$3, 145, 0, 3688);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -44674,10 +44674,10 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(script0, "load", loadGraph, false, false, false),
-    					listen_dev(script1, "load", loadGraph, false, false, false),
-    					listen_dev(script2, "load", loadGraph, false, false, false),
-    					listen_dev(script3, "load", loadGraph, false, false, false)
+    					listen_dev(script0, "load", /*loadGraph*/ ctx[0], false, false, false),
+    					listen_dev(script1, "load", /*loadGraph*/ ctx[0], false, false, false),
+    					listen_dev(script2, "load", /*loadGraph*/ ctx[0], false, false, false),
+    					listen_dev(script3, "load", /*loadGraph*/ ctx[0], false, false, false)
     				];
 
     				mounted = true;
@@ -44686,7 +44686,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 1) {
+    			if (dirty & /*$$scope*/ 4) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -44728,85 +44728,175 @@ var app = (function () {
     	return block;
     }
 
-    async function loadGraph() {
-    	let OtherData = [];
-    	const url = "https://www.balldontlie.io/api/v1/players";
-    	console.log("Fetching url...");
-    	const res = await fetch(url);
-
-    	if (res.ok) {
-    		console.log("Ok");
-    		OtherData = await res.json();
-    	} else {
-    		console.log("Error al cargar API externa");
-    	}
-
-    	let utilData = OtherData.data;
-
-    	let OtherDataGraph = utilData.filter(y => {
-    		return y.position == "G";
-    	}).map(x => {
-    		let res = {
-    			name: x.first_name + " " + x.last_name,
-    			value: x.id
-    		};
-
-    		return res;
-    	});
-
-    	let datosJuntos = [
-    		{
-    			name: "Jugadores NBA",
-    			data: OtherDataGraph
-    		}
-    	];
-
-    	Highcharts.chart("container", {
-    		chart: { type: "packedbubble", height: "100%" },
-    		title: {
-    			text: "Gráfica que representa el gasto total y el ID de los jugadores de la NBA de posición \"G\"."
-    		},
-    		tooltip: {
-    			useHTML: true,
-    			pointFormat: "<b>{point.name}:</b> {point.value}"
-    		},
-    		plotOptions: {
-    			packedbubble: {
-    				minSize: "30%",
-    				maxSize: "120%",
-    				zMin: 0,
-    				zMax: 1000,
-    				layoutAlgorithm: {
-    					splitSeries: true,
-    					gravitationalConstant: 0.02
-    				},
-    				dataLabels: {
-    					enabled: true,
-    					format: "{point.name}",
-    					filter: { property: "y", operator: ">", value: 250 },
-    					style: {
-    						color: "black",
-    						textOutline: "none",
-    						fontWeight: "normal"
-    					}
-    				}
-    			}
-    		},
-    		series: datosJuntos
-    	});
-    }
+    const NBA_PATH = "https://www.balldontlie.io/api/v1/players";
 
     function instance$3($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("IntegracionExt1", slots, []);
+    	let NBAStats = [];
+
+    	async function loadGraph() {
+    		console.log("Fetching url...");
+    		const res = await fetch(NBA_PATH);
+
+    		if (res.ok) {
+    			NBAStats = await res.json();
+    			console.log("Recived NBA data...");
+    		}
+
+    		let DataChart = NBAStats.data;
+
+    		//POSICION G
+    		let positionG = DataChart.filter(y => {
+    			return y.position == "G";
+    		}).map(x => {
+    			let res = {
+    				name: x.first_name + " " + x.last_name,
+    				value: x.id
+    			};
+
+    			return res;
+    		});
+
+    		//POSICION C
+    		let positionC = DataChart.filter(y => {
+    			return y.position == "C";
+    		}).map(x => {
+    			let res = {
+    				name: x.first_name + " " + x.last_name,
+    				value: x.id
+    			};
+
+    			return res;
+    		});
+
+    		//POSICION C
+    		let positionF = DataChart.filter(y => {
+    			return y.position == "F";
+    		}).map(x => {
+    			let res = {
+    				name: x.first_name + " " + x.last_name,
+    				value: x.id
+    			};
+
+    			return res;
+    		});
+
+    		//POSICION C-F
+    		let positionCF = DataChart.filter(y => {
+    			return y.position == "C-F";
+    		}).map(x => {
+    			let res = {
+    				name: x.first_name + " " + x.last_name,
+    				value: x.id
+    			};
+
+    			return res;
+    		});
+
+    		//POSICION F-C
+    		let positionFC = DataChart.filter(y => {
+    			return y.position == "F-C";
+    		}).map(x => {
+    			let res = {
+    				name: x.first_name + " " + x.last_name,
+    				value: x.id
+    			};
+
+    			return res;
+    		});
+
+    		//POSICION G-F
+    		let positionGF = DataChart.filter(y => {
+    			return y.position == "G-F";
+    		}).map(x => {
+    			let res = {
+    				name: x.first_name + " " + x.last_name,
+    				value: x.id
+    			};
+
+    			return res;
+    		});
+
+    		let datosJuntos = [
+    			{
+    				name: "Jugadores Posicion G",
+    				data: positionG
+    			},
+    			{ name: "Jugadores NBA C", data: positionC },
+    			{ name: "Jugadores NBA F", data: positionF },
+    			{
+    				name: "Jugadores NBA C-F",
+    				data: positionCF
+    			},
+    			{
+    				name: "Jugadores NBA F-C",
+    				data: positionFC
+    			},
+    			{
+    				name: "Jugadores NBA G-F",
+    				data: positionGF
+    			}
+    		];
+
+    		Highcharts.chart("container", {
+    			chart: { type: "packedbubble", height: "100%" },
+    			title: {
+    				text: "Gráfica que representa el ID de los jugadores de la NBA de posición \"G\"."
+    			},
+    			tooltip: {
+    				useHTML: true,
+    				pointFormat: "<b>{point.name}:</b> {point.value}"
+    			},
+    			plotOptions: {
+    				packedbubble: {
+    					minSize: "30%",
+    					maxSize: "120%",
+    					zMin: 0,
+    					zMax: 1000,
+    					layoutAlgorithm: {
+    						splitSeries: true,
+    						gravitationalConstant: 0.02
+    					},
+    					dataLabels: {
+    						enabled: true,
+    						format: "{point.name}",
+    						filter: { property: "y", operator: ">", value: 250 },
+    						style: {
+    							color: "black",
+    							textOutline: "none",
+    							fontWeight: "normal"
+    						}
+    					}
+    				}
+    			},
+    			series: datosJuntos
+    		});
+    	}
+
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$2.warn(`<IntegracionExt1> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$capture_state = () => ({ pop, Button, loadGraph });
-    	return [];
+    	$$self.$capture_state = () => ({
+    		pop,
+    		Button,
+    		NBA_PATH,
+    		NBAStats,
+    		loadGraph
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("NBAStats" in $$props) NBAStats = $$props.NBAStats;
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [loadGraph];
     }
 
     class IntegracionExt1 extends SvelteComponentDev {

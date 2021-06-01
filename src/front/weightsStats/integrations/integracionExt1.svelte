@@ -2,32 +2,94 @@
 	import {pop} from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
 
+	const NBA_PATH = "https://www.balldontlie.io/api/v1/players";
+	let NBAStats = [];
+
 	async function loadGraph(){
-        let OtherData = [];
-        const url = "https://www.balldontlie.io/api/v1/players";
+
+        
         console.log("Fetching url...");	
-		const res = await fetch(url); 
+		const res = await fetch(NBA_PATH); 
 		if (res.ok) {
-			console.log("Ok");
-            OtherData = await res.json();
-		} else {
-			console.log("Error al cargar API externa");
-        }
-       
+            NBAStats = await res.json();
+			console.log("Recived NBA data...");
+		}        
 		
-		let utilData = OtherData.data;
-        let OtherDataGraph = utilData.filter((y) => {
+		let DataChart = NBAStats.data;
+
+		//POSICION G
+        let positionG = DataChart.filter((y) => {
 			return y.position == "G";
 			}).map((x) => {
 				let res = {name: x.first_name + " " + x.last_name, value: x.id};
 			return res;
 		});
+
+		//POSICION C
+		let positionC = DataChart.filter((y) => {
+			return y.position == "C";
+			}).map((x) => {
+				let res = {name: x.first_name + " " + x.last_name, value: x.id};
+			return res;
+		});
+
+		//POSICION C
+		let positionF = DataChart.filter((y) => {
+			return y.position == "F";
+			}).map((x) => {
+				let res = {name: x.first_name + " " + x.last_name, value: x.id};
+			return res;
+		});
+
+		//POSICION C-F
+		let positionCF = DataChart.filter((y) => {
+			return y.position == "C-F";
+			}).map((x) => {
+				let res = {name: x.first_name + " " + x.last_name, value: x.id};
+			return res;
+		});
+
+		//POSICION F-C
+		let positionFC = DataChart.filter((y) => {
+			return y.position == "F-C";
+			}).map((x) => {
+				let res = {name: x.first_name + " " + x.last_name, value: x.id};
+			return res;
+		});
+
+		//POSICION G-F
+		let positionGF = DataChart.filter((y) => {
+			return y.position == "G-F";
+			}).map((x) => {
+				let res = {name: x.first_name + " " + x.last_name, value: x.id};
+			return res;
+		});		
 		
 		let datosJuntos = 
         [
             {
-                name: "Jugadores NBA",
-                data: OtherDataGraph
+                name: "Jugadores Posicion G",
+                data: positionG
+            },
+			{
+                name: "Jugadores NBA C",
+                data: positionC
+            },
+			{
+                name: "Jugadores NBA F",
+                data: positionF
+            },
+			{
+                name: "Jugadores NBA C-F",
+                data: positionCF
+            },
+			{
+                name: "Jugadores NBA F-C",
+                data: positionFC
+            },
+			{
+                name: "Jugadores NBA G-F",
+                data: positionGF
             }
         ];
         
