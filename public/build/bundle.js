@@ -919,7 +919,7 @@ var app = (function () {
     const file$O = "node_modules\\sveltestrap\\src\\Alert.svelte";
 
     // (22:0) {#if isOpen}
-    function create_if_block$p(ctx) {
+    function create_if_block$q(ctx) {
     	let div;
     	let t;
     	let current_block_type_index;
@@ -1035,7 +1035,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$p.name,
+    		id: create_if_block$q.name,
     		type: "if",
     		source: "(22:0) {#if isOpen}",
     		ctx
@@ -1195,7 +1195,7 @@ var app = (function () {
     function create_fragment$P(ctx) {
     	let if_block_anchor;
     	let current;
-    	let if_block = /*isOpen*/ ctx[2] && create_if_block$p(ctx);
+    	let if_block = /*isOpen*/ ctx[2] && create_if_block$q(ctx);
 
     	const block = {
     		c: function create() {
@@ -1219,7 +1219,7 @@ var app = (function () {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block$p(ctx);
+    					if_block = create_if_block$q(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -1556,7 +1556,7 @@ var app = (function () {
     }
 
     // (33:0) {#if href}
-    function create_if_block$o(ctx) {
+    function create_if_block$p(ctx) {
     	let a;
     	let current_block_type_index;
     	let if_block;
@@ -1664,7 +1664,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block: block_1,
-    		id: create_if_block$o.name,
+    		id: create_if_block$p.name,
     		type: "if",
     		source: "(33:0) {#if href}",
     		ctx
@@ -1954,7 +1954,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$o, create_else_block_1];
+    	const if_block_creators = [create_if_block$p, create_else_block_1];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -2831,7 +2831,7 @@ var app = (function () {
     }
 
     // (11:0) {#if tag === 'h3'}
-    function create_if_block$n(ctx) {
+    function create_if_block$o(ctx) {
     	let h3;
     	let current;
     	let mounted;
@@ -2897,7 +2897,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$n.name,
+    		id: create_if_block$o.name,
     		type: "if",
     		source: "(11:0) {#if tag === 'h3'}",
     		ctx
@@ -2911,7 +2911,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$n, create_else_block$9];
+    	const if_block_creators = [create_if_block$o, create_else_block$9];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -3531,7 +3531,7 @@ var app = (function () {
     }
 
     // (21:0) {#if tag === 'fieldset'}
-    function create_if_block$m(ctx) {
+    function create_if_block$n(ctx) {
     	let fieldset;
     	let current;
     	const default_slot_template = /*#slots*/ ctx[9].default;
@@ -3588,7 +3588,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$m.name,
+    		id: create_if_block$n.name,
     		type: "if",
     		source: "(21:0) {#if tag === 'fieldset'}",
     		ctx
@@ -3602,7 +3602,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$m, create_else_block$8];
+    	const if_block_creators = [create_if_block$n, create_else_block$8];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -4006,7 +4006,7 @@ var app = (function () {
     }
 
     // (82:0) {#if tag === 'input'}
-    function create_if_block$l(ctx) {
+    function create_if_block$m(ctx) {
     	let if_block_anchor;
 
     	function select_block_type_1(ctx, dirty) {
@@ -4062,7 +4062,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$l.name,
+    		id: create_if_block$m.name,
     		type: "if",
     		source: "(82:0) {#if tag === 'input'}",
     		ctx
@@ -5278,7 +5278,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$l, create_if_block_15, create_if_block_16];
+    	const if_block_creators = [create_if_block$m, create_if_block_15, create_if_block_16];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -7507,7 +7507,7 @@ var app = (function () {
     }
 
     // (29:0) {#if responsive}
-    function create_if_block$k(ctx) {
+    function create_if_block$l(ctx) {
     	let div;
     	let table;
     	let current;
@@ -7573,7 +7573,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$k.name,
+    		id: create_if_block$l.name,
     		type: "if",
     		source: "(29:0) {#if responsive}",
     		ctx
@@ -7587,7 +7587,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$k, create_else_block$6];
+    	const if_block_creators = [create_if_block$l, create_else_block$6];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -7846,7 +7846,7 @@ var app = (function () {
     const file$y = "src\\front\\NotFound.svelte";
 
     // (13:4) <Button color="primary">
-    function create_default_slot$x(ctx) {
+    function create_default_slot$y(ctx) {
     	let t;
 
     	const block = {
@@ -7863,7 +7863,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$x.name,
+    		id: create_default_slot$y.name,
     		type: "slot",
     		source: "(13:4) <Button color=\\\"primary\\\">",
     		ctx
@@ -7887,7 +7887,7 @@ var app = (function () {
     	button = new Button({
     			props: {
     				color: "primary",
-    				$$slots: { default: [create_default_slot$x] },
+    				$$slots: { default: [create_default_slot$y] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -8079,7 +8079,7 @@ var app = (function () {
     }
 
     // (15:23) <Button color="info">
-    function create_default_slot$w(ctx) {
+    function create_default_slot$x(ctx) {
     	let t;
 
     	const block = {
@@ -8096,7 +8096,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$w.name,
+    		id: create_default_slot$x.name,
     		type: "slot",
     		source: "(15:23) <Button color=\\\"info\\\">",
     		ctx
@@ -8154,7 +8154,7 @@ var app = (function () {
     	button3 = new Button({
     			props: {
     				color: "info",
-    				$$slots: { default: [create_default_slot$w] },
+    				$$slots: { default: [create_default_slot$x] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -9832,7 +9832,7 @@ var app = (function () {
     }
 
     // (102:4) <Table bordered responsive>
-    function create_default_slot$v(ctx) {
+    function create_default_slot$w(ctx) {
     	let thead;
     	let tr0;
     	let th0;
@@ -10108,7 +10108,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$v.name,
+    		id: create_default_slot$w.name,
     		type: "slot",
     		source: "(102:4) <Table bordered responsive>",
     		ctx
@@ -10218,7 +10218,7 @@ var app = (function () {
     			props: {
     				bordered: true,
     				responsive: true,
-    				$$slots: { default: [create_default_slot$v] },
+    				$$slots: { default: [create_default_slot$w] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -10617,11 +10617,7 @@ var app = (function () {
 
     /* node_modules\svelte-spa-router\Router.svelte generated by Svelte v3.38.2 */
 
-<<<<<<< HEAD
-    const { Error: Error_1, Object: Object_1$4, console: console_1$s } = globals;
-=======
-    const { Error: Error_1, Object: Object_1$3, console: console_1$t } = globals;
->>>>>>> a6e5c1958ec0adc62a9649e65f5a715947109cb9
+    const { Error: Error_1, Object: Object_1$4, console: console_1$t } = globals;
 
     // (209:0) {:else}
     function create_else_block$5(ctx) {
@@ -10719,7 +10715,7 @@ var app = (function () {
     }
 
     // (202:0) {#if componentParams}
-    function create_if_block$j(ctx) {
+    function create_if_block$k(ctx) {
     	let switch_instance;
     	let switch_instance_anchor;
     	let current;
@@ -10807,7 +10803,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$j.name,
+    		id: create_if_block$k.name,
     		type: "if",
     		source: "(202:0) {#if componentParams}",
     		ctx
@@ -10821,7 +10817,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$j, create_else_block$5];
+    	const if_block_creators = [create_if_block$k, create_else_block$5];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -11356,13 +11352,8 @@ var app = (function () {
 
     	const writable_props = ["routes", "prefix", "restoreScrollState"];
 
-<<<<<<< HEAD
     	Object_1$4.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$s.warn(`<Router> was created with unknown prop '${key}'`);
-=======
-    	Object_1$3.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$t.warn(`<Router> was created with unknown prop '${key}'`);
->>>>>>> a6e5c1958ec0adc62a9649e65f5a715947109cb9
     	});
 
     	function routeEvent_handler(event) {
@@ -12099,7 +12090,7 @@ var app = (function () {
     }
 
     // (59:2) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot$u(ctx) {
+    function create_default_slot$v(ctx) {
     	let t;
 
     	const block = {
@@ -12116,7 +12107,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$u.name,
+    		id: create_default_slot$v.name,
     		type: "slot",
     		source: "(59:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
@@ -12185,7 +12176,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot$u] },
+    				$$slots: { default: [create_default_slot$v] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -12902,13 +12893,13 @@ var app = (function () {
     	return block;
     }
 
-    // (47:11) <Button color="primary">
+    // (46:42) <Button color="primary">
     function create_default_slot_16(ctx) {
     	let t;
 
     	const block = {
     		c: function create() {
-    			t = text("Estadísticas Alquileres por comunidades");
+    			t = text("Estadísticas Rental-Smoker");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -12922,14 +12913,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_16.name,
     		type: "slot",
-    		source: "(47:11) <Button color=\\\"primary\\\">",
+    		source: "(46:42) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (49:9) <Button color="primary">
+    // (47:45) <Button color="primary">
     function create_default_slot_15$1(ctx) {
     	let t;
 
@@ -12949,7 +12940,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_15$1.name,
     		type: "slot",
-    		source: "(49:9) <Button color=\\\"primary\\\">",
+    		source: "(47:45) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
@@ -13003,7 +12994,7 @@ var app = (function () {
     			attr_dev(a0, "href", "/#/integrations/rentals");
     			add_location(a0, file$u, 45, 8, 1322);
     			attr_dev(a1, "href", "/#/integrations/hostelries");
-    			add_location(a1, file$u, 47, 8, 1454);
+    			add_location(a1, file$u, 46, 8, 1429);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -13152,7 +13143,7 @@ var app = (function () {
     	return block;
     }
 
-    // (56:8) <CardTitle>
+    // (54:8) <CardTitle>
     function create_default_slot_12$3(ctx) {
     	let h2;
 
@@ -13160,7 +13151,7 @@ var app = (function () {
     		c: function create() {
     			h2 = element("h2");
     			h2.textContent = "Integrado con las estadísticas sobre IMC";
-    			add_location(h2, file$u, 55, 19, 1685);
+    			add_location(h2, file$u, 53, 19, 1650);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -13174,14 +13165,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_12$3.name,
     		type: "slot",
-    		source: "(56:8) <CardTitle>",
+    		source: "(54:8) <CardTitle>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (55:6) <CardHeader>
+    // (53:6) <CardHeader>
     function create_default_slot_11$5(ctx) {
     	let cardtitle;
     	let current;
@@ -13229,14 +13220,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_11$5.name,
     		type: "slot",
-    		source: "(55:6) <CardHeader>",
+    		source: "(53:6) <CardHeader>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (61:46) <Button color="primary">
+    // (59:46) <Button color="primary">
     function create_default_slot_10$5(ctx) {
     	let t;
 
@@ -13256,14 +13247,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_10$5.name,
     		type: "slot",
-    		source: "(61:46) <Button color=\\\"primary\\\">",
+    		source: "(59:46) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (62:41) <Button color="primary">
+    // (60:41) <Button color="primary">
     function create_default_slot_9$5(ctx) {
     	let t;
 
@@ -13283,14 +13274,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_9$5.name,
     		type: "slot",
-    		source: "(62:41) <Button color=\\\"primary\\\">",
+    		source: "(60:41) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (63:47) <Button color="primary">
+    // (61:47) <Button color="primary">
     function create_default_slot_8$5(ctx) {
     	let t;
 
@@ -13310,14 +13301,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8$5.name,
     		type: "slot",
-    		source: "(63:47) <Button color=\\\"primary\\\">",
+    		source: "(61:47) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (58:6) <CardBody>
+    // (56:6) <CardBody>
     function create_default_slot_7$5(ctx) {
     	let cardsubtitle;
     	let t0;
@@ -13377,11 +13368,11 @@ var app = (function () {
     			a2 = element("a");
     			create_component(button2.$$.fragment);
     			attr_dev(a0, "href", "/#/integrations/culturaBASE");
-    			add_location(a0, file$u, 60, 8, 1843);
+    			add_location(a0, file$u, 58, 8, 1808);
     			attr_dev(a1, "href", "/#/integrations/prueba");
-    			add_location(a1, file$u, 61, 8, 1960);
+    			add_location(a1, file$u, 59, 8, 1925);
     			attr_dev(a2, "href", "/#/integrations/NBA-position");
-    			add_location(a2, file$u, 62, 8, 2073);
+    			add_location(a2, file$u, 60, 8, 2038);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -13458,14 +13449,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$5.name,
     		type: "slot",
-    		source: "(58:6) <CardBody>",
+    		source: "(56:6) <CardBody>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (54:4) <Card class="mb-3">
+    // (52:4) <Card class="mb-3">
     function create_default_slot_6$5(ctx) {
     	let cardheader;
     	let t;
@@ -13538,14 +13529,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$5.name,
     		type: "slot",
-    		source: "(54:4) <Card class=\\\"mb-3\\\">",
+    		source: "(52:4) <Card class=\\\"mb-3\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (70:8) <CardTitle>
+    // (68:8) <CardTitle>
     function create_default_slot_5$5(ctx) {
     	let h2;
 
@@ -13553,7 +13544,7 @@ var app = (function () {
     		c: function create() {
     			h2 = element("h2");
     			h2.textContent = "Integrado con las estadísticas sobre la esperanza de vida";
-    			add_location(h2, file$u, 69, 19, 2280);
+    			add_location(h2, file$u, 67, 19, 2245);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -13567,14 +13558,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$5.name,
     		type: "slot",
-    		source: "(70:8) <CardTitle>",
+    		source: "(68:8) <CardTitle>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (69:6) <CardHeader>
+    // (67:6) <CardHeader>
     function create_default_slot_4$5(ctx) {
     	let cardtitle;
     	let current;
@@ -13622,14 +13613,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$5.name,
     		type: "slot",
-    		source: "(69:6) <CardHeader>",
+    		source: "(67:6) <CardHeader>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (76:11) <Button color="primary">
+    // (74:11) <Button color="primary">
     function create_default_slot_3$9(ctx) {
     	let t;
 
@@ -13649,14 +13640,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$9.name,
     		type: "slot",
-    		source: "(76:11) <Button color=\\\"primary\\\">",
+    		source: "(74:11) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (72:6) <CardBody>
+    // (70:6) <CardBody>
     function create_default_slot_2$d(ctx) {
     	let cardsubtitle;
     	let t0;
@@ -13686,7 +13677,7 @@ var app = (function () {
     			a = element("a");
     			create_component(button.$$.fragment);
     			attr_dev(a, "href", "/#/integrations/unemployment");
-    			add_location(a, file$u, 74, 8, 2455);
+    			add_location(a, file$u, 72, 8, 2420);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -13733,14 +13724,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$d.name,
     		type: "slot",
-    		source: "(72:6) <CardBody>",
+    		source: "(70:6) <CardBody>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (68:4) <Card class="mb-3">
+    // (66:4) <Card class="mb-3">
     function create_default_slot_1$d(ctx) {
     	let cardheader;
     	let t;
@@ -13813,19 +13804,15 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$d.name,
     		type: "slot",
-    		source: "(68:4) <Card class=\\\"mb-3\\\">",
+    		source: "(66:4) <Card class=\\\"mb-3\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-<<<<<<< HEAD
-    // (79:2) <Button outline color="secondary" on:click="{pop}">
-=======
-    // (80:2) <Button outline color="secondary" on:click="{pop}">
->>>>>>> a6e5c1958ec0adc62a9649e65f5a715947109cb9
-    function create_default_slot$t(ctx) {
+    // (78:2) <Button outline color="secondary" on:click="{pop}">
+    function create_default_slot$u(ctx) {
     	let t;
 
     	const block = {
@@ -13842,9 +13829,9 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$t.name,
+    		id: create_default_slot$u.name,
     		type: "slot",
-    		source: "(80:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(78:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -13911,7 +13898,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot$t] },
+    				$$slots: { default: [create_default_slot$u] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -13948,9 +13935,9 @@ var app = (function () {
     			attr_dev(div2, "class", "svelte-egmbdb");
     			add_location(div2, file$u, 37, 2, 1069);
     			attr_dev(div3, "class", "svelte-egmbdb");
-    			add_location(div3, file$u, 52, 2, 1614);
+    			add_location(div3, file$u, 50, 2, 1579);
     			attr_dev(div4, "class", "svelte-egmbdb");
-    			add_location(div4, file$u, 66, 2, 2209);
+    			add_location(div4, file$u, 64, 2, 2174);
     			attr_dev(main, "class", "svelte-egmbdb");
     			add_location(main, file$u, 13, 2, 235);
     		},
@@ -14243,7 +14230,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot$s] },
+    				$$slots: { default: [create_default_slot$t] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -14454,7 +14441,7 @@ var app = (function () {
     }
 
     // (301:12) {#if checkMSG}
-    function create_if_block$i(ctx) {
+    function create_if_block$j(ctx) {
     	let t;
 
     	const block = {
@@ -14474,7 +14461,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$i.name,
+    		id: create_if_block$j.name,
     		type: "if",
     		source: "(301:12) {#if checkMSG}",
     		ctx
@@ -14486,7 +14473,7 @@ var app = (function () {
     // (300:8) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
     function create_default_slot_11$4(ctx) {
     	let if_block_anchor;
-    	let if_block = /*checkMSG*/ ctx[1] && create_if_block$i(ctx);
+    	let if_block = /*checkMSG*/ ctx[1] && create_if_block$j(ctx);
 
     	const block = {
     		c: function create() {
@@ -14502,7 +14489,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$i(ctx);
+    					if_block = create_if_block$j(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -15492,7 +15479,7 @@ var app = (function () {
     }
 
     // (380:8) <Button outline color="primary" on:click="{getNextPage}">
-    function create_default_slot$s(ctx) {
+    function create_default_slot$t(ctx) {
     	let t;
 
     	const block = {
@@ -15509,7 +15496,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$s.name,
+    		id: create_default_slot$t.name,
     		type: "slot",
     		source: "(380:8) <Button outline color=\\\"primary\\\" on:click=\\\"{getNextPage}\\\">",
     		ctx
@@ -16082,7 +16069,7 @@ var app = (function () {
     const file$s = "src\\front\\lifeStats\\EditLife.svelte";
 
     // (75:8) {#if errorMsg}
-    function create_if_block$h(ctx) {
+    function create_if_block$i(ctx) {
     	let t;
 
     	const block = {
@@ -16102,7 +16089,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$h.name,
+    		id: create_if_block$i.name,
     		type: "if",
     		source: "(75:8) {#if errorMsg}",
     		ctx
@@ -16114,7 +16101,7 @@ var app = (function () {
     // (74:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
     function create_default_slot_3$7(ctx) {
     	let if_block_anchor;
-    	let if_block = /*errorMsg*/ ctx[7] && create_if_block$h(ctx);
+    	let if_block = /*errorMsg*/ ctx[7] && create_if_block$i(ctx);
 
     	const block = {
     		c: function create() {
@@ -16130,7 +16117,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$h(ctx);
+    					if_block = create_if_block$i(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -16426,7 +16413,7 @@ var app = (function () {
     }
 
     // (106:4) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot$r(ctx) {
+    function create_default_slot$s(ctx) {
     	let t;
 
     	const block = {
@@ -16443,7 +16430,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$r.name,
+    		id: create_default_slot$s.name,
     		type: "slot",
     		source: "(106:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
@@ -16494,7 +16481,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot$r] },
+    				$$slots: { default: [create_default_slot$s] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -16927,7 +16914,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot$q] },
+    				$$slots: { default: [create_default_slot$r] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -17143,7 +17130,7 @@ var app = (function () {
     }
 
     // (266:8) {#if errorMSG.length>0}
-    function create_if_block$g(ctx) {
+    function create_if_block$h(ctx) {
     	let t;
 
     	const block = {
@@ -17163,7 +17150,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$g.name,
+    		id: create_if_block$h.name,
     		type: "if",
     		source: "(266:8) {#if errorMSG.length>0}",
     		ctx
@@ -17175,7 +17162,7 @@ var app = (function () {
     // (265:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
     function create_default_slot_11$3(ctx) {
     	let if_block_anchor;
-    	let if_block = /*errorMSG*/ ctx[2].length > 0 && create_if_block$g(ctx);
+    	let if_block = /*errorMSG*/ ctx[2].length > 0 && create_if_block$h(ctx);
 
     	const block = {
     		c: function create() {
@@ -17191,7 +17178,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$g(ctx);
+    					if_block = create_if_block$h(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -18092,7 +18079,7 @@ var app = (function () {
     }
 
     // (336:8) <Button outline color="primary" on:click="{getNextPage}">
-    function create_default_slot$q(ctx) {
+    function create_default_slot$r(ctx) {
     	let t;
 
     	const block = {
@@ -18109,7 +18096,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$q.name,
+    		id: create_default_slot$r.name,
     		type: "slot",
     		source: "(336:8) <Button outline color=\\\"primary\\\" on:click=\\\"{getNextPage}\\\">",
     		ctx
@@ -18980,7 +18967,7 @@ var app = (function () {
     }
 
     // (98:4) {#if errorMsg}
-    function create_if_block$f(ctx) {
+    function create_if_block$g(ctx) {
     	let p;
     	let t0;
     	let t1;
@@ -19008,7 +18995,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$f.name,
+    		id: create_if_block$g.name,
     		type: "if",
     		source: "(98:4) {#if errorMsg}",
     		ctx
@@ -19018,7 +19005,7 @@ var app = (function () {
     }
 
     // (101:4) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot$p(ctx) {
+    function create_default_slot$q(ctx) {
     	let t;
 
     	const block = {
@@ -19035,7 +19022,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$p.name,
+    		id: create_default_slot$q.name,
     		type: "slot",
     		source: "(101:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
@@ -19086,13 +19073,13 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	let if_block = /*errorMsg*/ ctx[6] && create_if_block$f(ctx);
+    	let if_block = /*errorMsg*/ ctx[6] && create_if_block$g(ctx);
 
     	button = new Button({
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot$p] },
+    				$$slots: { default: [create_default_slot$q] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -19171,7 +19158,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$f(ctx);
+    					if_block = create_if_block$g(ctx);
     					if_block.c();
     					if_block.m(main, t10);
     				}
@@ -19411,7 +19398,7 @@ var app = (function () {
     }
 
     // (115:6) {#if okMsg}
-    function create_if_block$e(ctx) {
+    function create_if_block$f(ctx) {
     	let p;
 
     	const block = {
@@ -19433,7 +19420,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$e.name,
+    		id: create_if_block$f.name,
     		type: "if",
     		source: "(115:6) {#if okMsg}",
     		ctx
@@ -19497,7 +19484,7 @@ var app = (function () {
     }
 
     // (130:30) <Button outline color="primary">
-    function create_default_slot$o(ctx) {
+    function create_default_slot$p(ctx) {
     	let t;
 
     	const block = {
@@ -19514,7 +19501,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$o.name,
+    		id: create_default_slot$p.name,
     		type: "slot",
     		source: "(130:30) <Button outline color=\\\"primary\\\">",
     		ctx
@@ -19560,7 +19547,7 @@ var app = (function () {
     	let mounted;
     	let dispose;
     	let if_block0 = /*errorMsg*/ ctx[0] && create_if_block_1$4(ctx);
-    	let if_block1 = /*okMsg*/ ctx[1] && create_if_block$e(ctx);
+    	let if_block1 = /*okMsg*/ ctx[1] && create_if_block$f(ctx);
 
     	button0 = new Button({
     			props: {
@@ -19586,7 +19573,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot$o] },
+    				$$slots: { default: [create_default_slot$p] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -19975,7 +19962,7 @@ var app = (function () {
     }
 
     // (89:6) {#if okMsg}
-    function create_if_block$d(ctx) {
+    function create_if_block$e(ctx) {
     	let p;
 
     	const block = {
@@ -19997,7 +19984,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$d.name,
+    		id: create_if_block$e.name,
     		type: "if",
     		source: "(89:6) {#if okMsg}",
     		ctx
@@ -20061,7 +20048,7 @@ var app = (function () {
     }
 
     // (104:30) <Button outline color="primary">
-    function create_default_slot$n(ctx) {
+    function create_default_slot$o(ctx) {
     	let t;
 
     	const block = {
@@ -20078,7 +20065,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$n.name,
+    		id: create_default_slot$o.name,
     		type: "slot",
     		source: "(104:30) <Button outline color=\\\"primary\\\">",
     		ctx
@@ -20124,7 +20111,7 @@ var app = (function () {
     	let mounted;
     	let dispose;
     	let if_block0 = /*errorMsg*/ ctx[0] && create_if_block_1$3(ctx);
-    	let if_block1 = /*okMsg*/ ctx[1] && create_if_block$d(ctx);
+    	let if_block1 = /*okMsg*/ ctx[1] && create_if_block$e(ctx);
 
     	button0 = new Button({
     			props: {
@@ -20150,7 +20137,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot$n] },
+    				$$slots: { default: [create_default_slot$o] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -31533,7 +31520,7 @@ var app = (function () {
     }
 
     // (68:4) {#if errorMsg}
-    function create_if_block$c(ctx) {
+    function create_if_block$d(ctx) {
     	let p;
     	let t;
 
@@ -31557,7 +31544,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$c.name,
+    		id: create_if_block$d.name,
     		type: "if",
     		source: "(68:4) {#if errorMsg}",
     		ctx
@@ -31621,7 +31608,7 @@ var app = (function () {
     }
 
     // (89:30) <Button outline color="primary">
-    function create_default_slot$m(ctx) {
+    function create_default_slot$n(ctx) {
     	let t;
 
     	const block = {
@@ -31638,7 +31625,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$m.name,
+    		id: create_default_slot$n.name,
     		type: "slot",
     		source: "(89:30) <Button outline color=\\\"primary\\\">",
     		ctx
@@ -31669,7 +31656,7 @@ var app = (function () {
     	let dispose;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*errorMsg*/ ctx[0]) return create_if_block$c;
+    		if (/*errorMsg*/ ctx[0]) return create_if_block$d;
     		return create_else_block$4;
     	}
 
@@ -31700,7 +31687,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot$m] },
+    				$$slots: { default: [create_default_slot$n] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -32025,7 +32012,7 @@ var app = (function () {
     }
 
     // (134:2) {#if errorMsg}
-    function create_if_block$b(ctx) {
+    function create_if_block$c(ctx) {
     	let p;
     	let t;
 
@@ -32049,7 +32036,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$b.name,
+    		id: create_if_block$c.name,
     		type: "if",
     		source: "(134:2) {#if errorMsg}",
     		ctx
@@ -32059,7 +32046,7 @@ var app = (function () {
     }
 
     // (185:2) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot$l(ctx) {
+    function create_default_slot$m(ctx) {
     	let t;
 
     	const block = {
@@ -32076,7 +32063,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$l.name,
+    		id: create_default_slot$m.name,
     		type: "slot",
     		source: "(185:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
@@ -32106,7 +32093,7 @@ var app = (function () {
     	let dispose;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*errorMsg*/ ctx[0]) return create_if_block$b;
+    		if (/*errorMsg*/ ctx[0]) return create_if_block$c;
     		return create_else_block$3;
     	}
 
@@ -32117,7 +32104,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot$l] },
+    				$$slots: { default: [create_default_slot$m] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -32492,7 +32479,7 @@ var app = (function () {
     }
 
     // (128:4) {#if errorMsg}
-    function create_if_block$a(ctx) {
+    function create_if_block$b(ctx) {
     	let p;
     	let t;
 
@@ -32516,7 +32503,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$a.name,
+    		id: create_if_block$b.name,
     		type: "if",
     		source: "(128:4) {#if errorMsg}",
     		ctx
@@ -32526,7 +32513,7 @@ var app = (function () {
     }
 
     // (179:4) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot$k(ctx) {
+    function create_default_slot$l(ctx) {
     	let t;
 
     	const block = {
@@ -32543,7 +32530,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$k.name,
+    		id: create_default_slot$l.name,
     		type: "slot",
     		source: "(179:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
@@ -32573,7 +32560,7 @@ var app = (function () {
     	let dispose;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*errorMsg*/ ctx[0]) return create_if_block$a;
+    		if (/*errorMsg*/ ctx[0]) return create_if_block$b;
     		return create_else_block$2;
     	}
 
@@ -32584,7 +32571,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot$k] },
+    				$$slots: { default: [create_default_slot$l] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -32919,7 +32906,7 @@ var app = (function () {
     }
 
     // (84:4) {#if errorMsg}
-    function create_if_block$9(ctx) {
+    function create_if_block$a(ctx) {
     	let p;
     	let t;
 
@@ -32943,7 +32930,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$9.name,
+    		id: create_if_block$a.name,
     		type: "if",
     		source: "(84:4) {#if errorMsg}",
     		ctx
@@ -32953,7 +32940,7 @@ var app = (function () {
     }
 
     // (103:4) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot$j(ctx) {
+    function create_default_slot$k(ctx) {
     	let t;
 
     	const block = {
@@ -32970,7 +32957,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$j.name,
+    		id: create_default_slot$k.name,
     		type: "slot",
     		source: "(103:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
@@ -32994,7 +32981,7 @@ var app = (function () {
     	let dispose;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*errorMsg*/ ctx[0]) return create_if_block$9;
+    		if (/*errorMsg*/ ctx[0]) return create_if_block$a;
     		return create_else_block$1;
     	}
 
@@ -33005,7 +32992,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot$j] },
+    				$$slots: { default: [create_default_slot$k] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -33310,7 +33297,7 @@ var app = (function () {
     }
 
     // (87:2) {#if errorMsg}
-    function create_if_block$8(ctx) {
+    function create_if_block$9(ctx) {
     	let p;
     	let t;
 
@@ -33334,7 +33321,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$8.name,
+    		id: create_if_block$9.name,
     		type: "if",
     		source: "(87:2) {#if errorMsg}",
     		ctx
@@ -33344,7 +33331,7 @@ var app = (function () {
     }
 
     // (106:2) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot$i(ctx) {
+    function create_default_slot$j(ctx) {
     	let t;
 
     	const block = {
@@ -33361,7 +33348,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$i.name,
+    		id: create_default_slot$j.name,
     		type: "slot",
     		source: "(106:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
@@ -33385,7 +33372,7 @@ var app = (function () {
     	let dispose;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*errorMsg*/ ctx[0]) return create_if_block$8;
+    		if (/*errorMsg*/ ctx[0]) return create_if_block$9;
     		return create_else_block;
     	}
 
@@ -33396,7 +33383,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot$i] },
+    				$$slots: { default: [create_default_slot$j] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -33801,7 +33788,7 @@ var app = (function () {
     	button6 = new Button({
     			props: {
     				color: "info",
-    				$$slots: { default: [create_default_slot$h] },
+    				$$slots: { default: [create_default_slot$i] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -34031,7 +34018,7 @@ var app = (function () {
     }
 
     // (372:12) {#if checkMSG}
-    function create_if_block$7(ctx) {
+    function create_if_block$8(ctx) {
     	let t;
 
     	const block = {
@@ -34051,7 +34038,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$7.name,
+    		id: create_if_block$8.name,
     		type: "if",
     		source: "(372:12) {#if checkMSG}",
     		ctx
@@ -34063,7 +34050,7 @@ var app = (function () {
     // (371:8) <Alert {color} isOpen={visible} toggle={() => (visible = false)}>
     function create_default_slot_12$2(ctx) {
     	let if_block_anchor;
-    	let if_block = /*checkMSG*/ ctx[9] && create_if_block$7(ctx);
+    	let if_block = /*checkMSG*/ ctx[9] && create_if_block$8(ctx);
 
     	const block = {
     		c: function create() {
@@ -34079,7 +34066,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$7(ctx);
+    					if_block = create_if_block$8(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -35076,7 +35063,7 @@ var app = (function () {
     }
 
     // (558:40) <Button color="info">
-    function create_default_slot$h(ctx) {
+    function create_default_slot$i(ctx) {
     	let t;
 
     	const block = {
@@ -35093,7 +35080,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$h.name,
+    		id: create_default_slot$i.name,
     		type: "slot",
     		source: "(558:40) <Button color=\\\"info\\\">",
     		ctx
@@ -35700,7 +35687,7 @@ var app = (function () {
     const file$h = "src\\front\\smokersStats\\SmokersItems.svelte";
 
     // (188:8) {#if checkMSG}
-    function create_if_block$6(ctx) {
+    function create_if_block$7(ctx) {
     	let t;
 
     	const block = {
@@ -35720,7 +35707,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$6.name,
+    		id: create_if_block$7.name,
     		type: "if",
     		source: "(188:8) {#if checkMSG}",
     		ctx
@@ -35732,7 +35719,7 @@ var app = (function () {
     // (187:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
     function create_default_slot_3$3(ctx) {
     	let if_block_anchor;
-    	let if_block = /*checkMSG*/ ctx[7] && create_if_block$6(ctx);
+    	let if_block = /*checkMSG*/ ctx[7] && create_if_block$7(ctx);
 
     	const block = {
     		c: function create() {
@@ -35748,7 +35735,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$6(ctx);
+    					if_block = create_if_block$7(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -36047,7 +36034,7 @@ var app = (function () {
     }
 
     // (216:8) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot$g(ctx) {
+    function create_default_slot$h(ctx) {
     	let t;
 
     	const block = {
@@ -36064,7 +36051,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$g.name,
+    		id: create_default_slot$h.name,
     		type: "slot",
     		source: "(216:8) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
@@ -36115,7 +36102,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot$g] },
+    				$$slots: { default: [create_default_slot$h] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -36459,7 +36446,7 @@ var app = (function () {
     const file$g = "src\\front\\smokersStats\\GraphSmokers.svelte";
 
     // (145:8) {#if checkMSG.length!=0}
-    function create_if_block$5(ctx) {
+    function create_if_block$6(ctx) {
     	let p;
 
     	const block = {
@@ -36481,7 +36468,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$5.name,
+    		id: create_if_block$6.name,
     		type: "if",
     		source: "(145:8) {#if checkMSG.length!=0}",
     		ctx
@@ -36545,7 +36532,7 @@ var app = (function () {
     }
 
     // (159:32) <Button outline color="primary" >
-    function create_default_slot$f(ctx) {
+    function create_default_slot$g(ctx) {
     	let t;
 
     	const block = {
@@ -36562,7 +36549,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$f.name,
+    		id: create_default_slot$g.name,
     		type: "slot",
     		source: "(159:32) <Button outline color=\\\"primary\\\" >",
     		ctx
@@ -36602,7 +36589,7 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block = /*checkMSG*/ ctx[0].length != 0 && create_if_block$5(ctx);
+    	let if_block = /*checkMSG*/ ctx[0].length != 0 && create_if_block$6(ctx);
 
     	button0 = new Button({
     			props: {
@@ -36630,7 +36617,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot$f] },
+    				$$slots: { default: [create_default_slot$g] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -36957,16 +36944,11 @@ var app = (function () {
 
     /* src\front\smokersStats\GraphSmokers2.svelte generated by Svelte v3.38.2 */
 
-<<<<<<< HEAD
-    const { Object: Object_1$3, console: console_1$d } = globals;
-    const file$e = "src\\front\\smokersStats\\GraphSmokers2.svelte";
-=======
-    const { Object: Object_1$2, console: console_1$e } = globals;
+    const { Object: Object_1$3, console: console_1$e } = globals;
     const file$f = "src\\front\\smokersStats\\GraphSmokers2.svelte";
->>>>>>> a6e5c1958ec0adc62a9649e65f5a715947109cb9
 
     // (172:8) {#if checkMSG.length != 0}
-    function create_if_block$4(ctx) {
+    function create_if_block$5(ctx) {
     	let p;
     	let t0;
     	let t1;
@@ -36995,7 +36977,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$4.name,
+    		id: create_if_block$5.name,
     		type: "if",
     		source: "(172:8) {#if checkMSG.length != 0}",
     		ctx
@@ -37004,12 +36986,8 @@ var app = (function () {
     	return block;
     }
 
-<<<<<<< HEAD
     // (185:8) <Button outline color="primary" on:click={pop}>
-=======
-    // (186:8) <Button outline color="primary" on:click={pop}>
->>>>>>> a6e5c1958ec0adc62a9649e65f5a715947109cb9
-    function create_default_slot$e(ctx) {
+    function create_default_slot$f(ctx) {
     	let t;
 
     	const block = {
@@ -37026,7 +37004,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$e.name,
+    		id: create_default_slot$f.name,
     		type: "slot",
     		source: "(185:8) <Button outline color=\\\"primary\\\" on:click={pop}>",
     		ctx
@@ -37062,13 +37040,13 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block = /*checkMSG*/ ctx[0].length != 0 && create_if_block$4(ctx);
+    	let if_block = /*checkMSG*/ ctx[0].length != 0 && create_if_block$5(ctx);
 
     	button = new Button({
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot$e] },
+    				$$slots: { default: [create_default_slot$f] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -37120,11 +37098,7 @@ var app = (function () {
     			add_location(figure, file$f, 176, 4, 6965);
     			attr_dev(p1, "align", "center");
     			attr_dev(p1, "class", "svelte-1vbfi7c");
-<<<<<<< HEAD
-    			add_location(p1, file$e, 183, 4, 7302);
-=======
-    			add_location(p1, file$f, 184, 4, 7298);
->>>>>>> a6e5c1958ec0adc62a9649e65f5a715947109cb9
+    			add_location(p1, file$f, 183, 4, 7302);
     			attr_dev(main, "class", "svelte-1vbfi7c");
     			add_location(main, file$f, 169, 0, 6801);
     		},
@@ -37162,7 +37136,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$4(ctx);
+    					if_block = create_if_block$5(ctx);
     					if_block.c();
     					if_block.m(div0, null);
     				}
@@ -37373,13 +37347,8 @@ var app = (function () {
 
     	const writable_props = [];
 
-<<<<<<< HEAD
     	Object_1$3.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$d.warn(`<GraphSmokers2> was created with unknown prop '${key}'`);
-=======
-    	Object_1$2.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$e.warn(`<GraphSmokers2> was created with unknown prop '${key}'`);
->>>>>>> a6e5c1958ec0adc62a9649e65f5a715947109cb9
     	});
 
     	$$self.$capture_state = () => ({
@@ -38910,16 +38879,11 @@ var app = (function () {
 
     /* src\front\smokersStats\GraphSmokers3.svelte generated by Svelte v3.38.2 */
 
-<<<<<<< HEAD
-    const { Object: Object_1$2, console: console_1$c } = globals;
-    const file$d = "src\\front\\smokersStats\\GraphSmokers3.svelte";
-=======
-    const { Object: Object_1$1, console: console_1$d } = globals;
+    const { Object: Object_1$2, console: console_1$d } = globals;
     const file$e = "src\\front\\smokersStats\\GraphSmokers3.svelte";
->>>>>>> a6e5c1958ec0adc62a9649e65f5a715947109cb9
 
     // (101:8) {#if checkMSG.length != 0}
-    function create_if_block$3(ctx) {
+    function create_if_block$4(ctx) {
     	let p;
     	let t0;
     	let t1;
@@ -38948,7 +38912,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$3.name,
+    		id: create_if_block$4.name,
     		type: "if",
     		source: "(101:8) {#if checkMSG.length != 0}",
     		ctx
@@ -38958,7 +38922,7 @@ var app = (function () {
     }
 
     // (107:22) <Button outline color="primary" on:click={pop}>
-    function create_default_slot$d(ctx) {
+    function create_default_slot$e(ctx) {
     	let t;
 
     	const block = {
@@ -38975,7 +38939,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$d.name,
+    		id: create_default_slot$e.name,
     		type: "slot",
     		source: "(107:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
     		ctx
@@ -38993,13 +38957,13 @@ var app = (function () {
     	let p;
     	let button;
     	let current;
-    	let if_block = /*checkMSG*/ ctx[0].length != 0 && create_if_block$3(ctx);
+    	let if_block = /*checkMSG*/ ctx[0].length != 0 && create_if_block$4(ctx);
 
     	button = new Button({
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot$d] },
+    				$$slots: { default: [create_default_slot$e] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -39046,7 +39010,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$3(ctx);
+    					if_block = create_if_block$4(ctx);
     					if_block.c();
     					if_block.m(div0, null);
     				}
@@ -39196,13 +39160,8 @@ var app = (function () {
 
     	const writable_props = [];
 
-<<<<<<< HEAD
     	Object_1$2.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$c.warn(`<GraphSmokers3> was created with unknown prop '${key}'`);
-=======
-    	Object_1$1.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$d.warn(`<GraphSmokers3> was created with unknown prop '${key}'`);
->>>>>>> a6e5c1958ec0adc62a9649e65f5a715947109cb9
     	});
 
     	$$self.$capture_state = () => ({
@@ -39256,18 +39215,50 @@ var app = (function () {
 
     /* src\front\smokersStats\integrations\RentalStats.svelte generated by Svelte v3.38.2 */
 
-<<<<<<< HEAD
-    const { Object: Object_1$1, console: console_1$b } = globals;
-    const file$c = "src\\front\\smokersStats\\integrations\\RentalStats.svelte";
-
-    // (153:22) <Button outline color="primary" on:click={pop}>
-=======
-    const { Object: Object_1, console: console_1$c } = globals;
+    const { Object: Object_1$1, console: console_1$c } = globals;
     const file$d = "src\\front\\smokersStats\\integrations\\RentalStats.svelte";
 
-    // (149:22) <Button outline color="primary" on:click={pop}>
->>>>>>> a6e5c1958ec0adc62a9649e65f5a715947109cb9
-    function create_default_slot$c(ctx) {
+    // (164:8) {#if checkMSG.length!=0}
+    function create_if_block$3(ctx) {
+    	let p;
+    	let t0;
+    	let t1;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t0 = text("ERROR: ");
+    			t1 = text(/*checkMSG*/ ctx[0]);
+    			attr_dev(p, "class", "msgRed svelte-9c2r18");
+    			set_style(p, "color", "#9d1c24");
+    			add_location(p, file$d, 164, 10, 6065);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t0);
+    			append_dev(p, t1);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*checkMSG*/ 1) set_data_dev(t1, /*checkMSG*/ ctx[0]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$3.name,
+    		type: "if",
+    		source: "(164:8) {#if checkMSG.length!=0}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (170:22) <Button outline color="primary" on:click={pop}>
+    function create_default_slot$d(ctx) {
     	let t;
 
     	const block = {
@@ -39284,9 +39275,9 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$c.name,
+    		id: create_default_slot$d.name,
     		type: "slot",
-    		source: "(153:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
+    		source: "(170:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
     		ctx
     	});
 
@@ -39295,17 +39286,20 @@ var app = (function () {
 
     function create_fragment$d(ctx) {
     	let main;
-    	let div;
-    	let t;
+    	let div0;
+    	let t0;
+    	let div1;
+    	let t1;
     	let p;
     	let button;
     	let current;
+    	let if_block = /*checkMSG*/ ctx[0].length != 0 && create_if_block$3(ctx);
 
     	button = new Button({
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot$c] },
+    				$$slots: { default: [create_default_slot$d] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -39316,41 +39310,58 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			main = element("main");
-    			div = element("div");
-    			t = space();
+    			div0 = element("div");
+    			if (if_block) if_block.c();
+    			t0 = space();
+    			div1 = element("div");
+    			t1 = space();
     			p = element("p");
     			create_component(button.$$.fragment);
-    			attr_dev(div, "id", "chartDiv");
-    			set_style(div, "max-width", "740px");
-    			set_style(div, "height", "400px");
-    			set_style(div, "margin", "0px auto");
-<<<<<<< HEAD
-    			add_location(div, file$c, 151, 4, 5364);
+    			attr_dev(div0, "class", "svelte-9c2r18");
+    			add_location(div0, file$d, 162, 4, 6014);
+    			attr_dev(div1, "id", "chartDiv");
+    			set_style(div1, "max-width", "740px");
+    			set_style(div1, "height", "400px");
+    			set_style(div1, "margin", "0px auto");
+    			attr_dev(div1, "class", "svelte-9c2r18");
+    			add_location(div1, file$d, 168, 4, 6164);
     			attr_dev(p, "align", "center");
-    			add_location(p, file$c, 152, 4, 5446);
-    			add_location(main, file$c, 149, 0, 5350);
-=======
-    			add_location(div, file$d, 147, 4, 5249);
-    			attr_dev(p, "align", "center");
-    			add_location(p, file$d, 148, 4, 5331);
-    			add_location(main, file$d, 145, 0, 5235);
->>>>>>> a6e5c1958ec0adc62a9649e65f5a715947109cb9
+    			attr_dev(p, "class", "svelte-9c2r18");
+    			add_location(p, file$d, 169, 4, 6246);
+    			attr_dev(main, "class", "svelte-9c2r18");
+    			add_location(main, file$d, 161, 0, 6002);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
-    			append_dev(main, div);
-    			append_dev(main, t);
+    			append_dev(main, div0);
+    			if (if_block) if_block.m(div0, null);
+    			append_dev(main, t0);
+    			append_dev(main, div1);
+    			append_dev(main, t1);
     			append_dev(main, p);
     			mount_component(button, p, null);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
+    			if (/*checkMSG*/ ctx[0].length != 0) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block$3(ctx);
+    					if_block.c();
+    					if_block.m(div0, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 16384) {
+    			if (dirty & /*$$scope*/ 65536) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -39367,6 +39378,7 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
+    			if (if_block) if_block.d();
     			destroy_component(button);
     		}
     	};
@@ -39403,6 +39415,8 @@ var app = (function () {
 
     	var rentalProvince = [];
     	var rentalRent = [];
+    	var rentalMeter = [];
+    	var rentalSalary = [];
     	var rentalFin = [];
 
     	//Variables globales
@@ -39418,7 +39432,7 @@ var app = (function () {
     			smokersData = await res.json();
     			console.log("Received Smokers Data.");
     		} else {
-    			checkMSG = res.status + ": " + res.statusText;
+    			$$invalidate(0, checkMSG = res.status + ": " + res.statusText);
     			console.log("ERROR al cargar los datos de SMOKERS");
     		}
     	}
@@ -39432,7 +39446,7 @@ var app = (function () {
     			rentalData = await res.json();
     			console.log("Received Rental Data.");
     		} else {
-    			checkMSG = res.status + ": " + res.statusText;
+    			$$invalidate(0, checkMSG = res.status + ": " + res.statusText);
     			console.log("ERROR al cargar los datos de RENTALS");
     		}
     	}
@@ -39464,10 +39478,9 @@ var app = (function () {
     		rentalData.forEach(stat => {
     			rentalProvince.push(stat["autonomous_community"]);
     			rentalRent.push(stat["rent"]);
+    			rentalMeter.push(stat["meter"]);
+    			rentalSalary.push(stat["salary"]);
     		});
-
-    		smokerChartProvince.sort();
-    		rentalProvince.sort();
 
     		//Comprueba que la gráfica no aparezca vacía y vuelve atrás
     		if (smokersData.length == 0) {
@@ -39479,10 +39492,10 @@ var app = (function () {
     		//Bucle para reemplazar las provincias
     		for (var i = 0; i < rentalRent.length; i++) {
     			rentalFin.push(rentalProvince[i].allReplace({
-    				andalucia: "Andalucía",
-    				cataluna: "Cataluña",
+    				"andalucia": "Andalucía",
+    				"cataluna": "Cataluña",
     				"castilla-y-leon": "Castilla y León",
-    				comunidad_de_madrid: "Comunidad de Madrid"
+    				"comunidad_de_madrid": "Comunidad de Madrid"
     			}));
     		}
 
@@ -39498,6 +39511,8 @@ var app = (function () {
     			for (var j = 0; j < rentalFin.length; j++) {
     				if (objDaily.province == rentalFin[j]) {
     					objDaily.rent = parseFloat(rentalRent[j]); //si coincide, se añade el campo renta al objeto
+    					objDaily.meter = parseFloat(rentalMeter[j]);
+    					objDaily.salary = parseFloat(rentalSalary[j]);
     				}
     			}
 
@@ -39511,21 +39526,38 @@ var app = (function () {
 
     		//Reúso del nido para cada uno de los diferentes datos del objeto que se quiere mostrar (rollup calls)
     		var series = [
-    			jscharting.merge({ name: "Fumadores diarios (en miles)" }, nido.rollup("dailySmoker").series(dataFin)[0]),
+    			jscharting.merge({ name: "Fumadores diarios (en miles)" }, { color: "blue" }, nido.rollup("dailySmoker").series(dataFin)[0]),
     			jscharting.merge(
     				{
-    					name: "Renta media", //segunda parte de la serie, rent
+    					name: "Renta media", //segunda parte de la serie, rent   
     					
     				},
+    				{ color: "red" },
     				nido.rollup("rent").series(dataFin)[0]
+    			),
+    			jscharting.merge(
+    				{
+    					name: "Metros de media", //tercera parte de la serie, meter
+    					
+    				},
+    				{ color: "yellow" },
+    				nido.rollup("meter").series(dataFin)[0]
+    			),
+    			jscharting.merge(
+    				{
+    					name: "Salarios medios (en miles)", //cuarta parte de la serie, salary
+    					
+    				},
+    				{ color: "green" },
+    				nido.rollup("salary").series(dataFin)[0]
     			)
-    		]; //segunda parte de la serie, rent
+    		]; //cuarta parte de la serie, salary
 
     		//Convert data to series array.
     		//Convierte los datos en grafo
     		jscharting.chart("chartDiv", {
     			debug: true,
-    			type: "column",
+    			type: "column aqua",
     			title_label_text: "SmokerVSRental",
     			yAxis: { label_text: "Unidades" },
     			xAxis: { label_text: "Comunidad Autónoma" },
@@ -39533,18 +39565,13 @@ var app = (function () {
     		});
     	}
 
-    	//Llamada a la función constructora
+    	//Llamada a la función 
     	loadGraph();
 
     	const writable_props = [];
 
-<<<<<<< HEAD
     	Object_1$1.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$b.warn(`<RentalStats> was created with unknown prop '${key}'`);
-=======
-    	Object_1.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$c.warn(`<RentalStats> was created with unknown prop '${key}'`);
->>>>>>> a6e5c1958ec0adc62a9649e65f5a715947109cb9
     	});
 
     	$$self.$capture_state = () => ({
@@ -39562,6 +39589,8 @@ var app = (function () {
     		rentalData,
     		rentalProvince,
     		rentalRent,
+    		rentalMeter,
+    		rentalSalary,
     		rentalFin,
     		dataFin,
     		getSmoker,
@@ -39572,13 +39601,15 @@ var app = (function () {
     	$$self.$inject_state = $$props => {
     		if ("visible" in $$props) visible = $$props.visible;
     		if ("color" in $$props) color = $$props.color;
-    		if ("checkMSG" in $$props) checkMSG = $$props.checkMSG;
+    		if ("checkMSG" in $$props) $$invalidate(0, checkMSG = $$props.checkMSG);
     		if ("smokersData" in $$props) smokersData = $$props.smokersData;
     		if ("smokerChartProvince" in $$props) smokerChartProvince = $$props.smokerChartProvince;
     		if ("smokerChartDaily" in $$props) smokerChartDaily = $$props.smokerChartDaily;
     		if ("rentalData" in $$props) rentalData = $$props.rentalData;
     		if ("rentalProvince" in $$props) rentalProvince = $$props.rentalProvince;
     		if ("rentalRent" in $$props) rentalRent = $$props.rentalRent;
+    		if ("rentalMeter" in $$props) rentalMeter = $$props.rentalMeter;
+    		if ("rentalSalary" in $$props) rentalSalary = $$props.rentalSalary;
     		if ("rentalFin" in $$props) rentalFin = $$props.rentalFin;
     		if ("dataFin" in $$props) dataFin = $$props.dataFin;
     	};
@@ -39587,7 +39618,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [];
+    	return [checkMSG];
     }
 
     class RentalStats extends SvelteComponentDev {
@@ -39606,12 +39637,11 @@ var app = (function () {
 
     /* src\front\smokersStats\integrations\Hostelries.svelte generated by Svelte v3.38.2 */
 
-<<<<<<< HEAD
-    const { Object: Object_1, console: console_1$a } = globals;
-    const file$b = "src\\front\\smokersStats\\integrations\\Hostelries.svelte";
+    const { Object: Object_1, console: console_1$b } = globals;
+    const file$c = "src\\front\\smokersStats\\integrations\\Hostelries.svelte";
 
     // (184:22) <Button outline color="primary" on:click={pop}>
-    function create_default_slot$b(ctx) {
+    function create_default_slot$c(ctx) {
     	let t;
 
     	const block = {
@@ -39628,7 +39658,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$b.name,
+    		id: create_default_slot$c.name,
     		type: "slot",
     		source: "(184:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
     		ctx
@@ -39637,13 +39667,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$b(ctx) {
-=======
-    const { console: console_1$b } = globals;
-    const file$c = "src\\front\\smokersStats\\integrations\\Hostelries.svelte";
-
     function create_fragment$c(ctx) {
->>>>>>> a6e5c1958ec0adc62a9649e65f5a715947109cb9
     	let main;
     	let div;
     	let t;
@@ -39655,7 +39679,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot$b] },
+    				$$slots: { default: [create_default_slot$c] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -39674,15 +39698,10 @@ var app = (function () {
     			set_style(div, "max-width", "770px");
     			set_style(div, "height", "600px");
     			set_style(div, "margin", "0px auto");
-<<<<<<< HEAD
-    			add_location(div, file$b, 182, 4, 6397);
+    			add_location(div, file$c, 182, 4, 6397);
     			attr_dev(p, "align", "center");
-    			add_location(p, file$b, 183, 4, 6487);
-    			add_location(main, file$b, 181, 0, 6385);
-=======
-    			add_location(div, file$c, 130, 4, 3948);
-    			add_location(main, file$c, 129, 0, 3936);
->>>>>>> a6e5c1958ec0adc62a9649e65f5a715947109cb9
+    			add_location(p, file$c, 183, 4, 6487);
+    			add_location(main, file$c, 181, 0, 6385);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -39913,13 +39932,8 @@ var app = (function () {
     	loadGraph();
     	const writable_props = [];
 
-<<<<<<< HEAD
     	Object_1.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$a.warn(`<Hostelries> was created with unknown prop '${key}'`);
-=======
-    	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$b.warn(`<Hostelries> was created with unknown prop '${key}'`);
->>>>>>> a6e5c1958ec0adc62a9649e65f5a715947109cb9
     	});
 
     	$$self.$capture_state = () => ({
@@ -44843,24 +44857,24 @@ var app = (function () {
     			t8 = space();
     			p1 = element("p");
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 77, 4, 1782);
+    			add_location(script0, file$3, 77, 4, 1765);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/highcharts-more.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 78, 4, 1874);
+    			add_location(script1, file$3, 78, 4, 1857);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 79, 4, 1971);
+    			add_location(script2, file$3, 79, 4, 1954);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$3, 80, 4, 2070);
+    			add_location(script3, file$3, 80, 4, 2053);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$3, 85, 2, 2237);
+    			add_location(div, file$3, 85, 2, 2220);
     			attr_dev(figure, "class", "highcharts-figure svelte-jt8hhq");
-    			add_location(figure, file$3, 84, 1, 2199);
+    			add_location(figure, file$3, 84, 1, 2182);
     			attr_dev(a, "href", "https://www.balldontlie.io/api/v1/players");
-    			add_location(a, file$3, 88, 5, 2285);
-    			add_location(h4, file$3, 88, 1, 2281);
-    			add_location(p0, file$3, 89, 1, 2355);
-    			add_location(p1, file$3, 91, 1, 2435);
+    			add_location(a, file$3, 88, 5, 2268);
+    			add_location(h4, file$3, 88, 1, 2264);
+    			add_location(p0, file$3, 89, 1, 2338);
+    			add_location(p1, file$3, 91, 1, 2418);
     			attr_dev(main, "class", "svelte-jt8hhq");
-    			add_location(main, file$3, 83, 0, 2190);
+    			add_location(main, file$3, 83, 0, 2173);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -44980,7 +44994,7 @@ var app = (function () {
     	Highcharts.chart("container", {
     		chart: { type: "packedbubble", height: "100%" },
     		title: {
-    			text: "Gráfica que representa el gasto total y el ID de los jugadores de la NBA de posición \"G\"."
+    			text: "Gráfica que representa el ID de los jugadores de la NBA de posición \"G\"."
     		},
     		tooltip: {
     			useHTML: true,

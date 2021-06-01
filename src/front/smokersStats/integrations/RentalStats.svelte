@@ -22,6 +22,8 @@
     var rentalData = [];
     var rentalProvince = [];
     var rentalRent = [];
+    var rentalMeter = [];
+    var rentalSalary = [];
     var rentalFin = [];
 
     //Variables globales
@@ -78,9 +80,10 @@
         rentalData.forEach((stat) => {
             rentalProvince.push(stat["autonomous_community"]);
             rentalRent.push(stat["rent"]);
+            rentalMeter.push(stat["meter"]);
+            rentalSalary.push(stat["salary"]);
         });
-        smokerChartProvince.sort();
-        rentalProvince.sort();
+        
 
         //Comprueba que la gráfica no aparezca vacía y vuelve atrás
         if (smokersData.length == 0) {
@@ -93,8 +96,9 @@
         //Bucle para reemplazar las provincias
         for (var i = 0; i < rentalRent.length; i++) {
             rentalFin.push(rentalProvince[i]
-                .allReplace({andalucia: "Andalucía", cataluna: "Cataluña", "castilla-y-leon": "Castilla y León", comunidad_de_madrid: "Comunidad de Madrid",}));
+                .allReplace({"andalucia": "Andalucía", "cataluna": "Cataluña", "castilla-y-leon": "Castilla y León", "comunidad_de_madrid": "Comunidad de Madrid",}));
         }
+        
 
         //Tratamiento de los datos: al final quedan todos los objetos en un array dataFin, que será la serie del gráfico
         for (var i = 0; i < smokersData.length; i++) {
@@ -106,6 +110,8 @@
             for (var j = 0; j < rentalFin.length; j++) {
                 if (objDaily.province == rentalFin[j]) {
                     objDaily.rent = parseFloat(rentalRent[j]); //si coincide, se añade el campo renta al objeto
+                    objDaily.meter = parseFloat(rentalMeter[j]);
+                    objDaily.salary = parseFloat(rentalSalary[j]);
                 }
             }
             dataFin.push(objDaily);
@@ -113,8 +119,6 @@
 
         console.log(dataFin);
 
-        
-        
 
         //Define del nido con el que se desarrolla la gráfica
         var nido = JSC.nest().key("province");
@@ -122,12 +126,20 @@
         //Reúso del nido para cada uno de los diferentes datos del objeto que se quiere mostrar (rollup calls)
         var series = [
             JSC.merge(
-                { name: "Fumadores diarios (en miles)" },
+                { name: "Fumadores diarios (en miles)" },{color: "blue"},
                 nido.rollup("dailySmoker").series(dataFin)[0] //primera parte de la serie, dailySmoker
             ),
             JSC.merge(
-                { name: "Renta media" },
-                nido.rollup("rent").series(dataFin)[0]  //segunda parte de la serie, rent
+                { name: "Renta media" },{color: "red"},
+                nido.rollup("rent").series(dataFin)[0]  //segunda parte de la serie, rent   
+            ),
+            JSC.merge(
+                { name: "Metros de media" },{color: "yellow"},
+                nido.rollup("meter").series(dataFin)[0]  //tercera parte de la serie, meter
+            ),
+            JSC.merge(
+                { name: "Salarios medios (en miles)" },{color: "green"},
+                nido.rollup("salary").series(dataFin)[0]  //cuarta parte de la serie, salary
             ),
         ];
 
@@ -143,13 +155,37 @@
         });
     }
 
-    //Llamada a la función constructora
+    //Llamada a la función 
     loadGraph();
 </script>
 
 <main>
+    <div>
+        {#if checkMSG.length!=0}
+          <p class="msgRed" style="color: #9d1c24">ERROR: {checkMSG}</p>
+        {/if}
+      </div>
 
     <div id="chartDiv" style="max-width: 740px;height: 400px;margin: 0px auto"/>
     <p align="center"><Button outline color="primary" on:click={pop}>Atrás</Button></p>
 
 </main>
+
+<style>
+    main {
+        text-align: center;
+        padding: 1em;
+        margin: 0 auto;
+      }
+      div{
+        margin-bottom: 15px;
+      }
+      p {
+        display: inline;
+      }
+      .msgRed {
+        padding: 8px;
+        background-color: #ffffff;
+      }
+  
+  </style>
