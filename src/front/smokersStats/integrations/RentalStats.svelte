@@ -135,7 +135,7 @@
         //Convierte los datos en grafo
         var chart = JSC.chart("chartDiv", {
             debug: true,
-            type: "column",
+            type: "column aqua",
             title_label_text: "SmokerVSRental",
             yAxis: { label_text: "Unidades" },
             xAxis: { label_text: "Comunidad Autónoma" },

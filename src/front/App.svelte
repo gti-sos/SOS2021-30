@@ -34,6 +34,7 @@
   import Cultura from "./weightsStats/integrations/culturaBASE.svelte";
   import Stress from "./weightsStats/integrations/stressStats.svelte";
   import Prueba from "./weightsStats/integrations/pruebaMorris.svelte";
+  import NBA from "./weightsStats/integrations/integracionExt1.svelte";
   import GroupGraph from "./GroupGraph.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
   import GraphLife from "./lifeStats/GraphLife.svelte";
@@ -63,6 +64,7 @@
     "/integrations/culturaBASE" : Cultura,
     "/integrations/stress-stats" : Stress,
     "/integrations/prueba" : Prueba,
+    "/integrations/NBA-position" : NBA,
     "/smokers-stats" : SmokerStats,
     "/smokers-stats/:province/:year" : SmokersItems,
     "/smokers-graph" : GraphSmokers,
