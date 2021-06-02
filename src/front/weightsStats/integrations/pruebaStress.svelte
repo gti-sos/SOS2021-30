@@ -2,21 +2,20 @@
     import { pop } from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
 
+
     const BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
     //const culturaBASE_PATH = "https://sos2021-26.herokuapp.com/integration/api/v2/culturaBASE";
-    const culturaBASE_PATH = "/proxyHeroku/integration/api/v2/culturaBASE";
+    const stressBASE_PATH = "/proxyStress/api/v2/stress_stats/";
 
     let weightStats = [];
     let weightProvinces = [];
-    let weightNormalWeight = [];
+    let weightObesity = [];
 
-    let culturaStats = [];
-    let culturaProvinces = [];
-    let culturaFundraising = [];
+    let stressStats = [];
+    let stressProvinces = [];
+    let stressPoblation = [];
 
     async function getWeight(){
-        await fetch(BASE_WEIGHTS_PATH+"/loadInitialData");
-        console.log("Se cargan los datos desde la dirección: " + BASE_WEIGHTS_PATH+"/loadInitialData");
         const res = await fetch(BASE_WEIGHTS_PATH);
         if(res.ok){
             weightStats = await res.json();
@@ -24,11 +23,11 @@
         }
     }
 
-    async function getCultura(){
-        const res = await fetch(culturaBASE_PATH);
+    async function getStress(){
+        const res = await fetch(stressBASE_PATH);
         if(res.ok){
-            culturaStats = await res.json();
-            console.log("Recived " + culturaStats.length + " cultura data...");
+            stressStats = await res.json();
+            console.log("Recived " + stressStats.length + " stress data...");
         }
     }
 
@@ -36,20 +35,28 @@
         console.log("Fetching data...");
 
         await getWeight();
-        await getCultura();
+        await getStress();
         console.log("Procesing all data...");
 
         weightStats.forEach((stat) => {
             if(stat.year == 2017){
-                weightProvinces.push(stat.provinces);
-                weightNormalWeight.push(stat["normal_weight"]);
+                if(stat.provinces == "Cataluña"
+                || stat.provinces == "Melilla"
+                || stat.provinces == "Aragón"
+                || stat.provinces == "Navarra"
+                || stat.provinces == "Islas Baleares"
+                || stat.provinces == "Comunidad de Madrid"){
+                    weightProvinces.push(stat.provinces);
+                    weightObesity.push(stat["obesity"]);
+                }
+
             }
 
         });
 
-        culturaStats.forEach((stat) => {
-            culturaProvinces.push(stat.district);
-            culturaFundraising.push(stat["fundraising"]);
+        stressStats.forEach((stat) => {
+            stressProvinces.push(stat.country);
+            stressPoblation.push(stat["stress_population"]);
         });
 
         console.log("Generando datos para la gráfica...");
@@ -58,7 +65,7 @@
                 type: 'area'
             },
             title: {
-                text: 'Integración CulturalBASE API'
+                text: 'Integración Stress-Stats API'
             },
             xAxis: {
                 title: {
@@ -73,10 +80,10 @@
             },
             series: [{
                 name: 'Porcentaje de peso normal en el año 2017',
-                data: weightNormalWeight
+                data: weightObesity
             }, {
-                name: 'Recaudación total de la industria cinematográfica(contada por millones)',
-                data: culturaFundraising
+                name: 'Datos de estres de la poblacion(radio/media)',
+                data: stressPoblation
             }]
         });
         
@@ -97,8 +104,7 @@
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            Gráfico de área en el que se representa el porcentaje de peso normal según IMC por comunidades autónomas en el año 2017
-            integrado con los datos de la recaudación total en la industria cinematográfica en cada comunidad autónoma.
+            Gráfico de líneas en el que se representa el porcentaje por comunidades autónomas en el año 2017 de cada API
         </p>
     </figure>
     
