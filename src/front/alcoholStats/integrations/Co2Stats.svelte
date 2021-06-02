@@ -51,7 +51,7 @@
             }],
             yAxis: [{ // Primary yAxis
                 labels: {
-                    format: '{value}ppm',
+                    format: '{value} ppm',
                     style: {
                         color: Highcharts.getOptions().colors[1]
                     }
@@ -105,7 +105,7 @@
                 type: 'spline',
                 data: tendencia,
                 tooltip: {
-                    valueSuffix: 'ppm'
+                    valueSuffix: ' ppm'
                 }
             }]
         });

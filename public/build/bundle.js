@@ -32372,15 +32372,15 @@ var app = (function () {
     			t4 = space();
     			h6 = element("h6");
     			h6.textContent = "Gráfico";
-    			add_location(style, file$k, 130, 4, 4135);
+    			add_location(style, file$k, 130, 4, 4137);
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-1icl312");
-    			add_location(div, file$k, 172, 6, 5268);
+    			add_location(div, file$k, 172, 6, 5270);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$k, 171, 4, 5226);
-    			add_location(br0, file$k, 174, 4, 5313);
-    			add_location(br1, file$k, 175, 4, 5323);
-    			add_location(h6, file$k, 176, 4, 5333);
+    			add_location(figure, file$k, 171, 4, 5228);
+    			add_location(br0, file$k, 174, 4, 5315);
+    			add_location(br1, file$k, 175, 4, 5325);
+    			add_location(h6, file$k, 176, 4, 5335);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -32428,7 +32428,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t = text(/*errorMsg*/ ctx[0]);
-    			add_location(p, file$k, 128, 6, 4099);
+    			add_location(p, file$k, 128, 6, 4101);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -32536,18 +32536,18 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$k, 117, 4, 3645);
+    			add_location(script0, file$k, 117, 4, 3647);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$k, 118, 4, 3716);
+    			add_location(script1, file$k, 118, 4, 3718);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$k, 119, 4, 3794);
+    			add_location(script2, file$k, 119, 4, 3796);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$k, 120, 4, 3874);
-    			add_location(h2, file$k, 125, 6, 4021);
+    			add_location(script3, file$k, 120, 4, 3876);
+    			add_location(h2, file$k, 125, 6, 4023);
     			attr_dev(div, "class", "svelte-1icl312");
-    			add_location(div, file$k, 124, 4, 4008);
+    			add_location(div, file$k, 124, 4, 4010);
     			attr_dev(main, "class", "svelte-1icl312");
-    			add_location(main, file$k, 123, 2, 3996);
+    			add_location(main, file$k, 123, 2, 3998);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -32680,7 +32680,7 @@ var app = (function () {
     				{
     					// Primary yAxis
     					labels: {
-    						format: "{value}ppm",
+    						format: "{value} ppm",
     						style: { color: Highcharts.getOptions().colors[1] }
     					},
     					title: {
@@ -32723,7 +32723,7 @@ var app = (function () {
     					name: "Tendencia",
     					type: "spline",
     					data: tendencia,
-    					tooltip: { valueSuffix: "ppm" }
+    					tooltip: { valueSuffix: " ppm" }
     				}
     			]
     		});
