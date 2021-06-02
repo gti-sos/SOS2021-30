@@ -58469,7 +58469,7 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$3 = "src\\front\\weightsStats\\integrations\\integracionExt3.svelte";
 
-    // (123:2) <Button outline color="secondary" on:click="{pop}">
+    // (70:2) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -58489,7 +58489,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(123:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(70:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -58497,23 +58497,25 @@ var app = (function () {
     }
 
     function create_fragment$3(ctx) {
+    	let link;
     	let script0;
     	let script0_src_value;
     	let script1;
     	let script1_src_value;
     	let script2;
     	let script2_src_value;
-    	let script3;
-    	let script3_src_value;
-    	let script4;
-    	let script4_src_value;
     	let t0;
     	let main;
-    	let figure;
+    	let h1;
+    	let t2;
     	let div;
-    	let t1;
-    	let p;
     	let t3;
+    	let p0;
+    	let t5;
+    	let p1;
+    	let t6;
+    	let a;
+    	let t8;
     	let button;
     	let current;
     	let mounted;
@@ -58533,59 +58535,71 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			link = element("link");
     			script0 = element("script");
     			script1 = element("script");
     			script2 = element("script");
-    			script3 = element("script");
-    			script4 = element("script");
     			t0 = space();
     			main = element("main");
-    			figure = element("figure");
+    			h1 = element("h1");
+    			h1.textContent = "Estadística de obesidad integradas con el estrés";
+    			t2 = space();
     			div = element("div");
-    			t1 = space();
-    			p = element("p");
-    			p.textContent = "Gráfico que muestra el resultado de la liga española indicando los puntos, goles a favor y goles en contra de cada equipo.";
     			t3 = space();
+    			p0 = element("p");
+    			p0.textContent = "Gráfico que muestra el resultado de la liga española indicando los puntos, goles a favor y goles en contra de cada equipo.";
+    			t5 = space();
+    			p1 = element("p");
+    			t6 = text("Datos obtenidos de: ");
+    			a = element("a");
+    			a.textContent = "https://apifootball.com/";
+    			t8 = space();
     			create_component(button.$$.fragment);
-    			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 104, 2, 2840);
-    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 105, 2, 2909);
-    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 106, 2, 2988);
-    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$3, 107, 2, 3064);
-    			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$3, 108, 2, 3142);
-    			attr_dev(div, "id", "container");
-    			add_location(div, file$3, 116, 4, 3316);
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$3, 117, 4, 3348);
-    			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$3, 115, 2, 3276);
-    			add_location(main, file$3, 113, 0, 3264);
+    			attr_dev(link, "rel", "stylesheet");
+    			attr_dev(link, "href", "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css");
+    			add_location(link, file$3, 55, 4, 2126);
+    			if (script0.src !== (script0_src_value = "//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")) attr_dev(script0, "src", script0_src_value);
+    			add_location(script0, file$3, 56, 4, 2222);
+    			if (script1.src !== (script1_src_value = "//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$3, 57, 4, 2310);
+    			if (script2.src !== (script2_src_value = "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js")) attr_dev(script2, "src", script2_src_value);
+    			add_location(script2, file$3, 58, 4, 2401);
+    			set_style(h1, "text-align", "center");
+    			add_location(h1, file$3, 64, 4, 2545);
+    			attr_dev(div, "id", "myfirstchart");
+    			set_style(div, "height", "250px");
+    			add_location(div, file$3, 65, 4, 2635);
+    			add_location(p0, file$3, 66, 4, 2693);
+    			attr_dev(a, "href", "https://apifootball.com/");
+    			add_location(a, file$3, 68, 25, 2851);
+    			add_location(p1, file$3, 68, 2, 2828);
+    			add_location(main, file$3, 63, 0, 2533);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
+    			append_dev(document.head, link);
     			append_dev(document.head, script0);
     			append_dev(document.head, script1);
     			append_dev(document.head, script2);
-    			append_dev(document.head, script3);
-    			append_dev(document.head, script4);
     			insert_dev(target, t0, anchor);
     			insert_dev(target, main, anchor);
-    			append_dev(main, figure);
-    			append_dev(figure, div);
-    			append_dev(figure, t1);
-    			append_dev(figure, p);
+    			append_dev(main, h1);
+    			append_dev(main, t2);
+    			append_dev(main, div);
     			append_dev(main, t3);
+    			append_dev(main, p0);
+    			append_dev(main, t5);
+    			append_dev(main, p1);
+    			append_dev(p1, t6);
+    			append_dev(p1, a);
+    			append_dev(main, t8);
     			mount_component(button, main, null);
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(script4, "load", /*loadGraph*/ ctx[0], false, false, false);
+    				dispose = listen_dev(script2, "load", /*loadGraph*/ ctx[0], false, false, false);
     				mounted = true;
     			}
     		},
@@ -58608,11 +58622,10 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
+    			detach_dev(link);
     			detach_dev(script0);
     			detach_dev(script1);
     			detach_dev(script2);
-    			detach_dev(script3);
-    			detach_dev(script4);
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
     			destroy_component(button);
@@ -58660,55 +58673,42 @@ var app = (function () {
     		console.log("Generando datos...");
     		console.log("We have " + equipo.length + " teams in the league");
     		console.log("We hace " + puntos.length + " datas from de points of each team");
-    		console.log("We hace " + golesFavor.length + " datas from de goals of each team");
+    		console.log("We hace " + golesFavor.length + " datas from the goals of each team");
+    		console.log("We hace " + golesContra.length + " datas from the goals against each team");
 
-    		Highcharts.chart("container", {
-    			title: { text: "Gráfica La Liga" },
-    			yAxis: { title: { text: "Número" } },
-    			xAxis: {
-    				title: { text: "Equipo" },
-    				categories: equipo
-    			},
-    			legend: {
-    				layout: "vertical",
-    				align: "right",
-    				verticalAlign: "middle"
-    			},
-    			annootations: [
-    				{
-    					labels: [
-    						{ point: "date", text: "" },
-    						{
-    							point: "min",
-    							text: "Min",
-    							backgroundColor: "white"
-    						}
-    					]
-    				}
-    			],
-    			series: [
-    				{ name: "Puntos", data: puntos },
-    				{ name: "Goles a favor", data: golesFavor },
-    				{
-    					name: "Goles en contra",
-    					data: golesContra
-    				}
-    			],
-    			responsive: {
-    				rules: [
+    		new Morris.Bar({
+    				element: "myfirstchart",
+    				//Tratamiento de datos de la integración manual
+    				data: [
     					{
-    						condition: { maxWidth: 500 },
-    						chartOptions: {
-    							legend: {
-    								layout: "horizontal",
-    								align: "center",
-    								verticalAlign: "bottom"
-    							}
-    						}
+    						equipo: "Atletico de Madrid",
+    						value: puntos[0],
+    						value2: golesFavor[0],
+    						value3: golesContra[0]
+    					},
+    					{
+    						equipo: "Madrid",
+    						value: puntos[1],
+    						value2: golesFavor[1],
+    						value3: golesContra[1]
+    					},
+    					{
+    						equipo: "Barcelona",
+    						value: puntos[2],
+    						value2: golesFavor[2],
+    						value3: golesContra[2]
+    					},
+    					{
+    						equipo: "Sevilla",
+    						value: puntos[3],
+    						value2: golesFavor[2],
+    						value3: golesContra[3]
     					}
-    				]
-    			}
-    		});
+    				],
+    				xkey: "equipo",
+    				ykeys: ["value", "value2", "value3"],
+    				labels: ["Puntos", "Goles a favor", "Goles en contra"]
+    			});
     	}
 
     	const writable_props = [];
