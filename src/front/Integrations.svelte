@@ -43,8 +43,9 @@
       <CardBody>
         <CardSubtitle />
         <CardText />
-        <a href="/#/integrations/rentals"><Button color="primary">Estadísticas Rental-Smoker</Button></a>
-        <a href="/#/integrations/hostelries"><Button color="primary">Estadísticas Hostelries-Smoker</Button></a>
+        <a href="/#/integrations/rentals"><Button color="primary">Estadísticas Rental-Smoker (G07)</Button></a>
+        <a href="/#/integrations/hostelries"><Button color="primary">Estadísticas Hostelries-Smoker (G26)</Button></a>
+        <a href="/#/integrations/canada"><Button color="primary">Estadísticas Vacaciones en Canadá (EXT)</Button></a>
       </CardBody>
     </Card>
   </div>
@@ -56,9 +57,10 @@
       <CardBody>
         <CardSubtitle />
         <CardText />
-        <a href="/#/integrations/culturaBASE"><Button color="primary">Estadísticas CulturaBASE-Weights</Button></a>
-        <a href="/#/integrations/prueba"><Button color="primary">Estadísticas Stress-Stats-Weights</Button></a>
-        <a href="/#/integrations/NBA-position"><Button color="primary">Posiciones NBA</Button></a>
+        <a href="/#/integrations/culturaBASE"><Button color="primary">Estadísticas CulturaBASE-Weights (G26)</Button></a>
+        <a href="/#/integrations/stress-stats"><Button color="primary">Estadísticas Stress-Stats-Weights (G11)</Button></a>
+        <a href="/#/integrations/NBA-position"><Button color="primary">Posiciones NBA (Ext1)</Button></a>
+        <a href="/#/integrations/covid-integratin"><Button color="primary">Integración COVID (Ext2)</Button></a>
       </CardBody>
     </Card>
   </div>

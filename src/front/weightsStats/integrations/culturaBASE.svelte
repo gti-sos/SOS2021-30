@@ -15,6 +15,8 @@
     let culturaFundraising = [];
 
     async function getWeight(){
+        await fetch(BASE_WEIGHTS_PATH+"/loadInitialData");
+        console.log("Se cargan los datos desde la dirección: " + BASE_WEIGHTS_PATH+"/loadInitialData");
         const res = await fetch(BASE_WEIGHTS_PATH);
         if(res.ok){
             weightStats = await res.json();

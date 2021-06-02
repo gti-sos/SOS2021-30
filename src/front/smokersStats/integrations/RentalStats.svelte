@@ -8,7 +8,7 @@
     let color = "danger";
     var checkMSG = "";
 
-    //Uso API grupo 05 rental-arms
+    //Uso API grupo 07 rentals
     const BASE_RENTALS_API_PATH =
         "https://sos2021-07.herokuapp.com/api/v1/integration/rentals";
     const BASE_SMOKERS_PATH = "/api/v3/smokers-stats";
@@ -103,18 +103,18 @@
         //Tratamiento de los datos: al final quedan todos los objetos en un array dataFin, que será la serie del gráfico
         for (var i = 0; i < smokersData.length; i++) {
             //creando el objeto e insertandolo en dataFin
-            var objDaily = new Object();
-            objDaily.province = smokerChartProvince[i];
-            objDaily.dailySmoker = smokerChartDaily[i];
+            var objSerie = new Object();
+            objSerie.province = smokerChartProvince[i];
+            objSerie.dailySmoker = smokerChartDaily[i];
             //tras insertar en el objeto, el campo provincia y el campo dailySmoker, se busca la coincidencia con las provincias parseadas de rental
             for (var j = 0; j < rentalFin.length; j++) {
-                if (objDaily.province == rentalFin[j]) {
-                    objDaily.rent = parseFloat(rentalRent[j]); //si coincide, se añade el campo renta al objeto
-                    objDaily.meter = parseFloat(rentalMeter[j]);
-                    objDaily.salary = parseFloat(rentalSalary[j]);
+                if (objSerie.province == rentalFin[j]) {
+                    objSerie.rent = parseFloat(rentalRent[j]); //si coincide, se añade el campo renta al objeto
+                    objSerie.meter = parseFloat(rentalMeter[j]);
+                    objSerie.salary = parseFloat(rentalSalary[j]);
                 }
             }
-            dataFin.push(objDaily);
+            dataFin.push(objSerie);
         }
 
         console.log(dataFin);

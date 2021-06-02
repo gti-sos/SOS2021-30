@@ -2,32 +2,93 @@
 	import {pop} from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
 
+	const NBA_PATH = "https://www.balldontlie.io/api/v1/players";
+	let NBAStats = [];
+
 	async function loadGraph(){
-        let OtherData = [];
-        const url = "https://www.balldontlie.io/api/v1/players";
+        
         console.log("Fetching url...");	
-		const res = await fetch(url); 
+		const res = await fetch(NBA_PATH); 
 		if (res.ok) {
-			console.log("Ok");
-            OtherData = await res.json();
-		} else {
-			console.log("Error al cargar API externa");
-        }
-       
+            NBAStats = await res.json();
+			console.log("Recived NBA data...");
+		}        
 		
-		let utilData = OtherData.data;
-        let OtherDataGraph = utilData.filter((y) => {
+		let DataChart = NBAStats.data;
+
+		//POSICION G
+        let positionG = DataChart.filter((y) => {
 			return y.position == "G";
 			}).map((x) => {
 				let res = {name: x.first_name + " " + x.last_name, value: x.id};
 			return res;
 		});
+
+		//POSICION C
+		let positionC = DataChart.filter((y) => {
+			return y.position == "C";
+			}).map((x) => {
+				let res = {name: x.first_name + " " + x.last_name, value: x.id};
+			return res;
+		});
+
+		//POSICION C
+		let positionF = DataChart.filter((y) => {
+			return y.position == "F";
+			}).map((x) => {
+				let res = {name: x.first_name + " " + x.last_name, value: x.id};
+			return res;
+		});
+
+		//POSICION C-F
+		let positionCF = DataChart.filter((y) => {
+			return y.position == "C-F";
+			}).map((x) => {
+				let res = {name: x.first_name + " " + x.last_name, value: x.id};
+			return res;
+		});
+
+		//POSICION F-C
+		let positionFC = DataChart.filter((y) => {
+			return y.position == "F-C";
+			}).map((x) => {
+				let res = {name: x.first_name + " " + x.last_name, value: x.id};
+			return res;
+		});
+
+		//POSICION G-F
+		let positionGF = DataChart.filter((y) => {
+			return y.position == "G-F";
+			}).map((x) => {
+				let res = {name: x.first_name + " " + x.last_name, value: x.id};
+			return res;
+		});		
 		
 		let datosJuntos = 
         [
             {
-                name: "Jugadores NBA",
-                data: OtherDataGraph
+                name: "Jugadores Posicion Escolta",
+                data: positionG
+            },
+			{
+                name: "Jugadores NBA Pívot",
+                data: positionC
+            },
+			{
+                name: "Jugadores NBA Base",
+                data: positionF
+            },
+			{
+                name: "Jugadores NBA Ala-Pívot",
+                data: positionCF
+            },
+			{
+                name: "Jugadores NBA Alero",
+                data: positionFC
+            },
+			{
+                name: "Jugadores NBA Escolta-Base",
+                data: positionGF
             }
         ];
         
@@ -37,7 +98,7 @@
 				height: '100%'
 			},
 			title: {
-				text: 'Gráfica que representa el ID de los jugadores de la NBA de posición "G".'
+				text: 'Integración que representa algunos de los jugadores de la NBA según su posición'
 			},
 			tooltip: {
 				useHTML: true,
@@ -85,19 +146,17 @@
 	<figure class="highcharts-figure">
 		<div id="container"></div>
 	</figure>
-	
-	<h4><a href="https://www.balldontlie.io/api/v1/players">Fuente</a></h4>
-	<p></p>
+	<p>Gráfico de burbujas en el que cada una de las burbujas representa una posición en el campo de jugadores de 
+		la NBA y cada una de las burbujas interiores es un jugador que juega en dicha posición.
+	</p>
+	<p>Datos obtenidos de: <a href="https://www.balldontlie.io">https://www.balldontlie.io</a></p>	
+
 	<Button outline color="secondary" on:click="{pop}"> Volver</Button>
-	<p></p>
 
 </main>
 
 <style>
-	main {
-		text-align: center;
-	}
-    .highcharts-figure, .highcharts-data-table table {
+  .highcharts-figure, .highcharts-data-table table {
   min-width: 320px; 
   max-width: 800px;
   margin: 1em auto;

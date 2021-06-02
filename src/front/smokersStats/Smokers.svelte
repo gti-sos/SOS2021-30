@@ -384,13 +384,7 @@
             <th>Búsqueda por estadística de ex-fumadores</th>
             <th>Búsqueda por estadística de no fumadores</th>
             <tr>
-                <td
-                    ><input
-                        type="text"
-                        placeholder="Comunidad autónoma"
-                        bind:value={sProvince}
-                    /></td
-                >
+                <td><input type="text" placeholder="Comunidad autónoma" bind:value={sProvince}/></td>
                 <td
                     ><input
                         type="number"

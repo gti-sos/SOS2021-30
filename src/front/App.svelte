@@ -10,6 +10,7 @@
   import Integrations from './Integrations.svelte';
   import LifeExpectancy from './lifeStats/lifeExpectancy.svelte';
   import EditLife from './lifeStats/EditLife.svelte';
+  import UnemploymentStats from "./lifeStats/integrations/UnemploymentStats.svelte";
 	import TablaAlcohol from "./alcoholStats/TablaAlcohol.svelte";
   import EditAlcohol from "./alcoholStats/EditAlcohol.svelte";
   import GraphAlcohol from "./alcoholStats/GraphAlcohol.svelte";
@@ -26,6 +27,7 @@
   import GraphSmokers3 from "./smokersStats/GraphSmokers3.svelte";
   import RentalStats from "./smokersStats/integrations/RentalStats.svelte";
   import Hostelries from "./smokersStats/integrations/Hostelries.svelte";
+  import Canada from "./smokersStats/integrations/Canada.svelte";
   import FrontWeight from "./weightsStats/TablaWeights.svelte";
   import EditWeight from "./weightsStats/EditWeight.svelte";
   import GraphWeight from "./weightsStats/GraphWeight.svelte";
@@ -33,8 +35,9 @@
   import GraphColumns from "./weightsStats/GraphColumns.svelte";
   import Cultura from "./weightsStats/integrations/culturaBASE.svelte";
   import Stress from "./weightsStats/integrations/stressStats.svelte";
-  import Prueba from "./weightsStats/integrations/pruebaMorris.svelte";
+  import Prueba from "./weightsStats/integrations/pruebaStress.svelte";
   import NBA from "./weightsStats/integrations/integracionExt1.svelte";
+  import CovidIntegration from "./weightsStats/integrations/integracionExt2.svelte";
   import GroupGraph from "./GroupGraph.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
   import GraphLife from "./lifeStats/GraphLife.svelte";
@@ -63,8 +66,9 @@
     "/weights-graph-morris" : GraphWeightMorris,
     "/integrations/culturaBASE" : Cultura,
     "/integrations/stress-stats" : Stress,
-    "/integrations/prueba" : Prueba,
     "/integrations/NBA-position" : NBA,
+    "/integrations/unemployment": UnemploymentStats,
+    "/integrations/covid-integratin" : CovidIntegration,
     "/smokers-stats" : SmokerStats,
     "/smokers-stats/:province/:year" : SmokersItems,
     "/smokers-graph" : GraphSmokers,
@@ -72,6 +76,7 @@
     "/smokers-graph3" : GraphSmokers3,
     "/integrations/rentals" : RentalStats,
     "/integrations/hostelries" : Hostelries,
+    "/integrations/canada" : Canada,
     "/group-graph" : GroupGraph,
 		'*': NotFound};
 </script>
