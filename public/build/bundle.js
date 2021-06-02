@@ -44210,7 +44210,7 @@ var app = (function () {
     const { console: console_1$3 } = globals;
     const file$4 = "src\\front\\weightsStats\\integrations\\pruebaMorris.svelte";
 
-    // (99:4) <Button outline color="secondary" on:click="{pop}">
+    // (101:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$4(ctx) {
     	let t;
 
@@ -44230,7 +44230,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$4.name,
     		type: "slot",
-    		source: "(99:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(101:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -44286,7 +44286,7 @@ var app = (function () {
     			div = element("div");
     			t3 = space();
     			p = element("p");
-    			p.textContent = "Gráfico en el que se muestra el porcentaje de obesidad en algunas comunidades autónomas de españa\r\n        en el año 2017 combinado con el retio medio de estrés.";
+    			p.textContent = "Gráfico en el que se muestra el porcentaje de obesidad en algunas comunidades autónomas de españa\r\n        en el año 2017 combinado con el ratio medio de estrés en dichas comunidades.";
     			t5 = space();
     			h7 = element("h7");
     			h7.textContent = "Gráfica diseñada con Morris.js";
@@ -44294,22 +44294,22 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css");
-    			add_location(link, file$4, 83, 4, 2999);
+    			add_location(link, file$4, 85, 4, 3158);
     			if (script0.src !== (script0_src_value = "//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$4, 84, 4, 3095);
+    			add_location(script0, file$4, 86, 4, 3254);
     			if (script1.src !== (script1_src_value = "//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$4, 85, 4, 3183);
+    			add_location(script1, file$4, 87, 4, 3342);
     			if (script2.src !== (script2_src_value = "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$4, 86, 4, 3274);
+    			add_location(script2, file$4, 88, 4, 3433);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$4, 92, 4, 3418);
+    			add_location(h1, file$4, 94, 4, 3577);
     			attr_dev(div, "id", "myfirstchart");
     			set_style(div, "height", "250px");
-    			add_location(div, file$4, 93, 4, 3508);
-    			add_location(p, file$4, 94, 4, 3566);
+    			add_location(div, file$4, 95, 4, 3667);
+    			add_location(p, file$4, 96, 4, 3725);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$4, 97, 4, 3746);
-    			add_location(main, file$4, 91, 0, 3406);
+    			add_location(h7, file$4, 99, 4, 3927);
+    			add_location(main, file$4, 93, 0, 3565);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -44402,6 +44402,8 @@ var app = (function () {
     	}
 
     	async function getStress() {
+    		await fetch(stressBASE_PATH + "loadInitialData");
+    		console.log("Se cargan los datos desde la dirección: " + stressBASE_PATH + "loadInitialData");
     		const res = await fetch(stressBASE_PATH);
 
     		if (res.ok) {

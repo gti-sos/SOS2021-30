@@ -23,6 +23,8 @@
     }
 
     async function getStress(){
+        await fetch(stressBASE_PATH+"loadInitialData");
+        console.log("Se cargan los datos desde la dirección: " + stressBASE_PATH+"loadInitialData");
         const res = await fetch(stressBASE_PATH);
         if(res.ok){
             stressStats = await res.json();
@@ -93,7 +95,7 @@
     <h1 style="text-align: center">Estadística de obesidad integradas con el estrés</h1>
     <div id="myfirstchart" style="height: 250px;"></div>
     <p>Gráfico en el que se muestra el porcentaje de obesidad en algunas comunidades autónomas de españa
-        en el año 2017 combinado con el retio medio de estrés.
+        en el año 2017 combinado con el ratio medio de estrés en dichas comunidades.
     </p>
     <h7 style="color: gray;">Gráfica diseñada con Morris.js</h7>    
     <Button outline color="secondary" on:click="{pop}">Atrás</Button>
