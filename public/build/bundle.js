@@ -13254,7 +13254,7 @@ var app = (function () {
     	return block;
     }
 
-    // (62:41) <Button color="primary">
+    // (62:47) <Button color="primary">
     function create_default_slot_9$5(ctx) {
     	let t;
 
@@ -13274,7 +13274,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_9$5.name,
     		type: "slot",
-    		source: "(62:41) <Button color=\\\"primary\\\">",
+    		source: "(62:47) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
@@ -13369,10 +13369,10 @@ var app = (function () {
     			create_component(button2.$$.fragment);
     			attr_dev(a0, "href", "/#/integrations/culturaBASE");
     			add_location(a0, file$u, 60, 8, 1843);
-    			attr_dev(a1, "href", "/#/integrations/prueba");
+    			attr_dev(a1, "href", "/#/integrations/stress-stats");
     			add_location(a1, file$u, 61, 8, 1960);
     			attr_dev(a2, "href", "/#/integrations/NBA-position");
-    			add_location(a2, file$u, 62, 8, 2073);
+    			add_location(a2, file$u, 62, 8, 2079);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -13544,7 +13544,7 @@ var app = (function () {
     		c: function create() {
     			h2 = element("h2");
     			h2.textContent = "Integrado con las estadísticas sobre la esperanza de vida";
-    			add_location(h2, file$u, 69, 19, 2280);
+    			add_location(h2, file$u, 69, 19, 2286);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -13677,7 +13677,7 @@ var app = (function () {
     			a = element("a");
     			create_component(button.$$.fragment);
     			attr_dev(a, "href", "/#/integrations/unemployment");
-    			add_location(a, file$u, 74, 8, 2455);
+    			add_location(a, file$u, 74, 8, 2461);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -13937,7 +13937,7 @@ var app = (function () {
     			attr_dev(div3, "class", "svelte-egmbdb");
     			add_location(div3, file$u, 52, 2, 1614);
     			attr_dev(div4, "class", "svelte-egmbdb");
-    			add_location(div4, file$u, 66, 2, 2209);
+    			add_location(div4, file$u, 66, 2, 2215);
     			attr_dev(main, "class", "svelte-egmbdb");
     			add_location(main, file$u, 13, 2, 235);
     		},
@@ -43921,7 +43921,7 @@ var app = (function () {
     const { console: console_1$4 } = globals;
     const file$5 = "src\\front\\weightsStats\\integrations\\stressStats.svelte";
 
-    // (111:4) <Button outline color="secondary" on:click="{pop}">
+    // (103:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$5(ctx) {
     	let t;
 
@@ -43941,7 +43941,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$5.name,
     		type: "slot",
-    		source: "(111:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(103:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -43949,295 +43949,6 @@ var app = (function () {
     }
 
     function create_fragment$5(ctx) {
-    	let script0;
-    	let script0_src_value;
-    	let script1;
-    	let script1_src_value;
-    	let script2;
-    	let script2_src_value;
-    	let script3;
-    	let script3_src_value;
-    	let t0;
-    	let main;
-    	let figure;
-    	let div;
-    	let t1;
-    	let p;
-    	let t3;
-    	let button;
-    	let current;
-    	let mounted;
-    	let dispose;
-
-    	button = new Button({
-    			props: {
-    				outline: true,
-    				color: "secondary",
-    				$$slots: { default: [create_default_slot$5] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	button.$on("click", pop);
-
-    	const block = {
-    		c: function create() {
-    			script0 = element("script");
-    			script1 = element("script");
-    			script2 = element("script");
-    			script3 = element("script");
-    			t0 = space();
-    			main = element("main");
-    			figure = element("figure");
-    			div = element("div");
-    			t1 = space();
-    			p = element("p");
-    			p.textContent = "Gráfico de líneas en el que se representa el porcentaje por comunidades autónomas en el año 2017 de cada API";
-    			t3 = space();
-    			create_component(button.$$.fragment);
-    			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$5, 94, 4, 2843);
-    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$5, 95, 4, 2914);
-    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$5, 96, 4, 2992);
-    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$5, 97, 4, 3072);
-    			attr_dev(div, "id", "container");
-    			add_location(div, file$5, 104, 8, 3250);
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$5, 105, 8, 3286);
-    			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$5, 103, 4, 3206);
-    			add_location(main, file$5, 102, 0, 3194);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			append_dev(document.head, script0);
-    			append_dev(document.head, script1);
-    			append_dev(document.head, script2);
-    			append_dev(document.head, script3);
-    			insert_dev(target, t0, anchor);
-    			insert_dev(target, main, anchor);
-    			append_dev(main, figure);
-    			append_dev(figure, div);
-    			append_dev(figure, t1);
-    			append_dev(figure, p);
-    			append_dev(main, t3);
-    			mount_component(button, main, null);
-    			current = true;
-
-    			if (!mounted) {
-    				dispose = listen_dev(script3, "load", /*loadGraph*/ ctx[0], false, false, false);
-    				mounted = true;
-    			}
-    		},
-    		p: function update(ctx, [dirty]) {
-    			const button_changes = {};
-
-    			if (dirty & /*$$scope*/ 512) {
-    				button_changes.$$scope = { dirty, ctx };
-    			}
-
-    			button.$set(button_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(button.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(button.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			detach_dev(script0);
-    			detach_dev(script1);
-    			detach_dev(script2);
-    			detach_dev(script3);
-    			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(main);
-    			destroy_component(button);
-    			mounted = false;
-    			dispose();
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_fragment$5.name,
-    		type: "component",
-    		source: "",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    const BASE_WEIGHTS_PATH$1 = "/api/v2/table-weights-stats";
-
-    //const culturaBASE_PATH = "https://sos2021-26.herokuapp.com/integration/api/v2/culturaBASE";
-    const stressBASE_PATH$1 = "/proxyStress/api/v2/stress_stats/";
-
-    function instance$5($$self, $$props, $$invalidate) {
-    	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("StressStats", slots, []);
-    	let weightStats = [];
-    	let weightProvinces = [];
-    	let weightObesity = [];
-    	let stressStats = [];
-    	let stressProvinces = [];
-    	let stressPoblation = [];
-
-    	async function getWeight() {
-    		const res = await fetch(BASE_WEIGHTS_PATH$1);
-
-    		if (res.ok) {
-    			weightStats = await res.json();
-    			console.log("Recived " + weightStats.length + " weights data...");
-    		}
-    	}
-
-    	async function getStress() {
-    		const res = await fetch(stressBASE_PATH$1);
-
-    		if (res.ok) {
-    			stressStats = await res.json();
-    			console.log("Recived " + stressStats.length + " stress data...");
-    		}
-    	}
-
-    	async function loadGraph() {
-    		console.log("Fetching data...");
-    		await getWeight();
-    		await getStress();
-    		console.log("Procesing all data...");
-
-    		weightStats.forEach(stat => {
-    			if (stat.year == 2017) {
-    				if (stat.provinces == "Cataluña" || stat.provinces == "Melilla" || stat.provinces == "Aragón" || stat.provinces == "Navarra" || stat.provinces == "Islas Baleares" || stat.provinces == "Comunidad de Madrid") {
-    					weightProvinces.push(stat.provinces);
-    					weightObesity.push(stat["obesity"]);
-    				}
-    			}
-    		});
-
-    		stressStats.forEach(stat => {
-    			stressProvinces.push(stat.country);
-    			stressPoblation.push(stat["stress_population"]);
-    		});
-
-    		console.log("Generando datos para la gráfica...");
-
-    		Highcharts.chart("container", {
-    			chart: { type: "area" },
-    			title: { text: "Integración Stress-Stats API" },
-    			xAxis: {
-    				title: { text: "Comunidad autónoma" },
-    				categories: weightProvinces
-    			},
-    			yAxis: { title: { text: "Porcentaje y €(en M)" } },
-    			series: [
-    				{
-    					name: "Porcentaje de peso normal en el año 2017",
-    					data: weightObesity
-    				},
-    				{
-    					name: "Datos de estres de la poblacion(radio/media)",
-    					data: stressPoblation
-    				}
-    			]
-    		});
-    	}
-
-    	const writable_props = [];
-
-    	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$4.warn(`<StressStats> was created with unknown prop '${key}'`);
-    	});
-
-    	$$self.$capture_state = () => ({
-    		pop,
-    		Button,
-    		BASE_WEIGHTS_PATH: BASE_WEIGHTS_PATH$1,
-    		stressBASE_PATH: stressBASE_PATH$1,
-    		weightStats,
-    		weightProvinces,
-    		weightObesity,
-    		stressStats,
-    		stressProvinces,
-    		stressPoblation,
-    		getWeight,
-    		getStress,
-    		loadGraph
-    	});
-
-    	$$self.$inject_state = $$props => {
-    		if ("weightStats" in $$props) weightStats = $$props.weightStats;
-    		if ("weightProvinces" in $$props) weightProvinces = $$props.weightProvinces;
-    		if ("weightObesity" in $$props) weightObesity = $$props.weightObesity;
-    		if ("stressStats" in $$props) stressStats = $$props.stressStats;
-    		if ("stressProvinces" in $$props) stressProvinces = $$props.stressProvinces;
-    		if ("stressPoblation" in $$props) stressPoblation = $$props.stressPoblation;
-    	};
-
-    	if ($$props && "$$inject" in $$props) {
-    		$$self.$inject_state($$props.$$inject);
-    	}
-
-    	return [loadGraph];
-    }
-
-    class StressStats extends SvelteComponentDev {
-    	constructor(options) {
-    		super(options);
-    		init(this, options, instance$5, create_fragment$5, safe_not_equal, {});
-
-    		dispatch_dev("SvelteRegisterComponent", {
-    			component: this,
-    			tagName: "StressStats",
-    			options,
-    			id: create_fragment$5.name
-    		});
-    	}
-    }
-
-    /* src\front\weightsStats\integrations\pruebaMorris.svelte generated by Svelte v3.38.2 */
-
-    const { console: console_1$3 } = globals;
-    const file$4 = "src\\front\\weightsStats\\integrations\\pruebaMorris.svelte";
-
-    // (101:4) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot$4(ctx) {
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			t = text("Atrás");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, t, anchor);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot$4.name,
-    		type: "slot",
-    		source: "(101:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    function create_fragment$4(ctx) {
     	let link;
     	let script0;
     	let script0_src_value;
@@ -44264,7 +43975,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot$4] },
+    				$$slots: { default: [create_default_slot$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -44294,22 +44005,22 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css");
-    			add_location(link, file$4, 85, 4, 3158);
+    			add_location(link, file$5, 87, 4, 3323);
     			if (script0.src !== (script0_src_value = "//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$4, 86, 4, 3254);
+    			add_location(script0, file$5, 88, 4, 3419);
     			if (script1.src !== (script1_src_value = "//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$4, 87, 4, 3342);
+    			add_location(script1, file$5, 89, 4, 3507);
     			if (script2.src !== (script2_src_value = "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$4, 88, 4, 3433);
+    			add_location(script2, file$5, 90, 4, 3598);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$4, 94, 4, 3577);
+    			add_location(h1, file$5, 96, 4, 3742);
     			attr_dev(div, "id", "myfirstchart");
     			set_style(div, "height", "250px");
-    			add_location(div, file$4, 95, 4, 3667);
-    			add_location(p, file$4, 96, 4, 3725);
+    			add_location(div, file$5, 97, 4, 3832);
+    			add_location(p, file$5, 98, 4, 3890);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$4, 99, 4, 3927);
-    			add_location(main, file$4, 93, 0, 3565);
+    			add_location(h7, file$5, 101, 4, 4092);
+    			add_location(main, file$5, 95, 0, 3730);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -44370,7 +44081,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$4.name,
+    		id: create_fragment$5.name,
     		type: "component",
     		source: "",
     		ctx
@@ -44379,12 +44090,12 @@ var app = (function () {
     	return block;
     }
 
-    const BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
-    const stressBASE_PATH = "/proxyStress/api/v2/stress_stats/";
+    const BASE_WEIGHTS_PATH$1 = "/api/v2/table-weights-stats";
+    const stressBASE_PATH$1 = "/proxyStress/api/v2/stress_stats/";
 
-    function instance$4($$self, $$props, $$invalidate) {
+    function instance$5($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("PruebaMorris", slots, []);
+    	validate_slots("StressStats", slots, []);
     	let weightStats = [];
     	let weightProvinces = [];
     	let weightObesity = [];
@@ -44393,7 +44104,9 @@ var app = (function () {
     	let stressPoblation = [];
 
     	async function getWeight() {
-    		const res = await fetch(BASE_WEIGHTS_PATH);
+    		await fetch(BASE_WEIGHTS_PATH$1 + "/loadInitialData");
+    		console.log("Se cargan los datos desde la dirección: " + BASE_WEIGHTS_PATH$1 + "/loadInitialData");
+    		const res = await fetch(BASE_WEIGHTS_PATH$1);
 
     		if (res.ok) {
     			weightStats = await res.json();
@@ -44402,9 +44115,9 @@ var app = (function () {
     	}
 
     	async function getStress() {
-    		await fetch(stressBASE_PATH + "loadInitialData");
-    		console.log("Se cargan los datos desde la dirección: " + stressBASE_PATH + "loadInitialData");
-    		const res = await fetch(stressBASE_PATH);
+    		await fetch(stressBASE_PATH$1 + "loadInitialData");
+    		console.log("Se cargan los datos desde la dirección: " + stressBASE_PATH$1 + "loadInitialData");
+    		const res = await fetch(stressBASE_PATH$1);
 
     		if (res.ok) {
     			stressStats = await res.json();
@@ -44483,7 +44196,296 @@ var app = (function () {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$3.warn(`<PruebaMorris> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$4.warn(`<StressStats> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$capture_state = () => ({
+    		pop,
+    		Button,
+    		BASE_WEIGHTS_PATH: BASE_WEIGHTS_PATH$1,
+    		stressBASE_PATH: stressBASE_PATH$1,
+    		weightStats,
+    		weightProvinces,
+    		weightObesity,
+    		stressStats,
+    		stressProvinces,
+    		stressPoblation,
+    		getWeight,
+    		getStress,
+    		loadGraph
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("weightStats" in $$props) weightStats = $$props.weightStats;
+    		if ("weightProvinces" in $$props) weightProvinces = $$props.weightProvinces;
+    		if ("weightObesity" in $$props) weightObesity = $$props.weightObesity;
+    		if ("stressStats" in $$props) stressStats = $$props.stressStats;
+    		if ("stressProvinces" in $$props) stressProvinces = $$props.stressProvinces;
+    		if ("stressPoblation" in $$props) stressPoblation = $$props.stressPoblation;
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [loadGraph];
+    }
+
+    class StressStats extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$5, create_fragment$5, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "StressStats",
+    			options,
+    			id: create_fragment$5.name
+    		});
+    	}
+    }
+
+    /* src\front\weightsStats\integrations\pruebaStress.svelte generated by Svelte v3.38.2 */
+
+    const { console: console_1$3 } = globals;
+    const file$4 = "src\\front\\weightsStats\\integrations\\pruebaStress.svelte";
+
+    // (111:4) <Button outline color="secondary" on:click="{pop}">
+    function create_default_slot$4(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Atrás");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$4.name,
+    		type: "slot",
+    		source: "(111:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$4(ctx) {
+    	let script0;
+    	let script0_src_value;
+    	let script1;
+    	let script1_src_value;
+    	let script2;
+    	let script2_src_value;
+    	let script3;
+    	let script3_src_value;
+    	let t0;
+    	let main;
+    	let figure;
+    	let div;
+    	let t1;
+    	let p;
+    	let t3;
+    	let button;
+    	let current;
+    	let mounted;
+    	let dispose;
+
+    	button = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				$$slots: { default: [create_default_slot$4] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", pop);
+
+    	const block = {
+    		c: function create() {
+    			script0 = element("script");
+    			script1 = element("script");
+    			script2 = element("script");
+    			script3 = element("script");
+    			t0 = space();
+    			main = element("main");
+    			figure = element("figure");
+    			div = element("div");
+    			t1 = space();
+    			p = element("p");
+    			p.textContent = "Gráfico de líneas en el que se representa el porcentaje por comunidades autónomas en el año 2017 de cada API";
+    			t3 = space();
+    			create_component(button.$$.fragment);
+    			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
+    			add_location(script0, file$4, 94, 4, 2843);
+    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$4, 95, 4, 2914);
+    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
+    			add_location(script2, file$4, 96, 4, 2992);
+    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
+    			add_location(script3, file$4, 97, 4, 3072);
+    			attr_dev(div, "id", "container");
+    			add_location(div, file$4, 104, 8, 3250);
+    			attr_dev(p, "class", "highcharts-description");
+    			add_location(p, file$4, 105, 8, 3286);
+    			attr_dev(figure, "class", "highcharts-figure");
+    			add_location(figure, file$4, 103, 4, 3206);
+    			add_location(main, file$4, 102, 0, 3194);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			append_dev(document.head, script0);
+    			append_dev(document.head, script1);
+    			append_dev(document.head, script2);
+    			append_dev(document.head, script3);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, main, anchor);
+    			append_dev(main, figure);
+    			append_dev(figure, div);
+    			append_dev(figure, t1);
+    			append_dev(figure, p);
+    			append_dev(main, t3);
+    			mount_component(button, main, null);
+    			current = true;
+
+    			if (!mounted) {
+    				dispose = listen_dev(script3, "load", /*loadGraph*/ ctx[0], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 512) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			detach_dev(script0);
+    			detach_dev(script1);
+    			detach_dev(script2);
+    			detach_dev(script3);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(main);
+    			destroy_component(button);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$4.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    const BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
+
+    //const culturaBASE_PATH = "https://sos2021-26.herokuapp.com/integration/api/v2/culturaBASE";
+    const stressBASE_PATH = "/proxyStress/api/v2/stress_stats/";
+
+    function instance$4($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("PruebaStress", slots, []);
+    	let weightStats = [];
+    	let weightProvinces = [];
+    	let weightObesity = [];
+    	let stressStats = [];
+    	let stressProvinces = [];
+    	let stressPoblation = [];
+
+    	async function getWeight() {
+    		const res = await fetch(BASE_WEIGHTS_PATH);
+
+    		if (res.ok) {
+    			weightStats = await res.json();
+    			console.log("Recived " + weightStats.length + " weights data...");
+    		}
+    	}
+
+    	async function getStress() {
+    		const res = await fetch(stressBASE_PATH);
+
+    		if (res.ok) {
+    			stressStats = await res.json();
+    			console.log("Recived " + stressStats.length + " stress data...");
+    		}
+    	}
+
+    	async function loadGraph() {
+    		console.log("Fetching data...");
+    		await getWeight();
+    		await getStress();
+    		console.log("Procesing all data...");
+
+    		weightStats.forEach(stat => {
+    			if (stat.year == 2017) {
+    				if (stat.provinces == "Cataluña" || stat.provinces == "Melilla" || stat.provinces == "Aragón" || stat.provinces == "Navarra" || stat.provinces == "Islas Baleares" || stat.provinces == "Comunidad de Madrid") {
+    					weightProvinces.push(stat.provinces);
+    					weightObesity.push(stat["obesity"]);
+    				}
+    			}
+    		});
+
+    		stressStats.forEach(stat => {
+    			stressProvinces.push(stat.country);
+    			stressPoblation.push(stat["stress_population"]);
+    		});
+
+    		console.log("Generando datos para la gráfica...");
+
+    		Highcharts.chart("container", {
+    			chart: { type: "area" },
+    			title: { text: "Integración Stress-Stats API" },
+    			xAxis: {
+    				title: { text: "Comunidad autónoma" },
+    				categories: weightProvinces
+    			},
+    			yAxis: { title: { text: "Porcentaje y €(en M)" } },
+    			series: [
+    				{
+    					name: "Porcentaje de peso normal en el año 2017",
+    					data: weightObesity
+    				},
+    				{
+    					name: "Datos de estres de la poblacion(radio/media)",
+    					data: stressPoblation
+    				}
+    			]
+    		});
+    	}
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$3.warn(`<PruebaStress> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({
@@ -44518,14 +44520,14 @@ var app = (function () {
     	return [loadGraph];
     }
 
-    class PruebaMorris extends SvelteComponentDev {
+    class PruebaStress extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
     		init(this, options, instance$4, create_fragment$4, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
-    			tagName: "PruebaMorris",
+    			tagName: "PruebaStress",
     			options,
     			id: create_fragment$4.name
     		});
@@ -45784,7 +45786,7 @@ var app = (function () {
     /* src\front\App.svelte generated by Svelte v3.38.2 */
     const file = "src\\front\\App.svelte";
 
-    // (82:12) <NavbarBrand href="/">
+    // (81:12) <NavbarBrand href="/">
     function create_default_slot_14(ctx) {
     	let t;
 
@@ -45804,14 +45806,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_14.name,
     		type: "slot",
-    		source: "(82:12) <NavbarBrand href=\\\"/\\\">",
+    		source: "(81:12) <NavbarBrand href=\\\"/\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (85:16) <NavLink href="#/">
+    // (84:16) <NavLink href="#/">
     function create_default_slot_13(ctx) {
     	let t;
 
@@ -45831,14 +45833,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_13.name,
     		type: "slot",
-    		source: "(85:16) <NavLink href=\\\"#/\\\">",
+    		source: "(84:16) <NavLink href=\\\"#/\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (84:14) <NavItem  >
+    // (83:14) <NavItem  >
     function create_default_slot_12(ctx) {
     	let navlink;
     	let current;
@@ -45887,14 +45889,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_12.name,
     		type: "slot",
-    		source: "(84:14) <NavItem  >",
+    		source: "(83:14) <NavItem  >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (88:16) <NavLink href="#/info">
+    // (87:16) <NavLink href="#/info">
     function create_default_slot_11(ctx) {
     	let t;
 
@@ -45914,14 +45916,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_11.name,
     		type: "slot",
-    		source: "(88:16) <NavLink href=\\\"#/info\\\">",
+    		source: "(87:16) <NavLink href=\\\"#/info\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (87:14) <NavItem  >
+    // (86:14) <NavItem  >
     function create_default_slot_10(ctx) {
     	let navlink;
     	let current;
@@ -45970,14 +45972,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_10.name,
     		type: "slot",
-    		source: "(87:14) <NavItem  >",
+    		source: "(86:14) <NavItem  >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (91:16) <NavLink href="#/alcohol-stats">
+    // (90:16) <NavLink href="#/alcohol-stats">
     function create_default_slot_9(ctx) {
     	let t;
 
@@ -45997,14 +45999,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_9.name,
     		type: "slot",
-    		source: "(91:16) <NavLink href=\\\"#/alcohol-stats\\\">",
+    		source: "(90:16) <NavLink href=\\\"#/alcohol-stats\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (90:14) <NavItem>
+    // (89:14) <NavItem>
     function create_default_slot_8(ctx) {
     	let navlink;
     	let current;
@@ -46053,14 +46055,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8.name,
     		type: "slot",
-    		source: "(90:14) <NavItem>",
+    		source: "(89:14) <NavItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (94:16) <NavLink href="#/smokers-stats">
+    // (93:16) <NavLink href="#/smokers-stats">
     function create_default_slot_7(ctx) {
     	let t;
 
@@ -46080,14 +46082,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7.name,
     		type: "slot",
-    		source: "(94:16) <NavLink href=\\\"#/smokers-stats\\\">",
+    		source: "(93:16) <NavLink href=\\\"#/smokers-stats\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (93:14) <NavItem>
+    // (92:14) <NavItem>
     function create_default_slot_6(ctx) {
     	let navlink;
     	let current;
@@ -46136,14 +46138,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6.name,
     		type: "slot",
-    		source: "(93:14) <NavItem>",
+    		source: "(92:14) <NavItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (97:16) <NavLink href="#/life-stats">
+    // (96:16) <NavLink href="#/life-stats">
     function create_default_slot_5(ctx) {
     	let t;
 
@@ -46163,14 +46165,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(97:16) <NavLink href=\\\"#/life-stats\\\">",
+    		source: "(96:16) <NavLink href=\\\"#/life-stats\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (96:14) <NavItem>
+    // (95:14) <NavItem>
     function create_default_slot_4(ctx) {
     	let navlink;
     	let current;
@@ -46219,14 +46221,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(96:14) <NavItem>",
+    		source: "(95:14) <NavItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (100:16) <NavLink href="#/weights-stats">
+    // (99:16) <NavLink href="#/weights-stats">
     function create_default_slot_3(ctx) {
     	let t;
 
@@ -46246,14 +46248,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(100:16) <NavLink href=\\\"#/weights-stats\\\">",
+    		source: "(99:16) <NavLink href=\\\"#/weights-stats\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (99:14) <NavItem>
+    // (98:14) <NavItem>
     function create_default_slot_2(ctx) {
     	let navlink;
     	let current;
@@ -46302,14 +46304,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(99:14) <NavItem>",
+    		source: "(98:14) <NavItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (83:12) <Nav navbar >
+    // (82:12) <Nav navbar >
     function create_default_slot_1(ctx) {
     	let navitem0;
     	let t0;
@@ -46482,14 +46484,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(83:12) <Nav navbar >",
+    		source: "(82:12) <Nav navbar >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (81:8) <Navbar color="dark" dark expand = "md" >
+    // (80:8) <Navbar color="dark" dark expand = "md" >
     function create_default_slot(ctx) {
     	let navbarbrand;
     	let t;
@@ -46564,7 +46566,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(81:8) <Navbar color=\\\"dark\\\" dark expand = \\\"md\\\" >",
+    		source: "(80:8) <Navbar color=\\\"dark\\\" dark expand = \\\"md\\\" >",
     		ctx
     	});
 
@@ -46602,8 +46604,8 @@ var app = (function () {
     			create_component(navbar.$$.fragment);
     			t = space();
     			create_component(router.$$.fragment);
-    			add_location(body, file, 79, 1, 3718);
-    			add_location(main, file, 78, 0, 3709);
+    			add_location(body, file, 78, 1, 3680);
+    			add_location(main, file, 77, 0, 3671);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -46682,7 +46684,6 @@ var app = (function () {
     		"/weights-graph-morris": GraphWeightMorris,
     		"/integrations/culturaBASE": CulturaBASE,
     		"/integrations/stress-stats": StressStats,
-    		"/integrations/prueba": PruebaMorris,
     		"/integrations/NBA-position": IntegracionExt1,
     		"/smokers-stats": Smokers,
     		"/smokers-stats/:province/:year": SmokersItems,
@@ -46733,7 +46734,7 @@ var app = (function () {
     		GraphColumns,
     		Cultura: CulturaBASE,
     		Stress: StressStats,
-    		Prueba: PruebaMorris,
+    		Prueba: PruebaStress,
     		NBA: IntegracionExt1,
     		GroupGraph,
     		Navbar,
