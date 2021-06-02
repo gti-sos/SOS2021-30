@@ -1,6 +1,5 @@
 <script>
-    import { P } from "chart.js/dist/chunks/helpers.segment";
-import * as JSC from "jscharting";
+    import * as JSC from "jscharting";
     import { pop } from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
 
@@ -146,19 +145,25 @@ import * as JSC from "jscharting";
 
     //Llamada a la función 
     loadGraph();
+
+    //Función para cambiar el formato de las fechas
+    function formatea(texto){
+        return texto.replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1');
+    }
     
+    //Función para mostrar los datos debajo del gráfico JSCharting
     async function mostrarDatos(){
         for (let i=0; i<canadaData.holidays.valueOf().length;i++){
             let linea = new Object();
             linea.Fiesta = canadaNameFiesta[i];
-            linea.Fecha = canadaFecha[i];
+            linea.Fecha = formatea(canadaFecha[i]);
             canadaMostrar.push(linea);
         }
     }
     
     // Holds table sort state.  Initialized to reflect table sorted by id column ascending.
+    // Necesario para poder ordenar las columnas alfanuméricamente al hacer click
 	let sortBy = {col: "Fiesta", ascending: true};
-	
 	$: sort = (column) => {
 		
 		if (sortBy.col == column) {
@@ -170,14 +175,7 @@ import * as JSC from "jscharting";
 		
 		// Modifier to sorting function for ascending or descending
 		let sortModifier = (sortBy.ascending) ? 1 : -1;
-		
-		let sort = (a, b) => 
-			(a[column] < b[column]) 
-			? -1 * sortModifier 
-			: (a[column] > b[column]) 
-			? 1 * sortModifier 
-			: 0;
-		
+		let sort = (a, b) => (a[column] < b[column]) ? -1 * sortModifier : (a[column] > b[column]) ? 1 * sortModifier : 0;
 		canadaMostrar = canadaMostrar.sort(sort);
 	}
 	
@@ -194,11 +192,12 @@ import * as JSC from "jscharting";
     <div id="chartDiv" style="max-width: 740px;height: 400px;margin: 0px auto"/>
     <br>
     <p>Haz click en el título para mostrar la tabla ordenada</p>
+    <br>
     <table align="center">
         <thead>
             <tr>
-                <th on:click={sort("Fiesta")}>Fiesta</th>
-                <th on:click={sort("Fecha")}>Fecha</th>
+                <th on:click={sort("Fiesta")}>Día festivo</th>
+                <th on:click={sort("Fecha")}>Fecha del día festivo</th>
             </tr>
         </thead>
         <tbody>
@@ -210,7 +209,7 @@ import * as JSC from "jscharting";
             {/each}
         </tbody>
     </table>
-
+    <br>
     <p align="center"><Button outline color="primary" on:click={pop}>Atrás</Button></p>
 
 </main>
@@ -235,7 +234,7 @@ import * as JSC from "jscharting";
 		border: 1px solid black;
 		border-collapse: collapse;
 	}
-	table {
+	    table {
 		background: #eee;
 		width: 50%;
 		text-align: center;

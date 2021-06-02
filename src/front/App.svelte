@@ -38,6 +38,7 @@
   import Prueba from "./weightsStats/integrations/pruebaStress.svelte";
   import NBA from "./weightsStats/integrations/integracionExt1.svelte";
   import CovidIntegration from "./weightsStats/integrations/integracionExt2.svelte";
+  import LigaFutbol from "./weightsStats/integrations/integracionExt3.svelte";
   import GroupGraph from "./GroupGraph.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
   import GraphLife from "./lifeStats/GraphLife.svelte";
@@ -67,8 +68,9 @@
     "/integrations/culturaBASE" : Cultura,
     "/integrations/stress-stats" : Stress,
     "/integrations/NBA-position" : NBA,
+    "/integrations/covid-integration" : CovidIntegration,
+    "/integrations/liga-futbol" : LigaFutbol,
     "/integrations/unemployment": UnemploymentStats,
-    "/integrations/covid-integratin" : CovidIntegration,
     "/smokers-stats" : SmokerStats,
     "/smokers-stats/:province/:year" : SmokersItems,
     "/smokers-graph" : GraphSmokers,
@@ -77,7 +79,7 @@
     "/integrations/rentals" : RentalStats,
     "/integrations/hostelries" : Hostelries,
     "/integrations/canada" : Canada,
-    "/group-graph" : GroupGraph,
+    "/analytics" : GroupGraph,
 		'*': NotFound};
 </script>
 
