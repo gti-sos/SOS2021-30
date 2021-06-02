@@ -2,27 +2,62 @@
     import { pop }from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
 
+    const BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
+    const BASE_COVID_PATH = "https://covid-api.com/api/reports";
 
-    var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
-
-    let weightData = [];
-    let weightChartInfo = [];
-    let weightchartNormalWeight = [];
+    let weightStats = [];
+    let weightChartProvinces = [];
     let weightChartOverweight = [];
-    let weightChartObesity = [];
+
+    let covidStats = [];
+    let covidChartProvinces = [];
+    let covidChartDeadDiff = [];
+
+    async function getWeight(){
+        await fetch(BASE_WEIGHTS_PATH+"/loadInitialData");
+        console.log("Se cargan los datos desde la dirección: " + BASE_WEIGHTS_PATH+"/loadInitialData");
+        const res = await fetch(BASE_WEIGHTS_PATH);
+        if(res.ok){
+            weightStats = await res.json();
+            console.log("Recived " + weightStats.length + " weights data...");
+        }
+    }
+
+    async function getCovid(){
+        const res = await fetch(BASE_COVID_PATH);
+        if(res.ok){
+            covidStats = await res.json();
+            console.log("Recived " + covidStats.length + " covid data...");
+        }
+    }
 
     async function loadGraph(){
         console.log("Fetching data...");
-        const res = await fetch(BASE_WEIGHTS_PATH);
-        weightData = await res.json();
-        if(res.ok){
-            weightData.forEach(stat => {
-                weightChartInfo.push(stat.provinces+"/"+stat.year);
-                weightchartNormalWeight.push(stat["normal_weight"]);
+        await getWeight();
+        await getCovid();
+
+        weightStats.forEach((stat) => {
+            if(stat.year == 2017){
+                weightChartProvinces.push(stat.provinces);
                 weightChartOverweight.push(stat["overweight"]);
-                weightChartObesity.push(stat["obesity"]);
-            });
+            }
+        });
+        
+        /*for(let i = 0; i < covidStats.length; i++){
+            if(covidStats[i].name == "Spain"){
+                covidChartProvinces.push(province[i]);
+                covidChartDeadDiff.push(deaths_diff[i]);
+            }
         }
+
+        console.log("En los datos covid se han encontrado " + covidChartProvinces.length + " provincias.")
+        /*
+        covidStats.forEach((stat) => {
+            if(stat.name == "Spain"){
+                covidChartProvinces.push(stat["province"]);
+                covidChartDeadDiff.push(stat["deaths_diff"]);
+            }
+        });*/
 
         console.log("Generando datos...");
         Highcharts.chart('container', {
@@ -41,7 +76,7 @@
             title: {
                 text: 'Comunidad autónoma/año'
             },
-            categories: weightChartInfo,
+            categories: weightChartProvinces,
         },
 
         legend: {
@@ -67,15 +102,12 @@
 
         series: [
             {
-            name: 'Peso normal',
-            data: weightchartNormalWeight
-        }, {
             name: 'Sobrepeso',
             data: weightChartOverweight
-        }, {
-            name: 'Obesidad',
-            data: weightChartObesity
-        }],
+        }/*, {
+            name: 'Sobrepeso',
+            data: weightChartOverweight
+        }*/],
 
         responsive: {
             rules: [{

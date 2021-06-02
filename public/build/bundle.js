@@ -43849,7 +43849,7 @@ var app = (function () {
     	return block;
     }
 
-    const BASE_WEIGHTS_PATH$2 = "/api/v2/table-weights-stats";
+    const BASE_WEIGHTS_PATH$3 = "/api/v2/table-weights-stats";
 
     //const culturaBASE_PATH = "https://sos2021-26.herokuapp.com/integration/api/v2/culturaBASE";
     const culturaBASE_PATH = "/proxyHeroku/integration/api/v2/culturaBASE";
@@ -43865,9 +43865,9 @@ var app = (function () {
     	let culturaFundraising = [];
 
     	async function getWeight() {
-    		await fetch(BASE_WEIGHTS_PATH$2 + "/loadInitialData");
-    		console.log("Se cargan los datos desde la dirección: " + BASE_WEIGHTS_PATH$2 + "/loadInitialData");
-    		const res = await fetch(BASE_WEIGHTS_PATH$2);
+    		await fetch(BASE_WEIGHTS_PATH$3 + "/loadInitialData");
+    		console.log("Se cargan los datos desde la dirección: " + BASE_WEIGHTS_PATH$3 + "/loadInitialData");
+    		const res = await fetch(BASE_WEIGHTS_PATH$3);
 
     		if (res.ok) {
     			weightStats = await res.json();
@@ -43934,7 +43934,7 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		pop,
     		Button,
-    		BASE_WEIGHTS_PATH: BASE_WEIGHTS_PATH$2,
+    		BASE_WEIGHTS_PATH: BASE_WEIGHTS_PATH$3,
     		culturaBASE_PATH,
     		weightStats,
     		weightProvinces,
@@ -44151,7 +44151,7 @@ var app = (function () {
     	return block;
     }
 
-    const BASE_WEIGHTS_PATH$1 = "/api/v2/table-weights-stats";
+    const BASE_WEIGHTS_PATH$2 = "/api/v2/table-weights-stats";
     const stressBASE_PATH$1 = "/proxyStress/api/v2/stress_stats/";
 
     function instance$6($$self, $$props, $$invalidate) {
@@ -44165,9 +44165,9 @@ var app = (function () {
     	let stressPoblation = [];
 
     	async function getWeight() {
-    		await fetch(BASE_WEIGHTS_PATH$1 + "/loadInitialData");
-    		console.log("Se cargan los datos desde la dirección: " + BASE_WEIGHTS_PATH$1 + "/loadInitialData");
-    		const res = await fetch(BASE_WEIGHTS_PATH$1);
+    		await fetch(BASE_WEIGHTS_PATH$2 + "/loadInitialData");
+    		console.log("Se cargan los datos desde la dirección: " + BASE_WEIGHTS_PATH$2 + "/loadInitialData");
+    		const res = await fetch(BASE_WEIGHTS_PATH$2);
 
     		if (res.ok) {
     			weightStats = await res.json();
@@ -44263,7 +44263,7 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		pop,
     		Button,
-    		BASE_WEIGHTS_PATH: BASE_WEIGHTS_PATH$1,
+    		BASE_WEIGHTS_PATH: BASE_WEIGHTS_PATH$2,
     		stressBASE_PATH: stressBASE_PATH$1,
     		weightStats,
     		weightProvinces,
@@ -44467,7 +44467,7 @@ var app = (function () {
     	return block;
     }
 
-    const BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
+    const BASE_WEIGHTS_PATH$1 = "/api/v2/table-weights-stats";
 
     //const culturaBASE_PATH = "https://sos2021-26.herokuapp.com/integration/api/v2/culturaBASE";
     const stressBASE_PATH = "/proxyStress/api/v2/stress_stats/";
@@ -44483,7 +44483,7 @@ var app = (function () {
     	let stressPoblation = [];
 
     	async function getWeight() {
-    		const res = await fetch(BASE_WEIGHTS_PATH);
+    		const res = await fetch(BASE_WEIGHTS_PATH$1);
 
     		if (res.ok) {
     			weightStats = await res.json();
@@ -44552,7 +44552,7 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		pop,
     		Button,
-    		BASE_WEIGHTS_PATH,
+    		BASE_WEIGHTS_PATH: BASE_WEIGHTS_PATH$1,
     		stressBASE_PATH,
     		weightStats,
     		weightProvinces,
@@ -44600,7 +44600,7 @@ var app = (function () {
     const { console: console_1$3 } = globals;
     const file$4 = "src\\front\\weightsStats\\integrations\\integracionExt1.svelte";
 
-    // (155:1) <Button outline color="secondary" on:click="{pop}">
+    // (154:1) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$4(ctx) {
     	let t;
 
@@ -44620,7 +44620,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$4.name,
     		type: "slot",
-    		source: "(155:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(154:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -44691,22 +44691,22 @@ var app = (function () {
     			t9 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$4, 139, 4, 3317);
+    			add_location(script0, file$4, 138, 4, 3315);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/highcharts-more.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$4, 140, 4, 3409);
+    			add_location(script1, file$4, 139, 4, 3407);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$4, 141, 4, 3506);
+    			add_location(script2, file$4, 140, 4, 3504);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$4, 142, 4, 3605);
+    			add_location(script3, file$4, 141, 4, 3603);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$4, 147, 2, 3772);
+    			add_location(div, file$4, 146, 2, 3770);
     			attr_dev(figure, "class", "highcharts-figure svelte-yxl85i");
-    			add_location(figure, file$4, 146, 1, 3734);
-    			add_location(p0, file$4, 149, 1, 3813);
+    			add_location(figure, file$4, 145, 1, 3732);
+    			add_location(p0, file$4, 148, 1, 3811);
     			attr_dev(a, "href", "https://www.balldontlie.io");
-    			add_location(a, file$4, 152, 24, 4047);
-    			add_location(p1, file$4, 152, 1, 4024);
-    			add_location(main, file$4, 145, 0, 3725);
+    			add_location(a, file$4, 151, 24, 4045);
+    			add_location(p1, file$4, 151, 1, 4022);
+    			add_location(main, file$4, 144, 0, 3723);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -44985,7 +44985,7 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$3 = "src\\front\\weightsStats\\integrations\\integracionExt2.svelte";
 
-    // (120:2) <Button outline color="secondary" on:click="{pop}">
+    // (152:2) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -45005,7 +45005,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(120:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(152:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -45064,22 +45064,22 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 101, 2, 2625);
+    			add_location(script0, file$3, 133, 2, 3753);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 102, 2, 2694);
+    			add_location(script1, file$3, 134, 2, 3822);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 103, 2, 2773);
+    			add_location(script2, file$3, 135, 2, 3901);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$3, 104, 2, 2849);
+    			add_location(script3, file$3, 136, 2, 3977);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$3, 105, 2, 2927);
+    			add_location(script4, file$3, 137, 2, 4055);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$3, 113, 4, 3101);
+    			add_location(div, file$3, 145, 4, 4229);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$3, 114, 4, 3133);
+    			add_location(p, file$3, 146, 4, 4261);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$3, 112, 2, 3061);
-    			add_location(main, file$3, 110, 0, 3049);
+    			add_location(figure, file$3, 144, 2, 4189);
+    			add_location(main, file$3, 142, 0, 4177);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -45108,7 +45108,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 128) {
+    			if (dirty & /*$$scope*/ 512) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -45148,30 +45148,66 @@ var app = (function () {
     	return block;
     }
 
+    const BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
+    const BASE_COVID_PATH = "https://covid-api.com/api/reports";
+
     function instance$3($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("IntegracionExt2", slots, []);
-    	var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
-    	let weightData = [];
-    	let weightChartInfo = [];
-    	let weightchartNormalWeight = [];
+    	let weightStats = [];
+    	let weightChartProvinces = [];
     	let weightChartOverweight = [];
-    	let weightChartObesity = [];
+    	let covidStats = [];
+    	let covidChartProvinces = [];
+    	let covidChartDeadDiff = [];
+
+    	async function getWeight() {
+    		await fetch(BASE_WEIGHTS_PATH + "/loadInitialData");
+    		console.log("Se cargan los datos desde la dirección: " + BASE_WEIGHTS_PATH + "/loadInitialData");
+    		const res = await fetch(BASE_WEIGHTS_PATH);
+
+    		if (res.ok) {
+    			weightStats = await res.json();
+    			console.log("Recived " + weightStats.length + " weights data...");
+    		}
+    	}
+
+    	async function getCovid() {
+    		const res = await fetch(BASE_COVID_PATH);
+
+    		if (res.ok) {
+    			covidStats = await res.json();
+    			console.log("Recived " + covidStats.length + " covid data...");
+    		}
+    	}
 
     	async function loadGraph() {
     		console.log("Fetching data...");
-    		const res = await fetch(BASE_WEIGHTS_PATH);
-    		weightData = await res.json();
+    		await getWeight();
+    		await getCovid();
 
-    		if (res.ok) {
-    			weightData.forEach(stat => {
-    				weightChartInfo.push(stat.provinces + "/" + stat.year);
-    				weightchartNormalWeight.push(stat["normal_weight"]);
+    		weightStats.forEach(stat => {
+    			if (stat.year == 2017) {
+    				weightChartProvinces.push(stat.provinces);
     				weightChartOverweight.push(stat["overweight"]);
-    				weightChartObesity.push(stat["obesity"]);
-    			});
-    		}
+    			}
+    		});
 
+    		/*for(let i = 0; i < covidStats.length; i++){
+        if(covidStats[i].name == "Spain"){
+            covidChartProvinces.push(province[i]);
+            covidChartDeadDiff.push(deaths_diff[i]);
+        }
+    }
+
+    console.log("En los datos covid se han encontrado " + covidChartProvinces.length + " provincias.")
+    /*
+    covidStats.forEach((stat) => {
+        if(stat.name == "Spain"){
+            covidChartProvinces.push(stat["province"]);
+            covidChartDeadDiff.push(stat["deaths_diff"]);
+        }
+    });*/
     		console.log("Generando datos...");
 
     		Highcharts.chart("container", {
@@ -45179,7 +45215,7 @@ var app = (function () {
     			yAxis: { title: { text: "Porcentaje" } },
     			xAxis: {
     				title: { text: "Comunidad autónoma/año" },
-    				categories: weightChartInfo
+    				categories: weightChartProvinces
     			},
     			legend: {
     				layout: "vertical",
@@ -45200,18 +45236,13 @@ var app = (function () {
     			],
     			series: [
     				{
-    					name: "Peso normal",
-    					data: weightchartNormalWeight
-    				},
-    				{
     					name: "Sobrepeso",
     					data: weightChartOverweight
-    				},
-    				{
-    					name: "Obesidad",
-    					data: weightChartObesity
     				}
-    			],
+    			], /*, {
+        name: 'Sobrepeso',
+        data: weightChartOverweight
+    }*/
     			responsive: {
     				rules: [
     					{
@@ -45239,21 +45270,25 @@ var app = (function () {
     		pop,
     		Button,
     		BASE_WEIGHTS_PATH,
-    		weightData,
-    		weightChartInfo,
-    		weightchartNormalWeight,
+    		BASE_COVID_PATH,
+    		weightStats,
+    		weightChartProvinces,
     		weightChartOverweight,
-    		weightChartObesity,
+    		covidStats,
+    		covidChartProvinces,
+    		covidChartDeadDiff,
+    		getWeight,
+    		getCovid,
     		loadGraph
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("BASE_WEIGHTS_PATH" in $$props) BASE_WEIGHTS_PATH = $$props.BASE_WEIGHTS_PATH;
-    		if ("weightData" in $$props) weightData = $$props.weightData;
-    		if ("weightChartInfo" in $$props) weightChartInfo = $$props.weightChartInfo;
-    		if ("weightchartNormalWeight" in $$props) weightchartNormalWeight = $$props.weightchartNormalWeight;
+    		if ("weightStats" in $$props) weightStats = $$props.weightStats;
+    		if ("weightChartProvinces" in $$props) weightChartProvinces = $$props.weightChartProvinces;
     		if ("weightChartOverweight" in $$props) weightChartOverweight = $$props.weightChartOverweight;
-    		if ("weightChartObesity" in $$props) weightChartObesity = $$props.weightChartObesity;
+    		if ("covidStats" in $$props) covidStats = $$props.covidStats;
+    		if ("covidChartProvinces" in $$props) covidChartProvinces = $$props.covidChartProvinces;
+    		if ("covidChartDeadDiff" in $$props) covidChartDeadDiff = $$props.covidChartDeadDiff;
     	};
 
     	if ($$props && "$$inject" in $$props) {

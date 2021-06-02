@@ -6,7 +6,6 @@
 	let NBAStats = [];
 
 	async function loadGraph(){
-
         
         console.log("Fetching url...");	
 		const res = await fetch(NBA_PATH); 
