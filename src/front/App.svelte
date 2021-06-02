@@ -10,6 +10,7 @@
   import Integrations from './Integrations.svelte';
   import LifeExpectancy from './lifeStats/lifeExpectancy.svelte';
   import EditLife from './lifeStats/EditLife.svelte';
+  import UnemploymentStats from "./lifeStats/integrations/UnemploymentStats.svelte";
 	import TablaAlcohol from "./alcoholStats/TablaAlcohol.svelte";
   import EditAlcohol from "./alcoholStats/EditAlcohol.svelte";
   import GraphAlcohol from "./alcoholStats/GraphAlcohol.svelte";
@@ -65,6 +66,7 @@
     "/integrations/stress-stats" : Stress,
     "/integrations/prueba" : Prueba,
     "/integrations/NBA-position" : NBA,
+    "/integrations/unemployment": UnemploymentStats,
     "/smokers-stats" : SmokerStats,
     "/smokers-stats/:province/:year" : SmokersItems,
     "/smokers-graph" : GraphSmokers,
