@@ -93,3 +93,12 @@
   <Button outline color="secondary" on:click="{pop}">Atrás</Button>
  
 </main>
+
+<style>
+#container {
+    width: 100%;
+    height: 350px;
+    margin: 0;
+    padding: 0;
+}
+</style>
