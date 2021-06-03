@@ -101,6 +101,8 @@
             integrado con los datos de la recaudación total en la industria cinematográfica en cada comunidad autónoma.
         </p>
     </figure>
+
+    <h7 style="color: gray;">Gráfica diseñada con Highcharts - type: 'area'</h7>
     
     <Button outline color="secondary" on:click="{pop}">Atrás</Button>
 </main>
