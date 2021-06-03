@@ -35,7 +35,6 @@
   import GraphColumns from "./weightsStats/GraphColumns.svelte";
   import Cultura from "./weightsStats/integrations/culturaBASE.svelte";
   import Stress from "./weightsStats/integrations/stressStats.svelte";
-  import Prueba from "./weightsStats/integrations/pruebaStress.svelte";
   import NBA from "./weightsStats/integrations/integracionExt1.svelte";
   import CovidIntegration from "./weightsStats/integrations/integracionExt2.svelte";
   import LigaFutbol from "./weightsStats/integrations/integracionExt3.svelte";
