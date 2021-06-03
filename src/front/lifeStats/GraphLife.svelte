@@ -1,4 +1,5 @@
 <script>
+    import { pop }from "svelte-spa-router";
     import {Button} from "sveltestrap";
     const BASE_API_PATH = "/api/v2/life-expectancy-stats";
     let lifeData = [];
@@ -124,12 +125,12 @@
       <figure class="highcharts-figure">
         <div id="container" />
         <p class="highcharts-description">
-          Representación de la esperanza de vida en por País,Comunidades y Año, en este gráfico se muestra la esperanza de vida
-          en mujeres, hombres y la media de ambos.
+          Representación lineal de la esperanza de vida por País,Comunidad y Año
+          en mujeres, hombres y la media.
         </p>
       </figure>
     </div>
-    <a href="#/life-stats"><Button outline color="primary">Volver</Button></a>
+    <a href="#/life-stats"><Button outline color="primary"  on:click={pop} >Volver</Button></a>
   </main>
   
   <style>

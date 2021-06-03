@@ -42,7 +42,7 @@
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
   import GraphLife from "./lifeStats/GraphLife.svelte";
   import GraphLife2 from "./lifeStats/GraphLife2.svelte";
-import GraphsLife2 from "./lifeStats/GraphLife2.svelte";
+  import GraphLife3 from "./lifeStats/GraphLife3.svelte";
 
 	const routes = {
 		"/":Home,
@@ -62,6 +62,7 @@ import GraphsLife2 from "./lifeStats/GraphLife2.svelte";
     "/life-stats/:province/:year" : EditLife,
     "/life-graph": GraphLife,
     "/life-graph2": GraphLife2,
+    "/life-graph3": GraphLife3,
     "/weights-stats" : FrontWeight,
     "/weights-stats/:provinces/:year" : EditWeight,
     "/weights-graph" : GraphWeight,
