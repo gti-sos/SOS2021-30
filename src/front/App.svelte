@@ -36,13 +36,14 @@
   import GraphColumns from "./weightsStats/GraphColumns.svelte";
   import Cultura from "./weightsStats/integrations/culturaBASE.svelte";
   import Stress from "./weightsStats/integrations/stressStats.svelte";
-  import Prueba from "./weightsStats/integrations/pruebaStress.svelte";
   import NBA from "./weightsStats/integrations/integracionExt1.svelte";
   import CovidIntegration from "./weightsStats/integrations/integracionExt2.svelte";
   import LigaFutbol from "./weightsStats/integrations/integracionExt3.svelte";
   import GroupGraph from "./GroupGraph.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
   import GraphLife from "./lifeStats/GraphLife.svelte";
+  import GraphLife2 from "./lifeStats/GraphLife2.svelte";
+import GraphsLife2 from "./lifeStats/GraphLife2.svelte";
 
 	const routes = {
 		"/":Home,
@@ -61,6 +62,7 @@
     "/life-stats" : LifeExpectancy,
     "/life-stats/:province/:year" : EditLife,
     "/life-graph": GraphLife,
+    "/life-graph2": GraphLife2,
     "/weights-stats" : FrontWeight,
     "/weights-stats/:provinces/:year" : EditWeight,
     "/weights-graph" : GraphWeight,
