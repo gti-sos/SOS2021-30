@@ -127,7 +127,8 @@
             </table>
         </div>
     </figure>
-
-  <Button outline color="secondary" on:click="{pop}">Atrás</Button>
+    
+    <h7 style="color: gray;">Gráfica diseñada con Highcharts - type: 'column'</h7>
+    <Button outline color="secondary" on:click="{pop}">Atrás</Button>
  
 </main>
