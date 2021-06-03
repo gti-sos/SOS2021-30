@@ -33,29 +33,41 @@
         console.log("We hace " + golesContra.length + " datas from the goals against each team");
 
         //Tratamiento de los datos integrados de la API a mano
-            var chart = anychart.column3d([
-                {x: equipo[0], value: puntos[0], value2: golesFavor[0]},
-                {x: equipo[1], value: puntos[1], value2: golesFavor[1]},
-                {x: equipo[2], value: puntos[2], value2: golesFavor[2]},
-                {x: equipo[3], value: puntos[3], value2: golesFavor[3]},
-                {x: equipo[4], value: puntos[4], value2: golesFavor[4]},
-                {x: equipo[5], value: puntos[5], value2: golesFavor[5]},
-                {x: equipo[6], value: puntos[6], value2: golesFavor[6]},
-                {x: equipo[7], value: puntos[7], value2: golesFavor[7]},
-                {x: equipo[8], value: puntos[8], value2: golesFavor[8]},
-                {x: equipo[9], value: puntos[9], value2: golesFavor[9]},
-                {x: equipo[10], value: puntos[10], value2: golesFavor[10]},
-                {x: equipo[11], value: puntos[11], value2: golesFavor[11]},
-                {x: equipo[12], value: puntos[12], value2: golesFavor[12]},
-                {x: equipo[13], value: puntos[13], value2: golesFavor[13]},
-                {x: equipo[14], value: puntos[14], value2: golesFavor[14]},
-                {x: equipo[15], value: puntos[15], value2: golesFavor[15]},
-                {x: equipo[16], value: puntos[16], value2: golesFavor[16]},
-                {x: equipo[17], value: puntos[17], value2: golesFavor[17]},
-                {x: equipo[18], value: puntos[18], value2: golesFavor[18]},
-                {x: equipo[19], value: puntos[19], value2: golesFavor[19]}
+            var data = anychart.data.set([
+                {x: equipo[0], value: puntos[0]},
+                {x: equipo[1], value: puntos[1]},
+                {x: equipo[2], value: puntos[2]},
+                {x: equipo[3], value: puntos[3]},
+                {x: equipo[4], value: puntos[4]},
+                {x: equipo[5], value: puntos[5]},
+                {x: equipo[6], value: puntos[6]},
+                {x: equipo[7], value: puntos[7]},
+                {x: equipo[8], value: puntos[8]},
+                {x: equipo[9], value: puntos[9]},
+                {x: equipo[10], value: puntos[10]},
+                {x: equipo[11], value: puntos[11]},
+                {x: equipo[12], value: puntos[12]},
+                {x: equipo[13], value: puntos[13]},
+                {x: equipo[14], value: puntos[14]},
+                {x: equipo[15], value: puntos[15]},
+                {x: equipo[16], value: puntos[16]},
+                {x: equipo[17], value: puntos[17]},
+                {x: equipo[18], value: puntos[18]},
+                {x: equipo[19], value: puntos[19]}
             ]);
+
+            var seriesData_1 = data.mapAs({x: 0, value: 1});
+
+            var chart = anychart.column();
+
+            var series1 = chart.column(seriesData_1);
+            series1.name("Puntos");
+
             chart.title("Estadísitcas liga española de fútbol");
+            
+            chart.xAxis().title("Equipos");
+            chart.yAxis().title("Puntos");
+
             chart.container("container");
             chart.draw();
         });
