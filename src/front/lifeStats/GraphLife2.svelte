@@ -3,11 +3,8 @@
         const BASE_API_PATH = "/api/v2/life-expectancy-stats";
         let lifeData = [];
         let lifeChartData = [];
-        let lifeChartCountryProvinceYear = [];
-        let lifeChartLifeExpectancyMan = [];
-        let lifeChartProvinceAverage = [];
-        let lifeChartLifeExpectancyWoman = [];
-        let lifeChartAverageLifeExpectancy = [];
+        let lifeChartWoman = [];
+        let lifeChartMan = [];
         let provinces = [];
         let errorMsg = "";
         let okMsg = "";
@@ -18,68 +15,74 @@
         lifeData = await res.json();
         if (res.ok) {
             lifeData.forEach(stat => {
-                lifeChartCountryProvinceYear.push(stat.country+"/"+stat.province+"/"+stat.year);
-                lifeChartProvinceAverage.push([stat.province,stat.averageLifeExpectancy]);
-
+                lifeChartMan.push(stat.lifeExpectancyMan);
+                lifeChartWoman.push(stat.lifeExpectancyWoman);
                 provinces.push(stat.province);
             });
         }
       
       console.log("Life Expectancy Chart Data: " + lifeChartData);
-            var ranges = lifeChartLifeExpectancyWoman;
-            var averages = lifeChartAverageLifeExpectancy;
+
             var provincias = provinces
 
-            
+
             Highcharts.chart('container', {
-              chart: {
-                  type: 'column'
-              },
-              title: {
-                  text: 'Esperanza de vida media en España 2017'
-              },
-              subtitle: {
-                  text: 'Source: <a href="https://datosmacro.expansion.com/demografia/esperanza-vida/espana-comunidades-autonomas">datosmacro.com</a>'
-              },
-              xAxis: {
-                  type: 'category',
-                  labels: {
-                      rotation: -45,
-                      style: {
-                          fontSize: '13px',
-                          fontFamily: 'Verdana, sans-serif'
-                      }
-                  }
-              },
-              yAxis: {
-                  min: 0,
-                  title: {
-                      text: 'años'
-                  }
-              },
-              legend: {
-                  enabled: false
-              },
-              tooltip: {
-                  pointFormat: 'Edad: <b>{point.y:.1f} años</b>'
-              },
-              series: [{
-                  name: 'Population',
-                  data: lifeChartProvinceAverage,
-                  dataLabels: {
-                      enabled: true,
-                      rotation: -90,
-                      color: '#FFFFFF',
-                      align: 'right',
-                      format: '{point.y:.1f}', // one decimal
-                      y: 10, // 10 pixels down from the top
-                      style: {
-                          fontSize: '13px',
-                          fontFamily: 'Verdana, sans-serif'
-                      }
-                  }
-              }]
-          });
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Esperanza de vida por comunidades en España 2017'
+            },
+            subtitle: {
+                text: 'Source: <a href="https://datosmacro.expansion.com/demografia/esperanza-vida/espana-comunidades-autonomas">datosmacro.com</a>'
+            },
+            xAxis: {
+                categories: provincias,
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                max: 120,
+                title: {
+                    text: 'Edad (Años)',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -40,
+                y: 80,
+                floating: true,
+                borderWidth: 1,
+                backgroundColor:
+                    Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+                shadow: true
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: 'Hombres',
+                data: lifeChartMan,
+            }, {
+                name: 'Mujeres',
+                data: lifeChartWoman
+            }]
+        });
         
         }
 </script>
@@ -114,7 +117,7 @@
       <figure class="highcharts-figure">
         <div id="container" />
         <p class="highcharts-description">
-          Representación de la esperanza de vida media por comunidades. (Gráfica creada con Highcharts)
+          Representación de la esperanza de vida en hombres y mujeres por comunidades. (Gráfica creada con Highcharts)
         </p>
       </figure>
     </div>
@@ -122,42 +125,61 @@
   </main>
   
   <style>
-      #container {
-          height: 400px; 
-      }
+    main {
+      text-align: center;
+      padding: 1em;
+      margin: 0 auto;
+    }
+    div{
+      margin-bottom: 15px;
+    }
+    p {
+      display: inline;
+    }
+    .msgRed {
+      padding: 8px;
+      background-color: #f8d7da;
+    }
+    .msgGreen {
+      padding: 8px;
+      background-color: #d4edda;
+    }
+    .highcharts-figure, .highcharts-data-table table {
+        min-width: 310px; 
+        max-width: 800px;
+        margin: 1em auto;
+    }
 
-      .highcharts-figure, .highcharts-data-table table {
-          min-width: 310px; 
-          max-width: 800px;
-          margin: 1em auto;
-      }
+    #container {
+        height: 500px;
+    }
 
-      .highcharts-data-table table {
-          font-family: Verdana, sans-serif;
-          border-collapse: collapse;
-          border: 1px solid #EBEBEB;
-          margin: 10px auto;
-          text-align: center;
-          width: 100%;
-          max-width: 500px;
-      }
-      .highcharts-data-table caption {
-          padding: 1em 0;
-          font-size: 1.2em;
-          color: #555;
-      }
-      .highcharts-data-table th {
-        font-weight: 600;
-          padding: 0.5em;
-      }
-      .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
-          padding: 0.5em;
-      }
-      .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
-          background: #f8f8f8;
-      }
-      .highcharts-data-table tr:hover {
-          background: #f1f7ff;
-      }
+    .highcharts-data-table table {
+      font-family: Verdana, sans-serif;
+      border-collapse: collapse;
+      border: 1px solid #EBEBEB;
+      margin: 10px auto;
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+    }
+    .highcharts-data-table caption {
+        padding: 1em 0;
+        font-size: 1.2em;
+        color: #555;
+    }
+    .highcharts-data-table th {
+      font-weight: 600;
+        padding: 0.5em;
+    }
+    .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+        padding: 0.5em;
+    }
+    .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+        background: #f8f8f8;
+    }
+    .highcharts-data-table tr:hover {
+        background: #f1f7ff;
+    }
 
   </style>
