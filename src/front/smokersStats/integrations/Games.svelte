@@ -87,7 +87,7 @@
             gamesFecha.push(stat.release_date.valueOf());  //extraemos las fechas de lanzamiento
             gamesName.push(stat.title.valueOf());    //extraemos el nombre de cada juego
             gamesGenre.push(stat.genre.valueOf());    //extraemos el género
-            gamePlatform.push(stat.platform.valueOf());
+            gamePlatform.push(stat.platform.valueOf());     //extraemos la plataforma
             });
 
         //Tratamiento de datos
@@ -122,7 +122,7 @@
         var chart = JSC.chart('chartDiv', { 
   debug: true, 
   defaultSeries_type: 'marker',
-  title_label_text: 'Juegos publicados www.freetogame.com',
+  title_label_text: 'Juegos publicados en la web www.freetogame.com',
   legend: {
           position: 'right',
           fill: '#f1f8ff',
@@ -135,8 +135,7 @@
   yAxis: { label_text: 'Plataforma de lanzamiento' }, 
   xAxis_scale_type: 'time',
   series: dataFin
-}); 
-
+});  
     }
 
     //Llamada a la función 
@@ -188,6 +187,10 @@
 
     <div id="chartDiv" style="max-width: 740px;height: 400px;margin: 0px auto"/>
     <br>
+
+    <p align="center"><Button outline color="primary" on:click={pop}>Atrás</Button></p>
+    <br>
+    <br>
     <p>Haz click en el título para mostrar la tabla ordenada</p>
     <br>
     <table align="center">
@@ -209,7 +212,7 @@
         </tbody>
     </table>
     <br>
-    <p align="center"><Button outline color="primary" on:click={pop}>Atrás</Button></p>
+    
 
 </main>
 

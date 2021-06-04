@@ -374,7 +374,8 @@
             Eliminar todo
         </Button>
         <a href="#/life-graph"><Button outline color="primary">Ver gráfico</Button></a>
-        <a href="#/life-graph2"><Button outline color="primary">Ver gráfico con otra Representación</Button></a>
+        <a href="#/life-graph2"><Button outline color="primary">Ver gráfico de barras (D03)</Button></a>
+        <a href="#/life-graph3"><Button outline color="primary">Ver gráfico Chart.js (D03)</Button></a>
         <Button outline color="primary" on:click="{getPreviewPage}">
            Atrás
         </Button>

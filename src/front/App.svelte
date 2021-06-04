@@ -28,7 +28,7 @@
   import RentalStats from "./smokersStats/integrations/RentalStats.svelte";
   import Hostelries from "./smokersStats/integrations/Hostelries.svelte";
   import Canada from "./smokersStats/integrations/Canada.svelte";
-  import Bikewise from "./smokersStats/integrations/Bikes.svelte";
+  import Airlines from "./smokersStats/integrations/Airlines.svelte";
   import Games from "./smokersStats/integrations/Games.svelte";
   import FrontWeight from "./weightsStats/TablaWeights.svelte";
   import EditWeight from "./weightsStats/EditWeight.svelte";
@@ -44,7 +44,7 @@
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
   import GraphLife from "./lifeStats/GraphLife.svelte";
   import GraphLife2 from "./lifeStats/GraphLife2.svelte";
-import GraphsLife2 from "./lifeStats/GraphLife2.svelte";
+  import GraphLife3 from "./lifeStats/GraphLife3.svelte";
 
 	const routes = {
 		"/":Home,
@@ -64,6 +64,7 @@ import GraphsLife2 from "./lifeStats/GraphLife2.svelte";
     "/life-stats/:province/:year" : EditLife,
     "/life-graph": GraphLife,
     "/life-graph2": GraphLife2,
+    "/life-graph3": GraphLife3,
     "/weights-stats" : FrontWeight,
     "/weights-stats/:provinces/:year" : EditWeight,
     "/weights-graph" : GraphWeight,
@@ -83,7 +84,7 @@ import GraphsLife2 from "./lifeStats/GraphLife2.svelte";
     "/integrations/rentals" : RentalStats,
     "/integrations/hostelries" : Hostelries,
     "/integrations/canada" : Canada,
-    "/integrations/bikewise": Bikewise,
+    "/integrations/airlines": Airlines,
     "/integrations/games" : Games,
     "/analytics" : GroupGraph,
 		'*': NotFound};

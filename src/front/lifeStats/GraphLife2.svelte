@@ -117,7 +117,7 @@
       <figure class="highcharts-figure">
         <div id="container" />
         <p class="highcharts-description">
-          Representación de la esperanza de vida en hombres y mujeres por comunidades. (Gráfica creada con Highcharts)
+          Representación en barras de la esperanza de vida en hombres y mujeres por comunidades. (Gráfica creada con Highcharts)
         </p>
       </figure>
     </div>
