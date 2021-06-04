@@ -147,7 +147,7 @@
       width: 100%;
       max-width: 1000px;
       height: 100%;
-      max-height: 600px;
+      max-height: 550px;
     }
     main {
       text-align: center;
