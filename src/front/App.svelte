@@ -37,7 +37,7 @@
   import Cultura from "./weightsStats/integrations/culturaBASE.svelte";
   import Stress from "./weightsStats/integrations/stressStats.svelte";
   import NBA from "./weightsStats/integrations/integracionExt1.svelte";
-  import CovidIntegration from "./weightsStats/integrations/integracionExt2.svelte";
+  import SteamGames from "./weightsStats/integrations/integracionExt2.svelte";
   import LigaFutbol from "./weightsStats/integrations/integracionExt3.svelte";
   import GroupGraph from "./GroupGraph.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
@@ -73,7 +73,7 @@
     "/integrations/culturaBASE" : Cultura,
     "/integrations/stress-stats" : Stress,
     "/integrations/NBA-position" : NBA,
-    "/integrations/covid-integration" : CovidIntegration,
+    "/integrations/steam-games" : SteamGames,
     "/integrations/liga-futbol" : LigaFutbol,
     "/integrations/unemployment": UnemploymentStats,
     "/integrations/druguse": DrugUseStats,

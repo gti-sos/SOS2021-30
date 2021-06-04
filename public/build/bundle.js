@@ -13367,13 +13367,18 @@ var app = (function () {
     	return block;
     }
 
+<<<<<<< HEAD
     // (63:52) <Button color="primary">
     function create_default_slot_10$5(ctx) {
+=======
+    // (63:46) <Button color="primary">
+    function create_default_slot_9$5(ctx) {
+>>>>>>> c8c0d37a2b015753fd3d41f1e52aa1fa0e3a2a6a
     	let t;
 
     	const block = {
     		c: function create() {
-    			t = text("Integración COVID (Ext2)");
+    			t = text("Integración juegos Steam (Ext2)");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -13387,7 +13392,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_10$5.name,
     		type: "slot",
-    		source: "(63:52) <Button color=\\\"primary\\\">",
+    		source: "(63:46) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
@@ -13515,11 +13520,19 @@ var app = (function () {
     			attr_dev(a1, "href", "/#/integrations/stress-stats");
     			add_location(a1, file$A, 60, 8, 2062);
     			attr_dev(a2, "href", "/#/integrations/NBA-position");
+<<<<<<< HEAD
     			add_location(a2, file$A, 61, 8, 2187);
     			attr_dev(a3, "href", "/#/integrations/covid-integration");
     			add_location(a3, file$A, 62, 8, 2294);
     			attr_dev(a4, "href", "/#/integrations/liga-futbol");
     			add_location(a4, file$A, 63, 8, 2409);
+=======
+    			add_location(a2, file$z, 61, 8, 2187);
+    			attr_dev(a3, "href", "/#/integrations/steam-games");
+    			add_location(a3, file$z, 62, 8, 2294);
+    			attr_dev(a4, "href", "/#/integrations/liga-futbol");
+    			add_location(a4, file$z, 63, 8, 2410);
+>>>>>>> c8c0d37a2b015753fd3d41f1e52aa1fa0e3a2a6a
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -13721,7 +13734,11 @@ var app = (function () {
     		c: function create() {
     			h2 = element("h2");
     			h2.textContent = "Integrado con las estadísticas sobre la esperanza de vida";
+<<<<<<< HEAD
     			add_location(h2, file$A, 70, 19, 2634);
+=======
+    			add_location(h2, file$z, 70, 19, 2635);
+>>>>>>> c8c0d37a2b015753fd3d41f1e52aa1fa0e3a2a6a
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -13890,6 +13907,7 @@ var app = (function () {
     			t0 = space();
     			create_component(cardtext.$$.fragment);
     			t1 = space();
+<<<<<<< HEAD
     			a0 = element("a");
     			create_component(button0.$$.fragment);
     			t2 = space();
@@ -13899,6 +13917,12 @@ var app = (function () {
     			add_location(a0, file$A, 75, 8, 2809);
     			attr_dev(a1, "href", "/#/integrations/druguse");
     			add_location(a1, file$A, 76, 8, 2922);
+=======
+    			a = element("a");
+    			create_component(button.$$.fragment);
+    			attr_dev(a, "href", "/#/integrations/unemployment");
+    			add_location(a, file$z, 75, 8, 2810);
+>>>>>>> c8c0d37a2b015753fd3d41f1e52aa1fa0e3a2a6a
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -14173,7 +14197,11 @@ var app = (function () {
     			attr_dev(div3, "class", "svelte-egmbdb");
     			add_location(div3, file$A, 51, 2, 1710);
     			attr_dev(div4, "class", "svelte-egmbdb");
+<<<<<<< HEAD
     			add_location(div4, file$A, 67, 2, 2563);
+=======
+    			add_location(div4, file$z, 67, 2, 2564);
+>>>>>>> c8c0d37a2b015753fd3d41f1e52aa1fa0e3a2a6a
     			attr_dev(main, "class", "svelte-egmbdb");
     			add_location(main, file$A, 13, 2, 235);
     		},
@@ -58447,7 +58475,7 @@ var app = (function () {
     const { console: console_1$8 } = globals;
     const file$9 = "src\\front\\weightsStats\\integrations\\culturaBASE.svelte";
 
-    // (107:4) <Button outline color="secondary" on:click="{pop}">
+    // (108:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$9(ctx) {
     	let t;
 
@@ -58467,7 +58495,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$9.name,
     		type: "slot",
-    		source: "(107:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(108:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -58528,22 +58556,22 @@ var app = (function () {
     			t5 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$9, 87, 4, 2741);
+    			add_location(script0, file$9, 88, 4, 2808);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$9, 88, 4, 2812);
+    			add_location(script1, file$9, 89, 4, 2879);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$9, 89, 4, 2890);
+    			add_location(script2, file$9, 90, 4, 2957);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$9, 90, 4, 2970);
+    			add_location(script3, file$9, 91, 4, 3037);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$9, 97, 8, 3148);
+    			add_location(div, file$9, 98, 8, 3215);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$9, 98, 8, 3184);
+    			add_location(p, file$9, 99, 8, 3251);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$9, 96, 4, 3104);
+    			add_location(figure, file$9, 97, 4, 3171);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$9, 104, 4, 3509);
-    			add_location(main, file$9, 95, 0, 3092);
+    			add_location(h7, file$9, 105, 4, 3576);
+    			add_location(main, file$9, 96, 0, 3159);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -58612,10 +58640,11 @@ var app = (function () {
     	return block;
     }
 
-    const BASE_WEIGHTS_PATH$2 = "/api/v2/table-weights-stats";
+    const BASE_WEIGHTS_PATH$1 = "/api/v2/table-weights-stats";
 
     //const culturaBASE_PATH = "https://sos2021-26.herokuapp.com/integration/api/v2/culturaBASE";
-    const culturaBASE_PATH = "/proxyHeroku/integration/api/v2/culturaBASE";
+    //const culturaBASE_PATH = "/proxyHeroku/integration/api/v2/culturaBASE";
+    const culturaBASE_PATH = "/proxyHeroku/api/v2/culturaBASE";
 
     function instance$9($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
@@ -58628,9 +58657,9 @@ var app = (function () {
     	let culturaFundraising = [];
 
     	async function getWeight() {
-    		await fetch(BASE_WEIGHTS_PATH$2 + "/loadInitialData");
-    		console.log("Se cargan los datos desde la dirección: " + BASE_WEIGHTS_PATH$2 + "/loadInitialData");
-    		const res = await fetch(BASE_WEIGHTS_PATH$2);
+    		await fetch(BASE_WEIGHTS_PATH$1 + "/loadInitialData");
+    		console.log("Se cargan los datos desde la dirección: " + BASE_WEIGHTS_PATH$1 + "/loadInitialData");
+    		const res = await fetch(BASE_WEIGHTS_PATH$1);
 
     		if (res.ok) {
     			weightStats = await res.json();
@@ -58697,7 +58726,7 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		pop,
     		Button,
-    		BASE_WEIGHTS_PATH: BASE_WEIGHTS_PATH$2,
+    		BASE_WEIGHTS_PATH: BASE_WEIGHTS_PATH$1,
     		culturaBASE_PATH,
     		weightStats,
     		weightProvinces,
@@ -58917,7 +58946,7 @@ var app = (function () {
     	return block;
     }
 
-    const BASE_WEIGHTS_PATH$1 = "/api/v2/table-weights-stats";
+    const BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
     const stressBASE_PATH = "/proxyStress/api/v2/stress_stats/";
 
     function instance$8($$self, $$props, $$invalidate) {
@@ -58931,9 +58960,9 @@ var app = (function () {
     	let stressPoblation = [];
 
     	async function getWeight() {
-    		await fetch(BASE_WEIGHTS_PATH$1 + "/loadInitialData");
-    		console.log("Se cargan los datos desde la dirección: " + BASE_WEIGHTS_PATH$1 + "/loadInitialData");
-    		const res = await fetch(BASE_WEIGHTS_PATH$1);
+    		await fetch(BASE_WEIGHTS_PATH + "/loadInitialData");
+    		console.log("Se cargan los datos desde la dirección: " + BASE_WEIGHTS_PATH + "/loadInitialData");
+    		const res = await fetch(BASE_WEIGHTS_PATH);
 
     		if (res.ok) {
     			weightStats = await res.json();
@@ -59015,7 +59044,7 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		pop,
     		Button,
-    		BASE_WEIGHTS_PATH: BASE_WEIGHTS_PATH$1,
+    		BASE_WEIGHTS_PATH,
     		stressBASE_PATH,
     		weightStats,
     		weightProvinces,
@@ -59457,7 +59486,7 @@ var app = (function () {
     const { console: console_1$5 } = globals;
     const file$6 = "src\\front\\weightsStats\\integrations\\integracionExt2.svelte";
 
-    // (152:2) <Button outline color="secondary" on:click="{pop}">
+    // (116:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$6(ctx) {
     	let t;
 
@@ -59477,7 +59506,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$6.name,
     		type: "slot",
-    		source: "(152:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(116:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -59493,15 +59522,19 @@ var app = (function () {
     	let script2_src_value;
     	let script3;
     	let script3_src_value;
-    	let script4;
-    	let script4_src_value;
     	let t0;
     	let main;
     	let figure;
     	let div;
     	let t1;
-    	let p;
+    	let p0;
     	let t3;
+    	let p1;
+    	let t4;
+    	let a;
+    	let t6;
+    	let h7;
+    	let t8;
     	let button;
     	let current;
     	let mounted;
@@ -59525,33 +59558,43 @@ var app = (function () {
     			script1 = element("script");
     			script2 = element("script");
     			script3 = element("script");
-    			script4 = element("script");
     			t0 = space();
     			main = element("main");
     			figure = element("figure");
     			div = element("div");
     			t1 = space();
-    			p = element("p");
-    			p.textContent = "Gráfico de líneas en el que se ve representado el porcentaje por comunidades autónomas en los años 2014 y 2017 el IMC";
+    			p0 = element("p");
+    			p0.textContent = "Gráfico en el que se ve representado el precio de algunos juegos rebajados en Steam con un valor \r\n        superior a los 15€, comparando su precio real con el precio rebajado. La zona roja marca el momento\r\n        en el que los precios rebajados empiezan a ser más caros";
     			t3 = space();
+    			p1 = element("p");
+    			t4 = text("Datos obtenidos de: ");
+    			a = element("a");
+    			a.textContent = "https://www.cheapshark.com/";
+    			t6 = space();
+    			h7 = element("h7");
+    			h7.textContent = "Gráfica diseñada con Highcharts - type: 'areaspline'";
+    			t8 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$6, 133, 2, 3753);
-    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$6, 134, 2, 3822);
-    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$6, 135, 2, 3901);
-    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$6, 136, 2, 3977);
-    			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$6, 137, 2, 4055);
+    			add_location(script0, file$6, 94, 4, 2667);
+    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$6, 95, 4, 2738);
+    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
+    			add_location(script2, file$6, 96, 4, 2816);
+    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
+    			add_location(script3, file$6, 97, 4, 2896);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$6, 145, 4, 4229);
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$6, 146, 4, 4261);
+    			add_location(div, file$6, 105, 8, 3076);
+    			attr_dev(p0, "class", "highcharts-description");
+    			add_location(p0, file$6, 106, 8, 3112);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$6, 144, 2, 4189);
-    			add_location(main, file$6, 142, 0, 4177);
+    			add_location(figure, file$6, 104, 4, 3032);
+    			attr_dev(a, "href", "https://www.cheapshark.com/");
+    			add_location(a, file$6, 112, 27, 3478);
+    			add_location(p1, file$6, 112, 4, 3455);
+    			set_style(h7, "color", "gray");
+    			add_location(h7, file$6, 113, 4, 3558);
+    			add_location(main, file$6, 102, 0, 3018);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -59561,26 +59604,31 @@ var app = (function () {
     			append_dev(document.head, script1);
     			append_dev(document.head, script2);
     			append_dev(document.head, script3);
-    			append_dev(document.head, script4);
     			insert_dev(target, t0, anchor);
     			insert_dev(target, main, anchor);
     			append_dev(main, figure);
     			append_dev(figure, div);
     			append_dev(figure, t1);
-    			append_dev(figure, p);
+    			append_dev(figure, p0);
     			append_dev(main, t3);
+    			append_dev(main, p1);
+    			append_dev(p1, t4);
+    			append_dev(p1, a);
+    			append_dev(main, t6);
+    			append_dev(main, h7);
+    			append_dev(main, t8);
     			mount_component(button, main, null);
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(script4, "load", /*loadGraph*/ ctx[0], false, false, false);
+    				dispose = listen_dev(script3, "load", /*loadGraph*/ ctx[0], false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 512) {
+    			if (dirty & /*$$scope*/ 64) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -59600,7 +59648,6 @@ var app = (function () {
     			detach_dev(script1);
     			detach_dev(script2);
     			detach_dev(script3);
-    			detach_dev(script4);
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
     			destroy_component(button);
@@ -59620,115 +59667,70 @@ var app = (function () {
     	return block;
     }
 
-    const BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
-    const BASE_COVID_PATH = "https://covid-api.com/api/reports";
+    const BASE_GAMES_PATH = "https://www.cheapshark.com/api/1.0/deals?storeID=1";
 
     function instance$6($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("IntegracionExt2", slots, []);
-    	let weightStats = [];
-    	let weightChartProvinces = [];
-    	let weightChartOverweight = [];
-    	let covidStats = [];
-    	let covidChartProvinces = [];
-    	let covidChartDeadDiff = [];
+    	let gamesStats = [];
+    	let gameTitle = [];
+    	let price = [];
+    	let salePrice = [];
 
-    	async function getWeight() {
-    		await fetch(BASE_WEIGHTS_PATH + "/loadInitialData");
-    		console.log("Se cargan los datos desde la dirección: " + BASE_WEIGHTS_PATH + "/loadInitialData");
-    		const res = await fetch(BASE_WEIGHTS_PATH);
+    	async function getGames() {
+    		const res = await fetch(BASE_GAMES_PATH);
 
     		if (res.ok) {
-    			weightStats = await res.json();
-    			console.log("Recived " + weightStats.length + " weights data...");
-    		}
-    	}
-
-    	async function getCovid() {
-    		const res = await fetch(BASE_COVID_PATH);
-
-    		if (res.ok) {
-    			covidStats = await res.json();
-    			console.log("Recived " + covidStats.length + " covid data...");
+    			gamesStats = await res.json();
+    			console.log("Recived data from de url...");
     		}
     	}
 
     	async function loadGraph() {
     		console.log("Fetching data...");
-    		await getWeight();
-    		await getCovid();
+    		await getGames();
+    		console.log("Recived " + gamesStats.length + " games data...");
 
-    		weightStats.forEach(stat => {
-    			if (stat.year == 2017) {
-    				weightChartProvinces.push(stat.provinces);
-    				weightChartOverweight.push(stat["overweight"]);
+    		gamesStats.forEach(stat => {
+    			if (stat.normalPrice > 14.99) {
+    				gameTitle.push(stat.title);
+    				price.push(parseFloat(stat["normalPrice"]));
+    				salePrice.push(parseFloat(stat["salePrice"]));
     			}
     		});
 
-    		/*for(let i = 0; i < covidStats.length; i++){
-        if(covidStats[i].name == "Spain"){
-            covidChartProvinces.push(province[i]);
-            covidChartDeadDiff.push(deaths_diff[i]);
-        }
-    }
-
-    console.log("En los datos covid se han encontrado " + covidChartProvinces.length + " provincias.")
-    /*
-    covidStats.forEach((stat) => {
-        if(stat.name == "Spain"){
-            covidChartProvinces.push(stat["province"]);
-            covidChartDeadDiff.push(stat["deaths_diff"]);
-        }
-    });*/
     		console.log("Generando datos...");
 
     		Highcharts.chart("container", {
-    			title: { text: "Gráfica IMC por comunidades" },
-    			yAxis: { title: { text: "Porcentaje" } },
-    			xAxis: {
-    				title: { text: "Comunidad autónoma/año" },
-    				categories: weightChartProvinces
-    			},
+    			chart: { type: "areaspline" },
+    			title: { text: "Integración juegos de Steam" },
     			legend: {
     				layout: "vertical",
-    				align: "right",
-    				verticalAlign: "middle"
+    				align: "left",
+    				verticalAlign: "top",
+    				x: 150,
+    				y: 100,
+    				floating: true,
+    				borderWidth: 1,
+    				backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || "#FFFFFF"
     			},
-    			annootations: [
-    				{
-    					labels: [
-    						{ point: "date", text: "" },
-    						{
-    							point: "min",
-    							text: "Min",
-    							backgroundColor: "white"
-    						}
-    					]
-    				}
-    			],
-    			series: [
-    				{
-    					name: "Sobrepeso",
-    					data: weightChartOverweight
-    				}
-    			], /*, {
-        name: 'Sobrepeso',
-        data: weightChartOverweight
-    }*/
-    			responsive: {
-    				rules: [
+    			xAxis: {
+    				title: { text: "Titulo del juego" },
+    				categories: gameTitle,
+    				type: "category",
+    				plotBands: [
     					{
-    						condition: { maxWidth: 500 },
-    						chartOptions: {
-    							legend: {
-    								layout: "horizontal",
-    								align: "center",
-    								verticalAlign: "bottom"
-    							}
-    						}
+    						from: 20,
+    						to: 30,
+    						color: "rgba(231, 12, 8, .2)"
     					}
     				]
-    			}
+    			},
+    			yAxis: { title: { text: "Precio" } },
+    			tooltip: { shared: true, valueSuffix: " €" },
+    			credits: { enabled: false },
+    			plotOptions: { areaspline: { fillOpacity: 0.5 } },
+    			series: [{ name: "Precio", data: price }, { name: "Valoraciones", data: salePrice }]
     		});
     	}
 
@@ -59741,26 +59743,20 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		pop,
     		Button,
-    		BASE_WEIGHTS_PATH,
-    		BASE_COVID_PATH,
-    		weightStats,
-    		weightChartProvinces,
-    		weightChartOverweight,
-    		covidStats,
-    		covidChartProvinces,
-    		covidChartDeadDiff,
-    		getWeight,
-    		getCovid,
+    		BASE_GAMES_PATH,
+    		gamesStats,
+    		gameTitle,
+    		price,
+    		salePrice,
+    		getGames,
     		loadGraph
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("weightStats" in $$props) weightStats = $$props.weightStats;
-    		if ("weightChartProvinces" in $$props) weightChartProvinces = $$props.weightChartProvinces;
-    		if ("weightChartOverweight" in $$props) weightChartOverweight = $$props.weightChartOverweight;
-    		if ("covidStats" in $$props) covidStats = $$props.covidStats;
-    		if ("covidChartProvinces" in $$props) covidChartProvinces = $$props.covidChartProvinces;
-    		if ("covidChartDeadDiff" in $$props) covidChartDeadDiff = $$props.covidChartDeadDiff;
+    		if ("gamesStats" in $$props) gamesStats = $$props.gamesStats;
+    		if ("gameTitle" in $$props) gameTitle = $$props.gameTitle;
+    		if ("price" in $$props) price = $$props.price;
+    		if ("salePrice" in $$props) salePrice = $$props.salePrice;
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -62690,8 +62686,13 @@ var app = (function () {
     			create_component(navbar.$$.fragment);
     			t = space();
     			create_component(router.$$.fragment);
+<<<<<<< HEAD
     			add_location(body, file, 92, 1, 4428);
     			add_location(main, file, 91, 0, 4419);
+=======
+    			add_location(body, file, 89, 1, 4288);
+    			add_location(main, file, 88, 0, 4279);
+>>>>>>> c8c0d37a2b015753fd3d41f1e52aa1fa0e3a2a6a
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -62773,7 +62774,7 @@ var app = (function () {
     		"/integrations/culturaBASE": CulturaBASE,
     		"/integrations/stress-stats": StressStats,
     		"/integrations/NBA-position": IntegracionExt1,
-    		"/integrations/covid-integration": IntegracionExt2,
+    		"/integrations/steam-games": IntegracionExt2,
     		"/integrations/liga-futbol": IntegracionExt3,
     		"/integrations/unemployment": UnemploymentStats,
     		"/integrations/druguse": DrugUseStats,
@@ -62831,7 +62832,7 @@ var app = (function () {
     		Cultura: CulturaBASE,
     		Stress: StressStats,
     		NBA: IntegracionExt1,
-    		CovidIntegration: IntegracionExt2,
+    		SteamGames: IntegracionExt2,
     		LigaFutbol: IntegracionExt3,
     		GroupGraph,
     		Navbar,
