@@ -136,9 +136,6 @@
       'font-style': "Georgia",
       'font-size': 14
     },
-    source: {
-      text: "Gráfico ZingChart"
-    },
     legend: {
       align: 'center',
       borderWidth: '0px',
@@ -259,7 +256,7 @@
         <title>ZingSoft Demo</title>
         <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
       </head>
-      <body>
+      <body style= "background-image: url('images/airlines.png'); background-repeat: no-repeat; background-position: center;">
         <div id="myChart" class="chart--container">
           <a class="zc-ref" href="https://www.zingchart.com/">Powered by ZingChart</a>
         </div>

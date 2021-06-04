@@ -120,7 +120,6 @@
                 label_style_fontSize: 13, 
                 margin: 5, 
                 value: 'diamond', 
-                items: 'enum_markerTypes', 
                 events_change: function(val) { 
                     chart 
                     .series() 
@@ -181,7 +180,7 @@
 	
 </script>
 
-<main  style= "background-image: url('images/fondoCan.png'); background-repeat: no-repeat; background-position: center center;">
+<main  style= "background-image: url('images/fondoCan.png'); background-repeat: no-repeat; background-position: center;">
     <div>
         {#if checkMSG.length!=0}
           <p class="msgRed" style="color: #9d1c24">ERROR: {checkMSG}</p>
