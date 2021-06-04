@@ -27,6 +27,7 @@
   import GraphSmokers3 from "./smokersStats/GraphSmokers3.svelte";
   import RentalStats from "./smokersStats/integrations/RentalStats.svelte";
   import Hostelries from "./smokersStats/integrations/Hostelries.svelte";
+  import Canada from "./smokersStats/integrations/Canada.svelte";
   import FrontWeight from "./weightsStats/TablaWeights.svelte";
   import EditWeight from "./weightsStats/EditWeight.svelte";
   import GraphWeight from "./weightsStats/GraphWeight.svelte";
@@ -34,13 +35,14 @@
   import GraphColumns from "./weightsStats/GraphColumns.svelte";
   import Cultura from "./weightsStats/integrations/culturaBASE.svelte";
   import Stress from "./weightsStats/integrations/stressStats.svelte";
-  import Prueba from "./weightsStats/integrations/pruebaStress.svelte";
   import NBA from "./weightsStats/integrations/integracionExt1.svelte";
   import CovidIntegration from "./weightsStats/integrations/integracionExt2.svelte";
   import LigaFutbol from "./weightsStats/integrations/integracionExt3.svelte";
   import GroupGraph from "./GroupGraph.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
   import GraphLife from "./lifeStats/GraphLife.svelte";
+  import GraphLife2 from "./lifeStats/GraphLife2.svelte";
+  import GraphLife3 from "./lifeStats/GraphLife3.svelte";
 
 	const routes = {
 		"/":Home,
@@ -59,6 +61,8 @@
     "/life-stats" : LifeExpectancy,
     "/life-stats/:province/:year" : EditLife,
     "/life-graph": GraphLife,
+    "/life-graph2": GraphLife2,
+    "/life-graph3": GraphLife3,
     "/weights-stats" : FrontWeight,
     "/weights-stats/:provinces/:year" : EditWeight,
     "/weights-graph" : GraphWeight,
@@ -77,7 +81,8 @@
     "/smokers-graph3" : GraphSmokers3,
     "/integrations/rentals" : RentalStats,
     "/integrations/hostelries" : Hostelries,
-    "/group-graph" : GroupGraph,
+    "/integrations/canada" : Canada,
+    "/analytics" : GroupGraph,
 		'*': NotFound};
 </script>
 

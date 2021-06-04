@@ -7,14 +7,12 @@
   const BASE_UNEMPLOY_API_PATH = "https://sos2021-07.herokuapp.com/api/v2/unemployment"
   var unemploymentStats = [];
   var lifeStats = [];
+  var lifeExpectancy = [];
   var errorMsg = "";
   var provinces = [];
+  var unemployment = [];
 
   console.log("Cargando página...");
-
-
-
-
 
   
 
@@ -24,22 +22,23 @@
     if (res.ok) {
       console.log("OK");
       lifeStats = await res.json();
+      lifeStats.forEach(stat => {
+          if(stat.province == "Andalucía" ){
+            lifeExpectancy.push(stat.averageLifeExpectancy);
+            }
+
+          });
+
       console.log("Datos sobre esperanza de vida recibidos")
       console.log(lifeStats);
       console.log(`We have received ${lifeStats.length} life-expectancy-stats.`);
-      
-      lifeStats.forEach(stat => {
-              provinces.push(stat.province);
-          });
-          console.log(provinces);
     } else {
       console.log("Error");
       errorMsg = "Error al cargar los datos de la API";
     }
-    
-
-
   }
+
+
   async function getUnemploymentStats() {
     console.log("Fetching unemployment data...");
     await fetch(BASE_UNEMPLOY_API_PATH);
@@ -48,6 +47,18 @@
     if (res.ok) {
       const json = await res.json();
       unemploymentStats = json;
+      provinces.push("Andalucia"); // añado andalucia a la lista de provincias
+      unemployment.push(0); //le agrego valor 0 para que no se vea representado en el nivel inferior del donut
+      unemploymentStats.forEach(stat => {
+          if(stat.autonomous_community == "andalucia" ){
+              provinces.push(stat.province);
+              unemployment.push(stat.unemployment_rate);
+            }
+
+          });
+      console.log(provinces);
+      provinces.sort;
+      console.log(provinces);
       console.log(`We have received ${unemploymentStats.length} unemployment.`);
       console.log("Ok");
     } else {
@@ -56,7 +67,10 @@
     }
   }
 
+
+
   async function loadGraph() {
+
     console.log("Inicio getStats");
     await getUnemploymentStats();
     await getStats();
@@ -65,78 +79,100 @@
     console.log('Datos sobre desempleo recibidos para pintar el grafo:');
     console.log(unemploymentStats);
 
-    var ctx = document.getElementById('myChart');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-          labels: provinces,
-          datasets: [{
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
-              backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)'
-              ],
-              borderColor: [
-                  'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
-              ],
-              borderWidth: 1
-          }]
-      },
-      options: {
-          scales: {
-              y: {
-                suggestedMin: 50,
-                suggestedMax: 100
-              }
+      const data = {
+              datasets: [{
+
+                  data: unemployment,
+
+                      backgroundColor: [
+                      "#00FF28",
+                      "#F7464A",
+                      "#46BFBD",
+                      "#FDB45C",
+                      "#949FB1",
+                      "#4D5360",
+                      "#E4FF00",
+                      "#008BFF",
+                      "#B900FF"
+                  ],
+                 
+              }, {
+                  data: lifeExpectancy,
+                     backgroundColor: [
+                        "#00FF28",
+                  ],
+                 
+              }],        
+                labels: provinces
           }
-      }
-  });
 
 
 
+      var ctx = document.getElementById('myChart');
 
+      new Chart(ctx, {
+          type: 'doughnut',
+          data: data,
+          options: {
+              responsive: true
+          }
+      });
   };
 
 </script>
 
 <svelte:head>
-
+  <script src="https://github.com/chartjs/Chart.js/blob/master/docs/scripts/utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" on:load={loadGraph}></script>
 </svelte:head>
 
 
 <main>
 
-<div>
-  <h2>Integración API SOS unemployment</h2>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js" on:load={loadGraph}></script>
-
-<div>
-<canvas id="myChart" width="200" height="200"></canvas>
-</div>
+  <div>
+    <h2>Integración SOS G7 API unemployment   </h2>
+  </div>
 
 
-    <p align="center"><Button outline color="primary" on:click={pop}>Atrás</Button></p>
+
+
+  <div>
+  <canvas id="myChart" width="200" height="200"></canvas>
+  </div>
+
+
+  <div>
+    <figure class="highcharts-figure">
+      <div id="container" />
+      <p class="highcharts-description">
+        Representación en dos niveles de la esperanza de vida media (en años) de la comunidad autonoma Andalucia frente
+        al porcentaje de paro de sus provincias.
+      </p>
+    </figure>
+  </div>
+
+
+
+
+      <p align="center"><Button outline color="primary" on:click={pop}>Atrás</Button></p>
 </main>
 
 <style>
-main {
-  text-align: center;
-  padding: 1em;
-  margin: 0 auto;
-}
-div {
-  margin-bottom: 15px;
-}
+  #myChart{
+    font-family: Verdana, sans-serif;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+    max-height: 500px;
+  }
+  main {
+    text-align: center;
+    padding: 1em;
+    margin: 0 auto;
+  }
+  div {
+    margin-bottom: 15px;
+  }
 </style>

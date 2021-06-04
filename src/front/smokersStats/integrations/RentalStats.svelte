@@ -8,7 +8,7 @@
     let color = "danger";
     var checkMSG = "";
 
-    //Uso API grupo 05 rental-arms
+    //Uso API grupo 07 rentals
     const BASE_RENTALS_API_PATH =
         "https://sos2021-07.herokuapp.com/api/v1/integration/rentals";
     const BASE_SMOKERS_PATH = "/api/v3/smokers-stats";
@@ -22,6 +22,8 @@
     var rentalData = [];
     var rentalProvince = [];
     var rentalRent = [];
+    var rentalMeter = [];
+    var rentalSalary = [];
     var rentalFin = [];
 
     //Variables globales
@@ -42,6 +44,7 @@
     }
     //GET RENTAL
     async function getRental() {
+        //await fetch(BASE_RENTALS_API_PATH+"/loadInitialData"); //si no tiene persistencia
         const res = await fetch(BASE_RENTALS_API_PATH);
         if (res.ok) {
             rentalData = await res.json();
@@ -77,32 +80,10 @@
         rentalData.forEach((stat) => {
             rentalProvince.push(stat["autonomous_community"]);
             rentalRent.push(stat["rent"]);
+            rentalMeter.push(stat["meter"]);
+            rentalSalary.push(stat["salary"]);
         });
-        smokerChartProvince.sort();
-        rentalProvince.sort();
-
-        //Bucle para reemplazar las provincias
-        for (var i = 0; i < rentalRent.length; i++) {
-            rentalFin.push(rentalProvince[i]
-                .allReplace({andalucia: "Andalucía", cataluna: "Cataluña", "castilla-y-leon": "Castilla y León", comunidad_de_madrid: "Comunidad de Madrid",}));
-        }
-
-        //Tratamiento de los datos: al final quedan todos los objetos en un array dataFin, que será la serie del gráfico
-        for (var i = 0; i < smokersData.length; i++) {
-            //creando el objeto e insertandolo en dataFin
-            var objDaily = new Object();
-            objDaily.province = smokerChartProvince[i];
-            objDaily.dailySmoker = smokerChartDaily[i];
-            //tras insertar en el objeto, el campo provincia y el campo dailySmoker, se busca la coincidencia con las provincias parseadas de rental
-            for (var j = 0; j < rentalFin.length; j++) {
-                if (objDaily.province == rentalFin[j]) {
-                    objDaily.rent = parseFloat(rentalRent[j]); //si coincide, se añade el campo renta al objeto
-                }
-            }
-            dataFin.push(objDaily);
-        }
-
-        console.log(dataFin);
+        
 
         //Comprueba que la gráfica no aparezca vacía y vuelve atrás
         if (smokersData.length == 0) {
@@ -110,7 +91,34 @@
             alert("Por favor, primero cargue los datos de la API 'FUMADORES' ");
             pop();
         }
+
         
+        //Bucle para reemplazar las provincias
+        for (var i = 0; i < rentalRent.length; i++) {
+            rentalFin.push(rentalProvince[i]
+                .allReplace({"andalucia": "Andalucía", "cataluna": "Cataluña", "castilla-y-leon": "Castilla y León", "comunidad_de_madrid": "Comunidad de Madrid",}));
+        }
+        
+
+        //Tratamiento de los datos: al final quedan todos los objetos en un array dataFin, que será la serie del gráfico
+        for (var i = 0; i < smokersData.length; i++) {
+            //creando el objeto e insertandolo en dataFin
+            var objSerie = new Object();
+            objSerie.province = smokerChartProvince[i];
+            objSerie.dailySmoker = smokerChartDaily[i];
+            //tras insertar en el objeto, el campo provincia y el campo dailySmoker, se busca la coincidencia con las provincias parseadas de rental
+            for (var j = 0; j < rentalFin.length; j++) {
+                if (objSerie.province == rentalFin[j]) {
+                    objSerie.rent = parseFloat(rentalRent[j]); //si coincide, se añade el campo renta al objeto
+                    objSerie.meter = parseFloat(rentalMeter[j]);
+                    objSerie.salary = parseFloat(rentalSalary[j]);
+                }
+            }
+            dataFin.push(objSerie);
+        }
+
+        console.log(dataFin);
+
 
         //Define del nido con el que se desarrolla la gráfica
         var nido = JSC.nest().key("province");
@@ -118,12 +126,20 @@
         //Reúso del nido para cada uno de los diferentes datos del objeto que se quiere mostrar (rollup calls)
         var series = [
             JSC.merge(
-                { name: "Fumadores diarios (en miles)" },
+                { name: "Fumadores diarios (en miles)" },{color: "blue"},
                 nido.rollup("dailySmoker").series(dataFin)[0] //primera parte de la serie, dailySmoker
             ),
             JSC.merge(
-                { name: "Renta media" },
-                nido.rollup("rent").series(dataFin)[0]  //segunda parte de la serie, rent
+                { name: "Renta media" },{color: "red"},
+                nido.rollup("rent").series(dataFin)[0]  //segunda parte de la serie, rent   
+            ),
+            JSC.merge(
+                { name: "Metros de media" },{color: "yellow"},
+                nido.rollup("meter").series(dataFin)[0]  //tercera parte de la serie, meter
+            ),
+            JSC.merge(
+                { name: "Salarios medios (en miles)" },{color: "green"},
+                nido.rollup("salary").series(dataFin)[0]  //cuarta parte de la serie, salary
             ),
         ];
 
@@ -131,7 +147,7 @@
         //Convierte los datos en grafo
         var chart = JSC.chart("chartDiv", {
             debug: true,
-            type: "column",
+            type: "column aqua",
             title_label_text: "SmokerVSRental",
             yAxis: { label_text: "Unidades" },
             xAxis: { label_text: "Comunidad Autónoma" },
@@ -139,13 +155,37 @@
         });
     }
 
-    //Llamada a la función constructora
+    //Llamada a la función 
     loadGraph();
 </script>
 
 <main>
+    <div>
+        {#if checkMSG.length!=0}
+          <p class="msgRed" style="color: #9d1c24">ERROR: {checkMSG}</p>
+        {/if}
+      </div>
 
     <div id="chartDiv" style="max-width: 740px;height: 400px;margin: 0px auto"/>
     <p align="center"><Button outline color="primary" on:click={pop}>Atrás</Button></p>
 
 </main>
+
+<style>
+    main {
+        text-align: center;
+        padding: 1em;
+        margin: 0 auto;
+      }
+      div{
+        margin-bottom: 15px;
+      }
+      p {
+        display: inline;
+      }
+      .msgRed {
+        padding: 8px;
+        background-color: #ffffff;
+      }
+  
+  </style>

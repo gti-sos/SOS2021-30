@@ -3,13 +3,13 @@
     import { pop } from "svelte-spa-router";
 
     var BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
-    async function loadGraph(){     
+    async function loadGraph(){ 
+        console.log("Fetching data...");    
         let datos = [];
-        let cos_total = [];
         var dic = {};
-        const resData = await fetch(BASE_WEIGHTS_PATH);
-        const json = await resData.json();
-        json.forEach( (v) => {
+        const res = await fetch(BASE_WEIGHTS_PATH);
+        const weightData = await res.json();
+        weightData.forEach( (v) => {
              if(v.provinces in dic){
               dic[v.provinces] += Math.round(v.normal_weight)
             }
@@ -17,14 +17,13 @@
               dic[v.provinces]= v.normal_weight;
             }  
         });
-        console.log(dic);
-        for(var v in dic){
+        for(var dato in dic){
              datos.push({
-                label: v,
-                value: dic[v]
+                label: dato,
+                value: dic[dato]
             })
         }
-        console.log(datos);
+        console.log("Generando datos...");
         new Morris.Donut({
             element: 'AwesomeChart',
             data: datos,
@@ -47,6 +46,7 @@
         <div id="AwesomeChart" style="height: 250px;"></div>
     
         <p>Gráfico en el que se muestra la suma de los porcentajes del peso normal en los años 2014 y 2017 en cada comunidad autónoma de España</p>
-        <h7 style="color: gray;">Gráfica diseñada con Morris.js</h7>
+
+        <h7 style="color: gray;">Gráfica diseñada con Morris.js - type: 'Donut'</h7>
         <Button outline color="secondary" on:click="{pop}">Atrás</Button>
     </main>

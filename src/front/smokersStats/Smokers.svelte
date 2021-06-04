@@ -384,13 +384,7 @@
             <th>Búsqueda por estadística de ex-fumadores</th>
             <th>Búsqueda por estadística de no fumadores</th>
             <tr>
-                <td
-                    ><input
-                        type="text"
-                        placeholder="Comunidad autónoma"
-                        bind:value={sProvince}
-                    /></td
-                >
+                <td><input type="text" placeholder="Comunidad autónoma" bind:value={sProvince}/></td>
                 <td
                     ><input
                         type="number"
@@ -545,18 +539,12 @@
         </Table>
         <br>
         <p align="center">
-            <Button color="success" on:click={loadInitialData}
-                >Cargar datos inciales</Button
-            >
+            <Button color="success" on:click={loadInitialData}>Cargar datos inciales</Button>
             <Button color="danger" on:click={deleteALL}>Eliminar todo</Button>
-            <Button outline color="primary" on:click={getPreviewPage}
-                >Atrás</Button
-            >
-            <Button outline color="primary" on:click={getNextPage}
-                >Siguiente</Button
-            >
-            <a href="./#/smokers-graph"><Button color="info">Gráfico</Button></a
-            >
+            <Button outline color="primary" on:click={getPreviewPage}>Atrás</Button>
+            <Button outline color="primary" on:click={getNextPage}>Siguiente</Button>
+            <a href="./#/smokers-graph"><Button color="info">Gráfico</Button></a>
+            <a href="./#/integrations"><Button color="info">Ir a integraciones</Button></a>
         </p>
         <br>
     {/await}

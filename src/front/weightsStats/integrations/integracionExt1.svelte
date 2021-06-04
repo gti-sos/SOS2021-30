@@ -150,7 +150,7 @@
 		la NBA y cada una de las burbujas interiores es un jugador que juega en dicha posición.
 	</p>
 	<p>Datos obtenidos de: <a href="https://www.balldontlie.io">https://www.balldontlie.io</a></p>	
-
+	<h7 style="color: gray;">Gráfica diseñada con Highcharts - type: 'packedbubble'</h7>
 	<Button outline color="secondary" on:click="{pop}"> Volver</Button>
 
 </main>
