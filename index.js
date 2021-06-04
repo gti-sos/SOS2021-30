@@ -75,6 +75,20 @@ var lifeAPI = require("./src/back/lifeExpectancyStatsAPI/v1");
 lifeAPI.register(app);
 var lifeAPIv2 = require("./src/back/lifeExpectancyStatsAPI/v2");
 lifeAPIv2.register(app);
+
+
+//INTEGRACIONES
+
+//Desempleo G7
+
+app.use("/api/v2/unemployment", function(req, res) {
+    var apiServerHostUnemployment = 'https://sos2021-07.herokuapp.com';
+
+    var url = apiServerHostUnemployment + req.url;
+    console.log('piped: /api/v2/unemployment -> ' + url);
+    req.pipe(request(url)).pipe(res);
+});
+
 //~~~~~~~~~~~~~~~~~~~ END: API LIFE-EXPECTANCY-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 
 

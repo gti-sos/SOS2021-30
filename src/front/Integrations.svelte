@@ -58,8 +58,11 @@
       <CardBody>
         <CardSubtitle />
         <CardText />
-        <a href="/#/integrations/culturaBASE"><Button color="primary">Estadísticas CulturaBASE-Weights</Button></a>
-        <a href="/#/integrations/prueba"><Button color="primary">Estadísticas Stress-Stats-Weights</Button></a>
+        <a href="/#/integrations/culturaBASE"><Button color="primary">Estadísticas CulturaBASE-Weights (G26)</Button></a>
+        <a href="/#/integrations/stress-stats"><Button color="primary">Estadísticas Stress-Stats-Weights (G11)</Button></a>
+        <a href="/#/integrations/NBA-position"><Button color="primary">Posiciones NBA (Ext1)</Button></a>
+        <a href="/#/integrations/covid-integration"><Button color="primary">Integración COVID (Ext2)</Button></a>
+        <a href="/#/integrations/liga-futbol"><Button color="primary">Integración Liga de fútbol (Ext3)</Button></a>
       </CardBody>
     </Card>
   </div>
