@@ -90,7 +90,8 @@
             gamePlatform.push(stat.platform.valueOf());     //extraemos la plataforma
             });
 
-        //Tratamiento de datos
+            
+       ///////////////////////////////////////////////Tratamiento de datos
         var genreFine = Array.from(new Set(gamesGenre));   //eliminamos los géneros repetidos
         
 

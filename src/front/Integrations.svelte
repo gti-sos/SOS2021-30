@@ -46,8 +46,8 @@
         <a href="/#/integrations/rentals"><Button color="primary">Estadísticas Rental-Smoker (G07)</Button></a>
         <a href="/#/integrations/hostelries"><Button color="primary">Estadísticas Hostelries-Smoker (G26)</Button></a>
         <a href="/#/integrations/canada"><Button color="primary">Estadísticas Vacaciones en Canadá (EXT)</Button></a>
-        <a href="/#/integrations/bikewise"><Button color="primary">Estadísticas Accidentes en bicicleta en EEUU (EXT)</Button></a>
-        <a href="/#/integrations/games"><Button color="primary">Estadísticas Juegos lanzados (EXT)</Button></a>
+        <a href="/#/integrations/airlines"><Button color="primary">Estadísticas Aerolíneas mundiales (EXT)</Button></a>
+        <a href="/#/integrations/games"><Button color="primary">Estadísticas Juegos lanzados en web (EXT)</Button></a>
       </CardBody>
     </Card>
   </div>

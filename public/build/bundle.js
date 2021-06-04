@@ -12980,7 +12980,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			t = text("Estadísticas Accidentes en bicicleta en EEUU (EXT)");
+    			t = text("Estadísticas Aerolíneas mundiales (EXT)");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -13007,7 +13007,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			t = text("Estadísticas Juegos lanzados (EXT)");
+    			t = text("Estadísticas Juegos lanzados en web (EXT)");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -13123,10 +13123,10 @@ var app = (function () {
     			add_location(a1, file$B, 46, 8, 1435);
     			attr_dev(a2, "href", "/#/integrations/canada");
     			add_location(a2, file$B, 47, 8, 1555);
-    			attr_dev(a3, "href", "/#/integrations/bikewise");
+    			attr_dev(a3, "href", "/#/integrations/airlines");
     			add_location(a3, file$B, 48, 8, 1674);
     			attr_dev(a4, "href", "/#/integrations/games");
-    			add_location(a4, file$B, 49, 8, 1806);
+    			add_location(a4, file$B, 49, 8, 1795);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -13328,7 +13328,7 @@ var app = (function () {
     		c: function create() {
     			h2 = element("h2");
     			h2.textContent = "Integrado con las estadísticas sobre IMC";
-    			add_location(h2, file$B, 56, 19, 2026);
+    			add_location(h2, file$B, 56, 19, 2022);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -13629,15 +13629,15 @@ var app = (function () {
     			a4 = element("a");
     			create_component(button4.$$.fragment);
     			attr_dev(a0, "href", "/#/integrations/culturaBASE");
-    			add_location(a0, file$B, 61, 8, 2184);
+    			add_location(a0, file$B, 61, 8, 2180);
     			attr_dev(a1, "href", "/#/integrations/stress-stats");
-    			add_location(a1, file$B, 62, 8, 2307);
+    			add_location(a1, file$B, 62, 8, 2303);
     			attr_dev(a2, "href", "/#/integrations/NBA-position");
-    			add_location(a2, file$B, 63, 8, 2432);
+    			add_location(a2, file$B, 63, 8, 2428);
     			attr_dev(a3, "href", "/#/integrations/covid-integration");
-    			add_location(a3, file$B, 64, 8, 2539);
+    			add_location(a3, file$B, 64, 8, 2535);
     			attr_dev(a4, "href", "/#/integrations/liga-futbol");
-    			add_location(a4, file$B, 65, 8, 2654);
+    			add_location(a4, file$B, 65, 8, 2650);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -13839,7 +13839,7 @@ var app = (function () {
     		c: function create() {
     			h2 = element("h2");
     			h2.textContent = "Integrado con las estadísticas sobre la esperanza de vida";
-    			add_location(h2, file$B, 72, 19, 2879);
+    			add_location(h2, file$B, 72, 19, 2875);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -13972,7 +13972,7 @@ var app = (function () {
     			a = element("a");
     			create_component(button.$$.fragment);
     			attr_dev(a, "href", "/#/integrations/unemployment");
-    			add_location(a, file$B, 77, 8, 3054);
+    			add_location(a, file$B, 77, 8, 3050);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -14230,9 +14230,9 @@ var app = (function () {
     			attr_dev(div2, "class", "svelte-egmbdb");
     			add_location(div2, file$B, 37, 2, 1069);
     			attr_dev(div3, "class", "svelte-egmbdb");
-    			add_location(div3, file$B, 53, 2, 1955);
+    			add_location(div3, file$B, 53, 2, 1951);
     			attr_dev(div4, "class", "svelte-egmbdb");
-    			add_location(div4, file$B, 69, 2, 2808);
+    			add_location(div4, file$B, 69, 2, 2804);
     			attr_dev(main, "class", "svelte-egmbdb");
     			add_location(main, file$B, 13, 2, 235);
     		},
@@ -52832,7 +52832,7 @@ var app = (function () {
     const { Object: Object_1$4, console: console_1$i } = globals;
     const file$j = "src\\front\\smokersStats\\integrations\\RentalStats.svelte";
 
-    // (164:8) {#if checkMSG.length!=0}
+    // (167:8) {#if checkMSG.length!=0}
     function create_if_block$8(ctx) {
     	let p;
     	let t0;
@@ -52845,7 +52845,7 @@ var app = (function () {
     			t1 = text(/*checkMSG*/ ctx[0]);
     			attr_dev(p, "class", "msgRed svelte-9c2r18");
     			set_style(p, "color", "#9d1c24");
-    			add_location(p, file$j, 164, 10, 6067);
+    			add_location(p, file$j, 167, 10, 6169);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -52864,14 +52864,14 @@ var app = (function () {
     		block,
     		id: create_if_block$8.name,
     		type: "if",
-    		source: "(164:8) {#if checkMSG.length!=0}",
+    		source: "(167:8) {#if checkMSG.length!=0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (170:22) <Button outline color="primary" on:click={pop}>
+    // (173:22) <Button outline color="primary" on:click={pop}>
     function create_default_slot$j(ctx) {
     	let t;
 
@@ -52891,7 +52891,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$j.name,
     		type: "slot",
-    		source: "(170:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
+    		source: "(173:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
     		ctx
     	});
 
@@ -52932,18 +52932,18 @@ var app = (function () {
     			p = element("p");
     			create_component(button.$$.fragment);
     			attr_dev(div0, "class", "svelte-9c2r18");
-    			add_location(div0, file$j, 162, 4, 6016);
+    			add_location(div0, file$j, 165, 4, 6118);
     			attr_dev(div1, "id", "chartDiv");
     			set_style(div1, "max-width", "740px");
     			set_style(div1, "height", "400px");
     			set_style(div1, "margin", "0px auto");
     			attr_dev(div1, "class", "svelte-9c2r18");
-    			add_location(div1, file$j, 168, 4, 6166);
+    			add_location(div1, file$j, 171, 4, 6268);
     			attr_dev(p, "align", "center");
     			attr_dev(p, "class", "svelte-9c2r18");
-    			add_location(p, file$j, 169, 4, 6248);
+    			add_location(p, file$j, 172, 4, 6350);
     			attr_dev(main, "class", "svelte-9c2r18");
-    			add_location(main, file$j, 161, 0, 6004);
+    			add_location(main, file$j, 164, 0, 6106);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -53113,7 +53113,8 @@ var app = (function () {
     			}));
     		}
 
-    		//Tratamiento de los datos: al final quedan todos los objetos en un array dataFin=[obj], que será la serie del gráfico
+    		///////////////////////////////////////////////Tratamiento de datos
+    		// al final quedan todos los objetos en un array dataFin=[obj], que será la serie del gráfico
     		for (var i = 0; i < smokersData.length; i++) {
     			//creando el objeto e insertandolo en dataFin
     			var objSerie = new Object();
@@ -53135,6 +53136,7 @@ var app = (function () {
 
     		console.log(dataFin);
 
+    		/////////////////////////////////GRAPH
     		//Define del nido con el que se desarrolla la gráfica
     		var nido = jscharting.nest().key("province");
 
@@ -53254,7 +53256,7 @@ var app = (function () {
     const { Object: Object_1$3, console: console_1$h } = globals;
     const file$i = "src\\front\\smokersStats\\integrations\\Hostelries.svelte";
 
-    // (146:22) <Button outline color="primary" on:click={pop}>
+    // (147:22) <Button outline color="primary" on:click={pop}>
     function create_default_slot$i(ctx) {
     	let t;
 
@@ -53274,7 +53276,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$i.name,
     		type: "slot",
-    		source: "(146:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
+    		source: "(147:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
     		ctx
     	});
 
@@ -53312,10 +53314,10 @@ var app = (function () {
     			set_style(div, "max-width", "740px");
     			set_style(div, "height", "400px");
     			set_style(div, "margin", "0px auto");
-    			add_location(div, file$i, 144, 4, 5500);
+    			add_location(div, file$i, 145, 4, 5548);
     			attr_dev(p, "align", "center");
-    			add_location(p, file$i, 145, 4, 5587);
-    			add_location(main, file$i, 143, 0, 5488);
+    			add_location(p, file$i, 146, 4, 5635);
+    			add_location(main, file$i, 144, 0, 5536);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -53464,7 +53466,8 @@ var app = (function () {
     			pop();
     		}
 
-    		//Tratamiento de los datos: al final quedan todos los objetos en un array dataFin=[obj], que será la serie del gráfico. Points=[obj]
+    		///////////////////////////////////////////////Tratamiento de datos
+    		// al final quedan todos los objetos en un array dataFin=[obj], que será la serie del gráfico. Points=[obj]
     		var tipos = [
     			"Fumadores diarios",
     			"Establecimientos abiertos",
@@ -53628,7 +53631,7 @@ var app = (function () {
     			t1 = text(/*checkMSG*/ ctx[2]);
     			attr_dev(p, "class", "msgRed svelte-1duq9zo");
     			set_style(p, "color", "#9d1c24");
-    			add_location(p, file$h, 186, 10, 6377);
+    			add_location(p, file$h, 186, 10, 6423);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -53654,7 +53657,34 @@ var app = (function () {
     	return block;
     }
 
-    // (203:12) {#each canadaMostrar as row}
+    // (193:22) <Button outline color="primary" on:click={pop}>
+    function create_default_slot$h(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Atrás");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$h.name,
+    		type: "slot",
+    		source: "(193:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (206:12) {#each canadaMostrar as row}
     function create_each_block$3(ctx) {
     	let tr;
     	let td0;
@@ -53676,10 +53706,10 @@ var app = (function () {
     			t2 = text(t2_value);
     			t3 = space();
     			attr_dev(td0, "class", "svelte-1duq9zo");
-    			add_location(td0, file$h, 204, 20, 6978);
+    			add_location(td0, file$h, 207, 20, 7133);
     			attr_dev(td1, "class", "svelte-1duq9zo");
-    			add_location(td1, file$h, 205, 20, 7021);
-    			add_location(tr, file$h, 203, 16, 6952);
+    			add_location(td1, file$h, 208, 20, 7176);
+    			add_location(tr, file$h, 206, 16, 7107);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -53703,34 +53733,7 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(203:12) {#each canadaMostrar as row}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (212:22) <Button outline color="primary" on:click={pop}>
-    function create_default_slot$h(ctx) {
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			t = text("Atrás");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, t, anchor);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot$h.name,
-    		type: "slot",
-    		source: "(212:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
+    		source: "(206:12) {#each canadaMostrar as row}",
     		ctx
     	});
 
@@ -53746,33 +53749,30 @@ var app = (function () {
     	let br0;
     	let t2;
     	let p0;
-    	let t4;
+    	let button;
+    	let t3;
     	let br1;
+    	let t4;
+    	let br2;
     	let t5;
+    	let p1;
+    	let t7;
+    	let br3;
+    	let t8;
     	let table;
     	let thead;
     	let tr;
     	let th0;
-    	let t7;
-    	let th1;
-    	let t9;
-    	let tbody;
     	let t10;
-    	let br2;
-    	let t11;
-    	let p1;
-    	let button;
+    	let th1;
+    	let t12;
+    	let tbody;
+    	let t13;
+    	let br4;
     	let current;
     	let mounted;
     	let dispose;
     	let if_block = /*checkMSG*/ ctx[2].length != 0 && create_if_block$7(ctx);
-    	let each_value = /*canadaMostrar*/ ctx[0];
-    	validate_each_argument(each_value);
-    	let each_blocks = [];
-
-    	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
-    	}
 
     	button = new Button({
     			props: {
@@ -53785,6 +53785,13 @@ var app = (function () {
     		});
 
     	button.$on("click", pop);
+    	let each_value = /*canadaMostrar*/ ctx[0];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
+    	}
 
     	const block = {
     		c: function create() {
@@ -53797,61 +53804,67 @@ var app = (function () {
     			br0 = element("br");
     			t2 = space();
     			p0 = element("p");
-    			p0.textContent = "Haz click en el título para mostrar la tabla ordenada";
-    			t4 = space();
+    			create_component(button.$$.fragment);
+    			t3 = space();
     			br1 = element("br");
+    			t4 = space();
+    			br2 = element("br");
     			t5 = space();
+    			p1 = element("p");
+    			p1.textContent = "Haz click en el título para mostrar la tabla ordenada";
+    			t7 = space();
+    			br3 = element("br");
+    			t8 = space();
     			table = element("table");
     			thead = element("thead");
     			tr = element("tr");
     			th0 = element("th");
     			th0.textContent = "Día festivo";
-    			t7 = space();
+    			t10 = space();
     			th1 = element("th");
     			th1.textContent = "Fecha del día festivo";
-    			t9 = space();
+    			t12 = space();
     			tbody = element("tbody");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t10 = space();
-    			br2 = element("br");
-    			t11 = space();
-    			p1 = element("p");
-    			create_component(button.$$.fragment);
+    			t13 = space();
+    			br4 = element("br");
     			attr_dev(div0, "class", "svelte-1duq9zo");
-    			add_location(div0, file$h, 184, 4, 6326);
+    			add_location(div0, file$h, 184, 4, 6372);
     			attr_dev(div1, "id", "chartDiv");
     			set_style(div1, "max-width", "740px");
     			set_style(div1, "height", "400px");
     			set_style(div1, "margin", "0px auto");
     			attr_dev(div1, "class", "svelte-1duq9zo");
-    			add_location(div1, file$h, 190, 4, 6476);
-    			add_location(br0, file$h, 191, 4, 6558);
+    			add_location(div1, file$h, 190, 4, 6522);
+    			add_location(br0, file$h, 191, 4, 6604);
+    			attr_dev(p0, "align", "center");
     			attr_dev(p0, "class", "svelte-1duq9zo");
-    			add_location(p0, file$h, 192, 4, 6568);
-    			add_location(br1, file$h, 193, 4, 6634);
+    			add_location(p0, file$h, 192, 4, 6614);
+    			add_location(br1, file$h, 193, 4, 6703);
+    			add_location(br2, file$h, 194, 4, 6713);
+    			attr_dev(p1, "class", "svelte-1duq9zo");
+    			add_location(p1, file$h, 195, 4, 6723);
+    			add_location(br3, file$h, 196, 4, 6789);
     			attr_dev(th0, "class", "svelte-1duq9zo");
-    			add_location(th0, file$h, 197, 16, 6719);
+    			add_location(th0, file$h, 200, 16, 6874);
     			attr_dev(th1, "class", "svelte-1duq9zo");
-    			add_location(th1, file$h, 198, 16, 6783);
-    			add_location(tr, file$h, 196, 12, 6697);
-    			add_location(thead, file$h, 195, 8, 6676);
-    			add_location(tbody, file$h, 201, 8, 6885);
+    			add_location(th1, file$h, 201, 16, 6938);
+    			add_location(tr, file$h, 199, 12, 6852);
+    			add_location(thead, file$h, 198, 8, 6831);
+    			add_location(tbody, file$h, 204, 8, 7040);
     			attr_dev(table, "align", "center");
     			attr_dev(table, "class", "svelte-1duq9zo");
-    			add_location(table, file$h, 194, 4, 6644);
-    			add_location(br2, file$h, 210, 4, 7123);
-    			attr_dev(p1, "align", "center");
-    			attr_dev(p1, "class", "svelte-1duq9zo");
-    			add_location(p1, file$h, 211, 4, 7133);
+    			add_location(table, file$h, 197, 4, 6799);
+    			add_location(br4, file$h, 213, 4, 7278);
     			set_style(main, "background-image", "url('images/fondoCan.png')");
     			set_style(main, "background-repeat", "no-repeat");
     			set_style(main, "background-position", "center center");
     			attr_dev(main, "class", "svelte-1duq9zo");
-    			add_location(main, file$h, 183, 0, 6192);
+    			add_location(main, file$h, 183, 0, 6238);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -53866,27 +53879,31 @@ var app = (function () {
     			append_dev(main, br0);
     			append_dev(main, t2);
     			append_dev(main, p0);
-    			append_dev(main, t4);
+    			mount_component(button, p0, null);
+    			append_dev(main, t3);
     			append_dev(main, br1);
+    			append_dev(main, t4);
+    			append_dev(main, br2);
     			append_dev(main, t5);
+    			append_dev(main, p1);
+    			append_dev(main, t7);
+    			append_dev(main, br3);
+    			append_dev(main, t8);
     			append_dev(main, table);
     			append_dev(table, thead);
     			append_dev(thead, tr);
     			append_dev(tr, th0);
-    			append_dev(tr, t7);
+    			append_dev(tr, t10);
     			append_dev(tr, th1);
-    			append_dev(table, t9);
+    			append_dev(table, t12);
     			append_dev(table, tbody);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(tbody, null);
     			}
 
-    			append_dev(main, t10);
-    			append_dev(main, br2);
-    			append_dev(main, t11);
-    			append_dev(main, p1);
-    			mount_component(button, p1, null);
+    			append_dev(main, t13);
+    			append_dev(main, br4);
     			current = true;
 
     			if (!mounted) {
@@ -53932,6 +53949,14 @@ var app = (function () {
     				if_block = null;
     			}
 
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 2097152) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+
     			if (dirty & /*canadaMostrar*/ 1) {
     				each_value = /*canadaMostrar*/ ctx[0];
     				validate_each_argument(each_value);
@@ -53955,14 +53980,6 @@ var app = (function () {
 
     				each_blocks.length = each_value.length;
     			}
-
-    			const button_changes = {};
-
-    			if (dirty & /*$$scope*/ 2097152) {
-    				button_changes.$$scope = { dirty, ctx };
-    			}
-
-    			button.$set(button_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -53976,8 +53993,8 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
     			if (if_block) if_block.d();
-    			destroy_each(each_blocks, detaching);
     			destroy_component(button);
+    			destroy_each(each_blocks, detaching);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -54089,7 +54106,7 @@ var app = (function () {
     		console.log(canadaNameFiesta);
     		console.log(canadaProvinceNum);
 
-    		//Tratamiento de datos
+    		///////////////////////////////////////////////Tratamiento de datos
     		// dataFin=[[]] será donde acaben estando los datos a representar
     		for (let i = 0; i < canadaData.holidays.length; i++) {
     			let tablaAux = [];
@@ -54106,7 +54123,7 @@ var app = (function () {
     		/////////////////////////////////GRAPH
     		//Convierte los datos en un gráfico 
     		var chart = jscharting.chart("chartDiv", {
-    			debug: true,
+    			debug: false,
     			type: "marker",
     			title_label_text: "Días de vacaciones en regiones de Canadá",
     			legend_visible: false,
@@ -54273,7 +54290,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (249:8) {#if checkMSG.length!=0}
+    // (252:8) {#if checkMSG.length!=0}
     function create_if_block$6(ctx) {
     	let p;
     	let t0;
@@ -54286,7 +54303,7 @@ var app = (function () {
     			t1 = text(/*checkMSG*/ ctx[2]);
     			attr_dev(p, "class", "msgRed svelte-1yap031");
     			set_style(p, "color", "#9d1c24");
-    			add_location(p, file$g, 249, 10, 6949);
+    			add_location(p, file$g, 252, 10, 7130);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -54305,14 +54322,14 @@ var app = (function () {
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(249:8) {#if checkMSG.length!=0}",
+    		source: "(252:8) {#if checkMSG.length!=0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (265:22) <Button outline color="primary" on:click={pop}>
+    // (268:22) <Button outline color="primary" on:click={pop}>
     function create_default_slot$g(ctx) {
     	let t;
 
@@ -54332,14 +54349,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$g.name,
     		type: "slot",
-    		source: "(265:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
+    		source: "(268:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (279:12) {#each airMostrar as row}
+    // (282:12) {#each airMostrar as row}
     function create_each_block$2(ctx) {
     	let tr;
     	let td0;
@@ -54368,12 +54385,12 @@ var app = (function () {
     			t4 = text(t4_value);
     			t5 = space();
     			attr_dev(td0, "class", "svelte-1yap031");
-    			add_location(td0, file$g, 280, 20, 7999);
+    			add_location(td0, file$g, 283, 20, 8180);
     			attr_dev(td1, "class", "svelte-1yap031");
-    			add_location(td1, file$g, 281, 20, 8042);
+    			add_location(td1, file$g, 284, 20, 8223);
     			attr_dev(td2, "class", "svelte-1yap031");
-    			add_location(td2, file$g, 282, 20, 8083);
-    			add_location(tr, file$g, 279, 16, 7973);
+    			add_location(td2, file$g, 285, 20, 8264);
+    			add_location(tr, file$g, 282, 16, 8154);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -54401,7 +54418,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(279:12) {#each airMostrar as row}",
+    		source: "(282:12) {#each airMostrar as row}",
     		ctx
     	});
 
@@ -54527,44 +54544,44 @@ var app = (function () {
     			t20 = space();
     			br4 = element("br");
     			attr_dev(div0, "class", "svelte-1yap031");
-    			add_location(div0, file$g, 247, 4, 6898);
+    			add_location(div0, file$g, 250, 4, 7079);
     			attr_dev(meta, "charset", "utf-8");
-    			add_location(meta, file$g, 254, 8, 7066);
-    			add_location(title, file$g, 255, 8, 7098);
+    			add_location(meta, file$g, 257, 8, 7247);
+    			add_location(title, file$g, 258, 8, 7279);
     			if (script.src !== (script_src_value = "https://cdn.zingchart.com/zingchart.min.js")) attr_dev(script, "src", script_src_value);
-    			add_location(script, file$g, 256, 8, 7136);
-    			add_location(head, file$g, 253, 6, 7050);
+    			add_location(script, file$g, 259, 8, 7317);
+    			add_location(head, file$g, 256, 6, 7231);
     			attr_dev(a, "class", "zc-ref svelte-1yap031");
     			attr_dev(a, "href", "https://www.zingchart.com/");
-    			add_location(a, file$g, 260, 10, 7296);
+    			add_location(a, file$g, 263, 10, 7477);
     			attr_dev(div1, "id", "myChart");
     			attr_dev(div1, "class", "chart--container svelte-1yap031");
-    			add_location(div1, file$g, 259, 8, 7241);
-    			add_location(body, file$g, 258, 6, 7225);
-    			add_location(br0, file$g, 263, 4, 7409);
+    			add_location(div1, file$g, 262, 8, 7422);
+    			add_location(body, file$g, 261, 6, 7406);
+    			add_location(br0, file$g, 266, 4, 7590);
     			attr_dev(p0, "align", "center");
     			attr_dev(p0, "class", "svelte-1yap031");
-    			add_location(p0, file$g, 264, 4, 7421);
-    			add_location(br1, file$g, 265, 4, 7510);
-    			add_location(br2, file$g, 266, 4, 7520);
+    			add_location(p0, file$g, 267, 4, 7602);
+    			add_location(br1, file$g, 268, 4, 7691);
+    			add_location(br2, file$g, 269, 4, 7701);
     			attr_dev(p1, "class", "svelte-1yap031");
-    			add_location(p1, file$g, 267, 4, 7530);
-    			add_location(br3, file$g, 268, 4, 7596);
+    			add_location(p1, file$g, 270, 4, 7711);
+    			add_location(br3, file$g, 271, 4, 7777);
     			attr_dev(th0, "class", "svelte-1yap031");
-    			add_location(th0, file$g, 272, 16, 7681);
+    			add_location(th0, file$g, 275, 16, 7862);
     			attr_dev(th1, "class", "svelte-1yap031");
-    			add_location(th1, file$g, 273, 16, 7756);
+    			add_location(th1, file$g, 276, 16, 7937);
     			attr_dev(th2, "class", "svelte-1yap031");
-    			add_location(th2, file$g, 274, 16, 7818);
-    			add_location(tr, file$g, 271, 12, 7659);
-    			add_location(thead, file$g, 270, 8, 7638);
-    			add_location(tbody, file$g, 277, 8, 7909);
+    			add_location(th2, file$g, 277, 16, 7999);
+    			add_location(tr, file$g, 274, 12, 7840);
+    			add_location(thead, file$g, 273, 8, 7819);
+    			add_location(tbody, file$g, 280, 8, 8090);
     			attr_dev(table, "align", "center");
     			attr_dev(table, "class", "svelte-1yap031");
-    			add_location(table, file$g, 269, 4, 7606);
-    			add_location(br4, file$g, 287, 4, 8184);
+    			add_location(table, file$g, 272, 4, 7787);
+    			add_location(br4, file$g, 290, 4, 8365);
     			attr_dev(main, "class", "svelte-1yap031");
-    			add_location(main, file$g, 246, 0, 6886);
+    			add_location(main, file$g, 249, 0, 7067);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -54819,10 +54836,12 @@ var app = (function () {
     			pop();
     		}
 
-    		//Tratamiento de datos
+    		///////////////////////////////////////////////Tratamiento de datos
     		var airNames = Array.from(new Set(airCompany)); //eliminamos los géneros repetidos
 
+    		//tablas que proporcionan cuantas aerolineas tienen esa palabra en su nombre
     		var airlines = [];
+
     		var express = [];
     		var airways = [];
     		var air = [];
@@ -54845,6 +54864,7 @@ var app = (function () {
     		//Una vez cargados los datos en las variables, podemos instanciar la función mostrarDatos
     		await mostrarDatos();
 
+    		/////////////////////////////////GRAPH
     		let chartConfig = {
     			type: "ring",
     			title: { text: "Número de Aerolíneas" },
@@ -55048,7 +55068,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (182:8) {#if checkMSG.length!=0}
+    // (183:8) {#if checkMSG.length!=0}
     function create_if_block$5(ctx) {
     	let p;
     	let t0;
@@ -55061,7 +55081,7 @@ var app = (function () {
     			t1 = text(/*checkMSG*/ ctx[2]);
     			attr_dev(p, "class", "msgRed svelte-1duq9zo");
     			set_style(p, "color", "#9d1c24");
-    			add_location(p, file$f, 182, 10, 6224);
+    			add_location(p, file$f, 183, 10, 6282);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -55080,14 +55100,14 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(182:8) {#if checkMSG.length!=0}",
+    		source: "(183:8) {#if checkMSG.length!=0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (191:22) <Button outline color="primary" on:click={pop}>
+    // (192:22) <Button outline color="primary" on:click={pop}>
     function create_default_slot$f(ctx) {
     	let t;
 
@@ -55107,14 +55127,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$f.name,
     		type: "slot",
-    		source: "(191:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
+    		source: "(192:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (205:12) {#each gamesMostrar as row}
+    // (206:12) {#each gamesMostrar as row}
     function create_each_block$1(ctx) {
     	let tr;
     	let td0;
@@ -55143,12 +55163,12 @@ var app = (function () {
     			t4 = text(t4_value);
     			t5 = space();
     			attr_dev(td0, "class", "svelte-1duq9zo");
-    			add_location(td0, file$f, 206, 20, 7000);
+    			add_location(td0, file$f, 207, 20, 7058);
     			attr_dev(td1, "class", "svelte-1duq9zo");
-    			add_location(td1, file$f, 207, 20, 7043);
+    			add_location(td1, file$f, 208, 20, 7101);
     			attr_dev(td2, "class", "svelte-1duq9zo");
-    			add_location(td2, file$f, 208, 20, 7086);
-    			add_location(tr, file$f, 205, 16, 6974);
+    			add_location(td2, file$f, 209, 20, 7144);
+    			add_location(tr, file$f, 206, 16, 7032);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -55176,7 +55196,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(205:12) {#each gamesMostrar as row}",
+    		source: "(206:12) {#each gamesMostrar as row}",
     		ctx
     	});
 
@@ -55281,40 +55301,40 @@ var app = (function () {
     			t15 = space();
     			br4 = element("br");
     			attr_dev(div0, "class", "svelte-1duq9zo");
-    			add_location(div0, file$f, 180, 4, 6173);
+    			add_location(div0, file$f, 181, 4, 6231);
     			attr_dev(div1, "id", "chartDiv");
     			set_style(div1, "max-width", "740px");
     			set_style(div1, "height", "400px");
     			set_style(div1, "margin", "0px auto");
     			attr_dev(div1, "class", "svelte-1duq9zo");
-    			add_location(div1, file$f, 187, 4, 6325);
-    			add_location(br0, file$f, 188, 4, 6407);
+    			add_location(div1, file$f, 188, 4, 6383);
+    			add_location(br0, file$f, 189, 4, 6465);
     			attr_dev(p0, "align", "center");
     			attr_dev(p0, "class", "svelte-1duq9zo");
-    			add_location(p0, file$f, 190, 4, 6419);
-    			add_location(br1, file$f, 191, 4, 6508);
-    			add_location(br2, file$f, 192, 4, 6518);
+    			add_location(p0, file$f, 191, 4, 6477);
+    			add_location(br1, file$f, 192, 4, 6566);
+    			add_location(br2, file$f, 193, 4, 6576);
     			attr_dev(p1, "class", "svelte-1duq9zo");
-    			add_location(p1, file$f, 193, 4, 6528);
-    			add_location(br3, file$f, 194, 4, 6594);
+    			add_location(p1, file$f, 194, 4, 6586);
+    			add_location(br3, file$f, 195, 4, 6652);
     			attr_dev(th0, "class", "svelte-1duq9zo");
-    			add_location(th0, file$f, 198, 16, 6679);
+    			add_location(th0, file$f, 199, 16, 6737);
     			attr_dev(th1, "class", "svelte-1duq9zo");
-    			add_location(th1, file$f, 199, 16, 6748);
+    			add_location(th1, file$f, 200, 16, 6806);
     			attr_dev(th2, "class", "svelte-1duq9zo");
-    			add_location(th2, file$f, 200, 16, 6807);
-    			add_location(tr, file$f, 197, 12, 6657);
-    			add_location(thead, file$f, 196, 8, 6636);
-    			add_location(tbody, file$f, 203, 8, 6908);
+    			add_location(th2, file$f, 201, 16, 6865);
+    			add_location(tr, file$f, 198, 12, 6715);
+    			add_location(thead, file$f, 197, 8, 6694);
+    			add_location(tbody, file$f, 204, 8, 6966);
     			attr_dev(table, "align", "center");
     			attr_dev(table, "class", "svelte-1duq9zo");
-    			add_location(table, file$f, 195, 4, 6604);
-    			add_location(br4, file$f, 213, 4, 7198);
+    			add_location(table, file$f, 196, 4, 6662);
+    			add_location(br4, file$f, 214, 4, 7256);
     			set_style(main, "background-image", "url('images/games.png')");
     			set_style(main, "background-repeat", "no-repeat");
     			set_style(main, "background-position", "center center");
     			attr_dev(main, "class", "svelte-1duq9zo");
-    			add_location(main, file$f, 179, 0, 6043);
+    			add_location(main, file$f, 180, 0, 6101);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -55568,7 +55588,7 @@ var app = (function () {
     			gamePlatform.push(stat.platform.valueOf()); //extraemos la plataforma
     		});
 
-    		//Tratamiento de datos
+    		///////////////////////////////////////////////Tratamiento de datos
     		var genreFine = Array.from(new Set(gamesGenre)); //eliminamos los géneros repetidos
 
     		//Al final quedan todos los objetos en un array dataFin=[obj], que será la serie del gráfico. points = [obj]. 

@@ -100,7 +100,8 @@
         }
         
 
-        //Tratamiento de los datos: al final quedan todos los objetos en un array dataFin=[obj], que será la serie del gráfico
+        ///////////////////////////////////////////////Tratamiento de datos
+        // al final quedan todos los objetos en un array dataFin=[obj], que será la serie del gráfico
         for (var i = 0; i < smokersData.length; i++) {
             //creando el objeto e insertandolo en dataFin
             var objSerie = new Object();
@@ -120,6 +121,8 @@
         console.log(dataFin);
 
 
+
+        /////////////////////////////////GRAPH
         //Define del nido con el que se desarrolla la gráfica
         var nido = JSC.nest().key("province");
 

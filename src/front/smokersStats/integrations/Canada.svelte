@@ -84,7 +84,7 @@
         console.log(canadaProvinceNum);
         
 
-        //Tratamiento de datos
+        ///////////////////////////////////////////////Tratamiento de datos
         // dataFin=[[]] será donde acaben estando los datos a representar
         for (let i=0; i<canadaData.holidays.length; i++){
             let tablaAux = [];
@@ -100,7 +100,7 @@
         /////////////////////////////////GRAPH
         //Convierte los datos en un gráfico 
         var chart = JSC.chart('chartDiv', { 
-            debug: true, 
+            debug: false, 
             type: 'marker', 
             title_label_text: 'Días de vacaciones en regiones de Canadá', 
             legend_visible: false, 
@@ -190,6 +190,9 @@
 
     <div id="chartDiv" style="max-width: 740px;height: 400px;margin: 0px auto"/>
     <br>
+    <p align="center"><Button outline color="primary" on:click={pop}>Atrás</Button></p>
+    <br>
+    <br>
     <p>Haz click en el título para mostrar la tabla ordenada</p>
     <br>
     <table align="center">
@@ -209,7 +212,6 @@
         </tbody>
     </table>
     <br>
-    <p align="center"><Button outline color="primary" on:click={pop}>Atrás</Button></p>
 
 </main>
 

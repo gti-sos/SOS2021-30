@@ -90,15 +90,18 @@
             pop();
         }
 
-        //Tratamiento de datos
+        ///////////////////////////////////////////////Tratamiento de datos
+        
         var airNames = Array.from(new Set(airCompany));   //eliminamos los géneros repetidos
 
+        //tablas que proporcionan cuantas aerolineas tienen esa palabra en su nombre
         var airlines = [];
         var express = [];
         var airways = [];
         var air = [];
         var aviation = [];
         var company = [];
+
         airNames.forEach(stat => {
 
           if(stat.toLowerCase().includes("airlines")){
@@ -121,7 +124,7 @@
         //Una vez cargados los datos en las variables, podemos instanciar la función mostrarDatos
         await mostrarDatos();
 
-        
+        /////////////////////////////////GRAPH
   let chartConfig = {
     type: 'ring',
     title: {

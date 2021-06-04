@@ -94,7 +94,8 @@ import Smokers from "../Smokers.svelte";
         }
 
 
-    //Tratamiento de los datos: al final quedan todos los objetos en un array dataFin=[obj], que será la serie del gráfico. Points=[obj]
+    ///////////////////////////////////////////////Tratamiento de datos
+    // al final quedan todos los objetos en un array dataFin=[obj], que será la serie del gráfico. Points=[obj]
     var tipos = ["Fumadores diarios", "Establecimientos abiertos", "Turistas recibidos", "No fumadores",];
 
     //Se van iterando las opciones. Luego fijando un smokersData, se checkea la igualdad con hostelData
