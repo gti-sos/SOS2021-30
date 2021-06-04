@@ -58027,7 +58027,7 @@ var app = (function () {
     const { console: console_1$8 } = globals;
     const file$9 = "src\\front\\weightsStats\\integrations\\culturaBASE.svelte";
 
-    // (107:4) <Button outline color="secondary" on:click="{pop}">
+    // (108:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$9(ctx) {
     	let t;
 
@@ -58047,7 +58047,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$9.name,
     		type: "slot",
-    		source: "(107:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(108:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -58108,22 +58108,22 @@ var app = (function () {
     			t5 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$9, 87, 4, 2741);
+    			add_location(script0, file$9, 88, 4, 2808);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$9, 88, 4, 2812);
+    			add_location(script1, file$9, 89, 4, 2879);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$9, 89, 4, 2890);
+    			add_location(script2, file$9, 90, 4, 2957);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$9, 90, 4, 2970);
+    			add_location(script3, file$9, 91, 4, 3037);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$9, 97, 8, 3148);
+    			add_location(div, file$9, 98, 8, 3215);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$9, 98, 8, 3184);
+    			add_location(p, file$9, 99, 8, 3251);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$9, 96, 4, 3104);
+    			add_location(figure, file$9, 97, 4, 3171);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$9, 104, 4, 3509);
-    			add_location(main, file$9, 95, 0, 3092);
+    			add_location(h7, file$9, 105, 4, 3576);
+    			add_location(main, file$9, 96, 0, 3159);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -58195,7 +58195,8 @@ var app = (function () {
     const BASE_WEIGHTS_PATH$1 = "/api/v2/table-weights-stats";
 
     //const culturaBASE_PATH = "https://sos2021-26.herokuapp.com/integration/api/v2/culturaBASE";
-    const culturaBASE_PATH = "/proxyHeroku/integration/api/v2/culturaBASE";
+    //const culturaBASE_PATH = "/proxyHeroku/integration/api/v2/culturaBASE";
+    const culturaBASE_PATH = "/proxyHeroku/api/v2/culturaBASE";
 
     function instance$9($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
