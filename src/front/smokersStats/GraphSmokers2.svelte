@@ -167,6 +167,7 @@
         on:load={loadGraph}></script>
 </svelte:head>
 
+
 <main>
     <div>
         {#if checkMSG.length != 0}
@@ -175,10 +176,12 @@
     </div>
 
     <figure class="highcharts-figure">
-        <div id="container" />
+        <div id="container"></div>
         <p class="highcharts-description">
-            En el gráfico se representa el dato 'Fumadores diarios' por comunidad autónoma en el
-            año 2017 en España. Cada comunidad contiene un desglose de sus diferentes datos.
+            Scatter charts are often used to visualize the relationships
+            between data in two dimensions. This chart is visualizing
+            height and weight by gender, showing a clear trend where men
+            are on average taller and heavier than women.
         </p>
     </figure>
     <p align="center">

@@ -21,7 +21,7 @@
     var canadaData = [];
     var canadaNameFiesta = [];
     var canadaFecha = [];
-    var canadaProvince = [];
+    //var canadaProvince = [];
     var canadaProvinceNum = [];
     var canadaMostrar = [];
 
@@ -65,7 +65,12 @@
             smokerChartProvince.push(stat.province);
             smokerChartDaily.push(stat["dailySmoker"]);
         });
-
+        //
+        canadaData.holidays.forEach((stat) => {
+            canadaFecha.push(stat.date.valueOf());  //extraemos las fechas de las fiestas
+            canadaNameFiesta.push(stat.nameEn.valueOf());    //extraemos el nombre de cada fiesta
+            canadaProvinceNum.push(stat.provinces.valueOf().length);    //extraemos el numero de provincias que celebran
+        });
         
         //Comprueba que la gráfica no aparezca vacía y vuelve atrás
         if (smokersData.length == 0) {
@@ -74,37 +79,30 @@
             pop();
         }
         
-        canadaData.holidays.forEach((stat) => {
-            canadaFecha.push(stat.date.valueOf());  //extraemos las fechas de las fiestas
-            canadaNameFiesta.push(stat.nameEn.valueOf());    //extraemos el nombre de cada fiesta
-            canadaProvinceNum.push(stat.provinces.valueOf().length);    //extraemos el numero de provincias que celebran
-            //canadaProvince.push(stat.provinces.valueOf().nameEn.valueOf()); //extraemos el nombre de las provincias que celebran (no se usa)
-        });
-
         console.log(canadaFecha);
         console.log(canadaNameFiesta);
         console.log(canadaProvinceNum);
         
 
         //Tratamiento de datos
-        // dataFin será donde acaben estando los datos a representar
+        // dataFin=[[]] será donde acaben estando los datos a representar
         for (let i=0; i<canadaData.holidays.length; i++){
             let tablaAux = [];
             tablaAux.push(canadaFecha[i]);
             tablaAux.push(canadaProvinceNum[i]);
             dataFin.push(tablaAux);
         }
-
         console.log(dataFin);
 
         //Una vez cargados los datos en las variables, podemos instanciar la función mostrarDatos
         await mostrarDatos();
 
+        /////////////////////////////////GRAPH
         //Convierte los datos en un gráfico 
         var chart = JSC.chart('chartDiv', { 
             debug: true, 
             type: 'marker', 
-            title_label_text: 'Días de vacaciones en Canadá (por nº de provincias festivas)', 
+            title_label_text: 'Días de vacaciones en regiones de Canadá', 
             legend_visible: false, 
             defaultSeries: { 
                 opacity: 0.5, 
@@ -114,6 +112,7 @@
                 scale: { range_padding: 0.2 }, 
                 scale_type: 'time'
             },
+            yAxis_label_text: 'Nº de provincias',
 
             toolbar_items: { 
                 'Marker Type': { 
@@ -182,7 +181,7 @@
 	
 </script>
 
-<main>
+<main  style= "background-image: url('images/fondoCan.png'); background-repeat: no-repeat; background-position: center center;">
     <div>
         {#if checkMSG.length!=0}
           <p class="msgRed" style="color: #9d1c24">ERROR: {checkMSG}</p>

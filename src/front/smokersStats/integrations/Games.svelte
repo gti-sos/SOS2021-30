@@ -9,7 +9,7 @@
     var checkMSG = "";
 
     //Uso API Canadá
-    const BASE_GAMES_API_PATH = "https://www.freetogame.com/api/games";
+    const BASE_GAMES_API_PATH = "https://free-to-play-games-database.p.rapidapi.com/api/games";
     const BASE_SMOKERS_PATH = "/api/v3/smokers-stats";
 
     //Variables SMOKER
@@ -21,9 +21,9 @@
     var gamesData = [];
     var gamesName = [];
     var gamesFecha = [];
-    var gamesPlatform = [];
     var gamesGenre = [];
-    var gamesPublisher = [];
+    var gamePlatform = [];
+    var gamesMostrar = [];
 
     //Variables globales
     var dataFin = [];
@@ -41,9 +41,17 @@
             console.log("ERROR al cargar los datos de SMOKERS");
         }
     }
-    //GET games
+    
+    //GET GAMES (cabeceras necesarias para poder obtener los datos)
     async function getGames() {
-        const res = await fetch(BASE_GAMES_API_PATH);
+        const res = await fetch(BASE_GAMES_API_PATH, {
+            headers: {
+                'x-rapidapi-key': '6cbbc0122amsh6f393ab96de4d0bp1b8d19jsn7bdcc295e8c3',
+                'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com',
+                useQueryString: true
+            }
+        });
+
         if (res.ok) {
             gamesData = await res.json();
             console.log("Received Games Data.");
@@ -52,13 +60,14 @@
             console.log("ERROR al cargar los datos de GAMES-API");
         }
     }
-
+ 
     //LOAD
     async function loadGraph() {
         await getSmoker();
-        await getgames();
+        await getGames();
         console.log("Nº datos smoker recibidos para pintar: " + smokersData.length);
         console.log("Nº datos games recibidos para pintar: " + gamesData.length);
+
 
         //Gestión de datos de ambas apis y reparto en variables
         smokersData.forEach((stat) => {
@@ -78,70 +87,56 @@
             gamesFecha.push(stat.release_date.valueOf());  //extraemos las fechas de lanzamiento
             gamesName.push(stat.title.valueOf());    //extraemos el nombre de cada juego
             gamesGenre.push(stat.genre.valueOf());    //extraemos el género
-            gamesPlatform.push(stat.platform.valueOf());  //extraemos la plataforma
-            gamesPublisher.push(stat.publisher.valueOf());
+            gamePlatform.push(stat.platform.valueOf());
             });
 
-        console.log(gamesFecha);
-        console.log(gamesNameFiesta);
-        console.log(gamesProvinceNum);
+        //Tratamiento de datos
+        var genreFine = Array.from(new Set(gamesGenre));   //eliminamos los géneros repetidos
         
 
-        //Tratamiento de datos
-        // dataFin será donde acaben estando los datos a representar
-        for (let i=0; i<gamesData.holidays.length; i++){
-            let tablaAux = [];
-            tablaAux.push(gamesFecha[i]);
-            tablaAux.push(gamesProvinceNum[i]);
-            dataFin.push(tablaAux);
-        }
+        //Al final quedan todos los objetos en un array dataFin=[obj], que será la serie del gráfico. points = [obj]. 
+        for (let i=0; i<genreFine.length; i++){
+            let objData = new Object();
+            let points = [];
+            objData.name = genreFine[i];
+            for (let j=0; j<gamesData.length; j++){
+                if (genreFine[i] == gamesData[j].genre){
+                    let objPoint = new Object();
+                    objPoint.x = gamesData[j].release_date;
+                    objPoint.y = gamesData[j].platform;
+                    points.push(objPoint);
+                } 
+            }
+            objData.points = points;
+            dataFin.push(objData);
 
+        }
         console.log(dataFin);
+
 
         //Una vez cargados los datos en las variables, podemos instanciar la función mostrarDatos
         await mostrarDatos();
-
+        
+    /////////////////////////////////GRAPH
         //Convierte los datos en un gráfico 
         var chart = JSC.chart('chartDiv', { 
-            debug: true, 
-            type: 'marker', 
-            title_label_text: 'Días de vacaciones en Canadá (por nº de provincias festivas)', 
-            legend_visible: false, 
-            defaultSeries: { 
-                opacity: 0.5, 
-                defaultPoint_marker: { size: 40 } 
-            }, 
-            xAxis: { 
-                scale: { range_padding: 0.2 }, 
-                scale_type: 'time'
-            },
+  debug: true, 
+  defaultSeries_type: 'marker',
+  title_label_text: 'Juegos publicados www.freetogame.com',
+  legend: {
+          position: 'right',
+          fill: '#f1f8ff',
+          boxVisible: true,
+          radius: 2,
+          margin_left: 20,
+          outline: { color: '#a5c6ee', width: 0.5 },
+          template: '%icon %name',
+        },
+  yAxis: { label_text: 'Plataforma de lanzamiento' }, 
+  xAxis_scale_type: 'time',
+  series: dataFin
+}); 
 
-            toolbar_items: { 
-                'Marker Type': { 
-                type: 'select', 
-                label_style_fontSize: 13, 
-                margin: 5, 
-                value: 'diamond', 
-                items: 'enum_markerTypes', 
-                events_change: function(val) { 
-                    chart 
-                    .series() 
-                    .options({ 
-                        defaultPoint_marker_type: val 
-                    }); 
-                } 
-                } 
-            }, 
-            series: [ 
-                { 
-                palette: 'oceanMidtones', 
-                defaultPoint_marker_type: 'diamond',
-                name: 'Número de provincias', 
-                points: dataFin 
-                } 
-            ]
-            }); 
-            
     }
 
     //Llamada a la función 
@@ -154,17 +149,18 @@
     
     //Función para mostrar los datos debajo del gráfico JSCharting
     async function mostrarDatos(){
-        for (let i=0; i<gamesData.holidays.valueOf().length;i++){
+        for (let i=0; i<gamesData.length; i++){
             let linea = new Object();
-            linea.Fiesta = gamesNameFiesta[i];
-            linea.Fecha = formatea(gamesFecha[i]);
+            linea.Nombre = gamesName[i];
+            linea.Genero = gamesGenre[i];
+            linea.Fecha = gamesFecha[i];
             gamesMostrar.push(linea);
         }
     }
     
     // Holds table sort state.  Initialized to reflect table sorted by id column ascending.
     // Necesario para poder ordenar las columnas alfanuméricamente al hacer click
-	let sortBy = {col: "Fiesta", ascending: true};
+	let sortBy = {col: "Nombre", ascending: true};
 	$: sort = (column) => {
 		
 		if (sortBy.col == column) {
@@ -174,7 +170,6 @@
 			sortBy.ascending = true
 		}
 		
-		// Modifier to sorting function for ascending or descending
 		let sortModifier = (sortBy.ascending) ? 1 : -1;
 		let sort = (a, b) => (a[column] < b[column]) ? -1 * sortModifier : (a[column] > b[column]) ? 1 * sortModifier : 0;
 		gamesMostrar = gamesMostrar.sort(sort);
@@ -183,12 +178,13 @@
 	
 </script>
 
-<main>
+<main style= "background-image: url('images/games.png'); background-repeat: no-repeat; background-position: center center;">
     <div>
         {#if checkMSG.length!=0}
           <p class="msgRed" style="color: #9d1c24">ERROR: {checkMSG}</p>
         {/if}
       </div>
+
 
     <div id="chartDiv" style="max-width: 740px;height: 400px;margin: 0px auto"/>
     <br>
@@ -197,15 +193,17 @@
     <table align="center">
         <thead>
             <tr>
-                <th on:click={sort("Fiesta")}>Día festivo</th>
-                <th on:click={sort("Fecha")}>Fecha del día festivo</th>
+                <th on:click={sort("Nombre")}>Nombre del juego</th>
+                <th on:click={sort("Genero")}>Género</th>
+                <th on:click={sort("Fecha")}>Fecha de lanzamiento</th>
             </tr>
         </thead>
         <tbody>
             {#each gamesMostrar as row}
                 <tr>
-                    <td>{row.Fiesta}</td>
-                    <td>{row.Fecha}</td>
+                    <td>{row.Nombre}</td>
+                    <td>{row.Genero}</td>
+                    <td>{formatea(row.Fecha)}</td>
                 </tr>
             {/each}
         </tbody>

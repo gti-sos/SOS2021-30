@@ -56,6 +56,7 @@
     "svelte-spa-router": "^3.1.0",
     "svelte-tablesort": "^1.1.0",
     "sveltestrap": "^3.14.1",
-    "underscore": "^1.13.1"
+    "underscore": "^1.13.1",
+    "unirest": "^0.6.0"
   }
 }

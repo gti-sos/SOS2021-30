@@ -29,6 +29,7 @@
   import Hostelries from "./smokersStats/integrations/Hostelries.svelte";
   import Canada from "./smokersStats/integrations/Canada.svelte";
   import Bikewise from "./smokersStats/integrations/Bikes.svelte";
+  import Games from "./smokersStats/integrations/Games.svelte";
   import FrontWeight from "./weightsStats/TablaWeights.svelte";
   import EditWeight from "./weightsStats/EditWeight.svelte";
   import GraphWeight from "./weightsStats/GraphWeight.svelte";
@@ -83,6 +84,7 @@ import GraphsLife2 from "./lifeStats/GraphLife2.svelte";
     "/integrations/hostelries" : Hostelries,
     "/integrations/canada" : Canada,
     "/integrations/bikewise": Bikewise,
+    "/integrations/games" : Games,
     "/analytics" : GroupGraph,
 		'*': NotFound};
 </script>

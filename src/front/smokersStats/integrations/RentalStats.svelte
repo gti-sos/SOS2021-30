@@ -100,7 +100,7 @@
         }
         
 
-        //Tratamiento de los datos: al final quedan todos los objetos en un array dataFin, que será la serie del gráfico
+        //Tratamiento de los datos: al final quedan todos los objetos en un array dataFin=[obj], que será la serie del gráfico
         for (var i = 0; i < smokersData.length; i++) {
             //creando el objeto e insertandolo en dataFin
             var objSerie = new Object();
