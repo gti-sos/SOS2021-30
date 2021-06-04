@@ -11,6 +11,7 @@
   import LifeExpectancy from './lifeStats/lifeExpectancy.svelte';
   import EditLife from './lifeStats/EditLife.svelte';
   import UnemploymentStats from "./lifeStats/integrations/UnemploymentStats.svelte";
+  import DrugUseStats from "./lifeStats/integrations/DrugUseStats.svelte";
 	import TablaAlcohol from "./alcoholStats/TablaAlcohol.svelte";
   import EditAlcohol from "./alcoholStats/EditAlcohol.svelte";
   import GraphAlcohol from "./alcoholStats/GraphAlcohol.svelte";
@@ -44,6 +45,7 @@
   import GraphLife2 from "./lifeStats/GraphLife2.svelte";
   import GraphLife3 from "./lifeStats/GraphLife3.svelte";
 
+
 	const routes = {
 		"/":Home,
     "/info": Info,
@@ -74,6 +76,7 @@
     "/integrations/covid-integration" : CovidIntegration,
     "/integrations/liga-futbol" : LigaFutbol,
     "/integrations/unemployment": UnemploymentStats,
+    "/integrations/druguse": DrugUseStats,
     "/smokers-stats" : SmokerStats,
     "/smokers-stats/:province/:year" : SmokersItems,
     "/smokers-graph" : GraphSmokers,
