@@ -61703,7 +61703,7 @@ var app = (function () {
     const { console: console_1$4 } = globals;
     const file$5 = "src\\front\\weightsStats\\integrations\\integracionExt4.svelte";
 
-    // (130:4) <Button outline color="secondary" on:click="{pop}">
+    // (129:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$5(ctx) {
     	let t;
 
@@ -61723,7 +61723,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$5.name,
     		type: "slot",
-    		source: "(130:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(129:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -61793,25 +61793,25 @@ var app = (function () {
     			t8 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$5, 105, 4, 3128);
+    			add_location(script0, file$5, 104, 4, 3060);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$5, 106, 4, 3199);
+    			add_location(script1, file$5, 105, 4, 3131);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$5, 107, 4, 3277);
+    			add_location(script2, file$5, 106, 4, 3209);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$5, 108, 4, 3357);
+    			add_location(script3, file$5, 107, 4, 3289);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$5, 116, 8, 3537);
+    			add_location(div, file$5, 115, 8, 3469);
     			attr_dev(p0, "class", "highcharts-description");
-    			add_location(p0, file$5, 117, 8, 3573);
+    			add_location(p0, file$5, 116, 8, 3505);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$5, 115, 4, 3493);
+    			add_location(figure, file$5, 114, 4, 3425);
     			attr_dev(a, "href", "https://www.gamerpower.com/");
-    			add_location(a, file$5, 126, 27, 3951);
-    			add_location(p1, file$5, 126, 4, 3928);
+    			add_location(a, file$5, 125, 27, 3883);
+    			add_location(p1, file$5, 125, 4, 3860);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$5, 127, 4, 4031);
-    			add_location(main, file$5, 113, 0, 3479);
+    			add_location(h7, file$5, 126, 4, 3963);
+    			add_location(main, file$5, 112, 0, 3411);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -61908,7 +61908,7 @@ var app = (function () {
     		console.log("Recived " + gamesStats.length + " games data...");
 
     		gamesStats.forEach(stat => {
-    			if (stat.users > 2750) {
+    			if (stat.users > 5000) {
     				gameTitle.push(stat.title);
     				activeUsers.push(parseFloat(stat["users"]));
     			}
@@ -61952,16 +61952,13 @@ var app = (function () {
     						}
     					},
     					states: { hover: { marker: { enabled: false } } },
-    					tooltip: {
-    						headerFormat: "<b>{series.name}</b><br>",
-    						pointFormat: "{point.x} cm, {point.y} kg"
-    					}
+    					tooltip: { headerFormat: "<b>{series.name}</b><br>" }
     				}
     			},
     			series: [
     				{
     					name: "Usuarios activos",
-    					color: "rgba(223, 83, 83, .5)",
+    					color: "rgba(8, 163, 245, .5)",
     					data: activeUsers
     				}
     			]
