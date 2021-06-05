@@ -67,7 +67,6 @@ app.use("/proxy/api/v2/hostelries", function(req, res) {
     req.pipe(request(url)).pipe(res);
 });
 
-
 //---------------------------END: API REST SMOKERS-CONSUMPTION-STATS-----------------
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ API REST LIFE-EXPECTANCY-STATS ~~~~~~~~~~~~~~~~~~~~~~~~

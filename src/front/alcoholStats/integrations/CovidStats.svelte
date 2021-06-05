@@ -43,8 +43,45 @@
     await getCovidStats();
     console.log('Datos ansiedad recibidos para pintar el grafo:');
     console.log(covidStats);
-
     Highcharts.chart('container', {
+    chart: {
+        type: 'pyramid3d',
+        options3d: {
+            enabled: true,
+            alpha: 10,
+            depth: 50,
+            viewDistance: 50
+        }
+    },
+    title: {
+        text: 'Datos coronavirus'
+    },
+    plotOptions: {
+        series: {
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b> ({point.y:,.0f})',
+                allowOverlap: true,
+                x: 10,
+                y: -5
+            },
+            width: '60%',
+            height: '80%',
+            center: ['50%', '45%']
+        }
+    },
+    series: [{
+        name: 'Estadísticas en el mundo',
+        data: [
+            ['Muertes',parseInt(cleanChar(covidStats.world_total.total_deaths,","))],
+            ['Recuperados', parseInt(cleanChar(covidStats.world_total.total_recovered,","))],
+            ['Casos activos', parseInt(cleanChar(covidStats.world_total.active_cases,","))]
+        ]
+    }]
+});
+     
+
+   /*  Highcharts.chart('container', {
       chart: {
           type: 'column'
       },
@@ -115,7 +152,7 @@
           parseInt(cleanChar(covidStats.countries_stat[9].total_recovered,",")/10), parseInt(cleanChar(covidStats.countries_stat[10].total_recovered,",")/10)]
 
       }]
-  });
+  });*/
 };
 
 </script>
