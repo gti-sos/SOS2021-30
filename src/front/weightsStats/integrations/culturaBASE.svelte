@@ -26,6 +26,7 @@
     }
 
     async function getCultura(){
+        await fetch(culturaBASE_PATH+"/loadInitialData");
         const res = await fetch(culturaBASE_PATH);
         if(res.ok){
             culturaStats = await res.json();
