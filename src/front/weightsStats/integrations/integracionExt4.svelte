@@ -59,8 +59,7 @@
                 layout: 'vertical',
                 align: 'left',
                 verticalAlign: 'top',
-                x: 100,
-                y: 70,
+                x: activeUsers,
                 floating: true,
                 backgroundColor: Highcharts.defaultOptions.chart.backgroundColor,
                 borderWidth: 1
