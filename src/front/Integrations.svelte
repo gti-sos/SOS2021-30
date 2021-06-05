@@ -75,6 +75,7 @@
         <CardText />
         <a href="/#/integrations/unemployment"><Button color="primary">Estadísticas Desempleo (G7)</Button></a>
         <a href="/#/integrations/druguse"><Button color="primary">Estadísticas Uso de Drogas (G23) </Button></a>
+        <a href="/#/integrations/cocktail"><Button color="primary">Estadísticas Bebidas Alcoholicas (Ext) </Button></a>
       </CardBody>
     </Card>
   </div>
