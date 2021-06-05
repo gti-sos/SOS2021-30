@@ -22,7 +22,7 @@
         console.log("Recived " + gamesStats.length + " games data...");
 
         gamesStats.forEach((stat) => {
-            if(stat.users > 15000){
+            if(stat.users > 10000){
                 gameTitle.push(stat.title);
                 activeUsers.push(parseFloat(stat["users"]));
             }
