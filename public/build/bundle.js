@@ -46446,7 +46446,7 @@ var app = (function () {
     			br1 = element("br");
     			t4 = space();
     			h6 = element("h6");
-    			h6.textContent = "Gráfico en dónde se muestra las muertes por coronavirus, casos activos y total de recuperados (divididos en un factor de 10)";
+    			h6.textContent = "Gráfico en dónde se muestra las muertes por coronavirus, casos activos y total de recuperados en proporción";
     			add_location(style, file$u, 103, 2, 3297);
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-z6xnyu");
@@ -46903,15 +46903,15 @@ var app = (function () {
     			t4 = space();
     			h6 = element("h6");
     			h6.textContent = "Gráfico";
-    			add_location(style, file$t, 128, 2, 3884);
+    			add_location(style, file$t, 128, 2, 3896);
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-z6xnyu");
-    			add_location(div, file$t, 170, 4, 4933);
+    			add_location(div, file$t, 170, 4, 4945);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$t, 169, 2, 4893);
-    			add_location(br0, file$t, 172, 2, 4974);
-    			add_location(br1, file$t, 173, 2, 4982);
-    			add_location(h6, file$t, 174, 2, 4990);
+    			add_location(figure, file$t, 169, 2, 4905);
+    			add_location(br0, file$t, 172, 2, 4986);
+    			add_location(br1, file$t, 173, 2, 4994);
+    			add_location(h6, file$t, 174, 2, 5002);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -46959,7 +46959,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t = text(/*errorMsg*/ ctx[0]);
-    			add_location(p, file$t, 126, 4, 3852);
+    			add_location(p, file$t, 126, 4, 3864);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -47067,18 +47067,18 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$t, 115, 2, 3420);
+    			add_location(script0, file$t, 115, 2, 3432);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$t, 116, 2, 3489);
+    			add_location(script1, file$t, 116, 2, 3501);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$t, 117, 2, 3565);
+    			add_location(script2, file$t, 117, 2, 3577);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$t, 118, 2, 3643);
-    			add_location(h2, file$t, 123, 4, 3780);
+    			add_location(script3, file$t, 118, 2, 3655);
+    			add_location(h2, file$t, 123, 4, 3792);
     			attr_dev(div, "class", "svelte-z6xnyu");
-    			add_location(div, file$t, 122, 2, 3769);
+    			add_location(div, file$t, 122, 2, 3781);
     			attr_dev(main, "class", "svelte-z6xnyu");
-    			add_location(main, file$t, 121, 0, 3759);
+    			add_location(main, file$t, 121, 0, 3771);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -47204,7 +47204,7 @@ var app = (function () {
     		Highcharts.chart("container", {
     			chart: { zoomType: "xy" },
     			title: {
-    				text: "Datos Co2 registrados y su tendencia en marzo 2021"
+    				text: "Datos Co2 registrados y su tendendencia en los últimos 30 días"
     			},
     			xAxis: [{ categories: categorias, crosshair: true }],
     			yAxis: [

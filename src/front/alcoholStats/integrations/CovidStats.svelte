@@ -147,7 +147,7 @@
 </figure>
   <br>
   <br>
-  <h6>Gráfico en dónde se muestra las muertes por coronavirus, casos activos y total de recuperados (divididos en un factor de 10)</h6>
+  <h6>Gráfico en dónde se muestra las muertes por coronavirus, casos activos y total de recuperados en proporción</h6>
   {/if}
   <Button outline color="secondary" on:click="{pop}">Atrás</Button>
 </main>

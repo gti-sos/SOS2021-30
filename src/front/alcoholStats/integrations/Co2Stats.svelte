@@ -42,7 +42,7 @@
               zoomType: 'xy'
           },
           title: {
-              text: 'Datos Co2 registrados y su tendencia en marzo 2021'
+              text: 'Datos Co2 registrados y su tendendencia en los últimos 30 días'
           },
           xAxis: [{
               categories: categorias,
