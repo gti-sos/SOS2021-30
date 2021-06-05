@@ -535,6 +535,16 @@ module.exports.register = (app) => {
 
         req.pipe(request(url)).pipe(res);
     })
+
+    //PROXY PARA INTEGRACION EXTERNA4
+    app.use("/proxyExterno", function(req, res) {
+        console.log("New proxy stress call");
+        var apiServerHost = 'https://www.gamerpower.com';
+        var url = apiServerHost + req.url;
+        console.log("piped: /proxyExterno -> " + url);
+
+        req.pipe(request(url)).pipe(res);
+    })
 };
 
 //~~~~~~~~~~~~~~~~~~~ END: API REST WEIGHTS-STATS ~~~~~~~~~~~~~~~~~~~~~~~~

@@ -2,7 +2,7 @@
     import { pop }from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
     
-    const BASE_GAMES_PATH = "https://www.gamerpower.com/api/giveaways";
+    const BASE_GAMES_PATH = "/proxyExterno/api/giveaways";
 
     let gamesStats = [];
     let gameTitle = [];
