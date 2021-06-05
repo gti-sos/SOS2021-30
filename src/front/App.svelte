@@ -12,6 +12,7 @@
   import EditLife from './lifeStats/EditLife.svelte';
   import UnemploymentStats from "./lifeStats/integrations/UnemploymentStats.svelte";
   import DrugUseStats from "./lifeStats/integrations/DrugUseStats.svelte";
+  import HearthStoneStats from "./lifeStats/integrations/HearthStoneStats.svelte"
 	import TablaAlcohol from "./alcoholStats/TablaAlcohol.svelte";
   import EditAlcohol from "./alcoholStats/EditAlcohol.svelte";
   import GraphAlcohol from "./alcoholStats/GraphAlcohol.svelte";
@@ -81,6 +82,7 @@
     "/integrations/juegos-gratis" : JuegosGratis,
     "/integrations/unemployment": UnemploymentStats,
     "/integrations/druguse": DrugUseStats,
+    "/integrations/hearthstone": HearthStoneStats,
     "/smokers-stats" : SmokerStats,
     "/smokers-stats/:province/:year" : SmokersItems,
     "/smokers-graph" : GraphSmokers,
