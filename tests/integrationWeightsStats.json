@@ -1,0 +1,1236 @@
+{
+	"info": {
+		"_postman_id": "876d17eb-ef68-4320-90fd-c6afed080be0",
+		"name": "Documentación Weights-Stats-API v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "loadInitialdata",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 - Se han iniciado los datos correctamente\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats/loadInitialData",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a la lista de recursos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha cargado correctamente la lista de recursos\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La lista de recursos contiene el numero de elementos esperado\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(38);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loadInitialdata (409)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"No se han cargado los datos puesto que ya habían sido cargados antes.\", function () {\r",
+							"    pm.response.to.have.status(409);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats/loadInitialData",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST a la lista de recursos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201 - Se ha añadido un nuevo recurso a la lista\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": 40,\r\n\"country\": \"China\",\r\n\"provinces\": \"China\",\r\n\"year\": 2020,\r\n\"normal_weight\": 100,\r\n\"overweight\": 100,\r\n\"obesity\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET comprobación",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha cargado correctamente la lista de recursos\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La lista de recursos contiene el numero de elementos esperado\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(1);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats?id=40",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "40"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST a la lista de recursos (409)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 409 - Ha habido un conflicto con el dato a añadir\", function () {\r",
+							"    pm.response.to.have.status(409);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": 40,\r\n\"country\": \"China\",\r\n\"provinces\": \"China\",\r\n\"year\": 2020,\r\n\"normal_weight\": 100,\r\n\"overweight\": 100,\r\n\"obesity\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a la lista de recursos CON OFFSET",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha cargado correctamente la lista de recursos\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La lista de recursos contiene el numero de elementos esperado\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(20);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats?offset=19",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "19"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a la lista de recursos CON LIMIT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha cargado correctamente la lista de recursos\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La lista de recursos contiene el numero de elementos esperado\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(7);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats?limit=7",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a la lista de recursos CON LIMIT Y OFFSET",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha cargado correctamente la lista de recursos\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La lista de recursos contiene el numero de elementos esperado\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(3);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats?limit=3&offset=5",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "3"
+						},
+						{
+							"key": "offset",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a la lista de recursos POR ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha cargado correctamente la lista de recursos\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La lista de recursos contiene el numero de elementos esperado\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(1);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats?id=1",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a la lista de recursos POR COUNTRY",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha cargado correctamente la lista de recursos\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La lista de recursos contiene el numero de elementos esperado\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(38);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats?country=España",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "España"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a la lista de recursos POR PROVINCES",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha cargado correctamente la lista de recursos\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La lista de recursos contiene el numero de elementos esperado\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(2);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats?provinces=Cantabria",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					],
+					"query": [
+						{
+							"key": "provinces",
+							"value": "Cantabria"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a la lista de recursos POR YEAR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha cargado correctamente la lista de recursos\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La lista de recursos contiene el numero de elementos esperado\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(19);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats?year=2017",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2017"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a la lista de recursos POR NORMAL-WEIGHT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha cargado correctamente la lista de recursos\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La lista de recursos contiene el numero de elementos esperado\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(1);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats?normal_weight=47.6",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					],
+					"query": [
+						{
+							"key": "normal_weight",
+							"value": "47.6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a la lista de recursos POR OVERWEIGHT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha cargado correctamente la lista de recursos\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La lista de recursos contiene el numero de elementos esperado\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(2);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats?overweight=36.2",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					],
+					"query": [
+						{
+							"key": "overweight",
+							"value": "36.2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a la lista de recursos POR OBESITY",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha cargado correctamente la lista de recursos\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La lista de recursos contiene el numero de elementos esperado\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(3);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats?obesity=15",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					],
+					"query": [
+						{
+							"key": "obesity",
+							"value": "15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a la lista de recursos COMBINADO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha cargado correctamente la lista de recursos\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La lista de recursos contiene el numero de elementos esperado\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(2);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats?year=2017&overweight=36.2",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2017"
+						},
+						{
+							"key": "overweight",
+							"value": "36.2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a un recurso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha cargado correctamente el recurso seleccionado\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats/Cantabria/2017",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats",
+						"Cantabria",
+						"2017"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a un recurso (404)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha cargado correctamente el recurso seleccionado\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats/Ceuta/2018",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats",
+						"Ceuta",
+						"2018"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT a un recurso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha actualizado correctamente el recurso seleccionado\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"provinces\": \"Cantabria\",\r\n\"year\": 2017,\r\n\"normal_weight\": 100,\r\n\"overweight\": 100,\r\n\"obesity\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats/Cantabria/2017",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats",
+						"Cantabria",
+						"2017"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET comprobación Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha cargado correctamente la lista de recursos\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La lista de recursos contiene el numero de elementos esperado\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(1);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats?id=10",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT a un recurso (400)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"El dato JSON no tiene exactamente la estructura de campos esperada.\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": 4,\r\n\"provinces\": \"Cantabria\",\r\n\"year\": 2017,\r\n\"normal_weight\": 100,\r\n\"overweight\": 100,\r\n\"obesity\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats/Cantabria/2017",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats",
+						"Cantabria",
+						"2017"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE a un recurso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha eliminado correctamente el recurso seleccionado\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats/Cantabria/2017",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats",
+						"Cantabria",
+						"2017"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE a un recurso (404)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"No se ha podido eliminar el recurso porque no se ha encontrado\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats/Cantabria/2017",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats",
+						"Cantabria",
+						"2017"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a la lista de recursos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha cargado correctamente la lista de recursos\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La lista de recursos contiene el numero de elementos esperado\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(38);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST a un recurso(error)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"El metodo solicitado no está permitido y no deja que sea usado\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"id\": 2,\r\n        \"country\": \"España\",\r\n        \"provinces\": \"Cantabria\",\r\n        \"year\": 2017,\r\n        \"normal_weight\": 43.5,\r\n        \"overweight\": 37.2,\r\n        \"obesity\": 19.3\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats/2",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT a la lista de recursos(error)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"El metodo solicitado no está permitido y no deja que sea usado\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"id\": 2,\r\n        \"country\": \"España\",\r\n        \"provinces\": \"Cantabria\",\r\n        \"year\": 2017,\r\n        \"normal_weight\": 43.5,\r\n        \"overweight\": 37.2,\r\n        \"obesity\": 19.3\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats/",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE a la lista de recursos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha vaciado correctamente la lista de recursos\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/table-weights-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"table-weights-stats"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

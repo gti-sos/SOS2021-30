@@ -90,7 +90,7 @@
             },
             series: [{
                 name: 'Usuarios activos',
-                color: 'rgba(128, 41, 58, .5)',
+                color: 'rgba(83, 217, 101, .5)',
                 data: activeUsers
             }]
 });
