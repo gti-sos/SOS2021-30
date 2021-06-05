@@ -35,7 +35,7 @@
                 zoomType: 'xy'
             },
             title: {
-                text: 'Height Versus Weight of 507 Individuals by Gender'
+                text: 'Jugadores activos en juegos gratis'
             },
             subtitle: {
                 text: 'Source: Heinz  2003'
@@ -90,7 +90,7 @@
             },
             series: [{
                 name: 'Usuarios activos',
-                color: 'rgba(8, 163, 245, .5)',
+                color: 'rgba(128, 41, 58, .5)',
                 data: activeUsers
             }]
 });
@@ -115,16 +115,13 @@
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            Scatter charts are often used to visualize the relationships
-            between data in two dimensions. This chart is visualizing
-            height and weight by gender, showing a clear trend where men
-            are on average taller and heavier than women.
-        </p>
+            Gráfico en el que se aprecia la cantidad de jugadores activos que tienen ciertos juegos
+            que son gratis</p>
     </figure>
     
 
     <p>Datos obtenidos de: <a href="https://www.gamerpower.com/">https://www.gamerpower.com/</a></p>	
-    <h7 style="color: gray;">Gráfica diseñada con Highcharts - type: 'areaspline'</h7>
+    <h7 style="color: gray;">Gráfica diseñada con Highcharts - type: 'scatter'</h7>
 
     <Button outline color="secondary" on:click="{pop}">Atrás</Button>
  
