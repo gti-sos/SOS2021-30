@@ -48,6 +48,7 @@
   import GraphLife from "./lifeStats/GraphLife.svelte";
   import GraphLife2 from "./lifeStats/GraphLife2.svelte";
   import GraphLife3 from "./lifeStats/GraphLife3.svelte";
+  import CovidEuropeStats from "./lifeStats/integrations/CovidEuropeStats.svelte"
 
 
 	const routes = {
@@ -83,6 +84,7 @@
     "/integrations/unemployment": UnemploymentStats,
     "/integrations/druguse": DrugUseStats,
     "/integrations/hearthstone": HearthStoneStats,
+    "/integrations/covideu": CovidEuropeStats,
     "/smokers-stats" : SmokerStats,
     "/smokers-stats/:province/:year" : SmokersItems,
     "/smokers-graph" : GraphSmokers,
