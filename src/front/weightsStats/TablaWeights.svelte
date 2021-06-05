@@ -352,7 +352,7 @@
     </Button>
 
     <a href="./#/weights-graph"><Button color="info">Gráfico de línea</Button></a>
-    <a href="./#/weights-graph-colums"><Button color="info">Gráfico de columnas(D03)</Button></a>
+    <a href="./#/weights-graph-colums"><Button color="info">Gráfico de cilindros 3D(D03)</Button></a>
     <a href="./#/weights-graph-morris"><Button color="info">Gráfico libreria morris.js(D03)</Button></a>
 
 

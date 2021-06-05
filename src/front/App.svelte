@@ -35,12 +35,13 @@
   import EditWeight from "./weightsStats/EditWeight.svelte";
   import GraphWeight from "./weightsStats/GraphWeight.svelte";
   import GraphWeightMorris from "./weightsStats/GraphWeightMorris.svelte"
-  import GraphColumns from "./weightsStats/GraphColumns.svelte";
+  import GraphCylinder from "./weightsStats/GraphCylinder.svelte";
   import Cultura from "./weightsStats/integrations/culturaBASE.svelte";
   import Stress from "./weightsStats/integrations/stressStats.svelte";
   import NBA from "./weightsStats/integrations/integracionExt1.svelte";
   import SteamGames from "./weightsStats/integrations/integracionExt2.svelte";
   import LigaFutbol from "./weightsStats/integrations/integracionExt3.svelte";
+  import JuegosGratis from "./weightsStats/integrations/integracionExt4.svelte";
   import GroupGraph from "./GroupGraph.svelte";
 	import {Navbar,NavbarBrand,Nav,NavItem,NavLink } from 'sveltestrap';
   import GraphLife from "./lifeStats/GraphLife.svelte";
@@ -70,13 +71,14 @@
     "/weights-stats" : FrontWeight,
     "/weights-stats/:provinces/:year" : EditWeight,
     "/weights-graph" : GraphWeight,
-    "/weights-graph-colums" : GraphColumns,
+    "/weights-graph-colums" : GraphCylinder,
     "/weights-graph-morris" : GraphWeightMorris,
     "/integrations/culturaBASE" : Cultura,
     "/integrations/stress-stats" : Stress,
     "/integrations/NBA-position" : NBA,
     "/integrations/steam-games" : SteamGames,
     "/integrations/liga-futbol" : LigaFutbol,
+    "/integrations/juegos-gratis" : JuegosGratis,
     "/integrations/unemployment": UnemploymentStats,
     "/integrations/druguse": DrugUseStats,
     "/smokers-stats" : SmokerStats,

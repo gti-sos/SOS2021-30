@@ -56,9 +56,9 @@
                 categories: gameTitle,
                 type: 'category',
                 plotBands: [{
-                    from: 20,
-                    to: 30,
-                    color: 'rgba(231, 12, 8, .2)'
+                    from: 0,
+                    to: 4,
+                    color: 'rgba(56, 231, 46, .2)'
                 }]
             },
             yAxis: {
@@ -106,8 +106,8 @@
         <div id="container"></div>
         <p class="highcharts-description">
         Gráfico en el que se ve representado el precio de algunos juegos rebajados en Steam con un valor 
-        superior a los 15€, comparando su precio real con el precio rebajado. La zona roja marca el momento
-        en el que los precios rebajados empiezan a ser más caros</p>
+        superior a los 15€, comparando su precio real con el precio rebajado. La zona verde marca los 5 juegos
+        con mejor valoración en la plataforma</p>
     </figure>
 
     <p>Datos obtenidos de: <a href="https://www.cheapshark.com/">https://www.cheapshark.com/</a></p>	
