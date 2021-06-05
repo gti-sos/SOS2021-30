@@ -22,7 +22,7 @@
         console.log("Recived " + gamesStats.length + " games data...");
 
         gamesStats.forEach((stat) => {
-            if(stat.users > 2750){
+            if(stat.users > 5000){
                 gameTitle.push(stat.title);
                 activeUsers.push(parseFloat(stat["users"]));
             }
@@ -84,14 +84,13 @@
                         }
                     },
                     tooltip: {
-                        headerFormat: '<b>{series.name}</b><br>',
-                        pointFormat: '{point.x} cm, {point.y} kg'
+                        headerFormat: '<b>{series.name}</b><br>'
                     }
                 }
             },
             series: [{
                 name: 'Usuarios activos',
-                color: 'rgba(223, 83, 83, .5)',
+                color: 'rgba(8, 163, 245, .5)',
                 data: activeUsers
             }]
 });
