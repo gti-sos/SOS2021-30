@@ -27,6 +27,7 @@
 
     async function getCultura(){
         await fetch(culturaBASE_PATH+"/loadInitialData");
+        console.log("Se cargando los datos desde la dirección: " + culturaBASE_PATH+"/loadInitialData");
         const res = await fetch(culturaBASE_PATH);
         if(res.ok){
             culturaStats = await res.json();
