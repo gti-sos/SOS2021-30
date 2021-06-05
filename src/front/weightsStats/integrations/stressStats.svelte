@@ -2,7 +2,6 @@
     import { pop } from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
 
-
     const BASE_WEIGHTS_PATH = "/api/v2/table-weights-stats";
     const stressBASE_PATH = "/proxyStress/api/v2/stress_stats/";
 
