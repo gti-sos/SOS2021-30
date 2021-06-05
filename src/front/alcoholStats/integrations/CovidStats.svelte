@@ -73,12 +73,12 @@
         series: [{
             name: 'Estadísticas en el mundo',
             data: [
-                ['Muertes',parseInt(cleanChar(covidStats.world_total.total_deaths,","))],
-                ['Recuperados', parseInt(cleanChar(cleanCharcovidStats.world_total.total_recovered,","))],
-                ['Casos activos', parseInt(cleanChar(covidStats.world_total.active_cases,","))]
+                ['Recuperados', parseInt(cleanChar(covidStats.world_total.total_recovered,","))],
+                ['Casos activos', parseInt(cleanChar(covidStats.world_total.active_cases,","))],
+                ['Muertes',parseInt(cleanChar(covidStats.world_total.total_deaths,","))]
             ]
         }]
-    });
+    }); 
 };
 
 </script>
