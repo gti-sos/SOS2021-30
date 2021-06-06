@@ -51,7 +51,8 @@ var counter = 0;
     console.log("Volviendo a la página de datos IMC");
     
     if(datosWeight != 11){
-        console.log("No se ha pasado el test!");
+        console.log("No se ha pasado el test");
+        console.log("El número de filas detectadas no es el correcto");
         process.exit(1);
     } 
 
