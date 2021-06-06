@@ -61508,25 +61508,25 @@ var app = (function () {
     			t8 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$8, 94, 4, 2666);
+    			add_location(script0, file$8, 94, 4, 2669);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$8, 95, 4, 2737);
+    			add_location(script1, file$8, 95, 4, 2740);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$8, 96, 4, 2815);
+    			add_location(script2, file$8, 96, 4, 2818);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$8, 97, 4, 2895);
+    			add_location(script3, file$8, 97, 4, 2898);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$8, 105, 8, 3075);
+    			add_location(div, file$8, 105, 8, 3078);
     			attr_dev(p0, "class", "highcharts-description");
-    			add_location(p0, file$8, 106, 8, 3111);
+    			add_location(p0, file$8, 106, 8, 3114);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$8, 104, 4, 3031);
+    			add_location(figure, file$8, 104, 4, 3034);
     			attr_dev(a, "href", "https://www.cheapshark.com/");
-    			add_location(a, file$8, 112, 27, 3461);
-    			add_location(p1, file$8, 112, 4, 3438);
+    			add_location(a, file$8, 112, 27, 3464);
+    			add_location(p1, file$8, 112, 4, 3441);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$8, 113, 4, 3541);
-    			add_location(main, file$8, 102, 0, 3017);
+    			add_location(h7, file$8, 113, 4, 3544);
+    			add_location(main, file$8, 102, 0, 3020);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -61662,7 +61662,10 @@ var app = (function () {
     			tooltip: { shared: true, valueSuffix: " €" },
     			credits: { enabled: false },
     			plotOptions: { areaspline: { fillOpacity: 0.5 } },
-    			series: [{ name: "Precio", data: price }, { name: "Valoraciones", data: salePrice }]
+    			series: [
+    				{ name: "Precio", data: price },
+    				{ name: "Precio rebajado", data: salePrice }
+    			]
     		});
     	}
 
