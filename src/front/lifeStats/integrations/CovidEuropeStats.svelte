@@ -16,11 +16,13 @@
 		const res = await fetch(EXT_PATH); 
 		if (res.ok) {
             ext2Stats = await res.json();
-			console.log("Recived hearthstone data...");
+			console.log("Recived covid data...");
             console.log(ext2Stats);
             ext2Stats.forEach(stat => {
+              if(stat.rank <= 20){
                 paises.push(stat.Country);
                 muertes.push(stat.TotalDeaths);
+              }
             });
             
 		}    
@@ -36,7 +38,16 @@
             label: 'Europa',
             data: muertes,
             backgroundColor: [
-                "#FF4B4B80",
+                "#B900FF80",
+                "#00FF2880",
+                "#F7464A80",
+                "#46BFBD80",
+                "#FDB45C80",
+                "#949FB180",
+                "#4D536080",
+                "#E4FF0080",
+                "#008BFF80",
+                
             ]
             }
         ]
@@ -107,7 +118,7 @@
         <figure class="highcharts-figure">
           <div id="container" />
           <p class="highcharts-description">
-            Representación del número de muertes por covid en los paises europeos.
+            Representación del número de muertes por covid en los paises europeos con más casos.
           </p>
         </figure>
       </div>
