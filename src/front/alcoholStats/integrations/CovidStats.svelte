@@ -43,85 +43,52 @@
     await getCovidStats();
     console.log('Datos ansiedad recibidos para pintar el grafo:');
     console.log(covidStats);
-
     Highcharts.chart('container', {
-      chart: {
-          type: 'column'
-      },
-      title: {
-          text: 'Monthly Average Rainfall'
-      },
-      xAxis: {
-          categories: [
-              covidStats.countries_stat[11].country_name,
-              covidStats.countries_stat[12].country_name,
-              covidStats.countries_stat[13].country_name,
-              covidStats.countries_stat[3].country_name,
-              covidStats.countries_stat[4].country_name,
-              covidStats.countries_stat[5].country_name,
-              covidStats.countries_stat[6].country_name,
-              covidStats.countries_stat[7].country_name,
-              covidStats.countries_stat[8].country_name,
-              covidStats.countries_stat[9].country_name,
-              covidStats.countries_stat[10].country_name
-          ],
-          crosshair: true
-      },
-      yAxis: {
-          min: 0,
-          title: {
-              text: 'Valor númerico'
-          }
-      },
-      tooltip: {
-          headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-          pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-              '<td style="padding:0"><b>{point.y} personas</b></td></tr>',
-          footerFormat: '</table>',
-          shared: true,
-          useHTML: true
-      },
-      plotOptions: {
-          column: {
-              pointPadding: 0.2,
-              borderWidth: 0
-          }
-      },
-      series: [{
-          name: 'Muertes',
-          data: [parseInt(cleanChar(covidStats.countries_stat[11].deaths,",")),
-          parseInt(cleanChar(covidStats.countries_stat[12].deaths,",")), parseInt(cleanChar(covidStats.countries_stat[13].deaths,",")),
-          parseInt(cleanChar(covidStats.countries_stat[3].deaths,",")), parseInt(cleanChar(covidStats.countries_stat[4].deaths,",")),
-          parseInt(cleanChar(covidStats.countries_stat[5].deaths,",")), parseInt(cleanChar(covidStats.countries_stat[6].deaths,",")), 
-          parseInt(cleanChar(covidStats.countries_stat[7].deaths,",")), parseInt(cleanChar(covidStats.countries_stat[8].deaths,",")),
-          parseInt(cleanChar(covidStats.countries_stat[9].deaths,",")), parseInt(cleanChar(covidStats.countries_stat[10].deaths,","))]
-
-      }, {
-          name: 'Casos activos',
-          data: [parseInt(cleanChar(covidStats.countries_stat[11].active_cases,",")),
-          parseInt(cleanChar(covidStats.countries_stat[12].active_cases,",")), parseInt(cleanChar(covidStats.countries_stat[13].active_cases,",")),
-          parseInt(cleanChar(covidStats.countries_stat[3].active_cases,",")), parseInt(cleanChar(covidStats.countries_stat[4].active_cases,",")),
-          parseInt(cleanChar(covidStats.countries_stat[5].active_cases,",")), parseInt(cleanChar(covidStats.countries_stat[6].active_cases,",")), 
-          parseInt(cleanChar(covidStats.countries_stat[7].active_cases,",")), parseInt(cleanChar(covidStats.countries_stat[8].active_cases,",")),
-          parseInt(cleanChar(covidStats.countries_stat[9].active_cases,",")), parseInt(cleanChar(covidStats.countries_stat[10].active_cases,","))]
-
-      }, {
-          name: 'Total de recuperados',
-          data: [parseInt(cleanChar(covidStats.countries_stat[11].total_recovered,",")/10),
-          parseInt(cleanChar(covidStats.countries_stat[12].total_recovered,",")/10), parseInt(cleanChar(covidStats.countries_stat[13].total_recovered,",")/10),
-          parseInt(cleanChar(covidStats.countries_stat[3].total_recovered,",")/10), parseInt(cleanChar(covidStats.countries_stat[4].total_recovered,",")/10),
-          parseInt(cleanChar(covidStats.countries_stat[5].total_recovered,",")/10), parseInt(cleanChar(covidStats.countries_stat[6].total_recovered,",")/10), 
-          parseInt(cleanChar(covidStats.countries_stat[7].total_recovered,",")/10), parseInt(cleanChar(covidStats.countries_stat[8].total_recovered,",")/10),
-          parseInt(cleanChar(covidStats.countries_stat[9].total_recovered,",")/10), parseInt(cleanChar(covidStats.countries_stat[10].total_recovered,",")/10)]
-
-      }]
-  });
+        chart: {
+            type: 'pyramid3d',
+            options3d: {
+                enabled: true,
+                alpha: 10,
+                depth: 50,
+                viewDistance: 50
+            }
+        },
+        title: {
+            text: 'Datos coronavirus'
+        },
+        plotOptions: {
+            series: {
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b> ({point.y:,.0f})',
+                    allowOverlap: true,
+                    x: 10,
+                    y: -5
+                },
+                width: '60%',
+                height: '80%',
+                center: ['50%', '45%']
+            }
+        },
+        series: [{
+            name: 'Estadísticas en el mundo',
+            data: [
+                ['Recuperados', parseInt(cleanChar(covidStats.world_total.total_recovered,","))],
+                ['Casos activos', parseInt(cleanChar(covidStats.world_total.active_cases,","))],
+                ['Muertes',parseInt(cleanChar(covidStats.world_total.total_deaths,","))]
+            ]
+        }]
+    }); 
 };
 
 </script>
 
 <svelte:head>
   <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+  <script src="https://code.highcharts.com/modules/cylinder.js"></script>
+  <script src="https://code.highcharts.com/modules/funnel3d.js"></script>
+  <script src="https://code.highcharts.com/modules/pyramid3d.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/modules/export-data.js"></script>
   <script src="https://code.highcharts.com/modules/accessibility.js" on:load={loadGraph}></script>
@@ -180,7 +147,7 @@
 </figure>
   <br>
   <br>
-  <h6>Gráfico en dónde se muestra las muertes por coronavirus, casos activos y total de recuperados (divididos en un factor de 10)</h6>
+  <h6>Gráfico en dónde se muestra las muertes por coronavirus, casos activos y total de recuperados en proporción</h6>
   {/if}
   <Button outline color="secondary" on:click="{pop}">Atrás</Button>
 </main>
