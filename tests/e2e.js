@@ -16,31 +16,48 @@ var counter = 0;
     // Home page
     console.log("Pagina HOME abierta!");
     await page.screenshot({ path: path + (counter++) + '.png'});
-    console.log("> Captura tomada...");
+    console.log("Captura tomada...");
 
     // Info page
     await page.click("body > main > main > a:nth-child(3)");
     console.log("Pagina INFO abierta!");
     await page.screenshot({ path: path + (counter++) + '.png'});
-    console.log("> Captura tomada...");
+    console.log("Captura tomada...");
     
     // Tabla IMC page
     await page.click("body > nav > ul > li:nth-child(6) > a");
     console.log("Pagina FrontEnd IMC abierta!");
     await page.screenshot({ path: path + (counter++) + '.png'});
-    console.log("> Captura tomada...");
-/*
-    // About page
-    await page.click("#about");
-    console.log("Pagina ABOUT abierta!");
+    console.log("Captura tomada...");
+    await page.click("body > main > main > button.btn.btn-success");
+    console.log("Pulsado botón para cargar los datos iniciales");
     await page.screenshot({ path: path + (counter++) + '.png'});
-    console.log("> Captura tomada...");
-    await page.click("#nav-back"); // Volvemos a la Home page
 
-    // Integrations page
-    await page.click("#integrations");
-    console.log("Pagina INTEGRATIONS abierta!");
-    console.log("> Captura tomada...");
-    await page.screenshot({ path: path + (counter++) + '.png'});
-    await page.click("#nav-back"); // Volvemos a la Home page*/
+    var datosWeight = (await page.$$("body > main > main > table.table.table-bordered > tbody > tr")).length;
+    console.log("Hay un total de " + datosWeight + " en la tabla de la página inicial");
+
+    await page.click("body > main > main > a:nth-child(10) > button");
+    console.log("Pulsado botón para ver gráfica de cilindros");
+    await page.screenshot({path: path + "graficaCilindrosWeights.png"});
+    console.log("Captura de grafico cilindros tomada...");
+    await page.click("body > main > main > button");
+    console.log("Volviendo a la página de datos IMC");
+
+    await page.click("body > main > main > a:nth-child(11) > button");
+    console.log("Pulsado botón para ver gráfica de morris.js");
+    await page.screenshot({path: path + "graficaMorrisWeights.png"});
+    console.log("Captura de grafico cilindros tomada...");
+    await page.click("body > main > main > button");
+    console.log("Volviendo a la página de datos IMC");
+    
+    if(datosWeight != 11){
+        console.log("No se ha pasado el test!");
+        process.exit(1);
+    } 
+
+    //Cerramos el navegador
+    await browser.close();
+    console.log("Browser closed!");
+    console.log("Test pasado correctamente!")
+    process.exit(0);    
 })()

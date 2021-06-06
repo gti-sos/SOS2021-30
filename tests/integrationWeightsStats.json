@@ -12,9 +12,6 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200 - Se han iniciado los datos correctamente\", function () {\r",
-							"    pm.response.to.have.status(201);\r",
-							"});\r",
 							""
 						],
 						"type": "text/javascript"
