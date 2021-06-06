@@ -10,7 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm install
+      - run: npm run build
       - run: npm start &
       - run: npx newman run tests/integrationLifeStats.json 
       - run: npx newman run tests/integrationSmokerStats.json
       - run: npx newman run tests/integrationWeightsStats.json
+      - run: node tests/e2e.json
