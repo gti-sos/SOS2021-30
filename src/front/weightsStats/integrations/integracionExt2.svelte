@@ -82,7 +82,7 @@
                 name: 'Precio',
                 data: price
             }, {
-                name: 'Valoraciones',
+                name: 'Precio rebajado',
                 data: salePrice
             }]
         });
