@@ -56,6 +56,41 @@ var counter = 0;
         process.exit(1);
     } 
 
+    //Tabla Life Stats
+    console.log("------------------------------------------------");
+    console.log("Test e2e Life-Stats");
+    console.log("------------------------------------------------");
+    await page.click("body > nav > ul > li:nth-child(5) > a");
+    console.log("Pagina FrontEnd Esperanza de vida abierta!");
+    await page.screenshot({ path: path + "paginaInicialLife.png"});
+    console.log("Captura tomada...");
+    await page.click("body > main > main > button.btn.btn-success");
+    console.log("Pulsado botón para cargar los datos iniciales");
+    await page.screenshot({ path: path + 'paginaCargadaLife.png'});
+
+    var datosLife = (await page.$$("body > main > main > div.table-responsive > table > tbody > tr")).length;
+    console.log("Hay un total de " + datosLife + " en la tabla de la página inicial");
+
+    await page.click("body > main > main > a:nth-child(11) > button");
+    console.log("Pulsado botón para ver gráfica de barras");
+    await page.screenshot({path: path + "graficaBarrasLife.png"});
+    console.log("Captura de grafico de barras tomada...");
+    await page.click("body > main > main > a > button");
+    console.log("Volviendo a la página de datos Esperanza de vida");
+
+    await page.click("body > main > main > a:nth-child(12) > button");
+    console.log("Pulsado botón para ver gráfica de Chart.js");
+    await page.screenshot({path: path + "graficaChartLife.png"});
+    console.log("Captura de grafica de columnas tomada...");
+    await page.click("body > main > main > a > button");
+    console.log("Volviendo a la página de datos Esperanza de vida");
+
+    if(datosLife != 11){
+        console.log("No se ha pasado el test");
+        console.log("El número de filas detectadas no es el correcto");
+        process.exit(1);
+    } 
+
     //Cerramos el navegador
     await browser.close();
     console.log("Browser closed!");

@@ -18,6 +18,7 @@
 
   async function getStats() {
     console.log("Fetching life expectancy data...");
+    await fetch(BASE_API_PATH + "/loadInitialData");
     const res = await fetch(BASE_API_PATH);
     if (res.ok) {
       console.log("OK");
@@ -41,7 +42,7 @@
 
   async function getUnemploymentStats() {
     console.log("Fetching unemployment data...");
-    await fetch(BASE_UNEMPLOY_API_PATH);
+    await fetch(BASE_UNEMPLOY_API_PATH + "/loadInitialData");
     const res = await fetch(BASE_UNEMPLOY_API_PATH); 
     console.log(res);
     if (res.ok) {
