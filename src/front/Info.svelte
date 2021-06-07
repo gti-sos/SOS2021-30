@@ -91,7 +91,7 @@
                 <td>Víctor Caballero Sánchez</td>
                 <td>API alcohol-consumption-stats</td>
                 <td><a href="https://documenter.getpostman.com/view/14942936/TzJsheDD"><Button color="info">Documentación v1</Button></a>
-                    <a href="https://documenter.getpostman.com/view/14942936/TzRX85Lc"><Button color="info">Documentación v1</Button></a></td>
+                    <a href="https://documenter.getpostman.com/view/14942936/TzRX85Lc"><Button color="info">Documentación v2</Button></a></td>
 
                 
             </tr>

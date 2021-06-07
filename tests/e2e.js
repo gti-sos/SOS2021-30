@@ -90,6 +90,37 @@ var counter = 0;
         console.log("El número de filas detectadas no es el correcto");
         process.exit(1);
     } 
+    // Tabla alcohol
+    console.log("////// Test e2e alcohol ////////");
+    await page.click("body > nav > ul > li:nth-child(3) > a");
+    console.log("Pagina FrontEnd alcohol abierta!");
+    await page.screenshot({ path: path + 'InicioAlcohol.png'});
+    console.log("Captura tomada...");
+    await page.click("body > main > main > button.btn.btn-success");
+    console.log("Pulsado botón para cargar los datos iniciales");
+    await page.screenshot({ path: path + 'CargaDatosInicialesAlcohol.png'});
+
+    var datosAlcohol = (await page.$$("body > main > main > div.table-responsive > table > tbody > tr")).length;
+    console.log("Hay un total de " + datosAlcohol + " en la tabla de la página inicial");
+
+    await page.click("body > main > main > a > button"); 
+    console.log("Pulsado botón para ver gráfica de tipo line");
+    await page.screenshot({path: path + "LineAlcohol.png"});
+    console.log("Captura de grafico line tomada..."); 
+
+    await page.click("body > main > main > a:nth-child(5) > button");
+    console.log("Pulsado botón para ver gráfica tipo item");
+    await page.waitForTimeout(1000);
+    await page.screenshot({path: path + "graficaParlamentoAlcohol.png"});
+    console.log("Captura de grafico cilindros tomada...");
+    await page.click("body > main > main > a:nth-child(6) > button"); //Falla
+    console.log("Volviendo a la página de datos Alcohol");
+    
+    if(datosAlcohol != 11){
+        console.log("No se ha pasado el test");
+        console.log("El número de filas detectadas no es el correcto");
+        process.exit(1);
+    } 
 
     //Cerramos el navegador
     await browser.close();

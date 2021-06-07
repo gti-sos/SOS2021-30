@@ -7998,7 +7998,7 @@ var app = (function () {
     const file$I = "src\\front\\Home.svelte";
 
     // (12:23) <Button color="info">
-    function create_default_slot_3$c(ctx) {
+    function create_default_slot_3$f(ctx) {
     	let t;
 
     	const block = {
@@ -8015,7 +8015,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$c.name,
+    		id: create_default_slot_3$f.name,
     		type: "slot",
     		source: "(12:23) <Button color=\\\"info\\\">",
     		ctx
@@ -8127,7 +8127,7 @@ var app = (function () {
     	button0 = new Button({
     			props: {
     				color: "info",
-    				$$slots: { default: [create_default_slot_3$c] },
+    				$$slots: { default: [create_default_slot_3$f] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -9751,7 +9751,7 @@ var app = (function () {
     }
 
     // (118:78) <Button color="info">
-    function create_default_slot_3$b(ctx) {
+    function create_default_slot_3$e(ctx) {
     	let t;
 
     	const block = {
@@ -9768,7 +9768,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$b.name,
+    		id: create_default_slot_3$e.name,
     		type: "slot",
     		source: "(118:78) <Button color=\\\"info\\\">",
     		ctx
@@ -9891,7 +9891,7 @@ var app = (function () {
     	button1 = new Button({
     			props: {
     				color: "info",
-    				$$slots: { default: [create_default_slot_3$b] },
+    				$$slots: { default: [create_default_slot_3$e] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11939,7 +11939,7 @@ var app = (function () {
     }
 
     // (52:8) <CardTitle>
-    function create_default_slot_3$a(ctx) {
+    function create_default_slot_3$d(ctx) {
     	let h2;
 
     	const block = {
@@ -11958,7 +11958,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$a.name,
+    		id: create_default_slot_3$d.name,
     		type: "slot",
     		source: "(52:8) <CardTitle>",
     		ctx
@@ -11974,7 +11974,7 @@ var app = (function () {
 
     	cardtitle = new CardTitle({
     			props: {
-    				$$slots: { default: [create_default_slot_3$a] },
+    				$$slots: { default: [create_default_slot_3$d] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -14071,7 +14071,7 @@ var app = (function () {
     }
 
     // (83:42) <Button color="primary">
-    function create_default_slot_3$9(ctx) {
+    function create_default_slot_3$c(ctx) {
     	let t;
 
     	const block = {
@@ -14088,7 +14088,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$9.name,
+    		id: create_default_slot_3$c.name,
     		type: "slot",
     		source: "(83:42) <Button color=\\\"primary\\\">",
     		ctx
@@ -14148,7 +14148,7 @@ var app = (function () {
     	button3 = new Button({
     			props: {
     				color: "primary",
-    				$$slots: { default: [create_default_slot_3$9] },
+    				$$slots: { default: [create_default_slot_3$c] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -14770,7 +14770,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_3$8] },
+    				$$slots: { default: [create_default_slot_3$b] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -16064,7 +16064,7 @@ var app = (function () {
     }
 
     // (377:32) <Button outline color="primary">
-    function create_default_slot_3$8(ctx) {
+    function create_default_slot_3$b(ctx) {
     	let t;
 
     	const block = {
@@ -16081,7 +16081,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$8.name,
+    		id: create_default_slot_3$b.name,
     		type: "slot",
     		source: "(377:32) <Button outline color=\\\"primary\\\">",
     		ctx
@@ -16765,7 +16765,7 @@ var app = (function () {
     }
 
     // (74:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
-    function create_default_slot_3$7(ctx) {
+    function create_default_slot_3$a(ctx) {
     	let if_block_anchor;
     	let if_block = /*errorMsg*/ ctx[7] && create_if_block$n(ctx);
 
@@ -16800,7 +16800,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$7.name,
+    		id: create_default_slot_3$a.name,
     		type: "slot",
     		source: "(74:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>",
     		ctx
@@ -17128,7 +17128,7 @@ var app = (function () {
     				color: /*color*/ ctx[2],
     				isOpen: /*visible*/ ctx[1],
     				toggle: /*func*/ ctx[9],
-    				$$slots: { default: [create_default_slot_3$7] },
+    				$$slots: { default: [create_default_slot_3$a] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -31372,7 +31372,7 @@ var app = (function () {
     	button2 = new Button({
     			props: {
     				color: "danger",
-    				$$slots: { default: [create_default_slot_3$6] },
+    				$$slots: { default: [create_default_slot_3$9] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -32490,7 +32490,7 @@ var app = (function () {
     }
 
     // (329:8) <Button color="danger" on:click="{deleteALL}">
-    function create_default_slot_3$6(ctx) {
+    function create_default_slot_3$9(ctx) {
     	let t;
 
     	const block = {
@@ -32507,7 +32507,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$6.name,
+    		id: create_default_slot_3$9.name,
     		type: "slot",
     		source: "(329:8) <Button color=\\\"danger\\\" on:click=\\\"{deleteALL}\\\">",
     		ctx
@@ -33175,7 +33175,7 @@ var app = (function () {
     }
 
     // (68:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>
-    function create_default_slot_3$5(ctx) {
+    function create_default_slot_3$8(ctx) {
     	let if_block_anchor;
     	let if_block = /*checkMSG*/ ctx[2] && create_if_block_1$7(ctx);
 
@@ -33210,7 +33210,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$5.name,
+    		id: create_default_slot_3$8.name,
     		type: "slot",
     		source: "(68:4) <Alert color={color} isOpen={visible} toggle={() => (visible = false)}>",
     		ctx
@@ -33550,7 +33550,7 @@ var app = (function () {
     				color: /*color*/ ctx[3],
     				isOpen: /*visible*/ ctx[1],
     				toggle: /*func*/ ctx[8],
-    				$$slots: { default: [create_default_slot_3$5] },
+    				$$slots: { default: [create_default_slot_3$8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -33857,7 +33857,7 @@ var app = (function () {
     const { console: console_1$w } = globals;
     const file$x = "src\\front\\alcoholStats\\GraphAlcohol.svelte";
 
-    // (112:6) {#if errorMsg}
+    // (113:6) {#if errorMsg}
     function create_if_block_1$6(ctx) {
     	let p;
 
@@ -33882,7 +33882,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1$6.name,
     		type: "if",
-    		source: "(112:6) {#if errorMsg}",
+    		source: "(113:6) {#if errorMsg}",
     		ctx
     	});
 
@@ -33914,15 +33914,15 @@ var app = (function () {
     		block,
     		id: create_if_block$k.name,
     		type: "if",
-    		source: "(115:6) {#if okMsg}",
+    		source: "(116:6) {#if okMsg}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (128:31) <Button outline color="primary">
-    function create_default_slot_2$8(ctx) {
+    // (129:31) <Button outline color="primary">
+    function create_default_slot_3$7(ctx) {
     	let t;
 
     	const block = {
@@ -33939,17 +33939,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$8.name,
+    		id: create_default_slot_3$7.name,
     		type: "slot",
-    		source: "(128:31) <Button outline color=\\\"primary\\\">",
+    		source: "(129:31) <Button outline color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (129:31) <Button outline color="primary">
-    function create_default_slot_1$8(ctx) {
+    // (130:31) <Button outline color="primary">
+    function create_default_slot_2$8(ctx) {
     	let t;
 
     	const block = {
@@ -33966,17 +33966,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$8.name,
+    		id: create_default_slot_2$8.name,
     		type: "slot",
-    		source: "(129:31) <Button outline color=\\\"primary\\\">",
+    		source: "(130:31) <Button outline color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (130:30) <Button outline color="primary">
-    function create_default_slot$x(ctx) {
+    // (131:30) <Button outline color="primary">
+    function create_default_slot_1$8(ctx) {
     	let t;
 
     	const block = {
@@ -33993,9 +33993,36 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
+    		id: create_default_slot_1$8.name,
+    		type: "slot",
+    		source: "(131:30) <Button outline color=\\\"primary\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (130:30) <Button outline color="primary">
+    function create_default_slot$x(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Atrás");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
     		id: create_default_slot$x.name,
     		type: "slot",
-    		source: "(130:30) <Button outline color=\\\"primary\\\">",
+    		source: "(132:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -34035,6 +34062,8 @@ var app = (function () {
     	let t9;
     	let a2;
     	let button2;
+    	let t10;
+    	let button3;
     	let current;
     	let mounted;
     	let dispose;
@@ -34045,7 +34074,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_2$8] },
+    				$$slots: { default: [create_default_slot_3$7] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -34055,7 +34084,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_1$8] },
+    				$$slots: { default: [create_default_slot_2$8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -34070,6 +34099,18 @@ var app = (function () {
     			},
     			$$inline: true
     		});
+
+    	button3 = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				$$slots: { default: [create_default_slot$x] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button3.$on("click", pop);
 
     	const block = {
     		c: function create() {
@@ -34104,6 +34145,8 @@ var app = (function () {
     			t9 = space();
     			a2 = element("a");
     			create_component(button2.$$.fragment);
+    			t10 = space();
+    			create_component(button3.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
     			add_location(script0, file$x, 94, 4, 2702);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
@@ -34170,6 +34213,8 @@ var app = (function () {
     			append_dev(main, t9);
     			append_dev(main, a2);
     			mount_component(button2, a2, null);
+    			append_dev(main, t10);
+    			mount_component(button3, main, null);
     			current = true;
 
     			if (!mounted) {
@@ -34201,18 +34246,27 @@ var app = (function () {
     			}
 
     			button2.$set(button2_changes);
+    			const button3_changes = {};
+
+    			if (dirty & /*$$scope*/ 512) {
+    				button3_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button3.$set(button3_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(button0.$$.fragment, local);
     			transition_in(button1.$$.fragment, local);
     			transition_in(button2.$$.fragment, local);
+    			transition_in(button3.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(button0.$$.fragment, local);
     			transition_out(button1.$$.fragment, local);
     			transition_out(button2.$$.fragment, local);
+    			transition_out(button3.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -34228,6 +34282,7 @@ var app = (function () {
     			destroy_component(button0);
     			destroy_component(button1);
     			destroy_component(button2);
+    			destroy_component(button3);
     			mounted = false;
     			dispose();
     		}
@@ -34336,6 +34391,7 @@ var app = (function () {
 
     	$$self.$capture_state = () => ({
     		Button,
+    		pop,
     		BASE_API_PATH: BASE_API_PATH$7,
     		alcoholData,
     		alcoholChartData,
@@ -34421,7 +34477,7 @@ var app = (function () {
     const { console: console_1$v } = globals;
     const file$w = "src\\front\\alcoholStats\\GraphAlcohol2.svelte";
 
-    // (86:6) {#if errorMsg}
+    // (87:6) {#if errorMsg}
     function create_if_block_1$5(ctx) {
     	let p;
 
@@ -34446,7 +34502,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1$5.name,
     		type: "if",
-    		source: "(86:6) {#if errorMsg}",
+    		source: "(87:6) {#if errorMsg}",
     		ctx
     	});
 
@@ -34478,15 +34534,15 @@ var app = (function () {
     		block,
     		id: create_if_block$j.name,
     		type: "if",
-    		source: "(89:6) {#if okMsg}",
+    		source: "(90:6) {#if okMsg}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (102:31) <Button outline color="primary">
-    function create_default_slot_2$7(ctx) {
+    // (103:31) <Button outline color="primary">
+    function create_default_slot_3$6(ctx) {
     	let t;
 
     	const block = {
@@ -34503,17 +34559,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$7.name,
+    		id: create_default_slot_3$6.name,
     		type: "slot",
-    		source: "(102:31) <Button outline color=\\\"primary\\\">",
+    		source: "(103:31) <Button outline color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (103:30) <Button outline color="primary">
-    function create_default_slot_1$7(ctx) {
+    // (104:30) <Button outline color="primary">
+    function create_default_slot_2$7(ctx) {
     	let t;
 
     	const block = {
@@ -34530,17 +34586,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$7.name,
+    		id: create_default_slot_2$7.name,
     		type: "slot",
-    		source: "(103:30) <Button outline color=\\\"primary\\\">",
+    		source: "(104:30) <Button outline color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (104:30) <Button outline color="primary">
-    function create_default_slot$w(ctx) {
+    // (105:30) <Button outline color="primary">
+    function create_default_slot_1$7(ctx) {
     	let t;
 
     	const block = {
@@ -34557,9 +34613,36 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
+    		id: create_default_slot_1$7.name,
+    		type: "slot",
+    		source: "(105:30) <Button outline color=\\\"primary\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (104:30) <Button outline color="primary">
+    function create_default_slot$w(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Atrás");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
     		id: create_default_slot$w.name,
     		type: "slot",
-    		source: "(104:30) <Button outline color=\\\"primary\\\">",
+    		source: "(106:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -34599,6 +34682,8 @@ var app = (function () {
     	let t9;
     	let a2;
     	let button2;
+    	let t10;
+    	let button3;
     	let current;
     	let mounted;
     	let dispose;
@@ -34609,7 +34694,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_2$7] },
+    				$$slots: { default: [create_default_slot_3$6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -34619,7 +34704,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_1$7] },
+    				$$slots: { default: [create_default_slot_2$7] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -34634,6 +34719,8 @@ var app = (function () {
     			},
     			$$inline: true
     		});
+
+    	button3.$on("click", pop);
 
     	const block = {
     		c: function create() {
@@ -34668,6 +34755,8 @@ var app = (function () {
     			t9 = space();
     			a2 = element("a");
     			create_component(button2.$$.fragment);
+    			t10 = space();
+    			create_component(button3.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
     			add_location(script0, file$w, 70, 4, 2465);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/item-series.js")) attr_dev(script1, "src", script1_src_value);
@@ -34734,6 +34823,8 @@ var app = (function () {
     			append_dev(main, t9);
     			append_dev(main, a2);
     			mount_component(button2, a2, null);
+    			append_dev(main, t10);
+    			mount_component(button3, main, null);
     			current = true;
 
     			if (!mounted) {
@@ -34765,18 +34856,27 @@ var app = (function () {
     			}
 
     			button2.$set(button2_changes);
+    			const button3_changes = {};
+
+    			if (dirty & /*$$scope*/ 16) {
+    				button3_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button3.$set(button3_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(button0.$$.fragment, local);
     			transition_in(button1.$$.fragment, local);
     			transition_in(button2.$$.fragment, local);
+    			transition_in(button3.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(button0.$$.fragment, local);
     			transition_out(button1.$$.fragment, local);
     			transition_out(button2.$$.fragment, local);
+    			transition_out(button3.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -34792,6 +34892,7 @@ var app = (function () {
     			destroy_component(button0);
     			destroy_component(button1);
     			destroy_component(button2);
+    			destroy_component(button3);
     			mounted = false;
     			dispose();
     		}
@@ -34881,6 +34982,7 @@ var app = (function () {
 
     	$$self.$capture_state = () => ({
     		Button,
+    		pop,
     		ItemSeries: itemSeries,
     		BASE_API_PATH: BASE_API_PATH$6,
     		alcoholData,
@@ -46046,7 +46148,7 @@ var app = (function () {
     }
 
     // (87:31) <Button outline color="primary">
-    function create_default_slot_2$6(ctx) {
+    function create_default_slot_3$5(ctx) {
     	let t;
 
     	const block = {
@@ -46063,7 +46165,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$6.name,
+    		id: create_default_slot_3$5.name,
     		type: "slot",
     		source: "(87:31) <Button outline color=\\\"primary\\\">",
     		ctx
@@ -46073,7 +46175,7 @@ var app = (function () {
     }
 
     // (88:30) <Button outline color="primary">
-    function create_default_slot_1$6(ctx) {
+    function create_default_slot_2$6(ctx) {
     	let t;
 
     	const block = {
@@ -46090,7 +46192,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$6.name,
+    		id: create_default_slot_2$6.name,
     		type: "slot",
     		source: "(88:30) <Button outline color=\\\"primary\\\">",
     		ctx
@@ -46126,6 +46228,33 @@ var app = (function () {
     	return block;
     }
 
+    // (90:4) <Button outline color="secondary" on:click="{pop}">
+    function create_default_slot$v(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Atrás");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$v.name,
+    		type: "slot",
+    		source: "(90:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     function create_fragment$v(ctx) {
     	let script;
     	let script_src_value;
@@ -46143,6 +46272,8 @@ var app = (function () {
     	let t5;
     	let a2;
     	let button2;
+    	let t6;
+    	let button3;
     	let current;
     	let mounted;
     	let dispose;
@@ -46159,7 +46290,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_2$6] },
+    				$$slots: { default: [create_default_slot_3$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -46169,7 +46300,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_1$6] },
+    				$$slots: { default: [create_default_slot_2$6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -46184,6 +46315,18 @@ var app = (function () {
     			},
     			$$inline: true
     		});
+
+    	button3 = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				$$slots: { default: [create_default_slot$v] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button3.$on("click", pop);
 
     	const block = {
     		c: function create() {
@@ -46204,6 +46347,8 @@ var app = (function () {
     			t5 = space();
     			a2 = element("a");
     			create_component(button2.$$.fragment);
+    			t6 = space();
+    			create_component(button3.$$.fragment);
     			if (script.src !== (script_src_value = "//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js")) attr_dev(script, "src", script_src_value);
     			add_location(script, file$v, 60, 4, 2177);
     			add_location(h2, file$v, 65, 6, 2333);
@@ -46238,6 +46383,8 @@ var app = (function () {
     			append_dev(main, t5);
     			append_dev(main, a2);
     			mount_component(button2, a2, null);
+    			append_dev(main, t6);
+    			mount_component(button3, main, null);
     			current = true;
 
     			if (!mounted) {
@@ -46279,18 +46426,27 @@ var app = (function () {
     			}
 
     			button2.$set(button2_changes);
+    			const button3_changes = {};
+
+    			if (dirty & /*$$scope*/ 32) {
+    				button3_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button3.$set(button3_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(button0.$$.fragment, local);
     			transition_in(button1.$$.fragment, local);
     			transition_in(button2.$$.fragment, local);
+    			transition_in(button3.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(button0.$$.fragment, local);
     			transition_out(button1.$$.fragment, local);
     			transition_out(button2.$$.fragment, local);
+    			transition_out(button3.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -46301,6 +46457,7 @@ var app = (function () {
     			destroy_component(button0);
     			destroy_component(button1);
     			destroy_component(button2);
+    			destroy_component(button3);
     			mounted = false;
     			dispose();
     		}

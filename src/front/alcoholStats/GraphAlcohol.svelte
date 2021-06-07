@@ -1,5 +1,6 @@
 <script>
     import {Button} from "sveltestrap";
+    import { pop }from "svelte-spa-router";
     const BASE_API_PATH = "/api/v2";
     let alcoholData = [];
     let alcoholChartData = [];
@@ -128,6 +129,7 @@
     <a href="#/alcohol-graph3"><Button outline color="primary">Ver representación lineal dygraph</Button></a>
     <a href="#/alcohol-graph2"><Button outline color="primary">Ver representación Highcharts en otro formato</Button></a>
     <a href="#/alcohol-stats"><Button outline color="primary">Ver datos</Button></a>
+    <Button outline color="secondary" on:click="{pop}">Atrás</Button>
   </main>
   
   <style>
