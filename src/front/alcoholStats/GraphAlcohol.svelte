@@ -1,5 +1,6 @@
 <script>
     import {Button} from "sveltestrap";
+    import { pop }from "svelte-spa-router";
     const BASE_API_PATH = "/api/v2";
     let alcoholData = [];
     let alcoholChartData = [];
