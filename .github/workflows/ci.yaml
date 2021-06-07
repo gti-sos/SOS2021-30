@@ -15,4 +15,5 @@ jobs:
       - run: npx newman run tests/integrationLifeStats.json 
       - run: npx newman run tests/integrationSmokerStats.json
       - run: npx newman run tests/integrationWeightsStats.json
+      - run: npx newman run tests/integrationAlcoholStats.json
       - run: node tests/e2e.js

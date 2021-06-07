@@ -1,0 +1,620 @@
+{
+	"info": {
+		"_postman_id": "a9dd9dbc-b57b-4d2a-8b6d-bcd225fd8407",
+		"name": "Test API SOS2021-30-alcohol-consumption-stats v2",
+		"description": "Test de la API sobre el consumo de alcohol de la asignatura Sistemas orientados a servicios.\n\nEn el test se comprueban varios códigos de estado (200,201,400,404,405 y 409) además de comprobar que todos los métodos sobre la API funcionan correctamente.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Load Initial Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/alcohol-consumption-stats/loadInitialData",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"alcohol-consumption-stats",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Búsqueda Country",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/alcohol-consumption-stats?country=España",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"alcohol-consumption-stats"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "España"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Búsqueda age range",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/alcohol-consumption-stats?ageRange=00-05",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"alcohol-consumption-stats"
+					],
+					"query": [
+						{
+							"key": "ageRange",
+							"value": "00-05"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET RECURSO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"La respuesta es menor a 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/alcohol-consumption-stats/España/2017/00-05",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"alcohol-consumption-stats",
+						"España",
+						"2017",
+						"00-05"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST LISTA DE  RECURSOS Bad Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"El código de estado es 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"country\": \"España\",\r\n    \"year\": \"2017\",\r\n    \"ageRange\": \"80-100\",\r\n    \"alcoholPrematureDeath\": 50,\r\n    \"prevalenceOfAlcoholUseDisorder\": 0.2,\r\n    \"datoExtraBadRequest\": \"BadRequest\"\r\n}"
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/alcohol-consumption-stats/",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"alcohol-consumption-stats",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET LISTA DE RECURSOS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Comprobamos si se devuelve un array\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.be.an(\"array\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Comprobamos que el año del primer dato es 2017\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].year).to.eql(\"2017\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/alcohol-consumption-stats/",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"alcohol-consumption-stats",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST LISTA DE RECURSOS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Comprobamos que el código de estado como cadena es Created\", function () {\r",
+							"    pm.response.to.have.status(\"Created\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"country\":\"España\",\r\n        \"year\":\"2017\",\r\n        \"ageRange\":\"80-100\",\r\n        \"alcoholPrematureDeath\":1000,\r\n        \"prevalenceOfAlcoholUseDisorder\":1\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/alcohol-consumption-stats/",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"alcohol-consumption-stats",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST LISTA DE RECURSOS Conflicto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Comprobamos que el código de estado como cadena es Conflict\", function () {\r",
+							"    pm.response.to.have.status(\"Conflict\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"country\": \"España\",\r\n    \"year\": \"2017\",\r\n    \"ageRange\": \"80-100\",\r\n    \"alcoholPrematureDeath\": 50,\r\n    \"prevalenceOfAlcoholUseDisorder\": 0.2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/alcohol-consumption-stats/",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"alcohol-consumption-stats",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT RECURSO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"El código de estado es 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"country\":\"España\",\r\n        \"year\":\"2017\",\r\n        \"ageRange\":\"00-05\",\r\n        \"alcoholPrematureDeath\":1000,\r\n        \"prevalenceOfAlcoholUseDisorder\":1\r\n\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/alcohol-consumption-stats/España/2017/00-05",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"alcohol-consumption-stats",
+						"España",
+						"2017",
+						"00-05"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE RECURSO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"El código de estado es 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/alcohol-consumption-stats/España/2017/00-05",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"alcohol-consumption-stats",
+						"España",
+						"2017",
+						"00-05"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE LISTA DE RECURSOS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"El código de estado es 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/alcohol-consumption-stats/",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"alcohol-consumption-stats",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST RECURSO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"El código de estado es 405\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"country\":\"España\",\r\n        \"years\":\"2017\",\r\n        \"ageRange\":\"00-03\",\r\n        \"alcoholPrematureDeath\":1000,\r\n        \"prevalenceOfAlcoholUseDisorder\":1\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/alcohol-consumption-stats/España/2017/00-05",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"alcohol-consumption-stats",
+						"España",
+						"2017",
+						"00-05"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT LISTA DE RECURSOS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"El código de estado es 405\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"country\":\"España\",\r\n        \"years\":\"2017\",\r\n        \"ageRange\":\"00-05\",\r\n        \"alcoholPrematureDeath\":1000,\r\n        \"prevalenceOfAlcoholUseDisorder\":1\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/alcohol-consumption-stats/",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"alcohol-consumption-stats",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Limit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/alcohol-consumption-stats?limit=1",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"alcohol-consumption-stats"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Offset",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/alcohol-consumption-stats?offset=1",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"alcohol-consumption-stats"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Load Initial Data Fin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-30.herokuapp.com/api/v2/alcohol-consumption-stats/loadInitialData",
+					"protocol": "https",
+					"host": [
+						"sos2021-30",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"alcohol-consumption-stats",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "heroku",
+			"value": "https://sos2021-30.herokuapp.com"
+		}
+	]
+}
