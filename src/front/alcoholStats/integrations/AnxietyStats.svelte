@@ -52,8 +52,8 @@
       console.log(anxietyStats);
       var label = [];
 
-      label.push("Ratio de pobreza (%)");
-      label.push("Muertes prematuras por consumo de alcohol");
+      label.push("Media ansiedad");
+      label.push("Media muertes prematuras por consumo de alcohol");
 
       let muertesPrematuras = [];
       let ansiedad = [];
