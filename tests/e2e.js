@@ -123,7 +123,7 @@ var counter = 0;
     }
 
     //Tabla Smokers 
-    console.log("////// Test e2e smokers-stats ////////");
+    console.log("------------ Test e2e smokers-stats ------------");
     await page.click("body > nav > ul > li:nth-child(4) > a");
     console.log("Pagina FrontEnd smokers abierta!");
     await page.screenshot({ path: path + 'InicioSmokers.png'});

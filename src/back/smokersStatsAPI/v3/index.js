@@ -12,7 +12,7 @@ module.exports.register = (app) => {
 
 /*--------------Variable Objeto-----------------------*/
     smokersStats=[
-        /*
+        
         {   
             "country": 'España',
             "province":"Andalucía",
@@ -130,7 +130,7 @@ module.exports.register = (app) => {
             "exSmoker": 74051.46,
             "nonSmoker": 1083694.64
         }
-        */
+        
     ];
     // Inserta los datos iniciales en la base de datos
     db.insert(smokersStats);
