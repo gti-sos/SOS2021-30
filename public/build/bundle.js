@@ -11605,7 +11605,7 @@ var app = (function () {
     }
 
     // (20:4) <Card class="mb-3">
-    function create_default_slot_11$6(ctx) {
+    function create_default_slot_12$5(ctx) {
     	let cardheader;
     	let t;
     	let cardbody;
@@ -11675,7 +11675,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_11$6.name,
+    		id: create_default_slot_12$5.name,
     		type: "slot",
     		source: "(20:4) <Card class=\\\"mb-3\\\">",
     		ctx
@@ -11685,7 +11685,7 @@ var app = (function () {
     }
 
     // (32:8) <CardTitle>
-    function create_default_slot_10$6(ctx) {
+    function create_default_slot_11$6(ctx) {
     	let h2;
 
     	const block = {
@@ -11704,7 +11704,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_10$6.name,
+    		id: create_default_slot_11$6.name,
     		type: "slot",
     		source: "(32:8) <CardTitle>",
     		ctx
@@ -11714,13 +11714,13 @@ var app = (function () {
     }
 
     // (31:6) <CardHeader>
-    function create_default_slot_9$6(ctx) {
+    function create_default_slot_10$6(ctx) {
     	let cardtitle;
     	let current;
 
     	cardtitle = new CardTitle({
     			props: {
-    				$$slots: { default: [create_default_slot_10$6] },
+    				$$slots: { default: [create_default_slot_11$6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11759,7 +11759,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_9$6.name,
+    		id: create_default_slot_10$6.name,
     		type: "slot",
     		source: "(31:6) <CardHeader>",
     		ctx
@@ -11769,7 +11769,7 @@ var app = (function () {
     }
 
     // (30:4) <Card class="mb-3">
-    function create_default_slot_8$6(ctx) {
+    function create_default_slot_9$6(ctx) {
     	let cardheader;
     	let t;
     	let cardbody;
@@ -11777,7 +11777,7 @@ var app = (function () {
 
     	cardheader = new CardHeader({
     			props: {
-    				$$slots: { default: [create_default_slot_9$6] },
+    				$$slots: { default: [create_default_slot_10$6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11826,7 +11826,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_8$6.name,
+    		id: create_default_slot_9$6.name,
     		type: "slot",
     		source: "(30:4) <Card class=\\\"mb-3\\\">",
     		ctx
@@ -11836,7 +11836,7 @@ var app = (function () {
     }
 
     // (42:8) <CardTitle>
-    function create_default_slot_7$6(ctx) {
+    function create_default_slot_8$6(ctx) {
     	let h2;
 
     	const block = {
@@ -11855,7 +11855,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_7$6.name,
+    		id: create_default_slot_8$6.name,
     		type: "slot",
     		source: "(42:8) <CardTitle>",
     		ctx
@@ -11865,13 +11865,13 @@ var app = (function () {
     }
 
     // (41:6) <CardHeader>
-    function create_default_slot_6$6(ctx) {
+    function create_default_slot_7$6(ctx) {
     	let cardtitle;
     	let current;
 
     	cardtitle = new CardTitle({
     			props: {
-    				$$slots: { default: [create_default_slot_7$6] },
+    				$$slots: { default: [create_default_slot_8$6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11910,7 +11910,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_6$6.name,
+    		id: create_default_slot_7$6.name,
     		type: "slot",
     		source: "(41:6) <CardHeader>",
     		ctx
@@ -11920,7 +11920,7 @@ var app = (function () {
     }
 
     // (44:6) <CardBody>
-    function create_default_slot_5$6(ctx) {
+    function create_default_slot_6$6(ctx) {
     	let li;
     	let a;
 
@@ -11945,7 +11945,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$6.name,
+    		id: create_default_slot_6$6.name,
     		type: "slot",
     		source: "(44:6) <CardBody>",
     		ctx
@@ -11955,7 +11955,7 @@ var app = (function () {
     }
 
     // (40:4) <Card class="mb-3">
-    function create_default_slot_4$6(ctx) {
+    function create_default_slot_5$6(ctx) {
     	let cardheader;
     	let t;
     	let cardbody;
@@ -11963,7 +11963,7 @@ var app = (function () {
 
     	cardheader = new CardHeader({
     			props: {
-    				$$slots: { default: [create_default_slot_6$6] },
+    				$$slots: { default: [create_default_slot_7$6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11971,7 +11971,7 @@ var app = (function () {
 
     	cardbody = new CardBody({
     			props: {
-    				$$slots: { default: [create_default_slot_5$6] },
+    				$$slots: { default: [create_default_slot_6$6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -12025,7 +12025,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$6.name,
+    		id: create_default_slot_5$6.name,
     		type: "slot",
     		source: "(40:4) <Card class=\\\"mb-3\\\">",
     		ctx
@@ -12035,7 +12035,7 @@ var app = (function () {
     }
 
     // (52:8) <CardTitle>
-    function create_default_slot_3$d(ctx) {
+    function create_default_slot_4$6(ctx) {
     	let h2;
 
     	const block = {
@@ -12054,7 +12054,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$d.name,
+    		id: create_default_slot_4$6.name,
     		type: "slot",
     		source: "(52:8) <CardTitle>",
     		ctx
@@ -12064,13 +12064,13 @@ var app = (function () {
     }
 
     // (51:6) <CardHeader>
-    function create_default_slot_2$e(ctx) {
+    function create_default_slot_3$d(ctx) {
     	let cardtitle;
     	let current;
 
     	cardtitle = new CardTitle({
     			props: {
-    				$$slots: { default: [create_default_slot_3$d] },
+    				$$slots: { default: [create_default_slot_4$6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -12109,9 +12109,44 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$e.name,
+    		id: create_default_slot_3$d.name,
     		type: "slot",
     		source: "(51:6) <CardHeader>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (54:6) <CardBody>
+    function create_default_slot_2$e(ctx) {
+    	let li;
+    	let a;
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			a = element("a");
+    			a.textContent = "Enlace al vídeo explicativo esperanza de vida(Alejandro Sánchez Márquez)";
+    			attr_dev(a, "href", "https://youtu.be/URB-d0D1I6A");
+    			add_location(a, file$G, 54, 26, 1310);
+    			attr_dev(li, "type", "circle");
+    			add_location(li, file$G, 54, 8, 1292);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			append_dev(li, a);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(li);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_2$e.name,
+    		type: "slot",
+    		source: "(54:6) <CardBody>",
     		ctx
     	});
 
@@ -12127,13 +12162,19 @@ var app = (function () {
 
     	cardheader = new CardHeader({
     			props: {
-    				$$slots: { default: [create_default_slot_2$e] },
+    				$$slots: { default: [create_default_slot_3$d] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	cardbody = new CardBody({ $$inline: true });
+    	cardbody = new CardBody({
+    			props: {
+    				$$slots: { default: [create_default_slot_2$e] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
 
     	const block = {
     		c: function create() {
@@ -12155,6 +12196,13 @@ var app = (function () {
     			}
 
     			cardheader.$set(cardheader_changes);
+    			const cardbody_changes = {};
+
+    			if (dirty & /*$$scope*/ 1) {
+    				cardbody_changes.$$scope = { dirty, ctx };
+    			}
+
+    			cardbody.$set(cardbody_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -12235,7 +12283,7 @@ var app = (function () {
     	card0 = new Card({
     			props: {
     				class: "mb-3",
-    				$$slots: { default: [create_default_slot_11$6] },
+    				$$slots: { default: [create_default_slot_12$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -12244,7 +12292,7 @@ var app = (function () {
     	card1 = new Card({
     			props: {
     				class: "mb-3",
-    				$$slots: { default: [create_default_slot_8$6] },
+    				$$slots: { default: [create_default_slot_9$6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -12253,7 +12301,7 @@ var app = (function () {
     	card2 = new Card({
     			props: {
     				class: "mb-3",
-    				$$slots: { default: [create_default_slot_4$6] },
+    				$$slots: { default: [create_default_slot_5$6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
