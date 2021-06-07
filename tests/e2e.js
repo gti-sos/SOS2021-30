@@ -107,8 +107,6 @@ var counter = 0;
     console.log("Pulsado botón para ver gráfica de tipo line");
     await page.screenshot({path: path + "LineAlcohol.png"});
     console.log("Captura de grafico line tomada...");
-    await page.click("body > main > main > button");
-    console.log("Volviendo a la página de datos IMC");
 
     await page.click("body > main > main > a:nth-child(2) > button");
     console.log("Pulsado botón para ver gráfica tipo item");
