@@ -11,7 +11,7 @@
         const weightData = await res.json();
         weightData.forEach( (v) => {
              if(v.provinces in dic){
-              dic[v.provinces] += Math.round(v.normal_weight)
+              dic[v.provinces] += v.normal_weight;
             }
             else{
               dic[v.provinces]= v.normal_weight;

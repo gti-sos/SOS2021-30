@@ -9266,7 +9266,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			t = text("Documentación v1");
+    			t = text("Documentación v2");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -33867,7 +33867,7 @@ var app = (function () {
     			p.textContent = `ERROR: ${/*errorMsg*/ ctx[0]}`;
     			attr_dev(p, "class", "msgRed svelte-lhbtsa");
     			set_style(p, "color", "#9d1c24");
-    			add_location(p, file$x, 112, 8, 3264);
+    			add_location(p, file$x, 113, 8, 3309);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -33889,7 +33889,7 @@ var app = (function () {
     	return block;
     }
 
-    // (115:6) {#if okMsg}
+    // (116:6) {#if okMsg}
     function create_if_block$k(ctx) {
     	let p;
 
@@ -33899,7 +33899,7 @@ var app = (function () {
     			p.textContent = `${/*okMsg*/ ctx[1]}`;
     			attr_dev(p, "class", "msgGreen svelte-lhbtsa");
     			set_style(p, "color", "#155724");
-    			add_location(p, file$x, 115, 8, 3368);
+    			add_location(p, file$x, 116, 8, 3413);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -34002,7 +34002,7 @@ var app = (function () {
     	return block;
     }
 
-    // (130:30) <Button outline color="primary">
+    // (132:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$x(ctx) {
     	let t;
 
@@ -34094,7 +34094,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot$x] },
+    				$$slots: { default: [create_default_slot_1$8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -34148,37 +34148,37 @@ var app = (function () {
     			t10 = space();
     			create_component(button3.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$x, 94, 4, 2702);
+    			add_location(script0, file$x, 95, 4, 2747);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$x, 95, 4, 2773);
+    			add_location(script1, file$x, 96, 4, 2818);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$x, 96, 4, 2854);
+    			add_location(script2, file$x, 97, 4, 2899);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$x, 97, 4, 2932);
+    			add_location(script3, file$x, 98, 4, 2977);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$x, 98, 4, 3012);
-    			add_location(h2, file$x, 105, 6, 3171);
+    			add_location(script4, file$x, 99, 4, 3057);
+    			add_location(h2, file$x, 106, 6, 3216);
     			attr_dev(div0, "class", "svelte-lhbtsa");
-    			add_location(div0, file$x, 104, 4, 3158);
+    			add_location(div0, file$x, 105, 4, 3203);
     			attr_dev(div1, "class", "svelte-lhbtsa");
-    			add_location(div1, file$x, 110, 4, 3227);
+    			add_location(div1, file$x, 111, 4, 3272);
     			attr_dev(div2, "id", "container");
     			attr_dev(div2, "class", "svelte-lhbtsa");
-    			add_location(div2, file$x, 121, 8, 3514);
+    			add_location(div2, file$x, 122, 8, 3559);
     			attr_dev(p, "class", "highcharts-description svelte-lhbtsa");
-    			add_location(p, file$x, 122, 8, 3546);
+    			add_location(p, file$x, 123, 8, 3591);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$x, 120, 6, 3470);
+    			add_location(figure, file$x, 121, 6, 3515);
     			attr_dev(div3, "class", "svelte-lhbtsa");
-    			add_location(div3, file$x, 119, 4, 3457);
+    			add_location(div3, file$x, 120, 4, 3502);
     			attr_dev(a0, "href", "#/alcohol-graph3");
-    			add_location(a0, file$x, 127, 4, 3692);
+    			add_location(a0, file$x, 128, 4, 3737);
     			attr_dev(a1, "href", "#/alcohol-graph2");
-    			add_location(a1, file$x, 128, 4, 3803);
+    			add_location(a1, file$x, 129, 4, 3848);
     			attr_dev(a2, "href", "#/alcohol-stats");
-    			add_location(a2, file$x, 129, 4, 3926);
+    			add_location(a2, file$x, 130, 4, 3971);
     			attr_dev(main, "class", "svelte-lhbtsa");
-    			add_location(main, file$x, 103, 2, 3146);
+    			add_location(main, file$x, 104, 2, 3191);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -34487,7 +34487,7 @@ var app = (function () {
     			p.textContent = `ERROR: ${/*errorMsg*/ ctx[0]}`;
     			attr_dev(p, "class", "msgRed svelte-lhbtsa");
     			set_style(p, "color", "#9d1c24");
-    			add_location(p, file$w, 86, 8, 3012);
+    			add_location(p, file$w, 87, 8, 3057);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -34509,7 +34509,7 @@ var app = (function () {
     	return block;
     }
 
-    // (89:6) {#if okMsg}
+    // (90:6) {#if okMsg}
     function create_if_block$j(ctx) {
     	let p;
 
@@ -34519,7 +34519,7 @@ var app = (function () {
     			p.textContent = `${/*okMsg*/ ctx[1]}`;
     			attr_dev(p, "class", "msgGreen svelte-lhbtsa");
     			set_style(p, "color", "#155724");
-    			add_location(p, file$w, 89, 8, 3116);
+    			add_location(p, file$w, 90, 8, 3161);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -34622,7 +34622,7 @@ var app = (function () {
     	return block;
     }
 
-    // (104:30) <Button outline color="primary">
+    // (106:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$w(ctx) {
     	let t;
 
@@ -34714,6 +34714,16 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
+    				$$slots: { default: [create_default_slot_1$7] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button3 = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
     				$$slots: { default: [create_default_slot$w] },
     				$$scope: { ctx }
     			},
@@ -34758,37 +34768,37 @@ var app = (function () {
     			t10 = space();
     			create_component(button3.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$w, 70, 4, 2465);
+    			add_location(script0, file$w, 71, 4, 2510);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/item-series.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$w, 71, 4, 2536);
+    			add_location(script1, file$w, 72, 4, 2581);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$w, 72, 4, 2636);
+    			add_location(script2, file$w, 73, 4, 2681);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$w, 73, 4, 2714);
+    			add_location(script3, file$w, 74, 4, 2759);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$w, 74, 4, 2794);
-    			add_location(h2, file$w, 79, 6, 2919);
+    			add_location(script4, file$w, 75, 4, 2839);
+    			add_location(h2, file$w, 80, 6, 2964);
     			attr_dev(div0, "class", "svelte-lhbtsa");
-    			add_location(div0, file$w, 78, 4, 2906);
+    			add_location(div0, file$w, 79, 4, 2951);
     			attr_dev(div1, "class", "svelte-lhbtsa");
-    			add_location(div1, file$w, 84, 4, 2975);
+    			add_location(div1, file$w, 85, 4, 3020);
     			attr_dev(div2, "id", "container");
     			attr_dev(div2, "class", "svelte-lhbtsa");
-    			add_location(div2, file$w, 95, 8, 3262);
+    			add_location(div2, file$w, 96, 8, 3307);
     			attr_dev(p, "class", "highcharts-description svelte-lhbtsa");
-    			add_location(p, file$w, 96, 8, 3294);
+    			add_location(p, file$w, 97, 8, 3339);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$w, 94, 6, 3218);
+    			add_location(figure, file$w, 95, 6, 3263);
     			attr_dev(div3, "class", "svelte-lhbtsa");
-    			add_location(div3, file$w, 93, 4, 3205);
+    			add_location(div3, file$w, 94, 4, 3250);
     			attr_dev(a0, "href", "#/alcohol-graph3");
-    			add_location(a0, file$w, 101, 4, 3417);
+    			add_location(a0, file$w, 102, 4, 3462);
     			attr_dev(a1, "href", "#/alcohol-graph");
-    			add_location(a1, file$w, 102, 4, 3528);
+    			add_location(a1, file$w, 103, 4, 3573);
     			attr_dev(a2, "href", "#/alcohol-stats");
-    			add_location(a2, file$w, 103, 4, 3641);
+    			add_location(a2, file$w, 104, 4, 3686);
     			attr_dev(main, "class", "svelte-lhbtsa");
-    			add_location(main, file$w, 77, 2, 2894);
+    			add_location(main, file$w, 78, 2, 2939);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -46202,7 +46212,7 @@ var app = (function () {
     }
 
     // (89:30) <Button outline color="primary">
-    function create_default_slot$v(ctx) {
+    function create_default_slot_1$6(ctx) {
     	let t;
 
     	const block = {
@@ -46219,7 +46229,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$v.name,
+    		id: create_default_slot_1$6.name,
     		type: "slot",
     		source: "(89:30) <Button outline color=\\\"primary\\\">",
     		ctx
@@ -46310,7 +46320,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot$v] },
+    				$$slots: { default: [create_default_slot_1$6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -60100,25 +60110,25 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			attr_dev(link0, "href", "https://fonts.googleapis.com/css?family=Lato");
     			attr_dev(link0, "rel", "stylesheet");
-    			add_location(link0, file$d, 35, 4, 1129);
+    			add_location(link0, file$d, 35, 4, 1118);
     			attr_dev(link1, "rel", "stylesheet");
     			attr_dev(link1, "href", "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css");
-    			add_location(link1, file$d, 36, 4, 1210);
+    			add_location(link1, file$d, 36, 4, 1199);
     			if (script0.src !== (script0_src_value = "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$d, 37, 4, 1306);
+    			add_location(script0, file$d, 37, 4, 1295);
     			if (script1.src !== (script1_src_value = "//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$d, 38, 4, 1420);
+    			add_location(script1, file$d, 38, 4, 1409);
     			if (script2.src !== (script2_src_value = "//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$d, 39, 4, 1508);
+    			add_location(script2, file$d, 39, 4, 1497);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$d, 43, 8, 1641);
+    			add_location(h1, file$d, 43, 8, 1630);
     			attr_dev(div, "id", "AwesomeChart");
     			set_style(div, "height", "250px");
-    			add_location(div, file$d, 45, 8, 1743);
-    			add_location(p, file$d, 47, 8, 1811);
+    			add_location(div, file$d, 45, 8, 1732);
+    			add_location(p, file$d, 47, 8, 1800);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$d, 49, 8, 1962);
-    			add_location(main, file$d, 42, 4, 1625);
+    			add_location(h7, file$d, 49, 8, 1951);
+    			add_location(main, file$d, 42, 4, 1614);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -60204,7 +60214,7 @@ var app = (function () {
 
     		weightData.forEach(v => {
     			if (v.provinces in dic) {
-    				dic[v.provinces] += Math.round(v.normal_weight);
+    				dic[v.provinces] += v.normal_weight;
     			} else {
     				dic[v.provinces] = v.normal_weight;
     			}
