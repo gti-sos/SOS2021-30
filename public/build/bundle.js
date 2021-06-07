@@ -8609,7 +8609,7 @@ var app = (function () {
     }
 
     // (26:3) <Table bordered responsive>
-    function create_default_slot_15$2(ctx) {
+    function create_default_slot_15$3(ctx) {
     	let thead;
     	let tr0;
     	let th0;
@@ -9035,7 +9035,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_15$2.name,
+    		id: create_default_slot_15$3.name,
     		type: "slot",
     		source: "(26:3) <Table bordered responsive>",
     		ctx
@@ -10198,7 +10198,7 @@ var app = (function () {
     			props: {
     				bordered: true,
     				responsive: true,
-    				$$slots: { default: [create_default_slot_15$2] },
+    				$$slots: { default: [create_default_slot_15$3] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11486,7 +11486,7 @@ var app = (function () {
     const file$G = "src\\front\\About.svelte";
 
     // (22:8) <CardTitle>
-    function create_default_slot_14$3(ctx) {
+    function create_default_slot_15$2(ctx) {
     	let h2;
 
     	const block = {
@@ -11505,7 +11505,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_14$3.name,
+    		id: create_default_slot_15$2.name,
     		type: "slot",
     		source: "(22:8) <CardTitle>",
     		ctx
@@ -11515,13 +11515,13 @@ var app = (function () {
     }
 
     // (21:6) <CardHeader>
-    function create_default_slot_13$5(ctx) {
+    function create_default_slot_14$3(ctx) {
     	let cardtitle;
     	let current;
 
     	cardtitle = new CardTitle({
     			props: {
-    				$$slots: { default: [create_default_slot_14$3] },
+    				$$slots: { default: [create_default_slot_15$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11560,9 +11560,44 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_13$5.name,
+    		id: create_default_slot_14$3.name,
     		type: "slot",
     		source: "(21:6) <CardHeader>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (24:6) <CardBody>
+    function create_default_slot_13$5(ctx) {
+    	let li;
+    	let a;
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			a = element("a");
+    			a.textContent = "Enlace al vídeo de la API sobre consumo de alcohol(Víctor Caballero Sánchez)";
+    			attr_dev(a, "href", "https://www.youtube.com/watch?v=lfujfXZZSqA");
+    			add_location(a, file$G, 24, 26, 487);
+    			attr_dev(li, "type", "circle");
+    			add_location(li, file$G, 24, 8, 469);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			append_dev(li, a);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(li);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_13$5.name,
+    		type: "slot",
+    		source: "(24:6) <CardBody>",
     		ctx
     	});
 
@@ -11578,13 +11613,19 @@ var app = (function () {
 
     	cardheader = new CardHeader({
     			props: {
-    				$$slots: { default: [create_default_slot_13$5] },
+    				$$slots: { default: [create_default_slot_14$3] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	cardbody = new CardBody({ $$inline: true });
+    	cardbody = new CardBody({
+    			props: {
+    				$$slots: { default: [create_default_slot_13$5] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
 
     	const block = {
     		c: function create() {
@@ -11606,6 +11647,13 @@ var app = (function () {
     			}
 
     			cardheader.$set(cardheader_changes);
+    			const cardbody_changes = {};
+
+    			if (dirty & /*$$scope*/ 1) {
+    				cardbody_changes.$$scope = { dirty, ctx };
+    			}
+
+    			cardbody.$set(cardbody_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -11644,7 +11692,7 @@ var app = (function () {
     		c: function create() {
     			h2 = element("h2");
     			h2.textContent = "Vídeo sobre consumo de tabaco en España";
-    			add_location(h2, file$G, 31, 19, 586);
+    			add_location(h2, file$G, 31, 19, 743);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -11795,7 +11843,7 @@ var app = (function () {
     		c: function create() {
     			h2 = element("h2");
     			h2.textContent = "Vídeo con las estadísticas sobre IMC";
-    			add_location(h2, file$G, 41, 19, 812);
+    			add_location(h2, file$G, 41, 19, 969);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -11882,9 +11930,9 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "Enlace al vídeo explicativo IMC(Jesús Ruiz Domínguez)";
     			attr_dev(a, "href", "https://www.youtube.com/watch?v=5medEV8SQ5k");
-    			add_location(a, file$G, 44, 26, 936);
+    			add_location(a, file$G, 44, 26, 1093);
     			attr_dev(li, "type", "circle");
-    			add_location(li, file$G, 44, 8, 918);
+    			add_location(li, file$G, 44, 8, 1075);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -11994,7 +12042,7 @@ var app = (function () {
     		c: function create() {
     			h2 = element("h2");
     			h2.textContent = "Vídeo con las estadísticas sobre la esperanza de vida";
-    			add_location(h2, file$G, 51, 19, 1169);
+    			add_location(h2, file$G, 51, 19, 1326);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -12081,9 +12129,9 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "Enlace al vídeo explicativo esperanza de vida(Alejandro Sánchez Márquez)";
     			attr_dev(a, "href", "https://youtu.be/URB-d0D1I6A");
-    			add_location(a, file$G, 54, 26, 1310);
+    			add_location(a, file$G, 54, 26, 1467);
     			attr_dev(li, "type", "circle");
-    			add_location(li, file$G, 54, 8, 1292);
+    			add_location(li, file$G, 54, 8, 1449);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -12307,11 +12355,11 @@ var app = (function () {
     			attr_dev(div1, "class", "svelte-egmbdb");
     			add_location(div1, file$G, 18, 2, 298);
     			attr_dev(div2, "class", "svelte-egmbdb");
-    			add_location(div2, file$G, 28, 2, 515);
+    			add_location(div2, file$G, 28, 2, 672);
     			attr_dev(div3, "class", "svelte-egmbdb");
-    			add_location(div3, file$G, 38, 2, 741);
+    			add_location(div3, file$G, 38, 2, 898);
     			attr_dev(div4, "class", "svelte-egmbdb");
-    			add_location(div4, file$G, 48, 2, 1098);
+    			add_location(div4, file$G, 48, 2, 1255);
     			attr_dev(main, "class", "svelte-egmbdb");
     			add_location(main, file$G, 13, 2, 235);
     		},
@@ -47909,8 +47957,8 @@ var app = (function () {
     		console.log("Datos ansiedad recibidos para pintar el grafo:");
     		console.log(anxietyStats);
     		var label = [];
-    		label.push("Ratio de pobreza (%)");
-    		label.push("Muertes prematuras por consumo de alcohol");
+    		label.push("Media ansiedad");
+    		label.push("Media muertes prematuras por consumo de alcohol");
     		let muertesPrematuras = [];
     		let ansiedad = [];
 
