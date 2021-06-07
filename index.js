@@ -78,15 +78,17 @@ lifeAPIv2.register(app);
 
 //INTEGRACIONES
 
-//Desempleo G7
+//PROXY Desempleo G7
 
-app.use("/api/v2/unemployment", function(req, res) {
-    var apiServerHostUnemployment = 'https://sos2021-07.herokuapp.com';
+    app.use("/unemployment", function(req, res) {
+        console.log("New proxy call");
+        var apiServerHostDuStats = 'https://sos2021-07.herokuapp.com';
+        var url = apiServerHostDuStats + req.url;
+        console.log("piped: /unemployment -> " + url);
+        req.pipe(request(url)).pipe(res);
+    });
 
-    var url = apiServerHostUnemployment + req.url;
-    console.log('piped: /api/v2/unemployment -> ' + url);
-    req.pipe(request(url)).pipe(res);
-});
+
 
 //~~~~~~~~~~~~~~~~~~~ END: API LIFE-EXPECTANCY-STATS ~~~~~~~~~~~~~~~~~~~~~~~~
 

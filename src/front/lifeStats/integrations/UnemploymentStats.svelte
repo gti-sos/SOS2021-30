@@ -4,7 +4,7 @@
   import Chart from 'chart.js/auto';
 
   const BASE_API_PATH = "/api/v2/life-expectancy-stats";
-  const BASE_UNEMPLOY_API_PATH = "https://sos2021-07.herokuapp.com/api/v2/unemployment"
+  const BASE_UNEMPLOY_API_PATH = "/unemployment/api/v2/unemployment"
   var unemploymentStats = [];
   var lifeStats = [];
   var lifeExpectancy = [];
@@ -43,10 +43,18 @@
   async function getUnemploymentStats() {
     console.log("Fetching unemployment data...");
     await fetch(BASE_UNEMPLOY_API_PATH + "/loadInitialData");
-    const res = await fetch(BASE_UNEMPLOY_API_PATH); 
+    const res = await fetch(BASE_UNEMPLOY_API_PATH, {
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+
+    })
+
     console.log(res);
     if (res.ok) {
       const json = await res.json();
+      console.log(json);
       unemploymentStats = json;
       provinces.push("Andalucia"); // añado andalucia a la lista de provincias
       unemployment.push(0); //le agrego valor 0 para que no se vea representado en el nivel inferior del donut
