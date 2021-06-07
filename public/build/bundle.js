@@ -60066,10 +60066,12 @@ var app = (function () {
     	let t2;
     	let div;
     	let t3;
-    	let p;
+    	let p0;
     	let t5;
-    	let h7;
+    	let p1;
     	let t7;
+    	let h7;
+    	let t9;
     	let button;
     	let current;
     	let mounted;
@@ -60101,34 +60103,39 @@ var app = (function () {
     			t2 = space();
     			div = element("div");
     			t3 = space();
-    			p = element("p");
-    			p.textContent = "Gráfico en el que se muestra la suma de los porcentajes del peso normal en los años 2014 y 2017 en cada comunidad autónoma de España";
+    			p0 = element("p");
+    			p0.textContent = "Gráfico en el que se muestra la suma de los porcentajes del peso normal en los años 2014 y 2017 en cada comunidad autónoma de España";
     			t5 = space();
+    			p1 = element("p");
+    			p1.textContent = "En caso de que no se muestre la gráfica correctamente, volver a la página anterior y entrar de nuevo";
+    			t7 = space();
     			h7 = element("h7");
     			h7.textContent = "Gráfica diseñada con Morris.js - type: 'Donut'";
-    			t7 = space();
+    			t9 = space();
     			create_component(button.$$.fragment);
     			attr_dev(link0, "href", "https://fonts.googleapis.com/css?family=Lato");
     			attr_dev(link0, "rel", "stylesheet");
-    			add_location(link0, file$d, 35, 4, 1129);
+    			add_location(link0, file$d, 35, 4, 1118);
     			attr_dev(link1, "rel", "stylesheet");
     			attr_dev(link1, "href", "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css");
-    			add_location(link1, file$d, 36, 4, 1210);
+    			add_location(link1, file$d, 36, 4, 1199);
     			if (script0.src !== (script0_src_value = "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$d, 37, 4, 1306);
+    			add_location(script0, file$d, 37, 4, 1295);
     			if (script1.src !== (script1_src_value = "//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$d, 38, 4, 1420);
+    			add_location(script1, file$d, 38, 4, 1409);
     			if (script2.src !== (script2_src_value = "//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$d, 39, 4, 1508);
+    			add_location(script2, file$d, 39, 4, 1497);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$d, 43, 8, 1641);
+    			add_location(h1, file$d, 43, 8, 1630);
     			attr_dev(div, "id", "AwesomeChart");
     			set_style(div, "height", "250px");
-    			add_location(div, file$d, 45, 8, 1743);
-    			add_location(p, file$d, 47, 8, 1811);
+    			add_location(div, file$d, 45, 8, 1732);
+    			add_location(p0, file$d, 47, 8, 1800);
+    			set_style(p1, "color", "red");
+    			add_location(p1, file$d, 48, 8, 1949);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$d, 49, 8, 1962);
-    			add_location(main, file$d, 42, 4, 1625);
+    			add_location(h7, file$d, 49, 8, 2087);
+    			add_location(main, file$d, 42, 4, 1614);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -60145,10 +60152,12 @@ var app = (function () {
     			append_dev(main, t2);
     			append_dev(main, div);
     			append_dev(main, t3);
-    			append_dev(main, p);
+    			append_dev(main, p0);
     			append_dev(main, t5);
-    			append_dev(main, h7);
+    			append_dev(main, p1);
     			append_dev(main, t7);
+    			append_dev(main, h7);
+    			append_dev(main, t9);
     			mount_component(button, main, null);
     			current = true;
 
@@ -60214,7 +60223,7 @@ var app = (function () {
 
     		weightData.forEach(v => {
     			if (v.provinces in dic) {
-    				dic[v.provinces] += Math.round(v.normal_weight);
+    				dic[v.provinces] += v.normal_weight;
     			} else {
     				dic[v.provinces] = v.normal_weight;
     			}
@@ -60285,7 +60294,7 @@ var app = (function () {
     const { console: console_1$b } = globals;
     const file$c = "src\\front\\weightsStats\\GraphCylinder.svelte";
 
-    // (100:4) <Button outline color="secondary" on:click="{pop}">
+    // (101:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$c(ctx) {
     	let t;
 
@@ -60305,7 +60314,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$c.name,
     		type: "slot",
-    		source: "(100:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(101:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -60330,10 +60339,12 @@ var app = (function () {
     	let figure;
     	let div;
     	let t1;
-    	let p;
+    	let p0;
     	let t3;
-    	let h7;
+    	let p1;
     	let t5;
+    	let h7;
+    	let t7;
     	let button;
     	let current;
     	let mounted;
@@ -60364,12 +60375,15 @@ var app = (function () {
     			figure = element("figure");
     			div = element("div");
     			t1 = space();
-    			p = element("p");
-    			p.textContent = "Gráfico de cilindros 3D en el que se ve representado el porcentaje por comunidades \r\n            autónomas en los años 2014 y 2017 el IMC";
+    			p0 = element("p");
+    			p0.textContent = "Gráfico de cilindros 3D en el que se ve representado el porcentaje por comunidades \r\n            autónomas en los años 2014 y 2017 el IMC";
     			t3 = space();
+    			p1 = element("p");
+    			p1.textContent = "En caso de que no se muestre la gráfica correctamente, volver a la página anterior y entrar de nuevo";
+    			t5 = space();
     			h7 = element("h7");
     			h7.textContent = "Gráfica diseñada con Highcharts - type: 'cylinder'";
-    			t5 = space();
+    			t7 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
     			add_location(script0, file$c, 79, 4, 2214);
@@ -60386,12 +60400,14 @@ var app = (function () {
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-1955777");
     			add_location(div, file$c, 92, 8, 2774);
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$c, 93, 8, 2810);
+    			attr_dev(p0, "class", "highcharts-description");
+    			add_location(p0, file$c, 93, 8, 2810);
     			attr_dev(figure, "class", "highcharts-figure");
     			add_location(figure, file$c, 91, 4, 2730);
+    			set_style(p1, "color", "red");
+    			add_location(p1, file$c, 98, 4, 3026);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$c, 98, 4, 3026);
+    			add_location(h7, file$c, 99, 4, 3160);
     			add_location(main, file$c, 89, 0, 2716);
     		},
     		l: function claim(nodes) {
@@ -60409,10 +60425,12 @@ var app = (function () {
     			append_dev(main, figure);
     			append_dev(figure, div);
     			append_dev(figure, t1);
-    			append_dev(figure, p);
+    			append_dev(figure, p0);
     			append_dev(main, t3);
-    			append_dev(main, h7);
+    			append_dev(main, p1);
     			append_dev(main, t5);
+    			append_dev(main, h7);
+    			append_dev(main, t7);
     			mount_component(button, main, null);
     			current = true;
 
@@ -61200,7 +61218,7 @@ var app = (function () {
     const { console: console_1$8 } = globals;
     const file$9 = "src\\front\\weightsStats\\integrations\\integracionExt1.svelte";
 
-    // (154:1) <Button outline color="secondary" on:click="{pop}">
+    // (156:1) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$9(ctx) {
     	let t;
 
@@ -61220,7 +61238,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$9.name,
     		type: "slot",
-    		source: "(154:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(156:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -61296,24 +61314,24 @@ var app = (function () {
     			t11 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$9, 138, 4, 3315);
+    			add_location(script0, file$9, 140, 4, 3388);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/highcharts-more.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$9, 139, 4, 3407);
+    			add_location(script1, file$9, 141, 4, 3460);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$9, 140, 4, 3504);
+    			add_location(script2, file$9, 142, 4, 3537);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$9, 141, 4, 3603);
+    			add_location(script3, file$9, 143, 4, 3616);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$9, 146, 2, 3770);
+    			add_location(div, file$9, 148, 2, 3783);
     			attr_dev(figure, "class", "highcharts-figure svelte-yxl85i");
-    			add_location(figure, file$9, 145, 1, 3732);
-    			add_location(p0, file$9, 148, 1, 3811);
+    			add_location(figure, file$9, 147, 1, 3745);
+    			add_location(p0, file$9, 150, 1, 3824);
     			attr_dev(a, "href", "https://www.balldontlie.io");
-    			add_location(a, file$9, 151, 24, 4045);
-    			add_location(p1, file$9, 151, 1, 4022);
+    			add_location(a, file$9, 153, 24, 4058);
+    			add_location(p1, file$9, 153, 1, 4035);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$9, 152, 1, 4120);
-    			add_location(main, file$9, 144, 0, 3723);
+    			add_location(h7, file$9, 154, 1, 4133);
+    			add_location(main, file$9, 146, 0, 3736);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -61343,13 +61361,7 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = [
-    					listen_dev(script0, "load", /*loadGraph*/ ctx[0], false, false, false),
-    					listen_dev(script1, "load", /*loadGraph*/ ctx[0], false, false, false),
-    					listen_dev(script2, "load", /*loadGraph*/ ctx[0], false, false, false),
-    					listen_dev(script3, "load", /*loadGraph*/ ctx[0], false, false, false)
-    				];
-
+    				dispose = listen_dev(script3, "load", /*loadGraph*/ ctx[0], false, false, false);
     				mounted = true;
     			}
     		},
@@ -61383,7 +61395,7 @@ var app = (function () {
     			if (detaching) detach_dev(main);
     			destroy_component(button);
     			mounted = false;
-    			run_all(dispose);
+    			dispose();
     		}
     	};
 
@@ -61414,6 +61426,7 @@ var app = (function () {
     			console.log("Recived NBA data...");
     		}
 
+    		console.log("Se cargan los datos desde la dirección: " + NBA_PATH);
     		let DataChart = NBAStats.data;
 
     		//POSICION G
@@ -61594,7 +61607,7 @@ var app = (function () {
     const { console: console_1$7 } = globals;
     const file$8 = "src\\front\\weightsStats\\integrations\\integracionExt2.svelte";
 
-    // (116:4) <Button outline color="secondary" on:click="{pop}">
+    // (117:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$8(ctx) {
     	let t;
 
@@ -61614,7 +61627,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$8.name,
     		type: "slot",
-    		source: "(116:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(117:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -61684,25 +61697,25 @@ var app = (function () {
     			t8 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$8, 94, 4, 2669);
+    			add_location(script0, file$8, 95, 4, 2753);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$8, 95, 4, 2740);
+    			add_location(script1, file$8, 96, 4, 2824);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$8, 96, 4, 2818);
+    			add_location(script2, file$8, 97, 4, 2902);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$8, 97, 4, 2898);
+    			add_location(script3, file$8, 98, 4, 2982);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$8, 105, 8, 3078);
+    			add_location(div, file$8, 106, 8, 3162);
     			attr_dev(p0, "class", "highcharts-description");
-    			add_location(p0, file$8, 106, 8, 3114);
+    			add_location(p0, file$8, 107, 8, 3198);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$8, 104, 4, 3034);
+    			add_location(figure, file$8, 105, 4, 3118);
     			attr_dev(a, "href", "https://www.cheapshark.com/");
-    			add_location(a, file$8, 112, 27, 3464);
-    			add_location(p1, file$8, 112, 4, 3441);
+    			add_location(a, file$8, 113, 27, 3548);
+    			add_location(p1, file$8, 113, 4, 3525);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$8, 113, 4, 3544);
-    			add_location(main, file$8, 102, 0, 3020);
+    			add_location(h7, file$8, 114, 4, 3628);
+    			add_location(main, file$8, 103, 0, 3104);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -61792,6 +61805,8 @@ var app = (function () {
     			gamesStats = await res.json();
     			console.log("Recived data from de url...");
     		}
+
+    		console.log("Se cargan los datos desde la dirección: " + BASE_GAMES_PATH$1);
     	}
 
     	async function loadGraph() {
@@ -61896,7 +61911,7 @@ var app = (function () {
     const { console: console_1$6 } = globals;
     const file$7 = "src\\front\\weightsStats\\integrations\\integracionExt3.svelte";
 
-    // (85:4) <Button outline color="secondary" on:click="{pop}">
+    // (87:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$7(ctx) {
     	let t;
 
@@ -61916,7 +61931,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$7.name,
     		type: "slot",
-    		source: "(85:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(87:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -61945,8 +61960,10 @@ var app = (function () {
     	let t8;
     	let a;
     	let t10;
-    	let h7;
+    	let p3;
     	let t12;
+    	let h7;
+    	let t14;
     	let button;
     	let current;
     	let mounted;
@@ -61988,32 +62005,37 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "https://apifootball.com/";
     			t10 = space();
+    			p3 = element("p");
+    			p3.textContent = "En caso de que no se muestre la gráfica correctamente, volver a la página anterior y entrar de nuevo";
+    			t12 = space();
     			h7 = element("h7");
     			h7.textContent = "Gráfica diseñada con Morris.js - type: 'Bar'";
-    			t12 = space();
+    			t14 = space();
     			create_component(button.$$.fragment);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css");
-    			add_location(link, file$7, 68, 4, 3420);
+    			add_location(link, file$7, 69, 4, 3501);
     			if (script0.src !== (script0_src_value = "//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$7, 69, 4, 3516);
+    			add_location(script0, file$7, 70, 4, 3597);
     			if (script1.src !== (script1_src_value = "//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$7, 70, 4, 3604);
+    			add_location(script1, file$7, 71, 4, 3685);
     			if (script2.src !== (script2_src_value = "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$7, 71, 4, 3695);
+    			add_location(script2, file$7, 72, 4, 3776);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$7, 76, 4, 3837);
+    			add_location(h1, file$7, 77, 4, 3918);
     			attr_dev(div, "id", "myfirstchart");
     			set_style(div, "height", "250px");
-    			add_location(div, file$7, 77, 4, 3927);
-    			add_location(p0, file$7, 78, 4, 3985);
-    			add_location(p1, file$7, 79, 4, 4084);
+    			add_location(div, file$7, 78, 4, 4008);
+    			add_location(p0, file$7, 79, 4, 4066);
+    			add_location(p1, file$7, 80, 4, 4165);
     			attr_dev(a, "href", "https://apifootball.com/");
-    			add_location(a, file$7, 82, 27, 4298);
-    			add_location(p2, file$7, 82, 4, 4275);
+    			add_location(a, file$7, 83, 27, 4379);
+    			add_location(p2, file$7, 83, 4, 4356);
+    			set_style(p3, "color", "red");
+    			add_location(p3, file$7, 84, 4, 4452);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$7, 83, 4, 4371);
-    			add_location(main, file$7, 75, 0, 3825);
+    			add_location(h7, file$7, 85, 4, 4586);
+    			add_location(main, file$7, 76, 0, 3906);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -62037,8 +62059,10 @@ var app = (function () {
     			append_dev(p2, t8);
     			append_dev(p2, a);
     			append_dev(main, t10);
-    			append_dev(main, h7);
+    			append_dev(main, p3);
     			append_dev(main, t12);
+    			append_dev(main, h7);
+    			append_dev(main, t14);
     			mount_component(button, main, null);
     			current = true;
 
@@ -62107,6 +62131,8 @@ var app = (function () {
     			futbolData = await res.json();
     			console.log("Recived futbol data");
     		}
+
+    		console.log("Se cargan los datos desde la dirección: " + BASE_FUTBOL_PATH);
     	}
 
     	async function loadGraph() {
@@ -62305,7 +62331,7 @@ var app = (function () {
     const { console: console_1$5 } = globals;
     const file$6 = "src\\front\\weightsStats\\integrations\\integracionExt4.svelte";
 
-    // (125:4) <Button outline color="secondary" on:click="{pop}">
+    // (126:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$6(ctx) {
     	let t;
 
@@ -62325,7 +62351,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$6.name,
     		type: "slot",
-    		source: "(125:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(126:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -62395,25 +62421,25 @@ var app = (function () {
     			t8 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$6, 103, 4, 3030);
+    			add_location(script0, file$6, 104, 4, 3114);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$6, 104, 4, 3101);
+    			add_location(script1, file$6, 105, 4, 3185);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$6, 105, 4, 3179);
+    			add_location(script2, file$6, 106, 4, 3263);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$6, 106, 4, 3259);
+    			add_location(script3, file$6, 107, 4, 3343);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$6, 114, 8, 3439);
+    			add_location(div, file$6, 115, 8, 3523);
     			attr_dev(p0, "class", "highcharts-description");
-    			add_location(p0, file$6, 115, 8, 3475);
+    			add_location(p0, file$6, 116, 8, 3559);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$6, 113, 4, 3395);
+    			add_location(figure, file$6, 114, 4, 3479);
     			attr_dev(a, "href", "https://www.gamerpower.com/");
-    			add_location(a, file$6, 121, 27, 3694);
-    			add_location(p1, file$6, 121, 4, 3671);
+    			add_location(a, file$6, 122, 27, 3778);
+    			add_location(p1, file$6, 122, 4, 3755);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$6, 122, 4, 3774);
-    			add_location(main, file$6, 111, 0, 3381);
+    			add_location(h7, file$6, 123, 4, 3858);
+    			add_location(main, file$6, 112, 0, 3465);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -62502,6 +62528,8 @@ var app = (function () {
     			gamesStats = await res.json();
     			console.log("Recived data from de url...");
     		}
+
+    		console.log("Se cargan los datos desde la dirección: " + BASE_GAMES_PATH);
     	}
 
     	async function loadGraph() {

@@ -11,7 +11,7 @@
         const weightData = await res.json();
         weightData.forEach( (v) => {
              if(v.provinces in dic){
-              dic[v.provinces] += Math.round(v.normal_weight)
+              dic[v.provinces] += v.normal_weight;
             }
             else{
               dic[v.provinces]= v.normal_weight;
@@ -46,7 +46,7 @@
         <div id="AwesomeChart" style="height: 250px;"></div>
     
         <p>Gráfico en el que se muestra la suma de los porcentajes del peso normal en los años 2014 y 2017 en cada comunidad autónoma de España</p>
-
+        <p style= "color: red;">En caso de que no se muestre la gráfica correctamente, volver a la página anterior y entrar de nuevo</p>
         <h7 style="color: gray;">Gráfica diseñada con Morris.js - type: 'Donut'</h7>
         <Button outline color="secondary" on:click="{pop}">Atrás</Button>
     </main>
