@@ -47482,62 +47482,67 @@ var app = (function () {
     const { console: console_1$r, document: document_1$2 } = globals;
     const file$s = "src\\front\\alcoholStats\\integrations\\AnxietyStats.svelte";
 
-    // (86:4) {:else}
+    // (115:4) {:else}
     function create_else_block$1(ctx) {
-    	let style;
+    	let div0;
+    	let canvas;
+    	let t0;
+    	let div1;
     	let t1;
-    	let div;
-    	let t2;
     	let br0;
-    	let t3;
+    	let t2;
     	let br1;
-    	let t4;
+    	let t3;
     	let h6;
 
     	const block = {
     		c: function create() {
-    			style = element("style");
-    			style.textContent = ".dygraph-legend { text-align: right; background: none; }\r\n        #grafo1 .dygraph-label { font-family: Georgia, Verdana, serif; }\r\n\r\n        #grafo1 .dygraph-title { font-size: 20px; text-shadow: gray 2px 2px 2px; margin: -30px 0px 0px 50px}\r\n\r\n        #grafo1 .dygraph-ylabel { font-size: 18px; text-shadow: gray -2px 2px 2px; margin: 0px 0px 0px 90px }\r\n\r\n        #grafo1 .dygraph-xlabel { font-size: 18px; text-shadow: gray -2px 2px 2px; margin: 20px 0px 0px 0px }\r\n\r\n        .chart { border: 1px hidden black; margin: 50px 5px 5px 400px; padding: 2px; }";
+    			div0 = element("div");
+    			canvas = element("canvas");
+    			t0 = space();
+    			div1 = element("div");
     			t1 = space();
-    			div = element("div");
-    			t2 = space();
     			br0 = element("br");
-    			t3 = space();
+    			t2 = space();
     			br1 = element("br");
-    			t4 = space();
+    			t3 = space();
     			h6 = element("h6");
     			h6.textContent = "Gráfico en dónde se muestra las muertes prematuras por consumo de alcohol en correlación con la ansiedad";
-    			add_location(style, file$s, 86, 4, 3135);
-    			attr_dev(div, "id", "grafo1");
-    			attr_dev(div, "class", "chart svelte-1icl312");
-    			set_style(div, "width", "600px");
-    			set_style(div, "height", "300px");
-    			add_location(div, file$s, 97, 4, 3720);
-    			add_location(br0, file$s, 98, 4, 3799);
-    			add_location(br1, file$s, 99, 4, 3809);
-    			add_location(h6, file$s, 100, 4, 3819);
+    			attr_dev(canvas, "id", "myChart");
+    			add_location(canvas, file$s, 116, 6, 3802);
+    			attr_dev(div0, "class", "svelte-1icl312");
+    			add_location(div0, file$s, 115, 4, 3789);
+    			attr_dev(div1, "id", "grafo1");
+    			attr_dev(div1, "class", "chart svelte-1icl312");
+    			set_style(div1, "width", "600px");
+    			set_style(div1, "height", "300px");
+    			add_location(div1, file$s, 118, 4, 3843);
+    			add_location(br0, file$s, 119, 4, 3922);
+    			add_location(br1, file$s, 120, 4, 3932);
+    			add_location(h6, file$s, 121, 4, 3942);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, style, anchor);
+    			insert_dev(target, div0, anchor);
+    			append_dev(div0, canvas);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, div1, anchor);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, div, anchor);
-    			insert_dev(target, t2, anchor);
     			insert_dev(target, br0, anchor);
-    			insert_dev(target, t3, anchor);
+    			insert_dev(target, t2, anchor);
     			insert_dev(target, br1, anchor);
-    			insert_dev(target, t4, anchor);
+    			insert_dev(target, t3, anchor);
     			insert_dev(target, h6, anchor);
     		},
     		p: noop$1,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(style);
+    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(div1);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(div);
-    			if (detaching) detach_dev(t2);
     			if (detaching) detach_dev(br0);
-    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(t2);
     			if (detaching) detach_dev(br1);
-    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(t3);
     			if (detaching) detach_dev(h6);
     		}
     	};
@@ -47546,14 +47551,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(86:4) {:else}",
+    		source: "(115:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (84:4) {#if errorMsg}
+    // (113:4) {#if errorMsg}
     function create_if_block$f(ctx) {
     	let p;
     	let t;
@@ -47562,7 +47567,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t = text(/*errorMsg*/ ctx[0]);
-    			add_location(p, file$s, 84, 6, 3099);
+    			add_location(p, file$s, 113, 6, 3753);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -47580,14 +47585,14 @@ var app = (function () {
     		block,
     		id: create_if_block$f.name,
     		type: "if",
-    		source: "(84:4) {#if errorMsg}",
+    		source: "(113:4) {#if errorMsg}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (103:4) <Button outline color="secondary" on:click="{pop}">
+    // (124:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$s(ctx) {
     	let t;
 
@@ -47607,7 +47612,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$s.name,
     		type: "slot",
-    		source: "(103:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(124:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -47660,13 +47665,13 @@ var app = (function () {
     			if_block.c();
     			t3 = space();
     			create_component(button.$$.fragment);
-    			if (script.src !== (script_src_value = "//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js")) attr_dev(script, "src", script_src_value);
-    			add_location(script, file$s, 76, 4, 2861);
-    			add_location(h2, file$s, 81, 6, 3017);
+    			if (script.src !== (script_src_value = "https://cdn.jsdelivr.net/npm/chart.js")) attr_dev(script, "src", script_src_value);
+    			add_location(script, file$s, 105, 4, 3539);
+    			add_location(h2, file$s, 110, 6, 3671);
     			attr_dev(div, "class", "svelte-1icl312");
-    			add_location(div, file$s, 80, 4, 3004);
+    			add_location(div, file$s, 109, 4, 3658);
     			attr_dev(main, "class", "svelte-1icl312");
-    			add_location(main, file$s, 79, 2, 2992);
+    			add_location(main, file$s, 108, 2, 3646);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -47792,31 +47797,56 @@ var app = (function () {
     		console.log(alcoholData);
     		console.log("Datos ansiedad recibidos para pintar el grafo:");
     		console.log(anxietyStats);
-    		let arrayDatos = [];
+    		var label = [];
+    		label.push("Ratio de pobreza (%)");
+    		label.push("Muertes prematuras por consumo de alcohol");
+    		let muertesPrematuras = [];
+    		let ansiedad = [];
 
     		for (let index = 0; index < alcoholData.length - 2; index++) {
-    			let separa = alcoholData[index].ageRange.split("-");
-    			let parseo = parseInt(separa[1]);
+    			muertesPrematuras.push(alcoholData[index].alcoholPrematureDeath);
+    			ansiedad.push(anxietyStats[index].anxiety_population);
+    		}
 
-    			arrayDatos.push([
-    				parseo,
-    				alcoholData[index].alcoholPrematureDeath,
-    				anxietyStats[index].anxiety_population
-    			]);
-    		} // Etiqueta (Valorx) Numero asociado al rango de edad, Dato grafica muertes , Dato grafica ansiedad
+    		let datos = [];
+    		let suma = 0;
+    		let suma1 = 0;
 
-    		console.log("Array de datos para el grafo:");
-    		console.log(arrayDatos);
+    		for (let index = 0; index < muertesPrematuras.length; index++) {
+    			suma += muertesPrematuras[index];
+    			suma1 += ansiedad[index];
+    		}
 
-    		new Dygraph(document.getElementById("grafo1"),
-    		arrayDatos,
+    		datos.push(parseFloat(suma / muertesPrematuras.length));
+    		datos.push(parseFloat(suma1 / ansiedad.length));
+    		console.log("Datos:");
+    		console.log(datos);
+    		var ctx = document.getElementById("myChart").getContext("2d");
+
+    		new Chart(ctx,
     		{
-    				labels: ["RangoEdad", "Muertes", "Ansiedad"],
-    				legend: "always",
-    				title: "Muertes prematuras y ansiedad España 2017",
-    				titleHeight: 32,
-    				ylabel: "Valor",
-    				xlabel: "Rango de edad"
+    				type: "doughnut",
+    				data: {
+    					labels: label,
+    					datasets: [
+    						{
+    							label: "Ansiedad por población",
+    							data: datos,
+    							backgroundColor: ["rgb(129, 162, 2)", "rgb(123, 34, 137)"],
+    							hoverOffset: 4
+    						}
+    					]
+    				},
+    				options: {
+    					responsive: true,
+    					maintainAspectRatio: false,
+    					plugins: {
+    						title: {
+    							display: true,
+    							text: "Comparativa de la ansiedad y el consumo de alcohol"
+    						}
+    					}
+    				}
     			});
     	}
 
@@ -61044,24 +61074,24 @@ var app = (function () {
     			t5 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$a, 113, 4, 3648);
+    			add_location(script0, file$a, 113, 4, 3647);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/highcharts-more.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$a, 114, 4, 3719);
+    			add_location(script1, file$a, 114, 4, 3718);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$a, 115, 4, 3795);
+    			add_location(script2, file$a, 115, 4, 3794);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$a, 116, 4, 3873);
+    			add_location(script3, file$a, 116, 4, 3872);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$a, 117, 4, 3953);
+    			add_location(script4, file$a, 117, 4, 3952);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$a, 125, 8, 4133);
+    			add_location(div, file$a, 125, 8, 4132);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$a, 126, 8, 4169);
+    			add_location(p, file$a, 126, 8, 4168);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$a, 124, 4, 4089);
+    			add_location(figure, file$a, 124, 4, 4088);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$a, 132, 4, 4446);
-    			add_location(main, file$a, 123, 0, 4077);
+    			add_location(h7, file$a, 132, 4, 4445);
+    			add_location(main, file$a, 123, 0, 4076);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -61212,7 +61242,7 @@ var app = (function () {
     					showInLegend: false
     				},
     				{
-    					name: "Datos de estrñes de la poblacion(ratio/media)",
+    					name: "Datos de estrés de la poblacion(ratio/media)",
     					colorByPoint: true,
     					data: stressPoblation,
     					showInLegend: false

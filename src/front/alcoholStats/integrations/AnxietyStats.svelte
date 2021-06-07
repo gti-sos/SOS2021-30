@@ -50,31 +50,60 @@
       console.log(alcoholData);
       console.log('Datos ansiedad recibidos para pintar el grafo:');
       console.log(anxietyStats);
-      let arrayDatos = [];
+      var label = [];
+
+      label.push("Ratio de pobreza (%)");
+      label.push("Muertes prematuras por consumo de alcohol");
+
+      let muertesPrematuras = [];
+      let ansiedad = [];
       for (let index = 0; index < alcoholData.length-2; index++) {
-        let separa = alcoholData[index].ageRange.split('-'); 
-        let parseo = parseInt(separa[1]);
-        arrayDatos.push([parseo,alcoholData[index].alcoholPrematureDeath,anxietyStats[index].anxiety_population]);
+        muertesPrematuras.push(alcoholData[index].alcoholPrematureDeath);
+        ansiedad.push(anxietyStats[index].anxiety_population);
         
-      } // Etiqueta (Valorx) Numero asociado al rango de edad, Dato grafica muertes , Dato grafica ansiedad
-      console.log("Array de datos para el grafo:");
-      console.log(arrayDatos);
-      new Dygraph(document.getElementById("grafo1"),arrayDatos,
-      { 
-              labels:["RangoEdad","Muertes","Ansiedad"],
-              legend: 'always',
-              title: 'Muertes prematuras y ansiedad España 2017',
-              titleHeight: 32,
-              ylabel: 'Valor',
-              xlabel: 'Rango de edad'
-    
-            });
+      } 
+      let datos = []
+      let suma = 0;
+      let suma1 = 0;
+      for (let index = 0; index < muertesPrematuras.length; index++) {
+        suma += muertesPrematuras[index];
+        suma1 += ansiedad[index];
+      }
+      datos.push(parseFloat(suma/muertesPrematuras.length));
+      datos.push(parseFloat(suma1/ansiedad.length));
+      console.log("Datos:");
+      console.log(datos);
+      var ctx = document.getElementById("myChart").getContext("2d");
+      var myChart = new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          labels: label,
+          datasets: [
+            {
+              label: "Ansiedad por población",
+              data: datos,
+              backgroundColor: ["rgb(129, 162, 2)", "rgb(123, 34, 137)"],
+              hoverOffset: 4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+              title: {
+                  display: true,
+                  text: 'Comparativa de la ansiedad y el consumo de alcohol'
+              }
+          },
+        },
+      });
     };
 
 </script>
   
   <svelte:head>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js" on:load={loadGraph}></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" on:load={loadGraph}></script>
   </svelte:head>
   
   <main>
@@ -84,17 +113,9 @@
     {#if errorMsg}
       <p>{errorMsg}</p>
     {:else}
-    <style>.dygraph-legend { text-align: right; background: none; }
-        #grafo1 .dygraph-label { font-family: Georgia, Verdana, serif; }
-
-        #grafo1 .dygraph-title { font-size: 20px; text-shadow: gray 2px 2px 2px; margin: -30px 0px 0px 50px}
-
-        #grafo1 .dygraph-ylabel { font-size: 18px; text-shadow: gray -2px 2px 2px; margin: 0px 0px 0px 90px }
-
-        #grafo1 .dygraph-xlabel { font-size: 18px; text-shadow: gray -2px 2px 2px; margin: 20px 0px 0px 0px }
-
-        .chart { border: 1px hidden black; margin: 50px 5px 5px 400px; padding: 2px; }
-    </style>
+    <div>
+      <canvas id="myChart" />
+    </div>
     <div  id="grafo1" class="chart" style="width:600px; height:300px;"></div>
     <br>
     <br>
