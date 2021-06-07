@@ -110,6 +110,7 @@ var counter = 0;
 
     await page.click("body > main > main > a:nth-child(5) > button");
     console.log("Pulsado botón para ver gráfica tipo item");
+    await page.waitForTimeout(1000);
     await page.screenshot({path: path + "graficaParlamentoAlcohol.png"});
     console.log("Captura de grafico cilindros tomada...");
     await page.click("body > main > main > a:nth-child(6) > button"); //Falla
