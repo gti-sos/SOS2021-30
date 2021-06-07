@@ -24,6 +24,7 @@
       <CardBody>
         <CardSubtitle />
         <CardText />
+        <p><a href="https://github.com/vic3214">Víctor Caballero Sánchez</a></p>
         <a href="/#/integrations/anxiety-stats"
           ><Button color="primary">Estadísticas Ansiedad</Button></a>
         <a href="/#/integrations/poverty-risk-stats"
@@ -78,6 +79,7 @@
       <CardBody>
         <CardSubtitle />
         <CardText />
+        <p><a href="https://github.com/Alesanmar">Alejandro Sánchez Márquez</a></p>
         <a href="/#/integrations/unemployment"><Button color="primary">Estadísticas Desempleo (G7)</Button></a>
         <a href="/#/integrations/druguse"><Button color="primary">Estadísticas Uso de Drogas (G23) </Button></a>
         <a href="/#/integrations/hearthstone"><Button color="primary">Estadísticas HearthStone (Ext) </Button></a>

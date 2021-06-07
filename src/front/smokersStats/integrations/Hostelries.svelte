@@ -2,7 +2,6 @@
     import * as JSC from "jscharting";
     import { pop } from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
-import Smokers from "../Smokers.svelte";
 
     //ALERTAS
     let visible = false;
@@ -122,28 +121,39 @@ import Smokers from "../Smokers.svelte";
         objSmoker.points = tablaPoint;
         dataFin.push(objSmoker);
     }
-
         console.log(dataFin);
 
-
+        
         /////////////////////////////////GRAPH
-        //Convierte los datos en un gráfico 
         var chart = JSC.chart('chartDiv', { 
-            degug: true,
-            defaultSeries_type: 'horizontal column', 
-            legend_description: 'chart legend', 
-            legend_defaultEntry_description: '%name', 
-            toolbar_items_export_description: 'export menu', 
-            defaultPoint_description: '%name %value', 
-            series: dataFin
+            debug: true, 
+            type: 'radar polar column', 
+            yAxis_alternateGridFill: '#f4f4f4', 
+            legend_visible: true,
+            title: { 
+                position: 'center', 
+                label: { 
+                    text: 'Datos conjuntos por comunidad autónoma (en millones)',  
+                } 
+            }, 
+            defaultSeries: { 
+                opacity: 0.7, 
+                defaultPoint_complete: { 
+                fill: ['white', 0.3], 
+                hatch_style: 'dotted-grid'
+                } 
+            }, 
+            series: dataFin 
         }); 
+
     }
     //Llamada a la función
     loadGraph();
 </script>
 
 <main>
-    <div id="chartDiv" style="max-width: 740px;height: 400px;margin: 0px auto"></div>
+    <div id="chartDiv" style="max-width: 540;height: 500px;margin: 0px auto"></div>
     <p align="center"><Button outline color="primary" on:click={pop}>Atrás</Button></p>
+
 
 </main>

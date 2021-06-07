@@ -100,7 +100,7 @@
         /////////////////////////////////GRAPH
         //Convierte los datos en un gráfico 
         var chart = JSC.chart('chartDiv', { 
-            debug: true, 
+            debug: false, 
             type: 'marker', 
             title_label_text: 'Días de vacaciones en regiones de Canadá', 
             legend_visible: false, 
