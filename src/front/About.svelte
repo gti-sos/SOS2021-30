@@ -22,7 +22,7 @@
         <CardTitle><h2>Vídeo sobre consumo de alcohol</h2></CardTitle>
       </CardHeader>
       <CardBody>
-        <li type="circle"><a href="https://www.youtube.com/watch?v=lfujfXZZSqA">Enlace al vídeo de la API sobre consumo de alcohol(Víctor Caballero Sánchez)</a></li>
+        <li type="circle"><a href="https://www.youtube.com/watch?v=lfujfXZZSqA">Enlace al vídeo de la API sobre consumo de alcohol (Víctor Caballero Sánchez)</a></li>
       </CardBody>
     </Card>
   </div>
@@ -32,7 +32,7 @@
         <CardTitle><h2>Vídeo sobre consumo de tabaco en España</h2></CardTitle>
       </CardHeader>
       <CardBody>
-        
+        <li type="circle"><a href="https://mixdrop.sx/f/knxdpdz9sdk7g6">Enlace al vídeo de la API sobre consumo de tabaco (Juan Pedro Hurtado Masero)</a></li>
       </CardBody>
     </Card>
   </div>
@@ -42,7 +42,7 @@
         <CardTitle><h2>Vídeo con las estadísticas sobre IMC</h2></CardTitle>
       </CardHeader>
       <CardBody>
-        <li type="circle"><a href="https://www.youtube.com/watch?v=5medEV8SQ5k">Enlace al vídeo explicativo IMC(Jesús Ruiz Domínguez)</a></li>
+        <li type="circle"><a href="https://www.youtube.com/watch?v=5medEV8SQ5k">Enlace al vídeo explicativo IMC (Jesús Ruiz Domínguez)</a></li>
       </CardBody>
     </Card>
   </div>
@@ -52,7 +52,7 @@
         <CardTitle><h2>Vídeo con las estadísticas sobre la esperanza de vida</h2></CardTitle>
       </CardHeader>
       <CardBody>
-        <li type="circle"><a href="https://youtu.be/URB-d0D1I6A">Enlace al vídeo explicativo esperanza de vida(Alejandro Sánchez Márquez)</a></li>
+        <li type="circle"><a href="https://youtu.be/URB-d0D1I6A">Enlace al vídeo explicativo esperanza de vida (Alejandro Sánchez Márquez)</a></li>
       </CardBody>
     </Card>
   </div>
