@@ -12941,7 +12941,7 @@ var app = (function () {
     	return block;
     }
 
-    // (46:42) <Button color="primary">
+    // (47:42) <Button color="primary">
     function create_default_slot_25(ctx) {
     	let t;
 
@@ -12961,14 +12961,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_25.name,
     		type: "slot",
-    		source: "(46:42) <Button color=\\\"primary\\\">",
+    		source: "(47:42) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (47:45) <Button color="primary">
+    // (48:45) <Button color="primary">
     function create_default_slot_24(ctx) {
     	let t;
 
@@ -12988,14 +12988,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_24.name,
     		type: "slot",
-    		source: "(47:45) <Button color=\\\"primary\\\">",
+    		source: "(48:45) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (48:41) <Button color="primary">
+    // (49:41) <Button color="primary">
     function create_default_slot_23(ctx) {
     	let t;
 
@@ -13015,14 +13015,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_23.name,
     		type: "slot",
-    		source: "(48:41) <Button color=\\\"primary\\\">",
+    		source: "(49:41) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (49:43) <Button color="primary">
+    // (50:43) <Button color="primary">
     function create_default_slot_22(ctx) {
     	let t;
 
@@ -13042,14 +13042,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_22.name,
     		type: "slot",
-    		source: "(49:43) <Button color=\\\"primary\\\">",
+    		source: "(50:43) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (50:40) <Button color="primary">
+    // (51:40) <Button color="primary">
     function create_default_slot_21(ctx) {
     	let t;
 
@@ -13069,7 +13069,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_21.name,
     		type: "slot",
-    		source: "(50:40) <Button color=\\\"primary\\\">",
+    		source: "(51:40) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
@@ -13082,19 +13082,22 @@ var app = (function () {
     	let t0;
     	let cardtext;
     	let t1;
+    	let p;
     	let a0;
-    	let button0;
-    	let t2;
-    	let a1;
-    	let button1;
     	let t3;
-    	let a2;
-    	let button2;
+    	let a1;
+    	let button0;
     	let t4;
-    	let a3;
-    	let button3;
+    	let a2;
+    	let button1;
     	let t5;
+    	let a3;
+    	let button2;
+    	let t6;
     	let a4;
+    	let button3;
+    	let t7;
+    	let a5;
     	let button4;
     	let current;
     	cardsubtitle = new CardSubtitle({ $$inline: true });
@@ -13151,50 +13154,60 @@ var app = (function () {
     			t0 = space();
     			create_component(cardtext.$$.fragment);
     			t1 = space();
+    			p = element("p");
     			a0 = element("a");
-    			create_component(button0.$$.fragment);
-    			t2 = space();
-    			a1 = element("a");
-    			create_component(button1.$$.fragment);
+    			a0.textContent = "Juan Pedro Hurtado Masero";
     			t3 = space();
-    			a2 = element("a");
-    			create_component(button2.$$.fragment);
+    			a1 = element("a");
+    			create_component(button0.$$.fragment);
     			t4 = space();
-    			a3 = element("a");
-    			create_component(button3.$$.fragment);
+    			a2 = element("a");
+    			create_component(button1.$$.fragment);
     			t5 = space();
+    			a3 = element("a");
+    			create_component(button2.$$.fragment);
+    			t6 = space();
     			a4 = element("a");
+    			create_component(button3.$$.fragment);
+    			t7 = space();
+    			a5 = element("a");
     			create_component(button4.$$.fragment);
-    			attr_dev(a0, "href", "/#/integrations/rentals");
-    			add_location(a0, file$F, 45, 8, 1322);
-    			attr_dev(a1, "href", "/#/integrations/hostelries");
-    			add_location(a1, file$F, 46, 8, 1435);
-    			attr_dev(a2, "href", "/#/integrations/canada");
-    			add_location(a2, file$F, 47, 8, 1555);
-    			attr_dev(a3, "href", "/#/integrations/airlines");
-    			add_location(a3, file$F, 48, 8, 1674);
-    			attr_dev(a4, "href", "/#/integrations/games");
-    			add_location(a4, file$F, 49, 8, 1795);
+    			attr_dev(a0, "href", "https://github.com/Juanpepitt");
+    			add_location(a0, file$F, 45, 11, 1325);
+    			add_location(p, file$F, 45, 8, 1322);
+    			attr_dev(a1, "href", "/#/integrations/rentals");
+    			add_location(a1, file$F, 46, 8, 1408);
+    			attr_dev(a2, "href", "/#/integrations/hostelries");
+    			add_location(a2, file$F, 47, 8, 1521);
+    			attr_dev(a3, "href", "/#/integrations/canada");
+    			add_location(a3, file$F, 48, 8, 1641);
+    			attr_dev(a4, "href", "/#/integrations/airlines");
+    			add_location(a4, file$F, 49, 8, 1760);
+    			attr_dev(a5, "href", "/#/integrations/games");
+    			add_location(a5, file$F, 50, 8, 1881);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
     			insert_dev(target, t0, anchor);
     			mount_component(cardtext, target, anchor);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, a0, anchor);
-    			mount_component(button0, a0, null);
-    			insert_dev(target, t2, anchor);
-    			insert_dev(target, a1, anchor);
-    			mount_component(button1, a1, null);
+    			insert_dev(target, p, anchor);
+    			append_dev(p, a0);
     			insert_dev(target, t3, anchor);
-    			insert_dev(target, a2, anchor);
-    			mount_component(button2, a2, null);
+    			insert_dev(target, a1, anchor);
+    			mount_component(button0, a1, null);
     			insert_dev(target, t4, anchor);
-    			insert_dev(target, a3, anchor);
-    			mount_component(button3, a3, null);
+    			insert_dev(target, a2, anchor);
+    			mount_component(button1, a2, null);
     			insert_dev(target, t5, anchor);
+    			insert_dev(target, a3, anchor);
+    			mount_component(button2, a3, null);
+    			insert_dev(target, t6, anchor);
     			insert_dev(target, a4, anchor);
-    			mount_component(button4, a4, null);
+    			mount_component(button3, a4, null);
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, a5, anchor);
+    			mount_component(button4, a5, null);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -13260,19 +13273,21 @@ var app = (function () {
     			if (detaching) detach_dev(t0);
     			destroy_component(cardtext, detaching);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(a0);
-    			destroy_component(button0);
-    			if (detaching) detach_dev(t2);
-    			if (detaching) detach_dev(a1);
-    			destroy_component(button1);
+    			if (detaching) detach_dev(p);
     			if (detaching) detach_dev(t3);
-    			if (detaching) detach_dev(a2);
-    			destroy_component(button2);
+    			if (detaching) detach_dev(a1);
+    			destroy_component(button0);
     			if (detaching) detach_dev(t4);
-    			if (detaching) detach_dev(a3);
-    			destroy_component(button3);
+    			if (detaching) detach_dev(a2);
+    			destroy_component(button1);
     			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(a3);
+    			destroy_component(button2);
+    			if (detaching) detach_dev(t6);
     			if (detaching) detach_dev(a4);
+    			destroy_component(button3);
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(a5);
     			destroy_component(button4);
     		}
     	};
@@ -13368,7 +13383,7 @@ var app = (function () {
     	return block;
     }
 
-    // (57:8) <CardTitle>
+    // (58:8) <CardTitle>
     function create_default_slot_18(ctx) {
     	let h2;
 
@@ -13376,7 +13391,7 @@ var app = (function () {
     		c: function create() {
     			h2 = element("h2");
     			h2.textContent = "Integrado con las estadísticas sobre IMC";
-    			add_location(h2, file$F, 56, 19, 2022);
+    			add_location(h2, file$F, 57, 19, 2108);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -13390,14 +13405,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_18.name,
     		type: "slot",
-    		source: "(57:8) <CardTitle>",
+    		source: "(58:8) <CardTitle>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (56:6) <CardHeader>
+    // (57:6) <CardHeader>
     function create_default_slot_17(ctx) {
     	let cardtitle;
     	let current;
@@ -13445,14 +13460,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_17.name,
     		type: "slot",
-    		source: "(56:6) <CardHeader>",
+    		source: "(57:6) <CardHeader>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (63:46) <Button color="primary">
+    // (64:46) <Button color="primary">
     function create_default_slot_16(ctx) {
     	let t;
 
@@ -13472,14 +13487,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_16.name,
     		type: "slot",
-    		source: "(63:46) <Button color=\\\"primary\\\">",
+    		source: "(64:46) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (64:47) <Button color="primary">
+    // (65:47) <Button color="primary">
     function create_default_slot_15$1(ctx) {
     	let t;
 
@@ -13499,14 +13514,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_15$1.name,
     		type: "slot",
-    		source: "(64:47) <Button color=\\\"primary\\\">",
+    		source: "(65:47) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (65:47) <Button color="primary">
+    // (66:47) <Button color="primary">
     function create_default_slot_14$2(ctx) {
     	let t;
 
@@ -13526,14 +13541,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_14$2.name,
     		type: "slot",
-    		source: "(65:47) <Button color=\\\"primary\\\">",
+    		source: "(66:47) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (66:46) <Button color="primary">
+    // (67:46) <Button color="primary">
     function create_default_slot_13$4(ctx) {
     	let t;
 
@@ -13553,14 +13568,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_13$4.name,
     		type: "slot",
-    		source: "(66:46) <Button color=\\\"primary\\\">",
+    		source: "(67:46) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (67:46) <Button color="primary">
+    // (68:46) <Button color="primary">
     function create_default_slot_12$4(ctx) {
     	let t;
 
@@ -13580,14 +13595,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_12$4.name,
     		type: "slot",
-    		source: "(67:46) <Button color=\\\"primary\\\">",
+    		source: "(68:46) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (68:48) <Button color="primary">
+    // (69:48) <Button color="primary">
     function create_default_slot_11$5(ctx) {
     	let t;
 
@@ -13607,14 +13622,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_11$5.name,
     		type: "slot",
-    		source: "(68:48) <Button color=\\\"primary\\\">",
+    		source: "(69:48) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (59:6) <CardBody>
+    // (60:6) <CardBody>
     function create_default_slot_10$5(ctx) {
     	let cardsubtitle;
     	let t0;
@@ -13726,20 +13741,20 @@ var app = (function () {
     			a6 = element("a");
     			create_component(button5.$$.fragment);
     			attr_dev(a0, "href", "https://github.com/jesruidom");
-    			add_location(a0, file$F, 61, 11, 2183);
-    			add_location(p, file$F, 61, 8, 2180);
+    			add_location(a0, file$F, 62, 11, 2269);
+    			add_location(p, file$F, 62, 8, 2266);
     			attr_dev(a1, "href", "/#/integrations/culturaBASE");
-    			add_location(a1, file$F, 62, 8, 2260);
+    			add_location(a1, file$F, 63, 8, 2346);
     			attr_dev(a2, "href", "/#/integrations/stress-stats");
-    			add_location(a2, file$F, 63, 8, 2383);
+    			add_location(a2, file$F, 64, 8, 2469);
     			attr_dev(a3, "href", "/#/integrations/NBA-position");
-    			add_location(a3, file$F, 64, 8, 2508);
+    			add_location(a3, file$F, 65, 8, 2594);
     			attr_dev(a4, "href", "/#/integrations/steam-games");
-    			add_location(a4, file$F, 65, 8, 2615);
+    			add_location(a4, file$F, 66, 8, 2701);
     			attr_dev(a5, "href", "/#/integrations/liga-futbol");
-    			add_location(a5, file$F, 66, 8, 2731);
+    			add_location(a5, file$F, 67, 8, 2817);
     			attr_dev(a6, "href", "/#/integrations/juegos-gratis");
-    			add_location(a6, file$F, 67, 8, 2849);
+    			add_location(a6, file$F, 68, 8, 2935);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -13866,14 +13881,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_10$5.name,
     		type: "slot",
-    		source: "(59:6) <CardBody>",
+    		source: "(60:6) <CardBody>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (55:4) <Card class="mb-3">
+    // (56:4) <Card class="mb-3">
     function create_default_slot_9$5(ctx) {
     	let cardheader;
     	let t;
@@ -13946,14 +13961,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_9$5.name,
     		type: "slot",
-    		source: "(55:4) <Card class=\\\"mb-3\\\">",
+    		source: "(56:4) <Card class=\\\"mb-3\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (75:8) <CardTitle>
+    // (76:8) <CardTitle>
     function create_default_slot_8$5(ctx) {
     	let h2;
 
@@ -13961,7 +13976,7 @@ var app = (function () {
     		c: function create() {
     			h2 = element("h2");
     			h2.textContent = "Integrado con las estadísticas sobre la esperanza de vida";
-    			add_location(h2, file$F, 74, 19, 3075);
+    			add_location(h2, file$F, 75, 19, 3161);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -13975,14 +13990,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8$5.name,
     		type: "slot",
-    		source: "(75:8) <CardTitle>",
+    		source: "(76:8) <CardTitle>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (74:6) <CardHeader>
+    // (75:6) <CardHeader>
     function create_default_slot_7$5(ctx) {
     	let cardtitle;
     	let current;
@@ -14030,14 +14045,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$5.name,
     		type: "slot",
-    		source: "(74:6) <CardHeader>",
+    		source: "(75:6) <CardHeader>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (80:47) <Button color="primary">
+    // (81:47) <Button color="primary">
     function create_default_slot_6$5(ctx) {
     	let t;
 
@@ -14057,14 +14072,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$5.name,
     		type: "slot",
-    		source: "(80:47) <Button color=\\\"primary\\\">",
+    		source: "(81:47) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (81:42) <Button color="primary">
+    // (82:42) <Button color="primary">
     function create_default_slot_5$5(ctx) {
     	let t;
 
@@ -14084,14 +14099,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$5.name,
     		type: "slot",
-    		source: "(81:42) <Button color=\\\"primary\\\">",
+    		source: "(82:42) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (82:46) <Button color="primary">
+    // (83:46) <Button color="primary">
     function create_default_slot_4$5(ctx) {
     	let t;
 
@@ -14111,14 +14126,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$5.name,
     		type: "slot",
-    		source: "(82:46) <Button color=\\\"primary\\\">",
+    		source: "(83:46) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (83:42) <Button color="primary">
+    // (84:42) <Button color="primary">
     function create_default_slot_3$c(ctx) {
     	let t;
 
@@ -14138,14 +14153,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$c.name,
     		type: "slot",
-    		source: "(83:42) <Button color=\\\"primary\\\">",
+    		source: "(84:42) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (77:6) <CardBody>
+    // (78:6) <CardBody>
     function create_default_slot_2$d(ctx) {
     	let cardsubtitle;
     	let t0;
@@ -14220,13 +14235,13 @@ var app = (function () {
     			a3 = element("a");
     			create_component(button3.$$.fragment);
     			attr_dev(a0, "href", "/#/integrations/unemployment");
-    			add_location(a0, file$F, 79, 8, 3250);
+    			add_location(a0, file$F, 80, 8, 3336);
     			attr_dev(a1, "href", "/#/integrations/druguse");
-    			add_location(a1, file$F, 80, 8, 3363);
+    			add_location(a1, file$F, 81, 8, 3449);
     			attr_dev(a2, "href", "/#/integrations/hearthstone");
-    			add_location(a2, file$F, 81, 8, 3477);
+    			add_location(a2, file$F, 82, 8, 3563);
     			attr_dev(a3, "href", "/#/integrations/covideu");
-    			add_location(a3, file$F, 82, 8, 3593);
+    			add_location(a3, file$F, 83, 8, 3679);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -14318,14 +14333,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$d.name,
     		type: "slot",
-    		source: "(77:6) <CardBody>",
+    		source: "(78:6) <CardBody>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (73:4) <Card class="mb-3">
+    // (74:4) <Card class="mb-3">
     function create_default_slot_1$d(ctx) {
     	let cardheader;
     	let t;
@@ -14398,14 +14413,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$d.name,
     		type: "slot",
-    		source: "(73:4) <Card class=\\\"mb-3\\\">",
+    		source: "(74:4) <Card class=\\\"mb-3\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (87:2) <Button outline color="secondary" on:click="{pop}">
+    // (88:2) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$F(ctx) {
     	let t;
 
@@ -14425,7 +14440,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$F.name,
     		type: "slot",
-    		source: "(87:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(88:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -14529,9 +14544,9 @@ var app = (function () {
     			attr_dev(div2, "class", "svelte-egmbdb");
     			add_location(div2, file$F, 37, 2, 1069);
     			attr_dev(div3, "class", "svelte-egmbdb");
-    			add_location(div3, file$F, 53, 2, 1951);
+    			add_location(div3, file$F, 54, 2, 2037);
     			attr_dev(div4, "class", "svelte-egmbdb");
-    			add_location(div4, file$F, 71, 2, 3004);
+    			add_location(div4, file$F, 72, 2, 3090);
     			attr_dev(main, "class", "svelte-egmbdb");
     			add_location(main, file$F, 13, 2, 235);
     		},
@@ -48637,12 +48652,12 @@ var app = (function () {
     			add_location(br0, file$q, 442, 8, 15167);
     			add_location(br1, file$q, 539, 8, 18859);
     			attr_dev(a0, "href", "./#/smokers-graph");
-    			add_location(a0, file$q, 545, 12, 19253);
+    			add_location(a0, file$q, 545, 12, 19270);
     			attr_dev(a1, "href", "./#/integrations");
-    			add_location(a1, file$q, 546, 12, 19336);
+    			add_location(a1, file$q, 546, 12, 19353);
     			attr_dev(p, "align", "center");
     			add_location(p, file$q, 540, 8, 18873);
-    			add_location(br2, file$q, 548, 8, 19439);
+    			add_location(br2, file$q, 548, 8, 19456);
     		},
     		m: function mount(target, anchor) {
     			mount_component(alert_1, target, anchor);
@@ -49830,7 +49845,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			t = text("Atrás");
+    			t = text("Página Anterior");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -49857,7 +49872,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			t = text("Siguiente");
+    			t = text("Página Siguiente");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -51914,7 +51929,7 @@ var app = (function () {
     			div1 = element("div");
     			t2 = space();
     			p0 = element("p");
-    			p0.textContent = "Scatter charts are often used to visualize the relationships\r\n            between data in two dimensions. This chart is visualizing\r\n            height and weight by gender, showing a clear trend where men\r\n            are on average taller and heavier than women.";
+    			p0.textContent = "El gráfico muestra cada comunidad autónoma (excluyendo ciudades autónomas).\r\n            En un primer plano se muestra el número de fumadores diarios por comunidad y \r\n            en un segundo plano (haciendo click) podemos encontrar la expansión de los datos\r\n            para cada comunidad autónoma en concreto, incluyendo todos sus datos.";
     			t4 = space();
     			p1 = element("p");
     			create_component(button.$$.fragment);
@@ -51941,7 +51956,7 @@ var app = (function () {
     			add_location(figure, file$n, 177, 4, 6967);
     			attr_dev(p1, "align", "center");
     			attr_dev(p1, "class", "svelte-1vbfi7c");
-    			add_location(p1, file$n, 186, 4, 7394);
+    			add_location(p1, file$n, 186, 4, 7473);
     			attr_dev(main, "class", "svelte-1vbfi7c");
     			add_location(main, file$n, 170, 0, 6803);
     		},

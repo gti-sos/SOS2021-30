@@ -178,10 +178,10 @@
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            Scatter charts are often used to visualize the relationships
-            between data in two dimensions. This chart is visualizing
-            height and weight by gender, showing a clear trend where men
-            are on average taller and heavier than women.
+            El gráfico muestra cada comunidad autónoma (excluyendo ciudades autónomas).
+            En un primer plano se muestra el número de fumadores diarios por comunidad y 
+            en un segundo plano (haciendo click) podemos encontrar la expansión de los datos
+            para cada comunidad autónoma en concreto, incluyendo todos sus datos.
         </p>
     </figure>
     <p align="center">
