@@ -112,7 +112,7 @@ var counter = 0;
     console.log("Pulsado botón para ver gráfica tipo item");
     await page.screenshot({path: path + "graficaParlamentoAlcohol.png"});
     console.log("Captura de grafico cilindros tomada...");
-    await page.click("body > main > main > button"); //Falla
+    await page.click("body > main > main > button:nth-child(7)"); //Falla
     console.log("Volviendo a la página de datos Alcohol");
     
     if(datosAlcohol != 11){
