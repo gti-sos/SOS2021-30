@@ -120,8 +120,39 @@ var counter = 0;
         console.log("No se ha pasado el test");
         console.log("El número de filas detectadas no es el correcto");
         process.exit(1);
-    } 
+    }
 
+    //Tabla Smokers 
+    console.log("////// Test e2e smokers-stats ////////");
+    await page.click("body > nav > ul > li:nth-child(4) > a");
+    console.log("Pagina FrontEnd smokers abierta!");
+    await page.screenshot({ path: path + 'InicioSmokers.png'});
+    console.log("Captura tomada...");
+    await page.click("body > main > main > p > button.btn.btn-success");
+    console.log("Pulsado botón para cargar los datos iniciales");
+    await page.screenshot({ path: path + 'CargaDatosInicialesSmokers.png'});
+
+    var dataSmokers = (await page.$$("body > main > main > div.table-responsive > table > tbody > tr")).length;
+    console.log("Hay un total de " + dataSmokers + " en la tabla de la página inicial");
+
+    await page.click("body > main > main > p > a:nth-child(5) > button"); 
+    console.log("Pulsado botón para ver gráfica de tipo line");
+    await page.screenshot({path: path + "LineSmokers.png"});
+    console.log("Captura de grafico line tomada..."); 
+
+    await page.click("body > main > main > p > a:nth-child(2) > button");
+    console.log("Pulsado botón para ver gráfica tipo drill");
+    await page.waitForTimeout(1000);
+    await page.screenshot({path: path + "drillSmokers.png"});
+    console.log("Captura de grafico cilindros tomada...");
+    await page.click("body > main > main > p > button");
+    console.log("Volviendo a la página de datos Smokers");
+    
+    if(dataSmokers != 11){
+        console.log("No se ha pasado el test");
+        console.log("El número de filas detectadas no es el correcto");
+        process.exit(1);
+    }
     //Cerramos el navegador
     await browser.close();
     console.log("Browser closed!");

@@ -43,6 +43,7 @@
       <CardBody>
         <CardSubtitle />
         <CardText />
+        <p><a href="https://github.com/Juanpepitt">Juan Pedro Hurtado Masero</a></p>
         <a href="/#/integrations/rentals"><Button color="primary">Estadísticas Rental-Smoker (G07)</Button></a>
         <a href="/#/integrations/hostelries"><Button color="primary">Estadísticas Hostelries-Smoker (G26)</Button></a>
         <a href="/#/integrations/canada"><Button color="primary">Estadísticas Vacaciones en Canadá (EXT)</Button></a>

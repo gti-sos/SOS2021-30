@@ -541,8 +541,8 @@
         <p align="center">
             <Button color="success" on:click={loadInitialData}>Cargar datos inciales</Button>
             <Button color="danger" on:click={deleteALL}>Eliminar todo</Button>
-            <Button outline color="primary" on:click={getPreviewPage}>Atrás</Button>
-            <Button outline color="primary" on:click={getNextPage}>Siguiente</Button>
+            <Button outline color="primary" on:click={getPreviewPage}>Página Anterior</Button>
+            <Button outline color="primary" on:click={getNextPage}>Página Siguiente</Button>
             <a href="./#/smokers-graph"><Button color="info">Gráfico</Button></a>
             <a href="./#/integrations"><Button color="info">Ir a integraciones</Button></a>
         </p>
