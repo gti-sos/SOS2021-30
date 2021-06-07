@@ -16,7 +16,8 @@
             futbolData = await res.json();
             console.log("Recived futbol data");
         }
-    }        
+        console.log("Se cargan los datos desde la dirección: " + BASE_FUTBOL_PATH);  
+    }  
 
     async function loadGraph(){
         console.log("Fetching data...");

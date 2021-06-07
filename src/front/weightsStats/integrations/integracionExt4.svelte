@@ -14,6 +14,7 @@
             gamesStats = await res.json();
             console.log("Recived data from de url...");
         }
+        console.log("Se cargan los datos desde la dirección: " + BASE_GAMES_PATH);
     }
 
     async function loadGraph(){
