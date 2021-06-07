@@ -132,7 +132,7 @@ var counter = 0;
     console.log("Pulsado botón para cargar los datos iniciales");
     await page.screenshot({ path: path + 'CargaDatosInicialesSmokers.png'});
 
-    var dataSmokers = (await page.$$("body > main > main > div.table-responsive > table > thead > tr")).length;
+    var dataSmokers = (await page.$$("body > main > main > div.table-responsive > table > tbody > tr")).length;
     console.log("Hay un total de " + dataSmokers + " en la tabla de la página inicial");
 
     await page.click("body > main > main > p > a:nth-child(5) > button"); 
