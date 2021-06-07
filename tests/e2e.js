@@ -103,12 +103,12 @@ var counter = 0;
     var datosAlcohol = (await page.$$("body > main > main > div.table-responsive > table > tbody > tr")).length;
     console.log("Hay un total de " + datosAlcohol + " en la tabla de la página inicial");
 
-    await page.click("body > main > main > a > button"); //here
+    await page.click("body > main > main > a > button"); 
     console.log("Pulsado botón para ver gráfica de tipo line");
     await page.screenshot({path: path + "LineAlcohol.png"});
-    console.log("Captura de grafico line tomada...");
+    console.log("Captura de grafico line tomada..."); 
 
-    await page.click("body > main > main > a:nth-child(2) > button");
+    await page.click("body > main > main > a:nth-child(5) > button"); //Falla
     console.log("Pulsado botón para ver gráfica tipo item");
     await page.screenshot({path: path + "graficaParlamentoAlcohol.png"});
     console.log("Captura de grafico cilindros tomada...");
