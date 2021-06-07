@@ -151,7 +151,7 @@
         var chart = JSC.chart("chartDiv", {
             debug: true,
             type: "column aqua",
-            title_label_text: "SmokerVSRental",
+            title_label_text: "Datos conjuntos de renta/metros/salarios medios y fumadores diarios",
             yAxis: { label_text: "Unidades" },
             xAxis: { label_text: "Comunidad Autónoma" },
             series: series,
@@ -169,7 +169,7 @@
         {/if}
       </div>
 
-    <div id="chartDiv" style="max-width: 740px;height: 400px;margin: 0px auto"/>
+    <div id="chartDiv" style="max-width: 800px;height: 500px;margin: 0px auto"/>
     <p align="center"><Button outline color="primary" on:click={pop}>Atrás</Button></p>
 
 </main>

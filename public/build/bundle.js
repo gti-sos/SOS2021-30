@@ -8609,7 +8609,7 @@ var app = (function () {
     }
 
     // (26:3) <Table bordered responsive>
-    function create_default_slot_15$2(ctx) {
+    function create_default_slot_15$3(ctx) {
     	let thead;
     	let tr0;
     	let th0;
@@ -9035,7 +9035,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_15$2.name,
+    		id: create_default_slot_15$3.name,
     		type: "slot",
     		source: "(26:3) <Table bordered responsive>",
     		ctx
@@ -10198,7 +10198,7 @@ var app = (function () {
     			props: {
     				bordered: true,
     				responsive: true,
-    				$$slots: { default: [create_default_slot_15$2] },
+    				$$slots: { default: [create_default_slot_15$3] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11486,7 +11486,7 @@ var app = (function () {
     const file$G = "src\\front\\About.svelte";
 
     // (22:8) <CardTitle>
-    function create_default_slot_14$3(ctx) {
+    function create_default_slot_15$2(ctx) {
     	let h2;
 
     	const block = {
@@ -11505,7 +11505,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_14$3.name,
+    		id: create_default_slot_15$2.name,
     		type: "slot",
     		source: "(22:8) <CardTitle>",
     		ctx
@@ -11515,13 +11515,13 @@ var app = (function () {
     }
 
     // (21:6) <CardHeader>
-    function create_default_slot_13$5(ctx) {
+    function create_default_slot_14$3(ctx) {
     	let cardtitle;
     	let current;
 
     	cardtitle = new CardTitle({
     			props: {
-    				$$slots: { default: [create_default_slot_14$3] },
+    				$$slots: { default: [create_default_slot_15$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11560,7 +11560,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_13$5.name,
+    		id: create_default_slot_14$3.name,
     		type: "slot",
     		source: "(21:6) <CardHeader>",
     		ctx
@@ -11570,7 +11570,7 @@ var app = (function () {
     }
 
     // (24:6) <CardBody>
-    function create_default_slot_12$5(ctx) {
+    function create_default_slot_13$5(ctx) {
     	let li;
     	let a;
 
@@ -11595,7 +11595,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_12$5.name,
+    		id: create_default_slot_13$5.name,
     		type: "slot",
     		source: "(24:6) <CardBody>",
     		ctx
@@ -11613,7 +11613,7 @@ var app = (function () {
 
     	cardheader = new CardHeader({
     			props: {
-    				$$slots: { default: [create_default_slot_13$5] },
+    				$$slots: { default: [create_default_slot_14$3] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11621,7 +11621,7 @@ var app = (function () {
 
     	cardbody = new CardBody({
     			props: {
-    				$$slots: { default: [create_default_slot_12$5] },
+    				$$slots: { default: [create_default_slot_13$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -12129,9 +12129,9 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "Enlace al vídeo explicativo esperanza de vida(Alejandro Sánchez Márquez)";
     			attr_dev(a, "href", "https://youtu.be/URB-d0D1I6A");
-    			add_location(a, file$G, 54, 26, 1310);
+    			add_location(a, file$G, 54, 26, 1467);
     			attr_dev(li, "type", "circle");
-    			add_location(li, file$G, 54, 8, 1292);
+    			add_location(li, file$G, 54, 8, 1449);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -12585,7 +12585,7 @@ var app = (function () {
     	return block;
     }
 
-    // (28:11) <Button color="primary">
+    // (29:11) <Button color="primary">
     function create_default_slot_33(ctx) {
     	let t;
 
@@ -12605,14 +12605,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_33.name,
     		type: "slot",
-    		source: "(28:11) <Button color=\\\"primary\\\">",
+    		source: "(29:11) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (30:9) <Button color="primary">
+    // (31:9) <Button color="primary">
     function create_default_slot_32(ctx) {
     	let t;
 
@@ -12632,14 +12632,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_32.name,
     		type: "slot",
-    		source: "(30:9) <Button color=\\\"primary\\\">",
+    		source: "(31:9) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (32:9) <Button color="primary">
+    // (33:9) <Button color="primary">
     function create_default_slot_31(ctx) {
     	let t;
 
@@ -12659,14 +12659,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_31.name,
     		type: "slot",
-    		source: "(32:9) <Button color=\\\"primary\\\">",
+    		source: "(33:9) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (34:9) <Button color="primary">
+    // (35:9) <Button color="primary">
     function create_default_slot_30(ctx) {
     	let t;
 
@@ -12686,7 +12686,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_30.name,
     		type: "slot",
-    		source: "(34:9) <Button color=\\\"primary\\\">",
+    		source: "(35:9) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
@@ -12699,16 +12699,19 @@ var app = (function () {
     	let t0;
     	let cardtext;
     	let t1;
+    	let p;
     	let a0;
-    	let button0;
-    	let t2;
-    	let a1;
-    	let button1;
     	let t3;
-    	let a2;
-    	let button2;
+    	let a1;
+    	let button0;
     	let t4;
+    	let a2;
+    	let button1;
+    	let t5;
     	let a3;
+    	let button2;
+    	let t6;
+    	let a4;
     	let button3;
     	let current;
     	cardsubtitle = new CardSubtitle({ $$inline: true });
@@ -12756,42 +12759,52 @@ var app = (function () {
     			t0 = space();
     			create_component(cardtext.$$.fragment);
     			t1 = space();
+    			p = element("p");
     			a0 = element("a");
-    			create_component(button0.$$.fragment);
-    			t2 = space();
-    			a1 = element("a");
-    			create_component(button1.$$.fragment);
+    			a0.textContent = "Víctor Caballero Sánchez";
     			t3 = space();
-    			a2 = element("a");
-    			create_component(button2.$$.fragment);
+    			a1 = element("a");
+    			create_component(button0.$$.fragment);
     			t4 = space();
+    			a2 = element("a");
+    			create_component(button1.$$.fragment);
+    			t5 = space();
     			a3 = element("a");
+    			create_component(button2.$$.fragment);
+    			t6 = space();
+    			a4 = element("a");
     			create_component(button3.$$.fragment);
-    			attr_dev(a0, "href", "/#/integrations/anxiety-stats");
-    			add_location(a0, file$F, 26, 8, 541);
-    			attr_dev(a1, "href", "/#/integrations/poverty-risk-stats");
-    			add_location(a1, file$F, 28, 8, 661);
-    			attr_dev(a2, "href", "/#/integrations/covid-stats");
-    			add_location(a2, file$F, 30, 8, 793);
-    			attr_dev(a3, "href", "/#/integrations/co2-stats");
-    			add_location(a3, file$F, 32, 8, 918);
+    			attr_dev(a0, "href", "https://github.com/vic3214");
+    			add_location(a0, file$F, 26, 11, 544);
+    			add_location(p, file$F, 26, 8, 541);
+    			attr_dev(a1, "href", "/#/integrations/anxiety-stats");
+    			add_location(a1, file$F, 27, 8, 623);
+    			attr_dev(a2, "href", "/#/integrations/poverty-risk-stats");
+    			add_location(a2, file$F, 29, 8, 743);
+    			attr_dev(a3, "href", "/#/integrations/covid-stats");
+    			add_location(a3, file$F, 31, 8, 875);
+    			attr_dev(a4, "href", "/#/integrations/co2-stats");
+    			add_location(a4, file$F, 33, 8, 1000);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
     			insert_dev(target, t0, anchor);
     			mount_component(cardtext, target, anchor);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, a0, anchor);
-    			mount_component(button0, a0, null);
-    			insert_dev(target, t2, anchor);
-    			insert_dev(target, a1, anchor);
-    			mount_component(button1, a1, null);
+    			insert_dev(target, p, anchor);
+    			append_dev(p, a0);
     			insert_dev(target, t3, anchor);
-    			insert_dev(target, a2, anchor);
-    			mount_component(button2, a2, null);
+    			insert_dev(target, a1, anchor);
+    			mount_component(button0, a1, null);
     			insert_dev(target, t4, anchor);
+    			insert_dev(target, a2, anchor);
+    			mount_component(button1, a2, null);
+    			insert_dev(target, t5, anchor);
     			insert_dev(target, a3, anchor);
-    			mount_component(button3, a3, null);
+    			mount_component(button2, a3, null);
+    			insert_dev(target, t6, anchor);
+    			insert_dev(target, a4, anchor);
+    			mount_component(button3, a4, null);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -12848,16 +12861,18 @@ var app = (function () {
     			if (detaching) detach_dev(t0);
     			destroy_component(cardtext, detaching);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(a0);
-    			destroy_component(button0);
-    			if (detaching) detach_dev(t2);
-    			if (detaching) detach_dev(a1);
-    			destroy_component(button1);
+    			if (detaching) detach_dev(p);
     			if (detaching) detach_dev(t3);
-    			if (detaching) detach_dev(a2);
-    			destroy_component(button2);
+    			if (detaching) detach_dev(a1);
+    			destroy_component(button0);
     			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(a2);
+    			destroy_component(button1);
+    			if (detaching) detach_dev(t5);
     			if (detaching) detach_dev(a3);
+    			destroy_component(button2);
+    			if (detaching) detach_dev(t6);
+    			if (detaching) detach_dev(a4);
     			destroy_component(button3);
     		}
     	};
@@ -12953,7 +12968,7 @@ var app = (function () {
     	return block;
     }
 
-    // (41:8) <CardTitle>
+    // (42:8) <CardTitle>
     function create_default_slot_27(ctx) {
     	let h2;
 
@@ -12961,7 +12976,7 @@ var app = (function () {
     		c: function create() {
     			h2 = element("h2");
     			h2.textContent = "Integrado con las estadísticas sobre consumo de tabaco en España";
-    			add_location(h2, file$F, 40, 19, 1140);
+    			add_location(h2, file$F, 41, 19, 1222);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -12975,14 +12990,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_27.name,
     		type: "slot",
-    		source: "(41:8) <CardTitle>",
+    		source: "(42:8) <CardTitle>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (40:6) <CardHeader>
+    // (41:6) <CardHeader>
     function create_default_slot_26(ctx) {
     	let cardtitle;
     	let current;
@@ -13030,14 +13045,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_26.name,
     		type: "slot",
-    		source: "(40:6) <CardHeader>",
+    		source: "(41:6) <CardHeader>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (47:42) <Button color="primary">
+    // (48:42) <Button color="primary">
     function create_default_slot_25(ctx) {
     	let t;
 
@@ -13057,14 +13072,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_25.name,
     		type: "slot",
-    		source: "(47:42) <Button color=\\\"primary\\\">",
+    		source: "(48:42) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (48:45) <Button color="primary">
+    // (49:45) <Button color="primary">
     function create_default_slot_24(ctx) {
     	let t;
 
@@ -13084,14 +13099,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_24.name,
     		type: "slot",
-    		source: "(48:45) <Button color=\\\"primary\\\">",
+    		source: "(49:45) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (49:41) <Button color="primary">
+    // (50:41) <Button color="primary">
     function create_default_slot_23(ctx) {
     	let t;
 
@@ -13111,14 +13126,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_23.name,
     		type: "slot",
-    		source: "(49:41) <Button color=\\\"primary\\\">",
+    		source: "(50:41) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (50:43) <Button color="primary">
+    // (51:43) <Button color="primary">
     function create_default_slot_22(ctx) {
     	let t;
 
@@ -13138,14 +13153,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_22.name,
     		type: "slot",
-    		source: "(50:43) <Button color=\\\"primary\\\">",
+    		source: "(51:43) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (51:40) <Button color="primary">
+    // (52:40) <Button color="primary">
     function create_default_slot_21(ctx) {
     	let t;
 
@@ -13165,14 +13180,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_21.name,
     		type: "slot",
-    		source: "(51:40) <Button color=\\\"primary\\\">",
+    		source: "(52:40) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (43:6) <CardBody>
+    // (44:6) <CardBody>
     function create_default_slot_20(ctx) {
     	let cardsubtitle;
     	let t0;
@@ -13269,18 +13284,18 @@ var app = (function () {
     			a5 = element("a");
     			create_component(button4.$$.fragment);
     			attr_dev(a0, "href", "https://github.com/Juanpepitt");
-    			add_location(a0, file$F, 45, 11, 1325);
-    			add_location(p, file$F, 45, 8, 1322);
+    			add_location(a0, file$F, 46, 11, 1407);
+    			add_location(p, file$F, 46, 8, 1404);
     			attr_dev(a1, "href", "/#/integrations/rentals");
-    			add_location(a1, file$F, 46, 8, 1408);
+    			add_location(a1, file$F, 47, 8, 1490);
     			attr_dev(a2, "href", "/#/integrations/hostelries");
-    			add_location(a2, file$F, 47, 8, 1521);
+    			add_location(a2, file$F, 48, 8, 1603);
     			attr_dev(a3, "href", "/#/integrations/canada");
-    			add_location(a3, file$F, 48, 8, 1641);
+    			add_location(a3, file$F, 49, 8, 1723);
     			attr_dev(a4, "href", "/#/integrations/airlines");
-    			add_location(a4, file$F, 49, 8, 1760);
+    			add_location(a4, file$F, 50, 8, 1842);
     			attr_dev(a5, "href", "/#/integrations/games");
-    			add_location(a5, file$F, 50, 8, 1881);
+    			add_location(a5, file$F, 51, 8, 1963);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -13392,14 +13407,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_20.name,
     		type: "slot",
-    		source: "(43:6) <CardBody>",
+    		source: "(44:6) <CardBody>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (39:4) <Card class="mb-3">
+    // (40:4) <Card class="mb-3">
     function create_default_slot_19(ctx) {
     	let cardheader;
     	let t;
@@ -13472,14 +13487,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_19.name,
     		type: "slot",
-    		source: "(39:4) <Card class=\\\"mb-3\\\">",
+    		source: "(40:4) <Card class=\\\"mb-3\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (58:8) <CardTitle>
+    // (59:8) <CardTitle>
     function create_default_slot_18(ctx) {
     	let h2;
 
@@ -13487,7 +13502,7 @@ var app = (function () {
     		c: function create() {
     			h2 = element("h2");
     			h2.textContent = "Integrado con las estadísticas sobre IMC";
-    			add_location(h2, file$F, 57, 19, 2108);
+    			add_location(h2, file$F, 58, 19, 2190);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -13501,14 +13516,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_18.name,
     		type: "slot",
-    		source: "(58:8) <CardTitle>",
+    		source: "(59:8) <CardTitle>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (57:6) <CardHeader>
+    // (58:6) <CardHeader>
     function create_default_slot_17(ctx) {
     	let cardtitle;
     	let current;
@@ -13556,14 +13571,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_17.name,
     		type: "slot",
-    		source: "(57:6) <CardHeader>",
+    		source: "(58:6) <CardHeader>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (64:46) <Button color="primary">
+    // (65:46) <Button color="primary">
     function create_default_slot_16(ctx) {
     	let t;
 
@@ -13583,14 +13598,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_16.name,
     		type: "slot",
-    		source: "(64:46) <Button color=\\\"primary\\\">",
+    		source: "(65:46) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (65:47) <Button color="primary">
+    // (66:47) <Button color="primary">
     function create_default_slot_15$1(ctx) {
     	let t;
 
@@ -13610,14 +13625,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_15$1.name,
     		type: "slot",
-    		source: "(65:47) <Button color=\\\"primary\\\">",
+    		source: "(66:47) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (66:47) <Button color="primary">
+    // (67:47) <Button color="primary">
     function create_default_slot_14$2(ctx) {
     	let t;
 
@@ -13637,14 +13652,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_14$2.name,
     		type: "slot",
-    		source: "(66:47) <Button color=\\\"primary\\\">",
+    		source: "(67:47) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (67:46) <Button color="primary">
+    // (68:46) <Button color="primary">
     function create_default_slot_13$4(ctx) {
     	let t;
 
@@ -13664,14 +13679,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_13$4.name,
     		type: "slot",
-    		source: "(67:46) <Button color=\\\"primary\\\">",
+    		source: "(68:46) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (68:46) <Button color="primary">
+    // (69:46) <Button color="primary">
     function create_default_slot_12$4(ctx) {
     	let t;
 
@@ -13691,14 +13706,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_12$4.name,
     		type: "slot",
-    		source: "(68:46) <Button color=\\\"primary\\\">",
+    		source: "(69:46) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (69:48) <Button color="primary">
+    // (70:48) <Button color="primary">
     function create_default_slot_11$5(ctx) {
     	let t;
 
@@ -13718,14 +13733,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_11$5.name,
     		type: "slot",
-    		source: "(69:48) <Button color=\\\"primary\\\">",
+    		source: "(70:48) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (60:6) <CardBody>
+    // (61:6) <CardBody>
     function create_default_slot_10$5(ctx) {
     	let cardsubtitle;
     	let t0;
@@ -13837,20 +13852,20 @@ var app = (function () {
     			a6 = element("a");
     			create_component(button5.$$.fragment);
     			attr_dev(a0, "href", "https://github.com/jesruidom");
-    			add_location(a0, file$F, 62, 11, 2269);
-    			add_location(p, file$F, 62, 8, 2266);
+    			add_location(a0, file$F, 63, 11, 2351);
+    			add_location(p, file$F, 63, 8, 2348);
     			attr_dev(a1, "href", "/#/integrations/culturaBASE");
-    			add_location(a1, file$F, 63, 8, 2346);
+    			add_location(a1, file$F, 64, 8, 2428);
     			attr_dev(a2, "href", "/#/integrations/stress-stats");
-    			add_location(a2, file$F, 64, 8, 2469);
+    			add_location(a2, file$F, 65, 8, 2551);
     			attr_dev(a3, "href", "/#/integrations/NBA-position");
-    			add_location(a3, file$F, 65, 8, 2594);
+    			add_location(a3, file$F, 66, 8, 2676);
     			attr_dev(a4, "href", "/#/integrations/steam-games");
-    			add_location(a4, file$F, 66, 8, 2701);
+    			add_location(a4, file$F, 67, 8, 2783);
     			attr_dev(a5, "href", "/#/integrations/liga-futbol");
-    			add_location(a5, file$F, 67, 8, 2817);
+    			add_location(a5, file$F, 68, 8, 2899);
     			attr_dev(a6, "href", "/#/integrations/juegos-gratis");
-    			add_location(a6, file$F, 68, 8, 2935);
+    			add_location(a6, file$F, 69, 8, 3017);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -13977,14 +13992,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_10$5.name,
     		type: "slot",
-    		source: "(60:6) <CardBody>",
+    		source: "(61:6) <CardBody>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (56:4) <Card class="mb-3">
+    // (57:4) <Card class="mb-3">
     function create_default_slot_9$5(ctx) {
     	let cardheader;
     	let t;
@@ -14057,14 +14072,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_9$5.name,
     		type: "slot",
-    		source: "(56:4) <Card class=\\\"mb-3\\\">",
+    		source: "(57:4) <Card class=\\\"mb-3\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (76:8) <CardTitle>
+    // (77:8) <CardTitle>
     function create_default_slot_8$5(ctx) {
     	let h2;
 
@@ -14072,7 +14087,7 @@ var app = (function () {
     		c: function create() {
     			h2 = element("h2");
     			h2.textContent = "Integrado con las estadísticas sobre la esperanza de vida";
-    			add_location(h2, file$F, 75, 19, 3161);
+    			add_location(h2, file$F, 76, 19, 3243);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -14086,14 +14101,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8$5.name,
     		type: "slot",
-    		source: "(76:8) <CardTitle>",
+    		source: "(77:8) <CardTitle>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (75:6) <CardHeader>
+    // (76:6) <CardHeader>
     function create_default_slot_7$5(ctx) {
     	let cardtitle;
     	let current;
@@ -14141,14 +14156,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$5.name,
     		type: "slot",
-    		source: "(75:6) <CardHeader>",
+    		source: "(76:6) <CardHeader>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (81:47) <Button color="primary">
+    // (83:47) <Button color="primary">
     function create_default_slot_6$5(ctx) {
     	let t;
 
@@ -14168,14 +14183,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$5.name,
     		type: "slot",
-    		source: "(81:47) <Button color=\\\"primary\\\">",
+    		source: "(83:47) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (82:42) <Button color="primary">
+    // (84:42) <Button color="primary">
     function create_default_slot_5$5(ctx) {
     	let t;
 
@@ -14195,14 +14210,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$5.name,
     		type: "slot",
-    		source: "(82:42) <Button color=\\\"primary\\\">",
+    		source: "(84:42) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (83:46) <Button color="primary">
+    // (85:46) <Button color="primary">
     function create_default_slot_4$5(ctx) {
     	let t;
 
@@ -14222,14 +14237,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$5.name,
     		type: "slot",
-    		source: "(83:46) <Button color=\\\"primary\\\">",
+    		source: "(85:46) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (84:42) <Button color="primary">
+    // (86:42) <Button color="primary">
     function create_default_slot_3$c(ctx) {
     	let t;
 
@@ -14249,29 +14264,32 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$c.name,
     		type: "slot",
-    		source: "(84:42) <Button color=\\\"primary\\\">",
+    		source: "(86:42) <Button color=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (78:6) <CardBody>
+    // (79:6) <CardBody>
     function create_default_slot_2$d(ctx) {
     	let cardsubtitle;
     	let t0;
     	let cardtext;
     	let t1;
+    	let p;
     	let a0;
-    	let button0;
-    	let t2;
-    	let a1;
-    	let button1;
     	let t3;
-    	let a2;
-    	let button2;
+    	let a1;
+    	let button0;
     	let t4;
+    	let a2;
+    	let button1;
+    	let t5;
     	let a3;
+    	let button2;
+    	let t6;
+    	let a4;
     	let button3;
     	let current;
     	cardsubtitle = new CardSubtitle({ $$inline: true });
@@ -14319,42 +14337,52 @@ var app = (function () {
     			t0 = space();
     			create_component(cardtext.$$.fragment);
     			t1 = space();
+    			p = element("p");
     			a0 = element("a");
-    			create_component(button0.$$.fragment);
-    			t2 = space();
-    			a1 = element("a");
-    			create_component(button1.$$.fragment);
+    			a0.textContent = "Alejandro Sánchez Márquez";
     			t3 = space();
-    			a2 = element("a");
-    			create_component(button2.$$.fragment);
+    			a1 = element("a");
+    			create_component(button0.$$.fragment);
     			t4 = space();
+    			a2 = element("a");
+    			create_component(button1.$$.fragment);
+    			t5 = space();
     			a3 = element("a");
+    			create_component(button2.$$.fragment);
+    			t6 = space();
+    			a4 = element("a");
     			create_component(button3.$$.fragment);
-    			attr_dev(a0, "href", "/#/integrations/unemployment");
-    			add_location(a0, file$F, 80, 8, 3336);
-    			attr_dev(a1, "href", "/#/integrations/druguse");
-    			add_location(a1, file$F, 81, 8, 3449);
-    			attr_dev(a2, "href", "/#/integrations/hearthstone");
-    			add_location(a2, file$F, 82, 8, 3563);
-    			attr_dev(a3, "href", "/#/integrations/covideu");
-    			add_location(a3, file$F, 83, 8, 3679);
+    			attr_dev(a0, "href", "https://github.com/Alesanmar");
+    			add_location(a0, file$F, 81, 11, 3421);
+    			add_location(p, file$F, 81, 8, 3418);
+    			attr_dev(a1, "href", "/#/integrations/unemployment");
+    			add_location(a1, file$F, 82, 8, 3503);
+    			attr_dev(a2, "href", "/#/integrations/druguse");
+    			add_location(a2, file$F, 83, 8, 3616);
+    			attr_dev(a3, "href", "/#/integrations/hearthstone");
+    			add_location(a3, file$F, 84, 8, 3730);
+    			attr_dev(a4, "href", "/#/integrations/covideu");
+    			add_location(a4, file$F, 85, 8, 3846);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
     			insert_dev(target, t0, anchor);
     			mount_component(cardtext, target, anchor);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, a0, anchor);
-    			mount_component(button0, a0, null);
-    			insert_dev(target, t2, anchor);
-    			insert_dev(target, a1, anchor);
-    			mount_component(button1, a1, null);
+    			insert_dev(target, p, anchor);
+    			append_dev(p, a0);
     			insert_dev(target, t3, anchor);
-    			insert_dev(target, a2, anchor);
-    			mount_component(button2, a2, null);
+    			insert_dev(target, a1, anchor);
+    			mount_component(button0, a1, null);
     			insert_dev(target, t4, anchor);
+    			insert_dev(target, a2, anchor);
+    			mount_component(button1, a2, null);
+    			insert_dev(target, t5, anchor);
     			insert_dev(target, a3, anchor);
-    			mount_component(button3, a3, null);
+    			mount_component(button2, a3, null);
+    			insert_dev(target, t6, anchor);
+    			insert_dev(target, a4, anchor);
+    			mount_component(button3, a4, null);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -14411,16 +14439,18 @@ var app = (function () {
     			if (detaching) detach_dev(t0);
     			destroy_component(cardtext, detaching);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(a0);
-    			destroy_component(button0);
-    			if (detaching) detach_dev(t2);
-    			if (detaching) detach_dev(a1);
-    			destroy_component(button1);
+    			if (detaching) detach_dev(p);
     			if (detaching) detach_dev(t3);
-    			if (detaching) detach_dev(a2);
-    			destroy_component(button2);
+    			if (detaching) detach_dev(a1);
+    			destroy_component(button0);
     			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(a2);
+    			destroy_component(button1);
+    			if (detaching) detach_dev(t5);
     			if (detaching) detach_dev(a3);
+    			destroy_component(button2);
+    			if (detaching) detach_dev(t6);
+    			if (detaching) detach_dev(a4);
     			destroy_component(button3);
     		}
     	};
@@ -14429,14 +14459,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$d.name,
     		type: "slot",
-    		source: "(78:6) <CardBody>",
+    		source: "(79:6) <CardBody>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (74:4) <Card class="mb-3">
+    // (75:4) <Card class="mb-3">
     function create_default_slot_1$d(ctx) {
     	let cardheader;
     	let t;
@@ -14509,14 +14539,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$d.name,
     		type: "slot",
-    		source: "(74:4) <Card class=\\\"mb-3\\\">",
+    		source: "(75:4) <Card class=\\\"mb-3\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (88:2) <Button outline color="secondary" on:click="{pop}">
+    // (90:2) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$F(ctx) {
     	let t;
 
@@ -14536,7 +14566,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$F.name,
     		type: "slot",
-    		source: "(88:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(90:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -14638,11 +14668,11 @@ var app = (function () {
     			attr_dev(div1, "class", "svelte-egmbdb");
     			add_location(div1, file$F, 18, 2, 297);
     			attr_dev(div2, "class", "svelte-egmbdb");
-    			add_location(div2, file$F, 37, 2, 1069);
+    			add_location(div2, file$F, 38, 2, 1151);
     			attr_dev(div3, "class", "svelte-egmbdb");
-    			add_location(div3, file$F, 54, 2, 2037);
+    			add_location(div3, file$F, 55, 2, 2119);
     			attr_dev(div4, "class", "svelte-egmbdb");
-    			add_location(div4, file$F, 72, 2, 3090);
+    			add_location(div4, file$F, 73, 2, 3172);
     			attr_dev(main, "class", "svelte-egmbdb");
     			add_location(main, file$F, 13, 2, 235);
     		},
@@ -54185,7 +54215,7 @@ var app = (function () {
     			t1 = text(/*checkMSG*/ ctx[0]);
     			attr_dev(p, "class", "msgRed svelte-9c2r18");
     			set_style(p, "color", "#9d1c24");
-    			add_location(p, file$l, 167, 10, 6169);
+    			add_location(p, file$l, 167, 10, 6222);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -54272,18 +54302,18 @@ var app = (function () {
     			p = element("p");
     			create_component(button.$$.fragment);
     			attr_dev(div0, "class", "svelte-9c2r18");
-    			add_location(div0, file$l, 165, 4, 6118);
+    			add_location(div0, file$l, 165, 4, 6171);
     			attr_dev(div1, "id", "chartDiv");
-    			set_style(div1, "max-width", "740px");
-    			set_style(div1, "height", "400px");
+    			set_style(div1, "max-width", "800px");
+    			set_style(div1, "height", "500px");
     			set_style(div1, "margin", "0px auto");
     			attr_dev(div1, "class", "svelte-9c2r18");
-    			add_location(div1, file$l, 171, 4, 6268);
+    			add_location(div1, file$l, 171, 4, 6321);
     			attr_dev(p, "align", "center");
     			attr_dev(p, "class", "svelte-9c2r18");
-    			add_location(p, file$l, 172, 4, 6350);
+    			add_location(p, file$l, 172, 4, 6403);
     			attr_dev(main, "class", "svelte-9c2r18");
-    			add_location(main, file$l, 164, 0, 6106);
+    			add_location(main, file$l, 164, 0, 6159);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -54514,7 +54544,7 @@ var app = (function () {
     		jscharting.chart("chartDiv", {
     			debug: true,
     			type: "column aqua",
-    			title_label_text: "SmokerVSRental",
+    			title_label_text: "Datos conjuntos de renta/metros/salarios medios y fumadores diarios",
     			yAxis: { label_text: "Unidades" },
     			xAxis: { label_text: "Comunidad Autónoma" },
     			series
@@ -54596,7 +54626,7 @@ var app = (function () {
     const { Object: Object_1$3, console: console_1$j } = globals;
     const file$k = "src\\front\\smokersStats\\integrations\\Hostelries.svelte";
 
-    // (363:22) <Button outline color="primary" on:click={pop}>
+    // (156:22) <Button outline color="primary" on:click={pop}>
     function create_default_slot$k(ctx) {
     	let t;
 
@@ -54616,7 +54646,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$k.name,
     		type: "slot",
-    		source: "(363:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
+    		source: "(156:22) <Button outline color=\\\"primary\\\" on:click={pop}>",
     		ctx
     	});
 
@@ -54651,13 +54681,13 @@ var app = (function () {
     			p = element("p");
     			create_component(button.$$.fragment);
     			attr_dev(div, "id", "chartDiv");
-    			set_style(div, "max-width", "740px");
-    			set_style(div, "height", "400px");
+    			set_style(div, "max-width", "540");
+    			set_style(div, "height", "500px");
     			set_style(div, "margin", "0px auto");
-    			add_location(div, file$k, 361, 4, 17854);
+    			add_location(div, file$k, 154, 4, 5754);
     			attr_dev(p, "align", "center");
-    			add_location(p, file$k, 362, 4, 17941);
-    			add_location(main, file$k, 360, 0, 17842);
+    			add_location(p, file$k, 155, 4, 5839);
+    			add_location(main, file$k, 153, 0, 5742);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -54817,7 +54847,7 @@ var app = (function () {
 
     		//Se van iterando las opciones. Luego fijando un smokersData, se checkea la igualdad con hostelData
     		for (let i = 0; i < tipos.length; i++) {
-    			var tablaPoint = [];
+    			let tablaPoint = [];
     			let objSmoker = new Object();
     			objSmoker.name = tipos[i];
 
@@ -54858,211 +54888,25 @@ var app = (function () {
     		console.log(dataFin);
 
     		/////////////////////////////////GRAPH
-    		/*
-    //Convierte los datos en un gráfico 
-    var chart = JSC.chart('chartDiv', { 
-        degug: true,
-        defaultSeries_type: 'horizontal column', 
-        legend_description: 'chart legend', 
-        legend_defaultEntry_description: '%name', 
-        toolbar_items_export_description: 'export menu', 
-        defaultPoint_description: '%name %value', 
-        series: dataFin
-    }); 
-    */
-    		var img = "data:image/png;base64,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";
-
-    		var plots = tablaPoint;
-    		var cols = 40, rows = 10;
-
-    		var cdata = {
-    			graphset: [
-    				{
-    					x: 0,
-    					y: 0,
-    					width: 18 * cols + 40,
-    					height: "100%",
-    					type: "scatter",
-    					title: {
-    						text: "Top 10 United States Largest Private Employers (as of 2020)"
-    					},
-    					plotarea: {
-    						maskTolerance: [99, 99],
-    						margin: "50 20 100 20"
-    					},
-    					legend: {
-    						offsetY: 10,
-    						layout: "2x5",
-    						margin: "auto auto 0 auto",
-    						height: 80,
-    						borderWidth: 0,
-    						marker: {
-    							type: "rectangle",
-    							width: 16,
-    							height: 32,
-    							backgroundColor: "none",
-    							borderWidth: 0
-    						}
-    					},
-    					scaleX: { visible: false },
-    					scaleY: { mirrored: true, visible: false },
-    					tooltip: {
-    						backgroundColor: "#eee",
-    						borderColor: "#333",
-    						fontSize: 17,
-    						padding: 20,
-    						fontWeight: null,
-    						thousandsSeparator: ",",
-    						text: "<b>%plot-text:</b> %data-employees employees (%data-percent%)"
-    					},
-    					plot: {
-    						animation: {
-    							speed: 150,
-    							effect: 1,
-    							method: 0,
-    							sequence: 1
-    						},
-    						marker: {
-    							backgroundColor: "none",
-    							type: "rectangle",
-    							width: 16,
-    							height: 32
-    						},
-    						hoverMarker: { type: "none", visible: false }
-    					},
-    					series: []
-    				},
-    				{
-    					x: 18 * cols + 40,
-    					y: 0,
-    					width: 300,
-    					height: "100%",
-    					type: "hbar",
-    					plotarea: { margin: "20 20 70 100" },
-    					tooltip: { visible: false },
-    					scaleX: { visible: false },
-    					scaleY: {
-    						lineWidth: 0,
-    						guide: { visible: false },
-    						item: { visible: false },
-    						tick: { visible: false },
-    						label: {
-    							align: "left",
-    							text: "Median annual pay",
-    							padding: 0,
-    							fontSize: 15,
-    							color: "#000"
-    						}
-    					},
-    					source: {
-    						text: "Source: API en rapidapi",
-    						align: "left",
-    						target: "_blank",
-    						url: "https://iata-and-icao-codes.p.rapidapi.com/airlines"
-    					},
-    					plot: {
-    						animation: {
-    							speed: 150,
-    							effect: 4,
-    							method: 0,
-    							sequence: 1
-    						},
-    						barSpace: 0.1,
-    						barsSpaceLeft: 0.1,
-    						barsSpaceRight: 0.1,
-    						valueBox: [
-    							{
-    								placement: "top-out",
-    								rules: [
-    									{
-    										rule: "%node-value > 25000",
-    										placement: "top-in",
-    										color: "#fff"
-    									}
-    								],
-    								thousandsSeparator: ",",
-    								text: "$%node-value"
-    							},
-    							{
-    								placement: "bottom-out",
-    								text: "%plot-text",
-    								color: "#000"
-    							}
-    						]
-    					},
-    					series: []
+    		jscharting.chart("chartDiv", {
+    			debug: true,
+    			type: "radar polar column",
+    			yAxis_alternateGridFill: "#f4f4f4",
+    			legend_visible: true,
+    			title: {
+    				position: "center",
+    				label: {
+    					text: "Datos conjuntos por comunidad autónoma (en millones)"
     				}
-    			]
-    		};
-
-    		// calculate number of items per plot
-    		var total_employees = 0;
-
-    		for (var p = 0; p < plots.length; p++) {
-    			total_employees += plots[p].employees;
-    		}
-
-    		var total_items = 0;
-
-    		for (var p = 0; p < plots.length; p++) {
-    			var pc = plots[p].employees / total_employees;
-    			var items = Math.round(cols * rows * pc);
-
-    			if (p === plots.length - 1) {
-    				// avoid rounding conflicts
-    				plots[p].items = cols * rows - total_items;
-    			} else {
-    				plots[p].items = items;
-    			}
-
-    			plots[p].dataPercent = (100 * pc).toFixed(2);
-    			total_items += items;
-    		}
-
-    		var col = 0, row = 0;
-
-    		for (var p = 0; p < plots.length; p++) {
-    			cdata.graphset[1].series.push({
-    				text: plots[p].text,
-    				values: [plots[p].medianpay],
-    				backgroundColor: plots[p].color
-    			});
-
-    			cdata.graphset[0].series.push({
-    				text: plots[p].text,
-    				dataPercent: plots[p].dataPercent,
-    				dataEmployees: plots[p].employees,
-    				tooltip: { color: plots[p].color },
-    				marker: {
-    					backgroundRepeat: "no-repeat",
-    					backgroundImage: img,
-    					backgroundPosition: -p * 16 + "px 0px"
-    				},
-    				legendMarker: {
-    					backgroundRepeat: "no-repeat",
-    					backgroundImage: img,
-    					backgroundPosition: -p * 16 + "px 0px"
-    				},
-    				values: []
-    			});
-
-    			for (var n = 0; n < plots[p].items; n++) {
-    				cdata.graphset[0].series[p].values.push([col, row]);
-    				col++;
-
-    				if (col === cols) {
-    					col = 0;
-    					row++;
+    			},
+    			defaultSeries: {
+    				opacity: 0.7,
+    				defaultPoint_complete: {
+    					fill: ["white", 0.3],
+    					hatch_style: "dotted-grid"
     				}
-    			}
-    		}
-
-    		zingchart.render({
-    			id: "myChart",
-    			width: "100%",
-    			height: "100%",
-    			output: "svg",
-    			data: cdata
+    			},
+    			series: dataFin
     		});
     	}
 
@@ -55079,7 +54923,6 @@ var app = (function () {
     		JSC,
     		pop,
     		Button,
-    		Smokers,
     		visible,
     		color,
     		checkMSG,
@@ -55167,7 +55010,7 @@ var app = (function () {
     			t1 = text(/*checkMSG*/ ctx[2]);
     			attr_dev(p, "class", "msgRed svelte-1duq9zo");
     			set_style(p, "color", "#9d1c24");
-    			add_location(p, file$j, 186, 10, 6414);
+    			add_location(p, file$j, 186, 10, 6415);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -55242,10 +55085,10 @@ var app = (function () {
     			t2 = text(t2_value);
     			t3 = space();
     			attr_dev(td0, "class", "svelte-1duq9zo");
-    			add_location(td0, file$j, 207, 20, 7124);
+    			add_location(td0, file$j, 207, 20, 7125);
     			attr_dev(td1, "class", "svelte-1duq9zo");
-    			add_location(td1, file$j, 208, 20, 7167);
-    			add_location(tr, file$j, 206, 16, 7098);
+    			add_location(td1, file$j, 208, 20, 7168);
+    			add_location(tr, file$j, 206, 16, 7099);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -55369,38 +55212,38 @@ var app = (function () {
     			t13 = space();
     			br4 = element("br");
     			attr_dev(div0, "class", "svelte-1duq9zo");
-    			add_location(div0, file$j, 184, 4, 6363);
+    			add_location(div0, file$j, 184, 4, 6364);
     			attr_dev(div1, "id", "chartDiv");
     			set_style(div1, "max-width", "740px");
     			set_style(div1, "height", "400px");
     			set_style(div1, "margin", "0px auto");
     			attr_dev(div1, "class", "svelte-1duq9zo");
-    			add_location(div1, file$j, 190, 4, 6513);
-    			add_location(br0, file$j, 191, 4, 6595);
+    			add_location(div1, file$j, 190, 4, 6514);
+    			add_location(br0, file$j, 191, 4, 6596);
     			attr_dev(p0, "align", "center");
     			attr_dev(p0, "class", "svelte-1duq9zo");
-    			add_location(p0, file$j, 192, 4, 6605);
-    			add_location(br1, file$j, 193, 4, 6694);
-    			add_location(br2, file$j, 194, 4, 6704);
+    			add_location(p0, file$j, 192, 4, 6606);
+    			add_location(br1, file$j, 193, 4, 6695);
+    			add_location(br2, file$j, 194, 4, 6705);
     			attr_dev(p1, "class", "svelte-1duq9zo");
-    			add_location(p1, file$j, 195, 4, 6714);
-    			add_location(br3, file$j, 196, 4, 6780);
+    			add_location(p1, file$j, 195, 4, 6715);
+    			add_location(br3, file$j, 196, 4, 6781);
     			attr_dev(th0, "class", "svelte-1duq9zo");
-    			add_location(th0, file$j, 200, 16, 6865);
+    			add_location(th0, file$j, 200, 16, 6866);
     			attr_dev(th1, "class", "svelte-1duq9zo");
-    			add_location(th1, file$j, 201, 16, 6929);
-    			add_location(tr, file$j, 199, 12, 6843);
-    			add_location(thead, file$j, 198, 8, 6822);
-    			add_location(tbody, file$j, 204, 8, 7031);
+    			add_location(th1, file$j, 201, 16, 6930);
+    			add_location(tr, file$j, 199, 12, 6844);
+    			add_location(thead, file$j, 198, 8, 6823);
+    			add_location(tbody, file$j, 204, 8, 7032);
     			attr_dev(table, "align", "center");
     			attr_dev(table, "class", "svelte-1duq9zo");
-    			add_location(table, file$j, 197, 4, 6790);
-    			add_location(br4, file$j, 213, 4, 7269);
+    			add_location(table, file$j, 197, 4, 6791);
+    			add_location(br4, file$j, 213, 4, 7270);
     			set_style(main, "background-image", "url('images/fondoCan.png')");
     			set_style(main, "background-repeat", "no-repeat");
     			set_style(main, "background-position", "center");
     			attr_dev(main, "class", "svelte-1duq9zo");
-    			add_location(main, file$j, 183, 0, 6236);
+    			add_location(main, file$j, 183, 0, 6237);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -55659,7 +55502,7 @@ var app = (function () {
     		/////////////////////////////////GRAPH
     		//Convierte los datos en un gráfico 
     		var chart = jscharting.chart("chartDiv", {
-    			debug: true,
+    			debug: false,
     			type: "marker",
     			title_label_text: "Días de vacaciones en regiones de Canadá",
     			legend_visible: false,
@@ -56841,8 +56684,8 @@ var app = (function () {
     			attr_dev(div0, "class", "svelte-1duq9zo");
     			add_location(div0, file$h, 181, 4, 6231);
     			attr_dev(div1, "id", "chartDiv");
-    			set_style(div1, "max-width", "740px");
-    			set_style(div1, "height", "400px");
+    			set_style(div1, "max-width", "850px");
+    			set_style(div1, "height", "500px");
     			set_style(div1, "margin", "0px auto");
     			attr_dev(div1, "class", "svelte-1duq9zo");
     			add_location(div1, file$h, 188, 4, 6383);
@@ -63088,7 +62931,7 @@ var app = (function () {
     const { console: console_1$4 } = globals;
     const file$5 = "src\\front\\GroupGraph.svelte";
 
-    // (211:20) <Button outline color="secondary" on:click="{pop}">
+    // (217:20) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$5(ctx) {
     	let t;
 
@@ -63108,7 +62951,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$5.name,
     		type: "slot",
-    		source: "(211:20) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(217:20) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -63178,31 +63021,31 @@ var app = (function () {
     			p1 = element("p");
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$5, 189, 2, 6465);
+    			add_location(script0, file$5, 195, 2, 6680);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$5, 190, 2, 6534);
+    			add_location(script1, file$5, 196, 2, 6749);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$5, 191, 2, 6613);
+    			add_location(script2, file$5, 197, 2, 6828);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/highcharts-more.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$5, 192, 2, 6689);
+    			add_location(script3, file$5, 198, 2, 6904);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$5, 193, 2, 6763);
+    			add_location(script4, file$5, 199, 2, 6978);
     			if (script5.src !== (script5_src_value = "https://code.highcharts.com/modules/dumbbell.js")) attr_dev(script5, "src", script5_src_value);
-    			add_location(script5, file$5, 194, 2, 6841);
+    			add_location(script5, file$5, 200, 2, 7056);
     			if (script6.src !== (script6_src_value = "https://code.highcharts.com/modules/lollipop.js")) attr_dev(script6, "src", script6_src_value);
-    			add_location(script6, file$5, 195, 2, 6916);
+    			add_location(script6, file$5, 201, 2, 7131);
     			if (script7.src !== (script7_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script7, "src", script7_src_value);
-    			add_location(script7, file$5, 196, 2, 6991);
+    			add_location(script7, file$5, 202, 2, 7206);
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-1dn2qq3");
-    			add_location(div, file$5, 204, 4, 7165);
+    			add_location(div, file$5, 210, 4, 7380);
     			attr_dev(p0, "class", "highcharts-description");
-    			add_location(p0, file$5, 205, 4, 7197);
+    			add_location(p0, file$5, 211, 4, 7412);
     			attr_dev(figure, "class", "highcharts-figure svelte-1dn2qq3");
-    			add_location(figure, file$5, 203, 2, 7125);
+    			add_location(figure, file$5, 209, 2, 7340);
     			attr_dev(p1, "align", "center");
-    			add_location(p1, file$5, 210, 2, 7454);
-    			add_location(main, file$5, 201, 0, 7113);
+    			add_location(p1, file$5, 216, 2, 7669);
+    			add_location(main, file$5, 207, 0, 7328);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -63319,6 +63162,12 @@ var app = (function () {
     		alcoholData = await resAlcohol.json();
     		lifeData = await resLife.json();
     		console.log("procesing all data....");
+
+    		if ((resWeight || resSmokers || resAlcohol || resLife) == 0) {
+    			console.log("ERROR MSG");
+    			alert("Por favor, primero cargue los datos de alguna API");
+    			pop();
+    		}
 
     		// CONDICIONES PARA CADA API CON UNA VARIABLE BASADA EN EL PORCENTAJE
     		//WEIGHTS-STATS

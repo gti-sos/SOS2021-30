@@ -186,7 +186,7 @@
       </div>
 
 
-    <div id="chartDiv" style="max-width: 740px;height: 400px;margin: 0px auto"/>
+    <div id="chartDiv" style="max-width: 850px;height: 500px;margin: 0px auto"/>
     <br>
 
     <p align="center"><Button outline color="primary" on:click={pop}>Atrás</Button></p>

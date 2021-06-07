@@ -385,41 +385,11 @@
             <th>Búsqueda por estadística de no fumadores</th>
             <tr>
                 <td><input type="text" placeholder="Comunidad autónoma" bind:value={sProvince}/></td>
-                <td
-                    ><input
-                        type="number"
-                        placeholder="2075"
-                        bind:value={sYear}
-                    /></td
-                >
-                <td
-                    ><input
-                        type="number"
-                        placeholder="0000"
-                        bind:value={sDaily}
-                    /></td
-                >
-                <td
-                    ><input
-                        type="number"
-                        placeholder="0000"
-                        bind:value={sOcasional}
-                    /></td
-                >
-                <td
-                    ><input
-                        type="number"
-                        placeholder="0000"
-                        bind:value={sExsmoker}
-                    /></td
-                >
-                <td
-                    ><input
-                        type="number"
-                        placeholder="0000"
-                        bind:value={sNonsmoker}
-                    /></td
-                >
+                <td><input type="number" placeholder="2075" bind:value={sYear}/></td>
+                <td><input type="number" placeholder="0000" bind:value={sDaily}/></td>
+                <td><input type="number" placeholder="0000" bind:value={sOcasional}/></td>
+                <td><input type="number" placeholder="0000" bind:value={sExsmoker}/></td>
+                <td><input type="number" placeholder="0000" bind:value={sNonsmoker}/></td>
             </tr>
         </Table>
 
@@ -543,7 +513,7 @@
             <Button color="danger" on:click={deleteALL}>Eliminar todo</Button>
             <Button outline color="primary" on:click={getPreviewPage}>Página Anterior</Button>
             <Button outline color="primary" on:click={getNextPage}>Página Siguiente</Button>
-            <a href="./#/smokers-graph"><Button color="info">Gráfico</Button></a>
+            <a href="./#/smokers-graph"><Button color="info">Gráficos</Button></a>
             <a href="./#/integrations"><Button color="info">Ir a integraciones</Button></a>
         </p>
         <br>

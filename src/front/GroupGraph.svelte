@@ -46,6 +46,12 @@
         
      
         console.log("procesing all data....");
+
+        if((resWeight || resSmokers || resAlcohol || resLife) == 0){
+            console.log("ERROR MSG");
+            alert("Por favor, primero cargue los datos de alguna API");
+            pop();
+        }
      
         // CONDICIONES PARA CADA API CON UNA VARIABLE BASADA EN EL PORCENTAJE
         //WEIGHTS-STATS
