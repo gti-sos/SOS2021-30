@@ -108,11 +108,11 @@ var counter = 0;
     await page.screenshot({path: path + "LineAlcohol.png"});
     console.log("Captura de grafico line tomada..."); 
 
-    await page.click("body > main > main > a:nth-child(5) > button"); //Falla
+    await page.click("body > main > main > a:nth-child(5) > button");
     console.log("Pulsado botón para ver gráfica tipo item");
     await page.screenshot({path: path + "graficaParlamentoAlcohol.png"});
     console.log("Captura de grafico cilindros tomada...");
-    await page.click("body > main > main > button");
+    await page.click("body > main > main > button"); //Falla
     console.log("Volviendo a la página de datos Alcohol");
     
     if(datosAlcohol != 11){
