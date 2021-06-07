@@ -98,7 +98,7 @@
                 data: weightObesity,
                 showInLegend: false
                 }, {
-                    name: 'Datos de estrñes de la poblacion(ratio/media)',
+                    name: 'Datos de estrés de la poblacion(ratio/media)',
                     colorByPoint: true,
                     data: stressPoblation,
                     showInLegend: false
