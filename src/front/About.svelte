@@ -42,7 +42,7 @@
         <CardTitle><h2>Vídeo con las estadísticas sobre IMC</h2></CardTitle>
       </CardHeader>
       <CardBody>
-
+        <li type="circle"><a href="https://www.youtube.com/watch?v=5medEV8SQ5k">Enlace al vídeo explicativo IMC(Jesús Ruiz Domínguez)</a></li>
       </CardBody>
     </Card>
   </div>
