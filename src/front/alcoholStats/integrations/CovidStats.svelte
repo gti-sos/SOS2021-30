@@ -34,7 +34,7 @@
       console.log(`We have received ${covidStats.length} covid-stats.`);
       console.log("Ok");
     } else {
-      errorMsg = "Error recuperando datos de ansiedad";
+      errorMsg = "Error recuperando datos de coronavirus";
       console.log("ERROR!" + errorMsg);
     }
   }

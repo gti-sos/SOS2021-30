@@ -1,12 +1,12 @@
 <script>
   import { pop }from "svelte-spa-router";
   import { Button } from "sveltestrap";
-  import Dygraph from 'dygraphs';
   //Uso API grupo 11
   const BASE_API_PATH = "/api/v2";
   var povertyStats = [];
   var alcoholData = [];
   var errorMsg = "";
+  
 
   console.log("Cargando página...");
 
@@ -53,31 +53,71 @@
     for (let index = 0; index < povertyStats.length; index++) {
       mediaPobreza.push(povertyStats[index].people_in_risk_of_poverty);
     }// Calcular media y representarlo en una linea en el grafico , ampliar los campos del grafico a 4
-    let arrayDatos = [];
+    let alcoholValue = [];
+    let povertyValue = [];
     for (let index = 0; index < alcoholData.length; index++) {
-      let separa = alcoholData[index].ageRange.split('-'); 
-      let parseo = parseInt(separa[1]);
-      arrayDatos.push([parseo,alcoholData[index].alcoholPrematureDeath,povertyStats[index].percentage_risk_of_poverty]);
+      alcoholValue.push(alcoholData[index].alcoholPrematureDeath);
+      povertyValue.push(povertyStats[index].percentage_risk_of_poverty);
       
-    } // Etiqueta (Valorx) Numero asociado al rango de edad, Dato grafica muertes , Dato grafica ansiedad
+    }
+    let suma = 0;
+    let suma1 = 0;
+    for (let index = 0; index < alcoholValue.length; index++) {
+      suma += alcoholValue[index];
+      suma1 += povertyValue[index];
+    }
+    let mediaAlcohol = parseInt(suma/alcoholValue.length);
+    let mediaPoverty = parseInt(suma1/povertyValue.length);
+    console.log("Medias");
+    console.log(mediaAlcohol);
+    console.log(mediaPoverty);
+
     console.log("Array de datos para el grafo:");
-    console.log(arrayDatos);
-    new Dygraph(document.getElementById("grafo1"),arrayDatos,
-    { 
-            labels:["RangoEdad","Muertes","Porcentaje riesgo de pobreza mundial"],
-            legend: 'always',
-            title: 'Muertes prematuras y ansiedad España 2017',
-            titleHeight: 32,
-            ylabel: 'Valor',
-            xlabel: 'Rango de edad'
-  
-          });
+    console.log(alcoholValue);
+    console.log(povertyValue);
+    Highcharts.chart('grafo1', {
+    accessibility: {
+        point: {
+            valueDescriptionFormat: '{point.name}: {point.longDescription}.'
+        }
+    },
+    series: [{
+        type: 'venn',
+        data: [{
+          sets: ['A'],
+            value: 2,//mediaPoverty
+            name: 'Riesgo de pobreza',
+            longDescription: 'Riesgo de pobreza mundial.'
+        }, {
+          sets: ['B'],
+            value: 4,//mediaAlcohol
+            name: 'Consumo de alcohol',
+            longDescription: 'Consumo de alcohol es España año 2017.'
+        }, {
+            sets: ['A', 'B'],
+            value: 1
+        }]
+    }],
+    tooltip: {
+        headerFormat:
+            '<span style="color:{point.color}">\u2022</span> ' +
+            '<span style="font-size: 14px"> {point.point.name}</span><br/>',
+        pointFormat: '{point.longDescription}<br><span style="font-size: 10px"></span>'
+    },
+    title: {
+        text: 'Relación entre el riesgo de pobreza y el consumo de alcohol'
+    }
+});
   };
 
 </script>
 
 <svelte:head>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js" on:load={loadGraph}></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/venn.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js" on:load={loadGraph}></script>
 </svelte:head>
 
 <main>
@@ -87,17 +127,9 @@
   {#if errorMsg}
     <p>{errorMsg}</p>
   {:else}
-  <style>.dygraph-legend { text-align: right; background: none; }
-      #grafo1 .dygraph-label { font-family: Georgia, Verdana, serif; }
-
-      #grafo1 .dygraph-title { font-size: 20px; text-shadow: gray 2px 2px 2px; margin: -30px 0px 0px 50px}
-
-      #grafo1 .dygraph-ylabel { font-size: 18px; text-shadow: gray -2px 2px 2px; margin: 0px 0px 0px 90px }
-
-      #grafo1 .dygraph-xlabel { font-size: 18px; text-shadow: gray -2px 2px 2px; margin: 20px 0px 0px 0px }
-
-      .chart { border: 1px hidden black; margin: 50px 5px 5px 400px; padding: 2px; }
-  </style>
+  <style>
+    .chart { border: 1px hidden black; margin: 50px 5px 5px 400px; padding: 2px; }
+</style>
   <div  id="grafo1" class="chart" style="width:600px; height:300px;"></div>
   <br>
   <br>
