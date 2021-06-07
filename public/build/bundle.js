@@ -60066,10 +60066,12 @@ var app = (function () {
     	let t2;
     	let div;
     	let t3;
-    	let p;
+    	let p0;
     	let t5;
-    	let h7;
+    	let p1;
     	let t7;
+    	let h7;
+    	let t9;
     	let button;
     	let current;
     	let mounted;
@@ -60101,12 +60103,15 @@ var app = (function () {
     			t2 = space();
     			div = element("div");
     			t3 = space();
-    			p = element("p");
-    			p.textContent = "Gráfico en el que se muestra la suma de los porcentajes del peso normal en los años 2014 y 2017 en cada comunidad autónoma de España";
+    			p0 = element("p");
+    			p0.textContent = "Gráfico en el que se muestra la suma de los porcentajes del peso normal en los años 2014 y 2017 en cada comunidad autónoma de España";
     			t5 = space();
+    			p1 = element("p");
+    			p1.textContent = "En caso de que no se muestre la gráfica correctamente, volver a la página anterior y entrar de nuevo";
+    			t7 = space();
     			h7 = element("h7");
     			h7.textContent = "Gráfica diseñada con Morris.js - type: 'Donut'";
-    			t7 = space();
+    			t9 = space();
     			create_component(button.$$.fragment);
     			attr_dev(link0, "href", "https://fonts.googleapis.com/css?family=Lato");
     			attr_dev(link0, "rel", "stylesheet");
@@ -60125,9 +60130,11 @@ var app = (function () {
     			attr_dev(div, "id", "AwesomeChart");
     			set_style(div, "height", "250px");
     			add_location(div, file$d, 45, 8, 1732);
-    			add_location(p, file$d, 47, 8, 1800);
+    			add_location(p0, file$d, 47, 8, 1800);
+    			set_style(p1, "color", "red");
+    			add_location(p1, file$d, 48, 8, 1949);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$d, 49, 8, 1951);
+    			add_location(h7, file$d, 49, 8, 2087);
     			add_location(main, file$d, 42, 4, 1614);
     		},
     		l: function claim(nodes) {
@@ -60145,10 +60152,12 @@ var app = (function () {
     			append_dev(main, t2);
     			append_dev(main, div);
     			append_dev(main, t3);
-    			append_dev(main, p);
+    			append_dev(main, p0);
     			append_dev(main, t5);
-    			append_dev(main, h7);
+    			append_dev(main, p1);
     			append_dev(main, t7);
+    			append_dev(main, h7);
+    			append_dev(main, t9);
     			mount_component(button, main, null);
     			current = true;
 
@@ -60285,7 +60294,7 @@ var app = (function () {
     const { console: console_1$b } = globals;
     const file$c = "src\\front\\weightsStats\\GraphCylinder.svelte";
 
-    // (100:4) <Button outline color="secondary" on:click="{pop}">
+    // (101:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$c(ctx) {
     	let t;
 
@@ -60305,7 +60314,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$c.name,
     		type: "slot",
-    		source: "(100:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(101:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -60330,10 +60339,12 @@ var app = (function () {
     	let figure;
     	let div;
     	let t1;
-    	let p;
+    	let p0;
     	let t3;
-    	let h7;
+    	let p1;
     	let t5;
+    	let h7;
+    	let t7;
     	let button;
     	let current;
     	let mounted;
@@ -60364,12 +60375,15 @@ var app = (function () {
     			figure = element("figure");
     			div = element("div");
     			t1 = space();
-    			p = element("p");
-    			p.textContent = "Gráfico de cilindros 3D en el que se ve representado el porcentaje por comunidades \r\n            autónomas en los años 2014 y 2017 el IMC";
+    			p0 = element("p");
+    			p0.textContent = "Gráfico de cilindros 3D en el que se ve representado el porcentaje por comunidades \r\n            autónomas en los años 2014 y 2017 el IMC";
     			t3 = space();
+    			p1 = element("p");
+    			p1.textContent = "En caso de que no se muestre la gráfica correctamente, volver a la página anterior y entrar de nuevo";
+    			t5 = space();
     			h7 = element("h7");
     			h7.textContent = "Gráfica diseñada con Highcharts - type: 'cylinder'";
-    			t5 = space();
+    			t7 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
     			add_location(script0, file$c, 79, 4, 2214);
@@ -60386,12 +60400,14 @@ var app = (function () {
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-1955777");
     			add_location(div, file$c, 92, 8, 2774);
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$c, 93, 8, 2810);
+    			attr_dev(p0, "class", "highcharts-description");
+    			add_location(p0, file$c, 93, 8, 2810);
     			attr_dev(figure, "class", "highcharts-figure");
     			add_location(figure, file$c, 91, 4, 2730);
+    			set_style(p1, "color", "red");
+    			add_location(p1, file$c, 98, 4, 3026);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$c, 98, 4, 3026);
+    			add_location(h7, file$c, 99, 4, 3160);
     			add_location(main, file$c, 89, 0, 2716);
     		},
     		l: function claim(nodes) {
@@ -60409,10 +60425,12 @@ var app = (function () {
     			append_dev(main, figure);
     			append_dev(figure, div);
     			append_dev(figure, t1);
-    			append_dev(figure, p);
+    			append_dev(figure, p0);
     			append_dev(main, t3);
-    			append_dev(main, h7);
+    			append_dev(main, p1);
     			append_dev(main, t5);
+    			append_dev(main, h7);
+    			append_dev(main, t7);
     			mount_component(button, main, null);
     			current = true;
 
@@ -61896,7 +61914,7 @@ var app = (function () {
     const { console: console_1$6 } = globals;
     const file$7 = "src\\front\\weightsStats\\integrations\\integracionExt3.svelte";
 
-    // (85:4) <Button outline color="secondary" on:click="{pop}">
+    // (86:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$7(ctx) {
     	let t;
 
@@ -61916,7 +61934,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$7.name,
     		type: "slot",
-    		source: "(85:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(86:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -61945,8 +61963,10 @@ var app = (function () {
     	let t8;
     	let a;
     	let t10;
-    	let h7;
+    	let p3;
     	let t12;
+    	let h7;
+    	let t14;
     	let button;
     	let current;
     	let mounted;
@@ -61988,9 +62008,12 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "https://apifootball.com/";
     			t10 = space();
+    			p3 = element("p");
+    			p3.textContent = "En caso de que no se muestre la gráfica correctamente, volver a la página anterior y entrar de nuevo";
+    			t12 = space();
     			h7 = element("h7");
     			h7.textContent = "Gráfica diseñada con Morris.js - type: 'Bar'";
-    			t12 = space();
+    			t14 = space();
     			create_component(button.$$.fragment);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css");
@@ -62011,8 +62034,10 @@ var app = (function () {
     			attr_dev(a, "href", "https://apifootball.com/");
     			add_location(a, file$7, 82, 27, 4298);
     			add_location(p2, file$7, 82, 4, 4275);
+    			set_style(p3, "color", "red");
+    			add_location(p3, file$7, 83, 4, 4371);
     			set_style(h7, "color", "gray");
-    			add_location(h7, file$7, 83, 4, 4371);
+    			add_location(h7, file$7, 84, 4, 4505);
     			add_location(main, file$7, 75, 0, 3825);
     		},
     		l: function claim(nodes) {
@@ -62037,8 +62062,10 @@ var app = (function () {
     			append_dev(p2, t8);
     			append_dev(p2, a);
     			append_dev(main, t10);
-    			append_dev(main, h7);
+    			append_dev(main, p3);
     			append_dev(main, t12);
+    			append_dev(main, h7);
+    			append_dev(main, t14);
     			mount_component(button, main, null);
     			current = true;
 

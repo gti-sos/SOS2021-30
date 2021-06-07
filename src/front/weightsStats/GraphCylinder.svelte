@@ -96,6 +96,7 @@
             autónomas en los años 2014 y 2017 el IMC</p>
     </figure>
     
+    <p style= "color: red;">En caso de que no se muestre la gráfica correctamente, volver a la página anterior y entrar de nuevo</p>
     <h7 style="color: gray;">Gráfica diseñada con Highcharts - type: 'cylinder'</h7>
     <Button outline color="secondary" on:click="{pop}">Atrás</Button>
  

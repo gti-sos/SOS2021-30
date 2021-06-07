@@ -81,6 +81,7 @@
         goles a favor y goles en contra de cada uno.
     </p>
     <p>Datos obtenidos de: <a href="https://apifootball.com/">https://apifootball.com/</a></p>
+    <p style= "color: red;">En caso de que no se muestre la gráfica correctamente, volver a la página anterior y entrar de nuevo</p>
     <h7 style="color: gray;">Gráfica diseñada con Morris.js - type: 'Bar'</h7>    
     <Button outline color="secondary" on:click="{pop}">Atrás</Button>
 </main>
