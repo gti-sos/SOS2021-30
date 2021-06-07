@@ -51,30 +51,40 @@
         //WEIGHTS-STATS
         if(resWeight.ok){
             weightData.forEach(stat => {
+                if(stat.year == "2017"){
                 weightChartInfo.push(stat.provinces+"/"+stat.year);
                 weightchartNormalWeight.push(stat["normal_weight"]);
+                }
                 //AÑADIR UN DATO DE CADA UNA DE LAS APIs (preferiblemente un porcentaje para que todo tenga relacion y se vea bien el grafico)
             });
         }
         //SMOKERS-STATS
         if(resSmokers.ok){
             smokersData.forEach(stat => {
+                if(stat.year == "2017"){
                 smokerChartInfo.push(stat.province+"/"+stat.year);
                 smokerChartDaily.push(stat["dailySmoker"]);
+                }
+                smokerChartDaily.sort();
             });
         }
         //ALCOHOL-STATS
         if (resAlcohol.ok) {
             alcoholData.forEach(stat =>{
+                if(stat.year == "2017"){
                 alcoholChartInfo.push(stat.country+"/"+stat.year);
                 alcoholChartPrematureDeath.push(stat["alcoholPrematureDeath"]);
+                }
             })
         }
         //LIFE-STATS
         if(resLife.ok){
             lifeData.forEach(stat => {
+                if(stat.year == "2017"){
                 lifeChartInfo.push(stat.province+"/"+stat.year);
                 lifeChartAverageLifeExpectancy.push(stat["averageLifeExpectancy"]);
+                }
+
             });
         }
 
@@ -137,85 +147,41 @@
         //ADMIN GRAFICA
         console.log("Generando datos...");
         Highcharts.chart('container', {
-        
-        title: {
-            text: 'Gráfica conjunta España'
-        },
-        lang: {
-            viewFullscreen:"Ver en pantalla completa",
-            downloadJPEG: "Descargar en formato JPEG",
-            downloadPDF: "Descargar en formato PDF",
-            downloadPNG:"Descargar en formato JPEG",
-            downloadSVG:"Descargar en formato JPEG",
-            downloadCSV:"Descargar en formato CSV",
-            downloadXLS:"Descargar en formato XLS",
-            exitFullscreen:"Salir de pantalla completa",
-  	        printChart: 'Imprimir gráfico',
-        },
-        yAxis: {
-            title: {
-                text: 'Porcentaje'
-            }
-        },
-        xAxis: {
-            title: {
-                text: 'Comunidad Autónoma/año'
+            chart: {
+                type: 'lollipop'
             },
-            categories: lifeChartInfo,
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle'
-        },
-        annootations: [
-            {
-                labels: [
-                    {
-                      point: "date",
-                      text: "",  
-                    },
-                    {
-                        point: "min",
-                        text: "Min",
-                        backgroundColor: "white",
-                    },                    
-                ],
+            title: {
+                text: 'Gráfica conjunta España'
             },
-        ],
-
-        series: [
-            {
-                name: 'Peso normal',
-                data: weightchartNormalWeight
-            },{
-                name: 'Fumadores diarios',
-                data: smokerChartPercent
-            },{
-                name: 'Muertes prematurass por alcohol',
-                data: alcoholChartPrematureDeath
-            },{
-                name: 'Esperanza de vida ',
-                data: lifeChartAverageLifeExpectancy
-            }],
-
-        resWeightponsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
+            xAxis: {
+                allowDecimals: false,  
+                title: {
+                    text: 'Comunidad Autónoma/año'
                 },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
-                }
+                categories: lifeChartInfo,
+            },
+            yAxis: {
+                title: {
+                    text: 'Valores'
+                },
+            },
+            series: [{
+                name: 'Esperanza de vida (años)',
+                data: lifeChartAverageLifeExpectancy
+            }, {
+                name: 'Muertes prematuras por alcohol',
+                data: alcoholChartPrematureDeath
+            }, {
+                name: 'Fumadores diarios (%)',
+                data: smokerChartPercent
+            }, {
+                name: 'Peso normal (kg)',
+                data: weightchartNormalWeight
             }]
-        }
-
         });
     }
+
+
      
 </script>
 
@@ -224,7 +190,10 @@
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/series-label.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
   <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/dumbbell.js"></script>
+  <script src="https://code.highcharts.com/modules/lollipop.js"></script>
   <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
 
 </svelte:head>
@@ -235,7 +204,7 @@
   <figure class="highcharts-figure">
     <div id="container"></div>
     <p class="highcharts-description">
-      Gráfico de líneas en el que se representa el porcentaje por comunidades autónomas en el año 2017 de cada API
+      Gráfico en el que se representa la esperanza de vida media, el porcentaje de fumadores diarios, el peso normal y el numero de muertes por alcohol por comunidades autónomas en el año 2017
     </p>
   </figure>
 
@@ -244,38 +213,42 @@
 </main>
 
 <style>
-    .highcharts-figure, .highcharts-data-table table {
-      min-width: 360px; 
-      max-width: 800px;
-      margin: 1em auto;
-  }
-  
-  .highcharts-data-table table {
-      font-family: Verdana, sans-serif;
-      border-collapse: collapse;
-      border: 1px solid #EBEBEB;
-      margin: 10px auto;
-      text-align: center;
-      width: 100%;
-      max-width: 500px;
-  }
-  .highcharts-data-table caption {
-      padding: 1em 0;
-      font-size: 1.2em;
-      color: #555;
-  }
-  .highcharts-data-table th {
-      font-weight: 600;
-      padding: 0.5em;
-  }
-  .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
-      padding: 0.5em;
-  }
-  .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
-      background: #f8f8f8;
-  }
-  .highcharts-data-table tr:hover {
-      background: #f1f7ff;
-  }
+        .highcharts-figure, .highcharts-data-table table {
+            min-width: 320px; 
+            max-width: 800px;
+            margin: 1em auto;
+        }
+
+        #container {
+            height: 450px;
+        }
+
+        .highcharts-data-table table {
+            font-family: Verdana, sans-serif;
+            border-collapse: collapse;
+            border: 1px solid #EBEBEB;
+            margin: 10px auto;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+        .highcharts-data-table caption {
+            padding: 1em 0;
+            font-size: 1.2em;
+            color: #555;
+        }
+        .highcharts-data-table th {
+            font-weight: 600;
+            padding: 0.5em;
+        }
+        .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+            padding: 0.5em;
+        }
+        .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+            background: #f8f8f8;
+        }
+        .highcharts-data-table tr:hover {
+            background: #f1f7ff;
+        }
   
   </style>
