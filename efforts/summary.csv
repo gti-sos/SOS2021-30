@@ -1,0 +1,60 @@
+﻿Project,Client,Title,Duration
+SOS2021-30,,#14 La API debe implementar adecuadamente todos los casos de la “tabla azul” comentada en el L06,03:41:00
+SOS2021-30,,#15 Implementar API-REST en heroku,07:09:06
+SOS2021-30,,#17 Indexación de documentación POSTMAN,03:19:12
+SOS2021-30,,#20 La API debe implementar un sistema de persistencia (tal como se ve en el L08),01:43:18
+SOS2021-30,,#21 Gestión de códigos de estados y actualizaciones,06:52:47
+SOS2021-30,,#24 Preparación F07 Front-end,06:08:05
+SOS2021-30,,#25 Front-end Svelte que permita una forma de listar todos los recursos,02:10:03
+SOS2021-30,,#28 Implementación de funciones front-end,10:10:27
+SOS2021-30,,#29 Front-end Svelte que permita todas las funcionalidades básicas de gestión de la información realizando peticiones a la API REST:,01:55:36
+SOS2021-30,,#31 Diseño de las funciones de búsqueda y paginación Front-End,05:12:59
+SOS2021-30,,#32 Implementación de búsqueda y modificación de la acción editar,11:55:36
+SOS2021-30,,#35 Implementación de widget parte smoker,08:03:49
+SOS2021-30,,#39 Issue entregable final,01:49:11
+SOS2021-30,,#40 Integración Rental-Smoker para D03,09:10:19
+SOS2021-30,,#41 Integración Hostelries-Smoker,10:11:46
+SOS2021-30,,#44 Integraciones API externas,21:41:16
+SOS2021-30,,#6 Realización de tareas grupal y personales para F02,02:40:37
+SOS2021-30,,#9 Despliegue del proyecto en heroku,03:17:28
+SOS2021-30,,05/06/2021,05:53:55
+SOS2021-30,,Back-End Alcohol,03:07:00
+SOS2021-30,,Backlog F01 alesanmar8,01:04:07
+SOS2021-30,,Backlog F02 alesanmar8,03:18:46
+SOS2021-30,,Backlog F03 alesanmar8,03:50:47
+SOS2021-30,,Backlog F04 alesanmar8,03:19:18
+SOS2021-30,,Buscar fuentes de datos,00:13:27
+SOS2021-30,,Clonar repositorio común,01:44:32
+SOS2021-30,,Corrección de rutas,03:22:00
+SOS2021-30,,Cumplir todos los requisitos por persona del F05,02:47:17
+SOS2021-30,,D01 1 alesanmar8 ,00:37:26
+SOS2021-30,,D01 2 alesanmar 8,01:58:16
+SOS2021-30,,D03 02/06/2021,03:51:17
+SOS2021-30,,D03 03/06/2021,07:07:34
+SOS2021-30,,D03 04/06/2021,05:58:10
+SOS2021-30,,D03 06/06/2021,00:29:56
+SOS2021-30,,D03 07/06/2021,06:03:38
+SOS2021-30,,D03 alesanmar8,04:06:17
+SOS2021-30,,Desplegar API consumo de alcohol,03:41:00
+SOS2021-30,,Despliegue del proyecto en Heroku,03:06:43
+SOS2021-30,,El código de la API debe estar modular en un archivo distinto al del servidor principal (tal como se vió en el L07) usando require y  module.exports.,02:32:19
+SOS2021-30,,F12,02:34:14
+SOS2021-30,,Front-end Svelte que permita todas las funcionalidades básicas de gestión de la información realizando peticiones a la API REST:,00:47:58
+SOS2021-30,,Grafico alcohol,04:52:14
+SOS2021-30,,Hacer L03,01:40:41
+SOS2021-30,,Implementación de búsqueda y paginación,04:43:00
+SOS2021-30,,Implementar base de datos,04:00:00
+SOS2021-30,,Implementar servidor web,02:50:15
+SOS2021-30,,Integración APIs SOS,02:38:00
+SOS2021-30,,Integración Covid,01:17:00
+SOS2021-30,,Issue entregable final,22:12:07
+SOS2021-30,,issue info/YYYY,00:07:51
+SOS2021-30,,Issue POSTMAN ,00:02:40
+SOS2021-30,,Issue tabla verde,00:12:53
+SOS2021-30,,La API debe implementar adecuadamente todos los casos de la “tabla azul” comentada en el L06,00:23:20
+SOS2021-30,,La API debe implementar un sistema de persistencia (tal como se ve en el L08),01:33:49
+SOS2021-30,,Modificar tabla,03:42:00
+SOS2021-30,,Postman,02:42:00
+SOS2021-30,,Realizar e2e,02:52:00
+SOS2021-30,,Realizar tareas del F02,02:19:32
+,,#20 La API debe implementar un sistema de persistencia (tal como se ve en el L08),00:30:24
